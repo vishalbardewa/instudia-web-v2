@@ -204,7 +204,7 @@ const CourseCard = ({
   className,
 }: ICourseCard) => (
   <div className={`overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
-    <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6 2xl:w-9/12">
+    <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6 lg:w-11/12 xl:w-11/12 2xl:w-11/12">
       {badge}
       <br />
       {title}
