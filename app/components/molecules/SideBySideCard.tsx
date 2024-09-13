@@ -6,9 +6,9 @@ function SideBySideCard() {
   return (
     <div className="bg-white py-16 sm:py-24 lg:pb-16">
       <div className="mx-auto max-w-7xl">
-        <div className="relative isolate flex flex-col gap-10 justify-between overflow-hidden bg-[#1B1C1E] py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:flex-row xl:items-center xl:py-32">
-          <div className="flex flex-col">
-            <h2 className="max-w-2xl text-3xl font-bold leading-[1.2] tracking-tight text-white sm:text-4xl xl:max-w-none lg:text-6xl xl:flex-auto">
+        <div className="relative isolate flex flex-col items-center gap-10 justify-between overflow-hidden bg-[#1B1C1E] py-24 shadow-2xl rounded-3xl sm:px-24 xl:flex-row xl:items-center xl:py-32">
+          <div className="flex flex-col items-center lg:items-start">
+            <h2 className="text-center text-6xl max-w-2xl font-bold leading-[1.2] tracking-tight lg:text-left text-white sm:text-4xl xl:max-w-none lg:text-6xl xl:flex-auto">
               Learn. Upskill. Succeed.
             </h2>
             <p className="text-[#FAFAFA] pt-2 text-opacity-60">

@@ -206,7 +206,7 @@ const CourseCard = ({
   gridFix = true
 }: ICourseCard) => (
   <div className={`${gridFix && "grid row-span-3 grid-rows-subgrid"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
-    <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6 lg:w-11/12 xl:w-11/12 2xl:w-11/12">
+    <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6">
       {badge}
       <br />
       {title}
@@ -217,7 +217,7 @@ const CourseCard = ({
     </div>
     <div className="px-2 py-2 sm:px-2 mt-4">
       <Image
-        className="rounded-md aspect-1"
+        className="rounded-md"
         width={800}
         height={800}
         alt={imageAlt}
@@ -230,13 +230,13 @@ const CourseCard = ({
 function CourseSectionList() {
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {firstLayerCourses.map((course) => (
           <CourseCard key={title} {...course} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {secondLayerCourses.map((course) => (
           <CourseCard key={title} {...course} />
         ))}
@@ -288,7 +288,7 @@ function CourseSectionList() {
 
       <SideBySideCard />
 
-      <div className="grid grid-cols-1 gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {fourthLayerCourses.map((course) => (
           <CourseCard key={title} {...course} />
         ))}
