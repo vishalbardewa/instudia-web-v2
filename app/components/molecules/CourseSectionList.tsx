@@ -17,6 +17,7 @@ interface ICourseCard {
   imageUrl: string;
   imageAlt: string;
   className?: string;
+  gridFix?: boolean;
 }
 
 let firstLayerCourses = [
@@ -202,8 +203,9 @@ const CourseCard = ({
   imageUrl,
   imageAlt,
   className,
+  gridFix = true
 }: ICourseCard) => (
-  <div className={`overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
+  <div className={`${gridFix && "grid row-span-3 grid-rows-subgrid"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
     <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6 lg:w-11/12 xl:w-11/12 2xl:w-11/12">
       {badge}
       <br />
@@ -215,7 +217,7 @@ const CourseCard = ({
     </div>
     <div className="px-2 py-2 sm:px-2 mt-4">
       <Image
-        className="rounded-md"
+        className="rounded-md aspect-1"
         width={800}
         height={800}
         alt={imageAlt}
@@ -271,13 +273,14 @@ function CourseSectionList() {
         {fifthLayerCourses.map((course) => (
           <CourseCard
             key={title}
+            gridFix={false}
             {...course}
             className="lg:col-start-3 lg:col-end-4"
           />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {thirdLayerCourses.map((course) => (
           <CourseCard key={title} {...course} />
         ))}
