@@ -146,11 +146,11 @@ const cards = [
 ];
 
 export const metadata = {
-  title:"Unlock Excellence: Dimapur's Finest Computer and Skill Training Courses | instudia ",
+  title:"Unlock Excellence: Dimapur's Finest Computer and Skill Training Courses | instudia",
   description:"Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, web development, project management, and digital skills. Unlock your potential with instudia through industry-focused training for success.",
   openGraph: {
-    title: "instudia",
-    description: "Description instudia",
+    title: "Unlock Excellence: Dimapur's Finest Computer and Skill Training Courses | instudia",
+    description: "Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, web development, project management, and digital skills. Unlock your potential with instudia through industry-focused training for success.",
     url: `${AppConfig.canonicalBase}`,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,
