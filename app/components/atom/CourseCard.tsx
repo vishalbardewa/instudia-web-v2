@@ -3,14 +3,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-import { ICourse } from '@/interfaces';
 
 export default function CourseCard({
   title,
   category,
   description,
   slug,
-}: ICourse) {
+}: any) {
   return (
     <motion.div
       whileHover={{ scale: 1.01, color: 'black' }}

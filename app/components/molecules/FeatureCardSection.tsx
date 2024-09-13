@@ -1,11 +1,11 @@
-import { IFeatureCardSection, ISupportLinks } from '@/interfaces';
+// import { IFeatureCardSection, ISupportLinks } from '@/interfaces';
 
 export default function FeatureCardSection({
   mainText,
   secondaryText,
   highlightText,
   supportLinks,
-}: IFeatureCardSection) {
+}: any) {
   return (
     <div className="bg-white">
       {/* Header */}
@@ -41,7 +41,7 @@ export default function FeatureCardSection({
           Contact us
         </h2>
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
-          {supportLinks.map((link: ISupportLinks) => (
+          {supportLinks.map((link: any) => (
             <div
               key={link.name}
               className="flex flex-col rounded-2xl bg-white shadow-xl"

@@ -1,8 +1,8 @@
-import { StarIcon } from '@heroicons/react/solid';
+import { StarIcon } from '@heroicons/react/24/solid';
 
-import { IRoundedBadge } from '@/interfaces';
+// import { IRoundedBadge } from '@/interfaces';
 
-export default function RoundedBadge({ text, color }: IRoundedBadge) {
+export default function RoundedBadge({ text, color }: any) {
   return (
     <>
       <span className="inline-flex items-center rounded-md bg-yellow-500 px-2.5 py-0.5 text-sm font-medium text-white ">

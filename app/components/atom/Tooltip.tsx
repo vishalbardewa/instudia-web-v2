@@ -3,7 +3,7 @@ import React from "react";
 function Tooltip() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white min-w-screen">
-      <div
+      {/* <div
         className="relative flex items-center text-gray-500 cursor-pointer hover:text-gray-600"
         x-data="{ hover: false }"
       >
@@ -40,7 +40,7 @@ function Tooltip() {
             ></path>
           </svg>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

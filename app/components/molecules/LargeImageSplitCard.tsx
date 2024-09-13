@@ -1,11 +1,9 @@
-import { UsersIcon } from '@heroicons/react/outline';
-
-import { ILargeImageSplitCard } from '@/interfaces';
+import { UsersIcon } from '@heroicons/react/24/outline';
 
 export default function LargeImageSplitCard({
   cardHeader,
   cardBody,
-}: ILargeImageSplitCard) {
+}: any) {
   return (
     <div className="relative bg-white shadow-xl sm:overflow-hidden sm:rounded-2xl">
       <div className="h-56 bg-yellow-600 sm:h-72 lg:absolute lg:left-0 lg:h-full lg:w-1/2">

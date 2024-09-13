@@ -1,10 +1,10 @@
-import { ISimpleOnBrand } from '@/interfaces';
+// import { ISimpleOnBrand } from '@/interfaces';
 
 export default function SimpleOnBrand({
   className,
   mainText,
   secondaryText,
-}: ISimpleOnBrand) {
+}: any) {
   return (
     <div className={`bg-yellow-500 ${className}`}>
       <div className="mx-auto max-w-7xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">

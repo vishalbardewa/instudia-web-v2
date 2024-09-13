@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SpeakerphoneIcon } from '@heroicons/react/outline';
+import { SpeakerWaveIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 type BannerProps = {
@@ -9,13 +9,12 @@ type BannerProps = {
 };
 export default function TopBanner(props: BannerProps) {
   return (
-    // eslint-disable-next-line tailwindcss/no-custom-classname
     <div className="bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800">
       <div className="mx-auto max-w-7xl p-3 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between">
           <div className="flex w-0 flex-1 items-center">
             <span className="flex rounded-lg bg-gray-600 p-2">
-              <SpeakerphoneIcon
+              <SpeakerWaveIcon
                 className="h-6 w-6 text-white"
                 aria-hidden="true"
               />

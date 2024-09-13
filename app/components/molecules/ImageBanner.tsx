@@ -1,7 +1,5 @@
-import { UsersIcon } from '@heroicons/react/solid';
+import { UsersIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-
-import { ICourse } from '@/interfaces';
 
 import RoundedBadge from '../atom/RoundedBadge';
 
@@ -11,7 +9,7 @@ export default function ImageBanner({
   slug,
   duration,
   durationUnit,
-}: ICourse) {
+}: any) {
   return (
     <div className="relative col-span-3 bg-white">
       <div className="h-56 bg-yellow-600 sm:h-72 lg:absolute lg:left-0 lg:h-full">

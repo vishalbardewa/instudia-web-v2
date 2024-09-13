@@ -1,4 +1,4 @@
-import { ChevronRightIcon, HomeIcon } from '@heroicons/react/solid';
+import { ChevronRightIcon, HomeIcon } from '@heroicons/react/24/solid';
 
 const pages = [
   { name: 'Projects', href: '#', current: false },

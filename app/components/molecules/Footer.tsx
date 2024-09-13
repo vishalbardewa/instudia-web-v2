@@ -1,6 +1,6 @@
+import { AppConfig } from '@/app/_utils/AppConfig';
 import React from 'react';
 
-import { AppConfig } from '@/utils/AppConfig';
 
 export default function Footer({ footerNavigation }: any) {
   return (

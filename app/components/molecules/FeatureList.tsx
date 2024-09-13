@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import {
-  BadgeCheckIcon,
-  CashIcon,
+  CheckBadgeIcon,
+  CurrencyRupeeIcon,
   ClockIcon,
   UsersIcon,
-} from '@heroicons/react/outline';
+} from '@heroicons/react/24/outline';
+import { cn } from '@/app/_utils/cn';
 
-import { classNames } from '@/utils/classnames';
 
 interface IFeatureList {
   key: string;
@@ -32,7 +32,7 @@ const initialActions: IFeatureList[] = [
     key: 'prerequisites',
     title: 'Prerequisites',
     href: '#',
-    icon: BadgeCheckIcon,
+    icon: CheckBadgeIcon,
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
   },
@@ -48,7 +48,7 @@ const initialActions: IFeatureList[] = [
     key: 'level',
     title: 'Level',
     href: '#',
-    icon: CashIcon,
+    icon: CurrencyRupeeIcon,
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
   },
@@ -76,7 +76,7 @@ export default function FeatureList({ features }: any) {
         return (
           <div
             key={action.title}
-            className={classNames(
+            className={cn(
               actionIdx === 0
                 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none'
                 : '',
@@ -90,7 +90,7 @@ export default function FeatureList({ features }: any) {
           >
             <div>
               <span
-                className={classNames(
+                className={cn(
                   action.iconBackground,
                   action.iconForeground,
                   'rounded-lg inline-flex p-3 ring-4 ring-white'

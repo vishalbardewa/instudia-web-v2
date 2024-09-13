@@ -1,16 +1,16 @@
 /* This example requires Tailwind CSS v2.0+ */
 import {
   LockClosedIcon,
-  RefreshIcon,
-  OfficeBuildingIcon,
-} from '@heroicons/react/outline';
+  ArrowPathIcon,
+  BuildingOfficeIcon,
+} from '@heroicons/react/24/outline';
 
 const features = [
   {
     name: 'Help to figure the right role for you',
     description:
       'Consulting with a career counselor or mentor can aid in uncovering and navigating the path toward the ideal job.',
-    icon: OfficeBuildingIcon,
+    icon: BuildingOfficeIcon,
     color: 'bg-brightyellow',
   },
   {
@@ -24,14 +24,14 @@ const features = [
     name: 'Referrals to good companies',
     description:
       'Networking with a recruiter or staffing agency can open doors to job opportunities and potential referrals in your field.',
-    icon: RefreshIcon,
+    icon: ArrowPathIcon,
     color: 'bg-redhue',
   },
   {
     name: 'Coaching on salary negotiation',
     description:
       'Specialized career coach boosts confidence and equips you with effective strategies for fair salary negotiation.',
-    icon: RefreshIcon,
+    icon: ArrowPathIcon,
     color: 'bg-flourescent',
   },
 ];
