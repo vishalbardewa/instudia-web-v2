@@ -1,0 +1,787 @@
+{
+  "courses": [
+    {
+      "slug": "dca",
+      "category": "Technology",
+      "fullTitle": "Diploma in Computer Application",
+      "pageTitle": {
+        "text": "Diploma in",
+        "highlightText": "Computer Applications"
+      },
+      "image": "https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "courseHightlight": "DCA is a 6-months diploma course to study computer applications in depth.The course imparts scientific, practical and technical knowledge to its learners about various computer tools that are used in day to day life. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "Opens up various job opportunities in the field of IT, software development, networking, and data management. This diploma can help you gain valuable skills that are in high demand in the job market."
+        },
+        {
+          "id": 1234,
+          "description": "Help you acquire technical skills in various areas of computer applications such as programming, web development, database management, and computer networking. These skills can help you enhance your employability and provide a strong foundation for further studies in the field."
+        },
+        {
+          "id": 1235,
+          "description": "Develops entrepreneurial skills by teaching you how to create and manage your own software, websites, and applications. With this diploma, you can acquire the skills necessary to start your own business in the tech industry."
+        },
+        {
+          "id": 1236,
+          "description": "Pursuing a Diploma in Computer Applications can help you enhance your problem-solving, critical thinking, and communication skills. It can also help you become more proficient in computer usage and digital literacy, which is becoming increasingly important in today's world."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 10999, "discountedPrice": 7999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "6",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 6 and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "python-level-1",
+      "category": "Technology",
+      "fullTitle": "Programming with Python Level 1",
+      "pageTitle": {
+        "text": "Programming",
+        "highlightText": "with Python Level 1"
+      },
+      "image": "https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "courseHightlight": "An introductory course designed for beginners who are interested in learning the fundamentals of the Python programming language. The course covers the basic syntax and structure of Python and how to write simple programs using Python. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "Python is a versatile programming language used in a wide range of applications such as data analysis, machine learning, web development, and scientific computing. By learning Python Level 1, you can gain a solid foundation in the language and open up opportunities in various fields."
+        },
+        {
+          "id": 1234,
+          "description": "Python is known for its readability and simplicity, making it easy to learn for beginners. Python code is written in a clear and concise manner, which makes it easier to understand and debug."
+        },
+        {
+          "id": 1235,
+          "description": "One of the most popular programming languages in the world and has a high demand in the job market. Learning Python can help you land a job in various industries such as IT, software development, data analysis, and more."
+        },
+        {
+          "id": 1236,
+          "description": "Python is not only useful for professionals, but it is also relevant to everyday life. You can use Python to automate tasks, create simple games, and solve everyday problems. Python is also a great tool for learning about computer science concepts, which can help you understand technology better."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 4999, "discountedPrice": 2999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "1",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 6 and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "python-level-2",
+      "category": "Technology",
+      "fullTitle": "Programming with Python Level 2",
+      "pageTitle": {
+        "text": "Programming",
+        "highlightText": "with Python Level 2"
+      },
+      "image": "https://images.unsplash.com/photo-1629904869392-ae2a682d4d01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
+      "courseHightlight": "An intermediate-level course designed for individuals who have a basic understanding of Python programming and want to build upon their knowledge. Advanced concepts with a review of the basics of Python programming with advanced data structures such as lists, tuples, dictionaries, and sets also covers object-oriented programming concepts such as classes, objects, and inheritance. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "Introduces advanced programming concepts such as object-oriented programming, file handling, regular expressions, and error handling. By mastering these concepts, you can become a more skilled programmer and build more complex and powerful applications."
+        },
+        {
+          "id": 1234,
+          "description": "Advanced data structures such as lists, tuples, dictionaries, and sets. These data structures are essential for building more complex applications and handling large amounts of data."
+        },
+        {
+          "id": 1235,
+          "description": "One of the most popular programming languages in the world and has a high demand in the job market. Learning Python Level 2 can help you land a job in various industries such as IT, software development, data analysis, and more."
+        },
+        {
+          "id": 1236,
+          "description": "Expands on the foundational knowledge gained in Python Level 1 and provides you with the skills to develop applications for a wider range of industries such as finance, healthcare, and education. This can help you explore new career paths and opportunities."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 4999, "discountedPrice": 2999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "2",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 6 and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "python-level-3",
+      "category": "Technology",
+      "fullTitle": "Programming with Python Level 3",
+      "pageTitle": {
+        "text": "Programming",
+        "highlightText": "with Python Level 3"
+      },
+      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      "courseHightlight": "An intermediate-level course designed for individuals who have a basic understanding of Python programming and want to build upon their knowledge. Advanced concepts with a review of the basics of Python programming with advanced data structures such as lists, tuples, dictionaries, and sets also covers object-oriented programming concepts such as classes, objects, and inheritance. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "Introduces advanced programming concepts such as object-oriented programming, file handling, regular expressions, and error handling. By mastering these concepts, you can become a more skilled programmer and build more complex and powerful applications."
+        },
+        {
+          "id": 1234,
+          "description": "Advanced data structures such as lists, tuples, dictionaries, and sets. These data structures are essential for building more complex applications and handling large amounts of data."
+        },
+        {
+          "id": 1235,
+          "description": "One of the most popular programming languages in the world and has a high demand in the job market. Learning Python Level 2 can help you land a job in various industries such as IT, software development, data analysis, and more."
+        },
+        {
+          "id": 1236,
+          "description": "Expands on the foundational knowledge gained in Python Level 1 and provides you with the skills to develop applications for a wider range of industries such as finance, healthcare, and education. This can help you explore new career paths and opportunities."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 4999, "discountedPrice": 2999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "3",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 6 and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "gst",
+      "category": "Finance",
+      "fullTitle": "Tally with GST",
+      "pageTitle": {
+        "text": "Tally",
+        "highlightText": "with GST"
+      },
+      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      "courseHightlight": "A course that focuses on teaching individuals how to use Tally, a popular accounting software, in the context of GST compliance. The course covers various aspects of Tally with GST, including creating and managing company accounts, generating invoices, and filing GST returns. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "Since the implementation of the Goods and Services Tax (GST) in India, businesses have to comply with several rules and regulations. By learning Tally with GST, you will gain knowledge about GST compliance, making it easier for you to stay within the law."
+        },
+        {
+          "id": 1234,
+          "description": "Provides a comprehensive accounting solution for businesses. By learning Tally with GST, you will have access to a wide range of features and functions that will help you manage your finances effectively. For instance, you can easily generate GST invoices, file GST returns, and calculate GST liabilities."
+        },
+        {
+          "id": 1235,
+          "description": "As the demand for GST compliance grows, the need for professionals with Tally and GST skills has increased. By learning Tally with GST, you will open yourself up to many job opportunities in finance and accounting."
+        },
+        {
+          "id": 1236,
+          "description": "Improve your business performance. Tally with GST allows you to generate financial reports quickly, making it easier for you to track your finances and make informed business decisions. Additionally, Tally with GST also allows you to automate many accounting tasks, reducing the time and effort required to manage your finances."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 4999, "discountedPrice": 2999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "3",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 6 and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "tally",
+      "fullTitle": "Accounting with Tally",
+      "category": "Finance",
+      "pageTitle": {
+        "text": "Accounting",
+        "highlightText": "with Tally"
+      },
+      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      "courseHightlight": "A course that focuses on teaching individuals how to use Tally, a popular accounting software, for effective financial management. The course covers various aspects of accounting, including ledger creation, voucher entry, and financial reporting. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "A powerful accounting software that can automate many accounting tasks, making financial management much more efficient. By learning Tally, individuals can save time and effort, which can be used to focus on other important tasks."
+        },
+        {
+          "id": 1234,
+          "description": "Provides a range of financial management tools, such as inventory management, payroll processing, and financial reporting. By learning Tally, individuals can improve their financial management skills, which can help them make better business decisions."
+        },
+        {
+          "id": 123512,
+          "description": "Many companies across various industries use Tally for their financial management. By learning Tally, individuals can open up job opportunities in finance and accounting, making it a valuable skill to have in the job market."
+        },
+        {
+          "id": 123612,
+          "description": "Known for its user-friendly interface, making it easy to learn and use. Additionally, there are numerous online resources and training programs available for individuals to learn Tally, making it an accessible skill to acquire."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 4999, "discountedPrice": 2999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "1",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 6 and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "pgdca",
+      "fullTitle": "Post Graduate Diploma in Computer Applications",
+      "category": "Technology",
+      "pageTitle": {
+        "text": "Post Graduate Diploma",
+        "highlightText": "in Computer Applications"
+      },
+      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      "courseHightlight": "A course that focuses on teaching individuals how to use Tally, a popular accounting software, for effective financial management. The course covers various aspects of accounting, including ledger creation, voucher entry, and financial reporting. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "A powerful accounting software that can automate many accounting tasks, making financial management much more efficient. By learning Tally, individuals can save time and effort, which can be used to focus on other important tasks."
+        },
+        {
+          "id": 1234,
+          "description": "Provides a range of financial management tools, such as inventory management, payroll processing, and financial reporting. By learning Tally, individuals can improve their financial management skills, which can help them make better business decisions."
+        },
+        {
+          "id": 123512,
+          "description": "Many companies across various industries use Tally for their financial management. By learning Tally, individuals can open up job opportunities in finance and accounting, making it a valuable skill to have in the job market."
+        },
+        {
+          "id": 123612,
+          "description": "Known for its user-friendly interface, making it easy to learn and use. Additionally, there are numerous online resources and training programs available for individuals to learn Tally, making it an accessible skill to acquire."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 4999, "discountedPrice": 2999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "12",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Diploma and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "advanced-excel",
+      "fullTitle": "Advanced",
+      "category": "Office & Productivity",
+      "pageTitle": {
+        "text": "Advanced",
+        "highlightText": "Excel"
+      },
+      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      "courseHightlight": "A course that focuses on teaching individuals how to use Microsoft Excel for advanced data analysis and reporting. The course covers various features and functions of Excel, including data analysis, data visualization, and automation. Advanced Excel course is designed to provide a comprehensive understanding of Excel software for advanced data analysis and reporting. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "Offers a range of tools for data analysis, such as pivot tables, statistical analysis, and data validation. By learning Advanced Excel, individuals can improve their data analysis skills and make better business decisions based on data insights."
+        },
+        {
+          "id": 1234,
+          "description": "Advanced reporting capabilities such as charts, graphs, and dashboards. By learning Advanced Excel, individuals can create more effective and visually appealing reports that can help communicate complex data to stakeholders."
+        },
+        {
+          "id": 123512,
+          "description": "Automate many repetitive tasks, saving time and effort. By learning Advanced Excel, individuals can work more efficiently and complete tasks faster, increasing productivity and allowing for more time to focus on other important tasks."
+        },
+        {
+          "id": 123612,
+          "description": "Individuals can open up job opportunities in these fields and increase their earning potential. Additionally, advanced Excel skills can also be valuable in many other industries that require data analysis and reporting."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 4999, "discountedPrice": 2999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "3",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Excel Beginner Level and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "frontend-development",
+      "category": "Technology",
+      "fullTitle": "Certificate in Frontend Development",
+      "pageTitle": {
+        "text": "Certificate in",
+        "highlightText": "Frontend Development"
+      },
+      "image": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "courseHightlight": "Unlock the world of modern web development. Dive into React, the leading JavaScript library for building robust and efficient UIs. Elevate your career in web development with hands-on training, industry insights, and a focus on practical applications. Enroll now for a transformative learning experience and step into the future of frontend development",
+      "fourReasons": [
+        {
+          "id": 123,
+          "description": "Gain a solid foundation in JavaScript, covering essential concepts and progressing to advanced techniques. From variables and control flow to closures and asynchronous programming, this course ensures a thorough understanding of JavaScript, empowering you to write efficient and effective code."
+        },
+        {
+          "id": 1234,
+          "description": "Specialize in React, a powerful library for building modern user interfaces. Dive into the React ecosystem, understanding components, state management, and the Virtual DOM. Learn to leverage React's capabilities to create dynamic and responsive web applications, making you proficient in one of the most sought-after frontend technologies."
+        },
+        {
+          "id": 1235,
+          "description": "Apply theoretical knowledge in real-world scenarios through hands-on projects and exercises. Develop practical skills by working on industry-relevant projects, allowing you to build a strong portfolio showcasing your expertise in JavaScript and React. This practical experience ensures you are job-ready and capable of tackling real-world development challenges."
+        },
+        {
+          "id": 1236,
+          "description": "Benefit from insights into industry best practices and trends. Stay updated with the latest advancements in frontend development, ensuring that your skills remain current and in-demand. Guest lectures, case studies, and discussions with industry professionals provide valuable perspectives, preparing you to excel in a competitive job market."
+        }
+      ],
+      "relatedCourses": [
+        {
+          "title": "Programming with Python II",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-2.png"
+        },
+        {
+          "title": "Programming with Python I",
+          "description": "This is the most comprehensive, yet straight-forward, course for the Python programming language in town! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python! In this course we will teach you Python 3.",
+          "shortDescription": "Comprehensive programming course covering basics into the world of Python",
+          "price": {
+            "original": 4999,
+            "discountedPrice": 2999
+          },
+          "features": {
+            "duration": "1 month",
+            "prerequisites": ["Basics of Computer"],
+            "level": "Entry",
+            "keySkills": ["Tally", "Networking", "Python"]
+          },
+          "imageUrl": "/assets/images/python-level-1.png"
+        }
+      ],
+      "price": { "original": 89000, "discountedPrice": 75999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "BadgeCheckIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "6",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Higher Secondary and Above",
+          "icon": "LibraryIcon"
+        }
+      ],
+      "inDemand": true
+    }
+  ]
+}
