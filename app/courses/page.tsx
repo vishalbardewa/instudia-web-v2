@@ -11,11 +11,12 @@ function Courses() {
         width={800}
         height={800}
         alt="Design Hexagonal"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
       <h4 className="col-start-2 col-end-8 lg:col-start-2 lg:col-end-8 py-1 inline-block rounded-md text-sm font-mono uppercase tracking-wider text-stone-900/70 mt-16">
         <span>💪</span> Upskill Today!
       </h4>
-      <div className="text-4xl col-start-2 col-end-9 font-semibold leading-tight lg:text-6xl">
+      <div className="text-5xl col-start-2 col-end-12 lg:col-end-9 font-semibold leading-tight lg:text-6xl">
         Empower{" "}
         <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-yellow-500 relative inline-block">
           <span className="relative p-4 text-white">Yourself</span>
@@ -32,10 +33,7 @@ function Courses() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 gap-y-70 pb-150">
             <article className="col-span-1 relative bg-[#e16687] min-h-96 rounded-md card__hover">
-              <a
-                className="flex flex-col h-full py-5 arrow__right"
-                href="#"
-              >
+              <a className="flex flex-col h-full py-5 arrow__right" href="#">
                 <div className="px-4 pb-2">
                   <h2 className="flex flex-col items-start w-4/5">
                     <span className="text-white font-mono tracking-wide uppercase text-sm">
@@ -43,10 +41,14 @@ function Courses() {
                     </span>
                   </h2>
                 </div>
-                <img
+                <Image
                   className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading"
                   src="https://ik.imagekit.io/dxffek9yf/course-list-page/pattern-1.png?updatedAt=1726168780299"
                   data-was-processed="true"
+                  width={800}
+                  height={800}
+                  alt="Design Hexagonal"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-4/5">
                   <p className="flex flex-col items-start text-white">
@@ -56,10 +58,7 @@ function Courses() {
               </a>
             </article>
             <article className="col-span-1 relative bg-[#b936d0] min-h-96 rounded-md card__hover">
-              <a
-                className="flex flex-col h-full py-5 arrow__right"
-                href="#"
-              >
+              <a className="flex flex-col h-full py-5 arrow__right" href="#">
                 <div className="px-4 pb-2">
                   <h2 className="flex flex-col items-start">
                     <span className="font-mono tracking-wide uppercase text-sm text-white">
@@ -67,10 +66,14 @@ function Courses() {
                     </span>
                   </h2>
                 </div>
-                <img
+                <Image
                   className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading"
                   src="https://ik.imagekit.io/dxffek9yf/course-list-page/pattern-3.png?updatedAt=1726168779931"
                   data-was-processed="true"
+                  width={800}
+                  height={800}
+                  alt="Square design"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-3/4">
                   <p className="flex flex-col items-start text-white">
@@ -81,10 +84,7 @@ function Courses() {
               </a>
             </article>
             <article className="col-span-1 relative bg-[#99daee] min-h-96 rounded-md card__hover">
-              <a
-                className="flex flex-col h-full py-5 arrow__right"
-                href="#"
-              >
+              <a className="flex flex-col h-full py-5 arrow__right" href="#">
                 <div className="px-4 pb-2">
                   <h2 className="flex flex-col items-start">
                     <span className="text-white font-mono tracking-wide uppercase text-sm">
@@ -92,10 +92,14 @@ function Courses() {
                     </span>
                   </h2>
                 </div>
-                <img
+                <Image
                   className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loaded"
                   src="https://ik.imagekit.io/dxffek9yf/course-list-page/pattern-4.png?updatedAt=1726168780003"
                   data-was-processed="true"
+                  width={800}
+                  height={800}
+                  alt="Rhombus design"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-3/4">
                   <p className="text-white flex flex-col items-start">
@@ -107,7 +111,7 @@ function Courses() {
           </div>
         </section>
       </div>
-      <section className="col-start-1 col-end-13 gutter mt-8 py-8 bg-[#171717] lg:mt-16"> 
+      <section className="col-start-1 col-end-13 gutter mt-8 py-8 bg-[#171717] lg:mt-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 gap-y-70 pb-150 mx-20">
           <div className="flex md:px-4 py-4">
             <div className="content-center md:max-w-96">
@@ -128,10 +132,7 @@ function Courses() {
             </div>
           </div>
           <article className="col-span-1 relative bg-[#FFD28A] min-h-96 rounded-md card__hover">
-            <a
-              className="flex flex-col h-full py-5 arrow__right"
-              href="#"
-            >
+            <a className="flex flex-col h-full py-5 arrow__right" href="#">
               <div className="px-4 pb-2">
                 <h4 className="flex flex-col items-start w-4/5">
                   <span className="font-mono tracking-wide uppercase text-sm">
@@ -148,7 +149,8 @@ function Courses() {
               />
               <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-4/5">
                 <p className="flex flex-col items-start">
-                  Discover your abilities in specific topics covered in our Curriculum
+                  Discover your abilities in specific topics covered in our
+                  Curriculum
                 </p>
               </div>
             </a>
@@ -195,7 +197,8 @@ function Courses() {
                   </span>
                 </h4>
                 <p className="text-sm text-stone-50">
-                  Earn a certificate for mastering the advanced skills for Top 10%
+                  Earn a certificate for mastering the advanced skills for Top
+                  10%
                 </p>
               </a>
             </div>

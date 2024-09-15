@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import PrimaryLayout from "./components/layouts/PrimaryLayout";
+import DeviceSizeIndicator from "./components/atom/DeviceSizeIndicator";
 
 const inter = Inter({ subsets: ["latin"] });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={jakarta.className}>
         <PrimaryLayout>
+          <DeviceSizeIndicator />
           {children}
         </PrimaryLayout>
       </body>
