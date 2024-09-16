@@ -140,7 +140,7 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
         </h1>
       </div>
       <section className="font-light lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-4">
-        {relatedCourses?.map((course: any, i) => (
+        {relatedCourses?.map((course: any, i: any) => (
           <div key={i} className="mt-12 space-y-1 sm:grid-cols-6">
             <figure className="relative max-w-xl cursor-pointer">
               <img
@@ -219,7 +219,6 @@ async function getCourseBySlug(slug: string) {
   return res.json();
 }
 export default async function Course({params: {slug}}: any) {
-  console.log('Slug: ', slug)
   const {courseDetails} = await getCourseBySlug(slug)
 
   return (
