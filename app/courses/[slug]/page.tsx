@@ -1,29 +1,37 @@
-import { Button } from "@/app/components/atom/Button";
-import courseList from '@/app/data/courses.json';
-import { promises as fs } from 'fs';
-import {
-  IconBadge,
-  IconCertificate,
-  IconCircleCheckFilled,
-  IconClock,
-  IconLibrary,
-} from "@tabler/icons-react";
+/* eslint-disable no-nested-ternary */
+import fs from "fs";
+import path from "path";
+
 import React from "react";
 
+import {
+  CheckBadgeIcon,
+  AcademicCapIcon,
+  ClockIcon,
+  BuildingLibraryIcon,
+} from "@heroicons/react/24/solid";
+
+import IconButton from "@/app/components/atom/IconButton";
+import { slugs } from "@/app/routes";
+
 const ICON_LIST: any = {
-  IconBadge: <IconBadge className="h-6 w-6" aria-hidden="true" />,
-  IconCertificate: <IconCertificate className="h-6 w-6" aria-hidden="true" />,
-  IconClock: <IconClock className="h-6 w-6" aria-hidden="true" />,
-  IconLibrary: <IconLibrary className="h-6 w-6" aria-hidden="true" />,
+  CheckBadgeIcon: <CheckBadgeIcon className="h-6 w-6" aria-hidden="true" />,
+  AcademicCapIcon: <AcademicCapIcon className="h-6 w-6" aria-hidden="true" />,
+  ClockIcon: <ClockIcon className="h-6 w-6" aria-hidden="true" />,
+  BuildingLibraryIcon: (
+    <BuildingLibraryIcon className="h-6 w-6" aria-hidden="true" />
+  ),
 };
 
 const ContentHead = ({
+  courseDetails: {
     pageTitle,
     features,
     inDemand,
     courseHightlight,
     image,
     category,
+  },
 }: any) => (
   <section className="mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-16">
     <div className="grid md:grid-cols-2 md:gap-1 lg:grid-cols-12 lg:gap-8">
@@ -85,7 +93,7 @@ const ContentHead = ({
 );
 
 const FourParaGrid = ({ fourReasons }: any) => (
-  <div className="mt-24 px-24 font-bold">
+  <div className="mt-24 px-8 lg:px-16 font-bold">
     <div className="relative">
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
         <div className="w-full border-t border-gray-300" />
@@ -100,7 +108,7 @@ const FourParaGrid = ({ fourReasons }: any) => (
       {fourReasons?.map((reason: any) => (
         <div className="mt-8 sm:grid-cols-2" key={reason.id}>
           <span className="grid grid-flow-col gap-4">
-            <IconCircleCheckFilled className="h-8 w-8" aria-hidden="true" />
+            <CheckBadgeIcon className="h-8 w-8" aria-hidden="true" />
             {reason.description}
           </span>
         </div>
@@ -108,6 +116,56 @@ const FourParaGrid = ({ fourReasons }: any) => (
     </section>
   </div>
 );
+
+const RelatedCoursesGrid = ({ relatedCourses }: any) => {
+  return (
+    <div className="mt-48 px-4 font-bold">
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div className="w-full border-t border-gray-300 lg:w-full" />
+        </div>
+        <div className="relative flex justify-center">
+          <span className="bg-white px-3 text-2xl font-medium text-gray-900">
+            Related Courses
+          </span>
+        </div>
+      </div>
+      <div>
+        <h1>
+          <span className="mt-1 block text-3xl font-bold leading-none tracking-tight sm:text-5xl lg:text-3xl xl:text-3xl">
+            <span className="block text-gray-900 sm:max-w-sm lg:max-w-[25%]">
+              Find More Courses Like This One.
+            </span>
+          </span>
+        </h1>
+      </div>
+      <section className="font-light lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-4">
+        {relatedCourses?.map((course: any, i) => (
+          <div key={i} className="mt-12 space-y-1 sm:grid-cols-6">
+            <figure className="relative max-w-xl cursor-pointer">
+              <img
+                className="rounded-lg"
+                src="/assets/images/python-level-1.png"
+                alt="image description"
+              />
+              <figcaption className="absolute bottom-0 rounded-tr-xl bg-slate-500 px-4 text-lg font-bold text-white hover:bg-yellow-500">
+                <p className="text-3xl">{course.title}</p>
+              </figcaption>
+            </figure>
+
+            <div className="space-y-2">
+              <div className="space-y-1 text-lg font-medium leading-6">
+                <p className="font-medium text-black">
+                  {course.shortDescription}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+    </div>
+  );
+};
 
 const FixedMarquee = () => (
   <div className="relative mx-5 flex overflow-x-hidden text-black">
@@ -135,10 +193,10 @@ const EnrollStrip = () => (
       Wanna Start Today?
     </h1>
     <p className="px-4">
-      <Button
+      <IconButton
         text="Enroll Now"
-        // formLink="https://tally.so/r/wMX0Dk"
-        // buttonSize="px-4 py-2 mt-0 lg:px-8 lg:py-4 lg:mt-4"
+        formLink="https://tally.so/r/wMX0Dk"
+        buttonSize="px-4 py-2 mt-0 lg:px-8 lg:py-4 lg:mt-4"
         textSize="font-extrabold text-base lg:text-2xl"
         iconSize="8"
       />
@@ -146,21 +204,31 @@ const EnrollStrip = () => (
   </div>
 );
 
-export async function generateStaticParams() {
-  return courseList.courses.map((course) => {course})
+// export async function generateStaticParams() {
+//   const res = await fetch(`http://localhost:3000/api/courses`);
+//   const courses = res.json();
+//   console.log('Courses: ', courses)
+//   return res
+// }
+
+async function getCourseBySlug(slug: string) {
+  const res = await fetch(`http://localhost:3000/api/courses/${slug}`, {
+    method: 'GET',
+  })
+
+  return res.json();
 }
+export default async function Course({params: {slug}}: any) {
+  console.log('Slug: ', slug)
+  const {courseDetails} = await getCourseBySlug(slug)
 
-export default async function Page({ params }: any) {
-  const file = await fs.readFile(process.cwd() + '/app/data/courses.json', 'utf8');
-  const data = JSON.parse(file);
-
-  console.log('param',params);
   return (
     <>
-      {/* <ContentHead courseDetails={data.courses[0]} /> */}
-      {/* <FourParaGrid fourReasons={params.details.fourReasons} /> */}
+      <ContentHead courseDetails={courseDetails} />
+      <FourParaGrid fourReasons={courseDetails.fourReasons} />
       <EnrollStrip />
       <FixedMarquee />
+      <RelatedCoursesGrid relatedCourses={courseDetails.relatedCourses} />
     </>
   );
 }

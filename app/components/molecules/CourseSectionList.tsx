@@ -9,6 +9,8 @@ import {
 } from "../atom/Badge";
 import { title } from "process";
 import SideBySideCard from "./SideBySideCard";
+import { routes, slugs } from "@/app/routes";
+import Link from "next/link";
 
 interface ICourseCard {
   title: string;
@@ -18,6 +20,7 @@ interface ICourseCard {
   imageAlt: string;
   className?: string;
   gridFix?: boolean;
+  href?: string;
 }
 
 let firstLayerCourses = [
@@ -29,6 +32,7 @@ let firstLayerCourses = [
     description:
       "Learn the fundamentals of Python, from basic syntax to object-oriented programming. This beginner-friendly course offers hands-on projects to develop real-world coding skills. By the end, you'll be ready to build your own applications.",
     badge: <DevelopmentBadge />,
+    href: slugs.PYTHON1
   },
   {
     title: "Accounting in Tally wih GST",
@@ -38,6 +42,7 @@ let firstLayerCourses = [
     description:
       "Learn the fundamentals of Tally, from basic accounting to GST compliance. This beginner-friendly course offers hands-on projects to develop real-world accounting skills. By the end, you'll be ready to manage GST-compliant financials.",
     badge: <FinanceBadge />,
+    href: slugs.GST
   },
 
   {
@@ -58,6 +63,7 @@ let firstLayerCourses = [
     description:
       "Learn the fundamentals of backend development, from server-side scripting to database management. This beginner-friendly course offers hands-on projects to build real-world APIs. Ready to develop and manage backend systems.",
     badge: <DevelopmentBadge />,
+    href: slugs.FRONTEND
   },
 ];
 
@@ -70,6 +76,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of UI/UX design, from user research to prototyping and testing. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create user-centered digital experiences.",
     badge: <DesignBadge />,
+    href: slugs.FRONTEND
   },
   {
     title: "Certificate in Graphic Design",
@@ -79,6 +86,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of graphic design, from basic principles to advanced techniques. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create your own professional designs.",
     badge: <DesignBadge />,
+    href: slugs.FRONTEND
   },
 
   {
@@ -89,6 +97,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of DevOps, from basic concepts to continuous integration and deployment. This beginner-friendly course offers hands-on projects to develop real-world automation skills. By the end, you'll be ready to streamline application development and operations.",
     badge: <DevelopmentBadge />,
+    href: slugs.FRONTEND
   },
 
   {
@@ -99,6 +108,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of Power BI, from data visualization to advanced analytics. This beginner-friendly course offers hands-on projects to develop real-world data analysis skills. By the end, you'll be ready to create your own interactive reports and dashboards.",
     badge: <FinanceBadge />,
+    href: slugs.ADCA
   },
 ];
 
@@ -111,6 +121,7 @@ let thirdLayerCourses = [
     description:
       "Learn the fundamentals of computer hardware and networking, from assembling PCs to configuring networks. This beginner-friendly course offers hands-on projects to develop real-world technical skills. By the end, you'll be ready to manage and troubleshoot networks efficiently.",
     badge: <DevelopmentBadge />,
+    href: slugs.PCA
   },
   {
     title: "Certificate in Project Management",
@@ -120,6 +131,7 @@ let thirdLayerCourses = [
     description:
       "Learn the fundamentals of project management, from planning and scheduling to risk management and execution. This beginner-friendly course offers hands-on projects to develop real-world management skills. By the end, you'll be ready to manage your own projects.",
     badge: <DesignBadge />,
+    href: slugs.FRONTEND
   },
 
   {
@@ -130,6 +142,7 @@ let thirdLayerCourses = [
     description:
       "Learn the fundamentals of computer applications, from basic software tools to advanced data management. This beginner-friendly course offers hands-on projects to develop real-world tech skills. By the end, you'll be ready to handle various IT tasks efficiently.",
     badge: <SkillBadge />,
+    href: slugs.DCA
   },
 
   {
@@ -140,6 +153,7 @@ let thirdLayerCourses = [
     description:
       "Learn the fundamentals of Retail Management, from customer service to inventory control. This beginner-friendly course offers hands-on projects to develop real-world management skills. By the end, you'll be ready to excel in retail operations and sales.",
     badge: <FinanceBadge />,
+    href: slugs.ADCA
   },
 ];
 
@@ -161,6 +175,7 @@ let fourthLayerCourses = [
     description:
       "Learn the fundamentals of food processing, from basic techniques to advanced preservation methods. This beginner-friendly course offers hands-on projects to develop practical skills. By the end, you'll be ready to apply your knowledge in real-world food processing environments.",
     badge: <SkillBadge />,
+    href: slugs.FRONTEND
   },
 
   {
@@ -171,6 +186,7 @@ let fourthLayerCourses = [
     description:
       "Learn the fundamentals of UI/UX design, from user research to prototyping and testing. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create user-centered digital experiences.",
     badge: <DevelopmentBadge />,
+    href: slugs.FRONTEND
   },
 
   {
@@ -181,6 +197,7 @@ let fourthLayerCourses = [
     description:
       "Learn the fundamentals of Fullstack Development, from front-end design to back-end architecture. This beginner-friendly course offers hands-on projects to build real-world web applications. By the end, you'll be ready to create and deploy your own full-stack solutions.",
     badge: <BasicBadge />,
+    href: slugs.ADVANCED_EXCEL
   },
 ];
 
@@ -193,6 +210,7 @@ let fifthLayerCourses = [
     description:
       "Learn key concepts in computing, from basic programming to advanced software development. This beginner-friendly PGDCA course offers hands-on projects to build real-world IT skills. By the end, you'll be ready to excel in various tech roles.",
     badge: <SkillBadge />,
+    href: slugs.PGDCA
   },
 ];
 
@@ -203,9 +221,11 @@ const CourseCard = ({
   imageUrl,
   imageAlt,
   className,
-  gridFix = true
+  gridFix = true,
+  href
 }: ICourseCard) => (
   <div className={`${gridFix   && "grid row-span-3 grid-rows-subgrid"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
+    <Link href={`courses/${href}`} >
     <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6">
       {badge}
       <br />
@@ -225,6 +245,7 @@ const CourseCard = ({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>
+    </Link>
   </div>
 );
 

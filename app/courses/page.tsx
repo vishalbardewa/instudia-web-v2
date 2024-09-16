@@ -1,6 +1,41 @@
 import React from "react";
 import CourseSectionList from "../components/molecules/CourseSectionList";
 import Image from "next/image";
+import { AppConfig } from "../_utils/AppConfig";
+
+export const metadata = {
+  title:"Courses | instudia",
+  description:"Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+  openGraph: {
+    title: "Pick a course to upskill | instudia",
+    description: "Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, web development, project management, and digital skills. Unlock your potential with instudia through industry-focused training for success.",
+    url: `${AppConfig.canonicalBase}`,
+    locale: AppConfig.locale,
+    siteName: AppConfig.site_name,
+    images: [
+      {
+        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+        width: 800,
+        height: 600,
+        type: "image/jpeg",
+        alt: "Upskill with instudia",
+      },
+      {
+        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
+        width: 800,
+        height: 600,
+        alt: "Enroll with instudia",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    title:"Courses | instudia ",
+  description:"Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+    card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  },
+  metadataBase: new URL("https://instudianagaland.com"),
+};
 
 function Courses() {
   return (
