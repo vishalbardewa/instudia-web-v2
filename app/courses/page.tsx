@@ -3,8 +3,10 @@ import CourseSectionList from "../components/molecules/CourseSectionList";
 import Image from "next/image";
 import { AppConfig } from "../_utils/AppConfig";
 
+const BE_URL = process.env.NODE_ENV === 'development' ? "http://127.0.0.1:3000" : "https://instudia-v2.netlify.app/"
+
 export async function generateStaticParams() {
-  const posts = await fetch("http://127.0.0.1:3000/api/courses");
+  const posts = await fetch(BE_URL);
   const courses = await posts.json();
   const res = courses?.courses?.courses.map((course: any) => {
     return { slug: course.slug };

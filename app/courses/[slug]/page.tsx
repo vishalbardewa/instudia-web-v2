@@ -210,8 +210,10 @@ const EnrollStrip = () => (
 //   return res;
 // }
 
+const BE_URL = process.env.NODE_ENV === 'development' ? "http://127.0.0.1:3000" : "https://instudia-v2.netlify.app/"
+
 async function getCourseBySlug(slug: string) {
-  const res = await fetch(`http://127.0.0.1:3000/api/courses/${slug}`, {
+  const res = await fetch(`${BE_URL}/api/courses/${slug}`, {
     method: "GET",
   });
 
