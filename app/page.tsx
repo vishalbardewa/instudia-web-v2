@@ -6,6 +6,7 @@ import Incentives from "./components/molecules/Incentives";
 import { StickyScroll } from "./components/organisms/StickyScroll";
 import { LayoutGrid } from "./components/organisms/LayoutGrid";
 import { AppConfig } from "./_utils/AppConfig";
+import { Testimonials } from "./components/organisms/Testimonial";
 
 const stats = [
   { label: "Founded", value: "2018" },
@@ -186,6 +187,7 @@ export default function Page() {
       <TestimonialWithStats />
       <Stats stats={stats} />
       <Incentives />
+      <Testimonials />
 
       <StickyScroll content={content} />
       <div className="relative h-screen py-20 w-full">

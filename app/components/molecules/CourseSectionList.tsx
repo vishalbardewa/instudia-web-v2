@@ -35,7 +35,7 @@ let firstLayerCourses = [
     href: slugs.PYTHON1
   },
   {
-    title: "Accounting in Tally wih GST",
+    title: "Accounting in Tally with GST",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
     imageAlt: "Tally with GST in Dimapur",
@@ -56,7 +56,7 @@ let firstLayerCourses = [
   },
 
   {
-    title: "Backend Development",
+    title: "Backend Web Development",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/backend.png?updatedAt=1726135539480",
     imageAlt: "Tally with GST in Dimapur",
@@ -69,7 +69,7 @@ let firstLayerCourses = [
 
 let secondLayerCourses = [
   {
-    title: "Certificate in UI/UX Design",
+    title: "Certificate in UI/UX Design Specialization",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
     imageAlt: "UI/UX Design in Dimapur",
@@ -79,7 +79,7 @@ let secondLayerCourses = [
     href: slugs.FRONTEND
   },
   {
-    title: "Certificate in Graphic Design",
+    title: "Certificate in Graphic Designing",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/graphic-design.png?updatedAt=1726138195936",
     imageAlt: "Graphic Design in Dimapur",
@@ -90,7 +90,7 @@ let secondLayerCourses = [
   },
 
   {
-    title: "Certificate in Devops",
+    title: "Certificate in DevOps Services",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/devops.png?updatedAt=1726138195852",
     imageAlt: "Devops in Dimapur",
@@ -101,7 +101,7 @@ let secondLayerCourses = [
   },
 
   {
-    title: "Certificate in PowerBI",
+    title: "Certificate in Business Intelligence",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/powerbi.png?updatedAt=1726138195839",
     imageAlt: "PowerBI in Dimapur",
@@ -179,7 +179,7 @@ let fourthLayerCourses = [
   },
 
   {
-    title: "Fullstack Development",
+    title: "Fullstack Web Development",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
     imageAlt: "Fullstack Development in Dimapur",
@@ -224,7 +224,7 @@ const CourseCard = ({
   gridFix = true,
   href
 }: ICourseCard) => (
-  <div className={`${gridFix   && "grid row-span-3 grid-rows-subgrid"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
+  <div className={`${gridFix && "grid row-span-3"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
     <Link href={`courses/${href}`} >
     <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6">
       {badge}
