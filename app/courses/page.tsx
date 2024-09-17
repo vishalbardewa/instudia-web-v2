@@ -4,7 +4,7 @@ import Image from "next/image";
 import { AppConfig } from "../_utils/AppConfig";
 
 export async function generateStaticParams() {
-  const posts = await fetch("http://localhost:3000/api/courses");
+  const posts = await fetch("http://127.0.0.1:3000/api/courses");
   const courses = await posts.json();
   const res = courses?.courses?.courses.map((course: any) => {
     return { slug: course.slug };
