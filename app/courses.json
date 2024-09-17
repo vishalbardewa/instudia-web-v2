@@ -67,7 +67,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -82,7 +82,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Grade 6 and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -154,7 +154,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -169,7 +169,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Grade 6 and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -241,7 +241,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -256,7 +256,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Grade 6 and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -328,7 +328,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -343,7 +343,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Grade 6 and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -415,7 +415,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -430,7 +430,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Grade 6 and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -502,7 +502,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -517,7 +517,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Grade 6 and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -589,7 +589,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -604,7 +604,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Diploma and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -676,7 +676,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -691,7 +691,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Excel Beginner Level and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true
@@ -763,7 +763,7 @@
           {
             "name": "Language",
             "description": "English, Hindi & Nagamese",
-            "icon": "BadgeCheckIcon"
+            "icon": "CheckBadgeIcon"
           },
           {
             "name": "Certificate",
@@ -778,7 +778,7 @@
           {
             "name": "Recommended Qualifications",
             "description": "Higher Secondary and Above",
-            "icon": "LibraryIcon"
+            "icon": "BuildingLibraryIcon"
           }
         ],
         "inDemand": true

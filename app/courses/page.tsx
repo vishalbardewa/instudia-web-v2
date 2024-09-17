@@ -3,6 +3,17 @@ import CourseSectionList from "../components/molecules/CourseSectionList";
 import Image from "next/image";
 import { AppConfig } from "../_utils/AppConfig";
 
+export async function generateStaticParams() {
+  const posts = await fetch("http://localhost:3000/api/courses");
+  const courses = await posts.json();
+  const res = courses?.courses?.courses.map((course: any) => {
+    return { slug: course.slug };
+  });
+
+  console.log("In generate params: ", res);
+  return res;
+}
+
 export const metadata = {
   title:"Courses | instudia",
   description:"Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",

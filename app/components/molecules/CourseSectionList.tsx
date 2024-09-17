@@ -9,7 +9,7 @@ import {
 } from "../atom/Badge";
 import { title } from "process";
 import SideBySideCard from "./SideBySideCard";
-import { routes, slugs } from "@/app/routes";
+import { slugs } from "@/app/routes";
 import Link from "next/link";
 
 interface ICourseCard {

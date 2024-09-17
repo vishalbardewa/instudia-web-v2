@@ -3,6 +3,9 @@ import fs from 'fs';
 import { NextResponse } from "next/server";
 
 export async function GET(req: any, {params}: any){
+    if (req.url.length < 0)
+        return new Response("Error");
+    
     const courseSlug = params.slug
     let res: any = {ok: false, message: 'Invalid Request'}
     const fileToRead = path.join(process.cwd(), '/app/courses.json');

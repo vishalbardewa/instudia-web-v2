@@ -1,7 +1,3 @@
-/* eslint-disable no-nested-ternary */
-import fs from "fs";
-import path from "path";
-
 import React from "react";
 
 import {
@@ -12,7 +8,6 @@ import {
 } from "@heroicons/react/24/solid";
 
 import IconButton from "@/app/components/atom/IconButton";
-import { slugs } from "@/app/routes";
 
 const ICON_LIST: any = {
   CheckBadgeIcon: <CheckBadgeIcon className="h-6 w-6" aria-hidden="true" />,
@@ -205,21 +200,26 @@ const EnrollStrip = () => (
 );
 
 // export async function generateStaticParams() {
-//   const res = await fetch(`http://localhost:3000/api/courses`);
-//   const courses = res.json();
-//   console.log('Courses: ', courses)
-//   return res
+//   const posts = await fetch("http://localhost:3000/api/courses");
+//   const courses = await posts.json();
+//   const res = courses.courses.courses.map((course: any) => {
+//     return { slug: course.slug };
+//   });
+
+//   console.log("In generate params: ", res);
+//   return res;
 // }
 
 async function getCourseBySlug(slug: string) {
   const res = await fetch(`http://localhost:3000/api/courses/${slug}`, {
-    method: 'GET',
-  })
+    method: "GET",
+  });
 
   return res.json();
 }
-export default async function Course({params: {slug}}: any) {
-  const {courseDetails} = await getCourseBySlug(slug)
+
+export default async function Course({ params: { slug } }: any) {
+  const { courseDetails } = await getCourseBySlug(slug);
 
   return (
     <>
