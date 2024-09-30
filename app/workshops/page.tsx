@@ -30,7 +30,7 @@ function ButtonInner({
   );
 }
 
-export function Button({
+function Button({
   className,
   arrow,
   children,
@@ -56,7 +56,7 @@ export function Button({
   );
 }
 
-export function IconLink({
+function IconLink({
   children,
   className,
   compact = false,
@@ -82,7 +82,7 @@ export function IconLink({
   );
 }
 
-export function SignUpForm() {
+function SignUpForm() {
   let id = useId();
 
   return (
@@ -108,7 +108,7 @@ export function SignUpForm() {
   );
 }
 
-export function Logo(props: React.ComponentPropsWithoutRef<"svg">) {
+function Logo(props: React.ComponentPropsWithoutRef<"svg">) {
   let id = useId();
 
   return (
@@ -190,7 +190,7 @@ function XIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   );
 }
 
-export function Intro() {
+function Intro() {
   return (
     <>
       <div>
@@ -222,7 +222,7 @@ export function Intro() {
   );
 }
 
-export function IntroFooter() {
+function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 relative bottom-32 leading-[6rem] opacity-5 text-[#1B1C1E] font-bold text-[6rem]">
       Learn. Think. Excel.
