@@ -1,4 +1,6 @@
-const DeviceSizeIndicator  = ({ enable = true }) => {
+import React from "react";
+
+const DeviceSizeIndicator = ({ enable = true }: {enable: boolean}) => {
     if (process.env.NODE_ENV === "development" && enable) {
       return (
         <div className="fixed top-0 right-0 m-2 p-3 text-xs font-mono text-white h-6 w-6 rounded-full flex items-center justify-center bg-gray-700 sm:bg-pink-500 md:bg-orange-500 lg:bg-green-500 xl:bg-blue-500 z-[200]">

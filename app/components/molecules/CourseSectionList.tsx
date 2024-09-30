@@ -46,7 +46,7 @@ let firstLayerCourses = [
   },
 
   {
-    title: "Frontend Development",
+    title: "Frontend Web Development",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/frontend.png?updatedAt=1726135539217",
     imageAlt: "Tally with GST in Dimapur",
@@ -90,7 +90,7 @@ let secondLayerCourses = [
   },
 
   {
-    title: "Certificate in DevOps Services",
+    title: "Certificate in DevOps Cloud Services",
     imageUrl:
       "https://ik.imagekit.io/dxffek9yf/course-list-page/devops.png?updatedAt=1726138195852",
     imageAlt: "Devops in Dimapur",
