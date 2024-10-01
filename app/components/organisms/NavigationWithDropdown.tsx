@@ -55,7 +55,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                 <Tab.Group as="div" className="mt-2">
                   <div className="">
                     <Tab.List className="-mb-px flex space-x-8 px-4">
-                      {navigation.categories.map((category) => (
+                      {navigation.categories.map((category: any) => (
                         <Tab
                           key={category.name}
                           className={({ selected }) =>
@@ -73,13 +73,13 @@ export default function NavigationWithDropdown({navigation}: any) {
                     </Tab.List>
                   </div>
                   <Tab.Panels as={Fragment}>
-                    {navigation.categories.map((category) => (
+                    {navigation.categories.map((category: any) => (
                       <Tab.Panel
                         key={category.name}
                         className="space-y-10 px-4 pb-8 pt-10"
                       >
                         <div className="grid grid-cols-2 gap-x-4">
-                          {category.featured.map((item) => (
+                          {category.featured.map((item: any) => (
                             <div
                               key={item.name}
                               className="group relative text-sm"
@@ -107,7 +107,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                             </div>
                           ))}
                         </div>
-                        {category.sections.map((section) => (
+                        {category.sections.map((section: any) => (
                           <div key={section.name}>
                             <p
                               id={`${category.id}-${section.id}-heading-mobile`}
@@ -120,7 +120,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                               aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
                               className="mt-6 flex flex-col space-y-6"
                             >
-                              {section.items.map((item) => (
+                              {section.items.map((item: any) => (
                                 <li key={item.name} className="flow-root">
                                   <a
                                     href={item.href}
@@ -139,7 +139,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                 </Tab.Group>
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                  {navigation.pages.map((page) => (
+                  {navigation.pages.map((page: any) => (
                     <div key={page.name} className="flow-root">
                       <a
                         href={page.href}
@@ -191,7 +191,7 @@ export default function NavigationWithDropdown({navigation}: any) {
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch z-40">
                 <div className="flex h-full space-x-8 mt-2 items-center">
-                  {navigation.categories.map((category) => (
+                  {navigation.categories.map((category: any) => (
                     <Popover key={category.name} className="flex">
                       {({ open }) => {
                         return (
@@ -238,7 +238,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                                   <div className="mx-auto max-w-7xl px-8">
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                                       <div className="col-start-2 grid grid-cols-2 gap-x-8">
-                                        {category.featured.map((item) => (
+                                        {category.featured.map((item: any) => (
                                           <div
                                             key={item.name}
                                             className="group relative text-base sm:text-sm"
@@ -270,7 +270,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                                         ))}
                                       </div>
                                       <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
-                                        {category.sections.map((section) => (
+                                        {category.sections.map((section: any) => (
                                           <div key={section.name}>
                                             <p
                                               id={`${section.name}-heading`}
@@ -283,7 +283,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                                               aria-labelledby={`${section.name}-heading`}
                                               className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                             >
-                                              {section.items.map((item) => (
+                                              {section.items.map((item: any) => (
                                                 <li
                                                   key={item.name}
                                                   className="flex"
@@ -311,7 +311,7 @@ export default function NavigationWithDropdown({navigation}: any) {
                     </Popover>
                   ))}
 
-                  {navigation.pages.map((page) => (
+                  {navigation.pages.map((page: any) => (
                     <a
                       key={page.name}
                       href={page.href}

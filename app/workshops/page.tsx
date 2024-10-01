@@ -1,9 +1,11 @@
+"use client";
+
 import { useId } from "react";
 
 // import { Intro, IntroFooter } from '@/components/Intro'
 // import { StarField } from '@/components/StarField'
 // import { ThemeToggle } from '@/components/ThemeToggle'
-
+import { v4 as uuidv4 } from 'uuid';
 import Link from "next/link";
 
 import { cn } from "../_utils/cn";
@@ -422,7 +424,7 @@ const posts = [
 
 const workshops = [
   {
-    id: randomUUID(),
+    id: uuidv4(),
     title: "Unlocking Potential with AI and Career insights",
     date: "September 7th, 2024",
     description:
@@ -495,7 +497,7 @@ const workshops = [
     ],
   },
   {
-    id: randomUUID(),
+    id: uuidv4(),
     title: "Youth Upskilling Program",
     subtitle: "in association with Dimapur Ao Baptist Arogo",
     date: "March 1 - 10 July, 2024",
@@ -577,7 +579,7 @@ const workshops = [
     ],
   },
   {
-    id: randomUUID(),
+    id: uuidv4(),
     title: "6 Weeks ESDP Training Program in Niuland",
     subtitle: "in association with Government of India and Ministry of MSME",
     date: "October 30th - 8th December, 2023",
@@ -658,7 +660,7 @@ const workshops = [
     ],
   },
   {
-    id: randomUUID(),
+    id: uuidv4(),
     title: "JobEx",
     date: "March 11th, 2023",
     description:
@@ -735,7 +737,7 @@ const workshops = [
     ],
   },
   {
-    id: randomUUID(),
+    id: uuidv4(),
     title: "Career Guidance at EduFest 2022",
     subtitle: "at Pilgrim Higher Secondary School",
     date: "17th September 2022",
@@ -813,7 +815,7 @@ const workshops = [
     ],
   },
   {
-    id: randomUUID(),
+    id: uuidv4(),
     title: "Workshop on Photography and Python",
     date: "June 23th - 24th 2022",
     description:
@@ -924,7 +926,7 @@ const PostCard = ({ workshop }: any) => (
                   <div className="flex flex-row gap-2">
                     {post.category.map((cat: any, i: any) => (
                       <p
-                        key={randomUUID()}
+                        key={uuidv4()}
                         className="text-xs font-sm text-yellow-600"
                       >
                         <a
@@ -954,7 +956,7 @@ const PostCard = ({ workshop }: any) => (
   </FadeInStagger>
 );
 
-export default function Workshops({ children }: { children: React.ReactNode }) {
+export default function Page() {
   return (
     <>
       <FixedSidebar main={<Intro />} footer={<IntroFooter />} />
