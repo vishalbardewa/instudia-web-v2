@@ -13,6 +13,7 @@ import Link from "next/link";
 import { FadeIn, FadeInStagger } from "./components/atom/FadeIn";
 import { SectionIntro } from "./components/atom/SectionIntro";
 import { randomUUID } from "crypto";
+import FeatureWithColumns from "./components/molecules/FeatureWithThreeCoulmns";
 
 const stats = [
   { label: "Founded", value: "2021" },
@@ -299,6 +300,8 @@ export default function Page() {
       <Stats stats={stats} />
 
       <Incentives />
+      <FeatureWithColumns />
+
       <Testimonials />
 
       {/* <StickyScroll content={content} /> */}
