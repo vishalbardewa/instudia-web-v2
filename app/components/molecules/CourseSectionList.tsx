@@ -53,6 +53,7 @@ let firstLayerCourses = [
     description:
       "Learn the fundamentals of frontend development, from HTML, CSS to JavaScript and responsive design. This beginner-friendly course offers hands-on projects to develop real-world web design skills. Build your own websites.",
     badge: <DevelopmentBadge />,
+    href: slugs.FRONTEND
   },
 
   {
@@ -63,7 +64,7 @@ let firstLayerCourses = [
     description:
       "Learn the fundamentals of backend development, from server-side scripting to database management. This beginner-friendly course offers hands-on projects to build real-world APIs. Ready to develop and manage backend systems.",
     badge: <DevelopmentBadge />,
-    href: slugs.FRONTEND
+    href: slugs.BACKEND
   },
 ];
 
@@ -76,7 +77,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of UI/UX design, from user research to prototyping and testing. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create user-centered digital experiences.",
     badge: <DesignBadge />,
-    href: slugs.FRONTEND
+    href: slugs.UIUX_DESIGN
   },
   {
     title: "Certificate in Graphic Designing",
@@ -86,7 +87,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of graphic design, from basic principles to advanced techniques. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create your own professional designs.",
     badge: <DesignBadge />,
-    href: slugs.FRONTEND
+    href: slugs.GRAPHIC_DESIGN
   },
 
   {
@@ -97,7 +98,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of DevOps, from basic concepts to continuous integration and deployment. This beginner-friendly course offers hands-on projects to develop real-world automation skills. By the end, you'll be ready to streamline application development and operations.",
     badge: <DevelopmentBadge />,
-    href: slugs.FRONTEND
+    href: slugs.DEVOPS
   },
 
   {
@@ -108,7 +109,7 @@ let secondLayerCourses = [
     description:
       "Learn the fundamentals of Power BI, from data visualization to advanced analytics. This beginner-friendly course offers hands-on projects to develop real-world data analysis skills. By the end, you'll be ready to create your own interactive reports and dashboards.",
     badge: <FinanceBadge />,
-    href: slugs.ADCA
+    href: slugs.BUSINESS_INTELLIGENCE
   },
 ];
 
@@ -121,7 +122,7 @@ let thirdLayerCourses = [
     description:
       "Learn the fundamentals of computer hardware and networking, from assembling PCs to configuring networks. This beginner-friendly course offers hands-on projects to develop real-world technical skills. By the end, you'll be ready to manage and troubleshoot networks efficiently.",
     badge: <DevelopmentBadge />,
-    href: slugs.PCA
+    href: slugs.HARDWARE_NETWORKING
   },
   {
     title: "Certificate in Project Management",
@@ -131,7 +132,7 @@ let thirdLayerCourses = [
     description:
       "Learn the fundamentals of project management, from planning and scheduling to risk management and execution. This beginner-friendly course offers hands-on projects to develop real-world management skills. By the end, you'll be ready to manage your own projects.",
     badge: <DesignBadge />,
-    href: slugs.FRONTEND
+    href: slugs.PROJECT_MANAGEMENT
   },
 
   {
@@ -153,7 +154,7 @@ let thirdLayerCourses = [
     description:
       "Learn the fundamentals of Retail Management, from customer service to inventory control. This beginner-friendly course offers hands-on projects to develop real-world management skills. By the end, you'll be ready to excel in retail operations and sales.",
     badge: <FinanceBadge />,
-    href: slugs.ADCA
+    href: slugs.RETAIL_MANAGEMENT
   },
 ];
 
@@ -166,6 +167,7 @@ let fourthLayerCourses = [
     description:
       "Learn the fundamentals of mobile app development using React Native, from basic UI components to advanced navigation. This beginner-friendly course offers hands-on projects to build real-world apps. By the end, you'll be ready to create your own mobile applications.",
     badge: <DevelopmentBadge />,
+    href: slugs.MOBILE_APP_DEVELOPMENT
   },
   {
     title: "Certificate in Food Processing",
@@ -175,7 +177,7 @@ let fourthLayerCourses = [
     description:
       "Learn the fundamentals of food processing, from basic techniques to advanced preservation methods. This beginner-friendly course offers hands-on projects to develop practical skills. By the end, you'll be ready to apply your knowledge in real-world food processing environments.",
     badge: <SkillBadge />,
-    href: slugs.FRONTEND
+    href: slugs.FOOD_PROCESSING
   },
 
   {
@@ -186,7 +188,7 @@ let fourthLayerCourses = [
     description:
       "Learn the fundamentals of UI/UX design, from user research to prototyping and testing. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create user-centered digital experiences.",
     badge: <DevelopmentBadge />,
-    href: slugs.FRONTEND
+    href: slugs.FULLSTACK_WEB_DEVELOPMENT
   },
 
   {
@@ -196,7 +198,7 @@ let fourthLayerCourses = [
     imageAlt: "Advanced Excel in Dimapur",
     description:
       "Learn the fundamentals of Fullstack Development, from front-end design to back-end architecture. This beginner-friendly course offers hands-on projects to build real-world web applications. By the end, you'll be ready to create and deploy your own full-stack solutions.",
-    badge: <BasicBadge />,
+    badge: <SkillBadge />,
     href: slugs.ADVANCED_EXCEL
   },
 ];

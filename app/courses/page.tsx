@@ -12,7 +12,6 @@ export async function generateStaticParams() {
     return { slug: course.slug };
   });
 
-  console.log("In generate params: ", res);
   return res;
 }
 
