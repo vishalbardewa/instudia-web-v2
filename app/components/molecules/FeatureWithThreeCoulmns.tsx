@@ -3,6 +3,7 @@ import {
   LockClosedIcon,
   ArrowPathIcon,
   BuildingOfficeIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
 const features = [
@@ -24,7 +25,7 @@ const features = [
     name: 'Referrals to good companies',
     description:
       'Networking with a recruiter or staffing agency can open doors to job opportunities and potential referrals in your field.',
-    icon: ArrowPathIcon,
+    icon: UserGroupIcon,
     color: 'bg-redhue',
   },
   {
