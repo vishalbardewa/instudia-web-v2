@@ -363,6 +363,93 @@ export default function Page() {
       </div>
 
       <CaseStudies caseStudies={caseStudies} />
+      <div className="bg-black text-center py-[64px] md:py-[80px] xl:py-[100px] mt-20 text-white px-8 lg:px-0">
+        <div className="flex flex-col md:items-center md:text-center space-y-[12px] xl:space-y-[16px] 2xl:space-y-[20px] pb-[40px] xl:pb-[48px] 2xl:pb-[60px] md:max-w-[560px] xl:max-w-[700px] md:mx-auto ">
+          <div className="flex flex-col items-center gap-y-[4px]">
+            <h2 className="text-text-highlight text-[32px] leading-[1.40625] font-medium">
+              Everything you can do with Linearity
+            </h2>
+          </div>
+          <p className="text-text-default 2xl:text-[18px] 2xl:leading-[1.6111111111111112] 2xl:font-normal text-[16px] leading-[1.625] font-normal xl:px-[54px]">
+            Together, Linearity Curve and Linearity Move form a powerful unified
+            design system. Explore what else they can do for you.{" "}
+          </p>
+        </div>
+        <div className="flex flex-col gap-6 justify-center lg:flex-row">
+          <div>
+            <a href="#" className="">
+              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
+                <picture className="overflow-hidden min-w-full">
+                  <img
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
+                    alt="Team slider card image"
+                  />
+                </picture>
+              </div>
+              <div className="h-[16px] 2xl:h-[20px]"></div>
+              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
+                Animations
+              </p>
+            </a>
+          </div>
+          <div>
+            <a href="#" className="snap-start w-full">
+              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
+                <picture className="overflow-hidden min-w-full">
+                  <img
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
+                    alt="Team slider card image"
+                  />
+                </picture>
+              </div>
+              <div className="h-[16px] 2xl:h-[20px]"></div>
+              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
+                Animations
+              </p>
+            </a>
+          </div>
+          <div>
+            <a href="#" className="snap-start w-full">
+              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
+                <picture className="overflow-hidden min-w-full">
+                  <img
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
+                    alt="Team slider card image"
+                  />
+                </picture>
+              </div>
+              <div className="h-[16px] 2xl:h-[20px]"></div>
+              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
+                Animations
+              </p>
+            </a>
+          </div>
+          <div>
+            <a href="#" className="snap-start w-full">
+              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
+                <picture className="overflow-hidden min-w-full">
+                  <img
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
+                    alt="Team slider card image"
+                  />
+                </picture>
+              </div>
+              <div className="h-[16px] 2xl:h-[20px]"></div>
+              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
+                Animations
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

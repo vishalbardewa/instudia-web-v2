@@ -1,75 +1,74 @@
-'use client'
-import { useEffect, useState } from 'react'
+"use client";
+import { useEffect, useState } from "react";
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Resources', href: '#' },
-  { name: 'Company', href: '#' },
-]
+  { name: "Product", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Resources", href: "#" },
+  { name: "Company", href: "#" },
+];
 const stats = [
-  { label: 'Students trained till date', value: '200+' },
-  { label: 'Assets under holding', value: '$119 trillion' },
-  { label: 'New users annually', value: '46,000' },
-]
+  { label: "Students trained till date", value: "200+" },
+  { label: "Assets under holding", value: "$119 trillion" },
+  { label: "New users annually", value: "46,000" },
+];
 const values = [
   {
-    name: 'Impart',
+    name: "Impart",
     description:
-      'We strive to impart cutting-edge knowledge and skills, fostering a culture of continuous learning. Our commitment is to equip individuals with the expertise needed for success in the dynamic tech landscape.',
+      "We strive to impart cutting-edge knowledge and skills, fostering a culture of continuous learning. Our commitment is to equip individuals with the expertise needed for success in the dynamic tech landscape.",
   },
   {
-    name: 'Inspirit',
+    name: "Inspirit",
     description:
-      'We aspire to inspirit the youth, igniting a passion for innovation and excellence. Through mentorship and a supportive community, we aim to kindle the flames of creativity, enabling individuals to exceed their own expectations.',
+      "We aspire to inspirit the youth, igniting a passion for innovation and excellence. Through mentorship and a supportive community, we aim to kindle the flames of creativity, enabling individuals to exceed their own expectations.",
   },
   {
-    name: 'Impact',
+    name: "Impact",
     description:
-      'Our ultimate goal is to empower individuals to make a meaningful impact on society. By instilling a sense of responsibility and purpose, we believe that our trained professionals can contribute to a better future, driving positive change in the world.',
+      "Our ultimate goal is to empower individuals to make a meaningful impact on society. By instilling a sense of responsibility and purpose, we believe that our trained professionals can contribute to a better future, driving positive change in the world.",
   },
-  
-]
+];
 const team = [
   {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
+    name: "Michael Foster",
+    role: "Co-Founder / CTO",
     imageUrl:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
   },
   // More people...
-]
+];
 const blogPosts = [
   {
     id: 1,
-    title: 'Vel expedita assumenda placeat aut nisi optio voluptates quas',
-    href: '#',
+    title: "Vel expedita assumenda placeat aut nisi optio voluptates quas",
+    href: "#",
     description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
     imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
     author: {
-      name: 'Michael Foster',
+      name: "Michael Foster",
       imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
   },
   // More posts...
-]
+];
 const footerNavigation = {
   main: [
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: "Blog", href: "#" },
+    { name: "Jobs", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Accessibility", href: "#" },
+    { name: "Partners", href: "#" },
   ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
+      name: "Facebook",
+      href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -81,8 +80,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'Instagram',
-      href: '#',
+      name: "Instagram",
+      href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -94,8 +93,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'Twitter',
-      href: '#',
+      name: "Twitter",
+      href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -103,8 +102,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'GitHub',
-      href: '#',
+      name: "GitHub",
+      href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -116,8 +115,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'YouTube',
-      href: '#',
+      name: "YouTube",
+      href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -129,7 +128,7 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
 export default function About() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -169,7 +168,12 @@ export default function About() {
                 strokeWidth={0}
               />
             </svg>
-            <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
+            <rect
+              width="100%"
+              height="100%"
+              strokeWidth={0}
+              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
+            />
           </svg>
           <div
             className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
@@ -179,7 +183,7 @@ export default function About() {
               className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
               style={{
                 clipPath:
-                  'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
+                  "polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)",
               }}
             />
           </div>
@@ -191,7 +195,12 @@ export default function About() {
                     We&apos;re empowering students to upskill and build careers.
                   </h1>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  A specialized learning platform nestled in Dimapur, Nagaland. We work to empower students and tech professionals, guiding them to elevate their skill sets and propel their careers to new heights. With a dedicated focus on transformation, we are committed to providing a dynamic learning environment that fosters growth and success.
+                    A specialized learning platform nestled in Dimapur,
+                    Nagaland. We work to empower students and tech
+                    professionals, guiding them to elevate their skill sets and
+                    propel their careers to new heights. With a dedicated focus
+                    on transformation, we are committed to providing a dynamic
+                    learning environment that fosters growth and success.
                   </p>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -245,33 +254,61 @@ export default function About() {
               </div>
             </div>
           </div>
+          <div className="rounded-[20px] xl:rounded-[40px] border-2 border-black aspect-[690/500] absolute bg-white z-[-1] top-[-14px] right-[-18px] w-full h-3/4 xl:top-14 xl:right-[-87px]">
+            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]">
+            </div>
+          </div>
         </div>
 
         {/* Content section */}
         <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our mission</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Our mission
+            </h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                 <p className="text-xl leading-8 text-gray-600">
-                The concept has evolved and continues to evolve. Nagaland's youth want to be self-sufficient. Many Naga students are providing honours and revenue to the state in the IT domain as well as other professional fields. 
+                  The concept has evolved and continues to evolve. Nagaland's
+                  youth want to be self-sufficient. Many Naga students are
+                  providing honours and revenue to the state in the IT domain as
+                  well as other professional fields.
                 </p>
                 <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
                   <p>
-                  We have progressed toward skilling in order to adapt oneself in order to be self-sufficient, understanding the need and requirement to fill in the gap as well as the economic state of our society. Considering the current market situation, the need is so great that our current generation will need to reskill their talent and creativity, which will necessitate a suitable reskilling in addition to their secular educational qualifications.
+                    We have progressed toward skilling in order to adapt oneself
+                    in order to be self-sufficient, understanding the need and
+                    requirement to fill in the gap as well as the economic state
+                    of our society. Considering the current market situation,
+                    the need is so great that our current generation will need
+                    to reskill their talent and creativity, which will
+                    necessitate a suitable reskilling in addition to their
+                    secular educational qualifications.
                   </p>
                   <p className="mt-10">
-                  Our team aims to work tirelessly to eliminate the threat of unemployment in Nagaland by placing sought IT jobs available both nationally and locally.{" "}
-                  <b>instudia</b> has one goal:{" "}<i>unlocking the potential talents of Nagaland by making our education system outcome driven.</i>
+                    Our team aims to work tirelessly to eliminate the threat of
+                    unemployment in Nagaland by placing sought IT jobs available
+                    both nationally and locally. <b>instudia</b> has one goal:{" "}
+                    <i>
+                      unlocking the potential talents of Nagaland by making our
+                      education system outcome driven.
+                    </i>
                   </p>
                 </div>
               </div>
               <div className="lg:flex lg:flex-auto lg:justify-center">
                 <dl className="w-64 space-y-8 xl:w-80">
                   {stats.map((stat) => (
-                    <div key={stat.label} className="flex flex-col-reverse gap-y-4">
-                      <dt className="text-base leading-7 text-gray-600">{stat.label}</dt>
-                      <dd className="text-5xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
+                    <div
+                      key={stat.label}
+                      className="flex flex-col-reverse gap-y-4"
+                    >
+                      <dt className="text-base leading-7 text-gray-600">
+                        {stat.label}
+                      </dt>
+                      <dd className="text-5xl font-semibold tracking-tight text-gray-900">
+                        {stat.value}
+                      </dd>
                     </div>
                   ))}
                 </dl>
@@ -281,7 +318,7 @@ export default function About() {
         </div>
 
         {/* Image section */}
-        <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
+        <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8 border-[2px] border-black flex flex-col rounded-[30px] p-[18px]">
           <img
             src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
             alt=""
@@ -292,9 +329,12 @@ export default function About() {
         {/* Values section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our values</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Our values
+            </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Our vision is defined by a framework we call the 3i&apos;s of instudia. The framework being defined as:
+              Our vision is defined by a framework we call the 3i&apos;s of
+              instudia. The framework being defined as:
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -367,18 +407,23 @@ export default function About() {
         </div> */}
 
         {/* Content section */}
-        <div className="mt-32 overflow-hidden sm:mt-40">
+        <div className="relative mt-32 overflow-hidden sm:mt-40">
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
               <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our people</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  Our people
+                </h2>
                 <p className="mt-6 text-xl leading-8 text-gray-600">
-                  Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta rerum quidem
-                  minus ut molestiae velit error quod. Excepturi quidem expedita molestias quas.
+                  Quasi est quaerat. Sit molestiae et. Provident ad dolorem
+                  occaecati eos iste. Soluta rerum quidem minus ut molestiae
+                  velit error quod. Excepturi quidem expedita molestias quas.
                 </p>
                 <p className="mt-6 text-base leading-7 text-gray-600">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
-                  amet fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.
+                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
+                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
+                  occaecat fugiat. Quasi aperiam sit non sit neque
+                  reprehenderit.
                 </p>
               </div>
               <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
@@ -415,34 +460,47 @@ export default function About() {
               </div>
             </div>
           </div>
+          <div className="rounded-[20px] xl:rounded-[40px] border-2 border-black aspect-[690/500] absolute bg-white z-[-1] top-[-14px] right-[-18px] w-full h-full xl:top-14 xl:right-[-87px]">
+            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]">
+            </div>
+          </div>
         </div>
 
         {/* Stats */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              We approach the workplace as something that adds to our lives and adds value to world.
+              We approach the workplace as something that adds to our lives and
+              adds value to world.
             </h2>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non placerat nam arcu.
-              Cras purus nibh cursus sit eu in id. Integer vel nibh.
+              Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est
+              euismod lacus. Est non placerat nam arcu. Cras purus nibh cursus
+              sit eu in id. Integer vel nibh.
             </p>
           </div>
           <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
             <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-50 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start">
-              <p className="flex-none text-3xl font-bold tracking-tight text-gray-900">250k</p>
+              <p className="flex-none text-3xl font-bold tracking-tight text-gray-900">
+                250k
+              </p>
               <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-gray-900">Users on the platform</p>
+                <p className="text-lg font-semibold tracking-tight text-gray-900">
+                  Users on the platform
+                </p>
                 <p className="mt-2 text-base leading-7 text-gray-600">
                   Vel labore deleniti veniam consequuntur sunt nobis.
                 </p>
               </div>
             </div>
             <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-900 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44">
-              <p className="flex-none text-3xl font-bold tracking-tight text-white">$8.9 billion</p>
+              <p className="flex-none text-3xl font-bold tracking-tight text-white">
+                $8.9 billion
+              </p>
               <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
                 <p className="text-lg font-semibold tracking-tight text-white">
-                  We’re proud that our customers have made over $8 billion in total revenue.
+                  We’re proud that our customers have made over $8 billion in
+                  total revenue.
                 </p>
                 <p className="mt-2 text-base leading-7 text-gray-400">
                   Eu duis porta aliquam ornare. Elementum eget magna egestas.
@@ -450,11 +508,16 @@ export default function About() {
               </div>
             </div>
             <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-indigo-600 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
-              <p className="flex-none text-3xl font-bold tracking-tight text-white">401,093</p>
+              <p className="flex-none text-3xl font-bold tracking-tight text-white">
+                401,093
+              </p>
               <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-white">Transactions this year</p>
+                <p className="text-lg font-semibold tracking-tight text-white">
+                  Transactions this year
+                </p>
                 <p className="mt-2 text-base leading-7 text-indigo-200">
-                  Eu duis porta aliquam ornare. Elementum eget magna egestas. Eu duis porta aliquam ornare.
+                  Eu duis porta aliquam ornare. Elementum eget magna egestas. Eu
+                  duis porta aliquam ornare.
                 </p>
               </div>
             </div>
@@ -464,10 +527,13 @@ export default function About() {
         {/* Team section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our team</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Our team
+            </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Sit facilis neque ab nulla vel. Cum eos in laudantium. Temporibus eos totam in dolorum. Nemo vel facere
-              repellendus ut eos dolores similique.
+              Sit facilis neque ab nulla vel. Cum eos in laudantium. Temporibus
+              eos totam in dolorum. Nemo vel facere repellendus ut eos dolores
+              similique.
             </p>
           </div>
           <ul
@@ -476,8 +542,14 @@ export default function About() {
           >
             {team.map((person) => (
               <li key={person.name}>
-                <img className="mx-auto h-24 w-24 rounded-full" src={person.imageUrl} alt="" />
-                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
+                <img
+                  className="mx-auto h-24 w-24 rounded-full"
+                  src={person.imageUrl}
+                  alt=""
+                />
+                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
+                  {person.name}
+                </h3>
                 <p className="text-sm leading-6 text-gray-600">{person.role}</p>
               </li>
             ))}
@@ -492,8 +564,9 @@ export default function About() {
                 We&apos;re always looking for awesome people to join us
               </h2>
               <p className="mt-6 text-xl leading-8 text-gray-600">
-                Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non placerat nam arcu.
-                Cras purus nibh cursus sit eu in id.
+                Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est
+                euismod lacus. Est non placerat nam arcu. Cras purus nibh cursus
+                sit eu in id.
               </p>
               <img
                 src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
@@ -530,7 +603,10 @@ export default function About() {
                 ))} */}
               </ul>
               <div className="mt-8 flex border-t border-gray-100 pt-8">
-                <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                <a
+                  href="#"
+                  className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                >
                   View all openings <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
@@ -539,5 +615,5 @@ export default function About() {
         </div>
       </main>
     </div>
-  )
+  );
 }

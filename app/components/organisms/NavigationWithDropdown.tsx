@@ -3,13 +3,13 @@ import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-
+import Image from "next/image";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function NavigationWithDropdown({navigation}: any) {
+export default function NavigationWithDropdown({ navigation }: any) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -157,10 +157,7 @@ export default function NavigationWithDropdown({navigation}: any) {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-black px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Enroll now to upskill today!
-        </p>
-
+        
         <nav
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-3 2xl:mx-32"
@@ -270,35 +267,39 @@ export default function NavigationWithDropdown({navigation}: any) {
                                         ))}
                                       </div>
                                       <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
-                                        {category.sections.map((section: any) => (
-                                          <div key={section.name}>
-                                            <p
-                                              id={`${section.name}-heading`}
-                                              className="font-medium text-gray-900"
-                                            >
-                                              {section.name}
-                                            </p>
-                                            <ul
-                                              role="list"
-                                              aria-labelledby={`${section.name}-heading`}
-                                              className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                            >
-                                              {section.items.map((item: any) => (
-                                                <li
-                                                  key={item.name}
-                                                  className="flex"
-                                                >
-                                                  <a
-                                                    href={item.href}
-                                                    className="hover:text-gray-800"
-                                                  >
-                                                    {item.name}
-                                                  </a>
-                                                </li>
-                                              ))}
-                                            </ul>
-                                          </div>
-                                        ))}
+                                        {category.sections.map(
+                                          (section: any) => (
+                                            <div key={section.name}>
+                                              <p
+                                                id={`${section.name}-heading`}
+                                                className="font-medium text-gray-900"
+                                              >
+                                                {section.name}
+                                              </p>
+                                              <ul
+                                                role="list"
+                                                aria-labelledby={`${section.name}-heading`}
+                                                className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
+                                              >
+                                                {section.items.map(
+                                                  (item: any) => (
+                                                    <li
+                                                      key={item.name}
+                                                      className="flex"
+                                                    >
+                                                      <a
+                                                        href={item.href}
+                                                        className="hover:text-gray-800"
+                                                      >
+                                                        {item.name}
+                                                      </a>
+                                                    </li>
+                                                  )
+                                                )}
+                                              </ul>
+                                            </div>
+                                          )
+                                        )}
                                       </div>
                                     </div>
                                   </div>
