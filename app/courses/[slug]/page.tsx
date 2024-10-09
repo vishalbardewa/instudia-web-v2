@@ -28,7 +28,7 @@ const ContentHead = ({
     category,
   },
 }: any) => (
-  <section className="mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-16">
+  <section className="mt-14 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-16">
     <div className="grid md:grid-cols-2 md:gap-1 lg:grid-cols-12 lg:gap-8">
       <div className="sm:text-center md:mx-auto md:max-w-2xl md:text-left lg:col-span-6 lg:text-left">
         <h1>
