@@ -101,7 +101,7 @@ export default function PrimaryLayout({ children }: any) {
       <p className="flex h-10 items-center justify-center bg-black px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
         Enroll now to upskill today!
       </p>
-      <div className="flex sticky z-[9999] top-0 w-full h-full">
+      <div className="flex sticky z-10 top-0 w-full h-full">
         <div className="w-1/4 h-[0.625rem] bg-[#58FF1B]"></div>
         <div className="w-1/4 h-[0.625rem] bg-[#FF1B58]"></div>
         <div className="w-1/4 h-[0.625rem] bg-[#C21BFF]"></div>

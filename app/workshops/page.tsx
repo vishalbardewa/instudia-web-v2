@@ -551,7 +551,7 @@ const workshops = [
             ),
             className: "lg:col-span-2",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/youth-daba-training/class-youth-2.webp?updatedAt=1727556592864&tr=w-2013%2Ch-2007%2Cfo-custom%2Ccm-extract",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/youth-daba-training/class-youth-group.webp?updatedAt=1728451444454",
           },
           {
             id: 4,
@@ -608,7 +608,7 @@ const workshops = [
             ),
             className: "md:col-span-2",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/niuland-msme-workshop/tinywow_niuland1_65552583.webp?updatedAt=1727345903918",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/niuland-msme-workshop/niuland1.webp?updatedAt=1727423463408",
           },
           {
             id: 2,
@@ -620,7 +620,7 @@ const workshops = [
             ),
             className: "col-span-1",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/tr:w-500,h-500,c-maintain_ratio/website-workshop-instudia/niuland-msme-workshop/tinywow_niuland4_65552583.webp?updatedAt=1727345904105",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/niuland-msme-workshop/niuland3.webp?updatedAt=1727423640960",
           },
           {
             id: 3,
@@ -697,7 +697,7 @@ const workshops = [
             ),
             className: "col-span-1",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-job-fair/instudia.webp?updatedAt=1727455974544",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-job-fair/job-fair-3.webp?updatedAt=1728451930044",
           },
           {
             id: 3,
@@ -721,7 +721,7 @@ const workshops = [
             ),
             className: "md:col-span-2",
             thumbnail:
-              "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-job-fair/job-fair-4.webp?updatedAt=1728451929991",
           },
         ],
         imageUrl:
@@ -763,7 +763,7 @@ const workshops = [
             ),
             className: "md:col-span-2",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/tr:w-500,h-500,c-maintain_ratio/website-workshop-instudia/pilgrim-school-workshop/tinywow_pilgrim_65554046.webp?updatedAt=1727346075613",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/pilgrim-school-workshop/pilgrim2.webp?updatedAt=1727545806021",
           },
           {
             id: 2,
@@ -775,7 +775,7 @@ const workshops = [
             ),
             className: "col-span-1",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/pilgrim-school-workshop/tinywow_pilgrim1_65552583.webp?updatedAt=1727346105546",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/pilgrim-school-workshop/pilgrim1_3:4.webp?updatedAt=1727427228258",
           },
           {
             id: 3,
@@ -799,7 +799,7 @@ const workshops = [
             ),
             className: "md:col-span-2",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/pilgrim-school-workshop/pilgrim2.webp?updatedAt=1727545806021",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/pilgrim-school-workshop/pilgrim_3:4.webp?updatedAt=1728450451052&tr=w-733%2Ch-494%2Cfo-custom%2Ccm-extract",
           },
         ],
         imageUrl:
@@ -840,7 +840,7 @@ const workshops = [
             ),
             className: "md:col-span-2",
             thumbnail:
-              "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-photography-workshop/photography-1.webp?updatedAt=1728451886303",
           },
           {
             id: 2,
@@ -852,7 +852,7 @@ const workshops = [
             ),
             className: "col-span-1",
             thumbnail:
-              "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-photography-workshop/photography-3.webp?updatedAt=1728452013442",
           },
           {
             id: 3,
@@ -864,7 +864,7 @@ const workshops = [
             ),
             className: "col-span-1",
             thumbnail:
-              "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-photography-workshop/photography-2.webp?updatedAt=1728451956240",
           },
           {
             id: 4,
@@ -876,7 +876,7 @@ const workshops = [
             ),
             className: "md:col-span-2",
             thumbnail:
-              "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-photography-workshop/photography-4.webp?updatedAt=1728451855375",
           },
         ],
         imageUrl:
