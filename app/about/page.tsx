@@ -1,16 +1,11 @@
-"use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import { AppConfig } from "../_utils/AppConfig";
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Resources", href: "#" },
-  { name: "Company", href: "#" },
-];
 const stats = [
   { label: "Students trained till date", value: "200+" },
-  { label: "Assets under holding", value: "$119 trillion" },
-  { label: "New users annually", value: "46,000" },
+  { label: "Hours of Training Delivered", value: "10,000+" },
+  { label: "Course Completion Rate", value: "98%" },
 ];
 const values = [
   {
@@ -29,123 +24,75 @@ const values = [
       "Our ultimate goal is to empower individuals to make a meaningful impact on society. By instilling a sense of responsibility and purpose, we believe that our trained professionals can contribute to a better future, driving positive change in the world.",
   },
 ];
-const team = [
-  {
-    name: "Michael Foster",
-    role: "Co-Founder / CTO",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-  },
-  // More people...
-];
-const blogPosts = [
-  {
-    id: 1,
-    title: "Vel expedita assumenda placeat aut nisi optio voluptates quas",
-    href: "#",
+
+export const metadata = {
+  title:
+    "Meet Our Team | instudia - Passionate Educators and Industry Experts Shaping the Future of Learning",
+  description:
+    "Discover the passionate team behind Instudia—educators, technologists, and industry experts dedicated to empowering learners. Learn how our diverse group is shaping the future of skill development with experience, innovation, and community support.",
+  openGraph: {
+    title:
+      "Meet Our Team | instudia - Passionate Educators and Industry Experts Shaping the Future of Learning",
     description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    author: {
-      name: "Michael Foster",
-      imageUrl:
-        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
+      "Discover the passionate team behind Instudia—educators, technologists, and industry experts dedicated to empowering learners. Learn how our diverse group is shaping the future of skill development with experience, innovation, and community support.",
+    url: `${AppConfig.canonicalBase}`,
+    locale: AppConfig.locale,
+    siteName: AppConfig.site_name,
+    images: [
+      {
+        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+        width: 800,
+        height: 600,
+        type: "image/jpeg",
+        alt: "Upskill with instudia",
+      },
+      {
+        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
+        width: 800,
+        height: 600,
+        alt: "Enroll with instudia",
+        type: "image/jpeg",
+      },
+    ],
   },
-  // More posts...
-];
-const footerNavigation = {
-  main: [
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Accessibility", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
-  social: [
-    {
-      name: "Facebook",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "Instagram",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "Twitter",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-        </svg>
-      ),
-    },
-    {
-      name: "GitHub",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "YouTube",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-  ],
+  twitter: {
+    title:
+      "Meet Our Team | instudia - Passionate Educators and Industry Experts Shaping the Future of Learning",
+    description:
+      "Discover the passionate team behind Instudia—educators, technologists, and industry experts dedicated to empowering learners. Learn how our diverse group is shaping the future of skill development with experience, innovation, and community support.",
+    card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  },
+  metadataBase: new URL("https://instudianagaland.com"),
 };
 
+const TeamMemberCard = ({ name, designation, imageUrl }: any) => (
+  <div className="border-[2px] col-span-2 lg:col-span-1 border-black flex flex-col rounded-[30px] p-[18px]">
+    <div className="flex flex-col items-center ">
+      <Image
+        alt="team"
+        width={300}
+        height={300}
+        className="rounded-2xl"
+        src={imageUrl}
+      />
+      <div className="space-y-[4px] pt-[20px] text-center mt-auto">
+        <p className="xl:text-[18px] xl:leading-[1.3] xl:font-bold text-[18px] leading-[1.2777777777777777] font-medium">
+          {name}
+        </p>
+        <p className="text-text-default text-[16px] leading-[1.625] font-normal">
+          {designation}
+        </p>
+      </div>
+    </div>
+  </div>
+);
+
 export default function About() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isLoaded, setLoaded] = useState(false);
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
-
-  if (!isLoaded) {
-    return null;
-  }
-
   return (
     <div className="bg-white">
       <main className="isolate">
         {/* Hero section */}
-        <div className="relative isolate -z-10">
+        <div className="relative isolate -z-10 overflow-hidden">
           <svg
             className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
             aria-hidden="true"
@@ -255,8 +202,7 @@ export default function About() {
             </div>
           </div>
           <div className="rounded-[20px] xl:rounded-[40px] border-2 border-black aspect-[690/500] absolute bg-white z-[-1] top-[-14px] right-[-18px] w-full h-3/4 xl:top-14 xl:right-[-87px]">
-            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]">
-            </div>
+            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]"></div>
           </div>
         </div>
 
@@ -415,15 +361,22 @@ export default function About() {
                   Our people
                 </h2>
                 <p className="mt-6 text-xl leading-8 text-gray-600">
-                  Quasi est quaerat. Sit molestiae et. Provident ad dolorem
-                  occaecati eos iste. Soluta rerum quidem minus ut molestiae
-                  velit error quod. Excepturi quidem expedita molestias quas.
+                  At Instudia, our people are the heart of everything we do. We
+                  are a diverse and passionate team of educators, technologists,
+                  and industry experts dedicated to empowering learners and
+                  shaping the future of skill development. Our faculty brings
+                  years of industry experience and a deep commitment to
+                  nurturing talent, ensuring every student has the support they
+                  need to thrive.
                 </p>
                 <p className="mt-6 text-base leading-7 text-gray-600">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                  occaecat fugiat. Quasi aperiam sit non sit neque
-                  reprehenderit.
+                  Our instructors are not just teachers; they are mentors who
+                  guide learners through every step of their journey, bringing
+                  practical insights from their own professional experiences.
+                  Our curriculum designers work closely with industry leaders to
+                  ensure that our courses are not only up-to-date but also
+                  forward-thinking, preparing students for the challenges of
+                  tomorrow.
                 </p>
               </div>
               <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
@@ -461,8 +414,7 @@ export default function About() {
             </div>
           </div>
           <div className="rounded-[20px] xl:rounded-[40px] border-2 border-black aspect-[690/500] absolute bg-white z-[-1] top-[-14px] right-[-18px] w-full h-full xl:top-14 xl:right-[-87px]">
-            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]">
-            </div>
+            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]"></div>
           </div>
         </div>
 
@@ -470,16 +422,16 @@ export default function About() {
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              We approach the workplace as something that adds to our lives and
-              adds value to world.
+              We view the workplace as a space that enhances our lives and
+              contributes value to the world.
             </h2>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est
-              euismod lacus. Est non placerat nam arcu. Cras purus nibh cursus
-              sit eu in id. Integer vel nibh.
+              We see work as more than a job — it's a space to grow, create, and
+              impact the world. Together, we shape a workplace that enriches
+              lives and drives meaningful change.
             </p>
           </div>
-          <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
+          {/* <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
             <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-50 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start">
               <p className="flex-none text-3xl font-bold tracking-tight text-gray-900">
                 250k
@@ -521,95 +473,197 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Team section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Our team
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Sit facilis neque ab nulla vel. Cum eos in laudantium. Temporibus
-              eos totam in dolorum. Nemo vel facere repellendus ut eos dolores
-              similique.
-            </p>
-          </div>
-          <ul
-            role="list"
-            className="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
-          >
-            {team.map((person) => (
-              <li key={person.name}>
-                <img
-                  className="mx-auto h-24 w-24 rounded-full"
-                  src={person.imageUrl}
-                  alt=""
+        <div className=" mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 overflow-hidden">
+          <div className="relative grid grid-cols-2 gap-[16px] md:grid-cols-3 md:gap-y-[24px] xl:grid-cols-4 xl:gap-[36px]">
+            <svg
+              className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+              aria-hidden="true"
+            >
+              <defs>
+                <pattern
+                  id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
+                  width={200}
+                  height={200}
+                  x="50%"
+                  y={-1}
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path d="M.5 200V.5H200" fill="none" />
+                </pattern>
+              </defs>
+              <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+                <path
+                  d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+                  strokeWidth={0}
                 />
-                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
-                  {person.name}
-                </h3>
-                <p className="text-sm leading-6 text-gray-600">{person.role}</p>
-              </li>
-            ))}
-          </ul>
+              </svg>
+              <rect
+                width="100%"
+                height="100%"
+                strokeWidth={0}
+                fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
+              />
+            </svg>
+            <TeamMemberCard
+              name="Daniel Changkija"
+              designation="Director"
+              imageUrl="https://images.unsplash.com/photo-1656338997878-279d71d48f6e?q=80&w=2551&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <div className="col-span-2 md:pl-[30px] xl:col-span-3 xl:pl-[70px]">
+              <div className="space-y-[12px] pb-[24px] md:pb-0 md:pt-[56px] xl:max-w-[486px] xl:space-y-[24px] xl:pt-[80px]">
+                <h2 className="text-text-highlight xl:text-[52px] xl:leading-[1.0961538461538463] xl:font-bold text-[32px] leading-[1.40625] font-bold max-w-[350px] xl:max-w-full">
+                  Meet our team of talented educators and mentors
+                </h2>
+              </div>
+            </div>
+            <TeamMemberCard
+              name="Kivigho Kinimi"
+              designation="IT Faculty"
+              imageUrl="https://images.unsplash.com/photo-1656337789708-cdf37b07112d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <TeamMemberCard
+              name="Niutoli V"
+              designation="Accounting Faculty"
+              imageUrl="https://images.unsplash.com/photo-1678733527538-845ebdc2f6b8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <TeamMemberCard
+              name="Susmita Ghosh"
+              designation="Accounting Faculty"
+              imageUrl="https://images.unsplash.com/photo-1672675611932-9d722165f0ad?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <TeamMemberCard
+              name="Imlisenla Imchen"
+              designation="Marketing Executive"
+              imageUrl="https://images.unsplash.com/photo-1656075203144-951d04f599ad?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <div className="col-span-2 md:pl-[30px] xl:col-span-3 xl:pl-[160px]">
+              <div className="space-y-[12px] pb-[24px] md:pb-0 md:pt-[56px] xl:max-w-[486px] xl:space-y-[24px] xl:pt-[80px]">
+                <h2 className="xl:text-[52px] xl:leading-[1.0961538461538463] xl:font-bold text-[32px] leading-[1.40625] font-bold max-w-[350px] xl:max-w-full">
+                  We solve your problems by upskilling you!
+                </h2>
+              </div>
+            </div>
+            <TeamMemberCard
+              name="Vishal Bardewa"
+              designation="Technical Advisor"
+              imageUrl="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <svg
+              className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+              aria-hidden="true"
+            >
+              <defs>
+                <pattern
+                  id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
+                  width={200}
+                  height={200}
+                  x="50%"
+                  y={-1}
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path d="M.5 200V.5H200" fill="none" />
+                </pattern>
+              </defs>
+              <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+                <path
+                  d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+                  strokeWidth={0}
+                />
+              </svg>
+              <rect
+                width="100%"
+                height="100%"
+                strokeWidth={0}
+                fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
+              />
+            </svg>
+          </div>
         </div>
 
-        {/* Content section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-          <div className="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
-            <div className="w-full lg:max-w-lg lg:flex-auto">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                We&apos;re always looking for awesome people to join us
-              </h2>
-              <p className="mt-6 text-xl leading-8 text-gray-600">
-                Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est
-                euismod lacus. Est non placerat nam arcu. Cras purus nibh cursus
-                sit eu in id.
-              </p>
-              <img
-                src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
-                alt=""
-                className="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
-              />
+        {/* Location section */}
+        <div className="mx-8 lg:mx-14 mt-[40px] grid grid-cols-1 gap-[8px] md:grid-cols-[minmax(248px,1.2fr)_minmax(168px,0.9fr)_minmax(248px,1.2fr)] md:gap-[12px] xl:mt-[60px] xl:gap-[16px]">
+          <div className="grid grid-cols-2 gap-[8px] md:gap-[12px] xl:gap-[16px] xl:rounded-[20px]">
+            <div className="flex h-[172px] bg-[#C21FFF] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-green md:h-[178px] xl:h-[296px] 2xl:h-[356px]">
+              <h1 className="xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
+                20+
+              </h1>
+              <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center">
+                Combined YOE
+              </span>
             </div>
-            <div className="w-full lg:max-w-xl lg:flex-auto">
-              <h3 className="sr-only">Job openings</h3>
-              <ul className="-my-8 divide-y divide-gray-100">
-                {/* {jobOpenings.map((opening) => (
-                  <li key={opening.id} className="py-8">
-                    <dl className="relative flex flex-wrap gap-x-3">
-                      <dt className="sr-only">Role</dt>
-                      <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900">
-                        <a href={opening.href}>
-                          {opening.role}
-                          <span className="absolute inset-0" aria-hidden="true" />
-                        </a>
-                      </dd>
-                      <dt className="sr-only">Description</dt>
-                      <dd className="mt-2 w-full flex-none text-base leading-7 text-gray-600">{opening.description}</dd>
-                      <dt className="sr-only">Salary</dt>
-                      <dd className="mt-4 text-base font-semibold leading-7 text-gray-900">{opening.salary}</dd>
-                      <dt className="sr-only">Location</dt>
-                      <dd className="mt-4 flex items-center gap-x-3 text-base leading-7 text-gray-500">
-                        <svg viewBox="0 0 2 2" className="h-0.5 w-0.5 flex-none fill-gray-300" aria-hidden="true">
-                          <circle cx={1} cy={1} r={1} />
-                        </svg>
-                        {opening.location}
-                      </dd>
-                    </dl>
-                  </li>
-                ))} */}
-              </ul>
-              <div className="mt-8 flex border-t border-gray-100 pt-8">
-                <a
-                  href="#"
-                  className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-                >
-                  View all openings <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+            <div className="h-[172px] overflow-hidden rounded-[12px] md:h-[178px] xl:h-[296px] 2xl:h-[356px]">
+              <picture className="overflow-hidden">
+                <img
+                  loading="eager"
+                  className="h-full w-full object-cover"
+                  src="https://a.storyblok.com/f/197805/4096x2732/bdf82eb04c/viw_rgb_230207vw-linearity-1812.jpg/m/319x0/filters:format(jpeg):quality(75)"
+                  alt="around table"
+                />
+              </picture>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-[8px] md:grid-cols-1 md:gap-[12px] xl:gap-[16px] xl:rounded-[20px]">
+            <div className="hidden overflow-hidden rounded-[12px] md:block md:h-[150px] xl:h-[260px] xl:rounded-[20px] 2xl:h-[320px]">
+              <picture className="overflow-hidden">
+                <img
+                  loading="eager"
+                  className="h-full w-full object-cover"
+                  src="https://a.storyblok.com/f/197805/4096x2732/4c2cf8e271/linearity-group-executive-01.jpg/m/360x0/filters:format(jpeg):quality(75)"
+                  alt="work table vladimir"
+                />
+              </picture>
+            </div>
+            <div className="h-[172px] overflow-hidden rounded-[12px] md:h-[109px] xl:h-[200px] xl:rounded-[20px] 2xl:h-[228px]">
+              <picture className="overflow-hidden">
+                <img
+                  loading="eager"
+                  className="h-full w-full object-cover"
+                  src="https://a.storyblok.com/f/197805/4096x2732/304d867401/image_3.png/m/156x172/filters:format(png):quality(75)"
+                  alt="table moritz anna wiebke"
+                />
+              </picture>
+            </div>
+            <div className="flex h-[172px] bg-[#58FF1B] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-orange md:h-[168px] xl:h-[260px] xl:rounded-[20px] 2xl:h-[320px]">
+              <h1 className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
+                10+
+              </h1>
+              <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center">
+                Languages
+              </span>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-[8px] md:gap-[12px] xl:gap-[16px]">
+            <div className="order-1 col-span-2 h-[180px] w-full overflow-hidden rounded-[12px] md:order-3 md:h-[234px] xl:h-[366px] xl:rounded-[20px] 2xl:h-[442px]">
+              <picture className="overflow-hidden">
+                <img
+                  loading="eager"
+                  className="h-full w-full object-cover"
+                  src="https://a.storyblok.com/f/197805/4096x2732/248870753d/image_5.png/m/500x0/filters:format(png):quality(75)"
+                  alt="thanassis paulius"
+                />
+              </picture>
+            </div>
+            <div className="order-2 flex h-[172px] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-[#FFE01B] md:h-[200px] xl:h-[366px] xl:rounded-[20px] 2xl:h-[442px]">
+              <h1 className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
+                2
+              </h1>
+              <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center xl:max-w-[144px]">
+                Work locations
+              </span>
+            </div>
+            <div className="order-3 h-[172px] overflow-hidden rounded-[12px] md:order-1 md:h-[200px] xl:h-[368px] xl:rounded-[20px] 2xl:h-[442px]">
+              <picture className="overflow-hidden">
+                <img
+                  loading="eager"
+                  className="h-full w-full object-cover"
+                  src="https://a.storyblok.com/f/197805/4096x2732/3dd6a9b6f0/image_4.png/m/156x172/filters:format(png):quality(75)"
+                  alt="malte wiebke"
+                />
+              </picture>
             </div>
           </div>
         </div>
