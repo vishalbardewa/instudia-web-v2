@@ -17,7 +17,7 @@ interface ICourseCard {
   title: string;
   description: string;
   badge: React.ReactNode;
-  imageUrl: string;
+  imageUrl: any;
   imageAlt: string;
   className?: string;
   gridFix?: boolean;
