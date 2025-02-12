@@ -11,6 +11,7 @@ import { title } from "process";
 import SideBySideCard from "./SideBySideCard";
 import { slugs } from "@/app/routes";
 import Link from "next/link";
+import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 
 interface ICourseCard {
   title: string;
@@ -27,17 +28,17 @@ let firstLayerCourses = [
   {
     title: "Programming with Python",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/python.png?updatedAt=1726135539337",
+    IMAGE_LIST[`${slugs.PYTHON}`],
     imageAlt: "Python Programming in Dimapur",
     description:
       "Learn the fundamentals of Python, from basic syntax to object-oriented programming. This beginner-friendly course offers hands-on projects to develop real-world coding skills. By the end, you'll be ready to build your own applications.",
     badge: <DevelopmentBadge />,
-    href: slugs.PYTHON1
+    href: slugs.PYTHON
   },
   {
     title: "Accounting in Tally with GST",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
+    IMAGE_LIST[`${slugs.GST}`],
     imageAlt: "Tally with GST in Dimapur",
     description:
       "Learn the fundamentals of Tally, from basic accounting to GST compliance. This beginner-friendly course offers hands-on projects to develop real-world accounting skills. By the end, you'll be ready to manage GST-compliant financials.",
@@ -48,7 +49,7 @@ let firstLayerCourses = [
   {
     title: "Frontend Web Development",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/frontend.png?updatedAt=1726135539217",
+    IMAGE_LIST[`${slugs.FRONTEND}`],
     imageAlt: "Tally with GST in Dimapur",
     description:
       "Learn the fundamentals of frontend development, from HTML, CSS to JavaScript and responsive design. This beginner-friendly course offers hands-on projects to develop real-world web design skills. Build your own websites.",
@@ -58,8 +59,7 @@ let firstLayerCourses = [
 
   {
     title: "Backend Web Development",
-    imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/backend.png?updatedAt=1726135539480",
+    imageUrl:IMAGE_LIST[`${slugs.BACKEND}`],
     imageAlt: "Tally with GST in Dimapur",
     description:
       "Learn the fundamentals of backend development, from server-side scripting to database management. This beginner-friendly course offers hands-on projects to build real-world APIs. Ready to develop and manage backend systems.",
@@ -71,8 +71,7 @@ let firstLayerCourses = [
 let secondLayerCourses = [
   {
     title: "Certificate in UI/UX Design Specialization",
-    imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    imageUrl:IMAGE_LIST[`${slugs.UIUX_DESIGN}`],
     imageAlt: "UI/UX Design in Dimapur",
     description:
       "Learn the fundamentals of UI/UX design, from user research to prototyping and testing. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create user-centered digital experiences.",
@@ -81,8 +80,7 @@ let secondLayerCourses = [
   },
   {
     title: "Certificate in Graphic Designing",
-    imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/graphic-design.png?updatedAt=1726138195936",
+    imageUrl:IMAGE_LIST[`${slugs.GRAPHIC_DESIGN}`],
     imageAlt: "Graphic Design in Dimapur",
     description:
       "Learn the fundamentals of graphic design, from basic principles to advanced techniques. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create your own professional designs.",
@@ -92,8 +90,7 @@ let secondLayerCourses = [
 
   {
     title: "Certificate in DevOps Cloud Services",
-    imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/devops.png?updatedAt=1726138195852",
+    imageUrl:IMAGE_LIST[`${slugs.DEVOPS}`],
     imageAlt: "Devops in Dimapur",
     description:
       "Learn the fundamentals of DevOps, from basic concepts to continuous integration and deployment. This beginner-friendly course offers hands-on projects to develop real-world automation skills. By the end, you'll be ready to streamline application development and operations.",
@@ -104,7 +101,7 @@ let secondLayerCourses = [
   {
     title: "Certificate in Business Intelligence",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/powerbi.png?updatedAt=1726138195839",
+    IMAGE_LIST[`${slugs.BUSINESS_INTELLIGENCE}`],
     imageAlt: "PowerBI in Dimapur",
     description:
       "Learn the fundamentals of Power BI, from data visualization to advanced analytics. This beginner-friendly course offers hands-on projects to develop real-world data analysis skills. By the end, you'll be ready to create your own interactive reports and dashboards.",
@@ -117,7 +114,7 @@ let thirdLayerCourses = [
   {
     title: "Certificate in Hardware and Networking",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/hardware-networking.png?updatedAt=1726165860073",
+    IMAGE_LIST[`${slugs.HARDWARE_NETWORKING}`],
     imageAlt: "Hardware and Networking in Dimapur",
     description:
       "Learn the fundamentals of computer hardware and networking, from assembling PCs to configuring networks. This beginner-friendly course offers hands-on projects to develop real-world technical skills. By the end, you'll be ready to manage and troubleshoot networks efficiently.",
@@ -126,8 +123,7 @@ let thirdLayerCourses = [
   },
   {
     title: "Certificate in Project Management",
-    imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/project-management.png?updatedAt=1726165860318",
+    imageUrl:IMAGE_LIST[`${slugs.PROJECT_MANAGEMENT}`],
     imageAlt: "Project Management in Dimapur",
     description:
       "Learn the fundamentals of project management, from planning and scheduling to risk management and execution. This beginner-friendly course offers hands-on projects to develop real-world management skills. By the end, you'll be ready to manage your own projects.",
@@ -138,7 +134,7 @@ let thirdLayerCourses = [
   {
     title: "Diploma in Computer Applications",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/dca.png?updatedAt=1726165860101",
+    IMAGE_LIST[`${slugs.DCA}`],
     imageAlt: "DCA in Dimapur",
     description:
       "Learn the fundamentals of computer applications, from basic software tools to advanced data management. This beginner-friendly course offers hands-on projects to develop real-world tech skills. By the end, you'll be ready to handle various IT tasks efficiently.",
@@ -149,7 +145,7 @@ let thirdLayerCourses = [
   {
     title: "Certificate in Retail Management",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/retail.png?updatedAt=1726165860169",
+    IMAGE_LIST[`${slugs.RETAIL_MANAGEMENT}`],
     imageAlt: "Retail Management in Dimapur",
     description:
       "Learn the fundamentals of Retail Management, from customer service to inventory control. This beginner-friendly course offers hands-on projects to develop real-world management skills. By the end, you'll be ready to excel in retail operations and sales.",
@@ -162,7 +158,7 @@ let fourthLayerCourses = [
   {
     title: "Mobile App Development",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    IMAGE_LIST[`${slugs.MOBILE_APP_DEVELOPMENT}`],
     imageAlt: "Fullstack Development in Dimapur",
     description:
       "Learn the fundamentals of mobile app development using React Native, from basic UI components to advanced navigation. This beginner-friendly course offers hands-on projects to build real-world apps. By the end, you'll be ready to create your own mobile applications.",
@@ -172,7 +168,7 @@ let fourthLayerCourses = [
   {
     title: "Certificate in Food Processing",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/graphic-design.png?updatedAt=1726138195936",
+    IMAGE_LIST[`${slugs.FOOD_PROCESSING}`],
     imageAlt: "Food Processing in Dimapur",
     description:
       "Learn the fundamentals of food processing, from basic techniques to advanced preservation methods. This beginner-friendly course offers hands-on projects to develop practical skills. By the end, you'll be ready to apply your knowledge in real-world food processing environments.",
@@ -182,8 +178,7 @@ let fourthLayerCourses = [
 
   {
     title: "Fullstack Web Development",
-    imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    imageUrl:IMAGE_LIST[`${slugs.FOOD_PROCESSING}`],
     imageAlt: "Fullstack Development in Dimapur",
     description:
       "Learn the fundamentals of UI/UX design, from user research to prototyping and testing. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create user-centered digital experiences.",
@@ -193,8 +188,7 @@ let fourthLayerCourses = [
 
   {
     title: "Certificate in Advanced Excel",
-    imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/devops.png?updatedAt=1726138195852",
+    imageUrl:IMAGE_LIST[`${slugs.ADVANCED_EXCEL}`],
     imageAlt: "Advanced Excel in Dimapur",
     description:
       "Learn the fundamentals of Fullstack Development, from front-end design to back-end architecture. This beginner-friendly course offers hands-on projects to build real-world web applications. By the end, you'll be ready to create and deploy your own full-stack solutions.",
@@ -207,7 +201,7 @@ let fifthLayerCourses = [
   {
     title: "Post Graduate in Diploma in Computer Applications",
     imageUrl:
-      "https://ik.imagekit.io/dxffek9yf/course-list-page/pgdca.png?updatedAt=1726167281469",
+    IMAGE_LIST[`${slugs.PGDCA}`],
     imageAlt: "PGDCA in Dimapur",
     description:
       "Learn key concepts in computing, from basic programming to advanced software development. This beginner-friendly PGDCA course offers hands-on projects to build real-world IT skills. By the end, you'll be ready to excel in various tech roles.",

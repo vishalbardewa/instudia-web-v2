@@ -5,6 +5,7 @@ import { FloatingNav } from "../organisms/FloatingNav";
 import Footer from "../organisms/Footer";
 import NavigationWithDropdown from "../organisms/NavigationWithDropdown";
 import { slugs } from "@/app/routes";
+import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 
 const navItems = [
   {
@@ -37,11 +38,18 @@ const longNavigation = {
             "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           imageAlt: "Learn Fullstack development in Dimapur",
         },
+        // {
+        //   name: "Frontend Development",
+        //   href: `/courses/${slugs.FRONTEND}`,
+        //   imageSrc:
+        //     "https://images.unsplash.com/photo-1552960504-34e1e1be3f53?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        //   imageAlt: "Learn Frontend development in Dimapur.",
+        // },
         {
-          name: "Frontend Development",
-          href: `/courses/${slugs.FRONTEND}`,
+          name: "Explore all courses",
+          href: `/courses`,
           imageSrc:
-            "https://images.unsplash.com/photo-1552960504-34e1e1be3f53?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            IMAGE_LIST['dca'],
           imageAlt: "Learn Frontend development in Dimapur.",
         },
       ],
@@ -65,8 +73,8 @@ const longNavigation = {
           id: "programming",
           name: "Programming Foundation",
           items: [
-            { name: "Javascript", href: `/courses/${slugs.PYTHON1}` },
-            { name: "Python", href: `/courses/${slugs.PYTHON1}`},
+            { name: "Javascript", href: `/courses/${slugs.PYTHON}` },
+            { name: "Python", href: `/courses/${slugs.PYTHON}`},
             { name: "Rust", href: "#" },
             { name: "C", href: "#" },
             { name: "C++", href: "#" },
@@ -91,7 +99,7 @@ const longNavigation = {
   pages: [
     { name: "About", href: "/about" },
     { name: "Workshops", href: "/workshops" },
-    { name: "Contact", href: "#" },
+    { name: "Contact", href: "/contact" },
   ],
 };
 

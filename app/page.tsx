@@ -205,46 +205,49 @@ const benefits = [
 const caseStudies = [
   {
     id: randomUUID(),
-    logo: "https://studio.tailwindui.com/_next/static/media/logomark-dark.73187f97.svg",
-    client: "This is alt",
-    date: "2024-12-12",
-    title: "Skip the bank, borrow from those you trust",
+    logo: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/logo-assets/unlock.svg?updatedAt=1729061047829",
+    client: "Unlock New Opportunities",
+    date: "001",
+    title: "Unlock New Opportunities",
     description:
-      "FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution",
+      "Upskilling equips you with the in-demand skills to thrive in today’s dynamic job market. Whether you're a student, professional, or looking for a career change, the right skills can open doors to exciting, future-ready opportunities.",
     classnames: "hover:bg-[#ffe01b]/70",
   },
   {
     id: randomUUID(),
-    logo: "https://studio.tailwindui.com/_next/static/media/logomark-dark.73187f97.svg",
-    client: "This is alt",
-    date: "2024-12-12",
-    title: "Skip the bank, borrow from those you trust",
+    logo: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/logo-assets/medal.svg?updatedAt=1729061595377",
+    client: "Empower Your Career",
+    date: "002",
+    title: "Empower Your Career",
     description:
-      "FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution",
+      "Industries are changing faster than ever, and the demand for new skills is at an all-time high. Our tailored courses help you stay ahead of the curve, ensuring you remain competitive and adaptable as your career progresses.",
     classnames: "hover:bg-[#c21bff]/70",
   },
   {
     id: randomUUID(),
-    logo: "https://studio.tailwindui.com/_next/static/media/logomark-dark.73187f97.svg",
-    client: "This is alt",
-    date: "2024-12-12",
-    title: "Skip the bank, borrow from those you trust",
+    logo: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/logo-assets/announcement.svg?updatedAt=1729060940757",
+    client: "Bridge the Skills Gap",
+    date: "003",
+    title: "Bridge the Skills Gap",
     description:
-      "FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution",
+      "The skills gap is real, but it doesn’t have to hold you back. By upskilling with Instudia, you can close that gap and meet the demands of today’s industries. Prepare for a future where you not only meet expectations but exceed them.",
     classnames: "hover:bg-[#58ff1b]/70",
   },
 ];
+
 const CaseStudies = ({ caseStudies }: any) => {
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        title="Harnessing skills for a brighter future"
         className="lg:mx-24 mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+          We believe upskilling is the solution to today’s most pressing
+          challenges While the demand for new skills is rising, it can also feel
+          overwhelming—but with the right guidance, upskilling can unlock
+          endless opportunities for growth and success. Let us help you bridge
+          the skills gap and build a future-ready career.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -262,6 +265,7 @@ const CaseStudies = ({ caseStudies }: any) => {
                     className="h-16 w-16"
                     width={16}
                     height={16}
+                    unoptimized
                   />
                 </h3>
                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
@@ -274,12 +278,12 @@ const CaseStudies = ({ caseStudies }: any) => {
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>Case study</span>
+                  <span>⚡</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
                 </p>
-                <p className="mt-4 text-base text-neutral-600">
+                <p className="mt-4 text-base text-neutral-950">
                   {caseStudy.description}
                 </p>
               </article>
@@ -363,11 +367,11 @@ export default function Page() {
       </div>
 
       <CaseStudies caseStudies={caseStudies} />
-      <div className="bg-black text-center py-[64px] md:py-[80px] xl:py-[100px] mt-20 text-white px-8 lg:px-0">
+      {/* <div className="bg-black text-center py-[64px] md:py-[80px] xl:py-[100px] mt-20 text-white px-8 lg:px-0">
         <div className="flex flex-col md:items-center md:text-center space-y-[12px] xl:space-y-[16px] 2xl:space-y-[20px] pb-[40px] xl:pb-[48px] 2xl:pb-[60px] md:max-w-[560px] xl:max-w-[700px] md:mx-auto ">
           <div className="flex flex-col items-center gap-y-[4px]">
             <h2 className="text-text-highlight text-[32px] leading-[1.40625] font-medium">
-              Everything you can do with Linearity
+              Everything you can do at instudia
             </h2>
           </div>
           <p className="text-text-default 2xl:text-[18px] 2xl:leading-[1.6111111111111112] 2xl:font-normal text-[16px] leading-[1.625] font-normal xl:px-[54px]">
@@ -449,7 +453,7 @@ export default function Page() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

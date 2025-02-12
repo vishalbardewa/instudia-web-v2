@@ -1,0 +1,21 @@
+export const IMAGE_LIST = {
+    "dca": 'https://ik.imagekit.io/dxffek9yf/course-list-page/dca.png?updatedAt=1726165860101',
+    "retail-management": "https://ik.imagekit.io/dxffek9yf/course-list-page/retail.png?updatedAt=1726165860169",
+    "python": "https://ik.imagekit.io/dxffek9yf/course-list-page/python.png?updatedAt=1726135539337",
+    "tally":"https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
+    "frontend-development": "https://ik.imagekit.io/dxffek9yf/course-list-page/frontend.png?updatedAt=1726135539217",
+    "backend-development":"https://ik.imagekit.io/dxffek9yf/course-list-page/backend.png?updatedAt=1726135539480",
+    "ui-ux-designing": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    "graphic-designing": "https://ik.imagekit.io/dxffek9yf/course-list-page/graphic-design.png?updatedAt=1726138195936",
+    "learn-devops-cloud-services": "https://ik.imagekit.io/dxffek9yf/course-list-page/devops.png?updatedAt=1726138195852",
+    "buisness-intelligence-using-powerbi": "https://ik.imagekit.io/dxffek9yf/course-list-page/powerbi.png?updatedAt=1726138195839",
+    "hardware-networking": "https://ik.imagekit.io/dxffek9yf/course-list-page/hardware-networking.png?updatedAt=1726165860073",
+    "learn-project-management": "https://ik.imagekit.io/dxffek9yf/course-list-page/project-management.png?updatedAt=1726165860318",
+    "mobile-app-development": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    "food-processing": "https://ik.imagekit.io/dxffek9yf/course-list-page/graphic-design.png?updatedAt=1726138195936",
+    "fullstack-web-development": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    "advanced-excel": "https://ik.imagekit.io/dxffek9yf/course-list-page/devops.png?updatedAt=1726138195852",
+    "pgdca": "https://ik.imagekit.io/dxffek9yf/course-list-page/pgdca.png?updatedAt=1726167281469",
+    "gst": "https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366"
+
+}

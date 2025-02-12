@@ -428,7 +428,7 @@ const workshops = [
     title: "Unlocking Potential with AI and Career insights",
     date: "September 7th, 2024",
     description:
-      "Explored how AI can support students in gaining deeper insights into their areas of study, as well as the importance of preparing for future career opportunities by embracing AI and other technological advancements.",
+      "A workshop was conducted at St. Edmund’s Higher Secondary School, Dimapur. The event featured engaging sessions led by experts from Instudia, who highlighted the growing significance of AI in reshaping industries and the modern job market. The sessions were designed to help students understand the critical role AI plays and how they can leverage it for both academic excellence and career readiness. Daniel Changkiri, Director of Instudia, explained the critical role of AI in modern education and its transformative potential. He emphasized how students can utilize AI tools to personalize and improve their learning experiences, thereby building stronger domain knowledge. Daniel also encouraged students to stay ahead in the digital age by acquiring AI-related skills—skills that are becoming increasingly relevant across a range of industries.",
     highlights:
       "Aimed to provide students with insights into new and evolving career paths while highlighting how Artificial Intelligence (AI) can be utilised to enhance their academic and professional growth,",
     posts: [
@@ -437,7 +437,7 @@ const workshops = [
         href: "#",
         category: [{ name: "Workshop", href: "#" }],
         description:
-          "Explored how AI can support students in gaining deeper insights into their areas of study, as well as the importance of preparing for future career opportunities by embracing AI and other technological advancements. Daniel Changkiri, director of instudia, expounded on the critical role that AI plays in modern education and how students can use AI tools to personalise and improve their learning experiences, thereby building stronger domain knowledge. During the workshop, participants were introduced to various applications of AI in education, with a focus on personalised learning and the expanding opportunities in technology-driven fields.",
+          "A workshop was conducted at St. Edmund’s Higher Secondary School, Dimapur. The event featured engaging sessions led by experts from Instudia, who highlighted the growing significance of AI in reshaping industries and the modern job market. The sessions were designed to help students understand the critical role AI plays and how they can leverage it for both academic excellence and career readiness. Daniel Changkiri, Director of Instudia, explained the critical role of AI in modern education and its transformative potential. He emphasized how students can utilize AI tools to personalize and improve their learning experiences, thereby building stronger domain knowledge. Daniel also encouraged students to stay ahead in the digital age by acquiring AI-related skills—skills that are becoming increasingly relevant across a range of industries.",
         date: "September 7th, 2024",
         datetime: "September 7th, 2024",
         images: [
@@ -445,8 +445,8 @@ const workshops = [
             id: 1,
             content: (
               <SkeletonOne
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="1"
+                caption="A day of discovery and growth as students explore AI-driven career path"
               />
             ),
             className: "md:col-span-2",
@@ -457,8 +457,8 @@ const workshops = [
             id: 2,
             content: (
               <SkeletonTwo
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="2"
+                caption="Discussion on how to make a career and develop one's skill"
               />
             ),
             className: "col-span-1",
@@ -469,8 +469,8 @@ const workshops = [
             id: 3,
             content: (
               <SkeletonThree
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="3"
+                caption="A snapshot of curious students"
               />
             ),
             className: "col-span-1",
@@ -481,8 +481,8 @@ const workshops = [
             id: 4,
             content: (
               <SkeletonFour
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="4"
+                caption="Daniel Changkija addressing students with Career insights"
               />
             ),
             className: "md:col-span-2",
@@ -502,7 +502,7 @@ const workshops = [
     subtitle: "in association with Dimapur Ao Baptist Arogo",
     date: "March 1 - 10 July, 2024",
     description:
-      "Instudia, in collaboration with Dimapur Ao Baptist Arogo, proudly organized the Youth Upskilling Program, aimed at empowering young individuals with essential digital and professional skills. This hands-on workshop focused on enhancing participants' knowledge in IT, communication, and career development, equipping them to thrive in today’s competitive job market. Through expert-led sessions, attendees gained practical insights into emerging technologies, effective problem-solving, and personal growth strategies. The program was a great success, fostering both skill enhancement and community growth for Dimapur's youth.",
+      "Instudia, in collaboration with Dimapur Ao Baptist Arogo, organized a Youth Upskilling Program to equip young individuals with essential digital and professional skills for thriving in the job market. Held in Dimapur, this program was focused on enhancing participants' knowledge in IT, communication, and career development to prepare them for today’s competitive job market. The Youth Upskilling Program was designed with a specific mission: to equip youth with the skills needed to thrive in an increasingly digital and professional world. By offering hands-on workshops, Instudia helped participants gain relevant skills that can be applied directly to their career goals.",
     posts: [
       {
         title:
@@ -521,8 +521,8 @@ const workshops = [
             id: 1,
             content: (
               <SkeletonOne
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="1"
+                caption="Students concentrating on the work"
               />
             ),
             className: "lg:col-span-1",
@@ -533,8 +533,8 @@ const workshops = [
             id: 2,
             content: (
               <SkeletonTwo
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="2"
+                caption="Training under going with instructor"
               />
             ),
             className: "lg:col-span-2",
@@ -545,8 +545,8 @@ const workshops = [
             id: 3,
             content: (
               <SkeletonThree
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="3"
+                caption="Group shot of certificate distribution ceremony to successful participants"
               />
             ),
             className: "lg:col-span-2",
@@ -557,8 +557,8 @@ const workshops = [
             id: 4,
             content: (
               <SkeletonFour
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="4"
+                caption="A student being handed out the certificate"
               />
             ),
             className: "lg:col-span-1",
@@ -584,7 +584,7 @@ const workshops = [
     subtitle: "in association with Government of India and Ministry of MSME",
     date: "October 30th - 8th December, 2023",
     description:
-      "Instudia, in partnership with the Government of India and the Ministry of MSME, proudly presents a 6-week Entrepreneurial Skill Development Program (ESDP) in Niuland. This training program is designed to equip participants with essential skills in Computer Basics, Information Technology (IT), and the MS Office Package. The course offers hands-on learning, covering foundational topics in IT, computer literacy, and practical applications of Microsoft Office (Word, Excel, PowerPoint) to enhance productivity and employability. Open to aspiring entrepreneurs, students, and professionals, this program is aimed at fostering digital skills that are essential for today’s workplace and business environments.",
+      "Instudia, in partnership with the Government of India and MSME, offered a 6-week Entrepreneurial Skill Development Program in Niuland. This training initiative is designed to equip participants with crucial skills in Computer Basics, Information Technology (IT), and the MS Office Package to prepare them for success in today’s digital workplace. The Entrepreneurial Skill Development Program (ESDP) is structured to provide hands-on learning in foundational IT skills and practical computer literacy that enhances productivity and employability. This program is specifically targeted at aspiring entrepreneurs, students, and professionals seeking to strengthen their digital skills and improve their readiness for a competitive work environment.",
     posts: [
       {
         title: "6 Weeks ESDP Training Program in Niuland",
@@ -602,8 +602,8 @@ const workshops = [
             id: 1,
             content: (
               <SkeletonOne
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="1"
+                caption="Director enagaging with students in one of the sessions"
               />
             ),
             className: "md:col-span-2",
@@ -614,8 +614,8 @@ const workshops = [
             id: 2,
             content: (
               <SkeletonTwo
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="2"
+                caption="A quick shoot of students after a full day class"
               />
             ),
             className: "col-span-1",
@@ -626,8 +626,8 @@ const workshops = [
             id: 3,
             content: (
               <SkeletonThree
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="3"
+                caption="Group project focusing on topics from the training"
               />
             ),
             className: "col-span-1",
@@ -638,8 +638,8 @@ const workshops = [
             id: 4,
             content: (
               <SkeletonFour
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="4"
+                caption="Students after a session on career insights"
               />
             ),
             className: "md:col-span-2",
@@ -664,14 +664,14 @@ const workshops = [
     title: "JobEx",
     date: "March 11th, 2023",
     description:
-      "A premium job fair aimed at bridging the gap between talented job seekers and top companies in the region. The event, held on March 11 at Instudia's premises, saw active participation from over 70 job seekers across various fields of expertise.More than 10 leading companies from sectors including IT, finance, marketing, human resources, and more, took part in the job fair, offering a diverse range of employment opportunities. JobEx provided an invaluable platform for candidates to showcase their skills, interact with potential employers, and explore exciting career paths.Participants had the chance to network with company representatives, submit resumes, and attend on-the-spot interviews, creating a direct link between employers and job seekers. The event not only facilitated meaningful connections but also empowered attendees with real-time opportunities to advance their careers.",
+      "JobEx, a premium job fair organized by Instudia, connected over 70 job seekers with top companies from IT, finance, marketing, HR, and more, offering diverse career opportunities. instudia proudly hosted the job fair which aimed at bridging the gap between talented job seekers and top companies in the region. Held on March 11 at instudia's premises, the event brought together over 70 job seekers from various fields and more than 10 leading companies from industries. The event provided a valuable platform where job seekers had the chance to showcase their skills, interact with prospective employers, and explore exciting career opportunities—all under one roof. The JobEx job fair was designed to create a dynamic and interactive space for both job seekers and employers. With over 70 job seekers participating, the fair attracted talented individuals from diverse fields of expertise.",
     posts: [
       {
         title: "JobEx",
         href: "#",
         category: [{ name: "Job Fair", href: "#" }],
         description:
-          "A premium job fair aimed at bridging the gap between talented job seekers and top companies in the region. The event, held on March 11 at Instudia's premises, saw active participation from over 70 job seekers across various fields of expertise.More than 10 leading companies from sectors including IT, finance, marketing, human resources, and more, took part in the job fair, offering a diverse range of employment opportunities. JobEx provided an invaluable platform for candidates to showcase their skills, interact with potential employers, and explore exciting career paths.Participants had the chance to network with company representatives, submit resumes, and attend on-the-spot interviews, creating a direct link between employers and job seekers. The event not only facilitated meaningful connections but also empowered attendees with real-time opportunities to advance their careers.",
+          "JobEx, a premium job fair organized by Instudia, connected over 70 job seekers with top companies from IT, finance, marketing, HR, and more, offering diverse career opportunities. instudia proudly hosted the job fair which aimed at bridging the gap between talented job seekers and top companies in the region. Held on March 11 at instudia's premises, the event brought together over 70 job seekers from various fields and more than 10 leading companies from industries. The event provided a valuable platform where job seekers had the chance to showcase their skills, interact with prospective employers, and explore exciting career opportunities—all under one roof. The JobEx job fair was designed to create a dynamic and interactive space for both job seekers and employers. With over 70 job seekers participating, the fair attracted talented individuals from diverse fields of expertise.",
         date: "March 11th, 2023",
         datetime: "March 11th, 2023",
         images: [
@@ -679,8 +679,8 @@ const workshops = [
             id: 1,
             content: (
               <SkeletonOne
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="1"
+                caption="Candidates awaiting their turns for a one-to-one"
               />
             ),
             className: "md:col-span-2",
@@ -691,8 +691,8 @@ const workshops = [
             id: 2,
             content: (
               <SkeletonTwo
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="2"
+                caption="Candidate being interviewed by one of the recruiters"
               />
             ),
             className: "col-span-1",
@@ -703,8 +703,8 @@ const workshops = [
             id: 3,
             content: (
               <SkeletonThree
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="3"
+                caption="Another shot of candidates awaiting their turn"
               />
             ),
             className: "col-span-1",
@@ -715,8 +715,8 @@ const workshops = [
             id: 4,
             content: (
               <SkeletonFour
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="4"
+                caption="Briefing about the recruiters participating"
               />
             ),
             className: "md:col-span-2",
@@ -757,8 +757,8 @@ const workshops = [
             id: 1,
             content: (
               <SkeletonOne
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="1"
+                caption="Students being curious about the courses"
               />
             ),
             className: "md:col-span-2",
@@ -769,8 +769,8 @@ const workshops = [
             id: 2,
             content: (
               <SkeletonTwo
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="2"
+                caption="One of the participating schools along with their teacher-in-charge"
               />
             ),
             className: "col-span-1",
@@ -781,8 +781,8 @@ const workshops = [
             id: 3,
             content: (
               <SkeletonThree
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="3"
+                caption="Director Daniel Changkija interacting with students"
               />
             ),
             className: "col-span-1",
@@ -793,8 +793,8 @@ const workshops = [
             id: 4,
             content: (
               <SkeletonFour
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="4"
+                caption="Group of enthusiatic girl students - Girl Power"
               />
             ),
             className: "md:col-span-2",
@@ -819,14 +819,14 @@ const workshops = [
     title: "Workshop on Photography and Python",
     date: "June 23th - 24th 2022",
     description:
-      "a two-day workshop on basic photography skills and Python programming at Instudia, Vikiye Centre, Notun Bosti junction, Dimapur with a renowned photographer and proprietor of StudioLagom, Akumyanger L. Jamir as the resource person along with Sr. Software Developer, Er. Vishal Bardewa on June 23 and 24.The resource person, Akumyanger L. Jamir gave a clear picture of different kinds of cameras and lens used by professional photographers for shooting different objects and situations. Jamir also trained the students on technical elements like composing photos, besides sharing his experiences. He also encouraged the students to be open to the unique needs of Naga people in photography profession in Nagaland. On the second day, the participants were divided into small groups and asked to take pictures in a restricted time limit. The participants were also introduced to various kinds of photography and helped to choose their favourite style of photography based on their personal preferences.",
+      "We organized an engaging two-day workshop on Basic Photography skills and Python programming with a renowned photographer and proprietor of StudioLagom, Akumyanger L. Jamir as the resource person along with Sr. Software Developer, Er. Vishal Bardewa on June 23 and 24. The resource person, Akumyanger L. Jamir gave a clear picture of different kinds of cameras and lens used by professional photographers for shooting different objects and situations. Jamir also trained the students on technical elements like composing photos, besides sharing his experiences. He also encouraged the students to be open to the unique needs of Naga people in photography profession in Nagaland. On the second day, the participants were divided into small groups and asked to take pictures in a restricted time limit. The participants were also introduced to various kinds of photography and helped to choose their favourite style of photography based on their personal preferences. On the second day, Vishal Bardewa, Sr. Software Developer led a session on Python programming, aimed at introducing participants to one of the most versatile and popular programming languages used today.",
     posts: [
       {
         title: "Workshop on Photography and Python",
         href: "#",
         category: [{ name: "Workshop", href: "#" }],
         description:
-          "a two-day workshop on basic photography skills and Python programming at Instudia, Vikiye Centre, Notun Bosti junction, Dimapur with a renowned photographer and proprietor of StudioLagom, Akumyanger L. Jamir (Aakum Den) as the resource person along with Sr. Software Developer, Vishal Bardewa on June 23 and 24.The resource person, Akumyanger L. Jamir gave a clear picture of different kinds of cameras and lens used by professional photographers for shooting different objects and situations. Jamir also trained the students on technical elements like composing photos, besides sharing his experiences. He also encouraged the students to be open to the unique needs of Naga people in photography profession in Nagaland. On the second day, the participants were divided into small groups and asked to take pictures in a restricted time limit. The participants were also introduced to various kinds of photography and helped to choose their favourite style of photography based on their personal preferences.",
+          "We organized an engaging two-day workshop on Basic Photography skills and Python programming with a renowned photographer and proprietor of StudioLagom, Akumyanger L. Jamir as the resource person along with Sr. Software Developer, Er. Vishal Bardewa on June 23 and 24. The resource person, Akumyanger L. Jamir gave a clear picture of different kinds of cameras and lens used by professional photographers for shooting different objects and situations. Jamir also trained the students on technical elements like composing photos, besides sharing his experiences. He also encouraged the students to be open to the unique needs of Naga people in photography profession in Nagaland. On the second day, the participants were divided into small groups and asked to take pictures in a restricted time limit. The participants were also introduced to various kinds of photography and helped to choose their favourite style of photography based on their personal preferences. On the second day, Vishal Bardewa, Sr. Software Developer led a session on Python programming, aimed at introducing participants to one of the most versatile and popular programming languages used today.",
         date: "17th September 2022",
         datetime: "17th September 2022",
         images: [
@@ -834,8 +834,8 @@ const workshops = [
             id: 1,
             content: (
               <SkeletonOne
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="1"
+                caption="Resource person sharing insights about the gears in use"
               />
             ),
             className: "md:col-span-2",
@@ -846,8 +846,8 @@ const workshops = [
             id: 2,
             content: (
               <SkeletonTwo
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="2"
+                caption="The session commencing"
               />
             ),
             className: "col-span-1",
@@ -858,8 +858,8 @@ const workshops = [
             id: 3,
             content: (
               <SkeletonThree
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="3"
+                caption="Participants taking the camera out for the day"
               />
             ),
             className: "col-span-1",
@@ -870,8 +870,8 @@ const workshops = [
             id: 4,
             content: (
               <SkeletonFour
-                title="lorem ipsum"
-                caption="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+                title="4"
+                caption="Presentation time!!"
               />
             ),
             className: "md:col-span-2",

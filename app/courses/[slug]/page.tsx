@@ -8,6 +8,8 @@ import {
 } from "@heroicons/react/24/solid";
 
 import IconButton from "@/app/components/atom/IconButton";
+import { IMAGE_LIST } from "@/app/utils/CourseImageList";
+import { slugs } from "@/app/routes";
 
 const ICON_LIST: any = {
   CheckBadgeIcon: <CheckBadgeIcon className="h-6 w-6" aria-hidden="true" />,
@@ -17,6 +19,8 @@ const ICON_LIST: any = {
     <BuildingLibraryIcon className="h-6 w-6" aria-hidden="true" />
   ),
 };
+
+const RECOMMENDED_COURSES_COUNT = 3
 
 const ContentHead = ({
   courseDetails: {
@@ -114,7 +118,7 @@ const FourParaGrid = ({ fourReasons }: any) => (
 
 const RelatedCoursesGrid = ({ relatedCourses }: any) => {
   return (
-    <div className="mt-48 px-4 font-bold">
+    <div className="mt-48 px-16 font-bold">
       <div className="relative">
         <div className="absolute inset-0 flex items-center" aria-hidden="true">
           <div className="w-full border-t border-gray-300 lg:w-full" />
@@ -134,29 +138,53 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
           </span>
         </h1>
       </div>
-      <section className="font-light lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-4">
-        {relatedCourses?.map((course: any, i: any) => (
+      <section className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      {relatedCourses.map((course: any) => (
+            <article key={course.id} className="flex flex-col items-start justify-between">
+              <div className="relative w-full">
+                <img
+                  alt=""
+                  src={IMAGE_LIST[`${course.slug}`]}
+                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                />
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              </div>
+              <div className="max-w-xl">
+                
+                <div className="group relative">
+                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                    <a href= {`/courses/${course.slug}`}>
+                      <span className="absolute inset-0" />
+                      {course.fullTitle}
+                    </a>
+                  </h3>
+                  <p className="mt-5 line-clamp-3 text-sm font-light leading-6 text-gray-600">{course.courseHightlight}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        {/* {relatedCourses?.map((course: any, i: any) => (
           <div key={i} className="mt-12 space-y-1 sm:grid-cols-6">
             <figure className="relative max-w-xl cursor-pointer">
               <img
                 className="rounded-lg"
-                src="/assets/images/python-level-1.png"
+                src={course.image}
                 alt="image description"
               />
               <figcaption className="absolute bottom-0 rounded-tr-xl bg-slate-500 px-4 text-lg font-bold text-white hover:bg-yellow-500">
-                <p className="text-3xl">{course.title}</p>
+                <p className="text-3xl">{course.fullTitle}</p>
               </figcaption>
             </figure>
 
             <div className="space-y-2">
               <div className="space-y-1 text-lg font-medium leading-6">
                 <p className="font-medium text-black">
-                  {course.shortDescription}
+                  {course.courseHightlight}
                 </p>
               </div>
             </div>
           </div>
-        ))}
+        ))} */}
       </section>
     </div>
   );
@@ -209,8 +237,28 @@ async function getCourseBySlug(slug: string) {
   return res.json();
 }
 
+async function getCourses() {
+  const posts = await fetch(`${BE_URL}/api/courses`, {
+    method: "GET",
+  });
+  return posts.json();
+}
+
 export default async function Course({ params: { slug } }: any) {
   const { courseDetails } = await getCourseBySlug(slug);
+  const { courses } = await getCourses();
+
+  const getRecommendedCourses = (arr: any, numElements: number) => {
+    const newArray = [];
+    if(arr?.length === 0) return [];
+    for (let i = 0; i < numElements; i++) {
+      const randomIndex = Math.floor(Math.random() * arr.length);
+      newArray.push(arr[randomIndex]);
+    }
+    return newArray;
+  }
+
+  const relatedCourses = getRecommendedCourses(courses?.courses, RECOMMENDED_COURSES_COUNT);
 
   return (
     <>
@@ -218,7 +266,7 @@ export default async function Course({ params: { slug } }: any) {
       <FourParaGrid fourReasons={courseDetails.fourReasons} />
       <EnrollStrip />
       <FixedMarquee />
-      <RelatedCoursesGrid relatedCourses={courseDetails.relatedCourses} />
+      <RelatedCoursesGrid relatedCourses={relatedCourses} />
     </>
   );
 }

@@ -28,7 +28,7 @@ const navigation = {
   social: [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/instudianagaland",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -68,7 +68,7 @@ const navigation = {
   ],
 };
 
-export default function Example() {
+export default function Footer() {
   return (
     <footer aria-labelledby="footer-heading" className="bg-white">
       <h2 id="footer-heading" className="sr-only">
@@ -76,7 +76,11 @@ export default function Example() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <img alt="Company name" src="" className="h-7" />
+          <img
+            alt="instudia logo"
+            className="h-20"
+            src="/assets/images/logo-with-tagline.png"
+          />
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>

@@ -206,7 +206,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Content section */}
+        {/* Our Mission */}
         <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -215,30 +215,19 @@ export default function About() {
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                 <p className="text-xl leading-8 text-gray-600">
-                  The concept has evolved and continues to evolve. Nagaland's
-                  youth want to be self-sufficient. Many Naga students are
-                  providing honours and revenue to the state in the IT domain as
-                  well as other professional fields.
+                  Our mission is to empower Nagaland's youth to become
+                  self-sufficient through reskilling and IT job opportunities.
+                  instudia bridges the skills gap, unlocking career potential by
+                  offering focused training that prepares students to meet the
+                  demands of a competitive job market.
                 </p>
                 <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
                   <p>
-                    We have progressed toward skilling in order to adapt oneself
-                    in order to be self-sufficient, understanding the need and
-                    requirement to fill in the gap as well as the economic state
-                    of our society. Considering the current market situation,
-                    the need is so great that our current generation will need
-                    to reskill their talent and creativity, which will
-                    necessitate a suitable reskilling in addition to their
-                    secular educational qualifications.
-                  </p>
-                  <p className="mt-10">
-                    Our team aims to work tirelessly to eliminate the threat of
-                    unemployment in Nagaland by placing sought IT jobs available
-                    both nationally and locally. <b>instudia</b> has one goal:{" "}
-                    <i>
-                      unlocking the potential talents of Nagaland by making our
-                      education system outcome driven.
-                    </i>
+                    We equip learners with the technical and creative skills
+                    needed to adapt to rapid changes in technology and industry.
+                    By emphasizing both skilling and reskilling, we help
+                    students thrive locally and nationally, addressing
+                    unemployment and creating a pathway to career success.
                   </p>
                 </div>
               </div>
@@ -272,7 +261,7 @@ export default function About() {
           />
         </div>
 
-        {/* Values section */}
+        {/* Our Values */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -293,66 +282,7 @@ export default function About() {
           </dl>
         </div>
 
-        {/* Logo cloud */}
-        {/* <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
-            <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Our customers love us
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-              Aliquip reprehenderit incididunt amet quis fugiat ut velit. Sit occaecat labore proident cillum in nisi
-              adipisicing officia excepteur tempor deserunt.
-            </p>
-            <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
-              <img
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
-                alt="Transistor"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
-                alt="Reform"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
-                alt="Tuple"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
-                alt="SavvyCal"
-                width={158}
-                height={48}
-              />
-              <img
-                className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
-                alt="Statamic"
-                width={158}
-                height={48}
-              />
-            </div>
-            <div className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">
-              <div
-                className="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-                style={{
-                  clipPath:
-                    'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-                }}
-              />
-            </div>
-          </div>
-        </div> */}
-
-        {/* Content section */}
+        {/* Our people */}
         <div className="relative mt-32 overflow-hidden sm:mt-40">
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
@@ -361,22 +291,20 @@ export default function About() {
                   Our people
                 </h2>
                 <p className="mt-6 text-xl leading-8 text-gray-600">
-                  At Instudia, our people are the heart of everything we do. We
-                  are a diverse and passionate team of educators, technologists,
-                  and industry experts dedicated to empowering learners and
-                  shaping the future of skill development. Our faculty brings
-                  years of industry experience and a deep commitment to
-                  nurturing talent, ensuring every student has the support they
-                  need to thrive.
+                  At instudia, our diverse team of educators and industry
+                  experts is dedicated to empowering learners and shaping the
+                  future of skill development. Our instructors, with years of
+                  real-world experience, act as mentors, guiding students with
+                  practical insights. We collaborate with industry leaders to
+                  ensure our courses are current and forward-looking, preparing
+                  students for future challenges.
                 </p>
                 <p className="mt-6 text-base leading-7 text-gray-600">
-                  Our instructors are not just teachers; they are mentors who
-                  guide learners through every step of their journey, bringing
-                  practical insights from their own professional experiences.
-                  Our curriculum designers work closely with industry leaders to
-                  ensure that our courses are not only up-to-date but also
-                  forward-thinking, preparing students for the challenges of
-                  tomorrow.
+                  Our instructors are mentors, offering practical insights from
+                  their professional experience to guide learners at every step.
+                  Our curriculum is developed with industry leaders, ensuring
+                  courses are up-to-date and future-focused, preparing students
+                  for tomorrow's challenges.
                 </p>
               </div>
               <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
