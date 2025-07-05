@@ -81,10 +81,15 @@ const config: Config = {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        }
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",
         border: "border 4s ease infinite",
+        "infinite-scroll": "infinite-scroll 35s linear infinite"
       },
       transitionTimingFunction: {
         'fast-in-slow-out': 'cubic-bezier(0.4, 0, 0.2, 1)',

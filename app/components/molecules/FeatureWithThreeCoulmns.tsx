@@ -5,9 +5,11 @@ import {
   BuildingOfficeIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
+import { randomUUID } from 'crypto';
 
 const features = [
   {
+    id: randomUUID(),
     name: 'Help to figure the right role for you',
     description:
       'Consulting with a career counselor or mentor can aid in uncovering and navigating the path toward the ideal job.',
@@ -15,6 +17,7 @@ const features = [
     color: 'bg-brightyellow',
   },
   {
+    id: randomUUID(),
     name: 'Help with CV and Interview Prep',
     description:
       'Professional resume and interview coaching services enhance CV creation and interview readiness',
@@ -22,6 +25,7 @@ const features = [
     color: 'bg-brandpurple',
   },
   {
+    id: randomUUID(),
     name: 'Referrals to good companies',
     description:
       'Networking with a recruiter or staffing agency can open doors to job opportunities and potential referrals in your field.',
@@ -29,6 +33,7 @@ const features = [
     color: 'bg-redhue',
   },
   {
+    id: randomUUID(),
     name: 'Coaching on salary negotiation',
     description:
       'Specialized career coach boosts confidence and equips you with effective strategies for fair salary negotiation.',
@@ -55,7 +60,7 @@ export default function FeatureWithColumns() {
         <div className="mt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
-              <div key={feature.name} className="h-full pt-6">
+              <div key={feature.id} className="h-full pt-6">
                 <div className="flow-root rounded-lg bg-gray-50 px-6 pb-8">
                   <div className="-mt-6">
                     <div>

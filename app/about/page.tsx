@@ -293,7 +293,7 @@ export default function About() {
                 <p className="mt-6 text-xl leading-8 text-gray-600">
                   At instudia, our diverse team of educators and industry
                   experts is dedicated to empowering learners and shaping the
-                  future of skill development. Our instructors, with years of
+                  future of skill development in Nagaland. Our instructors, with years of
                   real-world experience, act as mentors, guiding students with
                   practical insights. We collaborate with industry leaders to
                   ensure our courses are current and forward-looking, preparing
@@ -405,7 +405,7 @@ export default function About() {
         </div>
 
         {/* Team section */}
-        <div className=" mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 overflow-hidden">
+        {/* <div className=" mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 overflow-hidden">
           <div className="relative grid grid-cols-2 gap-[16px] md:grid-cols-3 md:gap-y-[24px] xl:grid-cols-4 xl:gap-[36px]">
             <svg
               className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
@@ -510,7 +510,7 @@ export default function About() {
               />
             </svg>
           </div>
-        </div>
+        </div> */}
 
         {/* Location section */}
         <div className="mx-8 lg:mx-14 mt-[40px] grid grid-cols-1 gap-[8px] md:grid-cols-[minmax(248px,1.2fr)_minmax(168px,0.9fr)_minmax(248px,1.2fr)] md:gap-[12px] xl:mt-[60px] xl:gap-[16px]">
@@ -557,10 +557,10 @@ export default function About() {
             </div>
             <div className="flex h-[172px] bg-[#58FF1B] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-orange md:h-[168px] xl:h-[260px] xl:rounded-[20px] 2xl:h-[320px]">
               <h1 className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
-                10+
+                100+
               </h1>
               <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center">
-                Languages
+                Community
               </span>
             </div>
           </div>
@@ -577,10 +577,10 @@ export default function About() {
             </div>
             <div className="order-2 flex h-[172px] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-[#FFE01B] md:h-[200px] xl:h-[366px] xl:rounded-[20px] 2xl:h-[442px]">
               <h1 className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
-                2
+                1
               </h1>
               <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center xl:max-w-[144px]">
-                Work locations
+                Work location
               </span>
             </div>
             <div className="order-3 h-[172px] overflow-hidden rounded-[12px] md:order-1 md:h-[200px] xl:h-[368px] xl:rounded-[20px] 2xl:h-[442px]">

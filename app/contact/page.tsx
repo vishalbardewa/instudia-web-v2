@@ -71,15 +71,6 @@ const ContactUs = () => {
                     <p className="mt-1">Dimapur, Nagaland 797112</p>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
-                    Niuland
-                  </h3>
-                  <div className="mt-2 text-base text-gray-500">
-                    <p>First Floor, Holo Complex, Opp. SBI Niuland Branch</p>
-                    <p className="mt-1">Niuland, Nagaland 797109</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

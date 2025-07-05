@@ -14,12 +14,14 @@ import { FadeIn, FadeInStagger } from "./components/atom/FadeIn";
 import { SectionIntro } from "./components/atom/SectionIntro";
 import { randomUUID } from "crypto";
 import FeatureWithColumns from "./components/molecules/FeatureWithThreeCoulmns";
+import TestimonialGrid from "./components/organisms/TestimonialGrid";
+import ScrollingLogos from "./components/organisms/ScrollingLogos";
 
 const stats = [
   { label: "Founded", value: "2021" },
   { label: "Courses", value: "19+" },
-  { label: "Offices", value: "2" },
-  { label: "Team Experience", value: "12+ Years" },
+  { label: "Office", value: "1" },
+  { label: "Team Experience", value: "14+ Years" },
 ];
 
 const content = [
@@ -252,8 +254,8 @@ const CaseStudies = ({ caseStudies }: any) => {
       </SectionIntro>
       <Container className="mt-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {caseStudies.map((caseStudy: any) => (
-            <FadeIn key={caseStudy.id} className="flex">
+          {caseStudies.map((caseStudy: any, i: number) => (
+            <FadeIn key={`${caseStudy.id}-${i}`} className="flex">
               <article
                 className={`relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition ease-in-out duration-800 delay-100 ${caseStudy.classnames} sm:p-8`}
               >
@@ -300,13 +302,15 @@ export default function Page() {
     <main className="w-full flex min-h-screen flex-col justify-between">
       <LandingTop />
       <TestimonialWithStats />
+      <ScrollingLogos />
 
       <Stats stats={stats} />
 
       <Incentives />
       <FeatureWithColumns />
 
-      <Testimonials />
+      {/* <Testimonials /> */}
+      <TestimonialGrid />
 
       {/* <StickyScroll content={content} /> */}
 
@@ -331,8 +335,8 @@ export default function Page() {
                 role="list"
                 className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-[#1b1c1e] sm:grid-cols-2"
               >
-                {benefits.map((benefit) => (
-                  <li key={benefit} className="flex gap-x-3">
+                {benefits.map((benefit,i) => (
+                  <li key={`${benefit}-${i}`} className="flex gap-x-3">
                     <CheckCircleIcon
                       aria-hidden="true"
                       className="h-7 w-5 flex-none"
