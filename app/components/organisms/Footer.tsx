@@ -2,12 +2,12 @@ import React from "react";
 
 const navigation = {
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "https://blog.instudianagaland.com/" },
   ],
   legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Privacy", href: "/privacy-policy" },
+    { name: "Terms", href: "/terms" },
   ],
   social: [
     {
@@ -77,6 +77,7 @@ export default function Footer() {
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <a
+                        target="_blank"
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:text-gray-900"
                       >
@@ -94,6 +95,7 @@ export default function Footer() {
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <a
+                        target="_blank"
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:text-gray-900"
                       >

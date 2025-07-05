@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
             ("Terms") govern all use of our Service and together with the
             Privacy Policy constitutes your agreement with us ("agreement").
           </p>
-          <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+          <ul role="list" className="mt-8 max-w-4xl space-y-8 text-gray-600">
             <li className="flex gap-x-3">
               <CheckCircleIcon
                 aria-hidden="true"
