@@ -193,6 +193,9 @@ export const metadata = {
     card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
   },
   metadataBase: new URL("https://instudianagaland.com"),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const benefits = [

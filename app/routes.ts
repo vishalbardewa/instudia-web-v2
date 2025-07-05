@@ -4,8 +4,8 @@ export const routes = {
   COURSES: "/courses",
   CONTACT: "/contact",
   WORKSHOPS: "/workshops",
-  PRIVACY_POLICY: "/legal/privacy-policy",
-  TERMS_AND_CONDITIONS: "/legal/tc",
+  PRIVACY_POLICY: "/privacy-policy",
+  TERMS_AND_CONDITIONS: "/terms",
 };
 
 export const slugs = {
