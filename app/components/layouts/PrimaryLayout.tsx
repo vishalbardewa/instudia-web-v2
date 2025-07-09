@@ -73,11 +73,11 @@ const longNavigation = {
           id: "programming",
           name: "Programming Foundation",
           items: [
-            { name: "Javascript", href: `/courses/${slugs.PYTHON}` },
-            { name: "Python", href: `/courses/${slugs.PYTHON}`},
-            { name: "Rust", href: "#" },
-            { name: "C", href: "#" },
-            { name: "C++", href: "#" },
+            // { name: "Javascript", href: `/courses/${slugs.PYTHON}` },
+            { name: "Python", href: `/courses/${slugs.PYTHON}`}
+            // { name: "Rust", href: "#" },
+            // { name: "C", href: "#" },
+            // { name: "C++", href: "#" },
           ],
         },
         {
