@@ -10,6 +10,8 @@ import {
 import IconButton from "@/app/components/atom/IconButton";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import { slugs } from "@/app/routes";
+import { Metadata, ResolvingMetadata } from "next";
+import META_LOOKUP from "@/app/_utils/MetaLookup";
 
 const ICON_LIST: any = {
   CheckBadgeIcon: <CheckBadgeIcon className="h-6 w-6" aria-hidden="true" />,
@@ -20,7 +22,25 @@ const ICON_LIST: any = {
   ),
 };
 
-const RECOMMENDED_COURSES_COUNT = 3
+const RECOMMENDED_COURSES_COUNT = 3;
+
+type Props = {
+  params: Promise<{ slug: string }>;
+
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata(
+  { params }: Props,
+
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = (await params).slug;
+
+  return {
+    ...META_LOOKUP[slug]
+  };
+}
 
 const ContentHead = ({
   courseDetails: {
@@ -139,30 +159,34 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
         </h1>
       </div>
       <section className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-      {relatedCourses.map((course: any) => (
-            <article key={course.id} className="flex flex-col items-start justify-between">
-              <div className="relative w-full">
-                <img
-                  alt=""
-                  src={IMAGE_LIST[`${course.slug}`]}
-                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+        {relatedCourses.map((course: any) => (
+          <article
+            key={course.id}
+            className="flex flex-col items-start justify-between"
+          >
+            <div className="relative w-full">
+              <img
+                alt=""
+                src={IMAGE_LIST[`${course.slug}`]}
+                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+            </div>
+            <div className="max-w-xl">
+              <div className="group relative">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <a href={`/courses/${course.slug}`}>
+                    <span className="absolute inset-0" />
+                    {course.fullTitle}
+                  </a>
+                </h3>
+                <p className="mt-5 line-clamp-3 text-sm font-light leading-6 text-gray-600">
+                  {course.courseHightlight}
+                </p>
               </div>
-              <div className="max-w-xl">
-                
-                <div className="group relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <a href= {`/courses/${course.slug}`}>
-                      <span className="absolute inset-0" />
-                      {course.fullTitle}
-                    </a>
-                  </h3>
-                  <p className="mt-5 line-clamp-3 text-sm font-light leading-6 text-gray-600">{course.courseHightlight}</p>
-                </div>
-              </div>
-            </article>
-          ))}
+            </div>
+          </article>
+        ))}
         {/* {relatedCourses?.map((course: any, i: any) => (
           <div key={i} className="mt-12 space-y-1 sm:grid-cols-6">
             <figure className="relative max-w-xl cursor-pointer">
@@ -227,7 +251,10 @@ const EnrollStrip = () => (
   </div>
 );
 
-const BE_URL = process.env.NODE_ENV === 'development' ? "http://127.0.0.1:3000" : "https://instudia-v2.netlify.app/"
+const BE_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://127.0.0.1:3000"
+    : "https://instudianagaland.com/";
 
 async function getCourseBySlug(slug: string) {
   const res = await fetch(`${BE_URL}/api/courses/${slug}`, {
@@ -250,15 +277,18 @@ export default async function Course({ params: { slug } }: any) {
 
   const getRecommendedCourses = (arr: any, numElements: number) => {
     const newArray = [];
-    if(arr?.length === 0) return [];
+    if (arr?.length === 0) return [];
     for (let i = 0; i < numElements; i++) {
       const randomIndex = Math.floor(Math.random() * arr.length);
       newArray.push(arr[randomIndex]);
     }
     return newArray;
-  }
+  };
 
-  const relatedCourses = getRecommendedCourses(courses?.courses, RECOMMENDED_COURSES_COUNT);
+  const relatedCourses = getRecommendedCourses(
+    courses?.courses,
+    RECOMMENDED_COURSES_COUNT
+  );
 
   return (
     <>

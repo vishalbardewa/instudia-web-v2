@@ -39,7 +39,7 @@ export const metadata = {
         alt: "Enroll with instudia",
         type: "image/jpeg",
       },
-    ],
+    ]
   },
   twitter: {
     title:"Courses | instudia ",
