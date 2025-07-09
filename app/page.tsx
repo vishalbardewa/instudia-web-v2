@@ -157,14 +157,14 @@ const cards = [
 
 export const metadata = {
   title:
-    "Unlock Excellence: Dimapur's Finest Computer and Skill Training Courses | instudia",
+    "Computer & Skill Training Courses in Dimapur, Nagaland | instudia",
   description:
-    "Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, web development, project management, and digital skills. Unlock your potential with instudia through industry-focused training for success.",
+    "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
   openGraph: {
     title:
-      "Unlock Excellence: Dimapur's Finest Computer and Skill Training Courses | instudia",
+      "Best Computer Courses & Skill Training in Dimapur | instudia",
     description:
-      "Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, web development, project management, and digital skills. Unlock your potential with instudia through industry-focused training for success.",
+      "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",
     url: `${AppConfig.canonicalBase}`,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,
@@ -187,9 +187,9 @@ export const metadata = {
   },
   twitter: {
     title:
-      "Unlock Excellence: Dimapur's Finest Computer and Skill Training Courses | instudia ",
+      "Best Computer Courses & Skill Training in Dimapur | instudia",
     description:
-      "Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, web development, project management, and digital skills. Unlock your potential with instudia through industry-focused training for success.",
+      "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
     card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
   },
   metadataBase: new URL("https://instudianagaland.com"),
@@ -321,7 +321,7 @@ export default function Page() {
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-black/5 px-6 py-16 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
             <img
-              alt=""
+              alt="Person staring at laptop sitting on the chair"
               src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
             />

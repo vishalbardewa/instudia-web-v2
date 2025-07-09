@@ -40,7 +40,7 @@ export default function BlogCard({
       className="flex flex-col overflow-hidden rounded-lg shadow-lg"
     >
       <div className="shrink-0">
-        <img className="h-48 w-full object-cover" src={imageUrl} alt="" />
+        <img className="h-48 w-full object-cover" src={imageUrl} alt={title} />
       </div>
       <div className="flex flex-1 flex-col justify-between bg-white p-6">
         <div className="flex-1">

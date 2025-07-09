@@ -20,7 +20,7 @@ export default function CourseCard({
         <img
           className="h-full w-full object-cover"
           src={`/assets/images/${slug}.png`}
-          alt=""
+          alt={title}
         />
       </div>
       <div className="flex flex-1 flex-col justify-between bg-white p-6 hover:bg-slate-100">
