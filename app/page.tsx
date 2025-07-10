@@ -157,7 +157,7 @@ const cards = [
 
 export const metadata = {
   title:
-    "Computer & Skill Training Courses in Dimapur, Nagaland | instudia",
+    "Computer & Skill Courses in Nagaland | instudia",
   description:
     "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
   openGraph: {
