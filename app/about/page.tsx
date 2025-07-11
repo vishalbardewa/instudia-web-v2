@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { AppConfig } from "../_utils/AppConfig";
 
 const stats = [
