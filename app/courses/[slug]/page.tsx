@@ -12,6 +12,8 @@ import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import { slugs } from "@/app/routes";
 import { Metadata, ResolvingMetadata } from "next";
 import META_LOOKUP from "@/app/_utils/MetaLookup";
+import { AppConfig } from "@/app/_utils/AppConfig";
+import Script from "next/script";
 
 const ICON_LIST: any = {
   CheckBadgeIcon: <CheckBadgeIcon className="h-6 w-6" aria-hidden="true" />,
@@ -290,6 +292,18 @@ export default async function Course({ params: { slug } }: any) {
     RECOMMENDED_COURSES_COUNT
   );
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": `${courseDetails.fullTitle}`,
+    "description": `${courseDetails.courseHightlight}`,
+    "provider": {
+      "@type": "Organization",
+      "name": `${AppConfig.title}`,
+      "sameAs": `${AppConfig.canonicalBase}`
+    }
+  }
+
   return (
     <>
       <ContentHead courseDetails={courseDetails} />
@@ -297,6 +311,13 @@ export default async function Course({ params: { slug } }: any) {
       <EnrollStrip />
       <FixedMarquee />
       <RelatedCoursesGrid relatedCourses={relatedCourses} />
+      <Script
+          id="site-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
     </>
   );
 }
