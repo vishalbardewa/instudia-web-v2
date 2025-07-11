@@ -15,6 +15,7 @@ import BlogCard from "../components/atom/BlogCard";
 import { LayoutGrid } from "../components/organisms/LayoutGrid";
 import { randomUUID } from "crypto";
 import { FadeIn, FadeInStagger } from "../components/atom/FadeIn";
+import { AppConfig } from "../_utils/AppConfig";
 
 function ButtonInner({
   arrow = false,
@@ -200,14 +201,13 @@ function Intro() {
           <Logo className="inline-block h-8 w-auto" />
         </Link> */}
       </div>
-      <h1 className="mt-14 font-display text-4xl/tight font-bold text-black">
-        Workshops and Seminars
+      <span className="mt-14 font-semibold text-md text-[#C21BFF]">Workshops and Seminars</span>
+      <h1 className="font-display text-4xl/tight font-bold text-black">
+        Skill Development Initiatives
         {/* <span className="text-black">for macOS minimalists</span> */}
       </h1>
       <p className="mt-4 text-sm/6 text-black">
-        Get ahead with instudia’s workshops and seminars, tailored to provide
-        students with real-world skills and education as per current job market
-        scenario.
+      We have been conducting workshops empowering Dimapur's student and professional communities with essential skill development. Our no-cost sessions in Nagaland provide hands-on exposure to high-demand domains including Fundamental Trainings, Python programming, web development fundamentals, AI. Be a part of the workshop alongwith participants who've gained industry insights, career pathway guidance, and practical skill demonstrations from expert instructors. These community initiatives bridge the skills gap in Northeast India through interactive sessions on emerging technologies, job market trends, and certification opportunities.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink href="#" icon={BookIcon} className="flex-none">
@@ -644,7 +644,7 @@ const workshops = [
             ),
             className: "md:col-span-2",
             thumbnail:
-              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/niuland-msme-workshop/tinywow_niuland9_65552583.webp?updatedAt=1727345904280",
+              "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/niuland-msme-workshop/niuland4.webp?updatedAt=1727423217087",
           },
         ],
         imageUrl:

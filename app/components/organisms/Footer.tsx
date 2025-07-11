@@ -65,8 +65,8 @@ export default function Footer() {
             className="h-20"
             src="/assets/images/logo-with-tagline.png"
           />
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className="mt-16 grid md:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="sm:hidden md:grid md:grid-cols-2 md:gap-8">
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
