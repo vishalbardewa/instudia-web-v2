@@ -207,7 +207,7 @@ function Intro() {
         {/* <span className="text-black">for macOS minimalists</span> */}
       </h1>
       <p className="mt-4 text-sm/6 text-black">
-      We have been conducting workshops empowering Dimapur's student and professional communities with essential skill development. Our no-cost sessions in Nagaland provide hands-on exposure to high-demand domains including Fundamental Trainings, Python programming, web development fundamentals, AI. Be a part of the workshop alongwith participants who've gained industry insights, career pathway guidance, and practical skill demonstrations from expert instructors. These community initiatives bridge the skills gap in Northeast India through interactive sessions on emerging technologies, job market trends, and certification opportunities.
+      We have been conducting workshops empowering Dimapur's student and professional communities with essential skill development workshops.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink href="#" icon={BookIcon} className="flex-none">
