@@ -34,7 +34,7 @@ export const metadata = {
   },
   metadataBase: new URL("https://instudianagaland.com"),
   keywords: [
-    "skill development courses",
+    "skill development",
     "Dimapur computer training",
     "Nagaland job skills",
     "Tally GST",
