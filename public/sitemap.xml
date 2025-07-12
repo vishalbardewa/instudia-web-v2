@@ -4,78 +4,132 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
   <loc>https://www.instudianagaland.com/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/community/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/about</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/about/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/contact</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/contact/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/courses</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/courses/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/workshops</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/workshops/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/privacy-policy</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/legal/privacy-policy/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/terms</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/legal/tc/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.instudianagaland.com/courses/dca/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/courses/python</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/courses/python/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/courses/gst</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/courses/gst/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/courses/frontend-development</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/courses/tally/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/courses/backend-development</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/courses/pgdca/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/courses/ui-ux-designing</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.instudianagaland.com/courses/advanced-excel/</loc>
-  <lastmod>2023-07-13T06:12:01+00:00</lastmod>
+  <loc>https://www.instudianagaland.com/courses/graphic-designing</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/learn-devops-cloud-services</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/buisness-intelligence-using-powerbi</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/pgdca</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/hardware-networking</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/learn-project-management</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/dca</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/retail-management</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/mobile-app-development</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/food-processing</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/fullstack-web-development</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/advanced-excel</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.instudianagaland.com/courses/tally</loc>
+  <lastmod>2025-07-12T11:12:11+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 

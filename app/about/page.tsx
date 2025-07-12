@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AppConfig } from "../_utils/AppConfig";
+import Script from "next/script";
 
 const stats = [
   { label: "Students trained till date", value: "200+" },
@@ -85,6 +86,27 @@ const TeamMemberCard = ({ name, designation, imageUrl }: any) => (
     </div>
   </div>
 );
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  url: "https://www.instudianagaland.com/about",
+  logo: "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+  name: "About instudia",
+  description:
+    "We're empowering students to upskill and build careers. We work to empower students and tech professionals, guiding them to elevate their skill sets and propel their careers to new heights. We bridges the skills gap, unlocking career potential by offering focused training that prepares students to meet the demands of a competitive job market.",
+  email: "instudia.nagaland@gmail.com",
+  telephone: "+91-8798-587779",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress:
+      "First Floor, Vikiye Center, Opposite Notun Bosti Gate, Fellowship Colony",
+    addressLocality: "Dimapur",
+    addressCountry: "IN",
+    addressRegion: "Nagaland",
+    postalCode: "797112",
+  },
+};
 
 export default function About() {
   return (
@@ -292,11 +314,11 @@ export default function About() {
                 <p className="mt-6 text-xl leading-8 text-gray-600">
                   At instudia, our diverse team of educators and industry
                   experts is dedicated to empowering learners and shaping the
-                  future of skill development in Nagaland. Our instructors, with years of
-                  real-world experience, act as mentors, guiding students with
-                  practical insights. We collaborate with industry leaders to
-                  ensure our courses are current and forward-looking, preparing
-                  students for future challenges.
+                  future of skill development in Nagaland. Our instructors, with
+                  years of real-world experience, act as mentors, guiding
+                  students with practical insights. We collaborate with industry
+                  leaders to ensure our courses are current and forward-looking,
+                  preparing students for future challenges.
                 </p>
                 <p className="mt-6 text-base leading-7 text-gray-600">
                   Our instructors are mentors, offering practical insights from
@@ -594,6 +616,13 @@ export default function About() {
             </div>
           </div>
         </div>
+        <Script
+        id="site-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       </main>
     </div>
   );
