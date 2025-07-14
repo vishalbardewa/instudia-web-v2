@@ -5,7 +5,7 @@ import { useId } from "react";
 // import { Intro, IntroFooter } from '@/components/Intro'
 // import { StarField } from '@/components/StarField'
 // import { ThemeToggle } from '@/components/ThemeToggle'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 
 import { cn } from "../_utils/cn";
@@ -201,13 +201,16 @@ function Intro() {
           <Logo className="inline-block h-8 w-auto" />
         </Link> */}
       </div>
-      <span className="mt-14 font-semibold text-md text-[#C21BFF]">Workshops and Seminars</span>
+      <span className="mt-14 font-semibold text-md text-[#C21BFF]">
+        Workshops and Seminars
+      </span>
       <h1 className="font-display text-4xl/tight font-bold text-black">
         Skill Development Initiatives
         {/* <span className="text-black">for macOS minimalists</span> */}
       </h1>
       <p className="mt-4 text-sm/6 text-black">
-      We have been conducting workshops empowering Dimapur's student and professional communities with essential skill development workshops.
+        We have been conducting workshops empowering Dimapur's student and
+        professional communities with essential skill development workshops.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink href="#" icon={BookIcon} className="flex-none">
@@ -425,6 +428,82 @@ const posts = [
 const workshops = [
   {
     id: uuidv4(),
+    title: "AI for Productive & Efficient Learning",
+    date: "April 5th, 2025",
+    description:
+      "The session focused on how Artificial Intelligence is no longer a distant concept, but a present-day tool reshaping education and professional development. Through real-world examples, interactive discussions, and hands-on demonstrations, participants gained a solid understanding of how AI can be used to personalize learning, automate routine tasks, and enhance productivity.",
+    highlights:
+      "The workshop highlighted how AI-powered tools can offer personalized learning experiences tailored to individual pace and style, assist with research and project development through intelligent search and analysis and provide real-time feedback and virtual mentorship, even outside the classroom.",
+    posts: [
+      {
+        title: "AI for Productive & Efficient Learning",
+        href: "#",
+        category: [
+          { name: "Workshop", href: "#" },
+          { name: "AI", href: "#" },
+        ],
+        description:
+          "The session focused on how Artificial Intelligence is no longer a distant concept, but a present-day tool reshaping education and professional development. Through real-world examples, interactive discussions, and hands-on demonstrations, participants gained a solid understanding of how AI can be used to personalize learning, automate routine tasks, and enhance productivity.",
+        date: "April 5th, 2025",
+        datetime: "April 5th, 2025",
+        images: [
+          {
+            id: 1,
+            content: (
+              <SkeletonOne
+                title="1"
+                caption="Interaction with students exploring AI-driven use cases"
+              />
+            ),
+            className: "md:col-span-2",
+            thumbnail:
+              "https://ik.imagekit.io/dxffek9yf/tr:h-1800,w-1800,fo-face/website-workshop-instudia/ai-institute-workshop/ai-workshop-at-instudia.jpeg?updatedAt=1752486659667",
+          },
+          {
+            id: 2,
+            content: (
+              <SkeletonTwo
+                title="2"
+                caption="Discussion on how to make prompting easier"
+              />
+            ),
+            className: "col-span-1",
+            thumbnail:
+              "https://ik.imagekit.io/dxffek9yf/tr:h-1800,w-1800,fo-face,f-webp/website-workshop-instudia/ai-institute-workshop/WhatsApp%20Image%202025-07-14%20at%203.15.05%20PM%20(1).jpeg?updatedAt=1752486594279",
+          },
+          {
+            id: 3,
+            content: (
+              <SkeletonThree
+                title="3"
+                caption="A snapshot of AI workshop being conducted"
+              />
+            ),
+            className: "col-span-1",
+            thumbnail:
+              "https://ik.imagekit.io/dxffek9yf/tr:f-webp/website-workshop-instudia/ai-institute-workshop/WhatsApp%20Image%202025-07-14%20at%203.15.03%20PM.jpeg?updatedAt=1752486594248",
+          },
+          {
+            id: 4,
+            content: (
+              <SkeletonFour
+                title="4"
+                caption="Resource person addressing students with Career insights"
+              />
+            ),
+            className: "md:col-span-2",
+            thumbnail:
+              "https://ik.imagekit.io/dxffek9yf/tr:h-1800,w-1800,fo-face,f-webp/website-workshop-instudia/ai-institute-workshop/WhatsApp%20Image%202025-07-14%20at%203.15.05%20PM.jpeg?updatedAt=1752486594214",
+          },
+        ],
+        imageUrl:
+          "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/ai-institute-workshop/WhatsApp%20Image%202025-07-14%20at%203.15.05%20PM.jpeg?updatedAt=1752486594214",
+        readingTime: "6 min",
+      },
+    ],
+  },
+  {
+    id: uuidv4(),
     title: "Unlocking Potential with AI and Career insights",
     date: "September 7th, 2024",
     description:
@@ -435,7 +514,10 @@ const workshops = [
       {
         title: "Unlocking Potential with AI and Career insights",
         href: "#",
-        category: [{ name: "Workshop", href: "#" }],
+        category: [
+          { name: "Workshop", href: "#" },
+          { name: "AI", href: "#" },
+        ],
         description:
           "A workshop was conducted at St. Edmund’s Higher Secondary School, Dimapur. The event featured engaging sessions led by experts from Instudia, who highlighted the growing significance of AI in reshaping industries and the modern job market. The sessions were designed to help students understand the critical role AI plays and how they can leverage it for both academic excellence and career readiness. Daniel Changkiri, Director of Instudia, explained the critical role of AI in modern education and its transformative potential. He emphasized how students can utilize AI tools to personalize and improve their learning experiences, thereby building stronger domain knowledge. Daniel also encouraged students to stay ahead in the digital age by acquiring AI-related skills—skills that are becoming increasingly relevant across a range of industries.",
         date: "September 7th, 2024",
@@ -844,12 +926,7 @@ const workshops = [
           },
           {
             id: 2,
-            content: (
-              <SkeletonTwo
-                title="2"
-                caption="The session commencing"
-              />
-            ),
+            content: <SkeletonTwo title="2" caption="The session commencing" />,
             className: "col-span-1",
             thumbnail:
               "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-photography-workshop/photography-3.webp?updatedAt=1728452013442",
@@ -868,12 +945,7 @@ const workshops = [
           },
           {
             id: 4,
-            content: (
-              <SkeletonFour
-                title="4"
-                caption="Presentation time!!"
-              />
-            ),
+            content: <SkeletonFour title="4" caption="Presentation time!!" />,
             className: "md:col-span-2",
             thumbnail:
               "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/instudia-photography-workshop/photography-4.webp?updatedAt=1728451855375",
