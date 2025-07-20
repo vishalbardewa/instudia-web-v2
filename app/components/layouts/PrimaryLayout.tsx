@@ -11,17 +11,17 @@ const navItems = [
   {
     name: "Home",
     link: "/",
-    icon: <IconHome fill="black" className="h-4 w-4 text-black dark:text-white  " />,
+    icon: <IconHome fill="black" className="h-6 w-6 text-black dark:text-white" />,
   },
   {
     name: "About",
     link: "/about",
-    icon: <IconUser fill="black" className="h-4 w-4 text-black dark:text-white" />,
+    icon: <IconUser fill="black" className="h-6 w-6 text-black dark:text-white" />,
   },
   {
     name: "Contact",
     link: "/contact",
-    icon: <IconMessage fill="black" className="h-4 w-4 text-black dark:text-white" />,
+    icon: <IconMessage fill="black" className="h-6 w-6 text-black dark:text-white" />,
   },
 ];
 
