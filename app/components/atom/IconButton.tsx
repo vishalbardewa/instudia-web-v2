@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import { PaperAirplaneIcon } from '@heroicons/react/outline';
-
 interface IIconButton {
   text: string;
   formLink?: string;

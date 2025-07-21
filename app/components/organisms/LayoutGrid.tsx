@@ -43,7 +43,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             layout
           >
             {selected?.id === card.id && <SelectedCard selected={selected} />}
-            <BlurImage card={card} />
+            <Thumbnail card={card} />
           </motion.div>
         </div>
       ))}
@@ -59,7 +59,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   );
 };
 
-const BlurImage = ({ card }: { card: Card }) => {
+const Thumbnail = ({ card }: { card: Card }) => {
   const [loaded, setLoaded] = useState(false);
   return (
     <Image
@@ -86,7 +86,7 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
         animate={{
           opacity: 0.6,
         }}
-        className="absolute inset-0  w-full z-10"
+        className="absolute inset-0 w-full z-10"
       />
       <motion.div
         initial={{

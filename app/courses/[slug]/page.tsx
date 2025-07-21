@@ -9,7 +9,6 @@ import {
 
 import IconButton from "@/app/components/atom/IconButton";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
-import { slugs } from "@/app/routes";
 import { Metadata, ResolvingMetadata } from "next";
 import META_LOOKUP from "@/app/_utils/MetaLookup";
 import { AppConfig } from "@/app/_utils/AppConfig";

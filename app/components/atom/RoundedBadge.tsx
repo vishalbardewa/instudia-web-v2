@@ -1,7 +1,5 @@
 import { StarIcon } from '@heroicons/react/24/solid';
 
-// import { IRoundedBadge } from '@/interfaces';
-
 export default function RoundedBadge({ text, color }: any) {
   return (
     <>

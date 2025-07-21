@@ -1,5 +1,3 @@
-// import { ISimpleOnBrand } from '@/interfaces';
-
 export default function SimpleOnBrand({
   className,
   mainText,
