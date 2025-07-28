@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const navigation = {
@@ -60,14 +61,15 @@ export default function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <img
-            alt="instudia logo"
-            className="h-20"
-            src="/assets/images/logo-with-tagline.png"
-          />
+          <Link href='/'>
+            <img
+              alt="instudia logo"
+              className="h-20"
+              src="/assets/images/logo-with-tagline.png"
+            />
+          </Link>
           <div className="mt-16 grid md:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="sm:hidden md:grid md:grid-cols-2 md:gap-8">
-            </div>
+            <div className="sm:hidden md:grid md:grid-cols-2 md:gap-8"></div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">

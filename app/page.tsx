@@ -325,6 +325,7 @@ export default function Page() {
               <h2 className="text-3xl font-bold tracking-tight text-[#1b1c1e] sm:text-4xl">
                 Discover what makes our courses unique
               </h2>
+              <h3 className="sr-only">Computer training in Dimapur, Nagaland</h3>
               <p className="mt-6 text-lg leading-8 text-[#1b1c1e]">
                 Experience hands-on learning with real-world projects, guided by
                 industry experts. Our unique approach blends cutting-edge skills
