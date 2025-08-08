@@ -413,7 +413,7 @@
         },
         {
           "name": "Duration",
-          "description": "6 Months",
+          "description": "6",
           "icon": "ClockIcon"
         },
         {
@@ -470,7 +470,7 @@
         },
         {
           "name": "Duration",
-          "description": "5 Months",
+          "description": "5",
           "icon": "ClockIcon"
         },
         {
