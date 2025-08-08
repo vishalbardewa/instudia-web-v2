@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import {
   BasicBadge,
+  ComingSoonBadge,
   DesignBadge,
   DevelopmentBadge,
   FinanceBadge,
@@ -22,6 +23,7 @@ interface ICourseCard {
   className?: string;
   gridFix?: boolean;
   href?: string;
+  comingSoon?: false;
 }
 
 let firstLayerCourses = [
@@ -178,10 +180,10 @@ let fourthLayerCourses = [
 
   {
     title: "Fullstack Web Development",
-    imageUrl:IMAGE_LIST[`${slugs.FOOD_PROCESSING}`],
+    imageUrl:IMAGE_LIST[`${slugs.FULLSTACK_WEB_DEVELOPMENT}`],
     imageAlt: "Fullstack Development in Dimapur",
     description:
-      "Learn the fundamentals of UI/UX design, from user research to prototyping and testing. This beginner-friendly course offers hands-on projects to develop real-world design skills. By the end, you'll be ready to create user-centered digital experiences.",
+      "Master end-to-end web application development with industry-relevant tech stack. Learn in-demand frontend frameworks like React, backend technologies including Node.js, and database management.",
     badge: <DevelopmentBadge />,
     href: slugs.FULLSTACK_WEB_DEVELOPMENT
   },
@@ -194,6 +196,24 @@ let fourthLayerCourses = [
       "Learn the fundamentals of Fullstack Development, from front-end design to back-end architecture. This beginner-friendly course offers hands-on projects to build real-world web applications. By the end, you'll be ready to create and deploy your own full-stack solutions.",
     badge: <SkillBadge />,
     href: slugs.ADVANCED_EXCEL
+  },
+  {
+    title: "Certificate in Data Analytics",
+    imageUrl:IMAGE_LIST[`${slugs.DATA_ANALYTICS}`],
+    imageAlt: "Data Analytics in Dimapur",
+    description:
+      "Master in-demand data skills with Python, SQL, and visualization tools. Transform raw data into strategic insights through hands-on projects with real datasets.",
+    badge: <DevelopmentBadge />,
+    href: slugs.DATA_ANALYTICS
+  },
+  {
+    title: "Certificate in Generative AI",
+    imageUrl:IMAGE_LIST[`${slugs.GENERATIVE_AI}`],
+    imageAlt: "Generative AI in Dimapur",
+    description:
+      "Master the future of artificial intelligence. Dive deep into generative models, transformer architectures, and ethical AI deployment.",
+    badge: <ComingSoonBadge />,
+    href: slugs.GENERATIVE_AI
   },
 ];
 
@@ -218,12 +238,14 @@ const CourseCard = ({
   imageAlt,
   className,
   gridFix = true,
-  href
+  href,
+  comingSoon=false
 }: ICourseCard) => (
   <div className={`${gridFix && "grid row-span-3"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
     <Link href={`courses/${href}`} >
     <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6">
       {badge}
+      {comingSoon && <ComingSoonBadge />}
       <br />
       {title}
     </div>

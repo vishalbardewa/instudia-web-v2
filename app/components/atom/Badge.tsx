@@ -20,5 +20,6 @@ export const FinanceBadge = () => <Badge name="Finance" color="fill-red-500" />
 export const SkillBadge = () => <Badge name="Skill" color="fill-blue-500" />
 export const DevelopmentBadge= () => <Badge name="Development" color="fill-yellow-500" />
 export const DesignBadge= () => <Badge name="Design" color="fill-pink-500" />
+export const ComingSoonBadge= () => <Badge name="Coming Soon" color="fill-red-500" />
 
 export default Badge;

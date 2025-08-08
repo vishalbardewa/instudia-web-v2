@@ -27,5 +27,7 @@ export const slugs = {
   RETAIL_MANAGEMENT: "retail-management",
   MOBILE_APP_DEVELOPMENT: "mobile-app-development",
   FOOD_PROCESSING: "food-processing",
-  FULLSTACK_WEB_DEVELOPMENT : "fullstack-web-development"
+  FULLSTACK_WEB_DEVELOPMENT : "fullstack-web-development",
+  DATA_ANALYTICS : "data-analytics",
+  GENERATIVE_AI: "generative-ai"
 };

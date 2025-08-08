@@ -13,9 +13,10 @@ export const IMAGE_LIST: Record<string,string> = {
     "learn-project-management": "https://ik.imagekit.io/dxffek9yf/course-list-page/project-management.png?updatedAt=1726165860318",
     "mobile-app-development": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
     "food-processing": "https://ik.imagekit.io/dxffek9yf/course-list-page/graphic-design.png?updatedAt=1726138195936",
-    "fullstack-web-development": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    "fullstack-web-development": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template-3.png?updatedAt=1754634062612",
     "advanced-excel": "https://ik.imagekit.io/dxffek9yf/course-list-page/devops.png?updatedAt=1726138195852",
     "pgdca": "https://ik.imagekit.io/dxffek9yf/course-list-page/pgdca.png?updatedAt=1726167281469",
-    "gst": "https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366"
-
+    "gst": "https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
+    "data-analytics": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template.png?updatedAt=1754633884785",
+    "generative-ai": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template-fs.png?updatedAt=1754633884789"
 }

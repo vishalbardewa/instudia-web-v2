@@ -372,6 +372,116 @@
       "inDemand": true
     },
     {
+      "slug": "data-analytics",
+      "category": "Technology",
+      "fullTitle": "Certificate in Data Analytics",
+      "pageTitle": {
+        "text": "Certificate in",
+        "highlightText": "Data Analytics"
+      },
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "courseHightlight": "Master in-demand data skills with Python, SQL, and visualization tools. Transform raw data into strategic insights through hands-on projects with real datasets. Learn industry-relevant techniques for data cleaning, analysis, and visualization. Advance your career in the fast-growing analytics field with practical training and portfolio development. Enroll today to unlock data-driven decision-making capabilities.",
+      "fourReasons": [
+        {
+          "id": 234,
+          "description": "Build expertise in Python programming for data analysis, covering Pandas, NumPy, and statistical libraries. From data manipulation to advanced analytics, gain proficiency in essential tools used by data professionals worldwide."
+        },
+        {
+          "id": 235,
+          "description": "Master SQL for efficient database querying and management. Learn to extract, transform, and analyze large datasets from relational databases, acquiring critical skills for data retrieval and preprocessing."
+        },
+        {
+          "id": 236,
+          "description": "Develop compelling data stories with Tableau and Power BI visualization tools. Create interactive dashboards and reports that transform complex data into actionable business insights for stakeholders."
+        },
+        {
+          "id": 237,
+          "description": "Solve real-world business problems through capstone projects using actual datasets. Build a professional portfolio demonstrating your ability to handle complete analytics workflows from data cleaning to insight generation."
+        }
+      ],
+      "price": { "original": 89000, "discountedPrice": 75999 },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "CheckBadgeIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "6 Months",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Higher Secondary and Above",
+          "icon": "BuildingLibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
+      "slug": "generative-ai",
+      "category": "Technology",
+      "comingSoon": true,
+      "fullTitle": "Certificate in Generative AI",
+      "pageTitle": {
+        "text": "Certificate in",
+        "highlightText": "Generative AI"
+      },
+      "image": "https://plus.unsplash.com/premium_vector-1725757196685-5e2b8755aa00?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "courseHighlight": "Master the future of artificial intelligence. Dive deep into generative models, transformer architectures, and ethical AI deployment. Gain hands-on experience building real-world GenAI applications with industry tools. Transform your career with cutting-edge skills in the fastest-growing AI domain. Enroll now to unlock innovation and high-demand job opportunities.",
+      "fourReasons": [
+        {
+          "id": 2345,
+          "description": "Build expertise in foundational GenAI technologies including GPT architectures, diffusion models, and LLMs. Understand neural network fundamentals, attention mechanisms, and probabilistic modeling to create sophisticated generative systems from scratch."
+        },
+        {
+          "id": 2346,
+          "description": "Master prompt engineering and fine-tuning techniques for leading GenAI platforms (OpenAI, Hugging Face, LangChain). Learn to optimize model outputs for diverse applications like content generation, code synthesis, and conversational AI."
+        },
+        {
+          "id": 2347,
+          "description": "Develop portfolio-worthy projects: Build image generators, AI chatbots, automated content systems, and custom fine-tuned models. Solve real industry challenges through capstone projects mirroring enterprise AI implementations."
+        },
+        {
+          "id": 2348,
+          "description": "Navigate AI ethics, deployment best practices, and MLOps for generative systems. Learn cost optimization, bias mitigation, and regulatory compliance from industry practitioners shaping AI standards."
+        }
+      ],
+      "price": {
+        "original": 99000,
+        "discountedPrice": 79999
+      },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English & Hindi",
+          "icon": "CheckBadgeIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "Industry-Recognized",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "5 Months",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Prerequisites",
+          "description": "Python Basics & ML Fundamentals",
+          "icon": "BuildingLibraryIcon"
+        }
+      ],
+      "inDemand": true
+    },
+    {
       "slug": "backend-development",
       "category": "Technology",
       "fullTitle": "Certificate in Backend Development",
