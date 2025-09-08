@@ -427,7 +427,6 @@
     {
       "slug": "generative-ai",
       "category": "Technology",
-      "comingSoon": true,
       "fullTitle": "Certificate in Generative AI",
       "pageTitle": {
         "text": "Certificate in",
@@ -479,7 +478,8 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": false,
+      "comingSoon": true
     },
     {
       "slug": "backend-development",

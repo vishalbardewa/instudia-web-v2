@@ -51,6 +51,7 @@ const ContentHead = ({
     courseHightlight,
     image,
     category,
+    comingSoon = ""
   },
 }: any) => (
   <section className="mt-14 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-16">
@@ -99,6 +100,11 @@ const ContentHead = ({
           {inDemand && (
             <span className="absolute top-3 right-2 inline-flex items-center rounded-full bg-yellow-100 px-3 py-0.5 text-sm font-medium text-yellow-800">
               In Demand
+            </span>
+          )}
+          {comingSoon && (
+            <span className="absolute top-3 right-2 inline-flex items-center rounded-full bg-yellow-100 px-3 py-0.5 text-sm font-medium text-yellow-800">
+              Coming Soon
             </span>
           )}
           <img className="w-full rounded-lg" src={image} alt="" />

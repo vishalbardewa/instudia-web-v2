@@ -47,7 +47,7 @@ const ContactUs = () => {
                   <dl className="mt-2 text-base text-gray-500">
                     <div>
                       <dt className="sr-only">Email</dt>
-                      <dd>instudianagaland@gmail.com</dd>
+                      <dd>hello@instudianagaland.com</dd>
                     </div>
                     <div className="mt-1">
                       <dt className="sr-only">Phone number</dt>
