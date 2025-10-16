@@ -49,7 +49,7 @@ const longNavigation = {
           name: "Explore all courses",
           href: `/courses`,
           imageSrc:
-            IMAGE_LIST['dca'],
+            IMAGE_LIST['diploma-in-computer-applications'],
           imageAlt: "Learn Frontend development in Dimapur.",
         },
       ],

@@ -9,7 +9,7 @@ export const routes = {
 };
 
 export const slugs = {
-  DCA: "dca",
+  DCA: "diploma-in-computer-applications",
   PGDCA: "pgdca",
   GST: "gst",
   TALLY: "tally",

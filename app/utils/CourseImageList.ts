@@ -1,5 +1,5 @@
 export const IMAGE_LIST: Record<string,string> = {
-    "dca": 'https://ik.imagekit.io/dxffek9yf/course-list-page/dca.png?updatedAt=1726165860101',
+    "diploma-in-computer-applications": 'https://ik.imagekit.io/dxffek9yf/course-list-page/dca.png?updatedAt=1726165860101',
     "retail-management": "https://ik.imagekit.io/dxffek9yf/course-list-page/retail.png?updatedAt=1726165860169",
     "python": "https://ik.imagekit.io/dxffek9yf/course-list-page/python.png?updatedAt=1726135539337",
     "tally":"https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
