@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
     <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-4xl text-base leading-7 text-gray-700">
         <p className="text-base font-semibold leading-7 text-purple-600">
-          Effective date: 2022-10-03
+          Effective date: 2026-01-01
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Privacy Policy
