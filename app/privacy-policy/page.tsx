@@ -459,10 +459,29 @@ export default function PrivacyPolicy() {
             Privacy Policy for instudia
           </h2>
           <p className="mt-6">
-          1. Data Collection: We collect and process user phone numbers solely to send WhatsApp messages via the Meta WhatsApp Business API.<br/>
-          2. Use of Data: This data is used only for the specific communication purpose you opted into (e.g., updates, notifications). We do not sell or share this data with third parties.<br/>
-          3. Data Deletion: Users can request data deletion by replying "STOP" or emailing instudia.nagaland@gmail.com. We will remove your data from our system within 48 hours.<br/>
-          4. Security: We use Meta's official Cloud API, which ensures end-to-end encryption for message content.<br/>
+            1. Data Collection: We collect and process user phone numbers solely
+            to send WhatsApp messages via the Meta WhatsApp Business API.
+            <br />
+            2. Use of Data: This data is used only for the specific
+            communication purpose you opted into (e.g., updates, notifications).
+            We do not sell or share this data with third parties.
+            <br />
+            3. Data Deletion: Users can request data deletion by replying "STOP"
+            or emailing instudia.nagaland@gmail.com. We will remove your data
+            from our system within 48 hours.
+            <br />
+            4. Security: We use Meta's official Cloud API, which ensures
+            end-to-end encryption for message content.
+            <br />
+          </p>
+        </div>
+
+        <div className="mt-16 max-w-4xl">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+          WhatsApp Communication
+          </h2>
+          <p className="mt-6">
+          We use the Meta WhatsApp Business API to communicate with users. We collect phone numbers for the purpose of sending automated messages and updates. This data is handled via Meta's secure infrastructure and is not shared with third parties.<br/>
           </p>
         </div>
         <div className="mt-16 max-w-4xl">
