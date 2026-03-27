@@ -13,7 +13,7 @@ export default function NavigationWithDropdown({ navigation }: any) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white pb-4">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -157,7 +157,7 @@ export default function NavigationWithDropdown({ navigation }: any) {
       </Transition.Root>
 
       <header className="relative bg-white">
-        
+
         <nav
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-3 2xl:mx-32"

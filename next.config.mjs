@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  serverExternalPackages: ['pdf2json', 'mammoth'],
+  webpack: (config) => {
+    config.resolve.alias.canvas = false;
+    config.resolve.alias.encoding = false;
+    return config;
+  },
   images: {
     remotePatterns: [
       {

@@ -1,7 +1,10 @@
-import Link from "next/link";
 import React from "react";
 
 const navigation = {
+  tools: [
+    { name: "Career Blueprint", href: "/tools/career-discovery" },
+    { name: "ATS Resume Scanner", href: "/tools/ats-analyzer" },
+  ],
   company: [
     { name: "About", href: "/about" },
     { name: "Blog", href: "https://blog.instudianagaland.com/" },
@@ -61,15 +64,33 @@ export default function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <Link href='/'>
+          <a href='/'>
             <img
               alt="instudia logo"
               className="h-20"
               src="/assets/images/logo-with-tagline.png"
             />
-          </Link>
-          <div className="mt-16 grid md:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="sm:hidden md:grid md:grid-cols-2 md:gap-8"></div>
+          </a>
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  Tools
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.tools.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-600 hover:text-gray-900 transition-colors"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
