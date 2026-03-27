@@ -98,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body className={jakarta.className}>
         <ConditionalLayout>
           <DeviceSizeIndicator />
@@ -169,6 +169,23 @@ export default function RootLayout({
                   }
                 }
               ]
+            })
+          }}
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "instudia",
+              "url": "https://www.instudianagaland.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.instudianagaland.com/courses?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
             })
           }}
         />

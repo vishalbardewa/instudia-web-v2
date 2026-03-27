@@ -11,13 +11,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/workshops',
     '/courses',
+    '/tools/career-blueprint',
     '/tools/career-planner',
     '/tools/ats-analyzer',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: route.startsWith('/tools') ? 'monthly' as const : 'weekly' as const,
+    priority: route === '' ? 1 : route.startsWith('/courses') ? 0.9 : 0.8,
   }));
 
   // Dynamic array projection generating localized routes for every single specific course catalog entry

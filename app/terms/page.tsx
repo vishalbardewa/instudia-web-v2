@@ -1,4 +1,13 @@
 import React from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | instudia",
+  description:
+    "Read instudia's Terms and Conditions governing use of our platform, courses, and services. Last updated July 2025.",
+  alternates: { canonical: "https://www.instudianagaland.com/terms" },
+  robots: { index: true, follow: true },
+};
 
 const TermsAndConditions = () => {
   return (

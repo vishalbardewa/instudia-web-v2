@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import WorkshopPhotoGrid from "./WorkshopPhotoGrid";
 import WorkshopNav from "./WorkshopNav";
 
@@ -234,8 +235,46 @@ const toId = (title: string) =>
   title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 export default function WorkshopsPage() {
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "instudia Workshops & Events",
+    "itemListElement": workshops.map((w, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Event",
+        "name": w.title,
+        "description": w.description.slice(0, 200),
+        "startDate": w.date,
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "instudia, Dimapur",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dimapur",
+            "addressRegion": "Nagaland",
+            "addressCountry": "IN",
+          },
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "instudia",
+          "url": "https://www.instudianagaland.com",
+        },
+      },
+    })),
+  };
+
   return (
     <main className="bg-white">
+      <Script
+        id="workshops-event-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-white border-b border-neutral-100 pt-24 pb-20 px-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brandpurple/5 rounded-full blur-[100px] pointer-events-none" />

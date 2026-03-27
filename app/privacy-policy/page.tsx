@@ -2,6 +2,16 @@ import {
   CheckCircleIcon,
   InformationCircleIcon,
 } from "@heroicons/react/20/solid";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | instudia",
+  description:
+    "instudia's Privacy Policy explains how we collect, use, and protect your personal data when you use our website and services.",
+  alternates: { canonical: "https://www.instudianagaland.com/privacy-policy" },
+  robots: { index: true, follow: true },
+};
+
 
 export default function PrivacyPolicy() {
   return (

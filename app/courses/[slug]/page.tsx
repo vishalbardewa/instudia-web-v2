@@ -33,13 +33,29 @@ type Props = {
 
 export async function generateMetadata(
   { params }: Props,
-
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = (await params).slug;
+  const meta = META_LOOKUP[slug] ?? {};
+  const courseImage = IMAGE_LIST[slug];
 
   return {
-    ...META_LOOKUP[slug]
+    ...meta,
+    openGraph: {
+      ...(meta.openGraph ?? {}),
+      ...(courseImage
+        ? {
+            images: [
+              {
+                url: courseImage,
+                width: 1200,
+                height: 630,
+                alt: meta.title ?? `${slug} course at instudia Dimapur`,
+              },
+            ],
+          }
+        : {}),
+    },
   };
 }
 
