@@ -1,100 +1,44 @@
 import Image from "next/image";
-import { AppConfig } from "../_utils/AppConfig";
 import Script from "next/script";
-
-const stats = [
-  { label: "Students trained till date", value: "200+" },
-  { label: "Hours of Training Delivered", value: "10,000+" },
-  { label: "Course Completion Rate", value: "98%" },
-];
-const values = [
-  {
-    name: "Impart",
-    description:
-      "We strive to impart cutting-edge knowledge and skills, fostering a culture of continuous learning. Our commitment is to equip individuals with the expertise needed for success in the dynamic tech landscape.",
-  },
-  {
-    name: "Inspirit",
-    description:
-      "We aspire to inspirit the youth, igniting a passion for innovation and excellence. Through mentorship and a supportive community, we aim to kindle the flames of creativity, enabling individuals to exceed their own expectations.",
-  },
-  {
-    name: "Impact",
-    description:
-      "Our ultimate goal is to empower individuals to make a meaningful impact on society. By instilling a sense of responsibility and purpose, we believe that our trained professionals can contribute to a better future, driving positive change in the world.",
-  },
-];
+import Link from "next/link";
+import { AppConfig } from "../_utils/AppConfig";
+import { staff } from "../data/staff";
 
 export const metadata = {
   title:
-    "Meet Our Team | instudia - Passionate Educators and Industry Experts Shaping the Future of Learning",
+    "About instudia — Tech & Skill Training Institute in Dimapur, Nagaland",
   description:
-    "Discover the passionate team behind Instudia—educators, technologists, and industry experts dedicated to empowering learners. Learn how our diverse group is shaping the future of skill development with experience, innovation, and community support.",
+    "Learn about instudia — Nagaland's career-first tech institute in Dimapur. Meet our team, discover our mission, and see how we've helped 500+ students build careers in IT, design, and finance.",
+  alternates: { canonical: "https://www.instudianagaland.com/about" },
   openGraph: {
-    title:
-      "Meet Our Team | instudia - Passionate Educators and Industry Experts Shaping the Future of Learning",
+    title: "About instudia — Dimapur's Career-First Tech Institute",
     description:
-      "Discover the passionate team behind Instudia—educators, technologists, and industry experts dedicated to empowering learners. Learn how our diverse group is shaping the future of skill development with experience, innovation, and community support.",
-    url: `${AppConfig.canonicalBase}`,
-    locale: AppConfig.locale,
+      "Discover instudia's story, our faculty, and why 500+ students chose us to launch their tech careers in Nagaland.",
+    url: `${AppConfig.canonicalBase}/about`,
     siteName: AppConfig.site_name,
+    locale: "en_IN",
+    type: "website",
     images: [
       {
         url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
         width: 800,
         height: 600,
         type: "image/jpeg",
-        alt: "Upskill with instudia",
-      },
-      {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
-        width: 800,
-        height: 600,
-        alt: "Enroll with instudia",
-        type: "image/jpeg",
+        alt: "instudia — Dimapur's Career-First Tech Institute",
       },
     ],
   },
-  twitter: {
-    title:
-      "Meet Our Team | instudia - Passionate Educators and Industry Experts Shaping the Future of Learning",
-    description:
-      "Discover the passionate team behind Instudia—educators, technologists, and industry experts dedicated to empowering learners. Learn how our diverse group is shaping the future of skill development with experience, innovation, and community support.",
-    card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-  },
   metadataBase: new URL("https://instudianagaland.com"),
 };
-
-const TeamMemberCard = ({ name, designation, imageUrl }: any) => (
-  <div className="border-[2px] col-span-2 lg:col-span-1 border-black flex flex-col rounded-[30px] p-[18px]">
-    <div className="flex flex-col items-center ">
-      <Image
-        alt="team"
-        width={300}
-        height={300}
-        className="rounded-2xl"
-        src={imageUrl}
-      />
-      <div className="space-y-[4px] pt-[20px] text-center mt-auto">
-        <p className="xl:text-[18px] xl:leading-[1.3] xl:font-bold text-[18px] leading-[1.2777777777777777] font-medium">
-          {name}
-        </p>
-        <p className="text-text-default text-[16px] leading-[1.625] font-normal">
-          {designation}
-        </p>
-      </div>
-    </div>
-  </div>
-);
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   url: "https://www.instudianagaland.com/about",
   logo: "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
-  name: "About instudia",
+  name: "instudia",
   description:
-    "We're empowering students to upskill and build careers. We work to empower students and tech professionals, guiding them to elevate their skill sets and propel their careers to new heights. We bridges the skills gap, unlocking career potential by offering focused training that prepares students to meet the demands of a competitive job market.",
+    "Nagaland's career-first tech institute in Dimapur, empowering students to upskill and build careers in IT, design, and finance.",
   email: "instudia.nagaland@gmail.com",
   telephone: "+91-8798-587779",
   address: {
@@ -108,522 +52,352 @@ const jsonLd = {
   },
 };
 
-export default function About() {
+const stats = [
+  { value: "500+", label: "Students Trained" },
+  { value: "10,000+", label: "Hours of Training" },
+  { value: "98%", label: "Completion Rate" },
+  { value: "20+", label: "Combined YOE" },
+];
+
+const values = [
+  {
+    name: "Impart",
+    icon: "📚",
+    description:
+      "We strive to impart cutting-edge knowledge and skills, fostering a culture of continuous learning. Our commitment is to equip individuals with the expertise needed for success in the dynamic tech landscape.",
+  },
+  {
+    name: "Inspirit",
+    icon: "✨",
+    description:
+      "We aspire to inspirit the youth, igniting a passion for innovation and excellence. Through mentorship and a supportive community, we kindle the flames of creativity, enabling individuals to exceed their own expectations.",
+  },
+  {
+    name: "Impact",
+    icon: "🚀",
+    description:
+      "Our ultimate goal is to empower individuals to make a meaningful impact on society. We believe our trained professionals can contribute to a better future, driving positive change in Nagaland and beyond.",
+  },
+];
+
+export default function AboutPage() {
   return (
-    <div className="bg-white">
-      <main className="isolate">
-        {/* Hero section */}
-        <div className="relative isolate -z-10 overflow-hidden">
-          <svg
-            className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-            aria-hidden="true"
-          >
-            <defs>
-              <pattern
-                id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                width={200}
-                height={200}
-                x="50%"
-                y={-1}
-                patternUnits="userSpaceOnUse"
+    <main className="bg-white">
+      <Script
+        id="about-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="relative overflow-hidden border-b border-neutral-100 pt-24 pb-20 px-6">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brandpurple/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="relative mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left copy */}
+          <div>
+            <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
+              About instudia
+            </p>
+            <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-[#1B1C1E] leading-tight">
+              Nagaland's{" "}
+              <span className="text-brandpurple">Career-First</span>{" "}
+              Tech Institute
+            </h1>
+            <p className="mt-6 text-lg text-gray-500 leading-relaxed max-w-xl">
+              A specialized learning platform nestled in Dimapur, Nagaland.
+              We empower students and tech professionals — guiding them to elevate their skill sets and propel their careers to new heights.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/courses"
+                className="inline-flex items-center gap-2 rounded-2xl bg-brandpurple px-6 py-3 text-sm font-extrabold text-white hover:bg-brandpurple/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-brandpurple/20"
               >
-                <path d="M.5 200V.5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth={0}
+                Explore Courses
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-2xl border border-neutral-200 px-6 py-3 text-sm font-extrabold text-[#1B1C1E] hover:bg-gray-50 transition-all hover:-translate-y-0.5"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+
+          {/* Right photo mosaic */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="rounded-2xl overflow-hidden aspect-[3/4]">
+              <img
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&h=528&q=80"
+                alt="instudia team discussion"
+                className="w-full h-full object-cover"
               />
-            </svg>
-            <rect
-              width="100%"
-              height="100%"
-              strokeWidth={0}
-              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-            />
-          </svg>
-          <div
-            className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
-            aria-hidden="true"
-          >
-            <div
-              className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-              style={{
-                clipPath:
-                  "polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)",
-              }}
-            />
-          </div>
-          <div className="overflow-hidden">
-            <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
-              <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center leading-tight">
-                <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                    We&apos;re empowering students to upskill and build careers.
-                  </h1>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                    A specialized learning platform nestled in Dimapur,
-                    Nagaland. We work to empower students and tech
-                    professionals, guiding them to elevate their skill sets and
-                    propel their careers to new heights. With a dedicated focus
-                    on transformation, we are committed to providing a dynamic
-                    learning environment that fosters growth and success.
-                  </p>
-                </div>
-                <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                  <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                    <div className="relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                        alt="Team Discussion with whiteboard"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                  </div>
-                  <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                    <div className="relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                        alt="Woman staring at the screen"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                    <div className="relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
-                        alt="Tech team discussing on details"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                  </div>
-                  <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                    <div className="relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
-                        alt="Happy guy looking at tablet"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                    <div className="relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                        alt="Happy female employee"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div className="rounded-[20px] xl:rounded-[40px] border-2 border-black aspect-[690/500] absolute bg-white z-[-1] top-[-14px] right-[-18px] w-full h-3/4 xl:top-14 xl:right-[-87px]">
-            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]"></div>
-          </div>
-        </div>
-
-        {/* Our Mission */}
-        <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Our mission
-            </h2>
-            <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
-              <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-xl leading-8 text-gray-600">
-                  Our mission is to empower Nagaland's youth to become
-                  self-sufficient through reskilling and IT job opportunities.
-                  instudia bridges the skills gap, unlocking career potential by
-                  offering focused training that prepares students to meet the
-                  demands of a competitive job market.
+            <div className="flex flex-col gap-3">
+              <div className="rounded-2xl overflow-hidden aspect-square">
+                <img
+                  src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&auto=format&fit=crop&h=300&q=80"
+                  alt="Student learning"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-2xl bg-brandpurple p-5 flex flex-col justify-end text-white">
+                <p className="text-3xl font-black">500+</p>
+                <p className="text-xs font-semibold text-white/70 uppercase tracking-widest mt-1">
+                  Students Trained
                 </p>
-                <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
-                  <p>
-                    We equip learners with the technical and creative skills
-                    needed to adapt to rapid changes in technology and industry.
-                    By emphasizing both skilling and reskilling, we help
-                    students thrive locally and nationally, addressing
-                    unemployment and creating a pathway to career success.
-                  </p>
-                </div>
-              </div>
-              <div className="lg:flex lg:flex-auto lg:justify-center">
-                <dl className="w-64 space-y-8 xl:w-80">
-                  {stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="flex flex-col-reverse gap-y-4"
-                    >
-                      <dt className="text-base leading-7 text-gray-600">
-                        {stat.label}
-                      </dt>
-                      <dd className="text-5xl font-semibold tracking-tight text-gray-900">
-                        {stat.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Image section */}
-        <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8 border-[2px] border-black flex flex-col rounded-[30px] p-[18px]">
-          <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            alt="Team at vaction"
-            className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
-          />
+      {/* ── Stats strip ──────────────────────────────────── */}
+      <section className="border-b border-neutral-100">
+        <div className="mx-auto max-w-6xl px-6 py-12 grid grid-cols-2 sm:grid-cols-4 gap-8">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <p className="text-4xl font-black text-[#1B1C1E]">{s.value}</p>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mt-2">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Mission ──────────────────────────────────────── */}
+      <section className="mx-auto max-w-6xl px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
+            Our Mission
+          </p>
+          <h2 className="text-4xl font-black text-[#1B1C1E] leading-tight">
+            Bridging the skills gap in{" "}
+            <span className="text-brandpurple">Nagaland</span>
+          </h2>
+          <p className="mt-6 text-gray-500 leading-relaxed">
+            Our mission is to empower Nagaland's youth to become self-sufficient through reskilling and IT job opportunities. instudia bridges the skills gap, unlocking career potential by offering focused training that prepares students to meet the demands of a competitive job market.
+          </p>
+          <p className="mt-4 text-gray-500 leading-relaxed">
+            We equip learners with the technical and creative skills needed to adapt to rapid changes in technology and industry. By emphasizing both skilling and reskilling, we help students thrive locally and nationally.
+          </p>
         </div>
 
-        {/* Our Values */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Our values
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Our vision is defined by a framework we call the 3i&apos;s of
-              instudia. The framework being defined as:
+        {/* Mission image */}
+        <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            alt="instudia mission — team learning together"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          <div className="absolute bottom-4 left-4 right-4">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-white/80">
+              Dimapur, Nagaland
+            </p>
+            <p className="text-lg font-black text-white mt-1">
+              Building careers, one skill at a time
             </p>
           </div>
-          <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {values.map((value) => (
-              <div key={value.name}>
-                <dt className="font-semibold text-gray-900">{value.name}</dt>
-                <dd className="mt-1 text-gray-600">{value.description}</dd>
+        </div>
+      </section>
+
+      {/* ── 3i Values ────────────────────────────────────── */}
+      <section className="bg-gray-50 border-y border-neutral-100">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="text-center mb-14">
+            <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-3">
+              Our Framework
+            </p>
+            <h2 className="text-4xl font-black text-[#1B1C1E]">
+              The 3<span className="text-brandpurple">i</span>'s of instudia
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-xl mx-auto">
+              Our vision is defined by a three-pillar framework that shapes everything we do — from curriculum design to community events.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {values.map((v, i) => (
+              <div
+                key={v.name}
+                className="bg-white rounded-3xl p-8 border border-neutral-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="text-3xl">{v.icon}</span>
+                <div className="flex items-center gap-2 mt-4 mb-3">
+                  <span className="text-[10px] font-black text-brandpurple/40">
+                    0{i + 1}
+                  </span>
+                  <h3 className="text-xl font-black text-[#1B1C1E]">{v.name}</h3>
+                </div>
+                <p className="text-sm text-gray-500 leading-relaxed">{v.description}</p>
               </div>
             ))}
-          </dl>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Team ─────────────────────────────────────────── */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="text-center mb-14">
+          <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-3">
+            Our People
+          </p>
+          <h2 className="text-4xl font-black text-[#1B1C1E]">
+            Meet the team
+          </h2>
+          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+            A diverse team of educators and industry experts dedicated to empowering learners and shaping the future of skill development in Nagaland.
+          </p>
         </div>
 
-        {/* Our people */}
-        <div className="relative mt-32 overflow-hidden sm:mt-40">
-          <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-              <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  Our people
-                </h2>
-                <p className="mt-6 text-xl leading-8 text-gray-600">
-                  At instudia, our diverse team of educators and industry
-                  experts is dedicated to empowering learners and shaping the
-                  future of skill development in Nagaland. Our instructors, with
-                  years of real-world experience, act as mentors, guiding
-                  students with practical insights. We collaborate with industry
-                  leaders to ensure our courses are current and forward-looking,
-                  preparing students for future challenges.
-                </p>
-                <p className="mt-6 text-base leading-7 text-gray-600">
-                  Our instructors are mentors, offering practical insights from
-                  their professional experience to guide learners at every step.
-                  Our curriculum is developed with industry leaders, ensuring
-                  courses are up-to-date and future-focused, preparing students
-                  for tomorrow's challenges.
-                </p>
-              </div>
-              <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-                <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-                  <img
-                    src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80"
-                    alt="Happy woman in sofa"
-                    className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                  />
-                </div>
-                <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                  <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
-                    <img
-                      src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                      alt="Team activity on the beach"
-                      className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
-                  <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
-                    <img
-                      src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80"
-                      alt="Team at cafeteria"
-                      className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
-                  <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
-                    <img
-                      src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                      alt="Vollyball at sunset"
-                      className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {staff.map((member) => (
+            <Link
+              key={member.slug}
+              href={`/card/${member.slug}`}
+              className="group relative bg-white rounded-3xl border border-neutral-100 p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+            >
+              {/* Glow on hover */}
+              <div className="absolute inset-0 rounded-3xl bg-brandpurple/0 group-hover:bg-brandpurple/3 transition-colors duration-300 pointer-events-none" />
+
+              <div className="relative overflow-hidden rounded-2xl h-52 bg-gray-100">
+                <Image
+                  src={member.photo ?? "/placeholder.png"}
+                  alt={`${member.name} — ${member.designation} at instudia`}
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Dept badge */}
+                <div className="absolute top-3 left-3">
+                  <span className="text-[9px] font-extrabold uppercase tracking-widest bg-black/60 backdrop-blur-sm text-white px-2 py-1 rounded-full">
+                    {member.department}
+                  </span>
                 </div>
               </div>
+
+              <div className="mt-4">
+                <p className="font-black text-[#1B1C1E] text-base leading-tight">
+                  {member.name}
+                </p>
+                <p className="text-xs font-semibold text-brandpurple mt-0.5">
+                  {member.designation}
+                </p>
+                {member.bio && (
+                  <p className="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                    {member.bio}
+                  </p>
+                )}
+              </div>
+
+              {/* View card link */}
+              <div className="mt-3 flex items-center gap-1 text-[10px] font-extrabold uppercase tracking-wider text-gray-300 group-hover:text-brandpurple transition-colors">
+                <span>View card</span>
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Workplace philosophy ─────────────────────────── */}
+      <section className="bg-gray-50 border-t border-neutral-100">
+        <div className="mx-auto max-w-6xl px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Bento grid of stats */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-3xl bg-brandpurple p-6 flex flex-col justify-end aspect-square">
+              <p className="text-4xl font-black text-white">20+</p>
+              <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mt-1">
+                Combined Years of Experience
+              </p>
+            </div>
+            <div className="rounded-3xl overflow-hidden aspect-square">
+              <img
+                src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="instudia team"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-3xl overflow-hidden aspect-square">
+              <img
+                src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="instudia classroom"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-3xl bg-flourescent p-6 flex flex-col justify-end aspect-square">
+              <p className="text-4xl font-black text-[#1B1C1E]">1</p>
+              <p className="text-xs font-semibold text-[#1B1C1E]/60 uppercase tracking-widest mt-1">
+                Home Campus in Dimapur
+              </p>
             </div>
           </div>
-          <div className="rounded-[20px] xl:rounded-[40px] border-2 border-black aspect-[690/500] absolute bg-white z-[-1] top-[-14px] right-[-18px] w-full h-full xl:top-14 xl:right-[-87px]">
-            <div className="flex items-center absolute right-0 top-0 xl:translate-x-[calc(50%-12px)] translate-x-[calc(50%-6px)] translate-y-[-2px] rotate-[45deg]"></div>
-          </div>
-        </div>
 
-        {/* Stats */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              We view the workplace as a space that enhances our lives and
-              contributes value to the world.
-            </h2>
-            <p className="mt-6 text-base leading-7 text-gray-600">
-              We see work as more than a job — it's a space to grow, create, and
-              impact the world. Together, we shape a workplace that enriches
-              lives and drives meaningful change.
+          {/* Copy */}
+          <div>
+            <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
+              Our Workplace
             </p>
-          </div>
-          {/* <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-50 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start">
-              <p className="flex-none text-3xl font-bold tracking-tight text-gray-900">
-                250k
-              </p>
-              <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-gray-900">
-                  Users on the platform
-                </p>
-                <p className="mt-2 text-base leading-7 text-gray-600">
-                  Vel labore deleniti veniam consequuntur sunt nobis.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-900 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44">
-              <p className="flex-none text-3xl font-bold tracking-tight text-white">
-                $8.9 billion
-              </p>
-              <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-white">
-                  We’re proud that our customers have made over $8 billion in
-                  total revenue.
-                </p>
-                <p className="mt-2 text-base leading-7 text-gray-400">
-                  Eu duis porta aliquam ornare. Elementum eget magna egestas.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-indigo-600 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
-              <p className="flex-none text-3xl font-bold tracking-tight text-white">
-                401,093
-              </p>
-              <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-white">
-                  Transactions this year
-                </p>
-                <p className="mt-2 text-base leading-7 text-indigo-200">
-                  Eu duis porta aliquam ornare. Elementum eget magna egestas. Eu
-                  duis porta aliquam ornare.
-                </p>
-              </div>
-            </div>
-          </div> */}
-        </div>
-
-        {/* Team section */}
-        {/* <div className=" mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 overflow-hidden">
-          <div className="relative grid grid-cols-2 gap-[16px] md:grid-cols-3 md:gap-y-[24px] xl:grid-cols-4 xl:gap-[36px]">
-            <svg
-              className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-              aria-hidden="true"
-            >
-              <defs>
-                <pattern
-                  id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                  width={200}
-                  height={200}
-                  x="50%"
-                  y={-1}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path d="M.5 200V.5H200" fill="none" />
-                </pattern>
-              </defs>
-              <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-                <path
-                  d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                  strokeWidth={0}
-                />
-              </svg>
-              <rect
-                width="100%"
-                height="100%"
-                strokeWidth={0}
-                fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-              />
-            </svg>
-            <TeamMemberCard
-              name="Daniel Changkija"
-              designation="Director"
-              imageUrl="https://images.unsplash.com/photo-1656338997878-279d71d48f6e?q=80&w=2551&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <div className="col-span-2 md:pl-[30px] xl:col-span-3 xl:pl-[70px]">
-              <div className="space-y-[12px] pb-[24px] md:pb-0 md:pt-[56px] xl:max-w-[486px] xl:space-y-[24px] xl:pt-[80px]">
-                <h2 className="text-text-highlight xl:text-[52px] xl:leading-[1.0961538461538463] xl:font-bold text-[32px] leading-[1.40625] font-bold max-w-[350px] xl:max-w-full">
-                  Meet our team of talented educators and mentors
-                </h2>
-              </div>
-            </div>
-            <TeamMemberCard
-              name="Kivigho Kinimi"
-              designation="IT Faculty"
-              imageUrl="https://images.unsplash.com/photo-1656337789708-cdf37b07112d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <TeamMemberCard
-              name="Niutoli V"
-              designation="Accounting Faculty"
-              imageUrl="https://images.unsplash.com/photo-1678733527538-845ebdc2f6b8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <TeamMemberCard
-              name="Susmita Ghosh"
-              designation="Accounting Faculty"
-              imageUrl="https://images.unsplash.com/photo-1672675611932-9d722165f0ad?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <TeamMemberCard
-              name="Imlisenla Imchen"
-              designation="Marketing Executive"
-              imageUrl="https://images.unsplash.com/photo-1656075203144-951d04f599ad?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <div className="col-span-2 md:pl-[30px] xl:col-span-3 xl:pl-[160px]">
-              <div className="space-y-[12px] pb-[24px] md:pb-0 md:pt-[56px] xl:max-w-[486px] xl:space-y-[24px] xl:pt-[80px]">
-                <h2 className="xl:text-[52px] xl:leading-[1.0961538461538463] xl:font-bold text-[32px] leading-[1.40625] font-bold max-w-[350px] xl:max-w-full">
-                  We solve your problems by upskilling you!
-                </h2>
-              </div>
-            </div>
-            <TeamMemberCard
-              name="Vishal Bardewa"
-              designation="Technical Advisor"
-              imageUrl="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <svg
-              className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-              aria-hidden="true"
-            >
-              <defs>
-                <pattern
-                  id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                  width={200}
-                  height={200}
-                  x="50%"
-                  y={-1}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path d="M.5 200V.5H200" fill="none" />
-                </pattern>
-              </defs>
-              <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-                <path
-                  d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                  strokeWidth={0}
-                />
-              </svg>
-              <rect
-                width="100%"
-                height="100%"
-                strokeWidth={0}
-                fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-              />
-            </svg>
-          </div>
-        </div> */}
-
-        {/* Location section */}
-        <div className="mx-8 lg:mx-14 mt-[40px] grid grid-cols-1 gap-[8px] md:grid-cols-[minmax(248px,1.2fr)_minmax(168px,0.9fr)_minmax(248px,1.2fr)] md:gap-[12px] xl:mt-[60px] xl:gap-[16px]">
-          <div className="grid grid-cols-2 gap-[8px] md:gap-[12px] xl:gap-[16px] xl:rounded-[20px]">
-            <div className="flex h-[172px] bg-[#C21FFF] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-green md:h-[178px] xl:h-[296px] 2xl:h-[356px]">
-              <p className="xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
-                20+
-              </p>
-              <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center">
-                Combined YOE
-              </span>
-            </div>
-            <div className="h-[172px] overflow-hidden rounded-[12px] md:h-[178px] xl:h-[296px] 2xl:h-[356px]">
-              <picture className="overflow-hidden">
-                <img
-                  loading="eager"
-                  className="h-full w-full object-cover"
-                  src="https://a.storyblok.com/f/197805/4096x2732/bdf82eb04c/viw_rgb_230207vw-linearity-1812.jpg/m/319x0/filters:format(jpeg):quality(75)"
-                  alt="around table"
-                />
-              </picture>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-[8px] md:grid-cols-1 md:gap-[12px] xl:gap-[16px] xl:rounded-[20px]">
-            <div className="hidden overflow-hidden rounded-[12px] md:block md:h-[150px] xl:h-[260px] xl:rounded-[20px] 2xl:h-[320px]">
-              <picture className="overflow-hidden">
-                <img
-                  loading="eager"
-                  className="h-full w-full object-cover"
-                  src="https://a.storyblok.com/f/197805/4096x2732/4c2cf8e271/linearity-group-executive-01.jpg/m/360x0/filters:format(jpeg):quality(75)"
-                  alt="work table vladimir"
-                />
-              </picture>
-            </div>
-            <div className="h-[172px] overflow-hidden rounded-[12px] md:h-[109px] xl:h-[200px] xl:rounded-[20px] 2xl:h-[228px]">
-              <picture className="overflow-hidden">
-                <img
-                  loading="eager"
-                  className="h-full w-full object-cover"
-                  src="https://a.storyblok.com/f/197805/4096x2732/304d867401/image_3.png/m/156x172/filters:format(png):quality(75)"
-                  alt="table moritz anna wiebke"
-                />
-              </picture>
-            </div>
-            <div className="flex h-[172px] bg-[#58FF1B] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-orange md:h-[168px] xl:h-[260px] xl:rounded-[20px] 2xl:h-[320px]">
-              <p className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
-                100+
-              </p>
-              <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center">
-                Community
-              </span>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-[8px] md:gap-[12px] xl:gap-[16px]">
-            <div className="order-1 col-span-2 h-[180px] w-full overflow-hidden rounded-[12px] md:order-3 md:h-[234px] xl:h-[366px] xl:rounded-[20px] 2xl:h-[442px]">
-              <picture className="overflow-hidden">
-                <img
-                  loading="eager"
-                  className="h-full w-full object-cover"
-                  src="https://a.storyblok.com/f/197805/4096x2732/248870753d/image_5.png/m/500x0/filters:format(png):quality(75)"
-                  alt="thanassis paulius"
-                />
-              </picture>
-            </div>
-            <div className="order-2 flex h-[172px] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-[#FFE01B] md:h-[200px] xl:h-[366px] xl:rounded-[20px] 2xl:h-[442px]">
-              <p className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
-                1
-              </p>
-              <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center xl:max-w-[144px]">
-                Work location
-              </span>
-            </div>
-            <div className="order-3 h-[172px] overflow-hidden rounded-[12px] md:order-1 md:h-[200px] xl:h-[368px] xl:rounded-[20px] 2xl:h-[442px]">
-              <picture className="overflow-hidden">
-                <img
-                  loading="eager"
-                  className="h-full w-full object-cover"
-                  src="https://a.storyblok.com/f/197805/4096x2732/3dd6a9b6f0/image_4.png/m/156x172/filters:format(png):quality(75)"
-                  alt="malte wiebke"
-                />
-              </picture>
+            <h2 className="text-4xl font-black text-[#1B1C1E] leading-tight">
+              Work that enriches lives and drives{" "}
+              <span className="text-brandpurple">meaningful change</span>
+            </h2>
+            <p className="mt-6 text-gray-500 leading-relaxed">
+              We see work as more than a job — it's a space to grow, create, and impact the world. Together, we shape a workplace that enriches lives and creates pathways to success for every student who walks through our doors.
+            </p>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              {[
+                { v: "100+", l: "Community Members" },
+                { v: "7+", l: "Events Conducted" },
+                { v: "3", l: "Core Disciplines" },
+                { v: "98%", l: "Completion Rate" },
+              ].map((s) => (
+                <div key={s.l} className="rounded-2xl bg-white border border-neutral-100 p-4">
+                  <p className="text-2xl font-black text-[#1B1C1E]">{s.v}</p>
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mt-1">{s.l}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <Script
-        id="site-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
-      />
-      </main>
-    </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────────── */}
+      <section className="mx-6 my-20">
+        <div className="rounded-[2.5rem] bg-gradient-to-r from-flourescent via-redhue via-brandpurple to-brightyellow p-[3px] shadow-lg">
+          <div className="rounded-[calc(2.5rem-3px)] bg-white px-8 py-14 text-center lg:px-16 relative overflow-hidden">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-brandpurple/5 rounded-full blur-[80px] pointer-events-none" />
+            <div className="relative">
+              <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
+                Join instudia
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#1B1C1E]">
+                Ready to build your career?
+              </h2>
+              <p className="mt-3 text-gray-500 max-w-xl mx-auto">
+                Explore our courses and take the first step towards a future-proof career in tech, design, or finance.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href="/courses"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-brandpurple px-6 py-3 text-sm font-extrabold text-white hover:bg-brandpurple/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-brandpurple/20"
+                >
+                  Browse Courses
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-2xl border border-neutral-200 bg-white px-6 py-3 text-sm font-extrabold text-[#1B1C1E] hover:bg-gray-50 transition-all hover:-translate-y-0.5"
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

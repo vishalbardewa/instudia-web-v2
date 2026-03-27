@@ -1,16 +1,18 @@
 import { MetadataRoute } from 'next';
 import coursesData from './courses.json';
+import { posts } from './data/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.instudianagaland.com';
 
-  // Core static gateway paths mapping to the search index prioritize routing logic
   const staticRoutes = [
     '',
     '/about',
     '/contact',
     '/workshops',
     '/courses',
+    '/blog',
+    '/careers',
     '/tools/career-blueprint',
     '/tools/career-planner',
     '/tools/ats-analyzer',
@@ -18,10 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: route.startsWith('/tools') ? 'monthly' as const : 'weekly' as const,
-    priority: route === '' ? 1 : route.startsWith('/courses') ? 0.9 : 0.8,
+    priority: route === '' ? 1 : route === '/blog' ? 0.85 : route.startsWith('/courses') ? 0.9 : 0.8,
   }));
 
-  // Dynamic array projection generating localized routes for every single specific course catalog entry
   const dynamicCourses = coursesData.courses.map((course) => ({
     url: `${baseUrl}/courses/${course.slug}`,
     lastModified: new Date().toISOString(),
@@ -29,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...dynamicCourses];
+  const blogPosts = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date).toISOString(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...dynamicCourses, ...blogPosts];
 }

@@ -1,0 +1,36 @@
+// Shared types and pure utilities — safe to import in both server and client code.
+
+/** An ordered content item within a Section. */
+export type ContentItem =
+  | { type: "paragraph"; text: string }
+  | { type: "bullets"; items: string[] }
+  | { type: "code"; language: string; content: string };
+
+export interface Section {
+  heading?: string;
+  /** Ordered content: paragraphs, bullet lists, and code blocks in document order. */
+  items: ContentItem[];
+}
+
+export interface Post {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  categoryColor: string;
+  date: string;           // ISO "YYYY-MM-DD"
+  readTime: string;
+  author: string;
+  authorRole: string;
+  authorPhoto: string;
+  coverImage: string;
+  body: Section[];
+}
+
+export function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}

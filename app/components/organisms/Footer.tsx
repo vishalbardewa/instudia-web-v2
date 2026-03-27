@@ -7,7 +7,7 @@ const navigation = {
   ],
   company: [
     { name: "About", href: "/about" },
-    { name: "Blog", href: "https://blog.instudianagaland.com/" },
+    { name: "Blog", href: "/blog" },
   ],
   legal: [
     { name: "Privacy", href: "/privacy-policy" },

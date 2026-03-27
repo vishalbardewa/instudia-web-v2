@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import "highlight.js/styles/github-dark.css";
 
 import ConditionalLayout from "./components/layouts/ConditionalLayout";
 import DeviceSizeIndicator from "./components/atom/DeviceSizeIndicator";
