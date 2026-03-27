@@ -9,82 +9,90 @@ import { randomUUID } from 'crypto';
 const features = [
   {
     id: randomUUID(),
-    name: 'Help to figure the right role for you',
+    name: 'Find the Right Role For You',
     description:
-      'Consulting with a career counselor or mentor can aid in uncovering and navigating the path toward the ideal job.',
+      'A career counselor or mentor helps uncover and navigate the path toward your ideal job.',
     icon: BuildingOfficeIcon,
-    color: 'bg-brightyellow',
+    accent: 'text-brightyellow',
+    bg: 'bg-brightyellow/10',
+    border: 'border-brightyellow/20',
   },
   {
     id: randomUUID(),
-    name: 'Help with CV and Interview Prep',
+    name: 'CV & Interview Coaching',
     description:
-      'Professional resume and interview coaching services enhance CV creation and interview readiness',
+      'Professional resume and interview coaching services sharpen your CV and boost interview readiness.',
     icon: LockClosedIcon,
-    color: 'bg-brandpurple',
+    accent: 'text-brandpurple',
+    bg: 'bg-brandpurple/10',
+    border: 'border-brandpurple/20',
   },
   {
     id: randomUUID(),
-    name: 'Referrals to good companies',
+    name: 'Referrals to Top Companies',
     description:
-      'Networking with a recruiter or staffing agency can open doors to job opportunities and potential referrals in your field.',
+      'Network with recruiters and staffing agencies to unlock job opportunities and referrals in your field.',
     icon: UserGroupIcon,
-    color: 'bg-redhue',
+    accent: 'text-redhue',
+    bg: 'bg-redhue/10',
+    border: 'border-redhue/20',
   },
   {
     id: randomUUID(),
-    name: 'Coaching on salary negotiation',
+    name: 'Salary Negotiation Coaching',
     description:
-      'Specialized career coach boosts confidence and equips you with effective strategies for fair salary negotiation.',
+      'A specialized career coach boosts your confidence with effective, evidence-based negotiation strategies.',
     icon: ArrowPathIcon,
-    color: 'bg-flourescent',
+    accent: 'text-flourescent',
+    bg: 'bg-flourescent/10',
+    border: 'border-flourescent/20',
   },
 ];
 
 export default function FeatureWithColumns() {
   return (
-    <div className="relative bg-white py-6 sm:py-24 lg:py-24">
-      <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-base font-semibold uppercase tracking-wider text-yellow-600">
-          instudia career services
-        </h2>
-        <p className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          Exclusive Career Prep and Job Readiness for{' '}
-          <span className="text-yellow-500">instudians</span>
-        </p>
-        <p className="mx-auto max-w-prose text-base text-gray-500">
-          instudians get access to exclusive job openings at our partner
-          companies and guidance + help from our Career Preparation team.
-        </p>
-        <div className="mt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature) => (
-              <div key={feature.id} className="h-full pt-6">
-                <div className="flow-root rounded-lg bg-gray-50 px-6 pb-8">
-                  <div className="-mt-6">
-                    <div>
-                      <span
-                        className={`inline-flex items-center justify-center rounded-md ${feature.color} p-3 shadow-lg`}
-                      >
-                        <feature.icon
-                          className="h-6 w-6 text-white"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </div>
-                    <h3 className="mt-8 text-lg font-medium tracking-tight text-gray-900">
-                      {feature.name}
-                    </h3>
-                    <p className="mt-3 text-sm text-gray-500">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
+    <section className="relative bg-white py-20 sm:py-32 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
+            Instudia Career Services
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-[#1B1C1E] leading-tight">
+            Exclusive career prep for{' '}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-brandpurple">instudians</span>
+              <span className="absolute inset-x-0 bottom-1 h-3 bg-brandpurple/10 -rotate-1 -z-0 rounded" />
+            </span>
+          </h2>
+          <p className="mt-4 text-base text-gray-500 leading-relaxed">
+            Instudians get exclusive access to job openings at our partner companies, plus guidance from our dedicated Career Preparation team.
+          </p>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className={`group relative flex flex-col gap-5 rounded-[2rem] border ${feature.border} bg-white p-7 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 ease-out overflow-hidden`}
+            >
+              {/* Accent dot */}
+              <div className={`absolute top-6 right-6 w-2 h-2 rounded-full ${feature.bg} ring-2 ring-offset-2 ${feature.accent.replace('text-', 'ring-')}`} />
+
+              {/* Icon */}
+              <div className={`w-12 h-12 rounded-2xl ${feature.bg} flex items-center justify-center flex-shrink-0`}>
+                <feature.icon className={`h-6 w-6 ${feature.accent}`} aria-hidden="true" />
               </div>
-            ))}
-          </div>
+
+              <div>
+                <h3 className="text-base font-extrabold text-[#1B1C1E] leading-snug">{feature.name}</h3>
+                <p className="mt-2 text-sm text-gray-500 leading-relaxed">{feature.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

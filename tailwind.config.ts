@@ -84,12 +84,22 @@ const config: Config = {
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' },
-        }
+        },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",
         border: "border 4s ease infinite",
-        "infinite-scroll": "infinite-scroll 35s linear infinite"
+        "infinite-scroll": "infinite-scroll 35s linear infinite",
+        marquee: "marquee 25s linear infinite",
+        marquee2: "marquee2 25s linear infinite",
       },
       transitionTimingFunction: {
         'fast-in-slow-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -105,25 +115,6 @@ const config: Config = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
-    },
-    animation: {
-      marquee: "marquee 25s linear infinite",
-      marquee2: "marquee2 25s linear infinite",
-      border: "border 4s ease infinite",
-    },
-    keyframes: {
-      marquee: {
-        "0%": { transform: "translateX(0%)" },
-        "100%": { transform: "translateX(-100%)" },
-      },
-      marquee2: {
-        "0%": { transform: "translateX(100%)" },
-        "100%": { transform: "translateX(0%)" },
-      },
-      border: {
-        "0%, 100%": { backgroundPosition: "0% 50%" },
-        "50%": { backgroundPosition: "100% 50%" },
-      },
     },
   },
   plugins: [require("@tailwindcss/aspect-ratio"), addVariablesForColors],

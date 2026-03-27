@@ -74,7 +74,7 @@ const longNavigation = {
           name: "Programming Foundation",
           items: [
             // { name: "Javascript", href: `/courses/${slugs.PYTHON}` },
-            { name: "Python", href: `/courses/${slugs.PYTHON}`}
+            { name: "Python", href: `/courses/${slugs.PYTHON}` }
             // { name: "Rust", href: "#" },
             // { name: "C", href: "#" },
             // { name: "C++", href: "#" },
@@ -107,7 +107,7 @@ export default function PrimaryLayout({ children }: any) {
   return (
     <>
       <p className="flex h-10 items-center justify-center bg-black px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-        Enroll now to upskill today!
+        Check out our new tools designed for you!
       </p>
       <div className="flex sticky z-50 top-0 w-full h-full">
         <div className="w-1/4 h-[0.625rem] bg-[#58FF1B]"></div>

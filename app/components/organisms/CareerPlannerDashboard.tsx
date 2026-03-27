@@ -7,7 +7,8 @@ import { ProgressBadge } from '../atom/ProgressBadge';
 import { MentorCard } from '../molecules/MentorCard';
 import { SkillGapChart } from '../molecules/SkillRadarChart';
 import { MilestoneTimeline, Milestone } from '../molecules/MilestoneTimeline';
-import { IconTargetArrow, IconLoader2 } from '@tabler/icons-react';
+import { IconTargetArrow, IconLoader2, IconArrowRight } from '@tabler/icons-react';
+import { getRecommendedCourses } from '../../utils/courseMatcher';
 
 const MOCK_SKILLS = [
   { name: 'React.js', current: 75, required: 90 },
@@ -36,6 +37,8 @@ const DashboardContent = () => {
     const score = Math.min(100, ((Number(skill.current) || 0) / (Number(skill.required) || 1)) * 100);
     return acc + score;
   }, 0) / skillGaps.length) : 0;
+
+  const recommendedCourses = getRecommendedCourses(skillGaps.map(s => s.name), 3);
 
   useEffect(() => {
     if (!wasRequested) return;
@@ -186,18 +189,43 @@ const DashboardContent = () => {
             <SkillGapChart skills={skillGaps} />
           </div>
 
-          {/* <div className="bg-white ring-1 ring-neutral-950/5 rounded-3xl p-6 shadow-sm relative overflow-hidden">
-            <h3 className="text-xl font-bold text-[#1B1C1E] tracking-tight mb-2">Connect with Mentors</h3>
-            <p className="text-sm text-neutral-500 mb-6">Alumni who followed a similar path.</p>
-            <div className="space-y-3 relative z-10">
-              {MOCK_MENTORS.map((mentor, i) => (
-                <MentorCard key={i} {...mentor} />
-              ))}
-            </div>
-            <button className="w-full mt-6 py-3 px-4 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-xl text-sm font-semibold transition-colors duration-200">
-              View All Matches
-            </button>
-          </div> */}
+          {/* DYNAMIC SALES FUNNEL: Native Instudia Course Maps */}
+          {recommendedCourses.length > 0 && (
+             <div className="bg-white ring-1 ring-neutral-950/5 rounded-[2rem] p-8 shadow-sm relative overflow-hidden flex flex-col group cursor-default">
+                <div className="absolute inset-0 bg-gradient-to-br from-brandpurple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="w-14 h-14 bg-brandpurple/10 text-brandpurple rounded-[1rem] flex items-center justify-center mb-6 relative">
+                   <IconTargetArrow size={28} stroke={2} className="relative z-10" />
+                </div>
+                
+                <h3 className="text-xl font-extrabold text-[#1B1C1E] tracking-tight mb-2 relative z-10">
+                  Accelerate Your Blueprint
+                </h3>
+                <p className="text-[14px] leading-relaxed text-neutral-500 mb-6 font-medium relative z-10">
+                  Don't map your roadmap alone. Master the precise skills currently limiting your profile with Instudia's expert-taught curriculums mapped to your exact gaps:
+                </p>
+                
+                <div className="space-y-3 relative z-10 w-full mb-8">
+                  {recommendedCourses.map((course: any) => (
+                    <a key={course.slug} href={`/courses/${course.slug}`} className="flex items-center shadow-sm justify-between p-4 bg-white hover:bg-brandpurple/5 hover:border-brandpurple/30 border-2 border-neutral-100 rounded-xl transition-all group/card">
+                       <div className="flex flex-col">
+                         <span className="font-extrabold text-[#1B1C1E] group-hover/card:text-brandpurple transition-colors text-[14.5px] leading-snug">{course.fullTitle}</span>
+                         <span className="text-neutral-400 text-[11px] uppercase tracking-wider font-black mt-1">{course.category}</span>
+                       </div>
+                       <div className="p-1.5 bg-neutral-50 group-hover/card:bg-brandpurple/10 text-neutral-400 group-hover/card:text-brandpurple rounded-lg transition-colors shrink-0 ml-3">
+                         <IconArrowRight size={18} stroke={2} />
+                       </div>
+                    </a>
+                  ))}
+                </div>
+
+                <a 
+                   href="/courses" 
+                   className="w-full inline-flex justify-center items-center gap-2 py-4 px-6 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-[14px] text-[15px] font-bold shadow-lg shadow-neutral-900/10 transition-all hover:-translate-y-1 active:scale-95 z-10"
+                >
+                  Browse All Courses
+                </a>
+             </div>
+          )}
         </div>}
 
       </section>

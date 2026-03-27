@@ -537,9 +537,9 @@ export default function About() {
         <div className="mx-8 lg:mx-14 mt-[40px] grid grid-cols-1 gap-[8px] md:grid-cols-[minmax(248px,1.2fr)_minmax(168px,0.9fr)_minmax(248px,1.2fr)] md:gap-[12px] xl:mt-[60px] xl:gap-[16px]">
           <div className="grid grid-cols-2 gap-[8px] md:gap-[12px] xl:gap-[16px] xl:rounded-[20px]">
             <div className="flex h-[172px] bg-[#C21FFF] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-green md:h-[178px] xl:h-[296px] 2xl:h-[356px]">
-              <h1 className="xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
+              <p className="xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
                 20+
-              </h1>
+              </p>
               <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center">
                 Combined YOE
               </span>
@@ -577,9 +577,9 @@ export default function About() {
               </picture>
             </div>
             <div className="flex h-[172px] bg-[#58FF1B] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-orange md:h-[168px] xl:h-[260px] xl:rounded-[20px] 2xl:h-[320px]">
-              <h1 className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
+              <p className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
                 100+
-              </h1>
+              </p>
               <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center">
                 Community
               </span>
@@ -597,9 +597,9 @@ export default function About() {
               </picture>
             </div>
             <div className="order-2 flex h-[172px] w-full flex-col items-center justify-center space-y-[4px] rounded-[12px] bg-[#FFE01B] md:h-[200px] xl:h-[366px] xl:rounded-[20px] 2xl:h-[442px]">
-              <h1 className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
+              <p className="text-text-highlight xl:text-[72px] xl:leading-[1.0972222222222223] xl:font-bold text-[38px] leading-[1.105263157894737] font-bold">
                 1
-              </h1>
+              </p>
               <span className="text-text-highlight xl:text-[20px] xl:leading-[1.3] xl:font-medium text-[18px] leading-[1.2777777777777777] font-medium max-w-[108px] text-center xl:max-w-[144px]">
                 Work location
               </span>

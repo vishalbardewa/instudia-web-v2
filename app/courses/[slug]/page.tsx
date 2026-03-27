@@ -144,8 +144,10 @@ const FourParaGrid = ({ fourReasons }: any) => (
 );
 
 const RelatedCoursesGrid = ({ relatedCourses }: any) => {
+  const isCarousel = relatedCourses.length > 3;
+
   return (
-    <div className="mt-48 px-16 font-bold">
+    <div className="mt-48 px-16 font-bold pb-24">
       <div className="relative">
         <div className="absolute inset-0 flex items-center" aria-hidden="true">
           <div className="w-full border-t border-gray-300 lg:w-full" />
@@ -159,22 +161,26 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
       <div>
         <h1>
           <span className="mt-1 block text-3xl font-bold leading-none tracking-tight sm:text-5xl lg:text-3xl xl:text-3xl">
-            <span className="block text-gray-900 sm:max-w-sm lg:max-w-[25%]">
+            <span className="block text-gray-900 sm:max-w-sm lg:max-w-[35%]">
               Find More Courses Like This One.
             </span>
           </span>
         </h1>
       </div>
-      <section className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      
+      {/* Hide scrollbar structurally using CSS modules or inline webkit rules, fallback to generic snap */}
+      <style>{`.no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }`}</style>
+      
+      <section className={`mx-auto mt-16 ${isCarousel ? 'flex overflow-x-auto snap-x snap-mandatory gap-8 pb-8 no-scrollbar scroll-smooth' : 'grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3'}`}>
         {relatedCourses.map((course: any) => (
           <article
-            key={course.id}
-            className="flex flex-col items-start justify-between"
+            key={course.id || course.slug}
+            className={`flex flex-col items-start justify-between ${isCarousel ? 'w-[85vw] sm:w-[47vw] lg:w-[31.5%] shrink-0 snap-center mb-8' : ''}`}
           >
             <div className="relative w-full">
               <img
                 alt=""
-                src={IMAGE_LIST[`${course.slug}`]}
+                src={IMAGE_LIST[`${course.slug}`] || course.image}
                 className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
@@ -188,7 +194,7 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
                   </a>
                 </h3>
                 <p className="mt-5 line-clamp-3 text-sm font-light leading-6 text-gray-600">
-                  {course.courseHightlight}
+                  {course.courseHightlight || course.courseHighlight}
                 </p>
               </div>
             </div>
@@ -278,36 +284,124 @@ async function getCourses() {
   return posts.json();
 }
 
-export default async function Course({ params: { slug } }: any) {
+export default async function Course({ params }: any) {
+  // Gracefully enforce Promise-based unwrapping for Next 15+ stability
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug || params?.slug;
+
   const { courseDetails } = await getCourseBySlug(slug);
   const { courses } = await getCourses();
 
-  const getRecommendedCourses = (arr: any, numElements: number) => {
-    const newArray = [];
-    if (arr?.length === 0) return [];
-    for (let i = 0; i < numElements; i++) {
-      const randomIndex = Math.floor(Math.random() * arr.length);
-      newArray.push(arr[randomIndex]);
+  const getSimilarCourses = (allCourses: any[], currentCourse: any, minElements: number) => {
+    if (!allCourses || allCourses.length === 0) return [];
+    
+    // Aggressively rigorously filter out the current active course natively ensuring absolute omission
+    const otherCourses = allCourses.filter((c: any) => 
+        c.slug !== slug && 
+        c.slug !== currentCourse?.slug && 
+        c.fullTitle !== currentCourse?.fullTitle
+    );
+    
+    const currentWords = new Set(
+      `${currentCourse.fullTitle} ${currentCourse.courseHightlight || currentCourse.courseHighlight || ""}`
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, '')
+        .split(' ')
+        .filter((w: string) => w.length > 3)
+    );
+
+    const scoredCourses = otherCourses.map((c: any) => {
+      let score = 0;
+      
+      // Category Match is the strongest indicator of similarity
+      if (c.category && currentCourse.category && c.category === currentCourse.category) {
+        score += 15;
+      }
+
+      // Keyword matching
+      const targetWords = `${c.fullTitle} ${c.courseHightlight || c.courseHighlight || ""}`
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, '')
+        .split(' ');
+        
+      targetWords.forEach((word: string) => {
+        if (word.length > 3 && currentWords.has(word)) {
+          score += 2;
+        }
+      });
+
+      return { course: c, score };
+    });
+
+    // Sort by descending correlation matrix
+    scoredCourses.sort((a, b) => b.score - a.score);
+    
+    // Threshold barrier mapping to extract highly relevant cross-links
+    const thresholdCourses = scoredCourses.filter(sc => sc.score > 2).map(sc => sc.course);
+    
+    // Fallback: If strict threshold fails to hit minimum carousel threshold, slice the top absolute matches
+    if (thresholdCourses.length < minElements) {
+       return scoredCourses.slice(0, Math.max(minElements, thresholdCourses.length)).map(sc => sc.course);
     }
-    return newArray;
+    
+    // Cap at 8 to prevent infinite snapping
+    return thresholdCourses.slice(0, 8);
   };
 
-  const relatedCourses = getRecommendedCourses(
-    courses?.courses,
-    RECOMMENDED_COURSES_COUNT
-  );
+  const relatedCourses = getSimilarCourses(courses?.courses || [], courseDetails, RECOMMENDED_COURSES_COUNT);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": `${courseDetails.fullTitle}`,
-    "description": `${courseDetails.courseHightlight}`,
-    "provider": {
-      "@type": "Organization",
-      "name": `${AppConfig.title}`,
-      "sameAs": `${AppConfig.canonicalBase}`
+  const durationFeature = courseDetails.features?.find((f: any) => f.name === "Duration");
+  const durationMonths = durationFeature?.description ? parseInt(durationFeature.description) : null;
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": `${courseDetails.fullTitle} in Dimapur, Nagaland`,
+      "description": `${courseDetails.courseHightlight ?? courseDetails.courseHighlight}`,
+      "provider": {
+        "@type": "Organization",
+        "name": "instudia",
+        "sameAs": `${AppConfig.canonicalBase}`
+      },
+      ...(courseDetails.price && {
+        "offers": {
+          "@type": "Offer",
+          "price": `${courseDetails.price.discountedPrice}`,
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": `${AppConfig.canonicalBase}/courses/${slug}`
+        }
+      }),
+      ...(durationMonths && {
+        "timeRequired": `P${durationMonths}M`,
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "In-Person",
+          "location": {
+            "@type": "Place",
+            "name": "instudia, Dimapur",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dimapur",
+              "addressRegion": "Nagaland",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      }),
+      "inLanguage": ["en", "hi"],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${AppConfig.canonicalBase}` },
+        { "@type": "ListItem", "position": 2, "name": "Courses", "item": `${AppConfig.canonicalBase}/courses` },
+        { "@type": "ListItem", "position": 3, "name": courseDetails.fullTitle, "item": `${AppConfig.canonicalBase}/courses/${slug}` }
+      ]
     }
-  }
+  ]
 
   return (
     <>

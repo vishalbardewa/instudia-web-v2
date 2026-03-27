@@ -12,6 +12,12 @@ import { randomUUID } from "crypto";
 import FeatureWithColumns from "./components/molecules/FeatureWithThreeCoulmns";
 import TestimonialGrid from "./components/organisms/TestimonialGrid";
 import ScrollingLogos from "./components/organisms/ScrollingLogos";
+import CareerTerminal from "./components/organisms/CareerTerminal";
+import MiniBlueprintGateway from "./components/organisms/MiniBlueprintGateway";
+import SkillGraphOrbit from "./components/organisms/SkillGraphOrbit";
+
+// Force Dynamic SSR to guarantee Math.random() executes natively per route request instead of baking identically during static build-time
+export const dynamic = "force-dynamic";
 
 const stats = [
   { label: "Founded", value: "2021" },
@@ -304,6 +310,19 @@ export default function Page() {
       <ScrollingLogos />
 
       <Stats stats={stats} />
+      
+      {/* Isolated Interactive Gateway Node Array Router */}
+      {(() => {
+        // Safe to execute Math.random() directly in Server Component block since the React Client exclusively receives and hydrates the mapped subtree Payload, not executing random natively
+        const InteractionComponents = [
+          CareerTerminal,
+          SkillGraphOrbit,
+          MiniBlueprintGateway
+        ];
+        const RandomGatewayBoundary = InteractionComponents[Math.floor(Math.random() * InteractionComponents.length)];
+        
+        return <RandomGatewayBoundary />;
+      })()}
 
       <Incentives />
       <FeatureWithColumns />
@@ -335,7 +354,7 @@ export default function Page() {
                 role="list"
                 className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-[#1b1c1e] sm:grid-cols-2"
               >
-                {benefits.map((benefit,i) => (
+                {benefits.map((benefit, i) => (
                   <li key={`${benefit}-${i}`} className="flex gap-x-3">
                     <CheckCircleIcon
                       aria-hidden="true"

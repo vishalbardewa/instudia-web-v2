@@ -31,10 +31,10 @@ export default function LandingTop() {
                 <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                     <span className="block text-white">
-                      Empowering lives through
+                      Nagaland&apos;s Career-First
                     </span>
                     <span className="block text-slate-300">
-                      skill-based trainings
+                      Tech and Skills Institute
                     </span>
                   </h1>
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-slate-300 sm:max-w-3xl">
@@ -77,28 +77,28 @@ export default function LandingTop() {
                       <img
                         className="h-24"
                         src="/assets/images/iso-logo.png"
-                        alt="ISO"
+                        alt="ISO Certified Computer Institute in Dimapur, Nagaland"
                       />
                     </div>
                     <div className=" col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
                       <img
                         className="h-12"
                         src="/assets/images/aisect.png"
-                        alt="AISECT"
+                        alt="AISECT Affiliated Tech Courses Dimapur"
                       />
                     </div>
                     <div className="col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
                       <img
                         className="h-24"
                         src="/assets/images/niact.png"
-                        alt="National Institute for Advanced Ccomputer Technology"
+                        alt="National Institute for Advanced Computer Technology Training"
                       />
                     </div>
                     <div className="col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 md:col-start-2 lg:col-span-1">
                       <img
                         className="h-24"
                         src="/assets/images/msme-logo.png"
-                        alt="Ministry of Micro, Small and Medium Enterprises"
+                        alt="MSME Certified Skill Training Programs in Nagaland"
                       />
                     </div>
                     {/* <div className="col-span-2 flex justify-center grayscale hover:grayscale-0 md:col-span-2 md:col-start-4 lg:col-span-1">

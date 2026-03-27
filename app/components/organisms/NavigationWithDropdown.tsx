@@ -143,9 +143,18 @@ export default function NavigationWithDropdown({ navigation }: any) {
                     <div key={page.name} className="flow-root">
                       <a
                         href={page.href}
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="-m-2 flex items-center p-2 font-medium text-gray-900 group"
                       >
                         {page.name}
+                        {page.isNew && (
+                          <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5">
+                            <span className="relative flex h-1.5 w-1.5">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
+                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
+                            </span>
+                            New
+                          </span>
+                        )}
                       </a>
                     </div>
                   ))}
@@ -316,9 +325,18 @@ export default function NavigationWithDropdown({ navigation }: any) {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center text-[15px] font-semibold text-[#1B1C1E] hover:text-brandpurple transition-colors relative group"
                     >
                       {page.name}
+                      {page.isNew && (
+                        <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5 mt-0.5">
+                          <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
+                          </span>
+                          New
+                        </span>
+                      )}
                     </a>
                   ))}
                 </div>

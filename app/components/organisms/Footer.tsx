@@ -2,8 +2,8 @@ import React from "react";
 
 const navigation = {
   tools: [
-    { name: "Career Blueprint", href: "/tools/career-discovery" },
-    { name: "ATS Resume Scanner", href: "/tools/ats-analyzer" },
+    { name: "Career Blueprint", href: "/tools/career-planner", isNew: true },
+    { name: "ATS Resume Scanner", href: "/tools/ats-analyzer", isNew: true },
   ],
   company: [
     { name: "About", href: "/about" },
@@ -72,19 +72,28 @@ export default function Footer() {
             />
           </a>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+            <div className="md:grid md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   Tools
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.tools.map((item) => (
+                  {navigation.tools.map((item: any) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900 transition-colors"
+                        className="text-sm leading-6 flex items-center text-gray-600 hover:text-brandpurple font-medium transition-colors group"
                       >
                         {item.name}
+                        {item.isNew && (
+                          <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5">
+                            <span className="relative flex h-1.5 w-1.5">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
+                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
+                            </span>
+                            New
+                          </span>
+                        )}
                       </a>
                     </li>
                   ))}
