@@ -32,6 +32,11 @@ const DashboardContent = () => {
   const [isLoading, setIsLoading] = useState(wasRequested);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
+  const readinessScore = skillGaps.length > 0 ? Math.round(skillGaps.reduce((acc, skill) => {
+    const score = Math.min(100, ((Number(skill.current) || 0) / (Number(skill.required) || 1)) * 100);
+    return acc + score;
+  }, 0) / skillGaps.length) : 0;
+
   useEffect(() => {
     if (!wasRequested) return;
 
@@ -88,10 +93,10 @@ const DashboardContent = () => {
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#1B1C1E] tracking-tight">No Action Plan Found</h1>
         <p className="text-neutral-500 max-w-md mx-auto leading-relaxed">
-          You haven't selected a target career role yet. Complete your discovery profile first so our AI engine can dynamically generate a custom learning roadmap for you.
+          You haven't selected a target career role yet. Complete your Career Blueprint first so our AI engine can dynamically generate a custom learning roadmap for you.
         </p>
-        <a href="/tools/career-discovery" className="px-8 py-4 mt-8 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-xl font-bold transition-all shadow-lg active:scale-95 inline-flex items-center gap-2">
-          Discover Your Path
+        <a href="/tools/career-blueprint" className="px-8 py-4 mt-8 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-xl font-bold transition-all shadow-lg active:scale-95 inline-flex items-center gap-2">
+          Create Your Blueprint
         </a>
       </div>
     );
@@ -119,7 +124,7 @@ const DashboardContent = () => {
         </div>
 
         <div className="mt-10 md:mt-0 md:ml-12 w-full max-w-xs md:w-80 shrink-0 z-10">
-          <ProgressBadge percentage={isLoading ? 0 : 68} label="Readiness Score" />
+          <ProgressBadge percentage={isLoading ? 0 : readinessScore} label="Readiness Score" />
         </div>
       </section>
 
