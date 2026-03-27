@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import mammoth from 'mammoth';
+import PDFParser from 'pdf2json';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -20,8 +21,7 @@ export async function POST(req: Request) {
 
     if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
       try {
-        const PDFParser = require("pdf2json");
-        const pdfParser = new PDFParser(null, 1);
+        const pdfParser = new PDFParser(null, true);
         
         const extracted = await new Promise<string>((resolve, reject) => {
           pdfParser.on("pdfParser_dataError", (errData: any) => reject(new Error(errData.parserError)));
