@@ -77,7 +77,7 @@ export async function POST(req: Request) {
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "qwen/qwen3.5-122b-a10b",
+        model: "meta/llama-3.1-70b-instruct",
         temperature: 0.2, // Low temperature for high precision JSON
         max_tokens: 2000, // Increased max tokens to account for the lengthier array structures
         messages: [

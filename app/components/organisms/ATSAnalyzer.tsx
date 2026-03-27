@@ -58,8 +58,17 @@ export const ATSAnalyzer = () => {
       });
       clearTimeout(timeoutId);
 
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Server API Error");
+      const responseText = await response.text();
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (e: any) {
+        throw new Error(`Production HTTP Crash (${response.status}): ${responseText.substring(0, 150)}...`);
+      }
+
+      if (!response.ok) {
+        throw new Error(data.error || `Production API Error object: ${JSON.stringify(data)}`);
+      }
 
       setResult(data);
     } catch (err: any) {
