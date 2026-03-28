@@ -61,7 +61,7 @@ export default function BlogCard({
               <img
                 className="h-10 w-10 rounded-full"
                 src={author.imageUrl}
-                alt=""
+                alt={author.name}
               />
             </a>
           </div>

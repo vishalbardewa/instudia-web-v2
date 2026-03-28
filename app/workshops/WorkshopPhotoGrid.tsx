@@ -143,7 +143,7 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
                   onClick={() => setLightbox(i)}
                   className={`flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden border-2 transition-all ${i === lightbox ? "border-brandpurple scale-105" : "border-transparent opacity-50 hover:opacity-75"}`}
                 >
-                  <img src={p.src} alt="" className="w-full h-full object-cover" />
+                  <img src={p.src} alt={p.caption} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
