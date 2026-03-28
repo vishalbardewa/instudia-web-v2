@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/courses',
     '/blog',
     '/careers',
+    '/privacy-policy',
+    '/terms',
     '/tools',
     '/tools/career-blueprint',
     '/tools/career-planner',
