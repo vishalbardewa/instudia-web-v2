@@ -146,7 +146,7 @@ export const ATSAnalyzer = () => {
                 onClick={handleAnalyze}
                 className="px-12 py-5 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-[1.25rem] font-extrabold text-xl shadow-xl hover:-translate-y-1 transition-all active:scale-95"
               >
-                Run Actionable ATS Scan
+                Run ATS Scan
               </button>
             </div>
           </motion.div>
