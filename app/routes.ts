@@ -6,6 +6,8 @@ export const routes = {
   WORKSHOPS: "/workshops",
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_AND_CONDITIONS: "/terms",
+  SALARY_INSIGHTS: "/salary-insights",
+  SUCCESS_STORIES: "/success-stories",
 };
 
 export const slugs = {

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import coursesData from './courses.json';
+import { slugs } from './routes';
 import { posts } from './data/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -16,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/career-blueprint',
     '/tools/career-planner',
     '/tools/ats-analyzer',
+    '/salary-insights',
+    '/gallery',
+    '/success-stories',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -23,8 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : route === '/blog' ? 0.85 : route.startsWith('/courses') ? 0.9 : 0.8,
   }));
 
-  const dynamicCourses = coursesData.courses.map((course) => ({
-    url: `${baseUrl}/courses/${course.slug}`,
+  const dynamicCourses = Object.values(slugs).map((slug) => ({
+    url: `${baseUrl}/courses/${slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'monthly' as const,
     priority: 0.9,

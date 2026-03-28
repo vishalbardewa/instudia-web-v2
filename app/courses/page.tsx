@@ -2,6 +2,9 @@ import React from "react";
 import CourseSectionList from "../components/molecules/CourseSectionList";
 import Image from "next/image";
 import { AppConfig } from "../_utils/AppConfig";
+import Script from "next/script";
+import { slugs } from "../routes";
+
 
 const BE_URL = process.env.NODE_ENV === 'development' ? "http://127.0.0.1:3000" : "https://instudia-v2.netlify.app/"
 
@@ -50,6 +53,16 @@ export const metadata = {
 };
 
 function Courses() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": Object.values(slugs).map((slug, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${AppConfig.canonicalBase}/courses/${slug}`
+    }))
+  };
+
   return (
     <div className="relative grid grid-cols-12 col-start-2 col-end-12">
       <Image
@@ -255,6 +268,11 @@ function Courses() {
       <div className="col-start-2 col-end-12">
         <CourseSectionList />
       </div>
+      <Script
+        id="course-list-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </div>
   );
 }

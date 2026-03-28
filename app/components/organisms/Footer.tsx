@@ -4,10 +4,12 @@ const navigation = {
   tools: [
     { name: "Career Blueprint", href: "/tools/career-planner", isNew: true },
     { name: "ATS Resume Scanner", href: "/tools/ats-analyzer", isNew: true },
+    { name: "Salary Insights", href: "/salary-insights", isNew: true }
   ],
   company: [
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
+    { name: "Gallery", href: "/gallery" },
   ],
   legal: [
     { name: "Privacy", href: "/privacy-policy" },
@@ -65,11 +67,9 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <a href='/'>
-            <img
-              alt="instudia logo"
-              className="h-20"
-              src="/assets/images/logo-with-tagline.png"
-            />
+            <div className="h-20 flex items-center">
+              <img alt="instudia logo" className="h-full w-auto object-contain" src="/assets/images/logo-with-tagline.png" />
+            </div>
           </a>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:gap-8">
@@ -82,7 +82,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 flex items-center text-gray-600 hover:text-brandpurple font-medium transition-colors group"
+                        className="text-sm leading-6 flex items-center text-gray-600 hover:text-gray-900 font-medium transition-colors group"
                       >
                         {item.name}
                         {item.isNew && (

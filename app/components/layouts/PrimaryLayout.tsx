@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+import { useState, useEffect } from "react";
 import { IconHome, IconUser } from "@tabler/icons-react";
 import { IconMessage } from "@tabler/icons-react";
 import { FloatingNav } from "../organisms/FloatingNav";
 import Footer from "../organisms/Footer";
 import NavigationWithDropdown from "../organisms/NavigationWithDropdown";
+import WhatsAppWidget from "../atom/WhatsAppWidget";
+import SearchModal from "../atom/SearchModal";
 import { slugs } from "@/app/routes";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 
@@ -104,9 +107,30 @@ const longNavigation = {
 };
 
 export default function PrimaryLayout({ children }: any) {
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // Global Cmd+K / Ctrl+K shortcut
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen((v) => !v);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
   return (
     <>
       <p className="flex h-10 items-center justify-center bg-black px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+        <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5 mr-3">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
+          </span>
+          New
+        </span>
         Check out our new tools designed for you!
       </p>
       <div className="flex sticky z-50 top-0 w-full h-full">
@@ -116,8 +140,10 @@ export default function PrimaryLayout({ children }: any) {
         <div className="w-1/4 h-[0.625rem] bg-[#FFE01B]"></div>
       </div>
       <FloatingNav navItems={navItems} />
-      <NavigationWithDropdown navigation={longNavigation} />
+      <NavigationWithDropdown navigation={longNavigation} onSearch={() => setSearchOpen(true)} />
       {children}
+      <WhatsAppWidget />
+      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
       <Footer />
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { posts, getPostBySlug, formatDate } from "../../data/posts";
 import hljs from "highlight.js";
+import ReadingProgress from "../../components/atom/ReadingProgress";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -69,6 +70,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="bg-white">
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
