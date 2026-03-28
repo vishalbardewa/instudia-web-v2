@@ -1,12 +1,38 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
+import Script from 'next/script';
+import { AppConfig } from '../_utils/AppConfig';
 
 export const metadata: Metadata = {
-  title: 'Student Success Suite | Instudia',
-  description: 'Bridge the gap between your current skills and your dream roles.',
+  title: 'Student Success Suite | Tools & Resources | Instudia',
+  description: 'Accelerate your career with our Student Success Suite. Access our ATS Resume Scanner, Salary Insights, Career Blueprint, and Study Planner to bridge the gap between education and industry.',
+  keywords: ['career planning', 'ATS resume scanner', 'salary benchmarks', 'study planner', 'student success', 'instudia', 'dimapur', 'nagaland'],
+  alternates: {
+    canonical: `${AppConfig.canonicalBase}/tools`,
+  },
+  openGraph: {
+    title: 'Student Success Suite | Navigate your Career | Instudia',
+    description: 'Bridge the gap between education and industry with our premium career tools.',
+    url: `${AppConfig.canonicalBase}/tools`,
+    siteName: 'Instudia',
+    images: [
+      {
+        url: 'https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png',
+        width: 1200,
+        height: 630,
+        alt: 'Student Success Suite - Instudia',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Student Success Suite | Instudia',
+    description: 'Premium career tools for the next generation of talent.',
+    images: ['https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png'],
+  },
 };
-
 
 interface ToolProps {
   name: string;
@@ -133,6 +159,30 @@ const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, st
 };
 
 export default function CareerPlannerPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Student Success Suite Tools",
+    "description": "A collection of tools to help students and professionals succeed in their careers.",
+    "itemListElement": tools.map((tool, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "WebApplication",
+        "name": tool.name,
+        "description": tool.description,
+        "url": `${AppConfig.canonicalBase}${tool.href}`,
+        "applicationCategory": "EducationalApplication",
+        "image": tool.imageUrl,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        }
+      }
+    }))
+  };
+
   return (
     <main className="min-h-screen bg-[#FAFAFA] text-[#1B1C1E] selection:bg-brandpurple/30 font-jakarta">
       {/* Hero */}
@@ -168,12 +218,17 @@ export default function CareerPlannerPage() {
         </div>
       </section>
 
-
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-6">
         {tools.map((tool) => (
           <ToolCard key={tool.href} {...tool} />
         ))}
       </div>
+
+      <Script
+        id="tools-suite-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </main>
   );
 }
