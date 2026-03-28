@@ -12,46 +12,34 @@ import { AppConfig } from "./_utils/AppConfig";
 const inter = Inter({ subsets: ["latin"] });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
-export const metadata = {
-  title:
-    "Computer & Skill Courses in Nagaland | instudia",
-  description:
-    "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Graphic Design, Project Management, DCA, PGDCA, Tally, GST & Digital Skills. Boost your career in Nagaland. Enroll now!",
+export const metadata: Metadata = {
+  title: "Computer & Skill Courses in Nagaland | instudia",
+  description: "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Graphic Design, Project Management, DCA, PGDCA, Tally, GST & Digital Skills. Boost your career in Nagaland. Enroll now!",
+  metadataBase: new URL(AppConfig.canonicalBase),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title:
-      "Best Computer Courses & Skill Training in Dimapur | instudia",
-    description:
-      "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",
-    url: `${AppConfig.canonicalBase}`,
+    title: "Best Computer Courses & Skill Training in Dimapur | instudia",
+    description: "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",
+    url: AppConfig.canonicalBase,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,
     images: [
       {
         url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
         type: "image/jpeg",
         alt: "Upskill with instudia",
-      },
-      {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
-        width: 800,
-        height: 600,
-        alt: "Enroll with instudia",
-        type: "image/jpeg",
       },
     ],
   },
   twitter: {
-    title:
-      "Best Computer Courses & Skill Training in Dimapur | instudia",
-    description:
-      "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
-    card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-  },
-  metadataBase: new URL("https://instudianagaland.com"),
-  alternates: {
-    canonical: "https://www.instudianagaland.com",
+    title: "Best Computer Courses & Skill Training in Dimapur | instudia",
+    description: "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
+    card: "summary_large_image",
+    images: ["https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9"],
   },
 };
 

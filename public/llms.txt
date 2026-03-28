@@ -1,0 +1,51 @@
+# instudia
+
+> Skill Up for a Better Career in Nagaland.
+
+instudia is the premier skill development and computer training institute located in Dimapur, Nagaland. We focus on practical, project-based learning to bridge the gap between education and employability.
+
+## Complete Course Catalog (19 Courses)
+
+### Technology & Development
+- **Programming with Python**: Fundamentals of Python syntax and object-oriented programming.
+- **Frontend Web Development**: Mastery of HTML, CSS, JavaScript, and responsive design.
+- **Backend Web Development**: Server-side scripting, database management, and API development.
+- **Fullstack Web Development**: End-to-end development with modern stacks like React and Node.js.
+- **Mobile App Development**: Building native and cross-platform apps using React Native.
+- **Certificate in DevOps Cloud Services**: Continuous integration, deployment, and cloud automation.
+- **Certificate in Data Analytics**: Data processing with Python, SQL, and visualization tools.
+- **Certificate in Generative AI**: (Coming Soon) Advanced AI modeling and transformer architectures.
+- **Certificate in Hardware and Networking**: PC assembly and network configuration/troubleshooting.
+
+### Finance & Business
+- **Accounting in Tally with GST**: Comprehensive GST-compliant accounting and tax filing.
+- **Accounting with Tally**: Core financial management and reporting.
+- **Certificate in Business Intelligence**: Data visualization and analytics using Power BI.
+- **Certificate in Project Management**: Planning, execution, and risk management for modern projects.
+- **Certificate in Retail Management**: Customer service, inventory control, and retail operations.
+
+### Design & Creativity
+- **Certificate in UI/UX Design Specialization**: User research, prototyping, and user-centered design.
+- **Certificate in Graphic Designing**: Visual communication and professional design principles.
+
+### Specialized Diplomas & Skills
+- **Diploma in Computer Applications (DCA)**: 6-month foundational diploma for IT proficiency.
+- **Post Graduate Diploma in Computer Applications (PGDCA)**: 12-month advanced specialization.
+- **Certificate in Advanced Excel**: Mastery of pivot tables, automation, and business intelligence.
+- **Certificate in Food Processing**: Practical techniques in food preservation and processing.
+
+## Student Success Tools
+- **Salary Insights**: Real-time salary data for tech roles in Nagaland vs National averages.
+- **Study Planner**: AI-powered schedule generator to help students manage their learning time.
+- **Career Planner**: Step-by-step roadmaps for transitioning into high-paying tech careers.
+
+## Contact & Location Information
+- **Address**: First Floor, Vikiye Center, Opp. Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112, India.
+- **Phone**: +91-8798-587779
+- **Website**: https://www.instudianagaland.com
+- **Email**: hello@instudianagaland.com
+
+## Technical Details
+- **Sitemap**: https://www.instudianagaland.com/sitemap.xml
+- **Robots**: https://www.instudianagaland.com/robots.txt
+- **LLM-Friendly**: This file (llms.txt) is provided for machine-readability by AI agents and LLMs.

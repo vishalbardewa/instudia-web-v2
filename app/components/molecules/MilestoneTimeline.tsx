@@ -39,16 +39,16 @@ export const MilestoneTimeline = ({ milestones }: MilestoneTimelineProps) => {
         {/* Desktop Central Line */}
         <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-1.5 bg-neutral-100 -translate-x-1/2 rounded-full z-0 overflow-hidden shadow-inner">
           <div 
-            className="absolute top-0 w-full bg-gradient-to-b from-brandpurple to-flourescent rounded-full transition-all duration-1000 ease-out" 
-            style={{ height: `${progressPercentage}%` }} 
+            className="absolute top-0 w-full bg-gradient-to-b from-brandpurple to-flourescent rounded-full transition-[height] duration-1000 ease-out h-[var(--milestone-progress)]" 
+            style={{ "--milestone-progress": `${progressPercentage}%` } as React.CSSProperties} 
           />
         </div>
 
         {/* Mobile Left Line */}
         <div className="md:hidden absolute left-7 top-8 bottom-8 w-1.5 bg-neutral-100 rounded-full z-0 overflow-hidden shadow-inner">
            <div 
-            className="absolute top-0 w-full bg-gradient-to-b from-brandpurple to-flourescent rounded-full transition-all duration-1000 ease-out" 
-            style={{ height: `${progressPercentage}%` }} 
+            className="absolute top-0 w-full bg-gradient-to-b from-brandpurple to-flourescent rounded-full transition-[height] duration-1000 ease-out h-[var(--milestone-progress)]" 
+            style={{ "--milestone-progress": `${progressPercentage}%` } as React.CSSProperties} 
           />
         </div>
 

@@ -59,7 +59,32 @@ export default function SalaryDashboard() {
         <div className="bg-white rounded-3xl border border-neutral-100 p-8 md:p-10 shadow-lg shadow-gray-100/50">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10">
             <div>
-              <h2 className="text-3xl font-black text-[#1B1C1E]">{selectedData.role}</h2>
+              <div className="flex items-center gap-4 mb-2">
+                <h2 className="text-3xl font-black text-[#1B1C1E]">{selectedData.role}</h2>
+                <button 
+                  onClick={() => {
+                    navigator.clipboard.writeText(window.location.href);
+                    const btn = document.getElementById('share-btn');
+                    if (btn) {
+                      btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Copied!';
+                      btn.classList.add('bg-emerald-500', 'text-white');
+                      btn.classList.remove('bg-gray-100', 'text-gray-500');
+                      setTimeout(() => {
+                        btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg> Share Result';
+                        btn.classList.remove('bg-emerald-500', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-500');
+                      }, 2000);
+                    }
+                  }}
+                  id="share-btn"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gray-100 text-gray-500 text-[10px] font-extrabold uppercase tracking-widest hover:bg-gray-200 hover:text-[#1B1C1E] transition-all"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+                  Share Result
+                </button>
+              </div>
               <p className="mt-3 text-sm text-gray-500 leading-relaxed max-w-lg">
                 {selectedData.description}
               </p>
@@ -96,8 +121,8 @@ export default function SalaryDashboard() {
               </div>
               <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
                 <div 
-                  className="h-full bg-blue-400 rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: `${(currentStats.min / MAX_SCALE) * 100}%` }}
+                  className="h-full bg-blue-400 rounded-full w-[var(--progress-min)] transition-[width] duration-1000 ease-out"
+                  style={{ "--progress-min": `${(currentStats.min / MAX_SCALE) * 100}%` } as React.CSSProperties}
                 />
               </div>
             </div>
@@ -110,8 +135,8 @@ export default function SalaryDashboard() {
               </div>
               <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
                 <div 
-                  className="h-full bg-brandpurple rounded-full transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(194,27,255,0.4)]"
-                  style={{ width: `${(currentStats.avg / MAX_SCALE) * 100}%` }}
+                  className="h-full bg-brandpurple rounded-full w-[var(--progress-avg)] transition-[width] duration-1000 ease-out shadow-[0_0_10px_rgba(194,27,255,0.4)]"
+                  style={{ "--progress-avg": `${(currentStats.avg / MAX_SCALE) * 100}%` } as React.CSSProperties}
                 />
               </div>
             </div>
@@ -124,8 +149,8 @@ export default function SalaryDashboard() {
               </div>
               <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
                 <div 
-                  className="h-full bg-green-400 rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: `${(currentStats.max / MAX_SCALE) * 100}%` }}
+                  className="h-full bg-green-400 rounded-full w-[var(--progress-max)] transition-[width] duration-1000 ease-out"
+                  style={{ "--progress-max": `${(currentStats.max / MAX_SCALE) * 100}%` } as React.CSSProperties}
                 />
               </div>
             </div>

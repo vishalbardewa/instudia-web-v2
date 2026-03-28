@@ -237,7 +237,7 @@ const ContactUs = () => {
               src="https://maps.google.com/maps?q=Vikiye+Center,+Opposite+Notun+Bosti+Gate,+Fellowship+Colony,+Dimapur,+Nagaland+797112&z=17&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "380px" }}
+              className="w-full border-0 min-h-[380px]"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
