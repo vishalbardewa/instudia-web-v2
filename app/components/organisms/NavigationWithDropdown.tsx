@@ -47,8 +47,8 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                 {/* ── Header ── */}
                 <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-neutral-100">
                   <Link href="/" onClick={() => setOpen(false)}>
-                    <div className="h-11 flex items-center">
-                      <img src="/assets/images/logo-with-tagline.png" alt="instudia" className="h-full w-auto object-contain" />
+                    <div className="h-11 relative aspect-[3/1]">
+                      <Image src="/assets/images/logo-with-tagline.png" alt="instudia" fill priority className="h-full w-auto object-contain" />
                     </div>
                   </Link>
                   <div className="flex items-center gap-2">
@@ -194,8 +194,8 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
               <div className="ml-4 flex lg:ml-0">
                 <Link href="/">
                   <span className="sr-only">instudia</span>
-                  <div className="h-16 flex items-center">
-                    <img className="h-full w-auto object-contain" src="/assets/images/logo-with-tagline.png" alt="instudia logo" />
+                  <div className="h-16 relative aspect-[3/1]">
+                    <Image className="h-full w-auto object-contain" src="/assets/images/logo-with-tagline.png" alt="instudia logo" fill priority />
                   </div>
                 </Link>
               </div>
@@ -256,9 +256,10 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                                             className="group relative text-base sm:text-sm"
                                           >
                                             <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                              <img
+                                              <Image
                                                 src={item.imageSrc}
                                                 alt={item.imageAlt}
+                                                fill
                                                 className="object-cover object-center"
                                               />
                                             </div>

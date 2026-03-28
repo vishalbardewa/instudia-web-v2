@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import {
   CheckBadgeIcon,
@@ -123,7 +124,16 @@ const ContentHead = ({
               Coming Soon
             </span>
           )}
-          <img className="w-full rounded-lg" src={image} alt="" />
+          <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden">
+            <Image 
+              src={image} 
+              alt={pageTitle.text} 
+              fill 
+              priority 
+              sizes="(max-width: 768px) 100vw, 600px"
+              className="object-cover" 
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -193,13 +203,15 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
             key={course.id || course.slug}
             className={`flex flex-col items-start justify-between ${isCarousel ? 'w-[85vw] sm:w-[47vw] lg:w-[31.5%] shrink-0 snap-center mb-8' : ''}`}
           >
-            <div className="relative w-full">
-              <img
-                alt=""
+            <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] lg:aspect-[3/2] rounded-2xl overflow-hidden bg-gray-100">
+              <Image
+                alt={course.fullTitle}
                 src={IMAGE_LIST[`${course.slug}`] || course.image}
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
               />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 transition-colors" />
             </div>
             <div className="max-w-xl">
               <div className="group relative">

@@ -59,10 +59,13 @@ const GA_MEASUREMENT_ID = "UA-232483046-1";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  name: "instudia",
-  url: "https://www.instudianagaland.com",
-  logo: "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+  "@type": ["EducationalOrganization", "LocalBusiness"],
+  "name": "instudia",
+  "url": "https://www.instudianagaland.com",
+  "logo": "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+  "image": "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+  "telephone": "+91-8798-587779",
+  "priceRange": "₹₹",
   description:
     "We offer top computer courses: Programming, Web Development, Graphic Design, Project Management & Digital Skills. Boost your career in Nagaland",
   address: {
@@ -81,6 +84,19 @@ const jsonLd = {
     email: "instudia.nagaland@gmail.com",
     availableLanguage: ["English", "Hindi", "Nagamese", "Assamese"],
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "25.9123",
+    "longitude": "93.7251"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
   sameAs: [
     "https://www.facebook.com/instudianagaland",
     "https://www.instagram.com/instudia_nagaland",

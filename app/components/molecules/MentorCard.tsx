@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { IconBriefcase, IconExternalLink, IconUserCircle } from '@tabler/icons-react';
 
 interface MentorProps {
@@ -12,7 +13,13 @@ export const MentorCard = ({ name, role, company, imageUrl }: MentorProps) => {
   return (
     <div className="flex items-center p-4 bg-neutral-50 hover:bg-neutral-100 transition-colors border border-neutral-200 rounded-xl gap-4 group cursor-pointer shadow-sm">
       {imageUrl ? (
-        <img src={imageUrl} alt={name} className="w-12 h-12 rounded-full object-cover border-2 border-brandpurple/30 group-hover:border-brandpurple transition-colors" />
+        <Image 
+          src={imageUrl} 
+          alt={name} 
+          width={48}
+          height={48}
+          className="w-12 h-12 rounded-full object-cover border-2 border-brandpurple/30 group-hover:border-brandpurple transition-colors" 
+        />
       ) : (
         <div className="w-12 h-12 rounded-full bg-neutral-200 flex items-center justify-center border-2 border-neutral-300 group-hover:border-brandpurple/50 transition-colors">
           <IconUserCircle className="text-neutral-400" size={28} />

@@ -1,6 +1,6 @@
 "use client";
-
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface Photo {
   src: string;
@@ -47,9 +47,11 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
             onClick={() => open(i)}
             className={`relative overflow-hidden rounded-2xl bg-gray-100 group/img cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-brandpurple focus:ring-offset-2 ${photo.wide ? "col-span-2" : "col-span-1"}`}
           >
-            <img
+            <Image
               src={photo.src}
               alt={photo.caption}
+              fill
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
               className={`w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105 ${photo.wide ? "aspect-[16/9]" : "aspect-square"}`}
               loading="lazy"
             />
@@ -101,9 +103,11 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
 
             {/* Image */}
             <div className="w-full rounded-2xl overflow-hidden shadow-2xl bg-neutral-900">
-              <img
+              <Image
                 src={photos[lightbox].src}
                 alt={photos[lightbox].caption}
+                width={1200}
+                height={800}
                 className="w-full max-h-[75vh] object-contain"
               />
             </div>
@@ -143,7 +147,7 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
                   onClick={() => setLightbox(i)}
                   className={`flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden border-2 transition-all ${i === lightbox ? "border-brandpurple scale-105" : "border-transparent opacity-50 hover:opacity-75"}`}
                 >
-                  <img src={p.src} alt={p.caption} className="w-full h-full object-cover" />
+                  <Image src={p.src} alt={p.caption} width={56} height={56} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

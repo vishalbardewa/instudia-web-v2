@@ -1,5 +1,9 @@
 import { Metadata } from "next";
-import StudyPlannerClient from "../../components/organisms/StudyPlannerClient";
+import dynamic from "next/dynamic";
+const StudyPlannerClient = dynamic(() => import("../../components/organisms/StudyPlannerClient"), {
+  ssr: false,
+  loading: () => <div className="h-96 w-full animate-pulse bg-gray-100 rounded-[2rem]" />
+});
 
 export const metadata: Metadata = {
   title: "Interactive Study Planner | Instudia",

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { TESTIMONIALS } from "../data/testimonials";
 
 export const metadata: Metadata = {
@@ -33,9 +34,11 @@ export default function SuccessStoriesPage() {
       {/* Main Video Placeholder (Crucial for high conversion) */}
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16 -mt-16 relative z-20">
         <div className="relative w-full max-w-4xl mx-auto aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer border border-neutral-800">
-          <img 
+          <Image 
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
             alt="Students collaborating" 
+            fill
+            sizes="(max-width: 1200px) 100vw, 800px"
             className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -74,8 +77,8 @@ export default function SuccessStoriesPage() {
               </blockquote>
               
               <div className="flex items-center gap-4 mt-auto pt-6 border-t border-neutral-50">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brandpurple/20 bg-gray-100 flex-shrink-0">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                <div className="w-14 h-14 relative rounded-full overflow-hidden border-2 border-brandpurple/20 bg-gray-100 flex-shrink-0">
+                  <Image src={testimonial.image} alt={testimonial.name} fill sizes="56px" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="font-extrabold text-[#1B1C1E]">{testimonial.name}</h4>

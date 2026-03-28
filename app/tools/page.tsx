@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Script from 'next/script';
 import { AppConfig } from '../_utils/AppConfig';
 
@@ -44,6 +45,7 @@ interface ToolProps {
   statusMessage?: string;
   style: string;
   imageUrl?: string;
+  priority?: boolean;
 }
 
 const tools = [
@@ -154,12 +156,19 @@ const styles: Record<string, { bg: string; border: string; text: string; hover: 
   }
 }
 
-const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, style, imageUrl }: ToolProps) => {
+const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, style, imageUrl, priority }: ToolProps) => {
   return (
     <Link href={href} className={`group block max-w-sm rounded-[2rem] p-2 shadow-sm transition-shadow hover:shadow-lg ${styles[style].bg} ${styles[style].border} ${styles[style].text} ${styles[style].hover}`}>
-      <div className="relative w-full overflow-hidden rounded-[1.5rem] bg-stone-50">
+      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-stone-50">
         {imageUrl ? (
-          <img src={imageUrl} alt={name} className="h-full w-full object-contain transition-transform group-hover:scale-110 duration-500" />
+          <Image 
+            src={`${imageUrl}?tr=f-auto,q-auto`} 
+            alt={name} 
+            fill
+            priority={priority}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="h-full w-full object-contain transition-transform group-hover:scale-110 duration-500" 
+          />
         ) : (
           icon
         )}
@@ -257,8 +266,12 @@ export default function CareerPlannerPage() {
       </section>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-6">
-        {tools.map((tool) => (
-          <ToolCard key={tool.href} {...tool} />
+        {tools.map((tool, index) => (
+          <ToolCard 
+            key={tool.href} 
+            {...tool} 
+            priority={index < 2} 
+          />
         ))}
       </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface ICategory {
   name: string;
@@ -39,8 +40,14 @@ export default function BlogCard({
       key={title}
       className="flex flex-col overflow-hidden rounded-lg shadow-lg"
     >
-      <div className="shrink-0">
-        <img className="h-48 w-full object-cover" src={imageUrl} alt={title} />
+      <div className="shrink-0 relative h-48 w-full">
+        <Image 
+          className="h-48 w-full object-cover" 
+          src={imageUrl} 
+          alt={title} 
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className="flex flex-1 flex-col justify-between bg-white p-6">
         <div className="flex-1">
@@ -58,10 +65,12 @@ export default function BlogCard({
           <div className="shrink-0">
             <a href={author.href}>
               <span className="sr-only text-yellow-600">{author.name}</span>
-              <img
+              <Image
                 className="h-10 w-10 rounded-full"
                 src={author.imageUrl}
                 alt={author.name}
+                width={40}
+                height={40}
               />
             </a>
           </div>
