@@ -9,7 +9,6 @@ const navigation = {
   company: [
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
-    { name: "Gallery", href: "/gallery" },
   ],
   legal: [
     { name: "Privacy", href: "/privacy-policy" },
