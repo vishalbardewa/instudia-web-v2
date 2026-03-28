@@ -261,21 +261,21 @@ export default function AboutPage() {
               {/* Glow on hover */}
               <div className="absolute inset-0 rounded-3xl bg-brandpurple/0 group-hover:bg-brandpurple/3 transition-colors duration-300 pointer-events-none" />
 
-              <div className="relative overflow-hidden rounded-2xl h-52 bg-gray-100">
-                <Image
+              {/* <div className="relative overflow-hidden rounded-2xl h-52 bg-gray-100"> */}
+              {/* <Image
                   src={member.photo ?? "/placeholder.png"}
                   alt={`${member.name} — ${member.designation} at instudia`}
                   width={300}
                   height={300}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Dept badge */}
-                <div className="absolute top-3 left-3">
+                /> */}
+              {/* Dept badge */}
+              {/* <div className="absolute top-3 left-3">
                   <span className="text-[9px] font-extrabold uppercase tracking-widest bg-black/60 backdrop-blur-sm text-white px-2 py-1 rounded-full">
                     {member.department}
                   </span>
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
 
               <div className="mt-4">
                 <p className="font-black text-[#1B1C1E] text-base leading-tight">
