@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/salary-insights',
     '/gallery',
     '/success-stories',
+    '/study-planner',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

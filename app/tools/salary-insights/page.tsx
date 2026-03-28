@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import SalaryDashboard from "../components/organisms/SalaryDashboard";
+import SalaryDashboard from "../../components/organisms/SalaryDashboard";
 
 export const metadata: Metadata = {
   title: "Tech Salary Insights in Nagaland | Instudia",
@@ -19,7 +19,7 @@ export default function SalaryInsightsPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple"></span>
             </span>
-            Career Planning Tool
+            Salary Insights
           </p>
           <h1 className="text-4xl md:text-6xl font-black tracking-tight text-[#1B1C1E] max-w-4xl mx-auto leading-tight">
             Discover your earning potential in <span className="text-brandpurple">Nagaland's</span> tech ecosystem

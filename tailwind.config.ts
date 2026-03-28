@@ -63,6 +63,8 @@ const config: Config = {
         brandpurple: "#C21BFF",
         redhue: "#FF1B58",
         flourescent: "#58FF1B",
+        matteblack: "#1B1C1E",
+        ivory: "#FAFAFA",
       },
       fontFamily: {
         jakarta: ["Plus Jakarta Sans", "san-serif"],

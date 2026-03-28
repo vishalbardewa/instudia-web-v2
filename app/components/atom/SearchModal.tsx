@@ -90,7 +90,7 @@ export default function SearchModal({ open, onClose }: Props) {
 
       {/* Panel */}
       <div
-        className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Input row */}

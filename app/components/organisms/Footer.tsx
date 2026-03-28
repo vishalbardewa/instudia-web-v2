@@ -2,17 +2,20 @@ import React from "react";
 
 const navigation = {
   tools: [
-    { name: "Career Blueprint", href: "/tools/career-planner", isNew: true },
+    { name: "Career Blueprint", href: "/tools/career-blueprint", isNew: true },
     { name: "ATS Resume Scanner", href: "/tools/ats-analyzer", isNew: true },
-    { name: "Salary Insights", href: "/salary-insights", isNew: true }
+    { name: "Salary Insights", href: "/tools/salary-insights", isNew: true },
+    { name: "Study Planner", href: "/tools/study-planner", isNew: true }
   ],
   company: [
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
+    { name: "FAQ", href: "/faq" },
   ],
   legal: [
     { name: "Privacy", href: "/privacy-policy" },
     { name: "Terms", href: "/terms" },
+    { name: "Cookie Policy", href: "/cookie-policy" },
   ],
   social: [
     {
@@ -74,14 +77,14 @@ export default function Footer() {
             <div className="md:grid md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                  Tools
+                  Student Success Suite
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-2">
                   {navigation.tools.map((item: any) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 flex items-center text-gray-600 hover:text-gray-900 font-medium transition-colors group"
+                        className="text-xs leading-6 flex items-center text-gray-600 hover:text-gray-900 font-medium transition-colors group"
                       >
                         {item.name}
                         {item.isNew && (
@@ -104,13 +107,13 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   Company
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-2">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <a
                         target="_blank"
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        className="text-xs leading-6 text-gray-600 hover:text-gray-900"
                       >
                         {item.name}
                       </a>
@@ -122,13 +125,13 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   Legal
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-2">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <a
                         target="_blank"
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        className="text-xs leading-6 text-gray-600 hover:text-gray-900"
                       >
                         {item.name}
                       </a>

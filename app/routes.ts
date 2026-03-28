@@ -8,6 +8,7 @@ export const routes = {
   TERMS_AND_CONDITIONS: "/terms",
   SALARY_INSIGHTS: "/salary-insights",
   SUCCESS_STORIES: "/success-stories",
+  STUDY_PLANNER: "/study-planner",
 };
 
 export const slugs = {

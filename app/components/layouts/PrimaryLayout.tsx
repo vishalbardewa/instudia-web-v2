@@ -9,6 +9,7 @@ import WhatsAppWidget from "../atom/WhatsAppWidget";
 import SearchModal from "../atom/SearchModal";
 import { slugs } from "@/app/routes";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
+import Link from "next/link";
 
 const navItems = [
   {
@@ -25,6 +26,11 @@ const navItems = [
     name: "Contact",
     link: "/contact",
     icon: <IconMessage fill="black" className="h-6 w-6 text-black dark:text-white" />,
+  },
+  {
+    name: "Student Success Suite",
+    link: "/tools",
+    icon: <IconHome fill="black" className="h-6 w-6 text-black dark:text-white" />,
   },
 ];
 
@@ -103,6 +109,7 @@ const longNavigation = {
     { name: "About", href: "/about" },
     { name: "Workshops", href: "/workshops" },
     { name: "Contact", href: "/contact" },
+    { name: "Tools", href: "/tools", isNew: true },
   ],
 };
 
@@ -131,7 +138,7 @@ export default function PrimaryLayout({ children }: any) {
           </span>
           New
         </span>
-        Check out our new tools designed for you!
+        We’ve built something just for you— <span className="underline hover:text-brandpurple"><Link href="/tools">take a look!</Link></span>
       </p>
       <div className="flex sticky z-50 top-0 w-full h-full">
         <div className="w-1/4 h-[0.625rem] bg-[#58FF1B]"></div>
