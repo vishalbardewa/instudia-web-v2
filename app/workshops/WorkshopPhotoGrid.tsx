@@ -53,7 +53,7 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
               width={photo.wide ? 1600 : 800}
               height={photo.wide ? 900 : 800}
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-              className={`w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-105 ${photo.wide ? "aspect-[16/9]" : "aspect-square"}`}
+              className={`w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105 ${photo.wide ? "aspect-[16/9]" : "aspect-square"}`}
               loading="lazy"
               unoptimized
             />
