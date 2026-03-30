@@ -5,14 +5,14 @@ import Script from 'next/script';
 import { AppConfig } from '../_utils/AppConfig';
 
 export const metadata: Metadata = {
-  title: 'Student Success Suite | Tools & Resources | Instudia',
-  description: 'Accelerate your career with our Student Success Suite. Access our ATS Resume Scanner, Salary Insights, Career Blueprint, and Study Planner to bridge the gap between education and industry.',
+  title: 'Student Success Suite | Tools & Resources',
+  description: 'Accelerate your career with our Student Success Suite. Access our ATS Resume Scanner, Salary Insights, Career Blueprint, and Study Planner tools.',
   keywords: ['career planning', 'ATS resume scanner', 'salary benchmarks', 'study planner', 'student success', 'instudia', 'dimapur', 'nagaland'],
   alternates: {
     canonical: `${AppConfig.canonicalBase}/tools`,
   },
   openGraph: {
-    title: 'Student Success Suite | Navigate your Career | Instudia',
+    title: 'Student Success Suite | Navigate your Career',
     description: 'Bridge the gap between education and industry with our premium career tools.',
     url: `${AppConfig.canonicalBase}/tools`,
     siteName: 'Instudia',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Success Suite | Instudia',
+    title: 'Student Success Suite',
     description: 'Premium career tools for the next generation of talent.',
     images: ['https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png'],
   },

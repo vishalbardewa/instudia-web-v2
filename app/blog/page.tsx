@@ -4,14 +4,14 @@ import { posts } from "../data/posts";
 import BlogClient from "./BlogClient";
 
 export const metadata: Metadata = {
-  title: "Blog — Insights on Careers, Tech & Skills | instudia",
+  title: "Blog — Insights on Careers, Tech & Skills",
   description:
     "Career tips, skill guides, and tech insights from instudia — Nagaland's career-first tech institute in Dimapur.",
   alternates: { canonical: "https://www.instudianagaland.com/blog" },
   openGraph: {
     title: "instudia Blog — Career, Tech & Skill Insights",
     description:
-      "Read practical guides on IT careers, design, accounting, and upskilling from the team at instudia Dimapur.",
+      "Read practical guides on IT careers, design, accounting, and upskilling from our team in Dimapur.",
     url: "https://www.instudianagaland.com/blog",
     type: "website",
   },

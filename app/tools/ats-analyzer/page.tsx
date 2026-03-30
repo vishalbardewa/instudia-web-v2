@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { ATSAnalyzer } from '../../components/organisms/ATSAnalyzer';
 
 export const metadata: Metadata = {
-  title: 'ATS Analyzer | Instudia',
-  description: 'Simulate ATS systems and analyze your CV keyword density against actual job descriptions.',
+  title: 'ATS Analyzer | CV Scanner',
+  description: 'Simulate ATS systems and analyze your CV keyword density against actual job descriptions for tech roles in Nagaland.',
 };
 
 export default function ATSAnalyzerPage() {

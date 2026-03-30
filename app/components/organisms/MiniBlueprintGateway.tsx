@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getRecommendedCourses } from '../../utils/courseMatcher';
 import { IconSearch, IconArrowRight, IconSparkles } from '@tabler/icons-react';
@@ -77,10 +78,12 @@ export default function MiniBlueprintGateway() {
                     className="bg-white rounded-[24px] p-5 border-2 border-neutral-100/80 hover:border-brandpurple/30 hover:shadow-2xl hover:shadow-brandpurple/5 transition-all group flex flex-col h-full"
                   >
                     <div className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-5 bg-neutral-100 relative border border-neutral-100">
-                      <img
+                      <Image
                         src={IMAGE_LIST[`${course.slug}`] || course.image}
                         alt={course.fullTitle}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        width={400}
+                        height={300}
                       />
                       <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md shadow-sm text-[#1B1C1E] font-black text-[10px] uppercase tracking-wider px-2.5 py-1.5 rounded-lg border border-neutral-100 drop-shadow-sm">
                         {course.category}

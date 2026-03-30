@@ -4,9 +4,9 @@ import WorkshopPhotoGrid from "./WorkshopPhotoGrid";
 import WorkshopNav from "./WorkshopNav";
 
 export const metadata: Metadata = {
-  title: "Workshops & Events | instudia Dimapur",
+  title: "Workshops & Events | Skill Programs",
   description:
-    "Explore instudia's skill development workshops, job fairs, AI seminars and community programs conducted across Dimapur and Nagaland.",
+    "Explore skill development workshops, job fairs, AI seminars and community programs conducted by instudia in Dimapur and Nagaland.",
   alternates: { canonical: "https://www.instudianagaland.com/workshops" },
 };
 

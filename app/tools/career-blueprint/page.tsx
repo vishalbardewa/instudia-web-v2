@@ -2,8 +2,8 @@ import { CareerAdviceForm } from '../../components/organisms/CareerAdviceForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Discover Your Career Path | Instudia',
-  description: 'Enter your skills and hobbies to receive market-driven career advice.',
+  title: 'Discover Your Career Path',
+  description: 'Enter your skills and hobbies to receive market-driven career advice and personalized tech roadmaps.',
 };
 
 export default function CareerDiscoveryPage() {

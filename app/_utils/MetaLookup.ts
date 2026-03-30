@@ -3,13 +3,13 @@ import { AppConfig } from "./AppConfig";
 
 const META_LOOKUP = {
   [slugs.PYTHON]: {
-    title: "Python Programming in Dimapur | Enroll Now",
+    title: "Python Programming in Dimapur",
     description:
-      "Master Python programming. Industry-certified training for career success. Join Instudia today!",
+      "Master Python programming with industry-certified training. Build real-world projects and launch your developer career in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Python | Instudia",
+      title: "Build Your Career: Learn Python",
       description:
-        "Top python training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Top Python training in Dimapur. Master programming and software development with industry-certified experts at instudia.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -18,28 +18,28 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Learn Python with instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Courses | instudia ",
+      title: "Python Programming Course",
       description:
-        "Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Python programming in Dimapur. Industry-focused training to help you build a successful tech career in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.DCA]: {
-    title: "Diploma in Computer Application in Dimapur | Enroll Now",
+    title: "Diploma in Computer Application (DCA) in Dimapur",
     description:
-      "Upskill in DCA. Industry-certified training for career success. Join Instudia today!",
+      "Comprehensive DCA course in Dimapur. Master fundamental computer skills, MS Office, and internet basics with industry-certified training.",
     openGraph: {
       title:
-        "Build Your Career: Learn Diploma in Computer Application | Instudia",
+        "Build Your Career: Learn DCA",
       description:
-        "Top DCA training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Top DCA training institute in Dimapur. Master fundamental computer applications for career success in Nagaland.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -48,28 +48,28 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "DCA Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Diploma in Computer Application in Dimapur | Enroll Now",
+      title: "Diploma in Computer Application (DCA)",
       description:
-        "Elevate your career with DCA in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Elevate your career with DCA in Dimapur. Practical training in computer applications to unlock new job opportunities.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.PGDCA]: {
-    title: "Post Graduate Diploma in Computer Application in Dimapur | Enroll Now",
+    title: "PGDCA Course in Dimapur",
     description:
-      "Upskill in PGDCA. Industry-certified training for career success. Join Instudia today!",
+      "Post Graduate Diploma in Computer Application. Master IT concepts and software management in Nagaland.",
     openGraph: {
       title:
-        "Build Your Career: Learn Post Graduate Diploma in Computer Application | Instudia",
+        "Build Your Career: Learn PGDCA",
       description:
-        "Top PGDCA training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "PGDCA training in Dimapur. Master IT fundamentals and applications for professional growth in Nagaland.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -78,27 +78,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "PGDCA Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Post Graduate Diploma in Computer Application in Dimapur | Enroll Now",
+      title: "PGDCA Course in Dimapur",
       description:
-        "Elevate your career with PGDCA in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Take your IT skills to the next level with PGDCA. Industry-certified training for career success in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.GRAPHIC_DESIGN]: {
-    title: "Graphic Design in Dimapur | Enroll Now",
+    title: "Graphic Design Course in Dimapur",
     description:
-      "Upskill in Graphic Design. Industry-certified training for career success. Join Instudia today!",
+      "Master industry-standard design tools like Photoshop, Illustrator, and Canva. Learn visual storytelling and brand design in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Graphic Design | Instudia",
+      title: "Build Your Career: Learn Graphic Design",
       description:
-        "Top Graphic Design training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Professional Graphic Design training in Dimapur. Master the tools and techniques to become a creative professional.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -107,27 +107,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Graphic Design at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Graphic Design in Dimapur | Enroll Now",
+      title: "Graphic Design Course",
       description:
-        "Elevate your career with Graphic Design in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Learn Graphic Design in Dimapur. Industry-certified training to help you launch a creative career in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.ADVANCED_EXCEL]: {
-    title: "Advanced Excel in Dimapur | Enroll Now",
+    title: "Advanced Excel Training in Dimapur",
     description:
-      "Upskill in Advanced Excel. Industry-certified training for career success. Join Instudia today!",
+      "Master data analysis, pivot tables, and advanced formulas. Professional Excel training for finance and business roles in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Advanced Excel | Instudia",
+      title: "Build Your Career: Learn Advanced Excel",
       description:
-        "Top Advanced Excel training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Master data management and analysis with our Advanced Excel course in Dimapur. Essential for modern professionals.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -136,28 +136,28 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Advanced Excel at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Advanced Excel in Dimapur | Enroll Now",
+      title: "Advanced Excel Course",
       description:
-        "Elevate your career with Advanced Excel in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Advanced Excel in Dimapur. Enhance your data skills and boost your employability in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.FRONTEND]: {
-    title: "Frontend Development using React in Dimapur | Enroll Now",
+    title: "Frontend Development using React in Dimapur",
     description:
-      "Upskill in Frontend Development using React. Industry-certified training for career success. Join Instudia today!",
+      "Learn modern web development with React. Master HTML, CSS, and JavaScript to build responsive web applications in Dimapur.",
     openGraph: {
       title:
-        "Build Your Career: Learn Frontend Development using React | Instudia",
+        "Build Your Career: Learn Frontend Development",
       description:
-        "Top Frontend Development using React training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "State-of-the-art Frontend training in Dimapur. Master React and modern JS frameworks for high-paying tech roles.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -166,27 +166,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Frontend React Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Frontend Development using React in Dimapur | Enroll Now",
+      title: "Frontend Development with React",
       description:
-        "Elevate your career with Frontend Development using React in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Frontend Development in Dimapur. Learn React and build modern web applications for the global market.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.BACKEND]: {
-    title: "Backend Development in Dimapur | Enroll Now",
+    title: "Backend Development Course in Dimapur",
     description:
-      "Upskill in Backend Development. Industry-certified training for career success. Join Instudia today!",
+      "Master server-side programming, databases, and API development. Learn Node.js and SQL to build robust web backends in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Backend Development | Instudia",
+      title: "Build Your Career: Learn Backend Development",
       description:
-        "Top Backend Development training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Professional Backend training in Dimapur. Master the architecture behind the web with industry-certified experts.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -195,27 +195,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Backend Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Backend Development in Dimapur | Enroll Now",
+      title: "Backend Development Course",
       description:
-        "Elevate your career with Backend Development in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master server-side logic and database management in Dimapur. Build powerful backends for modern web applications.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.FULLSTACK_WEB_DEVELOPMENT]: {
-    title: "Fullstack Web Development in Dimapur | Enroll Now",
+    title: "Fullstack Web Development Course in Dimapur",
     description:
-      "Upskill in Fullstack Web Development. Industry-certified training for career success. Join Instudia today!",
+      "Master both Frontend and Backend development. Build complete, production-ready web applications with modern tech stacks in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Fullstack Web Development | Instudia",
+      title: "Build Your Career: Learn Fullstack Web Development",
       description:
-        "Top Fullstack Web Development training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Comprehensive Fullstack training in Dimapur. Master the entire web stack from database to UI with expert guidance.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -224,27 +224,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Fullstack Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Fullstack Web Development in Dimapur | Enroll Now",
+      title: "Fullstack Web Development Course",
       description:
-        "Elevate your career with Fullstack Web Development in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Become a Fullstack Developer in Dimapur. Master the complete development cycle and launch your tech career.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.GST]: {
-    title: "Tally with GST in Dimapur | Enroll Now",
+    title: "Tally Prime with GST Course in Dimapur",
     description:
-      "Upskill in Tally with GST. Industry-certified training for career success. Join Instudia today!",
+      "Master Tally Prime with GST implementation. Learn accounting, taxation, and financial management with practical training in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Tally with GST | Instudia",
+      title: "Build Your Career: Learn Tally with GST",
       description:
-        "Top Tally with GST training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Expert Tally with GST training in Dimapur. Master digital accounting and tax compliance for modern business roles.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -253,27 +253,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Tally GST Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Tally with GST in Dimapur | Enroll Now",
+      title: "Tally with GST Course",
       description:
-        "Elevate your career with Tally with GST in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Tally with GST in Dimapur. Gain essential accounting skills and boost your financial career in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.TALLY]: {
-    title: "Accounting with Tally in Dimapur | Enroll Now",
+    title: "Accounting with Tally in Dimapur",
     description:
-      "Upskill in Accounting with Tally. Industry-certified training for career success. Join Instudia today!",
+      "Master professional accounting with Tally. Industry-certified training for finance and business success in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Accounting with Tally | Instudia",
+      title: "Build Your Career: Learn Tally",
       description:
-        "Top Accounting with Tally training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Top Accounting with Tally training in Dimapur. Master financial management and digital accounting for modern business.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -282,28 +282,28 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Tally Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Accounting with Tally in Dimapur | Enroll Now",
+      title: "Accounting with Tally Course",
       description:
-        "Elevate your career with Accounting with Tally in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Tally in Dimapur. Gain practical accounting skills to advance your financial career in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.MOBILE_APP_DEVELOPMENT]: {
-    title: "Mobile App Development using React Native in Dimapur | Enroll Now",
+    title: "Mobile App Development with React Native in Dimapur",
     description:
-      "Upskill in Mobile App Development using React Native. Industry-certified training for career success. Join Instudia today!",
+      "Build cross-platform mobile apps for iOS and Android using React Native. Master mobile UI and native features in Nagaland.",
     openGraph: {
       title:
-        "Build Your Career: Learn Mobile App Development using React Native | Instudia",
+        "Build Your Career: Learn Mobile App Development",
       description:
-        "Top Mobile App Development using React Native training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Professional React Native training in Dimapur. Master mobile app development for the modern app economy.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -312,27 +312,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "React Native Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Mobile App Development using React Native in Dimapur | Enroll Now",
+      title: "Mobile App Development Course",
       description:
-        "Elevate your career with Mobile App Development using React Native in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master React Native in Dimapur. Build and deploy mobile apps for iOS and Android with expert guidance.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.UIUX_DESIGN]: {
-    title: "UI/UX Design in Dimapur | Enroll Now",
+    title: "UI/UX Design Course in Dimapur",
     description:
-      "Upskill in UI/UX Design. Industry-certified training for career success. Join Instudia today!",
+      "Master user experience and interface design. Learn Figma, wireframing, and prototyping to build user-centric digital products in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn UI/UX Design | Instudia",
+      title: "Build Your Career: Learn UI/UX Design",
       description:
-        "Top UI/UX Design training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Professional UI/UX training in Dimapur. Master the design thinking process and build a stunning portfolio with expert mentors.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -341,28 +341,28 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "UI/UX Design at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "UI/UX Design in Dimapur | Enroll Now",
+      title: "UI/UX Design Course",
       description:
-        "Elevate your career with UI/UX Design in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master UI/UX Design in Dimapur. Learn to create intuitive digital experiences and launch your design career in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.BUSINESS_INTELLIGENCE]: {
-    title: "Business Intelligence using PowerBI in Dimapur | Enroll Now",
+    title: "Business Intelligence using PowerBI in Dimapur",
     description:
-      "Upskill in Business Intelligence using PowerBI. Industry-certified training for career success. Join Instudia today!",
+      "Master data visualization and business intelligence with PowerBI. Transform raw data into actionable insights for corporate roles in Nagaland.",
     openGraph: {
       title:
-        "Build Your Career: Learn Business Intelligence using PowerBI | Instudia",
+        "Build Your Career: Learn Business Intelligence",
       description:
-        "Top Business Intelligence using PowerBI training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Top PowerBI training in Dimapur. Master data analytics and reporting for informed business decision-making.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -371,27 +371,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "PowerBI Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Business Intelligence using PowerBI in Dimapur | Enroll Now",
+      title: "Business Intelligence using PowerBI",
       description:
-        "Elevate your career with Business Intelligence using PowerBI in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master PowerBI in Dimapur. Learn to visualize data and drive business growth with our industry-certified BI course.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.PROJECT_MANAGEMENT]: {
-    title: "Project Management in Dimapur | Enroll Now",
+    title: "Project Management Course in Dimapur",
     description:
-      "Upskill in Project Management. Industry-certified training for career success. Join Instudia today!",
+      "Master Agile, Scrum, and project lifecycle management. Develop leadership and organizational skills for corporate success in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Project Management | Instudia",
+      title: "Build Your Career: Learn Project Management",
       description:
-        "Top Project Management training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Professional Project Management training in Dimapur. Master the tools and methodologies to lead successful teams and projects.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -400,27 +400,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Project Management at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Project Management in Dimapur | Enroll Now",
+      title: "Project Management Course",
       description:
-        "Elevate your career with Project Management in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Project Management in Dimapur. Gain the skills to plan, execute, and deliver successful projects in any industry.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.DEVOPS]: {
-    title: "DevOps in Dimapur | Enroll Now",
+    title: "DevOps Engineering Course in Dimapur",
     description:
-      "Upskill in DevOps. Industry-certified training for career success. Join Instudia today!",
+      "Master CI/CD pipelines, cloud infrastructure, and automation. Learn to bridge the gap between development and operations in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn DevOps | Instudia",
+      title: "Build Your Career: Learn DevOps",
       description:
-        "Top DevOps training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Advanced DevOps training in Dimapur. Master the tools and culture of modern software delivery with expert guidance.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -429,27 +429,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "DevOps Course at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "DevOps in Dimapur | Enroll Now",
+      title: "DevOps Engineering Course",
       description:
-        "Elevate your career with DevOps in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master DevOps in Dimapur. Learn automation, cloud computing, and CI/CD to accelerate your tech career in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.HARDWARE_NETWORKING]: {
-    title: "Hardware and Networking in Dimapur | Enroll Now",
+    title: "Hardware and Networking Course in Dimapur",
     description:
-      "Upskill in Hardware and Networking. Industry-certified training for career success. Join Instudia today!",
+      "Master computer hardware, troubleshooting, and network administration. Industry-certified training for IT support roles in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Hardware and Networking | Instudia",
+      title: "Build Your Career: Learn Hardware & Networking",
       description:
-        "Top Hardware and Networking training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Comprehensive Hardware and Networking training in Dimapur. Master the physical foundation of IT infrastructure.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -458,27 +458,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Hardware & Networking at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Hardware and Networking in Dimapur | Enroll Now",
+      title: "Hardware & Networking Course",
       description:
-        "Elevate your career with Hardware and Networking in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master IT Hardware and Networking in Dimapur. Gain practical skills for technical support and infrastructure management.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.RETAIL_MANAGEMENT]: {
-    title: "Retail Management in Dimapur | Enroll Now",
+    title: "Retail Management Course in Dimapur",
     description:
-      "Upskill in Retail Management. Industry-certified training for career success. Join Instudia today!",
+      "Develop essential skills for the retail industry. Learn customer service, inventory management, and sales strategies in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Retail Management | Instudia",
+      title: "Build Your Career: Learn Retail Management",
       description:
-        "Top Retail Management training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Professional Retail Management training in Dimapur. Master the operations and strategies of modern retail business.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -487,27 +487,27 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Retail Management at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Retail Management in Dimapur | Enroll Now",
+      title: "Retail Management Course",
       description:
-        "Elevate your career with Retail Management in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Retail Management in Dimapur. Prepare for a successful career in the fast-growing retail sector in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
   },
   [slugs.FOOD_PROCESSING]: {
-    title: "Food Processing in Dimapur | Enroll Now",
+    title: "Food Processing Course in Dimapur",
     description:
-      "Upskill in Food Processing. Industry-certified training for career success. Join Instudia today!",
+      "Learn techniques for food preservation, quality control, and safety standards. Professional vocational training in Nagaland.",
     openGraph: {
-      title: "Build Your Career: Learn Food Processing | Instudia",
+      title: "Build Your Career: Learn Food Processing",
       description:
-        "Top Food Processing training institute in Dimapur, Nagaland. Master programming, Tally, GST, web design & graphic courses. Industry-certified training for career success. Join Instudia today!",
+        "Specialized Food Processing training in Dimapur. Master the skills to excel in the food production and safety industry.",
       url: `${AppConfig.canonicalBase}`,
       locale: AppConfig.locale,
       siteName: AppConfig.site_name,
@@ -516,15 +516,15 @@ const META_LOOKUP = {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
           width: 800,
           height: 600,
-          alt: "Enroll with instudia",
+          alt: "Food Processing at instudia",
           type: "image/png",
         },
       ],
     },
     twitter: {
-      title: "Food Processing in Dimapur | Enroll Now",
+      title: "Food Processing Course",
       description:
-        "Elevate your career with Food Processing in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+        "Master Food Processing in Dimapur. Gain practical skills for the food science and production industry in Nagaland.",
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),

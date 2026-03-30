@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "instudia — Links",
+  title: "Links & Resources",
   description:
-    "Explore instudia's courses, AI career tools, and community links. Computer & skill training in Dimapur, Nagaland.",
+    "Quick access to instudia's courses, AI career tools, and community links for students in Dimapur, Nagaland.",
   alternates: {
     canonical: "https://www.instudianagaland.com/links",
   },

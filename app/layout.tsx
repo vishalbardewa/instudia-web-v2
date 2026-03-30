@@ -13,12 +13,15 @@ const inter = Inter({ subsets: ["latin"] });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Computer & Skill Courses in Nagaland | instudia",
-  description: "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Graphic Design, Project Management, DCA, PGDCA, Tally, GST & Digital Skills. Boost your career in Nagaland. Enroll now!",
+  title: {
+    default: "Computer & Skill Courses in Nagaland | instudia",
+    template: "%s | instudia",
+  },
+  description: "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
   metadataBase: new URL(AppConfig.canonicalBase),
   openGraph: {
-    title: "Best Computer Courses & Skill Training in Dimapur | instudia",
-    description: "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",
+    title: "Best Computer Courses & Skill Training in Dimapur",
+    description: "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills.",
     url: AppConfig.canonicalBase,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,

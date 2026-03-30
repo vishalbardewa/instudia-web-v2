@@ -159,12 +159,12 @@ const cards = [
 
 export const metadata = {
   title:
-    "Computer & Skill Courses in Nagaland | instudia",
+    "Computer & Skill Courses in Nagaland",
   description:
-    "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
+    "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
   openGraph: {
     title:
-      "Best Computer Courses & Skill Training in Dimapur | instudia",
+      "Best Computer Courses & Skill Training in Dimapur",
     description:
       "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",
     url: `${AppConfig.canonicalBase}`,
@@ -189,9 +189,9 @@ export const metadata = {
   },
   twitter: {
     title:
-      "Best Computer Courses & Skill Training in Dimapur | instudia",
+      "Best Computer Courses & Skill Training in Dimapur",
     description:
-      "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
+      "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Enroll now!",
     card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
   },
   metadataBase: new URL("https://instudianagaland.com"),
@@ -335,10 +335,12 @@ export default function Page() {
       <div className="relative isolate -z-10 mt-32 sm:mt-40">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-black/5 px-6 py-16 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
-            <img
+            <Image
               alt="Person staring at laptop sitting on the chair"
               src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
+              width={600}
+              height={600}
             />
             <div className="w-full flex-auto">
               <h2 className="text-3xl font-bold tracking-tight text-[#1b1c1e] sm:text-4xl">
@@ -390,93 +392,7 @@ export default function Page() {
       </div>
 
       <CaseStudies caseStudies={caseStudies} />
-      {/* <div className="bg-black text-center py-[64px] md:py-[80px] xl:py-[100px] mt-20 text-white px-8 lg:px-0">
-        <div className="flex flex-col md:items-center md:text-center space-y-[12px] xl:space-y-[16px] 2xl:space-y-[20px] pb-[40px] xl:pb-[48px] 2xl:pb-[60px] md:max-w-[560px] xl:max-w-[700px] md:mx-auto ">
-          <div className="flex flex-col items-center gap-y-[4px]">
-            <h2 className="text-text-highlight text-[32px] leading-[1.40625] font-medium">
-              Everything you can do at instudia
-            </h2>
-          </div>
-          <p className="text-text-default 2xl:text-[18px] 2xl:leading-[1.6111111111111112] 2xl:font-normal text-[16px] leading-[1.625] font-normal xl:px-[54px]">
-            Together, Linearity Curve and Linearity Move form a powerful unified
-            design system. Explore what else they can do for you.{" "}
-          </p>
-        </div>
-        <div className="flex flex-col gap-6 justify-center lg:flex-row">
-          <div>
-            <a href="#" className="">
-              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
-                <picture className="overflow-hidden min-w-full">
-                  <img
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
-                    alt="Team slider card image"
-                  />
-                </picture>
-              </div>
-              <div className="h-[16px] 2xl:h-[20px]"></div>
-              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
-                Animations
-              </p>
-            </a>
-          </div>
-          <div>
-            <a href="#" className="snap-start w-full">
-              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
-                <picture className="overflow-hidden min-w-full">
-                  <img
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
-                    alt="Team slider card image"
-                  />
-                </picture>
-              </div>
-              <div className="h-[16px] 2xl:h-[20px]"></div>
-              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
-                Animations
-              </p>
-            </a>
-          </div>
-          <div>
-            <a href="#" className="snap-start w-full">
-              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
-                <picture className="overflow-hidden min-w-full">
-                  <img
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
-                    alt="Team slider card image"
-                  />
-                </picture>
-              </div>
-              <div className="h-[16px] 2xl:h-[20px]"></div>
-              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
-                Animations
-              </p>
-            </a>
-          </div>
-          <div>
-            <a href="#" className="snap-start w-full">
-              <div className="rounded-[20px] overflow-hidden border-2 border-border-main 2xl:rounded-[30px] h-full w-full bg-orange aspect-[248/167] xl:aspect-[262/176] 2xl:aspect-[312/210]">
-                <picture className="overflow-hidden min-w-full">
-                  <img
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                    src="https://a.storyblok.com/f/197805/936x630/95af150cda/animations-okx3.png/m/244x163/filters:format(png):quality(75)"
-                    alt="Team slider card image"
-                  />
-                </picture>
-              </div>
-              <div className="h-[16px] 2xl:h-[20px]"></div>
-              <p className="text-text-default xl:text-[18px] xl:leading-[1.6111111111111112] xl:font-normal text-[16px] leading-[1.625] font-normal 2xl:text-[20px]">
-                Animations
-              </p>
-            </a>
-          </div>
-        </div>
-      </div> */}
+
     </main>
   );
 }

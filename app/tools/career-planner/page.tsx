@@ -2,8 +2,8 @@ import { CareerPlannerDashboard } from '../../components/organisms/CareerPlanner
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student Career Planner | Instudia',
-  description: 'Bridge the gap between your current skills and your dream roles.',
+  title: 'Student Career Planner',
+  description: 'Bridge the gap between your current skills and your dream roles with our interactive career planning dashboard.',
 };
 
 export default function CareerPlannerPage() {

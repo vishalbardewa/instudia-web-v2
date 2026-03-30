@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const LOGOS = [
@@ -56,10 +57,12 @@ export default function ScrollingLogos() {
              {[...TopRow, ...TopRow, ...TopRow, ...TopRow].map((logo, i) => (
                 <div key={`top-${i}`} className="flex items-center justify-center shrink-0 group">
                   <div className="bg-white border border-neutral-100 shadow-sm rounded-[1.25rem] w-[85px] h-[85px] sm:w-[100px] sm:h-[100px] flex items-center justify-center p-5 group-hover:border-brandpurple/30 group-hover:shadow-xl transition-all duration-500 cursor-crosshair group-hover:-translate-y-2 relative overflow-hidden">
-                    <img 
+                    <Image 
                       src={logo.src} 
                       alt={logo.alt} 
                       className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-500 relative z-10" 
+                      width={100}
+                      height={100}
                     />
                     <div className="absolute inset-0 bg-brandpurple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
@@ -78,10 +81,12 @@ export default function ScrollingLogos() {
              {[...BottomRow, ...BottomRow, ...BottomRow, ...BottomRow].map((logo, i) => (
                 <div key={`bot-${i}`} className="flex items-center justify-center shrink-0 group">
                   <div className="bg-white border border-neutral-100 shadow-sm rounded-[1.25rem] w-[85px] h-[85px] sm:w-[100px] sm:h-[100px] flex items-center justify-center p-4 sm:p-5 group-hover:border-brandpurple/30 group-hover:shadow-xl transition-all duration-500 cursor-crosshair group-hover:-translate-y-2 relative overflow-hidden">
-                    <img 
+                    <Image 
                       src={logo.src} 
                       alt={logo.alt} 
                       className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-500 relative z-10" 
+                      width={100}
+                      height={100}
                     />
                     <div className="absolute inset-0 bg-brandpurple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>

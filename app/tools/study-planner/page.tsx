@@ -6,8 +6,8 @@ const StudyPlannerClient = dynamic(() => import("../../components/organisms/Stud
 });
 
 export const metadata: Metadata = {
-  title: "Interactive Study Planner | Instudia",
-  description: "Generate a personalised, print-ready study planner with time-blocked schedules, Pomodoro sessions, and spaced repetition trackers.",
+  title: "Interactive Study Planner",
+  description: "Generate a custom, print-ready study planner with time-blocked schedules, Pomodoro sessions, and trackers.",
   alternates: { canonical: "https://www.instudianagaland.com/tools/study-planner" },
 };
 

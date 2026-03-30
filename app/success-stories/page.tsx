@@ -3,8 +3,8 @@ import Image from "next/image";
 import { TESTIMONIALS } from "../data/testimonials";
 
 export const metadata: Metadata = {
-  title: "Student Success Stories | Instudia",
-  description: "Read inspiring stories from Instudia alumni who transformed their careers and landed jobs as Developers, Designers, and Marketers.",
+  title: "Student Success Stories",
+  description: "Read inspiring stories from instudia alumni who transformed their careers and landed jobs as Developers, Designers, and Marketers in Nagaland.",
   alternates: { canonical: "https://www.instudianagaland.com/success-stories" },
 };
 

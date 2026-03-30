@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getRecommendedCourses } from '../../utils/courseMatcher';
 import { IconArrowRight, IconAnalyze } from '@tabler/icons-react';
@@ -137,10 +138,12 @@ export default function SkillGraphOrbit() {
                         <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brandpurple to-fuchsia-500 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
                         
                         <div className="w-24 sm:w-28 aspect-[4/3] rounded-xl overflow-hidden shrink-0 border border-neutral-100">
-                          <img 
+                          <Image 
                             src={IMAGE_LIST[`${course.slug}`] || course.image}
-                            alt="" 
+                            alt={course.fullTitle} 
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-100"
+                            width={120}
+                            height={90}
                           />
                         </div>
                         <div className="flex-1 min-w-0 pr-2">

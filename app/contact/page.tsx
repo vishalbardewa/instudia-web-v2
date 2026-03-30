@@ -1,13 +1,13 @@
 import Script from "next/script";
 
 export const metadata = {
-  title: "Contact Instudia | Reach Us in Dimapur, Nagaland",
+  title: "Contact Us | Reach Us in Dimapur",
   description:
-    "Get in touch with instudia — the premier computer training institute in Dimapur, Nagaland. Contact us for admissions, collaborations, or career queries. Visit us at Fellowship Colony, Dimapur.",
+    "Get in touch with instudia — the premier computer training institute in Dimapur. Contact us for admissions, collaborations, or career queries.",
   openGraph: {
-    title: "Contact Instudia | Reach Us in Dimapur, Nagaland",
+    title: "Contact Us | Reach Us in Dimapur",
     description:
-      "Contact instudia for admissions and enquiries. Located in Fellowship Colony, Dimapur, Nagaland. Call +91-8798-587779 or email us.",
+      "Contact instudia for admissions and enquiries. Located in Fellowship Colony, Dimapur, Nagaland.",
   },
   alternates: {
     canonical: "https://www.instudianagaland.com/contact",

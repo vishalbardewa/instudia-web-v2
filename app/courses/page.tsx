@@ -19,11 +19,11 @@ export async function generateStaticParams() {
 }
 
 export const metadata = {
-  title:"Courses | instudia",
-  description:"Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
+  title:"Pick a course to upskill",
+  description:"Elevate your career with premier computer and skill training in Dimapur. Explore cutting-edge courses in programming, web development, web design & more.",
   openGraph: {
-    title: "Pick a course to upskill | instudia",
-    description: "Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, web development, project management, and digital skills. Unlock your potential with instudia through industry-focused training for success.",
+    title: "Pick a course to upskill",
+    description: "Elevate your career with premier computer and skill training in Dimapur. Explore cutting-edge courses in programming, web development, web design & more.",
     url: `${AppConfig.canonicalBase}`,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,
@@ -200,12 +200,12 @@ function Courses() {
                   </span>
                 </h4>
               </div>
-              <img
-                className="w-9/12 md:w-11/12 max-w-md m-auto card__image loading"
+              <Image
+                className="w-9/12 md:w-11/12 max-w-md m-auto card__image"
                 src="https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fa5kvkze8ki7bepnyswywp8vdk%2Fpublic%2F1718674299%2Fverified_export_test.1718674299381.png"
-                width="800"
-                height="400"
-                data-was-processed="true"
+                width={800}
+                height={400}
+                alt="Accredited Certificate for Proven Skill Mastery"
               />
               <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-4/5">
                 <p className="flex flex-col items-start">

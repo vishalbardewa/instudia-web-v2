@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | instudia",
+  title: "Cookie Policy",
   description:
-    "instudia's Cookie Policy explains what cookies are, how we use them, and how you can manage your cookie preferences.",
+    "Learn about how we use cookies to improve your experience on the instudia platform and how you can manage them.",
   alternates: { canonical: "https://www.instudianagaland.com/cookie-policy" },
   robots: { index: true, follow: true },
 };

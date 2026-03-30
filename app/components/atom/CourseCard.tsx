@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -16,11 +16,12 @@ export default function CourseCard({
       key={title}
       className="col-span-3 flex flex-col overflow-hidden rounded-lg shadow-lg lg:col-span-1"
     >
-      <div className="shrink-0">
-        <img
+      <div className="flex shrink-0 h-48 relative">
+        <Image
           className="h-full w-full object-cover"
           src={`/assets/images/${slug}.png`}
           alt={title}
+          fill
         />
       </div>
       <div className="flex flex-1 flex-col justify-between bg-white p-6 hover:bg-slate-100">

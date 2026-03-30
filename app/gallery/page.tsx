@@ -1,8 +1,9 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Campus Gallery | Life at Instudia",
-  description: "Take a tour of our modern computing labs, creative design studios, and vibrant student community at Instudia Dimapur, Nagaland.",
+  title: "Campus Gallery & Student Life",
+  description: "Take a tour of our modern computing labs, creative design studios, and vibrant student community at instudia in Nagaland.",
   alternates: { canonical: "https://www.instudianagaland.com/gallery" },
 };
 
@@ -77,11 +78,12 @@ export default function GalleryPage() {
               key={image.id} 
               className={`relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 ${image.span}`}
             >
-              <img 
+              <Image 
                 src={image.url} 
                 alt={image.alt}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                loading="lazy"
+                width={800}
+                height={600}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

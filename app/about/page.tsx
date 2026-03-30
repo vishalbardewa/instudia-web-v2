@@ -6,9 +6,9 @@ import { staff } from "../data/staff";
 
 export const metadata = {
   title:
-    "About instudia — Tech & Skill Training Institute in Dimapur, Nagaland",
+    "About instudia — Tech & Skill Institute in Nagaland",
   description:
-    "Learn about instudia — Nagaland's career-first tech institute in Dimapur. Meet our team, discover our mission, and see how we've helped 500+ students build careers in IT, design, and finance.",
+    "Learn about instudia — Nagaland's career-first tech institute. Meet our team, our mission, and see how we've helped 500+ students build IT careers.",
   alternates: { canonical: "https://www.instudianagaland.com/about" },
   openGraph: {
     title: "About instudia — Dimapur's Career-First Tech Institute",
@@ -126,18 +126,22 @@ export default function AboutPage() {
           {/* Right photo mosaic */}
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&h=528&q=80"
                 alt="instudia team discussion"
                 className="w-full h-full object-cover"
+                width={400}
+                height={528}
               />
             </div>
             <div className="flex flex-col gap-3">
               <div className="rounded-2xl overflow-hidden aspect-square">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&auto=format&fit=crop&h=300&q=80"
                   alt="Student learning"
                   className="w-full h-full object-cover"
+                  width={300}
+                  height={300}
                 />
               </div>
               <div className="rounded-2xl bg-brandpurple p-5 flex flex-col justify-end text-white">
@@ -185,10 +189,12 @@ export default function AboutPage() {
 
         {/* Mission image */}
         <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
             alt="instudia mission — team learning together"
             className="w-full h-full object-cover"
+            width={800}
+            height={600}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4">
@@ -315,17 +321,21 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-3xl overflow-hidden aspect-square">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                 alt="instudia team"
                 className="w-full h-full object-cover"
+                width={400}
+                height={400}
               />
             </div>
             <div className="rounded-3xl overflow-hidden aspect-square">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                 alt="instudia classroom"
                 className="w-full h-full object-cover"
+                width={400}
+                height={400}
               />
             </div>
             <div className="rounded-3xl bg-flourescent p-6 flex flex-col justify-end aspect-square">

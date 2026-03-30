@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getRecommendedCourses } from '../../utils/courseMatcher';
 import { IconArrowRight, IconTerminal2 } from '@tabler/icons-react';
@@ -122,10 +123,12 @@ export default function CareerTerminal() {
                       className="bg-[#FAFAFA] hover:bg-[#F5F5F5]/80 border border-neutral-800 hover:border-neutral-600 rounded-2xl p-5 transition-all group flex flex-col h-full shadow-lg shadow-black/50"
                     >
                       <div className="w-full aspect-[16/9] rounded-xl overflow-hidden mb-5 border border-neutral-800">
-                        <img
+                        <Image
                           src={IMAGE_LIST[`${course.slug}`] || course.image}
                           alt={course.fullTitle}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                          width={400}
+                          height={225}
                         />
                       </div>
 

@@ -2,17 +2,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Careers at instudia — Join Our Team in Dimapur, Nagaland",
+  title: "Careers & Join Our Team in Dimapur",
   description:
-    "Explore career opportunities at instudia — Nagaland's career-first tech institute. Join a mission-driven team shaping the future of skill development in Dimapur.",
+    "Join our mission-driven team at instudia. Explore career opportunities for educators, technologists, and creatives in Nagaland.",
   alternates: { canonical: "https://www.instudianagaland.com/careers" },
-  openGraph: {
-    title: "Careers at instudia — Join Our Team in Dimapur",
-    description:
-      "We're hiring educators, marketers, and technologists passionate about empowering Nagaland's youth. See open positions at instudia.",
-    url: "https://www.instudianagaland.com/careers",
-    type: "website",
-  },
 };
 
 const perks = [

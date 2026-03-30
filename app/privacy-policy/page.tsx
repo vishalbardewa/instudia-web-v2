@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | instudia",
+  title: "Privacy Policy",
   description:
-    "instudia's Privacy Policy explains how we collect, use, and protect your personal data when you use our website and services.",
+    "Learn how instudia collects, protects, and manages your personal data in compliance with privacy standards.",
   alternates: { canonical: "https://www.instudianagaland.com/privacy-policy" },
   robots: { index: true, follow: true },
 };

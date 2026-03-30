@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import SalaryDashboard from "../../components/organisms/SalaryDashboard";
 
 export const metadata: Metadata = {
-  title: "Tech Salary Insights in Nagaland | Instudia",
-  description: "Discover your earning potential for tech and design roles in Nagaland. Local vs Remote salary comparisons to help you plan your career.",
+  title: "Tech Salary Insights in Nagaland",
+  description: "Explore competitive salary benchmarks for Developers, Designers, and IT professionals based in Dimapur and Nagaland.",
   alternates: { canonical: "https://www.instudianagaland.com/tools/salary-insights" },
 };
 

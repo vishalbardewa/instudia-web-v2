@@ -229,28 +229,7 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
             </div>
           </article>
         ))}
-        {/* {relatedCourses?.map((course: any, i: any) => (
-          <div key={i} className="mt-12 space-y-1 sm:grid-cols-6">
-            <figure className="relative max-w-xl cursor-pointer">
-              <img
-                className="rounded-lg"
-                src={course.image}
-                alt="image description"
-              />
-              <figcaption className="absolute bottom-0 rounded-tr-xl bg-slate-500 px-4 text-lg font-bold text-white hover:bg-yellow-500">
-                <p className="text-3xl">{course.fullTitle}</p>
-              </figcaption>
-            </figure>
 
-            <div className="space-y-2">
-              <div className="space-y-1 text-lg font-medium leading-6">
-                <p className="font-medium text-black">
-                  {course.courseHightlight}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))} */}
       </section>
     </div>
   );

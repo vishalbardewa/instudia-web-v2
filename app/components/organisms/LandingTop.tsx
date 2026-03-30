@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "../atom/Button";
 import { FadeIn, FadeInStagger } from "../atom/FadeIn";
 
@@ -21,10 +22,12 @@ export default function LandingTop() {
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-1">
               <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
                 <div className="absolute inset-0">
-                  <img
+                  <Image
                     className="h-full w-full object-cover"
                     src={heroImages[`${imageIndex}`]}
                     alt="People working on laptops"
+                    fill
+                    priority
                   />
                   <div className="absolute inset-0 bg-gray-600 mix-blend-multiply" />
                 </div>
@@ -74,40 +77,42 @@ export default function LandingTop() {
                   </p>
                   <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-4">
                     <div className=" col-span-1 flex justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
-                      <img
-                        className="h-24"
+                      <Image
+                        className="h-24 object-contain"
                         src="/assets/images/iso-logo.png"
                         alt="ISO Certified Computer Institute in Dimapur, Nagaland"
+                        width={100}
+                        height={96}
                       />
                     </div>
                     <div className=" col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
-                      <img
-                        className="h-12"
+                      <Image
+                        className="h-12 object-contain"
                         src="/assets/images/aisect.png"
                         alt="AISECT Affiliated Tech Courses Dimapur"
+                        width={150}
+                        height={48}
                       />
                     </div>
                     <div className="col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
-                      <img
-                        className="h-24"
+                      <Image
+                        className="h-24 object-contain"
                         src="/assets/images/niact.png"
                         alt="National Institute for Advanced Computer Technology Training"
+                        width={150}
+                        height={96}
                       />
                     </div>
                     <div className="col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 md:col-start-2 lg:col-span-1">
-                      <img
-                        className="h-24"
+                      <Image
+                        className="h-24 object-contain"
                         src="/assets/images/msme-logo.png"
                         alt="MSME Certified Skill Training Programs in Nagaland"
+                        width={150}
+                        height={96}
                       />
                     </div>
-                    {/* <div className="col-span-2 flex justify-center grayscale hover:grayscale-0 md:col-span-2 md:col-start-4 lg:col-span-1">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                    alt="Workcation"
-                  />
-                </div> */}
+
                   </div>
                 </div>
               </div>

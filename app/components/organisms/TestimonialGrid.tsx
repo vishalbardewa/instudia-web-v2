@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { IconQuote, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -148,10 +149,12 @@ export default function TestimonialGrid() {
               <p>{`"${featuredTestimonial.body}"`}</p>
             </blockquote>
             <figcaption className="relative z-10 mt-auto flex items-center gap-x-5 border-t border-neutral-100 pt-6 group-hover:border-brandpurple/20 transition-colors duration-500">
-              <img
-                alt=""
+              <Image
+                alt={featuredTestimonial.author.name}
                 src={featuredTestimonial.author.imageUrl}
                 className="h-14 w-14 sm:h-16 sm:w-16 flex-none rounded-full object-cover ring-2 ring-neutral-100 group-hover:ring-brandpurple/30 bg-neutral-50 transition-all duration-300"
+                width={64}
+                height={64}
               />
               <div className="flex-auto">
                 <div className="font-extrabold text-[#1B1C1E] text-base sm:text-lg">{featuredTestimonial.author.name}</div>
@@ -179,10 +182,12 @@ export default function TestimonialGrid() {
                         <p>{`"${testimonial.body}"`}</p>
                       </blockquote>
                       <figcaption className="mt-auto flex items-center gap-x-4 border-t border-neutral-100/60 group-hover:border-brandpurple/10 transition-colors duration-500 pt-5">
-                        <img
-                          alt=""
+                        <Image
+                          alt={testimonial.author.name}
                           src={testimonial.author.imageUrl}
                           className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-transparent group-hover:ring-brandpurple/20 bg-neutral-50 transition-all duration-300"
+                          width={48}
+                          height={48}
                         />
                         <div>
                           <div className="font-extrabold text-[#1B1C1E] text-sm sm:text-base">
@@ -236,10 +241,12 @@ export default function TestimonialGrid() {
                 </blockquote>
 
                 <figcaption className="flex items-center gap-x-5 border-t border-neutral-100 pt-6 sm:pt-8 mt-auto">
-                  <img
-                    alt=""
+                  <Image
+                    alt={activeTestimonial.author.name}
                     src={activeTestimonial.author.imageUrl}
                     className="h-14 w-14 sm:h-16 sm:w-16 flex-none rounded-full object-cover ring-4 ring-brandpurple/10 bg-neutral-50"
+                    width={64}
+                    height={64}
                   />
                   <div>
                     <div className="font-extrabold text-[#1B1C1E] text-base sm:text-lg">{activeTestimonial.author.name}</div>

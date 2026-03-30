@@ -2,11 +2,11 @@ import React from 'react'
 import { AppConfig } from '../_utils/AppConfig';
 
 export const metadata = {
-  title:"Skill Development Courses in Dimapur | instudia",
-  description:"Skill development workshops conducted by in Dimapur. Our awareness sessions for students & professionals. Learn Fundamental training,Python, web development, career pathways and many more",
+  title:"Skill Development Programs in Dimapur",
+  description:"Skill development workshops and awareness sessions for students & professionals in Dimapur. Learn Python, web development, and career pathways.",
   openGraph: {
-    title: "Skill Development initiatives with instudia",
-    description: "Skill development workshops conducted by in Dimapur. Our awareness sessions for students & professionals. Learn Fundamental training,Python, web development, career pathways and many more",
+    title: "Skill Development initiatives",
+    description: "Skill development workshops and awareness sessions for students & professionals in Dimapur. Learn Python, web development, and career pathways.",
     url: `${AppConfig.canonicalBase}`,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,

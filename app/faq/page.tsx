@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | instudia",
+  title: "Frequently Asked Questions",
   description:
-    "Find answers to common questions about instudia, our courses, career tools, and community workshops in Nagaland.",
+    "Find answers to common questions about our computer courses, admissions, and career services in Dimapur, Nagaland.",
   alternates: { canonical: "https://www.instudianagaland.com/faq" },
   robots: { index: true, follow: true },
 };
