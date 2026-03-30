@@ -25,11 +25,11 @@ export const ATSAnalyzer = () => {
       formData.append('file', file);
       const res = await fetch('/api/parse-resume', { method: 'POST', body: formData });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to remotely extract text from the file.");
+      if (!res.ok) throw new Error(typeof data?.error === 'string' ? data.error : "Failed to extract text from the uploaded file.");
       setCvText(data.text);
     } catch (err: any) {
       console.error(err);
-      setErrorMsg(err.message || "Failed to extract string text from document.");
+      setErrorMsg(err.message || "Failed to extract text from your document. Please try again or paste the text manually.");
     } finally {
       setIsUploading(false);
       e.target.value = ''; // Reset input to allow re-uploads of same file identically
@@ -63,20 +63,20 @@ export const ATSAnalyzer = () => {
       try {
         data = JSON.parse(responseText);
       } catch (e: any) {
-        throw new Error(`Production HTTP Crash (${response.status}): ${responseText.substring(0, 150)}...`);
+        throw new Error("We encountered an issue processing your request. Please try again.");
       }
 
       if (!response.ok) {
-        throw new Error(data.error || `Production API Error object: ${JSON.stringify(data)}`);
+        throw new Error(typeof data?.error === 'string' ? data.error : "Unable to complete the analysis at this moment. Please check your inputs and try again.");
       }
 
       setResult(data);
     } catch (err: any) {
       console.error(err);
       if (err.name === 'AbortError') {
-        setErrorMsg("The AI engine took too long to read your document (Timeout). Please try again.");
+        setErrorMsg("The AI engine took too long to read your document. Please try again.");
       } else {
-        setErrorMsg(err.message || "An error occurred during ATS analysis.");
+        setErrorMsg(err.message || "An error occurred during ATS analysis. Please try again.");
       }
     } finally {
       setIsAnalyzing(false);
