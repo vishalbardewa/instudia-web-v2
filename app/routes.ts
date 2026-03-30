@@ -6,9 +6,9 @@ export const routes = {
   WORKSHOPS: "/workshops",
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_AND_CONDITIONS: "/terms",
-  SALARY_INSIGHTS: "/salary-insights",
+  SALARY_INSIGHTS: "/tools/salary-insights",
   SUCCESS_STORIES: "/success-stories",
-  STUDY_PLANNER: "/study-planner",
+  STUDY_PLANNER: "/tools/study-planner",
 };
 
 export const slugs = {
