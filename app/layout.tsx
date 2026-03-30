@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   title: "Computer & Skill Courses in Nagaland | instudia",
   description: "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Graphic Design, Project Management, DCA, PGDCA, Tally, GST & Digital Skills. Boost your career in Nagaland. Enroll now!",
   metadataBase: new URL(AppConfig.canonicalBase),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Best Computer Courses & Skill Training in Dimapur | instudia",
     description: "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",

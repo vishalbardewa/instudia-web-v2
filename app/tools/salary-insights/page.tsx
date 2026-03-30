@@ -4,7 +4,7 @@ import SalaryDashboard from "../../components/organisms/SalaryDashboard";
 export const metadata: Metadata = {
   title: "Tech Salary Insights in Nagaland | Instudia",
   description: "Discover your earning potential for tech and design roles in Nagaland. Local vs Remote salary comparisons to help you plan your career.",
-  alternates: { canonical: "https://www.instudianagaland.com/salary-insights" },
+  alternates: { canonical: "https://www.instudianagaland.com/tools/salary-insights" },
 };
 
 export default function SalaryInsightsPage() {

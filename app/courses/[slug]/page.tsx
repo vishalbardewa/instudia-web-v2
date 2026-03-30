@@ -14,6 +14,7 @@ import { Metadata, ResolvingMetadata } from "next";
 import META_LOOKUP from "@/app/_utils/MetaLookup";
 import { AppConfig } from "@/app/_utils/AppConfig";
 import Script from "next/script";
+import { notFound } from "next/navigation";
 
 const ICON_LIST: any = {
   CheckBadgeIcon: <CheckBadgeIcon className="h-6 w-6" aria-hidden="true" />,
@@ -318,6 +319,11 @@ export default async function Course({ params }: any) {
   const slug = resolvedParams?.slug || params?.slug;
 
   const { courseDetails } = await getCourseBySlug(slug);
+  
+  if (!courseDetails) {
+    return notFound();
+  }
+
   const { courses } = await getCourses();
 
   const getSimilarCourses = (allCourses: any[], currentCourse: any, minElements: number) => {
