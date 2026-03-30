@@ -100,14 +100,20 @@ export default function CareerTerminal() {
             </div>
 
             {/* Output Grid Target */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-              <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTarget.text}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr w-full"
+              >
                 {recommendedCourses.map((course: any, idx: number) => (
                   <motion.div
-                    key={`${course.slug}-${activeTarget.text}`}
+                    key={course.slug}
                     initial={{ opacity: 0, scale: 0.96, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.96, y: -15 }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1], delay: idx * 0.05 }}
                     className="h-full"
                   >
@@ -141,8 +147,8 @@ export default function CareerTerminal() {
                     </a>
                   </motion.div>
                 ))}
-              </AnimatePresence>
-            </div>
+              </motion.div>
+            </AnimatePresence>
 
           </div>
         </div>
