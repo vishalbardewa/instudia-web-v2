@@ -50,10 +50,12 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
             <Image
               src={photo.src}
               alt={photo.caption}
-              fill
+              width={photo.wide ? 1600 : 800}
+              height={photo.wide ? 900 : 800}
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-              className={`w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105 ${photo.wide ? "aspect-[16/9]" : "aspect-square"}`}
+              className={`w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-105 ${photo.wide ? "aspect-[16/9]" : "aspect-square"}`}
               loading="lazy"
+              unoptimized
             />
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex flex-col justify-end">
@@ -109,6 +111,7 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
                 width={1200}
                 height={800}
                 className="w-full max-h-[75vh] object-contain"
+                unoptimized
               />
             </div>
 
@@ -147,7 +150,7 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
                   onClick={() => setLightbox(i)}
                   className={`flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden border-2 transition-all ${i === lightbox ? "border-brandpurple scale-105" : "border-transparent opacity-50 hover:opacity-75"}`}
                 >
-                  <Image src={p.src} alt={p.caption} width={56} height={56} className="w-full h-full object-cover" />
+                  <Image src={p.src} alt={p.caption} width={56} height={56} className="w-full h-full object-cover" unoptimized />
                 </button>
               ))}
             </div>
