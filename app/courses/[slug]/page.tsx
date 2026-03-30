@@ -58,6 +58,9 @@ export async function generateMetadata(
           }
         : {}),
     },
+    alternates: {
+      canonical: `/courses/${slug}`,
+    },
   };
 }
 

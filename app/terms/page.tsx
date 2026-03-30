@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
+  title: "Terms & Conditions — instudia Tech Institute Nagaland",
   description:
     "Read instudia's Terms and Conditions governing use of our platform, courses, and business services in Nagaland.",
-  alternates: { canonical: "https://www.instudianagaland.com/terms" },
+  alternates: { canonical: "/terms" },
   robots: { index: true, follow: true },
 };
 

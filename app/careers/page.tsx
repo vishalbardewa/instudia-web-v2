@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Careers & Join Our Team in Dimapur",
   description:
     "Join our mission-driven team at instudia. Explore career opportunities for educators, technologists, and creatives in Nagaland.",
-  alternates: { canonical: "https://www.instudianagaland.com/careers" },
+  alternates: { canonical: "/careers" },
 };
 
 const perks = [

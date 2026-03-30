@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: member.photo ? [{ url: member.photo }] : [],
     },
     alternates: {
-      canonical: `https://www.instudianagaland.com/card/${slug}`,
+      canonical: `/card/${slug}`,
     },
   };
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Accelerate your career with our Student Success Suite. Access our ATS Resume Scanner, Salary Insights, Career Blueprint, and Study Planner tools.',
   keywords: ['career planning', 'ATS resume scanner', 'salary benchmarks', 'study planner', 'student success', 'instudia', 'dimapur', 'nagaland'],
   alternates: {
-    canonical: `${AppConfig.canonicalBase}/tools`,
+    canonical: "/tools",
   },
   openGraph: {
     title: 'Student Success Suite | Navigate your Career',

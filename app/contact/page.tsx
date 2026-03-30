@@ -10,7 +10,7 @@ export const metadata = {
       "Contact instudia for admissions and enquiries. Located in Fellowship Colony, Dimapur, Nagaland.",
   },
   alternates: {
-    canonical: "https://www.instudianagaland.com/contact",
+    canonical: "/contact",
   },
 };
 

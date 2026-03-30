@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Our Team | instudia Digital Cards",
   description:
     "Meet the instudia team — educators, technologists and mentors shaping tech careers in Dimapur, Nagaland.",
+  alternates: { canonical: "/card" },
 };
 
 const departmentColors: Record<string, string> = {

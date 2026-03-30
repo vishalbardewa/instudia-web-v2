@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Blog — Insights on Careers, Tech & Skills",
   description:
     "Career tips, skill guides, and tech insights from instudia — Nagaland's career-first tech institute in Dimapur.",
-  alternates: { canonical: "https://www.instudianagaland.com/blog" },
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "instudia Blog — Career, Tech & Skill Insights",
     description:

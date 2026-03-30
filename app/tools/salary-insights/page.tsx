@@ -4,7 +4,7 @@ import SalaryDashboard from "../../components/organisms/SalaryDashboard";
 export const metadata: Metadata = {
   title: "Tech Salary Insights in Nagaland",
   description: "Explore competitive salary benchmarks for Developers, Designers, and IT professionals based in Dimapur and Nagaland.",
-  alternates: { canonical: "https://www.instudianagaland.com/tools/salary-insights" },
+  alternates: { canonical: "/tools/salary-insights" },
 };
 
 export default function SalaryInsightsPage() {

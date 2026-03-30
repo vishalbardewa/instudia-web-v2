@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Student Career Planner',
   description: 'Bridge the gap between your current skills and your dream roles with our interactive career planning dashboard.',
+  alternates: { canonical: "/tools/career-planner" },
 };
 
 export default function CareerPlannerPage() {

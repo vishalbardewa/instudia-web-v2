@@ -49,6 +49,9 @@ export const metadata = {
   description:"Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
     card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
   },
+  alternates: {
+    canonical: "/courses",
+  },
   metadataBase: new URL("https://instudianagaland.com"),
 };
 

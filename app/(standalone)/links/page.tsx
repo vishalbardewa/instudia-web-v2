@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Quick access to instudia's courses, AI career tools, and community links for students in Dimapur, Nagaland.",
   alternates: {
-    canonical: "https://www.instudianagaland.com/links",
+    canonical: "/links",
   },
 };
 

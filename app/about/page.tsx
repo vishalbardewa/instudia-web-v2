@@ -9,7 +9,7 @@ export const metadata = {
     "About instudia — Tech & Skill Institute in Nagaland",
   description:
     "Learn about instudia — Nagaland's career-first tech institute. Meet our team, our mission, and see how we've helped 500+ students build IT careers.",
-  alternates: { canonical: "https://www.instudianagaland.com/about" },
+  alternates: { canonical: "/about" },
   openGraph: {
     title: "About instudia — Dimapur's Career-First Tech Institute",
     description:

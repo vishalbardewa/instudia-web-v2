@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Workshops & Events | Skill Programs",
   description:
     "Explore skill development workshops, job fairs, AI seminars and community programs conducted by instudia in Dimapur and Nagaland.",
-  alternates: { canonical: "https://www.instudianagaland.com/workshops" },
+  alternates: { canonical: "/workshops" },
 };
 
 const tagColors: Record<string, string> = {

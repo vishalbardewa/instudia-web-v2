@@ -5,7 +5,7 @@ import { TESTIMONIALS } from "../data/testimonials";
 export const metadata: Metadata = {
   title: "Student Success Stories",
   description: "Read inspiring stories from instudia alumni who transformed their careers and landed jobs as Developers, Designers, and Marketers in Nagaland.",
-  alternates: { canonical: "https://www.instudianagaland.com/success-stories" },
+  alternates: { canonical: "/success-stories" },
 };
 
 export default function SuccessStoriesPage() {

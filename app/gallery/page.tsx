@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Campus Gallery & Student Life",
   description: "Take a tour of our modern computing labs, creative design studios, and vibrant student community at instudia in Nagaland.",
-  alternates: { canonical: "https://www.instudianagaland.com/gallery" },
+  alternates: { canonical: "/gallery" },
 };
 
 // High-quality modern education, tech, and collaboration placeholders from Unsplash

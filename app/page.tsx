@@ -196,7 +196,7 @@ export const metadata = {
   },
   metadataBase: new URL("https://instudianagaland.com"),
   alternates: {
-    canonical: "https://www.instudianagaland.com",
+    canonical: "/",
   },
 };
 
