@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import mammoth from 'mammoth';
 import PDFParser from 'pdf2json';
+import { logError } from '@/app/utils/logger';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -34,6 +35,7 @@ export async function POST(req: Request) {
         extractedText = extracted;
       } catch (pdfErr: any) {
         console.error('PDF Parse Internal Backend Error:', pdfErr);
+        await logError('PDF Parse Internal Backend Error', pdfErr);
         return NextResponse.json({ error: `PDF Engine Crash: ${pdfErr.message || 'Event stream execution failed.'}` }, { status: 500 });
       }
     } else if (
@@ -58,6 +60,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ text: extractedText });
   } catch (error: any) {
     console.error('File Extractor Error:', error);
+    await logError('File Extractor Error', error);
     return NextResponse.json({ error: `Backend stream resolution failed: ${error.message || 'Unknown native node error.'}` }, { status: 500 });
   }
 }

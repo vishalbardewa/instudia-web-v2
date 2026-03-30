@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { logError } from '@/app/utils/logger';
 
 export const maxDuration = 180; // Allow full 3-minute generation threshold for Qwen LLMs
 
@@ -80,6 +81,7 @@ export async function POST(req: Request) {
     return NextResponse.json(JSON.parse(jsonString));
   } catch (error: any) {
     console.error('ATS Analysis Error:', error);
+    await logError('ATS Analysis Error', error);
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }
