@@ -71,7 +71,7 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <a href='/'>
             <div className="h-20 relative aspect-[3/1]">
-              <Image alt="instudia logo" className="h-full w-auto object-contain" src="/assets/images/logo-with-tagline.png" fill />
+              <Image alt="instudia logo" className="h-full w-auto object-contain" src="/assets/images/logo-with-tagline.png" fill sizes="(max-width: 768px) 150px, 250px" />
             </div>
           </a>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
