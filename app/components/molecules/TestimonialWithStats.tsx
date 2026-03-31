@@ -66,7 +66,7 @@ export default function TestimonialWithStats() {
                 </div>
 
                 {/* Inline stat chips */}
-                <div className="flex flex-wrap gap-3 pt-2">
+                <div className="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
                   {[
                     { label: 'Students trained', value: '1,000+' },
                     { label: 'Courses offered', value: '19+' },
