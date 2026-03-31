@@ -130,7 +130,7 @@ export default function PrimaryLayout({ children }: any) {
 
   return (
     <>
-      <p className="flex h-10 items-center justify-center bg-black px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+      <p className="flex h-10 items-center justify-center bg-black px-4 text-xs md:text-sm font-medium text-white sm:px-6 lg:px-8">
         <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5 mr-3">
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
