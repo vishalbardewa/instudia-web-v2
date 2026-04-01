@@ -20,19 +20,19 @@ The modern job market is no longer satisfied with simple claims of knowledge; em
 ## Precision Tools for Students
 Our student-centric tools are designed to guide you through the four pillars of career readiness: assessment, planning, optimization, and success.
 
-### 🔍 ATS Resume Scanner
+###  🔍 ATS Resume Scanner
 Most modern companies use an Applicant Tracking System (ATS) to filter resumes before a human ever sees them. Our scanner provides high-level **keyword optimization** to ensure your profile stands out.
 - **The Benefit:** It identifies missing keywords and structural gaps, giving you personalized recommendations to increase your interview chances significantly.
 
-### 🗺️ Career Blueprint
+###  🗺️ Career Blueprint
 Knowing where you want to go is easy; knowing how to get there is the hard part. The Career Blueprint acts as your interactive career roadmap for **skill gap analysis**.
 - **The Benefit:** It compares your current skill set against your "dream role," highlighting exactly which certifications or technical projects you need to bridge the gap.
 
-### 📈 Salary Insights
+###  📈 Salary Insights
 Transparency in compensation is vital for career growth. This tool helps you understand your market value through **market benchmarks**.
 - **The Benefit:** It combines global industry trends with local market data, providing the negotiation power you need to ensure fair compensation.
 
-### 📅 Study Planner
+###  📅 Study Planner
 Consistency is the key to mastering any new technology. The Study Planner removes the "analysis paralysis" of what to study next via **personalized scheduling**.
 - **The Benefit:** It generates a manageable schedule based on your specific learning goals and daily availability, ensuring steady progress without burnout.
 
@@ -41,11 +41,11 @@ Consistency is the key to mastering any new technology. The Study Planner remove
 ## Innovation for Educators
 Great learning begins with great teaching. Our teacher tools are designed to reduce administrative burden while maximizing student retention.
 
-### 🎓 Assessment Design Specialist
+###  🎓 Assessment Design Specialist
 Creating high-quality tests that accurately measure understanding is a time-consuming task. This tool automates the process with precision, focusing on **Indian standard calibrated assessments**.
 - **The Feature:** It creates assessments strictly based on your source material, ensuring students are prepared for both local and national benchmarks.
 
-### 👨‍🏫 Pedagogical Assistant
+###  👨‍🏫 Pedagogical Assistant
 Teaching complex technical concepts requires a structured approach to ensure information "sticks." This tool transforms dense text into guided lecture notes.
 - **The Feature:** It utilizes the **'Rule of Three'** and specific **visual cues** to break down information into digestible chunks.
 - **The Benefit:** It helps educators elevate classroom engagement and drastically improves student memory retention.
