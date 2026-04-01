@@ -188,6 +188,13 @@ export default async function BlogPostPage({ params }: Props) {
                           </p>
                         );
                       }
+                      if (item.type === "subheading") {
+                        return (
+                          <h3 key={ii} className="pt-4 text-xl font-bold text-[#1B1C1E] tracking-tight">
+                            {item.text}
+                          </h3>
+                        );
+                      }
                       if (item.type === "bullets") {
                         return (
                           <ul key={ii} className="space-y-2.5 border-l-2 border-brandpurple/20 pl-5">

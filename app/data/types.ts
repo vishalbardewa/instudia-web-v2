@@ -1,8 +1,8 @@
 // Shared types and pure utilities — safe to import in both server and client code.
 
-/** An ordered content item within a Section. */
 export type ContentItem =
   | { type: "paragraph"; text: string }
+  | { type: "subheading"; text: string }
   | { type: "bullets"; items: string[] }
   | { type: "code"; language: string; content: string };
 

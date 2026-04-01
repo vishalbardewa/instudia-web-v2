@@ -44,6 +44,13 @@ function parseBody(markdown: string): Section[] {
       continue;
     }
 
+    // ### Subheading → new content item type
+    if (trimmed.startsWith("### ")) {
+      current.items.push({ type: "subheading", text: trimmed.slice(4).trim() });
+      i++;
+      continue;
+    }
+
     // Fenced code block ```lang
     if (trimmed.startsWith("```")) {
       const language = trimmed.slice(3).trim() || "text";
