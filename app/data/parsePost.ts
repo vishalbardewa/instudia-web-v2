@@ -80,11 +80,8 @@ function parseBody(markdown: string): Section[] {
       continue;
     }
 
-    // Bold/italic/plain paragraph — strip leading ** ** wrappers for clean text
-    const text = trimmed
-      .replace(/^\*\*(.+)\*\*$/, "$1")   // **text** → text
-      .replace(/^_(.+)_$/, "$1")          // _text_ → text
-      .trim();
+    // Paragraph — preserve markdown formatting
+    const text = trimmed.trim();
 
     if (text) {
       current.items.push({ type: "paragraph", text });

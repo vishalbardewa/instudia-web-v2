@@ -4,6 +4,11 @@ import { notFound } from "next/navigation";
 import { posts, getPostBySlug, formatDate } from "../../data/posts";
 import hljs from "highlight.js";
 import ReadingProgress from "../../components/atom/ReadingProgress";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -183,9 +188,11 @@ export default async function BlogPostPage({ params }: Props) {
                     {section.items.map((item, ii) => {
                       if (item.type === "paragraph") {
                         return (
-                          <p key={ii} className="text-gray-700 leading-relaxed text-[1.05rem]">
-                            {item.text}
-                          </p>
+                          <div key={ii} className="text-gray-700 leading-relaxed text-[1.05rem]">
+                            <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+                              {item.text}
+                            </ReactMarkdown>
+                          </div>
                         );
                       }
                       if (item.type === "subheading") {
@@ -201,7 +208,11 @@ export default async function BlogPostPage({ params }: Props) {
                             {item.items.map((b, bi) => (
                               <li key={bi} className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
                                 <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brandpurple mt-1.5" />
-                                {b}
+                                <div className="flex-1 min-w-0">
+                                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+                                    {b}
+                                  </ReactMarkdown>
+                                </div>
                               </li>
                             ))}
                           </ul>
