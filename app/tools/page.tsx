@@ -185,13 +185,13 @@ const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, st
     <Link href={href} className={`group block w-full max-w-sm mx-auto md:mx-0 rounded-[2rem] p-2 shadow-sm transition-shadow hover:shadow-lg ${styles[style].bg} ${styles[style].border} ${styles[style].text} ${styles[style].hover}`}>
       <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-stone-50">
         {imageUrl ? (
-          <Image 
-            src={`${imageUrl}?tr=f-auto,q-auto`} 
-            alt={name} 
+          <Image
+            src={`${imageUrl}?tr=f-auto,q-auto`}
+            alt={name}
             fill
             priority={priority}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="h-full w-full object-contain transition-transform group-hover:scale-110 duration-500" 
+            className="h-full w-full object-contain transition-transform group-hover:scale-110 duration-500"
           />
         ) : (
           icon
@@ -300,10 +300,10 @@ export default function CareerPlannerPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {studentTools.map((tool, index) => (
-            <ToolCard 
-              key={tool.href} 
-              {...tool} 
-              priority={index < 2} 
+            <ToolCard
+              key={tool.href}
+              {...tool}
+              priority={index < 2}
             />
           ))}
         </div>
@@ -315,15 +315,15 @@ export default function CareerPlannerPage() {
           <div className="mb-10 text-center md:text-left">
             <h2 className="text-3xl font-black text-[#1B1C1E] mb-2 tracking-tight flex items-center justify-center md:justify-start gap-3">
               For Teachers
-              <span className="px-2 py-0.5 bg-brandpurple text-white text-[10px] font-black uppercase rounded-md tracking-tighter">Pro</span>
+              <span className="px-2 py-0.5 bg-brandpurple text-white text-[10px] font-black uppercase rounded-md tracking-tighter">Free</span>
             </h2>
             <p className="text-gray-500 font-medium">Advanced pedagogical assistants and assessment specialists to elevate classroom engagement.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teacherTools.map((tool) => (
-              <ToolCard 
-                key={tool.href} 
-                {...tool} 
+              <ToolCard
+                key={tool.href}
+                {...tool}
               />
             ))}
           </div>

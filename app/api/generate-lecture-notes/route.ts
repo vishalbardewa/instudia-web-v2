@@ -16,6 +16,8 @@ export async function POST(req: Request) {
     Instead of JSON, you will output a structured Markdown document using specific SECTION TAGS. 
     This is to ensure absolute reliability in the presentation format.
 
+    IMPORTANT: DO NOT use decorative separators like "=====" or "-----" between sections. Just follow the tag format strictly.
+
     REQUIRED TAGS:
     [TITLE] - The title of the lecture.
     [INTRO] - The introductory hook.
@@ -43,6 +45,7 @@ export async function POST(req: Request) {
     3. The "Rule of Three": Organize the core content into exactly three main pillars.
     4. Include Analogies: For every technical or complex concept, provide a real-world analogy.
     5. Formatting: Use Markdown with bold headers, bullet points, and LaTeX (using $ for inline and $$ for blocks) for formulas.
+    6. NO DECORATIVE LINES: Do not use long lines of "=" or "-" anywhere in your response.
 
     OUTPUT FORMAT (Follow this exactly):
     [TITLE]
@@ -96,7 +99,12 @@ export async function POST(req: Request) {
     const extractSection = (tag: string) => {
       const regex = new RegExp(`\\[${tag}\\]\\n?([\\s\\S]*?)(?=\\n\\[|$)`, 'i');
       const match = content.match(regex);
-      return match ? match[1].trim() : '';
+      if (!match) return '';
+      let section = match[1].trim();
+      // Specifically strip out long AI-generated decorative separators (10+ characters of =, -, or _)
+      // This solves the issue where the AI adds lines like "====================" between sections.
+      section = section.replace(/^[=\-_]{10,}\s*$/gm, '');
+      return section.trim();
     };
 
     const result = {

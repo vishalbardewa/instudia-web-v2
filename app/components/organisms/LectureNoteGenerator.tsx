@@ -81,7 +81,7 @@ export const LectureNoteGenerator = () => {
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Failed to generate notes.");
-      
+
       setResult(data);
     } catch (err: any) {
       console.error(err);
@@ -117,7 +117,7 @@ ${result.discussion}
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-16 font-jakarta pb-32 print:p-0 print:m-0">
-      
+
       <div className="text-center mb-16 relative print:hidden">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brandpurple/10 blur-[120px] rounded-full pointer-events-none -z-10" />
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1B1C1E] tracking-tight mb-5">
@@ -154,21 +154,20 @@ ${result.discussion}
               />
             </div>
 
-            <div className="bg-neutral-50 rounded-[2rem] p-8 border border-neutral-100">
+            <div className="bg-neutral-50 rounded-[2rem] p-6 md:p-8 border border-neutral-100">
               <div className="flex items-center gap-3 text-[#1B1C1E] mb-6">
                 <div className="p-2.5 bg-brightyellow/20 rounded-xl"><IconSchool size={24} /></div>
                 <h3 className="font-extrabold text-xl">Target Standard</h3>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 max-w-full">
                 {INDIAN_GRADES.map((grade) => (
                   <button
                     key={grade}
                     onClick={() => setTargetGrade(grade)}
-                    className={`px-4 py-3 rounded-xl text-sm font-bold transition-all border-2 ${
-                      targetGrade === grade 
-                        ? 'bg-[#1B1C1E] text-white border-[#1B1C1E]' 
+                    className={`px-4 py-3 rounded-xl text-sm font-bold transition-all border-2 ${targetGrade === grade
+                        ? 'bg-[#1B1C1E] text-white border-[#1B1C1E]'
                         : 'bg-white text-neutral-500 border-neutral-200 hover:border-brandpurple/30'
-                    }`}
+                      }`}
                   >
                     {grade}
                   </button>
@@ -178,10 +177,10 @@ ${result.discussion}
 
             {errorMsg && <p className="text-red-500 text-center font-bold px-6 py-3 bg-red-50 border border-red-100 rounded-xl w-fit mx-auto">{errorMsg}</p>}
 
-            <div className="flex justify-center pt-4">
+            <div className="flex justify-center pt-4 w-full">
               <button
                 onClick={handleGenerate}
-                className="px-12 py-5 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-[1.25rem] font-extrabold text-xl shadow-xl hover:-translate-y-1 transition-all active:scale-95 flex items-center gap-3"
+                className="w-full sm:w-auto px-8 md:px-12 py-5 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-[1.25rem] font-extrabold text-lg md:text-xl shadow-xl hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center gap-3"
               >
                 Generate Guided Notes
               </button>
@@ -210,28 +209,28 @@ ${result.discussion}
 
         {!isGenerating && result && (
           <motion.div key="results" initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="space-y-10">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-100 print:hidden">
-              <div>
-                <h2 className="text-3xl font-black text-[#1B1C1E] mb-2">{result.title}</h2>
-                <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-brandpurple/10 text-brandpurple rounded-lg text-xs font-bold uppercase tracking-wider">{targetGrade}</span>
-                  <span className="px-3 py-1 bg-brightyellow/10 text-yellow-700 rounded-lg text-xs font-bold uppercase tracking-wider">Guided Notes</span>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-neutral-100 print:hidden overflow-hidden">
+              <div className="min-w-0 flex-1">
+                <h2 className="text-2xl md:text-3xl font-black text-[#1B1C1E] mb-2 break-words leading-tight">{result.title}</h2>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-brandpurple/10 text-brandpurple rounded-lg text-xs font-bold uppercase tracking-wider whitespace-nowrap">{targetGrade}</span>
+                  <span className="px-3 py-1 bg-brightyellow/10 text-yellow-700 rounded-lg text-xs font-bold uppercase tracking-wider whitespace-nowrap">Teacher's Guide</span>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <button 
+              <div className="flex flex-wrap gap-3 flex-shrink-0">
+                <button
                   onClick={handlePrint}
                   className="flex items-center gap-2 px-6 py-3 bg-brandpurple/10 hover:bg-brandpurple/20 text-brandpurple rounded-xl font-bold transition-all text-sm"
                 >
                   <IconPrinter size={18} /> Print Handbook
                 </button>
-                <button 
+                <button
                   onClick={handleCopy}
                   className="flex items-center gap-2 px-6 py-3 bg-neutral-100 hover:bg-neutral-200 text-[#1B1C1E] rounded-xl font-bold transition-all text-sm"
                 >
                   <IconClipboardCopy size={18} /> Copy Markdown
                 </button>
-                <button 
+                <button
                   onClick={() => { setResult(null); }}
                   className="px-6 py-3 bg-[#1B1C1E] text-white hover:bg-neutral-800 rounded-xl font-bold transition-all text-sm"
                 >
@@ -240,23 +239,28 @@ ${result.discussion}
               </div>
             </div>
 
-            {/* Print & Screen View Styled as a Teacher's Handbook */}
-            <div className="bg-white border-2 border-neutral-100 rounded-[2.5rem] p-8 md:p-12 shadow-sm print:p-0 print:border-0 print:shadow-none font-serif">
-              
+            {/* HandBook Response Design */}
+            <div className="bg-white border-2 border-neutral-100 rounded-[2.5rem] p-8 md:p-14 md:pl-20 shadow-sm print:p-0 print:border-0 print:shadow-none font-jakarta relative overflow-hidden transition-all hover:shadow-md">
+
+              {/* Notebook Spine Margin Decoration */}
+              <div className="absolute left-0 top-0 bottom-0 w-2 md:w-3 bg-brandpurple/20 print:hidden" />
+              <div className="absolute left-6 md:left-10 top-0 bottom-0 w-px bg-neutral-100 print:hidden" />
+
               <div className="hidden print:block text-center border-b-2 border-black pb-8 mb-12">
                 <h1 className="text-3xl font-black uppercase mb-2">Teacher's Guided Presentation Notes</h1>
                 <p className="text-lg font-bold">{result.title}</p>
-                <p className="text-xs mt-1 uppercase tracking-widest text-neutral-500">{targetGrade}</p>
+                <p className="text-xs mt-1 uppercase tracking-widest text-neutral-500 text-center">{targetGrade}</p>
               </div>
 
-              <section className="mb-12">
-                <div className="flex items-center gap-2 text-brandpurple mb-4 print:text-black">
-                  <IconQuote size={24} />
-                  <h3 className="text-xl font-black uppercase tracking-tight">The Hook (Introduction)</h3>
+              {/* Hook Section */}
+              <section className="mb-20">
+                <div className="flex items-center gap-3 text-brandpurple mb-6 print:text-black">
+                  <div className="p-3 bg-brandpurple/5 rounded-2xl print:bg-transparent"><IconQuote size={28} /></div>
+                  <h3 className="text-2xl font-black uppercase tracking-tight">The Hook & Engagement</h3>
                 </div>
-                <div className="prose prose-neutral max-w-none prose-p:leading-relaxed prose-p:text-lg">
-                  <ReactMarkdown 
-                    remarkPlugins={[remarkGfm, remarkMath]} 
+                <div className="prose prose-neutral max-w-none prose-p:leading-relaxed prose-p:text-xl prose-p:text-neutral-800 border-l-4 border-brandpurple/10 pl-8 ml-2">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm, remarkMath]}
                     rehypePlugins={[rehypeKatex]}
                   >
                     {result.intro}
@@ -264,16 +268,26 @@ ${result.discussion}
                 </div>
               </section>
 
-              <div className="space-y-12">
-                <h3 className="text-xl font-black uppercase tracking-tight text-brandpurple border-b border-brandpurple/20 pb-2 print:text-black print:border-black">The Rule of Three (Core Pillars)</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 print:block print:space-y-8">
+              {/* Rule of Three (Pillars) Vertical Stack */}
+              <div className="space-y-20 mb-20">
+                <div className="flex flex-col gap-2 mb-10">
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-brandpurple print:text-black">The Rule of Three (Core Pillars)</h3>
+                  <div className="w-20 h-1.5 bg-brandpurple rounded-full" />
+                </div>
+
+                <div className="space-y-16">
                   {result.pillars.map((pillar, idx) => (
-                    <div key={idx} className="bg-neutral-50 p-6 rounded-2xl border border-neutral-100 print:bg-white print:border-l-4 print:border-black print:rounded-none">
-                      <span className="text-3xl font-black text-brandpurple/20 mb-4 block print:text-black">0{idx + 1}</span>
-                      <h4 className="text-xl font-bold text-[#1B1C1E] mb-4">{pillar.title}</h4>
-                      <div className="prose prose-sm max-w-none text-neutral-600">
-                        <ReactMarkdown 
-                          remarkPlugins={[remarkGfm, remarkMath]} 
+                    <div key={idx} className="relative group">
+                      <div className="absolute -left-14 -top-4 text-7xl font-black text-brandpurple opacity-[0.03] select-none group-hover:opacity-[0.06] transition-opacity print:hidden">
+                        0{idx + 1}
+                      </div>
+                      <div className="flex items-baseline gap-4 mb-6">
+                        <span className="text-sm font-black text-brandpurple bg-brandpurple/10 px-3 py-1 rounded-lg print:border print:border-black">PILLAR 0{idx + 1}</span>
+                        <h4 className="text-2xl font-extrabold text-[#1B1C1E]">{pillar.title}</h4>
+                      </div>
+                      <div className="prose prose-neutral max-w-none text-neutral-700 leading-relaxed text-lg break-words overflow-x-auto">
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm, remarkMath]}
                           rehypePlugins={[rehypeKatex]}
                         >
                           {pillar.content}
@@ -284,14 +298,16 @@ ${result.discussion}
                 </div>
               </div>
 
-              <section className="mt-16 bg-brightyellow/5 p-8 rounded-3xl border border-brightyellow/20 print:bg-white print:border-2 print:border-black print:rounded-none">
-                <div className="flex items-center gap-3 text-yellow-700 mb-6 print:text-black">
-                  <IconInfoCircle size={24} />
-                  <h3 className="text-xl font-black uppercase tracking-tight">Teacher's Cheat Sheet (Analogies & FAQs)</h3>
+              {/* Cheat Sheet (Analogy) CALLOUT box */}
+              <section className="bg-brightyellow/5 p-10 rounded-[2.5rem] border border-brightyellow/20 print:bg-white print:border-2 print:border-black print:rounded-none relative overflow-hidden mb-16">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brightyellow/10 blur-[60px] rounded-full -mr-16 -mt-16 pointer-events-none" />
+                <div className="flex items-center gap-4 text-yellow-800 mb-8 print:text-black">
+                  <div className="p-3 bg-brightyellow/20 rounded-2xl print:bg-transparent"><IconInfoCircle size={28} /></div>
+                  <h3 className="text-2xl font-black uppercase tracking-tight">Teacher's Cheat Sheet (Analogies & FAQs)</h3>
                 </div>
-                <div className="prose prose-neutral max-w-none text-neutral-700 leading-relaxed">
-                  <ReactMarkdown 
-                    remarkPlugins={[remarkGfm, remarkMath]} 
+                <div className="prose prose-neutral max-w-none text-neutral-800 leading-relaxed text-lg">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm, remarkMath]}
                     rehypePlugins={[rehypeKatex]}
                   >
                     {result.cheatSheet}
@@ -299,14 +315,15 @@ ${result.discussion}
                 </div>
               </section>
 
-              <section className="mt-12 bg-neutral-900 text-white p-8 rounded-3xl print:bg-white print:text-black print:border-2 print:border-black print:rounded-none">
-                <h3 className="text-xl font-black uppercase tracking-tight mb-6 flex items-center gap-2">
-                  <IconSchool size={24} className="text-brightyellow print:text-black" />
-                  Student Discussion Prompts
-                </h3>
-                <div className="prose prose-invert max-w-none print:prose-neutral">
-                  <ReactMarkdown 
-                    remarkPlugins={[remarkGfm, remarkMath]} 
+              {/* Discussion Prompts Block - High Contrast */}
+              <section className="bg-[#1B1C1E] text-white p-12 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all print:bg-white print:text-black print:border-2 print:border-black print:rounded-none">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="p-3 bg-brandpurple/20 rounded-2xl print:bg-transparent"><IconSchool size={28} className="text-brightyellow print:text-black" /></div>
+                  <h3 className="text-2xl font-black uppercase tracking-tight">Student Discussion Prompts</h3>
+                </div>
+                <div className="prose prose-invert max-w-none text-lg leading-relaxed print:prose-neutral">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm, remarkMath]}
                     rehypePlugins={[rehypeKatex]}
                   >
                     {result.discussion}
@@ -318,9 +335,10 @@ ${result.discussion}
                 Generated via Instudia Pedagogical Assistant - For Teacher Presentation Guidance Only
               </div>
             </div>
-            
-            <div className="flex justify-center pb-12 print:hidden">
-              <p className="text-xs font-bold italic">All the best!</p>
+
+            <div className="flex flex-col items-center gap-4 pb-20 print:hidden text-center">
+              <div className="w-12 h-1 bg-brandpurple/20 rounded-full" />
+              <p className="text-sm font-black text-neutral-400 uppercase tracking-widest italic">Teaching Made Effortless</p>
             </div>
           </motion.div>
         )}
