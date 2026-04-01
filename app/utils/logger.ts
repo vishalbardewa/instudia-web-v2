@@ -16,10 +16,9 @@ export async function logError(context: string, error: any) {
       await fs.mkdir(logDir, { recursive: true });
     }
 
-    const logFile = path.join(logDir, 'ats-errors.log');
+    const logFile = path.join(logDir, 'application-errors.log');
     await fs.appendFile(logFile, logMessage, 'utf-8');
   } catch (loggerErr) {
-    // Failsafe so the logger itself doesn't crash the running process entirely
-    console.error('Failed to write to error log file:', loggerErr);
+    // Failsafe: if the logger itself fails (e.g. disk full), we cannot use it
   }
 }

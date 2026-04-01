@@ -34,9 +34,8 @@ export async function POST(req: Request) {
         
         extractedText = extracted;
       } catch (pdfErr: any) {
-        console.error('PDF Parse Internal Backend Error:', pdfErr);
         await logError('PDF Parse Internal Backend Error', pdfErr);
-        return NextResponse.json({ error: `PDF Engine Crash: ${pdfErr.message || 'Event stream execution failed.'}` }, { status: 500 });
+        return NextResponse.json({ error: "Failed to extract text from this PDF. Please ensure it's not a scanned image." }, { status: 500 });
       }
     } else if (
       file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || 
@@ -59,8 +58,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ text: extractedText });
   } catch (error: any) {
-    console.error('File Extractor Error:', error);
     await logError('File Extractor Error', error);
-    return NextResponse.json({ error: `Backend stream resolution failed: ${error.message || 'Unknown native node error.'}` }, { status: 500 });
+    return NextResponse.json({ error: "We encountered an issue processing your file. Please try again." }, { status: 500 });
   }
 }

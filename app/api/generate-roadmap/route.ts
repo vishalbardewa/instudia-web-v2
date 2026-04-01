@@ -65,14 +65,14 @@ export async function POST(req: Request) {
     });
 
     const data = await response.json();
-    if (!response.ok) throw new Error(data.error?.message || 'Failed to fetch from NVIDIA API');
+    if (!response.ok) throw new Error(data.error?.message || 'Failed to fetch from API');
 
-    let jsonString = data.choices[0].message.content;
-    jsonString = jsonString.replace(/```json/gi, '').replace(/```/g, '').trim();
+    const jsonString = data.choices[0].message.content.replace(/```json/gi, '').replace(/```/g, '').trim();
     
     return NextResponse.json(JSON.parse(jsonString));
   } catch (error: any) {
-    console.error('Error generating roadmap:', error);
-    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+    const { logError } = await import('@/app/utils/logger');
+    await logError('Roadmap Generation Error', error);
+    return NextResponse.json({ error: "We couldn't generate your learning roadmap. Please try again." }, { status: 500 });
   }
 }

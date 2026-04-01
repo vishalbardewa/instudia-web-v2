@@ -130,7 +130,7 @@ export default function PrimaryLayout({ children }: any) {
 
   return (
     <>
-      <p className="flex h-10 items-center justify-center bg-black px-4 text-xs md:text-sm font-medium text-white sm:px-6 lg:px-8">
+      <p className="flex h-10 items-center justify-center bg-black px-4 text-xs md:text-sm font-medium text-white sm:px-6 lg:px-8 print:hidden">
         <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5 mr-3">
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
@@ -140,18 +140,22 @@ export default function PrimaryLayout({ children }: any) {
         </span>
         We’ve built something just for you— <span className="underline hover:text-brandpurple"><Link href="/tools">take a look!</Link></span>
       </p>
-      <div className="flex sticky z-50 top-0 w-full h-full">
+      <div className="flex sticky z-50 top-0 w-full h-full print:hidden">
         <div className="w-1/4 h-[0.625rem] bg-[#58FF1B]"></div>
         <div className="w-1/4 h-[0.625rem] bg-[#FF1B58]"></div>
         <div className="w-1/4 h-[0.625rem] bg-[#C21BFF]"></div>
         <div className="w-1/4 h-[0.625rem] bg-[#FFE01B]"></div>
       </div>
-      <FloatingNav navItems={navItems} />
-      <NavigationWithDropdown navigation={longNavigation} onSearch={() => setSearchOpen(true)} />
+      <div className="print:hidden">
+        <FloatingNav navItems={navItems} />
+        <NavigationWithDropdown navigation={longNavigation} onSearch={() => setSearchOpen(true)} />
+      </div>
       {children}
-      <WhatsAppWidget />
-      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
-      <Footer />
+      <div className="print:hidden">
+        <WhatsAppWidget />
+        <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
+        <Footer />
+      </div>
     </>
   );
 }

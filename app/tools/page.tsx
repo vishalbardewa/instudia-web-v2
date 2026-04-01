@@ -39,7 +39,7 @@ interface ToolProps {
   name: string;
   description: string;
   icon?: string;
-  category?: string;
+  category?: 'student' | 'teacher';
   href: string;
   statusIcon?: string;
   statusMessage?: string;
@@ -48,7 +48,7 @@ interface ToolProps {
   priority?: boolean;
 }
 
-const tools = [
+const tools: ToolProps[] = [
   {
     name: "Career Blueprint",
     href: "/tools/career-blueprint",
@@ -56,6 +56,7 @@ const tools = [
     style: "purple",
     statusIcon: "⭐",
     statusMessage: "Updated",
+    category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png"
   },
   {
@@ -65,6 +66,7 @@ const tools = [
     style: "redhue",
     statusIcon: "📈",
     statusMessage: "Updated",
+    category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-2.png"
   },
   {
@@ -74,6 +76,7 @@ const tools = [
     style: "brightyellow",
     statusIcon: "🔍",
     statusMessage: "Most Popular",
+    category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-3.png"
   },
   {
@@ -83,7 +86,28 @@ const tools = [
     style: "flourescent",
     statusIcon: "📅",
     statusMessage: "Updated",
+    category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-4.png"
+  },
+  {
+    name: "Assessment Design Specialist",
+    href: "/tools/assessment-designer",
+    description: "Create high-quality, calibrated assessments strictly based on your source material for Indian standards.",
+    style: "flourescent",
+    statusIcon: "🎓",
+    statusMessage: "New for Teachers",
+    category: "teacher",
+    imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-5.png"
+  },
+  {
+    name: "Pedagogical Assistant",
+    href: "/tools/lecture-note-generator",
+    description: "Transform complex text into guided lecture notes with analogies, visual cues, and the 'Rule of Three'.",
+    style: "purple",
+    statusIcon: "👨‍🏫",
+    statusMessage: "New for Teachers",
+    category: "teacher",
+    imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-6.png"
   },
 ]
 
@@ -158,7 +182,7 @@ const styles: Record<string, { bg: string; border: string; text: string; hover: 
 
 const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, style, imageUrl, priority }: ToolProps) => {
   return (
-    <Link href={href} className={`group block max-w-sm rounded-[2rem] p-2 shadow-sm transition-shadow hover:shadow-lg ${styles[style].bg} ${styles[style].border} ${styles[style].text} ${styles[style].hover}`}>
+    <Link href={href} className={`group block w-full max-w-sm mx-auto md:mx-0 rounded-[2rem] p-2 shadow-sm transition-shadow hover:shadow-lg ${styles[style].bg} ${styles[style].border} ${styles[style].text} ${styles[style].hover}`}>
       <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-stone-50">
         {imageUrl ? (
           <Image 
@@ -206,6 +230,9 @@ const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, st
 };
 
 export default function CareerPlannerPage() {
+  const studentTools = tools.filter(t => t.category === 'student');
+  const teacherTools = tools.filter(t => t.category === 'teacher');
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -233,9 +260,9 @@ export default function CareerPlannerPage() {
   return (
     <main className="min-h-screen bg-[#FAFAFA] text-[#1B1C1E] selection:bg-brandpurple/30 font-jakarta">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white border-b border-neutral-100 pt-24 pb-20 px-6">
+      <section className="relative overflow-hidden bg-white border-b border-neutral-100 pt-24 pb-20 px-6 text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brandpurple/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="relative mx-auto max-w-4xl text-center">
+        <div className="relative mx-auto max-w-4xl">
           <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
             Student Success Suite
           </p>
@@ -250,9 +277,9 @@ export default function CareerPlannerPage() {
           {/* Stats strip */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
             {[
-              { value: "4", label: "Tools" },
-              { value: "100+", label: "Users" },
-              { value: "1", label: "Initiative" },
+              { value: studentTools.length.toString(), label: "Student Tools" },
+              { value: teacherTools.length.toString(), label: "Teacher Tools" },
+              { value: "100+", label: "Daily Users" },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <p className="text-3xl font-black text-[#1B1C1E]">{s.value}</p>
@@ -265,29 +292,54 @@ export default function CareerPlannerPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-6">
-        {tools.map((tool, index) => (
-          <ToolCard 
-            key={tool.href} 
-            {...tool} 
-            priority={index < 2} 
-          />
-        ))}
-      </div>
+      {/* STUDENT TOOLS SECTION */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <div className="mb-10 text-center md:text-left">
+          <h2 className="text-3xl font-black text-[#1B1C1E] mb-2 tracking-tight">For Students</h2>
+          <p className="text-gray-500 font-medium">Strategic tools to scan your resume, plan your studies, and navigate salary benchmarks.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {studentTools.map((tool, index) => (
+            <ToolCard 
+              key={tool.href} 
+              {...tool} 
+              priority={index < 2} 
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* TEACHER TOOLS SECTION */}
+      <section className="bg-brandpurple/[0.02] border-y border-neutral-100 py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-black text-[#1B1C1E] mb-2 tracking-tight flex items-center justify-center md:justify-start gap-3">
+              For Teachers
+              <span className="px-2 py-0.5 bg-brandpurple text-white text-[10px] font-black uppercase rounded-md tracking-tighter">Pro</span>
+            </h2>
+            <p className="text-gray-500 font-medium">Advanced pedagogical assistants and assessment specialists to elevate classroom engagement.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teacherTools.map((tool) => (
+              <ToolCard 
+                key={tool.href} 
+                {...tool} 
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Why Section */}
-      <section className="bg-white py-20 px-6 border-y border-neutral-100 mt-12">
+      <section className="bg-white py-20 px-6 border-b border-neutral-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black text-[#1B1C1E] mb-8">Why Use the Instudia Success Suite?</h2>
+          <h2 className="text-3xl font-black text-[#1B1C1E] mb-8 tracking-tight">Why Use the Instudia Success Suite?</h2>
           <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
             <p>
               In today's competitive job market, simply having a degree or a certificate isn't always enough. Employers are looking for specific, data-backed proof of your abilities and a strategic approach to your professional development. That's why we built the Student Success Suite—to bridge the gap between traditional education and industrial requirements.
             </p>
             <p>
-              Our suite of tools is specifically designed for students and career-shifters in Dimapur and beyond. Whether you're struggling to get past automated resume filters or you're unsure which skills to learn next, our AI-powered resources provide the clarity you need. We combine local market insights with global industry standards to give you a unique advantage.
-            </p>
-            <p>
-              By centralizing your career planning, resume optimization, and study scheduling, we help you save time and focus on what truly matters: building the expertise that will launch your dream career. Start navigating your path to success today with Instudia.
+              Our suite of tools is specifically designed for students and educators in Dimapur and beyond. Whether you're a student struggling to get past automated resume filters or a teacher looking to generate high-retention lecture notes, our AI-powered resources provide the clarity you need.
             </p>
           </div>
         </div>
@@ -297,8 +349,8 @@ export default function CareerPlannerPage() {
       <section className="py-20 px-6 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-black text-[#1B1C1E]">The 4-Step Success Framework</h2>
-            <p className="mt-4 text-gray-500">A systematic approach to landing your dream role in tech.</p>
+            <h2 className="text-3xl font-black text-[#1B1C1E] tracking-tight">The 4-Step Success Framework</h2>
+            <p className="mt-4 text-gray-500">A systematic approach to landing your dream role or mastering your classroom.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {PROCESS_STEPS.map((step, i) => (
@@ -317,30 +369,14 @@ export default function CareerPlannerPage() {
       {/* Selection Guide Section */}
       <section className="bg-white py-20 px-6 border-b border-neutral-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black text-[#1B1C1E] mb-8">Choosing the Right Tool for Your Journey</h2>
+          <h2 className="text-3xl font-black text-[#1B1C1E] mb-8 tracking-tight">Choosing the Right Tool for Your Journey</h2>
           <div className="space-y-6 text-lg text-gray-600 leading-relaxed italic">
             <p>
-              Not sure where to start? We recommend beginning with the <strong>ATS Resume Scanner</strong>. Understanding how your current experience is perceived by automated systems is the first step in any modern job search. Once you have a clear picture of your resume's performance, use the <strong>Career Blueprint</strong> to map out your next skills.
+              Not sure where to start? Students, we recommend beginning with the <strong>ATS Resume Scanner</strong>. Teachers, your best companion is the <strong>Pedagogical Assistant</strong> for transforming dense text into structured guided notes.
             </p>
             <p>
-              If you're already in a specialized role but feel you're being under-compensated, our <strong>Salary Insights</strong> tool will provide the negotiation power you need. Finally, the <strong>Study Planner</strong> is your best friend for long-term consistency, helping you turn your career blueprint into a realistic, daily habit. Whatever your goal, we have a resource to help you reach it faster.
+              If you're already in a specialized role but feel you're being under-compensated, our <strong>Salary Insights</strong> tool will provide the negotiation power you need. Whatever your goal, we have a resource to help you reach it faster.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Section */}
-      <section className="bg-brandpurple/5 py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-black text-[#1B1C1E] mb-6">Our Commitment to Student Success</h2>
-          <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
-            At Instudia, we believe that education is only the first part of the equation. True success comes when that education is paired with the right industrial tools and a strategic mindset. Our mission is to provide every student in Dimapur with the same level of career resources available in major tech hubs worldwide.
-          </p>
-          <div className="inline-flex items-center gap-2 text-brandpurple font-bold border-b-2 border-brandpurple/20 pb-1">
-            Build your future with us
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
           </div>
         </div>
       </section>
@@ -348,7 +384,7 @@ export default function CareerPlannerPage() {
       {/* FAQ Section */}
       <section className="py-20 px-6 bg-white border-t border-neutral-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black text-[#1B1C1E] mb-12 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-black text-[#1B1C1E] mb-12 text-center tracking-tight">Frequently Asked Questions</h2>
           <div className="grid gap-8">
             {FAQ_DATA.map((faq) => (
               <div key={faq.q} className="group">

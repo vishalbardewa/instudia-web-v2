@@ -70,17 +70,21 @@ export async function POST(req: Request) {
 
     const data = await response.json();
     if (!response.ok) {
-       let msg = data?.error?.message || data?.detail || JSON.stringify(data);
-       throw new Error(`NVIDIA API Error: ${msg}`);
+      await logError('API Error in ATS', data);
+      throw new Error("We encountered an issue analyzing your resume. Please try again.");
     }
 
     let jsonString = data.choices?.[0]?.message?.content;
     if (!jsonString) throw new Error("Empty response returned from LLM.");
     jsonString = jsonString.replace(/```json/gi, '').replace(/```/g, '').trim();
 
-    return NextResponse.json(JSON.parse(jsonString));
+    try {
+      return NextResponse.json(JSON.parse(jsonString));
+    } catch (parseError) {
+      await logError('JSON Parse Error in ATS', { parseError, jsonString });
+      throw new Error("The AI generated an invalid analysis format. Please try again.");
+    }
   } catch (error: any) {
-    console.error('ATS Analysis Error:', error);
     await logError('ATS Analysis Error', error);
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }

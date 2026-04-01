@@ -90,7 +90,7 @@ export async function POST(req: Request) {
     const data = await response.json();
 
     if (!response.ok) {
-        throw new Error(data.error?.message || 'Failed to fetch from NVIDIA API');
+        throw new Error(data.error?.message || 'Failed to fetch from API');
     }
 
     let jsonString = data.choices[0].message.content;
@@ -102,7 +102,8 @@ export async function POST(req: Request) {
 
     return NextResponse.json(parsedData);
   } catch (error: any) {
-    console.error('Error generating career advice via Nvidia NIM:', error);
-    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+    const { logError } = await import('@/app/utils/logger');
+    await logError('Career Advice Generation Error', error);
+    return NextResponse.json({ error: "We couldn't generate your career advice. Please try again." }, { status: 500 });
   }
 }
