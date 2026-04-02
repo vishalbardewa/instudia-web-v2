@@ -8,7 +8,7 @@ date: "2023-09-16"
 readTime: 3 min read
 author: instudia
 authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/logo-round-white-bg.png?updatedAt=1696914242799"
+authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
 coverImage: "https://ik.imagekit.io/dxffek9yf/blogman/employabale-in-nagaland/how-the-programming-language-is-helping-us.webp?updatedAt=1694845356213"
 ---
 

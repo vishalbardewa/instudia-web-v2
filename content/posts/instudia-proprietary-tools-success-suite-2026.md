@@ -8,7 +8,7 @@ date: "2026-04-01"
 readTime: 5 min read
 author: instudia
 authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/logo-round-white-bg.png?updatedAt=1696914242799"
+authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
 coverImage: "https://images.unsplash.com/photo-1654931800100-2ecf6eee7c64?auto=format&fit=crop&w=1200&q=80"
 ---
 

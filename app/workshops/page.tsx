@@ -332,69 +332,69 @@ export default function WorkshopsPage() {
                 id={toId(w.title)}
                 className="group relative scroll-mt-28"
               >
-            {i < workshops.length - 1 && (
-              <div className="absolute left-0 top-full w-px h-24 bg-gradient-to-b from-neutral-200 to-transparent hidden lg:block" />
-            )}
-
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
-              {/* Left: Meta */}
-              <div className="lg:sticky lg:top-28">
-                {/* Index badge */}
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="w-8 h-8 rounded-full bg-brandpurple/10 flex items-center justify-center text-xs font-black text-brandpurple">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {w.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className={`text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full ${tagColors[tag] ?? "bg-gray-100 text-gray-500"}`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl font-black text-[#1B1C1E] leading-tight">
-                  {w.title}
-                </h2>
-                {w.subtitle && (
-                  <p className="mt-1 text-sm text-brandpurple font-semibold italic">
-                    {w.subtitle}
-                  </p>
+                {i < workshops.length - 1 && (
+                  <div className="absolute left-0 top-full w-px h-24 bg-gradient-to-b from-neutral-200 to-transparent hidden lg:block" />
                 )}
 
-                <div className="flex items-center gap-2 mt-3 text-sm text-gray-400">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span className="font-medium">{w.date}</span>
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
+                  {/* Left: Meta */}
+                  <div className="lg:sticky lg:top-28">
+                    {/* Index badge */}
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="w-8 h-8 rounded-full bg-brandpurple/10 flex items-center justify-center text-xs font-black text-brandpurple">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {w.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className={`text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full ${tagColors[tag] ?? "bg-gray-100 text-gray-500"}`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <h2 className="text-2xl sm:text-3xl font-black text-[#1B1C1E] leading-tight">
+                      {w.title}
+                    </h2>
+                    {w.subtitle && (
+                      <p className="mt-1 text-sm text-brandpurple font-semibold italic">
+                        {w.subtitle}
+                      </p>
+                    )}
+
+                    <div className="flex items-center gap-2 mt-3 text-sm text-gray-400">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span className="font-medium">{w.date}</span>
+                    </div>
+
+                    <p className="mt-5 text-sm text-gray-600 leading-relaxed">
+                      {w.description}
+                    </p>
+
+                    {/* Highlight callout */}
+                    <div className="mt-5 border-l-2 border-brandpurple/30 pl-4">
+                      <p className="text-xs font-extrabold uppercase tracking-widest text-brandpurple mb-1">
+                        Key Highlight
+                      </p>
+                      <p className="text-sm text-gray-500 leading-relaxed italic">
+                        {w.highlights}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right: Photo grid with lightbox */}
+                  <WorkshopPhotoGrid photos={w.photos} />
                 </div>
 
-                <p className="mt-5 text-sm text-gray-600 leading-relaxed">
-                  {w.description}
-                </p>
-
-                {/* Highlight callout */}
-                <div className="mt-5 border-l-2 border-brandpurple/30 pl-4">
-                  <p className="text-xs font-extrabold uppercase tracking-widest text-brandpurple mb-1">
-                    Key Highlight
-                  </p>
-                  <p className="text-sm text-gray-500 leading-relaxed italic">
-                    {w.highlights}
-                  </p>
-                </div>
-              </div>
-
-              {/* Right: Photo grid with lightbox */}
-              <WorkshopPhotoGrid photos={w.photos} />
-            </div>
-
-            {/* Divider */}
-            {i < workshops.length - 1 && (
-              <div className="mt-20 border-t border-neutral-100" />
-            )}
+                {/* Divider */}
+                {i < workshops.length - 1 && (
+                  <div className="mt-20 border-t border-neutral-100" />
+                )}
               </article>
             ))}
           </div> {/* end content wrapper */}

@@ -8,7 +8,7 @@ date: "2025-10-05"
 readTime: 4 min read
 author: Kivigho Kinimi
 authorRole: "IT Faculty, instudia"
-authorPhoto: "https://images.unsplash.com/photo-1656337789708-cdf37b07112d?q=80&w=200&auto=format&fit=crop"
+authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
 coverImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80"
 ---
 

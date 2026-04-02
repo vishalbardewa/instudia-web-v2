@@ -8,7 +8,7 @@ date: "2023-10-20"
 readTime: 4 min read
 author: instudia
 authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/logo-round-white-bg.png?updatedAt=1696914242799"
+authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
 coverImage: "https://ik.imagekit.io/dxffek9yf/blogman/blockbuster-vs-netflix/netflix-services.webp?updatedAt=1697875866486"
 ---
 

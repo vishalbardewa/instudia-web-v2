@@ -8,7 +8,7 @@ date: "2026-03-05"
 readTime: 4 min read
 author: Daniel Changkija
 authorRole: "Director, instudia"
-authorPhoto: "https://images.unsplash.com/photo-1656338997878-279d71d48f6e?q=80&w=200&auto=format&fit=crop"
+authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
 coverImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
 ---
 
