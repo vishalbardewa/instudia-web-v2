@@ -53,8 +53,15 @@ export const AssessmentDesigner = () => {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      const res = await fetch('/api/parse-resume', { method: 'POST', body: formData });
-      const data = await res.json();
+      const res = await fetch('/api/parse-assessment-material', { method: 'POST', body: formData });
+      let data;
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await res.json();
+      } else {
+        throw new Error(`Server returned an unexpected format (${res.status} ${res.statusText}).`);
+      }
+      
       if (!res.ok) throw new Error(data.error || "Failed to extract text from the file.");
       setSourceText(data.text);
     } catch (err: any) {
@@ -84,7 +91,14 @@ export const AssessmentDesigner = () => {
         body: JSON.stringify({ sourceText, targetGrade: actualGrade }),
       });
 
-      const data = await response.json();
+      let data;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        throw new Error(`Server returned an unexpected format (${response.status} ${response.statusText}).`);
+      }
+
       if (!response.ok) throw new Error(data.error || "Failed to generate assessment.");
 
       setResult(data);

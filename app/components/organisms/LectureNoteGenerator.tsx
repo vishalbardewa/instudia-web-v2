@@ -49,7 +49,7 @@ export const LectureNoteGenerator = () => {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      const res = await fetch('/api/parse-resume', { method: 'POST', body: formData });
+      const res = await fetch('/api/parse-lecture-material', { method: 'POST', body: formData });
       let data;
       const contentType = res.headers.get("content-type");
       if (contentType && contentType.includes("application/json")) {
