@@ -86,19 +86,94 @@ export const LectureNoteGenerator = () => {
         body: JSON.stringify({ sourceText, targetGrade }),
       });
 
-      let data;
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.includes("application/json")) {
-        data = await response.json();
-      } else {
-        throw new Error(`Server returned an unexpected format (${response.status} ${response.statusText}).`);
+      if (!response.ok) {
+        let errorData;
+        try {
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            errorData = await response.json();
+          }
+        } catch(e) {}
+        throw new Error(errorData?.error || `Server returned an unexpected format (${response.status}).`);
       }
 
-      if (!response.ok) throw new Error(data.error || "Failed to generate notes.");
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error("Stream not supported in this browser.");
 
-      setResult(data);
+      const decoder = new TextDecoder();
+      let fullContent = "";
+      
+      const extractSection = (content: string, tag: string) => {
+        const regex = new RegExp(`\\[${tag}\\]\\n?([\\s\\S]*?)(?=\\n\\[|$)`, 'i');
+        const match = content.match(regex);
+        if (!match) return '';
+        let section = match[1].trim();
+        section = section.replace(/^[=\-_]{10,}\s*$/gm, '');
+        return section;
+      };
+
+      setResult({
+        title: "Analyzing & Structuring Notes...",
+        intro: "",
+        pillars: [
+          { title: "", content: "" },
+          { title: "", content: "" },
+          { title: "", content: "" }
+        ],
+        cheatSheet: "",
+        discussion: ""
+      });
+
+      let buffer = "";
+      let hasStartedReceiving = false;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || "";
+        
+        let chunkChanged = false;
+
+        for (const line of lines) {
+          if (line.startsWith('data: ') && line.trim() !== 'data: [DONE]') {
+            try {
+              const p = JSON.parse(line.slice(6));
+              const content = p.choices?.[0]?.delta?.content;
+              if (content) {
+                 fullContent += content;
+                 chunkChanged = true;
+                 if (!hasStartedReceiving) {
+                   hasStartedReceiving = true;
+                   setIsGenerating(false);
+                 }
+              }
+            } catch {
+               // Ignore partial JSON
+            }
+          }
+        }
+        
+        if (chunkChanged) {
+           setResult({
+             title: extractSection(fullContent, 'TITLE') || "Finalizing Details...",
+             intro: extractSection(fullContent, 'INTRO'),
+             pillars: [
+               { title: extractSection(fullContent, 'PILLAR_1_TITLE'), content: extractSection(fullContent, 'PILLAR_1_CONTENT') },
+               { title: extractSection(fullContent, 'PILLAR_2_TITLE'), content: extractSection(fullContent, 'PILLAR_2_CONTENT') },
+               { title: extractSection(fullContent, 'PILLAR_3_TITLE'), content: extractSection(fullContent, 'PILLAR_3_CONTENT') },
+             ],
+             cheatSheet: extractSection(fullContent, 'CHEATSHEET'),
+             discussion: extractSection(fullContent, 'DISCUSSION'),
+           });
+        }
+      }
+
     } catch (err: any) {
       console.error(err);
+      setResult(null); // Revert back to input view to show error
       setErrorMsg(err.message || "An error occurred while generating the notes. Please try again.");
     } finally {
       setIsGenerating(false);

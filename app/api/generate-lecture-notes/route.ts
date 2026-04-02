@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-import { logError } from '@/app/utils/logger';
 
-export const maxDuration = 180;
+export const runtime = 'edge';
 
 export async function POST(req: Request) {
   try {
@@ -79,6 +78,7 @@ export async function POST(req: Request) {
         model: "meta/llama-3.1-70b-instruct",
         temperature: 0.3,
         max_tokens: 4096,
+        stream: true,
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt }
@@ -86,49 +86,24 @@ export async function POST(req: Request) {
       }),
     });
 
-    const data = await response.json();
     if (!response.ok) {
-      await logError('API Error in Lecture Notes', data);
-      throw new Error("We encountered an issue generating your lecture notes. Please try again.");
+      const data = await response.json().catch(() => ({}));
+      console.error('API Error in Lecture Notes', data);
+      return NextResponse.json({ error: "We encountered an issue generating your lecture notes. Please try again." }, { status: 500 });
     }
 
-    const content = data.choices?.[0]?.message?.content;
-    if (!content) throw new Error("Empty response returned from LLM.");
-    
-    // DELIMITED PARSER LOGIC
-    const extractSection = (tag: string) => {
-      const regex = new RegExp(`\\[${tag}\\]\\n?([\\s\\S]*?)(?=\\n\\[|$)`, 'i');
-      const match = content.match(regex);
-      if (!match) return '';
-      let section = match[1].trim();
-      // Specifically strip out long AI-generated decorative separators (10+ characters of =, -, or _)
-      // This solves the issue where the AI adds lines like "====================" between sections.
-      section = section.replace(/^[=\-_]{10,}\s*$/gm, '');
-      return section.trim();
-    };
-
-    const result = {
-      title: extractSection('TITLE'),
-      intro: extractSection('INTRO'),
-      pillars: [
-        { title: extractSection('PILLAR_1_TITLE'), content: extractSection('PILLAR_1_CONTENT') },
-        { title: extractSection('PILLAR_2_TITLE'), content: extractSection('PILLAR_2_CONTENT') },
-        { title: extractSection('PILLAR_3_TITLE'), content: extractSection('PILLAR_3_CONTENT') },
-      ],
-      cheatSheet: extractSection('CHEATSHEET'),
-      discussion: extractSection('DISCUSSION'),
-    };
-
-    // Validation
-    if (!result.title || !result.intro || result.pillars.some(p => !p.title || !p.content)) {
-      await logError('Delimited Parse Error in Lecture Notes', { content, result });
-      throw new Error("The AI generated an incomplete response. Please try again.");
-    }
-
-    return NextResponse.json(result);
+    // Proxy the Server-Sent Events stream directly to the client
+    return new Response(response.body, {
+      headers: {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      },
+    });
 
   } catch (error: any) {
-    await logError('Lecture Notes Generation Error', error);
+    console.error('Lecture Notes Generation Error', error);
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }
+
