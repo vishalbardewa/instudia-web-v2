@@ -20,8 +20,28 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "instudia Blog — Career & Tech Insights",
+    description: "Career tips, skill guides, and tech insights from instudia — Nagaland's career-first tech institute in Dimapur.",
+    url: "https://www.instudianagaland.com/blog",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: posts.map((post, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://www.instudianagaland.com/blog/${post.slug}`,
+      })),
+    },
+  };
+
   return (
     <main className="bg-[#FAFAFA] min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Swiss Archival Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden border-b-2 border-black/5">
         {/* Swiss Grid Overlay */}

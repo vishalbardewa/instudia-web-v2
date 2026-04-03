@@ -45,9 +45,37 @@ export default async function BlogPostPage({ params }: Props) {
   const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   const tocItems = post!.body.filter((s) => s.heading).map((s) => ({ label: s.heading!, id: slugify(s.heading!) }));
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post!.title,
+    description: post!.excerpt,
+    image: post!.coverImage,
+    datePublished: post!.date,
+    author: {
+      "@type": "Person",
+      name: post!.author,
+      jobTitle: post!.authorRole,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "instudia",
+      url: "https://www.instudianagaland.com",
+    },
+    url: `https://www.instudianagaland.com/blog/${slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.instudianagaland.com/blog/${slug}`,
+    },
+  };
+
   return (
     <main className="bg-[#FAFAFA] min-h-screen pb-32">
       <ReadingProgress />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Swiss Editorial Header */}
       <section className="relative pt-32 pb-20 border-b-2 border-black/5 bg-white overflow-hidden">
