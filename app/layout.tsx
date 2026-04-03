@@ -110,15 +110,13 @@ export default function RootLayout({
           {children}
         </ConditionalLayout>
         <GoogleAnalytics gaId={GA_MEASUREMENT_ID || ""} />
-        <Script
-          id="site-schema"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd),
           }}
         />
-        <Script
-          id="faq-schema"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -177,8 +175,7 @@ export default function RootLayout({
             })
           }}
         />
-        <Script
-          id="website-schema"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
