@@ -109,6 +109,16 @@ const tools: ToolProps[] = [
     category: "teacher",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-6.png"
   },
+  {
+    name: "AI Resume Builder",
+    href: "/tools/resume-builder",
+    description: "Create professional, ATS-optimized resumes with real-time AI content suggestions.",
+    style: "purple",
+    statusIcon: "✨",
+    statusMessage: "New",
+    category: "student",
+    imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-7.png"
+  },
 ]
 
 const FAQ_DATA = [

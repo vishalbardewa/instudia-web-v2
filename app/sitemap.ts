@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/study-planner',
     '/tools/assessment-designer',
     '/tools/lecture-note-generator',
+    '/tools/resume-builder',
     '/gallery',
     '/success-stories',
   ].map((route) => ({

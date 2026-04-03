@@ -4,6 +4,7 @@ import Image from "next/image";
 const navigation = {
   tools: [
     { name: "Career Blueprint", href: "/tools/career-blueprint", isNew: true },
+    { name: "AI Resume Builder", href: "/tools/resume-builder", isNew: true },
     { name: "ATS Resume Scanner", href: "/tools/ats-analyzer", isNew: true },
     { name: "Salary Insights", href: "/tools/salary-insights", isNew: true },
     { name: "Study Planner", href: "/tools/study-planner", isNew: true }
