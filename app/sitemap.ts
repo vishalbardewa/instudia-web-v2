@@ -5,6 +5,8 @@ import { posts } from './data/posts';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.instudianagaland.com';
 
+  const latestPostDate = posts[0]?.date ? new Date(posts[0].date).toISOString() : new Date().toISOString();
+
   const staticRoutes = [
     '',
     '/about',
@@ -30,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/success-stories',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
+    lastModified: route === '/blog' ? latestPostDate : new Date().toISOString(),
     changeFrequency: route.startsWith('/tools') ? 'monthly' as const : 'weekly' as const,
     priority: route === '' ? 1 : route === '/blog' ? 0.85 : route.startsWith('/courses') ? 0.9 : 0.8,
   }));

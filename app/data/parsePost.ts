@@ -7,12 +7,6 @@ const POSTS_DIR = path.join(process.cwd(), "content/posts");
 
 /**
  * Parse a markdown body into structured Section blocks.
- *
- * Supported markdown:
- *   ## Heading           → section.heading
- *   plain text line      → { type: "paragraph", text }
- *   - bullet             → { type: "bullets", items } (consecutive - lines merge)
- *   ```lang ... ```      → { type: "code", language, content }
  */
 function parseBody(markdown: string): Section[] {
   const lines = markdown.split("\n");
@@ -30,13 +24,11 @@ function parseBody(markdown: string): Section[] {
     const line = lines[i];
     const trimmed = line.trimEnd();
 
-    // Blank line — skip
     if (trimmed === "") {
       i++;
       continue;
     }
 
-    // ## Heading → start a new section
     if (trimmed.startsWith("## ")) {
       pushSection();
       current = { heading: trimmed.slice(3).trim(), items: [] };
@@ -44,14 +36,12 @@ function parseBody(markdown: string): Section[] {
       continue;
     }
 
-    // ### Subheading → new content item type
     if (trimmed.startsWith("### ")) {
       current.items.push({ type: "subheading", text: trimmed.slice(4).trim() });
       i++;
       continue;
     }
 
-    // Fenced code block ```lang
     if (trimmed.startsWith("```")) {
       const language = trimmed.slice(3).trim() || "text";
       const codeLines: string[] = [];
@@ -60,8 +50,7 @@ function parseBody(markdown: string): Section[] {
         codeLines.push(lines[i]);
         i++;
       }
-      i++; // consume closing ```
-      // Trim leading/trailing blank lines inside the block
+      i++;
       const content = codeLines.join("\n").trim();
       if (content) {
         current.items.push({ type: "code", language, content });
@@ -69,7 +58,6 @@ function parseBody(markdown: string): Section[] {
       continue;
     }
 
-    // - Bullet point — merge consecutive bullets into one bullets item
     if (trimmed.startsWith("- ")) {
       const items: string[] = [];
       while (i < lines.length && lines[i].trimEnd().startsWith("- ")) {
@@ -80,7 +68,6 @@ function parseBody(markdown: string): Section[] {
       continue;
     }
 
-    // Paragraph — preserve markdown formatting
     const text = trimmed.trim();
 
     if (text) {
@@ -113,13 +100,37 @@ export function loadPost(filename: string): Post {
   };
 }
 
-/** Load all posts from content/posts/, sorted oldest → newest by date. */
-export function loadAllPosts(): Post[] {
-  const files = fs
-    .readdirSync(POSTS_DIR)
-    .filter((f) => f.endsWith(".md"));
+/** Recursively get all markdown files from a directory, relative to POSTS_DIR. */
+function getAllFiles(dirPath: string): string[] {
+  const files: string[] = [];
+  const list = fs.readdirSync(dirPath);
+  for (const item of list) {
+    const fullPath = path.join(dirPath, item);
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      files.push(...getAllFiles(fullPath));
+    } else if (item.endsWith(".md")) {
+      files.push(path.relative(POSTS_DIR, fullPath));
+    }
+  }
+  return files;
+}
 
-  const loaded = files.map(loadPost);
-  loaded.sort((a, b) => a.date.localeCompare(b.date));
+/** Load all posts from content/posts/ and its subdirectories, sorted newest → oldest by date. */
+export function loadAllPosts(): Post[] {
+  const files = getAllFiles(POSTS_DIR);
+  const loaded = files
+    .map((f) => {
+      try {
+        return loadPost(f);
+      } catch (err) {
+        console.error(`Error loading post ${f}:`, err);
+        return null;
+      }
+    })
+    .filter((p): p is Post => p !== null && typeof p.slug === "string" && p.slug.length > 0);
+
+  // Sort descending: newest first
+  loaded.sort((a, b) => b.date.localeCompare(a.date));
   return loaded;
 }

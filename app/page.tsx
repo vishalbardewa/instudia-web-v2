@@ -15,6 +15,8 @@ import ScrollingLogos from "./components/organisms/ScrollingLogos";
 import CareerTerminal from "./components/organisms/CareerTerminal";
 import MiniBlueprintGateway from "./components/organisms/MiniBlueprintGateway";
 import SkillGraphOrbit from "./components/organisms/SkillGraphOrbit";
+import BlogCarousel from "./components/organisms/BlogCarousel";
+import { posts } from "./data/posts";
 
 // Force Dynamic SSR to guarantee Math.random() executes natively per route request instead of baking identically during static build-time
 export const dynamic = "force-dynamic";
@@ -390,6 +392,9 @@ export default function Page() {
           />
         </div>
       </div>
+
+      {/* --- Blog Horizon Carousel --- */}
+      <BlogCarousel posts={posts.slice(0, 7)} />
 
       <CaseStudies caseStudies={caseStudies} />
 

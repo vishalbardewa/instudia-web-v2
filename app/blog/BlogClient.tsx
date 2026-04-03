@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { type Post, formatDate } from "../data/types";
 
@@ -9,12 +9,27 @@ const categories = ["All", "Career", "Skills", "Finance", "Technology"];
 export default function BlogClient({ posts }: { posts: Post[] }) {
   const [active, setActive] = useState("All");
 
-  const filtered =
-    active === "All" ? posts : posts.filter((p) => p.category === active);
+  const filtered = useMemo(() => {
+    return active === "All" ? posts : posts.filter((p) => p.category === active);
+  }, [active, posts]);
 
-  // Latest post as featured (from the full filtered list)
-  const featured = filtered[filtered.length - 1];
-  const rest = filtered.slice(0, filtered.length - 1).reverse();
+  // Latest post as featured (the first one since we are now sorted newest first)
+  const featured = filtered[0];
+  const rest = filtered.slice(1);
+
+  // Group the "rest" posts by year
+  const groupedByYear = useMemo(() => {
+    const groups: Record<string, Post[]> = {};
+    rest.forEach((post) => {
+      const year = new Date(post.date).getFullYear().toString();
+      if (!groups[year]) groups[year] = [];
+      groups[year].push(post);
+    });
+    return groups;
+  }, [rest]);
+
+  // Sorted years (descending)
+  const sortedYears = Object.keys(groupedByYear).sort((a, b) => b.localeCompare(a));
 
   return (
     <>
@@ -95,55 +110,63 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
             </Link>
           </section>
 
-          {/* ── Post grid ─────────────────────────────────────── */}
-          {rest.length > 0 && (
-            <section className="mx-auto max-w-5xl px-6 pb-20">
-              <p className="text-xs font-extrabold tracking-[0.15em] text-gray-400 uppercase mb-6">
-                All Articles
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {rest.map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}`}
-                    className="group flex flex-col rounded-3xl border border-neutral-100 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brandpurple/20 transition-all duration-300 overflow-hidden"
-                  >
-                    <div className="overflow-hidden aspect-[16/9] bg-gray-100">
-                      <img
-                        src={post.coverImage}
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="flex flex-col flex-1 p-5">
-                      <span
-                        className={`self-start text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full ${post.categoryColor}`}
+          {/* ── Grouped Post Grid ─────────────────────────────────── */}
+          {sortedYears.length > 0 && (
+            <section className="mx-auto max-w-5xl px-6 pb-20 space-y-24">
+              {sortedYears.map((year) => (
+                <div key={year} className="space-y-8">
+                  {/* Architectural Year Marker */}
+                  <div className="flex items-center gap-4">
+                    <h2 className="text-3xl font-black text-[#1B1C1E] tracking-tight">{year}</h2>
+                    <div className="h-[2px] flex-1 bg-neutral-100 rounded-full" />
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-neutral-300">Archive Archive</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {groupedByYear[year].map((post) => (
+                      <Link
+                        key={post.slug}
+                        href={`/blog/${post.slug}`}
+                        className="group flex flex-col rounded-3xl border border-neutral-100 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brandpurple/20 transition-all duration-300 overflow-hidden"
                       >
-                        {post.category}
-                      </span>
-                      <h3 className="mt-3 text-base font-black text-[#1B1C1E] leading-snug group-hover:text-brandpurple transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="mt-2 text-xs text-gray-400 leading-relaxed line-clamp-2 flex-1">
-                        {post.excerpt}
-                      </p>
-                      <div className="mt-4 flex items-center gap-2.5 pt-4 border-t border-neutral-100">
-                        <img
-                          src={post.authorPhoto}
-                          alt={post.author}
-                          className="w-7 h-7 rounded-full object-cover"
-                        />
-                        <div>
-                          <p className="text-xs font-bold text-[#1B1C1E]">{post.author}</p>
-                          <p className="text-[10px] text-gray-400">
-                            {formatDate(post.date)} · {post.readTime}
-                          </p>
+                        <div className="overflow-hidden aspect-[16/9] bg-gray-100">
+                          <img
+                            src={post.coverImage}
+                            alt={post.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
                         </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                        <div className="flex flex-col flex-1 p-5">
+                          <span
+                            className={`self-start text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full ${post.categoryColor}`}
+                          >
+                            {post.category}
+                          </span>
+                          <h3 className="mt-3 text-base font-black text-[#1B1C1E] leading-snug group-hover:text-brandpurple transition-colors line-clamp-2">
+                            {post.title}
+                          </h3>
+                          <p className="mt-2 text-xs text-gray-400 leading-relaxed line-clamp-2 flex-1">
+                            {post.excerpt}
+                          </p>
+                          <div className="mt-4 flex items-center gap-2.5 pt-4 border-t border-neutral-100">
+                            <img
+                              src={post.authorPhoto}
+                              alt={post.author}
+                              className="w-7 h-7 rounded-full object-cover"
+                            />
+                            <div>
+                              <p className="text-xs font-bold text-[#1B1C1E]">{post.author}</p>
+                              <p className="text-[10px] text-gray-400">
+                                {formatDate(post.date)} · {post.readTime}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </section>
           )}
         </>
