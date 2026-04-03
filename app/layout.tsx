@@ -104,12 +104,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN">
-      <body className={jakarta.className}>
-        <ConditionalLayout>
-          <DeviceSizeIndicator />
-          {children}
-        </ConditionalLayout>
-        <GoogleAnalytics gaId={GA_MEASUREMENT_ID || ""} />
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -191,6 +186,13 @@ export default function RootLayout({
             })
           }}
         />
+      </head>
+      <body className={jakarta.className}>
+        <ConditionalLayout>
+          <DeviceSizeIndicator />
+          {children}
+        </ConditionalLayout>
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID || ""} />
       </body>
     </html>
   );
