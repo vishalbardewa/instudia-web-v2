@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { IconHome, IconUser } from "@tabler/icons-react";
 import { IconMessage } from "@tabler/icons-react";
 import { FloatingNav } from "../organisms/FloatingNav";
@@ -10,6 +11,9 @@ import SearchModal from "../atom/SearchModal";
 import { slugs } from "@/app/routes";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import Link from "next/link";
+import { getActiveFestival } from "@/app/utils/festival";
+import { Confetti, Snowfall, GlowEffects, FestivalDoodle, EasterEggs } from "../atom/FestivalEffects";
+import { clsx } from "clsx";
 
 const navItems = [
   {
@@ -112,7 +116,6 @@ const longNavigation = {
     { name: "Tools", href: "/tools", isNew: true },
   ],
 };
-
 export default function PrimaryLayout({ children }: any) {
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -129,17 +132,64 @@ export default function PrimaryLayout({ children }: any) {
   }, []);
 
   return (
+    <Suspense fallback={null}>
+      <FestivalLayoutContent 
+        navItems={navItems} 
+        longNavigation={longNavigation} 
+        searchOpen={searchOpen} 
+        setSearchOpen={setSearchOpen}
+      >
+        {children}
+      </FestivalLayoutContent>
+    </Suspense>
+  );
+}
+
+function FestivalLayoutContent({ 
+  children, 
+  navItems, 
+  longNavigation, 
+  searchOpen, 
+  setSearchOpen 
+}: any) {
+  const searchParams = useSearchParams();
+  const festivalDate = searchParams?.get("festivalDate");
+
+  const activeFestival = useMemo(() => {
+    return getActiveFestival(festivalDate || undefined);
+  }, [festivalDate]);
+
+  return (
     <>
-      <p className="flex h-10 items-center justify-center bg-black px-4 text-xs md:text-sm font-medium text-white sm:px-6 lg:px-8 print:hidden">
-        <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5 mr-3">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
+      {activeFestival?.effect === "confetti" && <Confetti />}
+      {activeFestival?.effect === "snowfall" && <Snowfall />}
+      {activeFestival?.effect === "lights" && <GlowEffects />}
+      {activeFestival?.effect === "easter-eggs" && <EasterEggs />}
+      <div 
+        className={clsx(
+          "flex h-10 items-center justify-center px-4 text-xs md:text-sm font-medium sm:px-6 lg:px-8 print:hidden transition-colors duration-500",
+          activeFestival ? activeFestival.colors.bannerBg : "bg-black",
+          activeFestival ? activeFestival.colors.bannerText : "text-white"
+        )}
+      >
+        {!activeFestival ? (
+          <>
+            <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5 mr-3">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
+              </span>
+              New
+            </span>
+            We’ve built something just for you— <span className="underline hover:text-brandpurple"><Link href="/tools">take a look!</Link></span>
+          </>
+        ) : (
+          <span className="flex items-center gap-2">
+            {activeFestival.bannerText}
+            {activeFestival.doodle && <FestivalDoodle type={activeFestival.doodle} />}
           </span>
-          New
-        </span>
-        We’ve built something just for you— <span className="underline hover:text-brandpurple"><Link href="/tools">take a look!</Link></span>
-      </p>
+        )}
+      </div>
       <div className="flex sticky z-50 top-0 w-full h-full print:hidden">
         <div className="w-1/4 h-[0.625rem] bg-[#58FF1B]"></div>
         <div className="w-1/4 h-[0.625rem] bg-[#FF1B58]"></div>
