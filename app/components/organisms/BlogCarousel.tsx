@@ -144,7 +144,7 @@ const SwissHeader = ({
           className="text-5xl sm:text-7xl lg:text-[10rem] font-black tracking-[-0.04em] text-black leading-[0.8] uppercase flex flex-col"
         >
           <span>instudia</span>
-          <span className="text-white [-webkit-text-stroke:2px_black]">Blogs.</span>
+          <span className="text-white [-webkit-text-stroke:4px_black]" style={{ paintOrder: 'stroke fill' }}>Blogs.</span>
         </motion.h2>
       </div>
 

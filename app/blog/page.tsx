@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { posts } from "../data/posts";
 import BlogClient from "./BlogClient";
+import { Container } from "../components/atom/Container";
+import { motion } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Blog — Insights on Careers, Tech & Skills",
@@ -19,61 +21,91 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="bg-white">
-      {/* ── Hero ──────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-neutral-100 pt-24 pb-16 px-6">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-brandpurple/5 rounded-full blur-[80px] pointer-events-none" />
-        <div className="relative mx-auto max-w-5xl text-center">
-          <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
-            instudia Blog
-          </p>
-          <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-[#1B1C1E] leading-tight">
-            Insights to{" "}
-            <span className="text-brandpurple">build your career</span>
-          </h1>
-          <p className="mt-5 text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-            Practical guides on tech careers, in-demand skills, and the tools you need to succeed — from our team in Dimapur.
-          </p>
-        </div>
+    <main className="bg-[#FAFAFA] min-h-screen">
+      {/* Swiss Archival Hero */}
+      <section className="relative pt-32 pb-20 overflow-hidden border-b-2 border-black/5">
+        {/* Swiss Grid Overlay */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-8">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest">
+                  Latest
+                </span>
+                <p className="text-[10px] font-black tracking-[0.4em] text-black uppercase">
+                  Knowledge Vault
+                </p>
+              </div>
+
+              <h1 className="text-6xl sm:text-[9rem] font-black tracking-[-0.04em] text-black leading-[0.8] uppercase flex flex-col">
+                <span>instudia</span>
+                <span className="text-white [-webkit-text-stroke:4px_black]" style={{ paintOrder: 'stroke fill' }}>blogs.</span>
+              </h1>
+            </div>
+
+            <div className="lg:col-span-4 lg:mb-4 lg:text-right">
+              <p className="text-sm font-bold text-black leading-tight max-w-sm ml-auto uppercase mb-10 opacity-70">
+                Insights to <span className="text-brandpurple underline decoration-2 underline-offset-4">build your career</span>. Practical guides on tech, design, and regional skills.
+              </p>
+              <div className="h-[2px] w-full bg-black/10 relative overflow-hidden hidden lg:block">
+                <div className="absolute inset-0 bg-black w-1/3" />
+              </div>
+            </div>
+          </div>
+        </Container>
       </section>
 
-      {/* ── Interactive filter + posts (client component) ── */}
+      {/* Interactive filter + posts (client component) */}
       <BlogClient posts={posts} />
 
-      {/* ── Newsletter / CTA ───────────────────────────────── */}
-      <section className="mx-6 mb-20">
-        <div className="rounded-[2.5rem] bg-gradient-to-r from-flourescent via-redhue via-brandpurple to-brightyellow p-[3px] shadow-lg">
-          <div className="rounded-[calc(2.5rem-3px)] bg-white px-8 py-14 text-center lg:px-16 relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-brandpurple/5 rounded-full blur-[80px] pointer-events-none" />
-            <div className="relative">
-              <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
-                Stay Updated
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-black text-[#1B1C1E]">
-                Get career insights in your inbox
+      {/* Brutalist Newsletter / CTA */}
+      <section className="py-24 sm:py-32 bg-white border-t-2 border-black">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white border-2 border-black p-8 sm:p-16 shadow-[12px_12px_0px_#FFE01B] relative overflow-hidden group">
+            {/* Technical Accent Line */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-black" />
+
+            <div className="lg:col-span-7">
+              <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest mb-6 inline-block">
+                Community
+              </span>
+              <h2 className="text-4xl sm:text-6xl font-black text-black leading-[0.9] uppercase tracking-tighter">
+                Join the Narrative <br />
+                <span className="text-white [-webkit-text-stroke:1.5px_black]">Get Insights.</span>
               </h2>
-              <p className="mt-3 text-gray-500 max-w-lg mx-auto">
-                Join 500+ students and professionals who get weekly career tips, course announcements, and skill guides from instudia.
+              <p className="mt-8 text-sm sm:text-base font-bold text-black max-w-xl leading-relaxed uppercase opacity-80">
+                Join 500+ students and professionals who get weekly career tips, course announcements, and skill guides directly from the instudia faculty.
               </p>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            </div>
+
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
                 <a
                   href="https://www.instagram.com/instudia_nagaland"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-brandpurple px-6 py-3 text-sm font-extrabold text-white hover:bg-brandpurple/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-brandpurple/20"
+                  className="flex items-center justify-between border-2 border-black bg-white px-8 py-5 text-xs font-black text-black uppercase tracking-widest hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[6px] hover:translate-y-[6px]"
                 >
                   Follow on Instagram
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </a>
                 <Link
                   href="/courses"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-neutral-200 bg-white px-6 py-3 text-sm font-extrabold text-[#1B1C1E] hover:bg-gray-50 transition-all hover:-translate-y-0.5"
+                  className="flex items-center justify-between border-2 border-black bg-white px-8 py-5 text-xs font-black text-black uppercase tracking-widest hover:bg-[#C21BFF] hover:text-white transition-all shadow-[6px_6px_0px_#C21BFF] hover:shadow-none hover:translate-x-[6px] hover:translate-y-[6px]"
                 >
                   Explore Courses
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </Link>
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );
