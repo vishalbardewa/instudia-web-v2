@@ -20,15 +20,16 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
 
   const [visible, setVisible] = useState(false);
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
+  useMotionValueEvent(scrollY, "change", (current) => {
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      let direction = current! - scrollY.getPrevious()!;
 
-      if (scrollYProgress.get() < 0.05) {
+      // Use absolute pixel scroll (120px) to determine top of page, ensuring it fades when main nav shows.
+      if (scrollY.get() < 120) {
         setVisible(false);
       } else {
         if (direction < 0) {
@@ -52,7 +53,8 @@ export const FloatingNav = ({
           opacity: visible ? 1 : 0,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.4,
+          ease: "easeInOut"
         }}
         className={cn(
           "flex max-w-fit fixed top-10 inset-x-0 mx-auto border-2 border-black rounded-full bg-white z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
