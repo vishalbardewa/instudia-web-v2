@@ -1,9 +1,5 @@
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
-const StudyPlannerClient = dynamic(() => import("../../components/organisms/StudyPlannerClient"), {
-  ssr: false,
-  loading: () => <div className="h-96 w-full animate-pulse bg-gray-100 rounded-[2rem]" />
-});
+import StudyPlannerWrapper from "./StudyPlannerWrapper";
 
 export const metadata: Metadata = {
   title: "Interactive Study Planner",
@@ -36,7 +32,7 @@ export default function StudyPlannerPage() {
 
       {/* Main Tool */}
       <section className="mx-auto max-w-7xl px-4 lg:px-8 py-16 md:py-20">
-        <StudyPlannerClient />
+        <StudyPlannerWrapper />
       </section>
     </main>
   );

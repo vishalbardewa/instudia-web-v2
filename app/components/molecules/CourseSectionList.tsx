@@ -8,7 +8,6 @@ import {
   FinanceBadge,
   SkillBadge,
 } from "../atom/Badge";
-import { title } from "process";
 import SideBySideCard from "./SideBySideCard";
 import { slugs } from "@/app/routes";
 import Link from "next/link";
@@ -272,13 +271,13 @@ function CourseSectionList() {
     <>
       <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {firstLayerCourses.map((course) => (
-          <CourseCard key={title} {...course} />
+          <CourseCard key={course.title} {...course} />
         ))}
       </div>
 
       <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {secondLayerCourses.map((course) => (
-          <CourseCard key={title} {...course} />
+          <CourseCard key={course.title} {...course} />
         ))}
       </div>
 
@@ -312,7 +311,7 @@ function CourseSectionList() {
         </div>
         {fifthLayerCourses.map((course) => (
           <CourseCard
-            key={title}
+            key={course.title}
             gridFix={false}
             {...course}
             className="lg:col-start-3 lg:col-end-4"
@@ -322,7 +321,7 @@ function CourseSectionList() {
 
       <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {thirdLayerCourses.map((course) => (
-          <CourseCard key={title} {...course} />
+          <CourseCard key={course.title} {...course} />
         ))}
       </div>
 
@@ -330,7 +329,7 @@ function CourseSectionList() {
 
       <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {fourthLayerCourses.map((course) => (
-          <CourseCard key={title} {...course} />
+          <CourseCard key={course.title} {...course} />
         ))}
       </div>
     </>
