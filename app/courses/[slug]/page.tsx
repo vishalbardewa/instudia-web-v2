@@ -378,7 +378,9 @@ export default async function Course({ params }: any) {
       "provider": {
         "@type": "Organization",
         "name": "instudia",
-        "sameAs": `${AppConfig.canonicalBase}`
+        "sameAs": `${AppConfig.canonicalBase}`,
+        "image": "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+        "telephone": "+91-8798-587779"
       },
       ...(courseDetails.price && {
         "offers": {
@@ -397,6 +399,8 @@ export default async function Course({ params }: any) {
           "location": {
             "@type": "Place",
             "name": "instudia, Dimapur",
+            "image": "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+            "telephone": "+91-8798-587779",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Dimapur",

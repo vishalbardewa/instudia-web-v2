@@ -36,6 +36,7 @@ const jsonLd = {
   "@type": "Organization",
   url: "https://www.instudianagaland.com/about",
   logo: "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+  image: "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
   name: "instudia",
   description:
     "Nagaland's career-first tech institute in Dimapur, empowering students to upskill and build careers in IT, design, and finance.",

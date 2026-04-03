@@ -18,6 +18,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "instudia",
+  image: "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
   url: "https://www.instudianagaland.com",
   telephone: "+91-8798-587779",
   email: "instudia.nagaland@gmail.com",
