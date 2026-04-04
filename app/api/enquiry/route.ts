@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { Resend } from "resend";
+import { buildEnquiryEmailHtml } from "@/app/_utils/emailTemplates";
+
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Use service role key — bypasses RLS for server-side writes only.
 // NEVER expose this key to the client.
@@ -7,7 +12,6 @@ const supabaseAdmin = createClient(
   process.env.SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
-
 
 export async function POST(req: NextRequest) {
   try {
@@ -31,7 +35,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { error } = await supabaseAdmin.from("enquiries").insert([
+    // 1. Insert into Supabase
+    const { error: dbError } = await supabaseAdmin.from("enquiries").insert([
       {
         name: name.trim(),
         phone: phone.trim(),
@@ -41,12 +46,34 @@ export async function POST(req: NextRequest) {
       },
     ]);
 
-    if (error) {
-      console.error("[enquiry] Supabase insert error:", error);
+    if (dbError) {
+      console.error("[enquiry] Supabase insert error:", dbError);
       return NextResponse.json(
         { ok: false, message: "Failed to submit enquiry. Please try again." },
         { status: 500 }
       );
+    }
+
+    // 2. Send Email Notification via Resend (async, don't block response)
+    try {
+      const emailHtml = buildEnquiryEmailHtml({
+        name: name.trim(),
+        phone: phone.trim(),
+        email: email.trim().toLowerCase(),
+        courseName: courseName.trim(),
+        message: message?.trim() ?? "",
+        submittedAt: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+      });
+
+      await resend.emails.send({
+        from: process.env.RESEND_FROM_EMAIL || "notifications@instudianagaland.com",
+        to: "instudia.nagaland@gmail.com",
+        subject: `New Enquiry: ${name.trim()} - ${courseName.trim()}`,
+        html: emailHtml,
+      });
+    } catch (emailErr) {
+      // Log email error but don't fail the request (the data is already in DB)
+      console.error("[enquiry] Email notification failed:", emailErr);
     }
 
     return NextResponse.json({ ok: true, message: "Enquiry submitted successfully." });
