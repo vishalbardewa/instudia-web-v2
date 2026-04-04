@@ -4,6 +4,10 @@ export type ContentItem =
   | { type: "paragraph"; text: string }
   | { type: "subheading"; text: string }
   | { type: "bullets"; items: string[] }
+  | { type: "list-ordered"; items: string[] }
+  | { type: "blockquote"; text: string; fontSize?: string; textCase?: "uppercase" | "lowercase" | "capitalize" | "normal" }
+  | { type: "divider" }
+  | { type: "image"; src: string; alt: string }
   | { type: "code"; language: string; content: string };
 
 export interface Section {

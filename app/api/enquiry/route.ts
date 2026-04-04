@@ -35,6 +35,15 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Phone validation (Indian 10-digit mobile check)
+    const cleanPhone = phone.replace(/[\s\-()+]/g, "").slice(-10);
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
+      return NextResponse.json(
+        { ok: false, message: "Please provide a valid 10-digit phone number." },
+        { status: 400 }
+      );
+    }
+
     // 1. Insert into Supabase
     const { error: dbError } = await supabaseAdmin.from("enquiries").insert([
       {

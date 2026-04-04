@@ -167,7 +167,17 @@ export default async function BlogPostPage({ params }: Props) {
                         if (item.type === "paragraph") {
                           return (
                             <div key={ii} className="text-lg sm:text-xl font-medium text-black leading-relaxed opacity-80">
-                              <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+                              <ReactMarkdown
+                                remarkPlugins={[remarkGfm, remarkMath]}
+                                rehypePlugins={[rehypeKatex]}
+                                components={{
+                                  table: ({ children }) => (
+                                    <div className="table-container">
+                                      <table>{children}</table>
+                                    </div>
+                                  ),
+                                }}
+                              >
                                 {item.text}
                               </ReactMarkdown>
                             </div>
@@ -196,6 +206,62 @@ export default async function BlogPostPage({ params }: Props) {
                                 </li>
                               ))}
                             </ul>
+                          );
+                        }
+                        if (item.type === "list-ordered") {
+                          return (
+                            <ol key={ii} className="space-y-6 my-12">
+                              {item.items.map((b, bi) => (
+                                <li key={bi} className="flex items-start gap-6 group">
+                                  <span className="flex-shrink-0 w-10 h-10 border-2 border-black bg-white text-black text-xs font-black flex items-center justify-center shadow-[4px_4px_0px_rgba(0,0,0,1)] group-hover:bg-black group-hover:text-white transition-all">
+                                    {bi + 1}
+                                  </span>
+                                  <div className="text-base sm:text-lg font-bold text-black leading-tight uppercase tracking-tight pt-2">
+                                    <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+                                      {b}
+                                    </ReactMarkdown>
+                                  </div>
+                                </li>
+                              ))}
+                            </ol>
+                          );
+                        }
+                        if (item.type === "blockquote") {
+                          const sizeClass = item.fontSize ? `text-${item.fontSize}` : "text-xl sm:text-3xl";
+                          const caseClass = item.textCase === "normal" ? "normal-case" : (item.textCase || "uppercase");
+
+                          return (
+                            <blockquote key={ii} className="my-16 border-l-8 border-[#FFE01B] bg-white p-10 sm:p-14 border-2 border-black shadow-[12px_12px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+                              <div className="absolute top-0 right-0 p-4 opacity-5">
+                                <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.899 15.192 15.606 16.017 15C16.842 14.394 17.667 14.394 18.017 14L18.017 11C18.017 10.337 17.65 10 17 10L14 10L14 4L22 4L22 10C22 15 19 21 14.017 21ZM5.017 21L5.017 18C5.017 16.899 6.192 15.606 7.017 15C7.842 14.394 8.667 14.394 9.017 14L9.017 11C9.017 10.337 8.65 10 8 10L5 10L5 4L13 4L13 10C13 15 10 21 5.017 21Z" /></svg>
+                              </div>
+                              <div className={`font-black text-black leading-[1.1] tracking-tight italic relative z-10 ${sizeClass} ${caseClass}`}>
+                                <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+                                  {item.text}
+                                </ReactMarkdown>
+                              </div>
+                            </blockquote>
+                          );
+                        }
+                        if (item.type === "divider") {
+                          return (
+                            <div key={ii} className="my-24 h-[2px] bg-black relative flex items-center justify-center">
+                              <div className="bg-white border-2 border-black rotate-45 w-4 h-4" />
+                            </div>
+                          );
+                        }
+                        if (item.type === "image") {
+                          return (
+                            <figure key={ii} className="my-20">
+                              <div className="border-2 border-black bg-white p-4 shadow-[12px_12px_0px_#FF1B58]">
+                                <img src={item.src} alt={item.alt} className="w-full object-cover border-2 border-black" />
+                              </div>
+                              {item.alt && (
+                                <figcaption className="mt-6 text-[10px] font-black uppercase text-black/40 tracking-[0.2em] text-center">
+                                  Fig. {item.alt}
+                                </figcaption>
+                              )}
+                            </figure>
                           );
                         }
                         if (item.type === "code") {
@@ -231,16 +297,13 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Post CTA */}
             <div className="mt-32 p-10 sm:p-20 border-2 border-black bg-white shadow-[12px_12px_0px_#C21BFF] text-center sm:text-left relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <svg className="w-40 h-40" viewBox="0 0 100 100"><path d="M0 0 L100 0 L100 100 L0 100 Z" fill="none" stroke="black" strokeWidth="2" /></svg>
-              </div>
               <div className="relative z-10">
                 <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest mb-6 inline-block">
                   Right time to
                 </span>
                 <h2 className="text-4xl sm:text-6xl font-black text-black leading-[0.9] uppercase tracking-tighter mb-8">
                   Turn Learning into <br />
-                  <span className="text-white [-webkit-text-stroke:1.5px_black]">A Career.</span>
+                  <span className="text-white [-webkit-text-stroke:3.5px_black]" style={{ paintOrder: 'stroke fill' }}>A Career.</span>
                 </h2>
                 <div className="flex flex-wrap gap-6">
                   <Link href="/courses" className="px-10 py-5 bg-black text-white text-xs font-black uppercase tracking-widest hover:bg-[#C21BFF] transition-all shadow-[6px_6px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[6px] hover:translate-y-[6px]">

@@ -68,10 +68,78 @@ function parseBody(markdown: string): Section[] {
       continue;
     }
 
+    if (/^\d+\. /.test(trimmed)) {
+      const items: string[] = [];
+      while (i < lines.length && /^\d+\. /.test(lines[i].trimEnd())) {
+        items.push(lines[i].trimEnd().replace(/^\d+\. /, "").trim());
+        i++;
+      }
+      current.items.push({ type: "list-ordered", items });
+      continue;
+    }
+
+    if (trimmed.startsWith("> ")) {
+      const quoteLines: string[] = [];
+      while (i < lines.length && lines[i].trimEnd().startsWith("> ")) {
+        quoteLines.push(lines[i].trimEnd().slice(2).trim());
+        i++;
+      }
+      
+      let text = quoteLines.join("\n");
+      let fontSize: string | undefined = undefined;
+      let textCase: any = undefined;
+
+      // Check for attributes in brackets at the start: [size:xl, case:upper]
+      const attrMatch = text.match(/^\[(.*?)\]\s*/);
+      if (attrMatch) {
+        const attrs = attrMatch[1].split(",").map(a => a.trim());
+        attrs.forEach(attr => {
+          if (attr.startsWith("size:")) fontSize = attr.replace("size:", "").trim();
+          if (attr.startsWith("case:")) {
+            const c = attr.replace("case:", "").trim();
+            if (["uppercase", "lowercase", "capitalize", "normal", "upper", "lower", "cap"].includes(c)) {
+              if (c === "upper") textCase = "uppercase";
+              else if (c === "lower") textCase = "lowercase";
+              else if (c === "cap") textCase = "capitalize";
+              else textCase = c;
+            }
+          }
+        });
+        text = text.replace(attrMatch[0], "");
+      }
+
+      current.items.push({ type: "blockquote", text, fontSize, textCase });
+      continue;
+    }
+
+    if (trimmed === "---" || trimmed === "***" || trimmed === "___") {
+      current.items.push({ type: "divider" });
+      i++;
+      continue;
+    }
+
+    const imageMatch = trimmed.match(/^!\[(.*?)\]\((.*?)\)$/);
+    if (imageMatch) {
+      current.items.push({ type: "image", alt: imageMatch[1], src: imageMatch[2] });
+      i++;
+      continue;
+    }
+
     const text = trimmed.trim();
 
     if (text) {
-      current.items.push({ type: "paragraph", text });
+      // Group table lines: if it starts with '|', gather all consecutive lines
+      if (text.startsWith("|")) {
+        const tableLines: string[] = [];
+        while (i < lines.length && lines[i].trimStart().startsWith("|")) {
+          tableLines.push(lines[i].trimEnd());
+          i++;
+        }
+        current.items.push({ type: "paragraph", text: tableLines.join("\n") });
+        continue; // 'i' is already moved to the next non-table line
+      } else {
+        current.items.push({ type: "paragraph", text });
+      }
     }
     i++;
   }

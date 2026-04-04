@@ -19,6 +19,30 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Swiss Brutalist Table Support */
+  .prose table {
+    @apply border-collapse w-full my-12 border-2 border-black bg-white shadow-[8px_8px_0px_rgba(0,0,0,1)];
+  }
+  .prose thead {
+    @apply bg-black text-white;
+  }
+  .prose th {
+    @apply border-2 border-black p-4 text-[10px] font-black uppercase tracking-widest text-white leading-tight;
+  }
+  .prose td {
+    @apply border-2 border-black p-4 text-sm font-bold text-black uppercase tracking-tight;
+  }
+  .prose tr:nth-child(even) {
+    @apply bg-neutral-50;
+  }
+  .prose tr:hover {
+    @apply bg-brandpurple/5;
+  }
+  /* Mobile Responsiveness */
+  .prose table-container {
+    @apply block w-full overflow-x-auto;
+  }
 
   /* Hide native scrollbar — custom scroll indicator is used instead */
   .brutalist-scrollbar::-webkit-scrollbar {

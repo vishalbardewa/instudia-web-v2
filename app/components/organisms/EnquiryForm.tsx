@@ -96,7 +96,9 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
     const e: FormErrors = {};
     if (!f.name.trim()) e.name = "Full name is required.";
     if (!f.phone.trim()) e.phone = "Phone number is required.";
-    else if (!/^\+?[\d\s\-()]{7,15}$/.test(f.phone)) e.phone = "Enter a valid phone number.";
+    else if (!/^[6-9]\d{9}$/.test(f.phone.replace(/[\s\-()+]/g, "").slice(-10))) {
+      e.phone = "Enter a valid 10-digit number.";
+    }
     if (!f.email.trim()) e.email = "Email is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) e.email = "Enter a valid email address.";
     if (!f.courseName.trim()) e.courseName = "Please specify a course.";
