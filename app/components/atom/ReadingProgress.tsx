@@ -44,7 +44,7 @@ export default function ReadingProgress() {
     <div className="fixed top-0 left-0 right-0 z-[100] h-[4px] bg-transparent pointer-events-none">
       <div
         ref={barRef}
-        className="h-full bg-[#1B1C1E] will-change-[width] w-[var(--scroll-progress)]"
+        className="h-full bg-[#1B1C1E]/50 will-change-[width] w-[var(--scroll-progress)]"
         style={{ "--scroll-progress": "0%" } as React.CSSProperties}
       />
     </div>
