@@ -18,6 +18,8 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
