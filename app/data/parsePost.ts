@@ -53,7 +53,23 @@ function parseBody(markdown: string): Section[] {
       i++;
       const content = codeLines.join("\n").trim();
       if (content) {
-        current.items.push({ type: "code", language, content });
+        if (language === "chart") {
+          try {
+            const chartData = JSON.parse(content);
+            current.items.push({
+              type: "chart",
+              chartType: chartData.type || "bar",
+              title: chartData.title,
+              data: chartData.data || [],
+              units: chartData.units,
+            });
+          } catch (err) {
+            console.error("[parsePost] Failed to parse chart JSON:", err);
+            current.items.push({ type: "code", language, content });
+          }
+        } else {
+          current.items.push({ type: "code", language, content });
+        }
       }
       continue;
     }

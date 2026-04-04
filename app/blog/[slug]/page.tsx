@@ -10,6 +10,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { Container } from "../../components/atom/Container";
 import "katex/dist/katex.min.css";
+import BrutalistChart from "../../components/molecules/BrutalistChart";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -103,7 +104,7 @@ export default async function BlogPostPage({ params }: Props) {
 
               <div className="flex flex-wrap items-center gap-10">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 border-2 border-black rounded-full overflow-hidden grayscale">
+                  <div className="w-12 h-12 border-2 border-black rounded-full overflow-hidden">
                     <img src={post.authorPhoto} alt={post.author} className="w-full h-full object-cover" />
                   </div>
                   <div>
@@ -263,6 +264,9 @@ export default async function BlogPostPage({ params }: Props) {
                               )}
                             </figure>
                           );
+                        }
+                        if (item.type === "chart") {
+                          return <BrutalistChart key={ii} type={item.chartType} data={item.data} title={item.title} units={item.units} />;
                         }
                         if (item.type === "code") {
                           const highlighted = (() => {
