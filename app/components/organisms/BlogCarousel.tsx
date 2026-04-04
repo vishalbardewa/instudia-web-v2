@@ -296,9 +296,6 @@ export default function BlogCarousel({ posts }: { posts: Post[] }) {
             />
           </div>
           <div className="flex items-center gap-6">
-            <span className="text-[10px] font-black text-black uppercase tracking-[0.5em]">
-              Index / Records
-            </span>
             <div className="flex gap-2">
               {[1, 2, 3].map(i => (
                 <div key={i} className={`w-2 h-2 border-[1px] border-black ${i === 1 ? 'bg-black' : 'bg-transparent'}`} />
