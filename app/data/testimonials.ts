@@ -6,6 +6,7 @@ export interface Testimonial {
   afterCourse: string;
   company: string;
   quote: string;
+  linkedin: string;
 }
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -17,6 +18,7 @@ export const TESTIMONIALS: Testimonial[] = [
     afterCourse: "Frontend Developer",
     company: "TechSolutions Dimapur",
     quote: "Instudia's hands-on approach completely changed how I learn. I went from struggling with basic HTML to building full React applications. The mentorship was invaluable.",
+    linkedin: "https://linkedin.com/#mock-atozo",
   },
   {
     id: "t2",
@@ -26,6 +28,7 @@ export const TESTIMONIALS: Testimonial[] = [
     afterCourse: "UI/UX Designer",
     company: "Creative Studio Kohima",
     quote: "Transitioning into tech seemed daunting, but the UI/UX course was structured perfectly. I now design interfaces that are not just beautiful, but highly functional.",
+    linkedin: "https://linkedin.com/#mock-kenei",
   },
   {
     id: "t3",
@@ -35,6 +38,7 @@ export const TESTIMONIALS: Testimonial[] = [
     afterCourse: "Junior Web Developer",
     company: "Freelance",
     quote: "I took the Fullstack course during my gap year. The practical projects fast-tracked my progress, and I landed my first freelance gig before the course even ended!",
+    linkedin: "https://linkedin.com/#mock-imti",
   },
   {
     id: "t4",
@@ -44,6 +48,7 @@ export const TESTIMONIALS: Testimonial[] = [
     afterCourse: "Data Analyst",
     company: "Remote (National)",
     quote: "Learning Data Analytics gave me a completely new career path. Instudia taught me how to find the stories hidden inside raw data, and I now work remotely for a firm in Bangalore.",
+    linkedin: "https://linkedin.com/#mock-vilu",
   },
   {
     id: "t5",
@@ -53,6 +58,7 @@ export const TESTIMONIALS: Testimonial[] = [
     afterCourse: "Graphic Designer",
     company: "Brand Agency",
     quote: "I always loved drawing, but Instudia taught me the industry-standard software (Photoshop/Illustrator) and design theory. Now I do branding for local startups.",
+    linkedin: "https://linkedin.com/#mock-sungjem",
   },
   {
     id: "t6",
@@ -62,5 +68,6 @@ export const TESTIMONIALS: Testimonial[] = [
     afterCourse: "Digital Marketer",
     company: "E-commerce Brand",
     quote: "The digital marketing strategies we practiced on real campaigns gave me the confidence to handle the online presence of a fast-growing retail business.",
+    linkedin: "https://linkedin.com/#mock-lydia",
   }
 ];

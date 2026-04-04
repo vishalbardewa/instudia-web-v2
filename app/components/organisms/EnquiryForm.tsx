@@ -150,7 +150,7 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
   const disabled = state === "submitting";
 
   return (
-    <section className="py-24 bg-neutral-50 relative overflow-hidden">
+    <section id="enquiry" className="py-24 bg-neutral-50 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brandpurple/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -202,11 +202,12 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
 
           {/* Right: Form */}
           <motion.div
+            id="enquiry-form-container"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="lg:col-span-8 bg-white rounded-[2.5rem] border border-neutral-100 p-10 lg:p-14 shadow-sm"
+            className="lg:col-span-8 bg-white rounded-[2.5rem] border border-neutral-100 p-10 lg:p-14 shadow-sm transition-all duration-700"
           >
             <AnimatePresence mode="wait">
               {state === "success" ? (

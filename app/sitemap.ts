@@ -29,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/lecture-note-generator',
     '/tools/resume-builder',
     '/gallery',
-    '/success-stories',
     '/links',
   ].map((route) => ({
     url: `${baseUrl}${route}`,

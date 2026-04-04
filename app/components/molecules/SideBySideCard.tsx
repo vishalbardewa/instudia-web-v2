@@ -15,9 +15,7 @@ function SideBySideCard() {
               Join Now & Get Certified
             </p>
             <Button
-              target="_blank"
-              rel="noopener"
-              href="https://tally.so/r/wMX0Dk"
+              href="/contact"
               className="flex lg:w-1/3 mt-8 px-0 items-center justify-center rounded-md border border-[#FAFAFA] bg-transparent text-base font-medium text-white shadow-sm hover:bg-white hover:text-purple-400 hover:ease-in hover:duration-150 hover:border-[#C21BFF] lg:px-8"
             >
               Get started

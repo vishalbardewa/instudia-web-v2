@@ -84,9 +84,46 @@ export default function ModernButton({
     );
   }
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href?.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+        
+        if (targetId === "enquiry") {
+          const formContainer = document.getElementById("enquiry-form-container");
+          if (formContainer) {
+            setTimeout(() => {
+              formContainer.classList.add("ring-8", "ring-brandpurple/30", "scale-[1.02]", "z-10");
+              
+              // Focus the Full Name input
+              const nameInput = document.getElementById("enq-name");
+              if (nameInput) {
+                nameInput.focus();
+              }
+              
+              setTimeout(() => {
+                formContainer.classList.remove("ring-8", "ring-brandpurple/30", "scale-[1.02]", "z-10");
+              }, 1500);
+            }, 600);
+          }
+        }
+      }
+    }
+  };
+
   if (href) {
+    const isFragment = href.startsWith("#");
+    
     return (
-      <Link href={href} target={href.startsWith("http") ? "_blank" : "_self"} className="inline-block no-underline">
+      <Link 
+        href={href} 
+        target={href.startsWith("http") ? "_blank" : "_self"} 
+        className="inline-block no-underline"
+        onClick={isFragment ? handleLinkClick : undefined}
+      >
         <motion.span
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}

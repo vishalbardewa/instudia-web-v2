@@ -22,6 +22,7 @@ export default function CourseCard({
           src={`/assets/images/${slug}.png`}
           alt={title}
           fill
+          sizes="(max-width: 1024px) 100vw, 33vw"
         />
       </div>
       <div className="flex flex-1 flex-col justify-between bg-white p-6 hover:bg-slate-100">

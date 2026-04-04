@@ -79,7 +79,7 @@ const BentoHero = ({ courseDetails }: any) => {
                 {mounted && (
                   <ModernButton
                     text="Enroll Now"
-                    href="https://tally.so/r/wMX0Dk"
+                    href="#enquiry"
                     variant="primary"
                     size="lg"
                   />
@@ -98,6 +98,7 @@ const BentoHero = ({ courseDetails }: any) => {
                   src={image}
                   alt={pageTitle.text}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -311,7 +312,7 @@ export default function CourseDetailContent({ courseDetails, relatedCourses }: a
             <h2 className="text-4xl sm:text-6xl font-black text-white uppercase mb-12 tracking-tight leading-none">Your Future <br /> Starts Here.</h2>
             <ModernButton
               text="Secure Your Spot Today"
-              href="https://tally.so/r/wMX0Dk"
+              href="#enquiry"
               variant="outline"
               size="lg"
               className="!bg-white !border-white !text-brandpurple hover:!bg-neutral-50 px-12"

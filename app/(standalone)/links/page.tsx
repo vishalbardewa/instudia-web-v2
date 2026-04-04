@@ -21,10 +21,9 @@ const primaryLinks = [
   {
     label: "✨ Enroll Now",
     sub: "Join instudia — admissions open",
-    href: "https://tally.so/r/wMX0Dk",
+    href: "/contact",
     style: "bg-brightyellow text-[#1B1C1E] hover:bg-brightyellow/90 shadow-lg shadow-brightyellow/20",
     arrow: true,
-    external: true,
   },
   {
     label: "🤖 AI Career Blueprint",

@@ -8,6 +8,7 @@ import Footer from "../organisms/Footer";
 import NavigationWithDropdown from "../organisms/NavigationWithDropdown";
 import WhatsAppWidget from "../atom/WhatsAppWidget";
 import SearchModal from "../atom/SearchModal";
+import MasterclassModal from "../organisms/MasterclassModal";
 import { slugs } from "@/app/routes";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import Link from "next/link";
@@ -204,6 +205,7 @@ function FestivalLayoutContent({
       <div className="print:hidden">
         <WhatsAppWidget />
         <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
+        <MasterclassModal />
         <Footer />
       </div>
     </>

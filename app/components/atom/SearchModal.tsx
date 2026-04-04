@@ -173,13 +173,49 @@ export default function SearchModal({ open, onClose }: Props) {
           </div>
         )}
 
-        {/* Hint row */}
+        {/* Hint row & Quick Access */}
         {results.length === 0 && query.length < 2 && (
-          <div className="px-5 py-4 flex gap-4 text-[11px] text-gray-400">
-            <span>↑↓ navigate</span>
-            <span>↵ open</span>
-            <span>ESC close</span>
-          </div>
+          <>
+            <div className="px-5 py-6 border-b border-neutral-50">
+              <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mb-3">Quick Access</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Free Masterclass",
+                  "Full Stack", 
+                  "DCA", 
+                  "Python", 
+                  "UI/UX Design", 
+                  "Tally", 
+                  "ATS Scanner"
+                ].map((term) => (
+                  <button
+                    key={term}
+                    onClick={() => {
+                      if (term === "Free Masterclass") {
+                        router.push("?modal=masterclass");
+                        onClose();
+                      } else {
+                        setQuery(term);
+                        inputRef.current?.focus();
+                      }
+                    }}
+                    className={`px-3 py-1.5 text-xs font-bold rounded-full transition-colors shadow-sm ${
+                      term === "Free Masterclass"
+                        ? "bg-brandpurple text-white hover:bg-brandpurple/90 ring-2 ring-brandpurple/30 animate-pulse"
+                        : "text-[#1B1C1E] bg-neutral-100 hover:bg-brandpurple hover:text-white"
+                    }`}
+                  >
+                    {term === "Free Masterclass" ? `🎁 ${term}` : term}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="px-5 py-4 flex gap-4 text-[11px] text-gray-400 bg-neutral-50/50">
+              <span>↑↓ navigate</span>
+              <span>↵ open</span>
+              <span>ESC close</span>
+            </div>
+          </>
         )}
       </div>
     </div>
