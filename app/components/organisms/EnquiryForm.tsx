@@ -260,7 +260,7 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
                       onChange={handleChange("name")}
                       onBlur={handleBlur("name")}
                       error={errors.name}
-                      placeholder="e.g. Vishal Bardewa"
+                      placeholder="e.g. John Doe"
                       disabled={disabled}
                       required
                     />
