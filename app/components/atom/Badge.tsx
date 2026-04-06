@@ -1,6 +1,6 @@
 import React from "react";
 
-function Badge({name, color}: any) {
+function Badge({ name, color }: any) {
   return (
     <span className="inline-flex items-center gap-x-1.5 rounded-full px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-inset ring-gray-200">
       <svg
@@ -18,8 +18,9 @@ function Badge({name, color}: any) {
 export const BasicBadge = () => <Badge name="Basic" color="fill-purple-500" />
 export const FinanceBadge = () => <Badge name="Finance" color="fill-red-500" />
 export const SkillBadge = () => <Badge name="Skill" color="fill-blue-500" />
-export const DevelopmentBadge= () => <Badge name="Development" color="fill-yellow-500" />
-export const DesignBadge= () => <Badge name="Design" color="fill-pink-500" />
-export const ComingSoonBadge= () => <Badge name="Coming Soon" color="fill-red-500" />
+export const DevelopmentBadge = () => <Badge name="Development" color="fill-yellow-500" />
+export const DesignBadge = () => <Badge name="Design" color="fill-pink-500" />
+export const ComingSoonBadge = () => <Badge name="Coming Soon" color="fill-red-500" />
+export const TrendingBadge = () => <Badge name="Trending" color="fill-green-500" />
 
 export default Badge;

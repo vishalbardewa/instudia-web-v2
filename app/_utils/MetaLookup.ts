@@ -528,6 +528,35 @@ const META_LOOKUP = {
       card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
     },
     metadataBase: new URL("https://instudianagaland.com"),
+  },
+  [slugs.AGENTIC_AI]: {
+    title: "Agentic AI Course in Dimapur",
+    description:
+      "Master autonomous AI agents and agentic workflows. Learn to build self-reasoning systems with LangGraph and CrewAI in Nagaland.",
+    openGraph: {
+      title: "Build Your Career: Master Agentic AI",
+      description:
+        "Top AI Agents training in Dimapur. Master the transition from chatbots to autonomous agents with industry experts.",
+      url: `${AppConfig.canonicalBase}`,
+      locale: AppConfig.locale,
+      site_name: AppConfig.site_name,
+      images: [
+        {
+          url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
+          width: 800,
+          height: 600,
+          alt: "Agentic AI Course at instudia",
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      title: "Agentic AI",
+      description:
+        "Learn to build autonomous AI agents in Dimapur. Master the next frontier of AI development and automation.",
+      card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
+    },
+    metadataBase: new URL("https://instudianagaland.com"),
   }
 };
 

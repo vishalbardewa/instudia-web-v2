@@ -9,6 +9,8 @@ import {
   ClockIcon,
   BuildingLibraryIcon,
   ChevronRightIcon,
+  LanguageIcon,
+  CodeBracketIcon,
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import ModernButton from "@/app/components/atom/ModernButton";
@@ -20,11 +22,13 @@ const ICON_LIST: any = {
   AcademicCapIcon: <AcademicCapIcon className="h-6 w-6" />,
   ClockIcon: <ClockIcon className="h-6 w-6" />,
   BuildingLibraryIcon: <BuildingLibraryIcon className="h-6 w-6" />,
+  LanguageIcon: <LanguageIcon className="h-6 w-6" />,
+  CodeBracketIcon: <CodeBracketIcon className="h-6 w-6" />,
 };
 
 // --- Modern Bento Hero ---
 const BentoHero = ({ courseDetails }: any) => {
-  const { pageTitle, image, category, comingSoon, inDemand } = courseDetails;
+  const { pageTitle, image, category, comingSoon, inDemand, inTrending } = courseDetails;
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -49,7 +53,12 @@ const BentoHero = ({ courseDetails }: any) => {
                 <span className="bg-brandpurple/10 text-brandpurple text-[10px] font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border border-brandpurple/20">
                   {category}
                 </span>
-                {(inDemand || comingSoon) && (
+                {mounted && inTrending && (
+                  <span className="bg-green-500/10 text-green-600 text-[10px] font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border border-green-500/20">
+                    TRENDING
+                  </span>
+                )}
+                {mounted && (inDemand || comingSoon) && (
                   <span className="bg-brightyellow/20 text-[#8B6E00] text-[10px] font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border border-brightyellow/30">
                     {inDemand ? "IN DEMAND" : "COMING SOON"}
                   </span>
@@ -236,6 +245,11 @@ const FixedMarquee = () => (
 
 // --- Modern Course Card ---
 function RelatedCourseCard({ course, index }: { course: any; index: number }) {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -253,10 +267,20 @@ function RelatedCourseCard({ course, index }: { course: any; index: number }) {
             sizes="(max-width: 768px) 100vw, 400px"
             className="object-cover"
           />
-          <div className="absolute top-4 right-4">
+          <div className="absolute top-4 right-4 flex flex-col items-end gap-2">
             <span className="bg-white/90 backdrop-blur-md text-[#1B1C1E] text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/20 shadow-sm">
               {course.category || "CORE"}
             </span>
+            {mounted && course.inTrending && (
+              <span className="bg-green-500/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-green-500/20 shadow-sm">
+                TRENDING
+              </span>
+            )}
+            {mounted && (course.inDemand || course.comingSoon) && (
+              <span className="bg-brightyellow/90 backdrop-blur-md text-[#8B6E00] text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-brightyellow/20 shadow-sm">
+                {course.inDemand ? "IN DEMAND" : "COMING SOON"}
+              </span>
+            )}
           </div>
         </div>
         <div className="px-2">

@@ -453,8 +453,8 @@
         }
       ],
       "price": {
-        "original": 99000,
-        "discountedPrice": 79999
+        "original": 9900,
+        "discountedPrice": 7999
       },
       "features": [
         {
@@ -479,7 +479,7 @@
         }
       ],
       "inDemand": false,
-      "comingSoon": true
+      "inTrending": true
     },
     {
       "slug": "backend-development",
@@ -1068,6 +1068,63 @@
         }
       ],
       "inDemand": true
+    },
+    {
+      "slug": "ai-agents-autonomic-workflows",
+      "category": "Technology",
+      "fullTitle": "Certificate in AI Agents & Autonomic Workflows",
+      "pageTitle": {
+        "text": "Certificate in",
+        "highlightText": "Agentic AI"
+      },
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1632&auto=format&fit=crop",
+      "courseHighlight": "Master the single biggest shift in the AI landscape: the transition from chatbots to autonomous agents. Learn to build self-reasoning systems that use tools, collaborate in multi-agent crews, and execute complex business processes independently. This course covers the cutting-edge frameworks like LangGraph and CrewAI to prepare you for the 2026 agentic revolution.",
+      "fourReasons": [
+        {
+          "id": 5001,
+          "description": "Architect autonomous reasoning loops. Master the ReAct (Reason + Act) pattern and Chain-of-Thought prompting to enable AI to solve multi-step problems without human intervention."
+        },
+        {
+          "id": 5002,
+          "description": "Build Multi-Agent Orchestrations. Learn to coordinate specialized agents—such as researchers, analysts, and coders—to work together in a synchronized digital workforce."
+        },
+        {
+          "id": 5003,
+          "description": "Master Tool-Use and API Integration. Teach your agents to interact with the physical and digital world by browsing the web, managing databases, and executing secure code."
+        },
+        {
+          "id": 5004,
+          "description": "Implement Long-term Memory and Persistence. Use vector databases and state management to give your agents 'experience,' allowing them to learn and adapt over time."
+        }
+      ],
+      "price": {
+        "original": 12900,
+        "discountedPrice": 8999
+      },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English & Hindi",
+          "icon": "LanguageIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "Industry-Recognized",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "8 Weeks",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Prerequisites",
+          "description": "Python & GenAI Basics",
+          "icon": "CodeBracketIcon"
+        }
+      ],
+      "inDemand": true,
+      "inTrending": true
     }
   ]
 }

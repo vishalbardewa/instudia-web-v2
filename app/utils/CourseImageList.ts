@@ -18,5 +18,6 @@ export const IMAGE_LIST: Record<string,string> = {
     "pgdca": "https://ik.imagekit.io/dxffek9yf/course-list-page/pgdca.png?updatedAt=1726167281469",
     "gst": "https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
     "data-analytics": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template.png?updatedAt=1754633884785",
-    "generative-ai": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template-fs.png?updatedAt=1754633884789"
+    "generative-ai": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template-fs.png?updatedAt=1754633884789",
+    "ai-agents-autonomic-workflows": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858"
 }

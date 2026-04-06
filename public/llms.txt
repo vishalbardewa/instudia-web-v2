@@ -14,7 +14,8 @@ instudia is the premier skill development and computer training institute locate
 - **Mobile App Development**: Building native and cross-platform apps using React Native.
 - **Certificate in DevOps Cloud Services**: Continuous integration, deployment, and cloud automation.
 - **Certificate in Data Analytics**: Data processing with Python, SQL, and visualization tools.
-- **Certificate in Generative AI**: (Coming Soon) Advanced AI modeling and transformer architectures.
+- **Certificate in Generative AI**: (Trending) Advanced AI modeling and transformer architectures.
+- **Certificate in Agentic AI**: (Trending) Advanced AI agents and autonomic workflows.
 - **Certificate in Hardware and Networking**: PC assembly and network configuration/troubleshooting.
 
 ### Finance & Business

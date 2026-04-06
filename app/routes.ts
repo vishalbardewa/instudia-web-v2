@@ -32,5 +32,6 @@ export const slugs = {
   FOOD_PROCESSING: "food-processing",
   FULLSTACK_WEB_DEVELOPMENT : "fullstack-web-development",
   DATA_ANALYTICS : "data-analytics",
-  GENERATIVE_AI: "generative-ai"
+  GENERATIVE_AI: "generative-ai",
+  AGENTIC_AI: "ai-agents-autonomic-workflows"
 };
