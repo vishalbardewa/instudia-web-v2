@@ -53,4 +53,4 @@ Even on a solo project, you have to "onboard" your future self who might have fo
 ## The Architect Perspective
 Innovation is often found in the things we choose to remove rather than what we add. This refactor was more than just cleaning up tech debt—it was a commitment to the longevity of the project. By prioritizing Developer Experience, I ensured that the engine remains a playground for creativity rather than a burden of maintenance.
 
-Stay ahead of the curve and follow my build journey at [github.com/vishalbardewa](https://github.com/vishalbardewa).
+Stay ahead of the curve.
