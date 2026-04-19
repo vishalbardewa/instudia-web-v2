@@ -3,6 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
+import MotionProvider from "./components/atom/MotionProvider";
 
 import ConditionalLayout from "./components/layouts/ConditionalLayout";
 import DeviceSizeIndicator from "./components/atom/DeviceSizeIndicator";
@@ -188,10 +189,12 @@ export default function RootLayout({
         />
       </head>
       <body className={jakarta.className}>
-        <ConditionalLayout>
-          <DeviceSizeIndicator />
-          {children}
-        </ConditionalLayout>
+        <MotionProvider>
+          <ConditionalLayout>
+            <DeviceSizeIndicator />
+            {children}
+          </ConditionalLayout>
+        </MotionProvider>
         <GoogleAnalytics gaId={GA_MEASUREMENT_ID || ""} />
       </body>
     </html>

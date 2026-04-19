@@ -260,6 +260,8 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                                                 src={item.imageSrc}
                                                 alt={item.imageAlt}
                                                 fill
+                                                sizes="(max-width: 1280px) 200px, 260px"
+                                                loading="lazy"
                                                 className="object-cover object-center"
                                               />
                                             </div>

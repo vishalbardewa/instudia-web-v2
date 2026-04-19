@@ -74,12 +74,12 @@ export default function GalleryPage() {
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
           {galleryImages.map((image) => (
-            <div 
-              key={image.id} 
+            <div
+              key={image.id}
               className={`relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 ${image.span}`}
             >
-              <Image 
-                src={image.url} 
+              <Image
+                src={image.url}
                 alt={image.alt}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 width={800}

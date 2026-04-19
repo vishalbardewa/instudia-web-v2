@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Testimonial } from "@/app/data/testimonials";
@@ -15,7 +15,7 @@ export default function AlumniMasonry({ testimonials }: Props) {
     <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8 pb-12 w-full">
       {testimonials.map((t, i) => (
         <div key={t.id} className="break-inside-avoid">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -75,7 +75,7 @@ export default function AlumniMasonry({ testimonials }: Props) {
             
             {/* Color Strip at bottom */}
             <div className="h-1.5 w-full bg-gradient-to-r from-brandpurple via-brandpurple to-brandpurple/80 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-          </motion.div>
+          </m.div>
         </div>
       ))}
     </div>

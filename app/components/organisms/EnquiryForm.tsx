@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { CheckCircleIcon, ExclamationCircleIcon } from "@heroicons/react/24/solid";
 
 interface EnquiryFormProps {
@@ -159,15 +159,15 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
 
           {/* Left: Copy */}
           <div className="lg:col-span-4">
-            <motion.span
+            <m.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-[10px] font-black text-brandpurple uppercase tracking-[0.4em] mb-4 block"
             >
               Get in Touch
-            </motion.span>
-            <motion.h2
+            </m.span>
+            <m.h2
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -176,8 +176,8 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
             >
               Have a<br />
               <span className="text-neutral-200">Question?</span>
-            </motion.h2>
-            <motion.p
+            </m.h2>
+            <m.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -185,7 +185,7 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
               className="text-base text-neutral-500 leading-relaxed"
             >
               Our admissions team typically responds within 24 hours. Fill in your details and we'll reach out with everything you need to know.
-            </motion.p>
+            </m.p>
 
             <div className="mt-10 flex flex-col gap-5">
               {[
@@ -201,7 +201,7 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
           </div>
 
           {/* Right: Form */}
-          <motion.div
+          <m.div
             id="enquiry-form-container"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +211,7 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
           >
             <AnimatePresence mode="wait">
               {state === "success" ? (
-                <motion.div
+                <m.div
                   key="success"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -233,9 +233,9 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
                   >
                     Submit another
                   </button>
-                </motion.div>
+                </m.div>
               ) : (
-                <motion.form
+                <m.form
                   key="form"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -322,7 +322,7 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
                   </div>
 
                   {/* Submit */}
-                  <motion.button
+                  <m.button
                     type="submit"
                     disabled={disabled}
                     whileHover={!disabled ? { scale: 1.01, y: -1 } : {}}
@@ -345,15 +345,15 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
                         </svg>
                       </>
                     )}
-                  </motion.button>
+                  </m.button>
 
                   <p className="text-[10px] text-neutral-400 leading-relaxed">
                     By submitting you agree to be contacted by the instudia admissions team. We respect your privacy and will not share your information.
                   </p>
-                </motion.form>
+                </m.form>
               )}
             </AnimatePresence>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

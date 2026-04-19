@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false,
   serverExternalPackages: ['pdf2json', 'mammoth'],
   webpack: (config) => {
     config.resolve.alias.canvas = false;

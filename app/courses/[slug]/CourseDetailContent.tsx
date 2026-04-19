@@ -12,7 +12,7 @@ import {
   LanguageIcon,
   CodeBracketIcon,
 } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import ModernButton from "@/app/components/atom/ModernButton";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import EnquiryForm from "@/app/components/organisms/EnquiryForm";
@@ -45,7 +45,7 @@ const BentoHero = ({ courseDetails }: any) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             <div className="lg:col-span-7">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-center gap-3 mb-8"
@@ -63,9 +63,9 @@ const BentoHero = ({ courseDetails }: any) => {
                     {inDemand ? "IN DEMAND" : "COMING SOON"}
                   </span>
                 )}
-              </motion.div>
+              </m.div>
 
-              <motion.h1
+              <m.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -73,16 +73,16 @@ const BentoHero = ({ courseDetails }: any) => {
               >
                 {pageTitle.text}{" "}
                 <span className="text-brandpurple">{pageTitle.highlightText}</span>
-              </motion.h1>
+              </m.h1>
 
-              <motion.p
+              <m.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 className="text-lg text-neutral-500 font-medium mb-12 max-w-xl leading-relaxed"
               >
                 Master professional industry-standard skills with our curated curriculum, designed to bridge the gap between classroom and career.
-              </motion.p>
+              </m.p>
 
               <div suppressHydrationWarning className="flex flex-wrap gap-4">
                 {mounted && (
@@ -97,7 +97,7 @@ const BentoHero = ({ courseDetails }: any) => {
             </div>
 
             <div className="lg:col-span-5">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -109,6 +109,7 @@ const BentoHero = ({ courseDetails }: any) => {
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
+                  loading="eager"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
@@ -124,7 +125,7 @@ const BentoHero = ({ courseDetails }: any) => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
         </div>
@@ -139,7 +140,7 @@ const CourseStats = ({ features }: any) => (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {features.map((feature: any, idx: number) => (
-          <motion.div
+          <m.div
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +156,7 @@ const CourseStats = ({ features }: any) => (
               {feature.description}
               {feature.name === "Duration" && " Months"}
             </p>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>
@@ -234,7 +235,7 @@ const BentoCurriculum = ({ fourReasons }: any) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {fourReasons?.map((reason: any, idx: number) => (
-            <motion.div
+            <m.div
               key={reason.id}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -257,7 +258,7 @@ const BentoCurriculum = ({ fourReasons }: any) => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
@@ -289,7 +290,7 @@ function RelatedCourseCard({ course, index }: { course: any; index: number }) {
   }, []);
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -330,7 +331,7 @@ function RelatedCourseCard({ course, index }: { course: any; index: number }) {
           </p>
         </div>
       </Link>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -341,9 +342,9 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
         <div className="flex items-end justify-between mb-16 px-2">
           <div>
             <span className="text-[10px] font-black text-brandpurple uppercase tracking-[0.4em] mb-4 block">Explore more</span>
-            <h2 className="text-4xl font-black text-[#1B1C1E] tracking-tight uppercase">Similar <span className="text-neutral-300">Courses</span></h2>
+            <h2 className="text-4xl font-black text-matteblack tracking-tight uppercase">Similar <span className="text-brandpurple">Courses</span></h2>
           </div>
-          <Link href="/courses" className="text-xs font-black uppercase tracking-widest text-[#1B1C1E] hover:text-brandpurple transition-colors flex items-center gap-2 group">
+          <Link href="/courses" className="text-xs font-black uppercase tracking-widest text-matteblack hover:text-brandpurple transition-colors flex items-center gap-2 group">
             Browse All <ChevronRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

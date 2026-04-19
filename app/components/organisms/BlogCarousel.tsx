@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useSpring, useTransform, useMotionValue, AnimatePresence } from "framer-motion";
+import { m, useScroll, useSpring, useTransform, useMotionValue, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { type Post, formatDate } from "../../data/types";
 import { Container } from "../atom/Container";
@@ -20,7 +20,7 @@ function SwissBrutalistCard({ post, index }: { post: Post; index: number }) {
   const translateHover = useTransform(springHover, [0, 1], ["translate(0px, 0px)", "translate(-4px, -4px)"]);
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.9, y: 60 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true }}
@@ -34,7 +34,7 @@ function SwissBrutalistCard({ post, index }: { post: Post; index: number }) {
       className="flex-shrink-0 w-[85vw] sm:w-[480px] snap-start py-12 px-4"
     >
       <Link href={`/blog/${post.slug}`} className="block h-full group">
-        <motion.div
+        <m.div
           onMouseEnter={() => isHovered.set(1)}
           onMouseLeave={() => isHovered.set(0)}
           style={{
@@ -45,7 +45,7 @@ function SwissBrutalistCard({ post, index }: { post: Post; index: number }) {
         >
           {/* Brutalist Image Vault */}
           <div className="overflow-hidden aspect-[16/9] relative border-b-2 border-black">
-            <motion.img
+            <m.img
               src={post.coverImage}
               alt={post.title}
               className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
@@ -104,9 +104,9 @@ function SwissBrutalistCard({ post, index }: { post: Post; index: number }) {
               </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </Link>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -123,7 +123,7 @@ const SwissHeader = ({
   <div className="relative mb-12 sm:mb-20 px-4 w-full">
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-end">
       <div className="lg:col-span-7">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
@@ -135,9 +135,9 @@ const SwissHeader = ({
           <p className="text-[10px] font-black tracking-[0.4em] text-black uppercase">
             Knowledge section
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.h2
+        <m.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 30 }}
@@ -145,7 +145,7 @@ const SwissHeader = ({
         >
           <span>instudia</span>
           <span className="text-white [-webkit-text-stroke:4px_black]" style={{ paintOrder: 'stroke fill' }}>Blogs.</span>
-        </motion.h2>
+        </m.h2>
       </div>
 
       <div className="lg:col-span-5 lg:mb-4 lg:text-right flex flex-col items-end gap-10">
@@ -158,22 +158,22 @@ const SwissHeader = ({
           <div className="hidden lg:flex items-center gap-4">
             <AnimatePresence mode="popLayout">
               {showLeftArrow && (
-                <motion.div key="nav-left" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
+                <m.div key="nav-left" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
                   <RigidButton onClick={() => handleScroll("left")} direction="left">
                     <svg className="w-8 h-8 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>
-                </motion.div>
+                </m.div>
               )}
               {showRightArrow && (
-                <motion.div key="nav-right" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
+                <m.div key="nav-right" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
                   <RigidButton onClick={() => handleScroll("right")} direction="right">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
@@ -195,7 +195,7 @@ const SwissHeader = ({
 // --- Rigid Brutalist Button ---
 function RigidButton({ children, onClick, direction }: { children: React.ReactNode; onClick: () => void; direction: string }) {
   return (
-    <motion.button
+    <m.button
       key={`brutalist-${direction}`}
       whileHover={{ scale: 1.05, x: direction === "left" ? -2 : 2 }}
       whileTap={{ scale: 0.95 }}
@@ -203,7 +203,7 @@ function RigidButton({ children, onClick, direction }: { children: React.ReactNo
       className="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_#FF1B58] hover:bg-neutral-50 transition-all duration-200"
     >
       {children}
-    </motion.button>
+    </m.button>
   );
 }
 
@@ -251,27 +251,27 @@ export default function BlogCarousel({ posts }: { posts: Post[] }) {
           <div className="flex items-center gap-4">
             <AnimatePresence mode="popLayout">
               {showLeftArrow && (
-                <motion.div key="nav-left-mobile" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
+                <m.div key="nav-left-mobile" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
                   <RigidButton onClick={() => handleScroll("left")} direction="left">
                     <svg className="w-8 h-8 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>
-                </motion.div>
+                </m.div>
               )}
               {showRightArrow && (
-                <motion.div key="nav-right-mobile" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
+                <m.div key="nav-right-mobile" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
                   <RigidButton onClick={() => handleScroll("right")} direction="right">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
           <div className="h-[2px] flex-1 mx-8 bg-black/10 relative overflow-hidden">
-            <motion.div style={{ scaleX, originX: 0 }} className="absolute inset-0 bg-black" />
+            <m.div style={{ scaleX, originX: 0 }} className="absolute inset-0 bg-black" />
           </div>
         </div>
       </Container>
@@ -290,7 +290,7 @@ export default function BlogCarousel({ posts }: { posts: Post[] }) {
       <Container className="relative z-10 hidden lg:block">
         <div className="flex items-center gap-16 px-6 sm:px-0">
           <div className="flex-1 h-1 bg-black/10 relative overflow-hidden">
-            <motion.div
+            <m.div
               style={{ scaleX, originX: 0 }}
               className="absolute inset-0 bg-black"
             />
