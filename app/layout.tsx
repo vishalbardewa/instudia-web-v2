@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -194,7 +195,10 @@ export default function RootLayout({
             {children}
           </ConditionalLayout>
         </MotionProvider>
-        <GoogleAnalytics gaId={GA_MEASUREMENT_ID || ""} />
+        {/* Deferred analytics — loads after page is interactive */}
+        <Suspense fallback={null}>
+          <GoogleAnalytics gaId={GA_MEASUREMENT_ID || ""} />
+        </Suspense>
       </body>
     </html>
   );

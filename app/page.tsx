@@ -1,6 +1,6 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import LandingTop from "./components/organisms/LandingTop";
-import TestimonialWithStats from "./components/molecules/TestimonialWithStats";
 import Stats from "./components/molecules/Stats";
 import Incentives from "./components/molecules/Incentives";
 import { AppConfig } from "./_utils/AppConfig";
@@ -9,12 +9,35 @@ import { Container } from "./components/atom/Container";
 import { FadeIn, FadeInStagger } from "./components/atom/FadeIn";
 import { SectionIntro } from "./components/atom/SectionIntro";
 import { randomUUID } from "crypto";
-import FeatureWithColumns from "./components/molecules/FeatureWithThreeCoulmns";
-import TestimonialGrid from "./components/organisms/TestimonialGrid";
-import ScrollingLogos from "./components/organisms/ScrollingLogos";
-import RandomGateway from "./components/organisms/RandomGateway";
-import BlogCarousel from "./components/organisms/BlogCarousel";
 import { posts } from "./data/posts";
+
+// --- Dynamic imports: defers JS parsing until component is needed ---
+// Each dynamic() call creates a separate chunk — browser only downloads+parses
+// a component when it's about to render, not at initial page load.
+const TestimonialWithStats = dynamic(
+  () => import("./components/molecules/TestimonialWithStats"),
+  { ssr: true }
+);
+const ScrollingLogos = dynamic(
+  () => import("./components/organisms/ScrollingLogos"),
+  { ssr: true }
+);
+const RandomGateway = dynamic(
+  () => import("./components/organisms/RandomGateway"),
+  { ssr: true }
+);
+const FeatureWithColumns = dynamic(
+  () => import("./components/molecules/FeatureWithThreeCoulmns"),
+  { ssr: true }
+);
+const TestimonialGrid = dynamic(
+  () => import("./components/organisms/TestimonialGrid"),
+  { ssr: true }
+);
+const BlogCarousel = dynamic(
+  () => import("./components/organisms/BlogCarousel"),
+  { ssr: true }
+);
 
 
 
