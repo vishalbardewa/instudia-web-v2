@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 import LandingTop from "./components/organisms/LandingTop";
 import Stats from "./components/molecules/Stats";
 import Incentives from "./components/molecules/Incentives";
@@ -401,6 +402,30 @@ export default function Page() {
           />
         </div>
       </div>
+
+      {/* --- SEO Content Block (Hidden from visual UI, visible to crawlers and screen readers) --- */}
+      <article className="sr-only">
+        <h2>Best Computer Courses and Skill Training in Dimapur, Nagaland</h2>
+        <p>
+          Welcome to Instudia, the premier institute for <strong>computer courses in Dimapur</strong>. We are dedicated to empowering individuals with cutting-edge tech skills that transform potential into a paycheck. Whether you're looking to start a career in software development, graphic design, or digital marketing, our comprehensive programs are designed to meet industry standards.
+        </p>
+        <div>
+          <h3>Why Choose Our Computer Institute?</h3>
+          <p>
+            At Instudia, we believe in an <Link href="/about">innovative approach</Link> to education. Unlike traditional institutes, we focus on hands-on experiences, project-based learning, and personalized mentorship. We offer over 19+ intensive courses, including DCA, PGDCA, Tally, Full-Stack Web Development, Data Analysis, and more. Our training bridges the gap between academic knowledge and real-world skills, ensuring our students are job-ready from day one. By learning from our expert instructors, you gain insights that go beyond the textbook.
+          </p>
+          
+          <h3>Comprehensive Skills for the Future</h3>
+          <p>
+            Our mission is to establish Nagaland as a hub of digital literacy and technical expertise. We partner with top organizations to bring you courses that align with the latest market demands. Whether it's mastering React.js for web development, understanding SEO, or designing stunning visuals with Adobe Creative Suite, we have the right course layout for you. Explore our <Link href="/courses">complete course catalog</Link> to find a program that suits your career goals.
+          </p>
+
+          <h3>Join a Vibrant Community of Learners</h3>
+          <p>
+            Education at Instudia expands beyond the classroom walls. We provide resume-building workshops, interview preparation sessions, and excellent placement assistance. Joining us means you become part of a community that fosters growth, innovation, and success. Don't wait to ignite your career. Contact our admissions team at our Dimapur center today. Learn more about our <Link href="/contact">admissions process</Link> or read through our <Link href="/blog">student success stories</Link>. Upskill, innovate, and start your successful journey with Instudia today!
+          </p>
+        </div>
+      </article>
 
       {/* --- Blog Horizon Carousel --- */}
       <BlogCarousel posts={posts.slice(0, 7)} />
