@@ -20,7 +20,7 @@ const jsonLd = {
   name: "instudia",
   image: "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
   url: "https://www.instudianagaland.com",
-  telephone: "+91-8798-587779",
+  telephone: "+91 87985 87779",
   email: "instudia.nagaland@gmail.com",
   address: {
     "@type": "PostalAddress",
@@ -51,7 +51,7 @@ const contacts = [
     label: "Collaborate",
     tag: "Partnerships",
     email: "instudianagaland@gmail.com",
-    phone: "+91 8798-587-779",
+    phone: "+91 87985 87779",
     accent: "border-brandpurple/20 bg-brandpurple/5",
     dot: "bg-brandpurple",
   },
@@ -59,7 +59,7 @@ const contacts = [
     label: "Join Our Team",
     tag: "Careers",
     email: "instudianagaland@gmail.com",
-    phone: "+91 9233-606-322",
+    phone: "+91 87985 87779",
     accent: "border-brightyellow/25 bg-brightyellow/5",
     dot: "bg-brightyellow",
   },
@@ -67,7 +67,7 @@ const contacts = [
     label: "Say Hello",
     tag: "General",
     email: "hello@instudianagaland.com",
-    phone: "+91 8798-587-779",
+    phone: "+91 87985 87779",
     accent: "border-flourescent/20 bg-flourescent/5",
     dot: "bg-flourescent",
   },
@@ -225,7 +225,7 @@ const ContactUs = () => {
                       href="tel:+918798587779"
                       className="mt-1 block hover:text-brandpurple transition-colors"
                     >
-                      +91 8798-587-779
+                      +91 87985 87779
                     </a>
                   </div>
                 </div>

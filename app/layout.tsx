@@ -52,7 +52,7 @@ const jsonLd = {
   "url": "https://www.instudianagaland.com",
   "logo": "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
   "image": "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
-  "telephone": "+91-8798-587779",
+  "telephone": "+91 87985 87779",
   "priceRange": "₹₹",
   description:
     "We offer top computer courses: Programming, Web Development, Graphic Design, Project Management & Digital Skills. Boost your career in Nagaland",
@@ -67,7 +67,7 @@ const jsonLd = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+91-8798-587779",
+    telephone: "+91 87985 87779",
     contactType: "Admissions",
     email: "instudia.nagaland@gmail.com",
     availableLanguage: ["English", "Hindi", "Nagamese", "Assamese"],

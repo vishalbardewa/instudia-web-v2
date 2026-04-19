@@ -34,16 +34,14 @@ export default function LandingTop() {
                 <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                     <span className="block text-white">
-                      Nagaland&apos;s Career-First
+                      Turn your potential
                     </span>
                     <span className="block text-slate-300">
-                      Tech and Skills Institute
+                      into a paycheck
                     </span>
                   </h1>
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-slate-300 sm:max-w-3xl">
-                    Experience and learn skills that are high on demand.
-                    Programs designed specifically for students and working
-                    professionals. Stay future-ready with new-age courses.
+                    Courses in tech, design &amp; business in Dimapur, Nagaland
                   </p>
                   <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                     <div className="flex justify-center gap-3 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">

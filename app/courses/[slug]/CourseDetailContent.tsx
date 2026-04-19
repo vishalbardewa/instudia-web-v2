@@ -162,6 +162,44 @@ const CourseStats = ({ features }: any) => (
   </section>
 );
 
+// --- Course Info Block (SEO + UX) ---
+const CourseInfoBlock = ({ courseDetails }: any) => {
+  const durationFeature = courseDetails.features?.find((f: any) => f.name === "Duration");
+  const durationMonths = durationFeature?.description ? `${durationFeature.description} Month${parseInt(durationFeature.description) !== 1 ? "s" : ""}` : "Flexible";
+
+  const items = [
+    { label: "Duration", value: durationMonths, icon: "⏱" },
+    { label: "Schedule", value: "Mon – Sat  ·  9:00 AM – 6:00 PM", icon: "📅" },
+    { label: "Mode", value: "In-Person (Dimapur)", icon: "🏫" },
+  ];
+
+  return (
+    <section className="py-12 bg-[#FAFAFA]">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <span className="text-[10px] font-black text-brandpurple uppercase tracking-[0.4em] mb-6 block">
+          Course Details
+        </span>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {items.map((item) => (
+            <div
+              key={item.label}
+              className="bg-white border border-neutral-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <span className="text-2xl mb-3 block" role="img" aria-label={item.label}>
+                {item.icon}
+              </span>
+              <p className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.15em] mb-1">
+                {item.label}
+              </p>
+              <p className="text-base font-extrabold text-[#1B1C1E] leading-tight">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // --- Subtle Outcome Roadmap ---
 const BentoCurriculum = ({ fourReasons }: any) => {
   const [mounted, setMounted] = React.useState(false);
@@ -325,6 +363,7 @@ export default function CourseDetailContent({ courseDetails, relatedCourses }: a
     <>
       <BentoHero courseDetails={courseDetails} />
       <CourseStats features={courseDetails.features} />
+      <CourseInfoBlock courseDetails={courseDetails} />
       <BentoCurriculum fourReasons={courseDetails.fourReasons} />
       <FixedMarquee />
       <EnquiryForm courseName={courseDetails.fullTitle} />
@@ -348,3 +387,4 @@ export default function CourseDetailContent({ courseDetails, relatedCourses }: a
     </>
   );
 }
+

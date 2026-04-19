@@ -4,26 +4,14 @@ import Image from "next/image";
 import { AppConfig } from "../_utils/AppConfig";
 import Script from "next/script";
 import { slugs } from "../routes";
-
-
-const BE_URL = process.env.NODE_ENV === 'development' ? "http://127.0.0.1:3000" : "https://instudia-v2.netlify.app/"
-
-export async function generateStaticParams() {
-  const posts = await fetch(BE_URL);
-  const courses = await posts.json();
-  const res = courses?.courses?.courses.map((course: any) => {
-    return { slug: course.slug };
-  });
-
-  return res;
-}
+import coursesData from "../courses.json";
 
 export const metadata = {
-  title:"Pick a course to upskill",
-  description:"Elevate your career with premier computer and skill training in Dimapur. Explore cutting-edge courses in programming, web development, web design & more.",
+  title: "Computer Courses in Dimapur, Nagaland — All Programs",
+  description: "Explore 19+ computer and skill courses at instudia Dimapur. Python, DCA, Graphic Design, Tally, Web Development & more. Enroll at Nagaland's top training institute!",
   openGraph: {
-    title: "Pick a course to upskill",
-    description: "Elevate your career with premier computer and skill training in Dimapur. Explore cutting-edge courses in programming, web development, web design & more.",
+    title: "Best Computer Courses in Dimapur, Nagaland | instudia",
+    description: "Discover 19+ courses at instudia Dimapur. From DCA & Tally to Python & Web Development — find the right program for your career in Nagaland.",
     url: `${AppConfig.canonicalBase}`,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,

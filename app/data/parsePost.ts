@@ -179,6 +179,7 @@ export function loadPost(filename: string): Post {
     author: data.author,
     authorRole: data.authorRole,
     authorPhoto: data.authorPhoto,
+    authorBio: data.authorBio,
     coverImage: data.coverImage,
     body: parseBody(content),
   };

@@ -29,6 +29,8 @@ export interface Post {
   author: string;
   authorRole: string;
   authorPhoto: string;
+  /** Optional short biography shown below the article */ 
+  authorBio?: string;
   coverImage: string;
   body: Section[];
 }

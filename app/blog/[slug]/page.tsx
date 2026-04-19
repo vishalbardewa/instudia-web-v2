@@ -11,6 +11,7 @@ import rehypeKatex from "rehype-katex";
 import { Container } from "../../components/atom/Container";
 import "katex/dist/katex.min.css";
 import BrutalistChart from "../../components/molecules/BrutalistChart";
+import coursesData from "@/app/courses.json";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | instudia Blog`,
+    // Clean format: "Post Title — instudia" (layout template appends "| instudia")
+    title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
@@ -59,6 +61,7 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "Person",
       name: post!.author,
       jobTitle: post!.authorRole,
+      url: "https://www.instudianagaland.com/blog",
     },
     publisher: {
       "@type": "Organization",
@@ -71,6 +74,17 @@ export default async function BlogPostPage({ params }: Props) {
       "@id": `https://www.instudianagaland.com/blog/${slug}`,
     },
   };
+
+  // Related courses: match by post category/keywords against course fullTitle
+  const postKeywords = `${post!.title} ${post!.excerpt} ${post!.category}`.toLowerCase();
+  const relatedCourses = coursesData.courses
+    .filter((c) => {
+      const courseText = `${c.fullTitle} ${c.courseHightlight || ""}`.toLowerCase();
+      // Simple keyword overlap check
+      const postWords = postKeywords.split(/\W+/).filter((w) => w.length > 4);
+      return postWords.some((w) => courseText.includes(w));
+    })
+    .slice(0, 3);
 
   return (
     <main className="bg-[#FAFAFA] min-h-screen pb-32">
@@ -300,6 +314,53 @@ export default async function BlogPostPage({ params }: Props) {
                 ))}
               </div>
             </div>
+
+            {/* Author Bio */}
+            <div className="mt-24 p-8 sm:p-12 border-2 border-black bg-white shadow-[6px_6px_0px_rgba(0,0,0,1)] flex flex-col sm:flex-row gap-8 items-start">
+              <div className="w-20 h-20 border-2 border-black rounded-full overflow-hidden shrink-0">
+                <img src={post.authorPhoto} alt={post.author} className="w-full h-full object-cover" />
+              </div>
+              <div className="flex-1">
+                <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest mb-3 inline-block">
+                  About the Author
+                </span>
+                <p className="text-xl font-black text-black uppercase tracking-tight mb-1">{post.author}</p>
+                <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest mb-4">{post.authorRole}</p>
+                <p className="text-sm font-medium text-black/70 leading-relaxed">
+                  {post.authorBio ||
+                    `${post.author} is an educator and tech professional at instudia, Dimapur's leading computer training institute. 
+                    Passionate about making technology accessible to students across Nagaland.`}
+                </p>
+              </div>
+            </div>
+
+            {/* Related Courses */}
+            {relatedCourses.length > 0 && (
+              <div className="mt-16">
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-black mb-6 pb-4 border-b-2 border-black/5">
+                  Relevant Courses at Instudia
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {relatedCourses.map((course) => (
+                    <Link
+                      key={course.slug}
+                      href={`/courses/${course.slug}`}
+                      className="group flex flex-col gap-2 p-5 border-2 border-black bg-white hover:bg-black transition-colors shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
+                    >
+                      <span className="text-[9px] font-black uppercase tracking-widest text-black/40 group-hover:text-white/60">
+                        {course.category}
+                      </span>
+                      <span className="text-sm font-black text-black uppercase tracking-tight group-hover:text-white leading-tight">
+                        {course.fullTitle}
+                      </span>
+                      <span className="text-[10px] font-bold text-brandpurple group-hover:text-[#FFE01B] mt-1">
+                        Explore Course →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Post CTA */}
             <div className="mt-32 p-10 sm:p-20 border-2 border-black bg-white shadow-[12px_12px_0px_#C21BFF] text-center sm:text-left relative overflow-hidden group">

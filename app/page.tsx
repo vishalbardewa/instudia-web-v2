@@ -12,14 +12,11 @@ import { randomUUID } from "crypto";
 import FeatureWithColumns from "./components/molecules/FeatureWithThreeCoulmns";
 import TestimonialGrid from "./components/organisms/TestimonialGrid";
 import ScrollingLogos from "./components/organisms/ScrollingLogos";
-import CareerTerminal from "./components/organisms/CareerTerminal";
-import MiniBlueprintGateway from "./components/organisms/MiniBlueprintGateway";
-import SkillGraphOrbit from "./components/organisms/SkillGraphOrbit";
+import RandomGateway from "./components/organisms/RandomGateway";
 import BlogCarousel from "./components/organisms/BlogCarousel";
 import { posts } from "./data/posts";
 
-// Force Dynamic SSR to guarantee Math.random() executes natively per route request instead of baking identically during static build-time
-export const dynamic = "force-dynamic";
+
 
 const stats = [
   { label: "Founded", value: "2021" },
@@ -160,8 +157,7 @@ const cards = [
 ];
 
 export const metadata = {
-  title:
-    "Computer & Skill Courses in Nagaland",
+  title: "Best Computer Courses in Dimapur, Nagaland | Instudia",
   description:
     "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
   openGraph: {
@@ -175,15 +171,15 @@ export const metadata = {
     images: [
       {
         url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
         type: "image/jpeg",
         alt: "Upskill with instudia",
       },
       {
         url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
         alt: "Enroll with instudia",
         type: "image/jpeg",
       },
@@ -313,18 +309,8 @@ export default function Page() {
 
       <Stats stats={stats} />
       
-      {/* Isolated Interactive Gateway Node Array Router */}
-      {(() => {
-        // Safe to execute Math.random() directly in Server Component block since the React Client exclusively receives and hydrates the mapped subtree Payload, not executing random natively
-        const InteractionComponents = [
-          CareerTerminal,
-          SkillGraphOrbit,
-          MiniBlueprintGateway
-        ];
-        const RandomGatewayBoundary = InteractionComponents[Math.floor(Math.random() * InteractionComponents.length)];
-        
-        return <RandomGatewayBoundary />;
-      })()}
+      {/* Isolated Interactive Gateway Node — client picks randomly */}
+      <RandomGateway />
 
       <Incentives />
       <FeatureWithColumns />
