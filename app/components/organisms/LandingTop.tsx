@@ -28,6 +28,8 @@ export default function LandingTop() {
                     alt="People working on laptops"
                     fill
                     priority
+                    loading="eager"
+                    fetchPriority="high"
                   />
                   <div className="absolute inset-0 bg-gray-600 mix-blend-multiply" />
                 </div>
