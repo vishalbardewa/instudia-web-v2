@@ -103,6 +103,7 @@ export default function SearchModal({ open, onClose }: Props) {
           <input
             ref={inputRef}
             type="text"
+            aria-label="Search courses and blog posts"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKey}

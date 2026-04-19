@@ -139,6 +139,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         href={item.href}
                         className="text-xs leading-6 text-gray-600 hover:text-gray-900"
                       >
@@ -157,6 +158,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         href={item.href}
                         className="text-xs leading-6 text-gray-600 hover:text-gray-900"
                       >
@@ -175,7 +177,7 @@ export default function Footer() {
               <a
                 key={item.name}
                 target="_blank"
-                rel="non-referrer"
+                rel="noopener noreferrer"
                 href={item.href}
                 className="text-gray-400 hover:text-gray-500"
               >

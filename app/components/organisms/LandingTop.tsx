@@ -53,7 +53,7 @@ export default function LandingTop() {
                     <div className="flex justify-center gap-3 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                       <Button
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                         href="https://tally.so/r/wvebpA"
                         className="flex items-center justify-center border border-transparent bg-black px-4 py-3 text-base font-medium text-black shadow-sm hover:bg-white hover:text-black sm:px-8"
                       >

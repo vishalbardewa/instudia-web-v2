@@ -49,6 +49,7 @@ export default function MiniBlueprintGateway() {
           </div>
           <input
             type="text"
+            aria-label="Target job title"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="e.g. Software Engineer, Data Scientist, UI Designer..."

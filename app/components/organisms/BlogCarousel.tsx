@@ -159,8 +159,8 @@ const SwissHeader = ({
             <AnimatePresence mode="popLayout">
               {showLeftArrow && (
                 <m.div key="nav-left" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
-                  <RigidButton onClick={() => handleScroll("left")} direction="left">
-                    <svg className="w-8 h-8 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <RigidButton onClick={() => handleScroll("left")} direction="left" label="Scroll blog posts left">
+                    <svg className="w-8 h-8 rotate-180" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>
@@ -168,8 +168,8 @@ const SwissHeader = ({
               )}
               {showRightArrow && (
                 <m.div key="nav-right" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
-                  <RigidButton onClick={() => handleScroll("right")} direction="right">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <RigidButton onClick={() => handleScroll("right")} direction="right" label="Scroll blog posts right">
+                    <svg className="w-8 h-8" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>
@@ -193,13 +193,14 @@ const SwissHeader = ({
 );
 
 // --- Rigid Brutalist Button ---
-function RigidButton({ children, onClick, direction }: { children: React.ReactNode; onClick: () => void; direction: string }) {
+function RigidButton({ children, onClick, direction, label }: { children: React.ReactNode; onClick: () => void; direction: string; label: string }) {
   return (
     <m.button
       key={`brutalist-${direction}`}
       whileHover={{ scale: 1.05, x: direction === "left" ? -2 : 2 }}
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
+      aria-label={label}
       className="w-16 h-16 bg-white border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_#FF1B58] hover:bg-neutral-50 transition-all duration-200"
     >
       {children}
@@ -252,8 +253,8 @@ export default function BlogCarousel({ posts }: { posts: Post[] }) {
             <AnimatePresence mode="popLayout">
               {showLeftArrow && (
                 <m.div key="nav-left-mobile" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
-                  <RigidButton onClick={() => handleScroll("left")} direction="left">
-                    <svg className="w-8 h-8 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <RigidButton onClick={() => handleScroll("left")} direction="left" label="Scroll blog posts left">
+                    <svg className="w-8 h-8 rotate-180" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>
@@ -261,8 +262,8 @@ export default function BlogCarousel({ posts }: { posts: Post[] }) {
               )}
               {showRightArrow && (
                 <m.div key="nav-right-mobile" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}>
-                  <RigidButton onClick={() => handleScroll("right")} direction="right">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <RigidButton onClick={() => handleScroll("right")} direction="right" label="Scroll blog posts right">
+                    <svg className="w-8 h-8" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </RigidButton>

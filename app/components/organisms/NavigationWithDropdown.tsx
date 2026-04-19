@@ -65,9 +65,10 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                     </button>
                     <button
                       onClick={() => setOpen(false)}
+                      aria-label="Close menu"
                       className="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-200 text-gray-500 hover:bg-gray-50 transition-colors"
                     >
-                      <XMarkIcon className="h-5 w-5" />
+                      <XMarkIcon className="h-5 w-5" aria-hidden="true" />
                     </button>
                   </div>
                 </div>
