@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import "highlight.js/styles/github-dark.css";
 import MotionProvider from "./components/atom/MotionProvider";
 
 import ConditionalLayout from "./components/layouts/ConditionalLayout";
@@ -10,8 +9,8 @@ import DeviceSizeIndicator from "./components/atom/DeviceSizeIndicator";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { AppConfig } from "./_utils/AppConfig";
 
-const inter = Inter({ subsets: ["latin"] });
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: {

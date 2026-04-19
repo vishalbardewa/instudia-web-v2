@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  compress: true,
   serverExternalPackages: ['pdf2json', 'mammoth'],
+  experimental: {
+    optimizePackageImports: ['@heroicons/react', '@headlessui/react', '@tabler/icons-react'],
+  },
   webpack: (config) => {
     config.resolve.alias.canvas = false;
     config.resolve.alias.encoding = false;
@@ -17,7 +21,8 @@ const nextConfig = {
       { protocol: "https", hostname: "everpath-course-content.s3-accelerate.amazonaws.com" },
       { protocol: "https", hostname: "res.cloudinary.com" },
     ],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // Removed 2048 & 3840 — useless on mobile, bloats image manifest
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
 };
 

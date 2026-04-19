@@ -12,7 +12,10 @@ export default function LandingTop() {
     "https://images.unsplash.com/photo-1649957909636-10a8b37d052e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
-  const imageIndex = Math.floor(Math.random() * (heroImages.length - 1));
+  // Stable daily rotation — avoids Math.random() breaking SSR/HTTP caching
+  // and allows the browser to reliably preload the LCP image
+  const dayIndex = Math.floor(Date.now() / 86400000) % heroImages.length;
+
   return (
     <div className="min-h-screen bg-white mt-6">
       <main>
@@ -24,9 +27,10 @@ export default function LandingTop() {
                 <div className="absolute inset-0">
                   <Image
                     className="h-full w-full object-cover"
-                    src={heroImages[`${imageIndex}`]}
+                    src={heroImages[dayIndex]}
                     alt="People working on laptops"
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1280px"
                     priority
                     loading="eager"
                     fetchPriority="high"
