@@ -47,6 +47,18 @@ export const staff: StaffMember[] = [
     bio: "Full-stack developer and technical advisor powering instudia's digital infrastructure.",
     linkedin: "https://www.linkedin.com/in/vishalbardewa",
   },
+  {
+    slug: "anguka-n-ayemi",
+    name: "Anguka N Ayemi",
+    designation: "Marketing Intern",
+    department: "Marketing",
+    phone: "+91 9863-832-170",
+    email: "instudia.nagaland@gmail.com",
+    photo:
+      "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7",
+    bio: "Marketing intern driving instudia's mission to bridge the tech skills gap in Nagaland.",
+    linkedin: "https://www.linkedin.com/in/anguka-ayemi-5533353b1/",
+  },
 ];
 
 export function getStaffBySlug(slug: string): StaffMember | undefined {
