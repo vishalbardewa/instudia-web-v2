@@ -173,7 +173,7 @@ export const CareerCapitalQuiz = () => {
 
   return (
     <div className="bg-white ring-1 ring-neutral-950/5 rounded-[2rem] shadow-sm flex flex-col font-jakarta relative h-full w-full overflow-hidden min-h-[400px]">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brandpurple to-brightyellow" />
+      <div className="absolute top-0 left-0 w-full h-[6px] bg-brandpurple" />
       
       {!started && !completed && (
         <div className="p-8 md:p-10 flex flex-col items-center justify-center text-center flex-1 space-y-6">

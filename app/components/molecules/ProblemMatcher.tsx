@@ -43,35 +43,35 @@ const PROFILES = {
     title: "Digital Infrastructure & Tech Literacy",
     description: "You are matched with solving the digital divide. Nagaland desperately needs localized software, better IT infrastructure, and digital literacy to enter the global economy.",
     careers: "Software Engineer, UX/UI Designer, IT Consultant",
-    color: "from-blue-500 to-cyan-400",
+    color: "bg-[#1B1C1E]",
     icon: "💻"
   },
   agri: {
     title: "Sustainable Agriculture & Eco-Entrepreneurship",
     description: "You are matched with our agricultural potential. We need innovators to move beyond subsistence farming and build sustainable, profitable export supply chains.",
     careers: "Agri-tech Founder, Supply Chain Manager, Eco-Tourism Operator",
-    color: "from-emerald-500 to-green-400",
+    color: "bg-brandpurple",
     icon: "🌱"
   },
   culture: {
     title: "Preservation of Indigenous Knowledge",
     description: "You are matched with cultural preservation. Our heritage is fading, and we need creative minds to document, modernize, and ethically monetize our traditions for a global audience.",
     careers: "Digital Archivist, Documentary Filmmaker, Cultural Entrepreneur",
-    color: "from-orange-500 to-yellow-400",
+    color: "bg-[#1B1C1E]",
     icon: "🏺"
   },
   edu: {
     title: "Accessible Education & Skill Development",
     description: "You are matched with solving youth unemployment. The current education system is failing to teach modern skills, and we need builders to create accessible, relevant learning platforms.",
     careers: "Ed-tech Founder, Curriculum Developer, Career Counselor",
-    color: "from-brandpurple to-purple-400",
+    color: "bg-brandpurple",
     icon: "📚"
   },
   health: {
     title: "Healthcare Logistics & Mental Health",
     description: "You are matched with the healthcare gap. Remote districts lack medical access, and our youth need culturally nuanced mental health support systems.",
     careers: "Telemedicine Founder, Health Logistics Manager, Clinical Psychologist",
-    color: "from-redhue to-red-400",
+    color: "bg-redhue",
     icon: "🏥"
   }
 };
@@ -149,7 +149,7 @@ export const ProblemMatcher = () => {
 
   return (
     <div className="bg-white ring-1 ring-neutral-950/5 rounded-[2rem] shadow-sm flex flex-col font-jakarta relative h-full w-full overflow-hidden min-h-[400px]">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-redhue to-orange-500" />
+      <div className="absolute top-0 left-0 w-full h-[6px] bg-redhue" />
       
       {!started && !completed && (
         <div className="p-8 md:p-10 flex flex-col items-center justify-center text-center flex-1 space-y-6">
@@ -207,7 +207,7 @@ export const ProblemMatcher = () => {
           animate={{ opacity: 1, scale: 1 }}
           className="p-8 md:p-10 flex flex-col items-center justify-center text-center flex-1 space-y-6"
         >
-          <div className={`w-20 h-20 rounded-[1.5rem] flex items-center justify-center text-4xl bg-gradient-to-br ${match.color} text-white shadow-md mb-2`}>
+          <div className={`w-20 h-20 rounded-[1.5rem] flex items-center justify-center text-4xl ${match.color} text-white shadow-md mb-2`}>
             {match.icon}
           </div>
           <div className="text-redhue font-black text-xs uppercase tracking-widest">Your Impact Match</div>

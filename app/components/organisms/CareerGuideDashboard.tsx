@@ -26,7 +26,7 @@ const MODULES = [
     question: "Why is the traditional path no longer the only (or best) way to succeed in Nagaland?",
     summary: "Move beyond the NPSC. Discover how to evaluate careers based on impact, growth, and personal fit rather than societal prestige.",
     icon: IconTargetArrow,
-    color: "from-blue-500 to-cyan-400",
+    color: "bg-[#1B1C1E]",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const MODULES = [
     question: "What are the most pressing, neglected problems in our region that you can help solve?",
     summary: "Explore local problem profiles and learn how to identify issues where you can have an outsized positive impact.",
     icon: IconBook,
-    color: "from-emerald-500 to-green-400",
+    color: "bg-brandpurple",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const MODULES = [
     question: "How do you build skills and connections that make you highly adaptable and employable anywhere?",
     summary: "Acquire flexible skills (coding, writing, project management) that open doors to remote global work.",
     icon: IconBriefcase,
-    color: "from-brandpurple to-purple-400",
+    color: "bg-[#1B1C1E]",
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const MODULES = [
     question: "How can you participate in the global economy without leaving Nagaland?",
     summary: "A practical guide to remote employment, freelancing, and succeeding in the creator economy.",
     icon: IconGlobe,
-    color: "from-orange-500 to-yellow-400",
+    color: "bg-brandpurple",
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ const MODULES = [
     question: "How do you plan for ambitious goals while protecting yourself from failure?",
     summary: "Map out an ideal scenario (Plan A), a pivot (Plan B), and a secure safety net (Plan Z).",
     icon: IconMap,
-    color: "from-redhue to-red-400",
+    color: "bg-[#1B1C1E]",
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const MODULES = [
     question: "What low-risk experiments can you run right now to test your career ideas?",
     summary: "Use internships, volunteering, and side projects to validate career paths before committing years of study.",
     icon: IconRocket,
-    color: "from-brightyellow to-yellow-400",
+    color: "bg-brandpurple",
   }
 ];
 
@@ -88,18 +88,15 @@ export const CareerGuideDashboard = () => {
       
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center bg-white border border-neutral-200 rounded-[2rem] p-8 md:p-16 shadow-sm overflow-hidden relative">
-        <div className="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
-          <div className="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-brightyellow to-brandpurple opacity-10" />
-        </div>
 
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brandpurple/30 bg-brandpurple/5 text-brandpurple text-sm font-bold tracking-wide mb-8 z-10">
-          <IconSparkles size={16} />
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brandpurple bg-white text-[#1B1C1E] text-sm font-bold tracking-wide mb-8 z-10">
+          <IconSparkles size={16} className="text-brandpurple" />
           The Ultimate Nagaland Career Guide
         </div>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1B1C1E] tracking-tight leading-[1.15] z-10 max-w-4xl">
           Build a Career That <br className="hidden md:block" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-brandpurple to-redhue">
+          <span className="text-brandpurple">
             Actually Matters.
           </span>
         </h1>
@@ -122,7 +119,7 @@ export const CareerGuideDashboard = () => {
         {/* Timeline Tracker */}
         <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-32">
           <div className="bg-white ring-1 ring-neutral-950/5 rounded-[2rem] p-8 shadow-sm relative overflow-hidden">
-             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brandpurple to-redhue" />
+             <div className="absolute top-0 left-0 w-full h-[6px] bg-brandpurple" />
              <h3 className="text-2xl font-extrabold text-[#1B1C1E] tracking-tight">Your Roadmap</h3>
              <p className="text-neutral-500 font-medium text-sm mt-2 mb-8">6 interconnected modules.</p>
              
@@ -138,8 +135,8 @@ export const CareerGuideDashboard = () => {
                       onClick={() => setExpandedModule(mod.id)}
                       className={`relative z-10 flex items-center gap-6 text-left transition-all duration-300 group ${isActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
                     >
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-500 z-10 ${isActive ? 'bg-gradient-to-br ' + mod.color + ' ring-4 ring-brandpurple/10' : isPassed ? 'bg-neutral-200' : 'bg-white border-2 border-neutral-200 group-hover:border-neutral-300'}`}>
-                         {isActive && <div className="w-2.5 h-2.5 bg-white rounded-full animate-pulse" />}
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-500 z-10 ${isActive ? mod.color + ' ring-4 ring-neutral-100' : isPassed ? 'bg-neutral-200' : 'bg-white border-2 border-neutral-200 group-hover:border-neutral-300'}`}>
+                         {isActive && <div className="w-2.5 h-2.5 bg-white rounded-full" />}
                       </div>
                       <span className={`font-bold text-[15px] ${isActive ? 'text-[#1B1C1E]' : 'text-neutral-500'}`}>
                         {mod.title}
@@ -166,7 +163,7 @@ export const CareerGuideDashboard = () => {
                   className="w-full p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 text-left relative z-10 bg-transparent"
                   onClick={() => setExpandedModule(isExpanded ? null : mod.id)}
                 >
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 bg-gradient-to-br ${mod.color} shadow-sm transition-transform duration-300 ${isExpanded ? 'scale-105' : 'group-hover:scale-105'}`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${mod.color} shadow-sm transition-transform duration-300 ${isExpanded ? 'scale-105' : 'group-hover:scale-105'}`}>
                     <Icon className="text-white w-7 h-7" stroke={1.5} />
                   </div>
                   <div className="flex-1">
@@ -187,8 +184,8 @@ export const CareerGuideDashboard = () => {
                       className="px-6 pb-8 sm:px-8 sm:pb-8 relative z-10"
                     >
                       <div className="pl-0 sm:pl-[5rem] space-y-6">
-                        <div className="p-5 bg-neutral-50/80 rounded-xl border border-neutral-100 relative overflow-hidden">
-                          <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${mod.color}`} />
+                        <div className="p-5 bg-neutral-50 rounded-xl border border-neutral-100 relative overflow-hidden">
+                          <div className={`absolute left-0 top-0 bottom-0 w-[6px] ${mod.color}`} />
                           <p className="text-[#1B1C1E] font-bold italic text-md leading-relaxed">"{mod.question}"</p>
                         </div>
                         <p className="text-neutral-600 leading-relaxed font-medium text-[15px]">

@@ -123,7 +123,7 @@ export const ABZCanvas = () => {
 
   return (
     <div className="bg-white ring-1 ring-neutral-950/5 rounded-[2.5rem] shadow-sm flex flex-col font-jakarta relative w-full overflow-hidden min-h-[500px]">
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brandpurple via-redhue to-brightyellow" />
+      <div className="absolute top-0 left-0 w-full h-[6px] bg-[#1B1C1E]" />
       
       {/* Intro Step */}
       <AnimatePresence mode="wait">
@@ -278,7 +278,7 @@ export const ABZCanvas = () => {
             <div className="flex flex-wrap items-center justify-center gap-4 mt-10 print:hidden w-full">
               <a 
                 href={`/tools/career-planner?role=${encodeURIComponent(planA)}`}
-                className="px-8 py-3.5 bg-gradient-to-r from-brandpurple to-purple-500 text-white rounded-xl font-bold hover:opacity-90 transition-all shadow-lg flex items-center gap-2 shadow-brandpurple/20 active:scale-95"
+                className="px-8 py-3.5 bg-brandpurple text-white rounded-xl font-bold hover:bg-purple-700 transition-all shadow-md flex items-center gap-2 active:scale-95"
               >
                 <IconRocket size={18} stroke={2.5} /> Map Roadmap for Plan A
               </a>
