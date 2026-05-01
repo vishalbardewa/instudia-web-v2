@@ -120,10 +120,13 @@ export const ProblemMatcher = () => {
     }
   }, [completed, scores, isMounted]);
 
-  const handleAnswer = (optionScores: Record<string, number>) => {
+  const handleAnswer = (optionScores: Record<string, number | undefined>) => {
     const newScores = { ...scores };
     Object.keys(optionScores).forEach(key => {
-      newScores[key as keyof typeof scores] += optionScores[key];
+      const score = optionScores[key];
+      if (score !== undefined) {
+        newScores[key as keyof typeof scores] += score;
+      }
     });
     setScores(newScores);
 
