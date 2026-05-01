@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { IconHome, IconUser } from "@tabler/icons-react";
+import { IconHome, IconUser, IconMap } from "@tabler/icons-react";
 import { IconMessage } from "@tabler/icons-react";
 import { FloatingNav } from "../organisms/FloatingNav";
 import Footer from "../organisms/Footer";
@@ -12,6 +12,8 @@ import MasterclassModal from "../organisms/MasterclassModal";
 import { slugs } from "@/app/routes";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import Link from "next/link";
+import { CookieBanner } from "../molecules/CookieBanner";
+import { AdBannerModal } from "../organisms/AdBannerModal";
 import { getActiveFestival } from "@/app/utils/festival";
 import { Confetti, Snowfall, GlowEffects, FestivalDoodle, EasterEggs } from "../atom/FestivalEffects";
 import { clsx } from "clsx";
@@ -206,7 +208,9 @@ function FestivalLayoutContent({
         <WhatsAppWidget />
         <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
         <MasterclassModal />
+        <AdBannerModal />
         <Footer />
+        <CookieBanner />
       </div>
     </>
   );

@@ -50,6 +50,16 @@ interface ToolProps {
 
 const tools: ToolProps[] = [
   {
+    name: "Nagaland Career Guide",
+    href: "/tools/career-guide",
+    description: "An interactive, 80,000 Hours-inspired guide to building high-impact careers and finding your problem match in Nagaland.",
+    style: "flourescent",
+    statusIcon: "🧭",
+    statusMessage: "New Guide",
+    category: "student",
+    imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-6.png"
+  },
+  {
     name: "Career Blueprint",
     href: "/tools/career-blueprint",
     description: "Bridge the gap between your current skills and your dream roles.",
