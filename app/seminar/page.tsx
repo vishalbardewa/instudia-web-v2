@@ -61,7 +61,7 @@ export default function SeminarMaterialPage() {
 
       {/* Decorative floating shapes */}
       <div className="absolute top-10 left-10 w-24 h-24 bg-[#bcff50] rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-bounce" style={{ animationDuration: '3s' }} />
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-[#ff6bdf] rotate-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]" />
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-redhue rotate-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]" />
 
       <div className="max-w-3xl w-full relative z-10">
         <div className="bg-white border-4 border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 sm:p-12 transform transition-all hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] duration-300">
@@ -73,7 +73,7 @@ export default function SeminarMaterialPage() {
                   THE SECRET STASH 📜
                 </div>
                 <h1 className="text-4xl sm:text-5xl font-black tracking-tighter uppercase leading-[1.1] mb-4">
-                  Unlock the <br /><span className="text-[#ff6bdf] drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">Seminar Stash</span>
+                  Unlock the <br /><span className="text-brandpurple drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">Seminar Stash</span>
                 </h1>
                 <p className="text-lg font-bold text-gray-700 leading-tight">
                   Drop your deets to get the sauce. Oh, and pass the vibe check first. ✨
@@ -112,7 +112,7 @@ export default function SeminarMaterialPage() {
                 </div>
 
                 <div className="bg-[#444cf7] text-white rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6 relative">
-                  <div className="absolute -top-4 -right-4 bg-[#ff6bdf] text-black font-black text-xs px-3 py-1 rounded-full border-2 border-black rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="absolute -top-4 -right-4 bg-redhue text-black font-black text-xs px-3 py-1 rounded-full border-2 border-black rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     MANDATORY
                   </div>
                   <label htmlFor="security-question" className="block text-lg font-black uppercase mb-3 text-[#bcff50]">
