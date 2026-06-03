@@ -38,6 +38,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: [post.author],
       images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage],
+    },
   };
 }
 
@@ -52,11 +58,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     headline: post!.title,
     description: post!.excerpt,
     image: post!.coverImage,
     datePublished: post!.date,
+    dateModified: post!.date,
     author: {
       "@type": "Person",
       name: post!.author,
@@ -66,6 +73,10 @@ export default async function BlogPostPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "instudia",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
+      },
       url: "https://www.instudianagaland.com",
     },
     url: `https://www.instudianagaland.com/blog/${slug}`,

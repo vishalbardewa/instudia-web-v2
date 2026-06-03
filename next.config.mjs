@@ -11,6 +11,16 @@ const nextConfig = {
     config.resolve.alias.encoding = false;
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "instudianagaland.com" }],
+        destination: "https://www.instudianagaland.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   turbopack: {},
   images: {
     remotePatterns: [

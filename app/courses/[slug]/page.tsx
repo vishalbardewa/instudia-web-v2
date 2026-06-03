@@ -5,6 +5,7 @@ import { AppConfig } from "@/app/_utils/AppConfig";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import CourseDetailContent from "./CourseDetailContent";
+import { BreadcrumbSchema } from "@/app/components/SchemaOrg/BreadcrumbSchema";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import coursesData from "@/app/courses.json";
 
@@ -30,13 +31,21 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = (await params).slug;
+  const courseDetails = getCourseBySlug(slug);
   const meta = META_LOOKUP[slug] ?? {};
   const courseImage = IMAGE_LIST[slug];
 
+  const title = meta.title || `${courseDetails?.fullTitle ?? slug} Course in Dimapur | instudia`;
+  const description = meta.description || courseDetails?.courseHightlight || courseDetails?.courseHighlight || `Learn ${courseDetails?.fullTitle ?? slug} in Dimapur. Industry-certified training. Enroll at Instudia, Nagaland.`;
+
   return {
     ...meta,
+    title,
+    description,
     openGraph: {
       ...(meta.openGraph ?? {}),
+      title: meta.openGraph?.title || title,
+      description: meta.openGraph?.description || description,
       ...(courseImage
         ? {
             images: [
@@ -44,11 +53,16 @@ export async function generateMetadata(
                 url: courseImage,
                 width: 1200,
                 height: 630,
-                alt: meta.title ?? `${slug} course at instudia Dimapur`,
+                alt: title,
               },
             ],
           }
         : {}),
+    },
+    twitter: {
+      ...(meta.twitter ?? {}),
+      title: meta.twitter?.title || title,
+      description: meta.twitter?.description || description,
     },
     alternates: {
       canonical: `/courses/${slug}`,
@@ -172,6 +186,30 @@ export default async function Course({ params }: any) {
         "text": `Yes, instudia provides an industry-recognized certificate upon successful completion of the ${courseDetails.fullTitle} course. instudia is ISO certified and affiliated with AISECT and MSME.`,
       },
     },
+    {
+      "@type": "Question",
+      "name": `Is the ${courseDetails.fullTitle} training practical or theoretical?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Our ${courseDetails.fullTitle} course is highly practical. You will work on hands-on assignments and projects to ensure you are job-ready.`,
+      },
+    },
+    {
+      "@type": "Question",
+      "name": `Who is the instructor for the ${courseDetails.fullTitle} course?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `The ${courseDetails.fullTitle} course is taught by experienced industry professionals with deep expertise in their respective fields.`,
+      },
+    },
+    {
+      "@type": "Question",
+      "name": `What are the career opportunities after completing the ${courseDetails.fullTitle} course?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Graduates of the ${courseDetails.fullTitle} course can explore various roles in IT, finance, management or creative fields in Nagaland and beyond. We also offer career placement support.`,
+      },
+    }
   ];
 
   const jsonLd = [
@@ -200,20 +238,21 @@ export default async function Course({ params }: any) {
             },
           }
         : {}),
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${AppConfig.canonicalBase}` },
-        { "@type": "ListItem", "position": 2, "name": "Courses", "item": `${AppConfig.canonicalBase}/courses` },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": courseDetails.fullTitle,
-          "item": `${AppConfig.canonicalBase}/courses/${slug}`,
-        },
-      ],
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "location": {
+          "@type": "Place",
+          "name": "Instudia, Dimapur",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dimapur",
+            "addressRegion": "Nagaland",
+            "postalCode": "797112",
+            "addressCountry": "IN"
+          }
+        }
+      }
     },
     {
       "@context": "https://schema.org",
@@ -224,6 +263,11 @@ export default async function Course({ params }: any) {
 
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", url: `${AppConfig.canonicalBase}` },
+        { name: "Courses", url: `${AppConfig.canonicalBase}/courses` },
+        { name: courseDetails.fullTitle, url: `${AppConfig.canonicalBase}/courses/${slug}` }
+      ]} />
       <CourseDetailContent courseDetails={courseDetails} relatedCourses={relatedCourses} />
       <Script
         id="course-schema"

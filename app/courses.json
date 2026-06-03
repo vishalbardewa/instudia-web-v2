@@ -28,7 +28,10 @@
           "description": "Pursuing a Diploma in Computer Applications can help you enhance your problem-solving, critical thinking, and communication skills. It can also help you become more proficient in computer usage and digital literacy, which is becoming increasingly important in today's world."
         }
       ],
-      "price": { "original": 10999, "discountedPrice": 7999 },
+      "price": {
+        "original": 10999,
+        "discountedPrice": 7999
+      },
       "features": [
         {
           "name": "Language",
@@ -51,7 +54,37 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Computer Fundamentals",
+          "description": "Learn hardware, software basics, and operating systems."
+        },
+        {
+          "title": "Module 2: MS Office Suite",
+          "description": "Master Word, Excel, and PowerPoint for professional document creation and data analysis."
+        },
+        {
+          "title": "Module 3: Internet & Email",
+          "description": "Navigate the web securely, use email clients effectively, and understand basic networking."
+        },
+        {
+          "title": "Module 4: Tally Fundamentals",
+          "description": "Learn fundamentals of Tally Accounting Software, including basic accounting concepts, voucher entries, and reporting."
+        },
+        {
+          "title": "Module 5: Python",
+          "description": "Learn Python for programming."
+        },
+        {
+          "title": "Module 6: AI Basics",
+          "description": "Learn the fundamentals of Artificial Intelligence (AI), including machine learning concepts, neural networks, and real-world applications."
+        },
+        {
+          "title": "Module 7: Final Assessment",
+          "description": "Practical test demonstrating proficiency in MS Office and basic troubleshooting."
+        }
+      ]
     },
     {
       "slug": "python",
@@ -81,7 +114,10 @@
           "description": "Python is not only useful for professionals, but it is also relevant to everyday life. You can use Python to automate tasks, create simple games, and solve everyday problems. Python is also a great tool for learning about computer science concepts, which can help you understand technology better."
         }
       ],
-      "price": { "original": 4999, "discountedPrice": 2999 },
+      "price": {
+        "original": 4999,
+        "discountedPrice": 2999
+      },
       "features": [
         {
           "name": "Language",
@@ -104,7 +140,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Python Basics",
+          "description": "Setup environment, variables, data types, and basic syntax."
+        },
+        {
+          "title": "Module 2: Control Flow",
+          "description": "If/else statements, for loops, and while loops."
+        },
+        {
+          "title": "Module 3: Functions & Data Structures",
+          "description": "Lists, dictionaries, tuples, and creating reusable functions."
+        },
+        {
+          "title": "Module 4: Final Project",
+          "description": "Build a real-world Python script to automate a daily task."
+        }
+      ]
     },
     {
       "slug": "gst",
@@ -134,7 +188,10 @@
           "description": "Improve your business performance. Tally with GST allows you to generate financial reports quickly, making it easier for you to track your finances and make informed business decisions. Additionally, Tally with GST also allows you to automate many accounting tasks, reducing the time and effort required to manage your finances."
         }
       ],
-      "price": { "original": 4999, "discountedPrice": 2999 },
+      "price": {
+        "original": 12999,
+        "discountedPrice": 9999
+      },
       "features": [
         {
           "name": "Language",
@@ -157,7 +214,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Introduction to Tally",
+          "description": "Setting up company, basic accounting principles, and ledger creation."
+        },
+        {
+          "title": "Module 2: GST Fundamentals",
+          "description": "Understanding CGST, SGST, IGST, and taxation rules."
+        },
+        {
+          "title": "Module 3: Invoicing with GST",
+          "description": "Generating GST compliant invoices and e-way bills."
+        },
+        {
+          "title": "Module 4: GST Returns",
+          "description": "Filing GSTR-1, GSTR-3B, and handling tax liabilities."
+        }
+      ]
     },
     {
       "slug": "tally",
@@ -187,7 +262,10 @@
           "description": "Known for its user-friendly interface, making it easy to learn and use. Additionally, there are numerous online resources and training programs available for individuals to learn Tally, making it an accessible skill to acquire."
         }
       ],
-      "price": { "original": 4999, "discountedPrice": 2999 },
+      "price": {
+        "original": 4999,
+        "discountedPrice": 2999
+      },
       "features": [
         {
           "name": "Language",
@@ -210,7 +288,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Accounting Basics",
+          "description": "Debit/Credit rules, chart of accounts, and financial statements."
+        },
+        {
+          "title": "Module 2: Tally Navigation",
+          "description": "Creating companies, ledgers, and voucher entries."
+        },
+        {
+          "title": "Module 3: Inventory Management",
+          "description": "Stock groups, items, units of measure, and purchase/sales orders."
+        },
+        {
+          "title": "Module 4: Financial Reporting",
+          "description": "Generating balance sheets, P&L statements, and cash flow reports."
+        }
+      ]
     },
     {
       "slug": "pgdca",
@@ -240,7 +336,10 @@
           "description": "Known for its user-friendly interface, making it easy to learn and use. Additionally, there are numerous online resources and training programs available for individuals to learn Tally, making it an accessible skill to acquire."
         }
       ],
-      "price": { "original": 4999, "discountedPrice": 2999 },
+      "price": {
+        "original": 4999,
+        "discountedPrice": 2999
+      },
       "features": [
         {
           "name": "Language",
@@ -263,7 +362,41 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Advanced Computing",
+          "description": "Deep dive into system architecture and software engineering principles."
+        },
+        {
+          "title": "Module 2: Python Programming Intermediate",
+          "description": "Python for programming."
+        },
+        {
+          "title": "Module 3: Tally Prime",
+          "description": "Learn Tally Prime for accounting and inventory management."
+        },
+        {
+          "title": "Module 4: Advanced Excel",
+          "description": "Learn Advanced Excel for data analysis and reporting."
+        },
+        {
+          "title": "Module 5: Digital Marketing & E-Commerce",
+          "description": "Understand SEO, social media marketing, and strategies for building a strong online business presence."
+        },
+        {
+          "title": "Module 6: Advanced Presentation Skills",
+          "description": "Learn to create and deliver impactful presentations that command attention."
+        },
+        {
+          "title": "Module 7: Generative AI & Automation",
+          "description": "Leveraging AI tools (ChatGPT, LLMs), prompt engineering, and automating daily workflows to boost productivity."
+        },
+        {
+          "title": "Module 8: Industry Capstone Project",
+          "description": "A hands-on, end-to-end project solving a real-world business problem using Python, Data, and AI."
+        }
+      ]
     },
     {
       "slug": "advanced-excel",
@@ -293,7 +426,10 @@
           "description": "Individuals can open up job opportunities in these fields and increase their earning potential. Additionally, advanced Excel skills can also be valuable in many other industries that require data analysis and reporting."
         }
       ],
-      "price": { "original": 4999, "discountedPrice": 2999 },
+      "price": {
+        "original": 4999,
+        "discountedPrice": 2999
+      },
       "features": [
         {
           "name": "Language",
@@ -316,7 +452,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Advanced Formulas",
+          "description": "VLOOKUP, INDEX MATCH, nested IFs, and text functions."
+        },
+        {
+          "title": "Module 2: Data Analysis",
+          "description": "Pivot tables, pivot charts, and data validation."
+        },
+        {
+          "title": "Module 3: What-If Analysis",
+          "description": "Goal seek, solver, and scenario manager."
+        },
+        {
+          "title": "Module 4: Automation Basics",
+          "description": "Recording macros and basic VBA to automate repetitive tasks."
+        }
+      ]
     },
     {
       "slug": "frontend-development",
@@ -346,7 +500,10 @@
           "description": "Benefit from insights into industry best practices and trends. Stay updated with the latest advancements in frontend development, ensuring that your skills remain current and in-demand. Guest lectures, case studies, and discussions with industry professionals provide valuable perspectives, preparing you to excel in a competitive job market."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -369,7 +526,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: HTML5 & CSS3",
+          "description": "Semantic markup, responsive design, Flexbox, and Grid."
+        },
+        {
+          "title": "Module 2: JavaScript Essentials",
+          "description": "DOM manipulation, ES6+ features, and asynchronous programming."
+        },
+        {
+          "title": "Module 3: React.js Fundamentals",
+          "description": "Components, props, state, hooks, and React Router."
+        },
+        {
+          "title": "Module 4: Capstone Project",
+          "description": "Build a fully responsive, dynamic web application from scratch."
+        }
+      ]
     },
     {
       "slug": "data-analytics",
@@ -399,7 +574,10 @@
           "description": "Solve real-world business problems through capstone projects using actual datasets. Build a professional portfolio demonstrating your ability to handle complete analytics workflows from data cleaning to insight generation."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -422,7 +600,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Data Foundations",
+          "description": "Understanding data types, statistics, and basic SQL."
+        },
+        {
+          "title": "Module 2: Python for Data",
+          "description": "Using Pandas and NumPy for data cleaning and manipulation."
+        },
+        {
+          "title": "Module 3: Data Visualization",
+          "description": "Creating dashboards with Tableau and Power BI."
+        },
+        {
+          "title": "Module 4: Capstone Analysis",
+          "description": "End-to-end data analysis project on a real-world dataset."
+        }
+      ]
     },
     {
       "slug": "generative-ai",
@@ -479,7 +675,25 @@
         }
       ],
       "inDemand": false,
-      "inTrending": true
+      "inTrending": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Intro to GenAI",
+          "description": "Understanding LLMs, transformers, and prompt engineering."
+        },
+        {
+          "title": "Module 2: API Integration",
+          "description": "Connecting to OpenAI and HuggingFace APIs."
+        },
+        {
+          "title": "Module 3: Application Building",
+          "description": "Building chatbots and content generators using LangChain."
+        },
+        {
+          "title": "Module 4: GenAI Project",
+          "description": "Deploy a custom AI application tailored to a specific business need."
+        }
+      ]
     },
     {
       "slug": "backend-development",
@@ -509,7 +723,10 @@
           "description": "Gain insights into industry best practices and trends in backend development. Stay updated with the latest advancements in server-side technologies, databases, and cloud services, ensuring your skills are current and in high demand."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -532,7 +749,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Server Basics",
+          "description": "Node.js environment, NPM, and basic server creation."
+        },
+        {
+          "title": "Module 2: Express Framework",
+          "description": "Routing, middleware, and RESTful API design."
+        },
+        {
+          "title": "Module 3: Database Integration",
+          "description": "Connecting to MongoDB/PostgreSQL and basic CRUD operations."
+        },
+        {
+          "title": "Module 4: Authentication & Security",
+          "description": "Implementing JWT, hashing passwords, and securing endpoints."
+        }
+      ]
     },
     {
       "slug": "buisness-intelligence-using-powerbi",
@@ -562,7 +797,10 @@
           "description": "Develop skills to connect, transform, and visualize data from multiple sources. Acquire the ability to gather and clean data from different platforms and present it in a cohesive, impactful way."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -585,7 +823,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Data Connection",
+          "description": "Importing data from various sources into Power BI."
+        },
+        {
+          "title": "Module 2: Data Transformation",
+          "description": "Using Power Query to clean and shape data."
+        },
+        {
+          "title": "Module 3: DAX Fundamentals",
+          "description": "Writing basic Data Analysis Expressions for calculated columns and measures."
+        },
+        {
+          "title": "Module 4: Dashboard Creation",
+          "description": "Designing interactive reports and publishing to Power BI Service."
+        }
+      ]
     },
     {
       "slug": "ui-ux-designing",
@@ -615,7 +871,10 @@
           "description": "Visual Design Fundamentals. Explore visual design principles, including color theory, typography, and layout, to create aesthetically pleasing interfaces."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -638,7 +897,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: UX Principles",
+          "description": "User research, personas, and user journey mapping."
+        },
+        {
+          "title": "Module 2: Wireframing",
+          "description": "Creating low-fidelity wireframes and information architecture."
+        },
+        {
+          "title": "Module 3: Visual Design",
+          "description": "Typography, color theory, and UI component design in Figma."
+        },
+        {
+          "title": "Module 4: Prototyping & Testing",
+          "description": "Building interactive prototypes and conducting usability tests."
+        }
+      ]
     },
     {
       "slug": "graphic-designing",
@@ -668,7 +945,10 @@
           "description": "Build a professional portfolio showcasing your projects to impress potential employers or clients. Work on real-world projects to gain valuable experience and apply your newly learned design skills effectively."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -696,7 +976,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Design Fundamentals",
+          "description": "Color theory, typography, and composition rules."
+        },
+        {
+          "title": "Module 2: Adobe Photoshop",
+          "description": "Image editing, manipulation, and creating digital composites."
+        },
+        {
+          "title": "Module 3: Adobe Illustrator",
+          "description": "Vector graphics, logo design, and branding materials."
+        },
+        {
+          "title": "Module 4: Portfolio Project",
+          "description": "Develop a complete brand identity package."
+        }
+      ]
     },
     {
       "slug": "learn-devops-cloud-services",
@@ -726,7 +1024,10 @@
           "description": "Discover the power of Infrastructure as Code with tools like Terraform to manage and provision cloud infrastructure."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -749,7 +1050,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Linux & Git",
+          "description": "Command-line basics, shell scripting, and version control."
+        },
+        {
+          "title": "Module 2: Containerization",
+          "description": "Docker fundamentals, creating images, and Docker Compose."
+        },
+        {
+          "title": "Module 3: CI/CD Pipelines",
+          "description": "Setting up automated build and deployment pipelines."
+        },
+        {
+          "title": "Module 4: Cloud Infrastructure",
+          "description": "Introduction to AWS/Azure and basic deployment strategies."
+        }
+      ]
     },
     {
       "slug": "learn-project-management",
@@ -779,7 +1098,10 @@
           "description": "Explore Agile methodologies to adapt quickly to changes, improve team collaboration, and deliver better outcomes."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -802,7 +1124,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: PM Frameworks",
+          "description": "Understanding Agile, Scrum, and Waterfall methodologies."
+        },
+        {
+          "title": "Module 2: Project Planning",
+          "description": "Defining scope, creating WBS, and estimating timelines."
+        },
+        {
+          "title": "Module 3: Risk & Resource Mgmt",
+          "description": "Identifying risks, allocation resources, and budget tracking."
+        },
+        {
+          "title": "Module 4: Execution & Closure",
+          "description": "Monitoring progress, stakeholder communication, and project handover."
+        }
+      ]
     },
     {
       "slug": "hardware-networking",
@@ -832,7 +1172,10 @@
           "description": "Understand the basics of IP addressing, subnetting, and their applications in network setup. Participate in practical lab exercises to apply the concepts learned and reinforce hands-on skills."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -855,7 +1198,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Fundamentals",
+          "description": "Introduction to core concepts of Technology."
+        },
+        {
+          "title": "Module 2: Core Skills",
+          "description": "Hands-on practice with industry-standard tools and techniques."
+        },
+        {
+          "title": "Module 3: Advanced Topics",
+          "description": "Deep dive into specialized areas and complex problem-solving."
+        },
+        {
+          "title": "Module 4: Final Project",
+          "description": "Build a real-world portfolio project from scratch."
+        }
+      ]
     },
     {
       "slug": "retail-management",
@@ -885,7 +1246,10 @@
           "description": "Understand merchandising strategies to create attractive in-store displays that capture customer attention and boost sales. Learn how to leverage data analytics to make informed business decisions and improve retail performance."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -908,7 +1272,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Fundamentals",
+          "description": "Introduction to core concepts of Finance."
+        },
+        {
+          "title": "Module 2: Core Skills",
+          "description": "Hands-on practice with industry-standard tools and techniques."
+        },
+        {
+          "title": "Module 3: Advanced Topics",
+          "description": "Deep dive into specialized areas and complex problem-solving."
+        },
+        {
+          "title": "Module 4: Final Project",
+          "description": "Build a real-world portfolio project from scratch."
+        }
+      ]
     },
     {
       "slug": "mobile-app-development",
@@ -938,7 +1320,10 @@
           "description": "Get familiar with Git for version control, enabling seamless collaboration on app development projects. Learn the end-to-end process of deploying your mobile apps to Google Play Store and Apple App Store"
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -961,7 +1346,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Fundamentals",
+          "description": "Introduction to core concepts of Technology."
+        },
+        {
+          "title": "Module 2: Core Skills",
+          "description": "Hands-on practice with industry-standard tools and techniques."
+        },
+        {
+          "title": "Module 3: Advanced Topics",
+          "description": "Deep dive into specialized areas and complex problem-solving."
+        },
+        {
+          "title": "Module 4: Final Project",
+          "description": "Build a real-world portfolio project from scratch."
+        }
+      ]
     },
     {
       "slug": "food-processing",
@@ -991,7 +1394,10 @@
           "description": "Engage in practical sessions to develop hands-on experience with food processing equipment and procedures."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -1014,7 +1420,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Fundamentals",
+          "description": "Introduction to core concepts of Skill."
+        },
+        {
+          "title": "Module 2: Core Skills",
+          "description": "Hands-on practice with industry-standard tools and techniques."
+        },
+        {
+          "title": "Module 3: Advanced Topics",
+          "description": "Deep dive into specialized areas and complex problem-solving."
+        },
+        {
+          "title": "Module 4: Final Project",
+          "description": "Build a real-world portfolio project from scratch."
+        }
+      ]
     },
     {
       "slug": "fullstack-web-development",
@@ -1044,7 +1468,10 @@
           "description": "Get hands-on experience with popular frameworks like React to build dynamic, single-page applications. Build real-world projects throughout the course, developing a comprehensive portfolio to showcase your skills."
         }
       ],
-      "price": { "original": 89000, "discountedPrice": 75999 },
+      "price": {
+        "original": 89000,
+        "discountedPrice": 75999
+      },
       "features": [
         {
           "name": "Language",
@@ -1067,7 +1494,25 @@
           "icon": "BuildingLibraryIcon"
         }
       ],
-      "inDemand": true
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Fundamentals",
+          "description": "Introduction to core concepts of Technology."
+        },
+        {
+          "title": "Module 2: Core Skills",
+          "description": "Hands-on practice with industry-standard tools and techniques."
+        },
+        {
+          "title": "Module 3: Advanced Topics",
+          "description": "Deep dive into specialized areas and complex problem-solving."
+        },
+        {
+          "title": "Module 4: Final Project",
+          "description": "Build a real-world portfolio project from scratch."
+        }
+      ]
     },
     {
       "slug": "ai-agents-autonomic-workflows",
@@ -1124,7 +1569,25 @@
         }
       ],
       "inDemand": true,
-      "inTrending": true
+      "inTrending": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Fundamentals",
+          "description": "Introduction to core concepts of Technology."
+        },
+        {
+          "title": "Module 2: Core Skills",
+          "description": "Hands-on practice with industry-standard tools and techniques."
+        },
+        {
+          "title": "Module 3: Advanced Topics",
+          "description": "Deep dive into specialized areas and complex problem-solving."
+        },
+        {
+          "title": "Module 4: Final Project",
+          "description": "Build a real-world portfolio project from scratch."
+        }
+      ]
     }
   ]
 }

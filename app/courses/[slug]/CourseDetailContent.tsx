@@ -170,7 +170,7 @@ const CourseInfoBlock = ({ courseDetails }: any) => {
 
   const items = [
     { label: "Duration", value: durationMonths, icon: "⏱" },
-    { label: "Schedule", value: "Mon – Sat  ·  9:00 AM – 6:00 PM", icon: "📅" },
+    { label: "Schedule", value: "Mon – Fri  ·  10AM – 4PM", icon: "📅" },
     { label: "Mode", value: "In-Person (Dimapur)", icon: "🏫" },
   ];
 
@@ -359,6 +359,108 @@ const RelatedCoursesGrid = ({ relatedCourses }: any) => {
   );
 };
 
+const CourseCurriculum = ({ courseDetails }: any) => {
+  const modules = courseDetails.curriculum || [
+    { title: "Module 1: Foundations", description: `Introduction to core concepts of ${courseDetails.category || "the course"}.` },
+    { title: "Module 2: Core Skills", description: "Hands-on practice with industry-standard tools and techniques." },
+    { title: "Module 3: Advanced Topics", description: "Deep dive into specialized areas and complex problem-solving." },
+    { title: "Module 4: Final Project", description: "Build a real-world portfolio project from scratch." },
+  ];
+
+  return (
+    <section className="py-24 bg-[#FAFAFA]">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <span className="text-[10px] font-black text-brandpurple uppercase tracking-[0.4em] mb-4 block">Curriculum</span>
+        <h2 className="text-4xl font-black text-[#1B1C1E] tracking-tight uppercase mb-16">
+          What You'll <span className="text-brandpurple">Learn</span>
+        </h2>
+
+        <div className="space-y-6">
+          {modules.map((mod: any, idx: number) => (
+            <div key={idx} className="bg-white border border-neutral-100 p-8 rounded-3xl shadow-sm flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-all group">
+              <div className="w-12 h-12 bg-neutral-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-brandpurple group-hover:text-white transition-colors">
+                <span className="font-black text-lg">{idx + 1}</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#1B1C1E] mb-2">{mod.title}</h3>
+                <p className="text-neutral-500">{mod.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CourseInstructor = () => (
+  <section className="py-24 bg-white border-y border-neutral-100">
+    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="bg-neutral-50 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brandpurple/5 rounded-full blur-[80px]" />
+
+        <div className="w-40 h-40 md:w-56 md:h-56 shrink-0 relative">
+          <div className="absolute inset-0 bg-brandpurple rounded-full rotate-6 scale-105" />
+          <img src="https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu" alt="Instudia Expert Instructor" className="w-full h-full object-cover rounded-full relative z-10 border-4 border-white shadow-xl bg-white" />
+        </div>
+
+        <div className="relative z-10 flex-1 text-center md:text-left">
+          <span className="text-[10px] font-black text-brandpurple uppercase tracking-[0.4em] mb-4 block">Meet Your Mentor</span>
+          <h3 className="text-3xl font-black text-[#1B1C1E] uppercase tracking-tight mb-2">Industry Expert</h3>
+          <p className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-6">Certified Professional</p>
+          <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl">
+            Learn directly from seasoned professionals who bring years of real-world experience into the classroom.
+            Our instructors don't just teach theory—they prepare you for the challenges of the modern workplace with practical insights and hands-on guidance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const CourseFAQs = ({ courseDetails }: any) => {
+  const faqs = [
+    {
+      question: `What will I learn in the ${courseDetails.fullTitle} course?`,
+      answer: courseDetails.courseHightlight || `You will gain practical skills in ${courseDetails.fullTitle} with hands-on projects.`,
+    },
+    {
+      question: `Is the ${courseDetails.fullTitle} training practical or theoretical?`,
+      answer: `Our ${courseDetails.fullTitle} course is highly practical. You will work on hands-on assignments and projects to ensure you are job-ready.`,
+    },
+    {
+      question: `Does instudia provide a certificate?`,
+      answer: `Yes, instudia provides an industry-recognized certificate upon successful completion of the course. We are ISO certified and affiliated with AISECT and MSME.`,
+    },
+    {
+      question: `What are the career opportunities?`,
+      answer: `Graduates can explore various roles in IT, finance, management or creative fields. We also offer career placement support in Nagaland and beyond.`,
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-[#FAFAFA]">
+      <div className="mx-auto max-w-4xl px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <span className="text-[10px] font-black text-brandpurple uppercase tracking-[0.4em] mb-4 block">Got Questions?</span>
+          <h2 className="text-4xl font-black text-[#1B1C1E] tracking-tight uppercase">
+            Frequently Asked <span className="text-brandpurple">Questions</span>
+          </h2>
+        </div>
+
+        <div className="space-y-6">
+          {faqs.map((faq, idx) => (
+            <div key={idx} className="bg-white border border-neutral-100 p-8 rounded-3xl shadow-sm">
+              <h3 className="text-lg font-bold text-[#1B1C1E] mb-3">{faq.question}</h3>
+              <p className="text-neutral-500">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function CourseDetailContent({ courseDetails, relatedCourses }: any) {
   return (
     <>
@@ -366,6 +468,8 @@ export default function CourseDetailContent({ courseDetails, relatedCourses }: a
       <CourseStats features={courseDetails.features} />
       <CourseInfoBlock courseDetails={courseDetails} />
       <BentoCurriculum fourReasons={courseDetails.fourReasons} />
+      <CourseCurriculum courseDetails={courseDetails} />
+      <CourseFAQs courseDetails={courseDetails} />
       <FixedMarquee />
       <EnquiryForm courseName={courseDetails.fullTitle} />
       <section className="py-32 bg-white relative">
