@@ -10,6 +10,7 @@ author: Kivigho Kinimi
 authorRole: "IT Faculty, instudia"
 authorPhoto: "https://images.unsplash.com/photo-1656337789708-cdf37b07112d?q=80&w=200&auto=format&fit=crop"
 coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80"
+ogImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80"
 ---
 
 ## Why Digital Marketing Is the Great Equaliser

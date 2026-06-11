@@ -10,6 +10,7 @@ author: instudia
 authorRole: "IT Skill Training Center in Nagaland"
 authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
 coverImage: "https://ik.imagekit.io/dxffek9yf/blogman/blockbuster-vs-netflix/netflix-services.webp?updatedAt=1697875866486"
+ogImage: "https://ik.imagekit.io/dxffek9yf/blogman/blockbuster-vs-netflix/netflix-services.webp?updatedAt=1697875866486"
 ---
 
 ## The Fall of a Giant

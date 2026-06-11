@@ -10,6 +10,7 @@ author: instudia Technical Faculty
 authorRole: "Senior Technical Lead, instudia"
 authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
 coverImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+ogImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
 ---
 
 ## The Elephant in the Room

@@ -191,6 +191,7 @@ export function loadPost(filename: string): Post {
     authorPhoto: data.authorPhoto,
     authorBio: data.authorBio,
     coverImage: data.coverImage,
+    ogImage: data.ogImage,
     body: parseBody(content),
   };
 }

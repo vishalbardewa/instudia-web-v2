@@ -11,6 +11,7 @@ authorRole: "Student, instudia"
 authorBio: "Marzulu is a backend developer and a hackathon winner who studied at Instudia Nagaland. He is passionate about building real-world projects and sharing his knowledge with others."
 authorPhoto: "https://ik.imagekit.io/oytjocebw/authors/20260508_142834(0).jpg"
 coverImage: "https://ik.imagekit.io/oytjocebw/authors/blog-marzulu.png"
+ogImage: "https://ik.imagekit.io/oytjocebw/authors/blog-marzulu.png"
 ---
 
 ## Wait, I Won *What*?

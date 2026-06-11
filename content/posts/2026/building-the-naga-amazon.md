@@ -10,6 +10,7 @@ author: Daniel Changkija
 authorRole: "Director, instudia"
 authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
 coverImage: "https://images.unsplash.com/photo-1624984608976-8a7358d25bce?q=80&w=2671&auto=format&fit=crop"
+ogImage: "https://images.unsplash.com/photo-1624984608976-8a7358d25bce?q=80&w=2671&auto=format&fit=crop"
 ---
 
 ## The "Pin Code Not Found" Problem

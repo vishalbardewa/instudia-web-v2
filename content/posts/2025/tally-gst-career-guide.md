@@ -10,6 +10,7 @@ author: Niutoli V
 authorRole: "Accounting Faculty, instudia"
 authorPhoto: "https://images.unsplash.com/photo-1678733527538-845ebdc2f6b8?q=80&w=200&auto=format&fit=crop"
 coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80"
+ogImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80"
 ---
 
 ## Why Tally Skills Are Always in Demand

@@ -33,6 +33,7 @@ export interface Post {
   /** Optional short biography shown below the article */ 
   authorBio?: string;
   coverImage: string;
+  ogImage?: string;
   body: Section[];
 }
 

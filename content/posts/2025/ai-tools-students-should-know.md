@@ -10,6 +10,7 @@ author: Vishal Bardewa
 authorRole: "Technical Advisor, instudia"
 authorPhoto: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop"
 coverImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
+ogImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
 ---
 
 ## The Productivity Gap Is Real
