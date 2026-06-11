@@ -7,7 +7,7 @@ categoryColor: bg-bluehue/10 text-blue-700
 date: "2026-06-11"
 readTime: 4 min read
 author: Daniel Changkija
-authorRole: "Director & Technical Advisor, instudia"
+authorRole: "Director, instudia"
 authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
 coverImage: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/ai-seminar-2026.png"
 ---
