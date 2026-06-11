@@ -84,6 +84,16 @@ function parseBody(markdown: string): Section[] {
       continue;
     }
 
+    if (trimmed.startsWith("* ")) {
+      const items: string[] = [];
+      while (i < lines.length && lines[i].trimEnd().startsWith("* ")) {
+        items.push(lines[i].trimEnd().slice(2).trim());
+        i++;
+      }
+      current.items.push({ type: "links", items });
+      continue;
+    }
+
     if (/^\d+\. /.test(trimmed)) {
       const items: string[] = [];
       while (i < lines.length && /^\d+\. /.test(lines[i].trimEnd())) {

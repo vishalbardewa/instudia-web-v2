@@ -218,6 +218,35 @@ export default async function BlogPostPage({ params }: Props) {
                             </h3>
                           );
                         }
+                        if (item.type === "links") {
+                          return (
+                            <div key={ii} className="my-6 flex flex-col gap-2">
+                              {item.items.map((b, bi) => (
+                                <div key={bi} className="group border border-black bg-white p-2 sm:px-3 sm:py-2 hover:bg-neutral-50 transition-all cursor-pointer relative">
+                                  <ReactMarkdown 
+                                    remarkPlugins={[remarkGfm, remarkMath]} 
+                                    rehypePlugins={[rehypeKatex]}
+                                    components={{
+                                      p: ({ children }) => <div className="text-xs sm:text-sm font-semibold text-black tracking-tight m-0 opacity-80 group-hover:opacity-100 transition-opacity">{children}</div>,
+                                      a: ({ href, children }) => (
+                                        <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 before:absolute before:inset-0">
+                                          <span className="flex-1 group-hover:text-[#C21BFF] transition-colors line-clamp-1 sm:line-clamp-none">{children}</span>
+                                          <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 border border-black flex items-center justify-center group-hover:bg-[#C21BFF] group-hover:text-white transition-colors bg-white">
+                                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            </svg>
+                                          </span>
+                                        </a>
+                                      )
+                                    }}
+                                  >
+                                    {b}
+                                  </ReactMarkdown>
+                                </div>
+                              ))}
+                            </div>
+                          );
+                        }
                         if (item.type === "bullets") {
                           return (
                             <ul key={ii} className="space-y-4 my-10">
