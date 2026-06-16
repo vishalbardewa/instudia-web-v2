@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Button } from "../atom/Button";
 import { FadeIn, FadeInStagger } from "../atom/FadeIn";
 
+import FifaFixturesWidget from "./FifaFixturesWidget";
+
 export default function LandingTop() {
   const heroImages = [
     "https://images.unsplash.com/photo-1649957909636-10a8b37d052e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -37,35 +39,44 @@ export default function LandingTop() {
                   />
                   <div className="absolute inset-0 bg-gray-600 mix-blend-multiply" />
                 </div>
-                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    <span className="block text-white">
-                      Turn your potential
-                    </span>
-                    <span className="block text-slate-300">
-                      into a paycheck
-                    </span>
-                  </h1>
-                  <p className="mx-auto mt-6 max-w-lg text-center text-xl text-slate-300 sm:max-w-3xl">
-                    Courses in tech, design &amp; business in Dimapur, Nagaland
-                  </p>
-                  <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-                    <div className="flex justify-center gap-3 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                      <Button
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://tally.so/r/wvebpA"
-                        className="flex items-center justify-center border border-transparent bg-black px-4 py-3 text-base font-medium text-black shadow-sm hover:bg-white hover:text-black sm:px-8"
-                      >
-                        Contact Us
-                      </Button>
-                      <Button
-                        className="flex items-center justify-center border border-transparent bg-[#FFE01B] px-4 py-3 text-base font-medium !text-black shadow-sm sm:px-8 animate-pulse"
-                        href="/courses"
-                      >
-                        Explore Courses
-                      </Button>
+                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
+                  <div className="flex-1 text-center lg:text-left">
+                    <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                      <span className="block text-white">
+                        Turn your potential
+                      </span>
+                      <span className="block text-slate-300">
+                        into a paycheck
+                      </span>
+                    </h1>
+                    <p className="mx-auto lg:mx-0 mt-6 max-w-lg text-xl text-slate-300 sm:max-w-3xl">
+                      Courses in tech, design &amp; business in Dimapur, Nagaland
+                    </p>
+                    <div className="mx-auto lg:mx-0 mt-10 max-w-sm sm:flex sm:max-w-none lg:justify-start justify-center">
+                      <div className="flex justify-center gap-3 sm:mx-auto lg:mx-0 sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
+                        <Button
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://tally.so/r/wvebpA"
+                          className="flex items-center justify-center border border-transparent bg-black px-4 py-3 text-base font-medium text-black shadow-sm hover:bg-white hover:text-black sm:px-8"
+                        >
+                          Contact Us
+                        </Button>
+                        <Button
+                          className="flex items-center justify-center border border-transparent bg-[#FFE01B] px-4 py-3 text-base font-medium !text-black shadow-sm sm:px-8 animate-pulse"
+                          href="/courses"
+                        >
+                          Explore Courses
+                        </Button>
+                      </div>
                     </div>
+                  </div>
+                  
+                  {/* FIFA World Cup Widget */}
+                  <div className="flex-1 w-full max-w-lg relative z-10">
+                    <FadeIn>
+                      <FifaFixturesWidget />
+                    </FadeIn>
                   </div>
                 </div>
               </div>
