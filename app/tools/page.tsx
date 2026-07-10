@@ -129,6 +129,16 @@ const tools: ToolProps[] = [
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-7.png"
   },
+  {
+    name: "Interactive Flashcards",
+    href: "/tools/flashcards",
+    description: "Create and study interactive flashcards using Markdown with a swipeable, Tinder-like interface.",
+    style: "flourescent",
+    statusIcon: "🗂️",
+    statusMessage: "New",
+    category: "student",
+    imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-4.png"
+  },
 ]
 
 const FAQ_DATA = [
