@@ -63,8 +63,8 @@ export default function FlashcardPrintView({ cards, onGoBack }: FlashcardPrintVi
     return mirrored;
   };
 
-  const getDynamicFrontClass = (text: string) => {
-    const len = text.length;
+  const getDynamicFrontClass = (text?: string) => {
+    const len = (text || '').length;
     const isTight = cardsPerPage >= 6;
     if (len < 30) return isTight ? 'prose-xl text-xl' : 'prose-2xl text-2xl';
     if (len < 80) return isTight ? 'prose-lg text-lg' : 'prose-xl text-xl';
@@ -72,8 +72,8 @@ export default function FlashcardPrintView({ cards, onGoBack }: FlashcardPrintVi
     return isTight ? 'prose-sm text-sm' : 'prose-base text-base';
   };
 
-  const getDynamicBackClass = (text: string) => {
-    const len = text.length;
+  const getDynamicBackClass = (text?: string) => {
+    const len = (text || '').length;
     const isTight = cardsPerPage >= 6;
     if (len < 100) return isTight ? 'prose-sm' : 'prose-base';
     if (len < 300) return isTight ? 'prose-sm [&_*]:text-xs [&_*]:leading-snug' : 'prose-sm';
@@ -174,7 +174,7 @@ export default function FlashcardPrintView({ cards, onGoBack }: FlashcardPrintVi
                           <div className={`w-full mt-4 prose prose-p:m-0 max-w-none text-center ${getDynamicFrontClass(card.front)}`}>
                             <div className="font-black text-black print:text-black uppercase tracking-tighter">
                               <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-                                {card.front}
+                                {card.front || ''}
                               </ReactMarkdown>
                             </div>
                           </div>
@@ -227,7 +227,7 @@ export default function FlashcardPrintView({ cards, onGoBack }: FlashcardPrintVi
                           <div className="w-full mt-6 flex-1 overflow-y-auto brutalist-scrollbar flex items-center justify-start flex-col">
                             <div className={`prose max-w-none text-left print:text-black font-bold text-black w-full ${getDynamicBackClass(card.back)}`}>
                               <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-                                {card.back}
+                                {card.back || ''}
                               </ReactMarkdown>
                             </div>
                           </div>

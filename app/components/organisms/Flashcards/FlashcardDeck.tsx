@@ -168,7 +168,7 @@ export default function FlashcardDeck({ cards: initialCards, onFinished, onGoBac
               Queue
             </div>
             <h2 className="text-3xl lg:text-4xl font-black text-black leading-tight uppercase blur-[2px] opacity-40">
-              {nextCard.front}
+              {nextCard.front || ''}
             </h2>
           </motion.div>
         )}
@@ -221,7 +221,7 @@ export default function FlashcardDeck({ cards: initialCards, onFinished, onGoBac
                 </div>
                 <div className="text-3xl lg:text-4xl font-black text-black leading-[1] uppercase tracking-tighter select-none prose prose-2xl prose-p:m-0 max-w-none text-center">
                   <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-                    {activeCard.front}
+                    {activeCard.front || ''}
                   </ReactMarkdown>
                 </div>
                 <div className="absolute bottom-8 text-[10px] font-black tracking-[0.2em] text-black uppercase border-2 border-black px-4 py-2 animate-pulse bg-[#FFE01B]">
@@ -239,7 +239,7 @@ export default function FlashcardDeck({ cards: initialCards, onFinished, onGoBac
                 </div>
                 <div className="prose prose-invert max-w-none text-left w-full h-full flex-1 font-bold select-none text-white">
                   <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-                    {activeCard.back}
+                    {activeCard.back || ''}
                   </ReactMarkdown>
                 </div>
                 <div className="mt-4 text-white text-[10px] font-black uppercase tracking-[0.1em] text-center w-full pt-6 border-t-2 border-white opacity-80">
