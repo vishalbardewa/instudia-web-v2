@@ -132,7 +132,7 @@ const tools: ToolProps[] = [
   {
     name: "Interactive Flashcards",
     href: "/tools/flashcards",
-    description: "Create and study interactive flashcards using Markdown with a swipeable, Tinder-like interface.",
+    description: "Create and study interactive flashcards using Markdown with a swipeable, Deck-like interface.",
     style: "flourescent",
     statusIcon: "🗂️",
     statusMessage: "New",
