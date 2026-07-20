@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Button } from "../atom/Button";
 import { FadeIn, FadeInStagger } from "../atom/FadeIn";
 
-import FifaFixturesWidget from "./FifaFixturesWidget";
 
 export default function LandingTop() {
   const heroImages = [
@@ -71,13 +70,7 @@ export default function LandingTop() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* FIFA World Cup Widget */}
-                  <div className="flex-1 w-full max-w-lg relative z-10">
-                    <FadeIn>
-                      <FifaFixturesWidget />
-                    </FadeIn>
-                  </div>
+
                 </div>
               </div>
             </div>

@@ -52,20 +52,7 @@ body {
     scrollbar-width: none;     /* Firefox */
   }
 
-  /* Fifa Widget Scrollbar */
-  .widget-scrollbar::-webkit-scrollbar {
-    width: 6px;
-  }
-  .widget-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .widget-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-  }
-  .widget-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4);
-  }
+
 }
 
 @media print {
