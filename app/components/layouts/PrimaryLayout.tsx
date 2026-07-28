@@ -13,7 +13,6 @@ import { slugs } from "@/app/routes";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import Link from "next/link";
 import { CookieBanner } from "../molecules/CookieBanner";
-import { AdBannerModal } from "../organisms/AdBannerModal";
 import { getActiveFestival } from "@/app/utils/festival";
 import { Confetti, Snowfall, GlowEffects, FestivalDoodle, EasterEggs } from "../atom/FestivalEffects";
 import { clsx } from "clsx";
@@ -208,7 +207,6 @@ function FestivalLayoutContent({
         <WhatsAppWidget />
         <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
         <MasterclassModal />
-        <AdBannerModal />
         <Footer />
         <CookieBanner />
       </div>
