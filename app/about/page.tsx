@@ -6,10 +6,10 @@ import { staff } from "../data/staff";
 
 export const metadata = {
   title:
-    "About instudia — Tech & Skill Institute in Nagaland",
+    "About Us — Tech & Skill Institute in Dimapur",
   description:
     "Learn about instudia — Nagaland's career-first tech institute. Meet our team, our mission, and see how we've helped 500+ students build IT careers.",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: `${AppConfig.canonicalBase}/about` },
   openGraph: {
     title: "About instudia — Dimapur's Career-First Tech Institute",
     description:

@@ -38,14 +38,18 @@ export async function generateMetadata(
   const title = meta.title || `${courseDetails?.fullTitle ?? slug} Course in Dimapur | instudia`;
   const description = meta.description || courseDetails?.courseHightlight || courseDetails?.courseHighlight || `Learn ${courseDetails?.fullTitle ?? slug} in Dimapur. Industry-certified training. Enroll at Instudia, Nagaland.`;
 
+  const pageUrl = `${AppConfig.canonicalBase}/courses/${slug}`;
+
   return {
     ...meta,
     title,
     description,
+    metadataBase: new URL(AppConfig.canonicalBase),
     openGraph: {
       ...(meta.openGraph ?? {}),
       title: meta.openGraph?.title || title,
       description: meta.openGraph?.description || description,
+      url: pageUrl,
       ...(courseImage
         ? {
             images: [
@@ -65,7 +69,7 @@ export async function generateMetadata(
       description: meta.twitter?.description || description,
     },
     alternates: {
-      canonical: `/courses/${slug}`,
+      canonical: pageUrl,
     },
   };
 }

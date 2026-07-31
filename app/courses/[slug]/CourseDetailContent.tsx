@@ -428,7 +428,7 @@ const CourseFAQs = ({ courseDetails }: any) => {
   const faqs = [
     {
       question: `What will I learn in the ${courseDetails.fullTitle} course?`,
-      answer: courseDetails.courseHightlight || `You will gain practical skills in ${courseDetails.fullTitle} with hands-on projects.`,
+      answer: `You will gain comprehensive, practical experience in ${courseDetails.fullTitle}. The course covers core concepts, hands-on software tools, real-world projects, and industry workflows to build job-ready skills.`,
     },
     {
       question: `Is the ${courseDetails.fullTitle} training practical or theoretical?`,

@@ -181,7 +181,7 @@ const cards = [
 ];
 
 export const metadata = {
-  title: "Best Computer Courses in Dimapur, Nagaland | Instudia",
+  title: "Best Computer Courses in Dimapur, Nagaland",
   description:
     "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
   openGraph: {
@@ -189,7 +189,7 @@ export const metadata = {
       "Best Computer Courses & Skill Training in Dimapur",
     description:
       "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",
-    url: `${AppConfig.canonicalBase}`,
+    url: AppConfig.canonicalBase,
     locale: AppConfig.locale,
     siteName: AppConfig.site_name,
     images: [
@@ -218,7 +218,7 @@ export const metadata = {
   },
   metadataBase: new URL(AppConfig.canonicalBase),
   alternates: {
-    canonical: "/",
+    canonical: AppConfig.canonicalBase,
   },
 };
 
