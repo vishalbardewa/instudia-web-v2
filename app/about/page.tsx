@@ -28,7 +28,7 @@ export const metadata = {
       },
     ],
   },
-  metadataBase: new URL("https://instudianagaland.com"),
+  metadataBase: new URL(AppConfig.canonicalBase),
 };
 
 const jsonLd = {

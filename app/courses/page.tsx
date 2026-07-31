@@ -40,7 +40,7 @@ export const metadata = {
   alternates: {
     canonical: "/courses",
   },
-  metadataBase: new URL("https://instudianagaland.com"),
+  metadataBase: new URL(AppConfig.canonicalBase),
 };
 
 function Courses() {

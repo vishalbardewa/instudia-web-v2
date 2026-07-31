@@ -216,7 +216,7 @@ export const metadata = {
       "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Enroll now!",
     card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
   },
-  metadataBase: new URL("https://instudianagaland.com"),
+  metadataBase: new URL(AppConfig.canonicalBase),
   alternates: {
     canonical: "/",
   },

@@ -32,6 +32,13 @@ export function LocalBusinessSchema() {
       "https://www.linkedin.com/company/instudia-trainings",
       "https://www.youtube.com/@instudia",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "128",
+      bestRating: "5",
+      worstRating: "1",
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

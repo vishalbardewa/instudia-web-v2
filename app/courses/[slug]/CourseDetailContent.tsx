@@ -401,7 +401,13 @@ const CourseInstructor = () => (
 
         <div className="w-40 h-40 md:w-56 md:h-56 shrink-0 relative">
           <div className="absolute inset-0 bg-brandpurple rounded-full rotate-6 scale-105" />
-          <img src="https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu" alt="Instudia Expert Instructor" className="w-full h-full object-cover rounded-full relative z-10 border-4 border-white shadow-xl bg-white" />
+          <Image
+            src="https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu"
+            alt="Instudia Expert Industry Mentor in Dimapur, Nagaland"
+            width={224}
+            height={224}
+            className="w-full h-full object-cover rounded-full relative z-10 border-4 border-white shadow-xl bg-white"
+          />
         </div>
 
         <div className="relative z-10 flex-1 text-center md:text-left">

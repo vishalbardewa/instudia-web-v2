@@ -15,7 +15,7 @@ const sections = [
     content: [
       {
         term: "SERVICE",
-        def: "The https://instudianagaland.com/ website operated by instudia.",
+        def: "The https://www.instudianagaland.com/ website operated by instudia.",
       },
       {
         term: "PERSONAL DATA",

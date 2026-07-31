@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
                   <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                        <img src="https://instudianagaland.com/assets/images/instudia-dark-logo.png" alt="Instudia" style="height:24px; display:block;" />
+                        <img src="https://www.instudianagaland.com/assets/images/instudia-dark-logo.png" alt="Instudia" style="height:24px; display:block;" />
                       </td>
                       <td align="right" style="font-size:12px; font-weight:800; color:#ffffff; letter-spacing:0.04em;">SUBMISSION ALERT</td>
                     </tr>
