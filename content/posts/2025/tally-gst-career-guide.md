@@ -21,7 +21,7 @@ Walk into any business district and ask — nearly every shop, clinic, or firm n
 
 ## What the Course Covers
 
-Our 3-month Tally + GST program is built for practical, on-the-job readiness:
+Our 3-month [Tally Prime & GST Program](/courses/tally) and dedicated [GST Filing Track](/courses/gst) are built for practical, on-the-job readiness:
 
 - GST fundamentals — types, slabs, input tax credit, filing
 - Tally Prime — company setup, vouchers, ledgers, journals
@@ -31,6 +31,8 @@ Our 3-month Tally + GST program is built for practical, on-the-job readiness:
 
 ## Career Outcomes
 
-Graduates from our accounting program typically find placement as junior accountants, billing executives, or GST assistants. Starting salaries in Dimapur range from ₹8,000–₹18,000/month, with significant scale as experience grows.
+Graduates from our accounting program typically find placement as junior accountants, billing executives, or GST assistants. Read how our graduates build accounting retainers in [From Student to Freelancer in Dimapur](/blog/instudia-graduates-freelancing-dimapur) and explore our overview of [top IT and accounting careers in Nagaland](/blog/best-it-careers-nagaland-2025).
 
-Many students also go on to support their family businesses or launch accounting freelance practices.
+Starting salaries in Dimapur range from ₹8,000–₹18,000/month, with significant scale as experience grows. Check regional benchmarks using our [Nagaland Tech Salary Calculator](/tools/salary-insights) or optimize your CV with our [ATS Resume Analyzer](/tools/ats-analyzer).
+
+Many students also go on to support their family businesses or launch accounting freelance practices. Feel free to explore [our course catalog](/courses) or [contact our admissions office](/contact).

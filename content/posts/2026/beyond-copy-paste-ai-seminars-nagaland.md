@@ -45,17 +45,17 @@ Staring at a blank page is the hardest part of any project or essay. Instead of 
 Ask it: *"I need to write an essay on climate change impacts in Northeast India. Give me 5 unique angles or outlines I could explore."* You still do the research. You still write the words. But the AI just cured your writer's block and saved you two hours of frustration.
 
 ### 3. The Custom Quizmaster
-Want to know if you are actually ready for tomorrow's test? Feed your study notes into an AI and say: *"Act as a strict teacher. Ask me 10 multiple-choice questions based on these notes, one at a time, and correct me if I’m wrong."* This active recall is scientifically proven to be one of the most efficient ways to retain information. 
+Want to know if you are actually ready for tomorrow's test? You can build interactive study decks with our [Free Flashcards Tool](/tools/flashcards), generate summaries with our [Lecture Note Generator](/tools/lecture-note-generator), or organize your timetable using our [AI Study Planner](/tools/study-planner). Feed your study notes into an AI and say: *"Act as a strict teacher. Ask me 10 multiple-choice questions based on these notes, one at a time, and correct me if I’m wrong."* This active recall is scientifically proven to be one of the most efficient ways to retain information. 
 
 ## The Road Ahead
 
-The energy we saw in these schools was electric. Nagaland’s students are sharp, adaptable, and ready for the future. Our goal at Instudia isn’t just to introduce them to new technology, but to show them how to steer it. 
+The energy we saw in these schools was electric. Nagaland’s students are sharp, adaptable, and ready for the future. Our goal at Instudia isn’t just to introduce them to new technology, but to show them how to steer it. Explore our dedicated [Instudia Workshops](/workshops) and our [Generative AI Course](/courses/generative-ai) to see how we bring these tools to life. For a deeper list of practical tools, check out our guide on [essential AI tools students should know](/blog/ai-tools-students-should-know) and our [complete beginner's coding guide](/blog/how-to-learn-coding-guide-beginners).
 
 We are moving into an era where knowing *how to ask the right questions* is more valuable than just memorizing answers. The students who will thrive in the next decade are the ones who treat AI like a co-pilot, not an autopilot. 
 
 To the management, teachers, and students at CHSS, Lewis Academy, Assisi HSS, and every other school welcoming this change—thank you. You’ve shown us that the future of education in our state is incredibly bright. 
 
-Keep learning, keep questioning, and whatever you do... don't just hit `Ctrl+C` and `Ctrl+V`.
+Keep learning, keep questioning, and whatever you do... don't just hit `Ctrl+C` and `Ctrl+V`. Feel free to [contact our team](/contact) to bring an AI workshop to your institution.
 
 **Read more about our recent campus seminars in the local press:**
 * [Morung Express: CHSS hosts seminar on AI integration](https://morungexpress.com/chss-hosts-seminar-on-ai-integration)

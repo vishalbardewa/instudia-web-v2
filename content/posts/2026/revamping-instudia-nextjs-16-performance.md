@@ -120,4 +120,6 @@ By slashing our bundle size and improving our rendering speed, we’ve made our 
 
 If you’re a developer in Nagaland still on Next 14, the water is warm. The jump to 16 is significant, but the performance gains are undeniable. 
 
-**What’s the biggest performance bottleneck you’re facing on your current projects?**
+Want to master modern React, Next.js, and web performance? Check out our [Frontend Development Program](/courses/frontend-development) and [Fullstack Web Development Track](/courses/fullstack-web-development). You can also read our architecture breakdown on [Go backend refactoring](/blog/refactoring-4000-lines-go-2026) or explore our free student tools like the [AI Study Planner](/tools/study-planner).
+
+**What’s the biggest performance bottleneck you’re facing on your current projects?** Feel free to [reach out to our faculty](/contact) with your questions.

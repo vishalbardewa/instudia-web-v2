@@ -35,7 +35,7 @@ We knew an AI could process these administrative tasks in seconds. We knew we co
 
 Initially, we considered building an AI integration layer to sit on top of these existing ERPs. But legacy systems were fundamentally unsuited for AI integration. Bolting modern tech onto a poorly structured database just created more friction. 
 
-True innovation required a completely new foundation. We needed to build an exclusive platform from scratch—an operating system for the modern campus that prioritizes speed, automation, and total efficiency. This meant completely revisiting the UI/UX from the ground up. We designed Acadesx to feel as intuitive, fast, and fluid as the best consumer apps we use every day, ensuring a beautiful experience and a zero learning curve for our staff.
+True innovation required a completely new foundation. We needed to build an exclusive platform from scratch—an operating system for the modern campus that prioritizes speed, automation, and total efficiency. Building a complex SaaS platform like Acadesx reflects the exact practical engineering principles we teach in our [Fullstack Web Development Program](/courses/fullstack-web-development) and [UI/UX Design Course](/courses/ui-ux-designing).
 
 That is how **Acadesx** was born. Here is how we are giving institutions their time back:
 
@@ -50,7 +50,7 @@ That is how **Acadesx** was born. Here is how we are giving institutions their t
 
 ## Reclaim Your Time
 
-We built Acadesx because we believe that educators should be educating, and directors should be directing—not wrestling with archaic software. 
+We built Acadesx because we believe that educators should be educating, and directors should be directing—not wrestling with archaic software. Learn more [about Instudia](/about) and our work with [educational workshops in Nagaland](/workshops).
 
 Whether you run a K-12 school, a university, or a coaching institute, Acadesx is the OS your campus deserves. The best part? You can configure your setup, import your data, and go live in under 48 hours.
 
@@ -58,4 +58,4 @@ We are incredibly excited to announce that Acadesx is transitioning from private
 
 ### Early Bird Offer
 
-We are providing exclusive early bird discounts to forward-thinking institutions who are ready to modernize their campus and reclaim their time. If you want to empower your teachers and streamline your administration, visit us at [acadesx.instudianagaland.com](https://acadesx.instudianagaland.com/) to claim your discount.
+We are providing exclusive early bird discounts to forward-thinking institutions who are ready to modernize their campus and reclaim their time. If you want to empower your teachers and streamline your administration, visit us at [acadesx.instudianagaland.com](https://acadesx.instudianagaland.com/) to claim your discount or [contact our technical team](/contact) directly.

@@ -23,20 +23,22 @@ We see this every day at instudia. Students who finish our digital marketing mod
 
 You don't need to be everywhere. Focus on these channels first:
 
-- Instagram & Facebook — Reels and stories still drive massive organic reach for local businesses
+- Instagram & Facebook — Reels and stories still drive massive organic reach for local businesses when paired with [Graphic Design](/courses/graphic-designing)
 - Google Business Profile — Free listing that shows your business in local search results
 - WhatsApp Business — Direct customer communication and broadcast lists
-- Google Ads — Even ₹200/day can drive meaningful traffic if targeted correctly
+- Google Ads & Analytics — Even ₹200/day can drive meaningful traffic when paired with data tools like [Business Intelligence using PowerBI](/courses/buisness-intelligence-using-powerbi)
 - SEO (Search Engine Optimization) — Long-term strategy to rank for searches like 'best IT course in Dimapur'
 
 ## What You'll Learn at instudia
 
-Our Digital Marketing module takes you from zero to running real campaigns — not just theory. You'll create an actual Instagram content calendar, set up a Google Business listing, and run a small test ad campaign with a real budget.
+Our Digital Marketing module takes you from zero to running real campaigns — not just theory. You'll create an actual Instagram content calendar, set up a Google Business listing, and run a small test ad campaign with a real budget. Read how local software developers are [building the Naga-Amazon](/blog/building-the-naga-amazon).
 
 By the end, you'll have proof of results: engagement data, reach numbers, and campaign screenshots that you can show to clients or employers.
 
 ## Getting Your First Client
 
-The fastest path to your first digital marketing client is your immediate network. Approach a local shop, restaurant, or clinic and offer to manage their Instagram for one month at a discounted rate — or even free — in exchange for a testimonial and portfolio permission.
+The fastest path to your first digital marketing client is your immediate network. Read how instudia students build sustainable income in [From Student to Freelancer in Dimapur](/blog/instudia-graduates-freelancing-dimapur) and explore our guide on [in-demand IT careers in Nagaland](/blog/best-it-careers-nagaland-2025).
 
-One good result leads to referrals. Referrals lead to a sustainable freelance income.
+Approach a local shop, restaurant, or clinic and offer to manage their Instagram for one month at a discounted rate — or even free — in exchange for a testimonial and portfolio permission. Follow our strategic [portfolio building guide for beginners](/blog/how-to-build-your-portfolio-no-experience) and test your CV with our [ATS Resume Analyzer](/tools/ats-analyzer).
+
+One good result leads to referrals. Referrals lead to a sustainable freelance income. Feel free to explore [all Instudia courses](/courses) or [contact our team](/contact).

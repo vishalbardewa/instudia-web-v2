@@ -57,9 +57,9 @@ By "Coding Our Heritage," we are making our mother tongues useful again. We are 
 
 You are the first generation in our history who can be both a guardian of the past and a pioneer of the future. You don't have to choose between being a "Naga" and being a "Techie." 
 
-At **instudia**, we aren't just training you to get jobs in Bangalore or Tokyo. We are training you to build the tools that will keep the Naga soul alive in the digital age. 
+At **instudia**, we aren't just training you to get jobs in Bangalore or Tokyo. In our [Python Programming Track](/courses/python), [Data Analytics Course](/courses/data-analytics), and [Generative AI Program](/courses/generative-ai), we train you to build real-world tools that solve meaningful local problems. Read our post on [why Python drives modern AI](/blog/importance-python-after-ai-boom-2026) or explore our [complete beginner's coding guide](/blog/how-to-learn-coding-guide-beginners) to start your journey.
 
-Let’s stop just *speaking* about our heritage. Let’s start *coding* it.
+Let’s stop just *speaking* about our heritage. Let’s start *coding* it. Feel free to explore [our courses](/courses) or [contact our team](/contact).
 
 ---
 

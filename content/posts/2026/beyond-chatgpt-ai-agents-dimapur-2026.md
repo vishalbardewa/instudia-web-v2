@@ -43,7 +43,7 @@ This isn't about replacing people; it's about giving our local entrepreneurs "su
 
 ## How You Can Build One (Right Here in Our Lab)
 
-You don't need a supercomputer to build an agent. You just need a laptop, a stable internet connection (we know, the Dimapur rains make that a challenge!), and a little bit of Python. 
+You don't need a supercomputer to build an agent. You just need a laptop, a stable internet connection (we know, the Dimapur rains make that a challenge!), and a solid foundation in Python. Read our post on [why Python is still king in the age of AI](/blog/importance-python-after-ai-boom-2026).
 
 Here is the 3-step blueprint we use at **instudia**:
 
@@ -56,17 +56,15 @@ An agent is useless if it can't see the world. We use **APIs** to connect the AI
 ### 3. Set the "Guardrails"
 This is the most important part we teach in our Senior Technical batch. An agent needs a **"Kill Switch."** You don't want an AI accidentally spending your entire marketing budget because of a typo. We build "Human-in-the-Loop" systems where the agent does 90% of the work but waits for your *“Okay”* before hitting 'Send'.
 
-
-
 ---
 
 ## The instudia Challenge: From User to Builder
 
 The era of "prompt engineering" is fading. The era of **Agentic Engineering** is here. 
 
-In our lab this month, we aren't just writing scripts. We are building **"Digital Assembly Lines."** We have students working on agents that can automatically audit GST filings and others building agents that manage social media for local brands while the owners sleep.
+In our lab this month, we aren't just writing scripts. We are building **"Digital Assembly Lines."** In our specialized [AI Agents & Autonomous Workflows Program](/courses/ai-agents-autonomic-workflows) and [Generative AI Course](/courses/generative-ai), we have students working on agents that can automatically audit [Tally & GST filings](/courses/tally) and others building tools like our interactive [AI Assessment Designer](/tools/assessment-designer).
 
-My message to every techie in Nagaland is simple: **Don't just be a consumer of the future.** Be the person who builds the agents that run our local economy. 
+My message to every techie in Nagaland is simple: **Don't just be a consumer of the future.** Be the person who builds the agents that run our local economy. Explore our [Python & AI Courses](/courses/python) or [contact our admissions team](/contact) to join the next batch.
 
 The terminal is open. The models are ready. Let’s build something that actually *does* the work.
 

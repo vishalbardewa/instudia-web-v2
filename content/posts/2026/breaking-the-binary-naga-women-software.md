@@ -41,9 +41,9 @@ The support is there. The technology is here. All that’s missing is the shift 
 
 ## Beyond "Male-Dominated"
 
-At **instudia**, we are making a conscious effort to change the face of tech in Nagaland. We don't just teach Python or Frontend Development; we build environments where women feel they belong. 
+At **instudia**, we are making a conscious effort to change the face of tech in Nagaland. We don't just teach [Python Programming](/courses/python) or [Frontend Web Development](/courses/frontend-development); we build environments where women feel supported and empowered. 
 
-We’ve seen that when a Naga girl learns to build a mobile app or manage a database, she doesn't just get a job—she gains a level of **financial independence** that is entirely mobile. Whether she's in a bosti in Mokokchung or a high-rise in Bangalore, her skills travel with her. She isn't tied to a specific location or a traditional "9-to-5" if she chooses to freelance.
+We’ve seen that when a Naga girl learns to build a mobile app or manage a database, she doesn't just get a job—she gains a level of **financial independence** that is entirely mobile. Whether she's in a bosti in Mokokchung or a high-rise in Bangalore, her skills travel with her. She isn't tied to a specific location or a traditional "9-to-5" if she chooses to freelance. Read our stories of [instudia graduates freelancing from Dimapur](/blog/instudia-graduates-freelancing-dimapur).
 
 ---
 
@@ -53,9 +53,9 @@ To the young women of Nagaland: Don't let the 17% statistic scare you. Let it pr
 
 Software engineering is the most powerful "equalizer" we have in 2026. Code doesn't care about your gender; it only cares if your logic is sound and your solution works. Whether you want to build an app for local farmers, create a platform for Naga artisans, or work for a global tech giant, the door is wide open.
 
-At our center near Notun Bosti Gate, I see the change starting. Slowly but surely, the seats in our Python and Web Dev classes are being filled by determined women who are ready to "Break the Binary."
+At our center near Notun Bosti Gate in Dimapur, I see the change starting. Slowly but surely, the seats in our [Python](/courses/python), [Fullstack Web Development](/courses/fullstack-web-development), and [UI/UX Design](/courses/ui-ux-designing) classes are being filled by determined women who are ready to "Break the Binary." Read our [complete beginner's coding roadmap](/blog/how-to-learn-coding-guide-beginners) and our guide to [top IT careers in Nagaland](/blog/best-it-careers-nagaland-2025).
 
-Nagaland needs your logic. We need your perspective. And most importantly, we need you at the keyboard.
+Nagaland needs your logic. We need your perspective. And most importantly, we need you at the keyboard. Feel free to explore [our courses](/courses) or [visit our campus](/contact) to get started.
 
 ---
 

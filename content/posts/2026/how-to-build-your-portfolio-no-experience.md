@@ -15,7 +15,7 @@ ogImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=form
 
 ## The Portfolio Paradox
 
-"You need experience to get a job, but you need a job to get experience." This is the classic paradox that traps most entry-level job seekers. The solution? Build your portfolio before anyone pays you to.
+"You need experience to get a job, but you need a job to get experience." This is the classic paradox that traps most entry-level job seekers. The solution? Build your portfolio before anyone pays you to. Start by [choosing the right learning path](/blog/how-to-learn-coding-guide-beginners) and reading our guide on [IT careers in Nagaland](/blog/best-it-careers-nagaland-2025).
 
 ## Strategy: Create, Don't Wait
 
@@ -31,8 +31,10 @@ You don't need a client to build a portfolio. Here's the framework we use at ins
 
 For designers: Behance or a simple custom website. For developers: GitHub + a deployed project on Netlify or Vercel. For accountants: A PDF case study showing a before/after of a client's books.
 
+To make sure your portfolio and resume pass screening filters, test your CV with our [ATS Resume Analyzer](/tools/ats-analyzer), create a polished layout with our [Free Resume Builder](/tools/resume-builder), or generate a personalized roadmap with our [Career Blueprint Tool](/tools/career-blueprint).
+
 The format doesn't matter as much as the proof. Employers hire people who can show their work.
 
 ## The instudia Approach
 
-Every instudia course is structured so that by the end, you have 5–8 completed projects that are portfolio-ready. We review them with you and help you present them in a way that gets interviews.
+Every [instudia course](/courses)—whether in [Frontend Development](/courses/frontend-development), [Backend Development](/courses/backend-development), or [Fullstack Web Development](/courses/fullstack-web-development)—is structured so that by the end, you have 5–8 completed projects that are portfolio-ready. We review them with you, benchmark salary expectations with our [Nagaland Tech Salary Tool](/tools/salary-insights), and help you present them in a way that lands interviews. Feel free to [contact us](/contact) to learn more.

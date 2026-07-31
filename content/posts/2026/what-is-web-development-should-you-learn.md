@@ -15,9 +15,9 @@ ogImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=form
 
 ## Web Development in Plain English
 
-Every website you visit — from YouTube to your favourite local bakery's Instagram-linked menu — was built by a web developer. Web development is the craft of building websites and web applications that run in your browser.
+Every website you visit — from YouTube to your favourite local bakery's Instagram-linked menu — was built by a web developer. Web development is the craft of building websites and web applications that run in your browser. For a comprehensive overview of getting started, read our [complete beginner's coding roadmap](/blog/how-to-learn-coding-guide-beginners).
 
-There are two main sides to it: the Frontend (what you see — buttons, layouts, colours) and the Backend (what you don't see — databases, servers, logic). Most beginners start with the Frontend.
+There are two main sides to it: the [Frontend Development](/courses/frontend-development) (what you see — buttons, layouts, colours) and the [Backend Development](/courses/backend-development) (what you don't see — databases, servers, logic). Most beginners start with Frontend before advancing to [Fullstack Web Development](/courses/fullstack-web-development).
 
 ## The Learning Path
 
@@ -31,12 +31,12 @@ A practical, job-ready web development path for beginners looks like this:
 
 ## What Does It Pay?
 
-Entry-level web developers in India earn ₹3–6 LPA at companies, with experienced developers earning ₹10–25+ LPA. Freelance rates vary widely — a single landing page project can pay ₹5,000–₹40,000 depending on complexity and the client.
+Entry-level web developers in India earn ₹3–6 LPA at companies, with experienced developers earning ₹10–25+ LPA. You can benchmark local and remote expectations using our [Nagaland Tech Salary Insights Tool](/tools/salary-insights). Freelance rates vary widely — a single landing page project can pay ₹5,000–₹40,000 depending on complexity and the client.
 
 Remote work is nearly universal in web development, which means your location — including Dimapur — is not a barrier. You can work for a startup in Bangalore while living at home.
 
 ## Is It Right for You?
 
-Web development is a great fit if you enjoy problem-solving, like seeing visual results quickly, and are comfortable with a learning curve. You don't need a computer science degree. You need consistency and a willingness to Google things constantly (all developers do this).
+Web development is a great fit if you enjoy problem-solving, like seeing visual results quickly, and are comfortable with a learning curve. You don't need a computer science degree — just follow our [portfolio building guide for beginners](/blog/how-to-build-your-portfolio-no-experience) to showcase your projects. You need consistency and a willingness to solve problems independently.
 
-At instudia, our Web Development course is designed to take you from zero to a job-ready portfolio in 4 months. Classes are small, instructor-led, and project-focused — no recorded lectures, no passive learning.
+At instudia, our [Fullstack Web Development course](/courses/fullstack-web-development) is designed to take you from zero to a job-ready portfolio in 4 to 8 months. Classes are small, instructor-led, and project-focused — no recorded lectures, no passive learning. Feel free to [explore our courses](/courses) or [get in touch](/contact) to learn more.

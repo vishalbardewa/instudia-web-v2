@@ -23,27 +23,27 @@ The modern job market is no longer satisfied with simple claims of knowledge; em
 
 Our student-centric tools are designed to guide you through the four pillars of career readiness: assessment, planning, optimization, and success.
 
-### 🔍 ATS Resume Scanner
+### ATS Resume Scanner
 
-Most modern companies use an Applicant Tracking System (ATS) to filter resumes before a human ever sees them. Our scanner provides high-level **keyword optimization** to ensure your profile stands out.
+Most modern companies use an Applicant Tracking System (ATS) to filter resumes before a human ever sees them. Try our [ATS Resume Analyzer](/tools/ats-analyzer) and build a clean CV with our [Free Resume Builder](/tools/resume-builder).
 
 - **The Benefit:** It identifies missing keywords and structural gaps, giving you personalized recommendations to increase your interview chances significantly.
 
-### 🗺️ Career Blueprint
+### Career Blueprint
 
-Knowing where you want to go is easy; knowing how to get there is the hard part. The Career Blueprint acts as your interactive career roadmap for **skill gap analysis**.
+Knowing where you want to go is easy; knowing how to get there is the hard part. Generate your personalized roadmap with our [Career Blueprint Tool](/tools/career-blueprint).
 
 - **The Benefit:** It compares your current skill set against your "dream role," highlighting exactly which certifications or technical projects you need to bridge the gap.
 
-### 📈 Salary Insights
+### Salary Insights
 
-Transparency in compensation is vital for career growth. This tool helps you understand your market value through **market benchmarks**.
+Transparency in compensation is vital for career growth. Calculate expected regional and remote pay using our [Salary Insights Tool](/tools/salary-insights).
 
 - **The Benefit:** It combines global industry trends with local market data, providing the negotiation power you need to ensure fair compensation.
 
-### 📅 Study Planner
+### Study Planner
 
-Consistency is the key to mastering any new technology. The Study Planner removes the "analysis paralysis" of what to study next via **personalized scheduling**.
+Consistency is the key to mastering any new technology. Organize your timetable with our [AI Study Planner](/tools/study-planner) or review active recall decks on our [Free Flashcard Tool](/tools/flashcards).
 
 - **The Benefit:** It generates a manageable schedule based on your specific learning goals and daily availability, ensuring steady progress without burnout.
 
@@ -53,21 +53,21 @@ Consistency is the key to mastering any new technology. The Study Planner remove
 
 Great learning begins with great teaching. Our teacher tools are designed to reduce administrative burden while maximizing student retention.
 
-### 🎓 Assessment Design Specialist
+### Assessment Design Specialist
 
-Creating high-quality tests that accurately measure understanding is a time-consuming task. This tool automates the process with precision, focusing on **Indian standard calibrated assessments**.
+Creating high-quality tests that accurately measure understanding is a time-consuming task. Try our [Assessment Designer Tool](/tools/assessment-designer).
 
 - **The Feature:** It creates assessments strictly based on your source material, ensuring students are prepared for both local and national benchmarks.
 
-### 👨‍🏫 Pedagogical Assistant
+### Pedagogical Assistant
 
-Teaching complex technical concepts requires a structured approach to ensure information "sticks." This tool transforms dense text into guided lecture notes.
+Teaching complex technical concepts requires a structured approach to ensure information "sticks." Generate structured summaries using our [Lecture Note Generator](/tools/lecture-note-generator).
 
 - **The Feature:** It utilizes the **'Rule of Three'** and specific **visual cues** to break down information into digestible chunks.
 - **The Benefit:** It helps educators elevate classroom engagement and drastically improves student memory retention.
 
 ## The instudia Perspective
 
-Innovation is at the heart of everything we do. These tools are more than just software—they are a commitment to the success of our students and teachers in Dimapur and beyond. By leveraging AI to solve local challenges, we are ensuring that the next generation of talent in Nagaland is not just educated, but industry-ready.
+Innovation is at the heart of everything we do. These tools are more than just software—they are a commitment to the success of our students and teachers in Dimapur and beyond. Read our [portfolio building guide for beginners](/blog/how-to-build-your-portfolio-no-experience) and explore our [job-ready courses](/courses).
 
-Stay ahead of the curve and start using these tools today at [instudianagaland.com/tools](https://www.instudianagaland.com/tools).
+Stay ahead of the curve and start using these tools today on the [Instudia Free Tools Hub](/tools). Feel free to [contact our team](/contact) to learn more.

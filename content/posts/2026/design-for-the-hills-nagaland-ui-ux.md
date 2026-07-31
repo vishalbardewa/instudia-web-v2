@@ -62,9 +62,11 @@ These aren't just "student projects." They are the blueprints for the future of 
 
 UI/UX is often called the "soft side" of tech, but I disagree. It is the most human side. 
 
-If you are a creative Naga youth who loves art but wants to work in technology, UI/UX is your calling. You don't need to be a math genius to be a great designer. You need to be an **observer**. You need to look at how your parents use their phones, how local shops manage their accounts, and how we talk to each other in our mother tongues.
+If you are a creative Naga youth who loves art but wants to work in technology, UI/UX is your calling. You don't need to be a math genius to be a great designer. You need to be an **observer**. You need to look at how your parents use their phones, how local shops manage their accounts, and how we talk to each other in our mother tongues. Read our guide on [why learn graphic design in 2025](/blog/why-learn-graphic-design-2025) and check out our [portfolio building guide for beginners](/blog/how-to-build-your-portfolio-no-experience).
 
-Nagaland doesn't just need more coders; we need **Digital Architects** who can build a home for us in the cloud.
+At **instudia**, our hands-on [UI/UX Designing Track](/courses/ui-ux-designing) and [Graphic Designing Program](/courses/graphic-designing) pair design fundamentals with practical frontend skills ([Frontend Web Development](/courses/frontend-development)). You can also benchmark creative career salaries with our [Nagaland Tech Salary Tool](/tools/salary-insights).
+
+Nagaland doesn't just need more coders; we need **Digital Architects** who can build a home for us in the cloud. Feel free to explore [our design courses](/courses) or [contact our design faculty](/contact).
 
 ---
 

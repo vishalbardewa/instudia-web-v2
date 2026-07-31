@@ -37,7 +37,7 @@ If you don't understand Python, you can't audit what the AI gives you. You becom
 
 As we’ve discussed in our previous lab sessions, 2026 is the year of **AI Agents**. These aren't just chatbots; they are autonomous systems that can book your flights, manage your store's inventory, or analyze Naga King Chilli export data.
 
-These agents are almost exclusively built using Python frameworks like **LangGraph**, **AutoGPT**, and **CrewAI**. To "orchestrate" these agents—to tell them how to talk to each other and where to store their memory—you need Python. 
+These agents are almost exclusively built using Python frameworks like **LangGraph**, **AutoGPT**, and **CrewAI**. To "orchestrate" these agents—to tell them how to talk to each other and where to store their memory—you need Python. Learn more about how we teach this in our [AI Agents & Autonomous Workflows Course](/courses/ai-agents-autonomic-workflows) and our guide on [AI agents in Dimapur](/blog/beyond-chatgpt-ai-agents-dimapur-2026).
 
 ``` chart
 {
@@ -68,18 +68,18 @@ Python is the "connective tissue" that plugs global AI power into local Naga pro
 
 Python isn't just for AI. It’s the language of:
 * **Cybersecurity:** Most hacking and defense tools are Python-based.
-* **Data Science:** Turning raw data into insights for our local MSMEs.
+* **Data Science:** Turning raw data into insights for our local MSMEs with our [Data Analytics Track](/courses/data-analytics).
 * **Automation:** Making your computer do your boring work while you enjoy a cup of tea.
 
 When you learn Python, you aren't just learning a "skill"—you are learning the **Universal Language of Problem Solving.**
 
 ## Final Thoughts: Don't Be Replaced, Be Enhanced
 
-At **instudia**, our mission for 2026 is to ensure that no youth in Nagaland is left behind by the AI wave. We don't teach Python the "old way" (memorizing definitions). We teach it as a tool to control AI.
+At **instudia**, our mission for 2026 is to ensure that no youth in Nagaland is left behind by the AI wave. We don't teach Python the "old way" (memorizing definitions). We teach it as a tool to control AI in our flagship [Python Programming Track](/courses/python) and [Generative AI Program](/courses/generative-ai).
 
-My advice? Don't let the AI boom make you lazy. Let it make you more ambitious. Use AI to help you learn Python faster, but never let it replace the logic in your own head. 
+My advice? Don't let the AI boom make you lazy. Let it make you more ambitious. Read our [complete beginner's coding guide](/blog/how-to-learn-coding-guide-beginners), use AI to help you learn Python faster, but never let it replace the logic in your own head. 
 
-The future belongs to those who can speak the language of the machines.
+The future belongs to those who can speak the language of the machines. Feel free to explore [our courses](/courses) or try our [AI Study Planner](/tools/study-planner).
 
 ---
 

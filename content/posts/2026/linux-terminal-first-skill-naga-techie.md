@@ -55,11 +55,11 @@ Once you master these, something magical happens. You stop being afraid of the m
 
 ## The instudia Pathway
 
-We don't teach Linux as an "extra" course. We teach it as the *foundation*. Whether you are here for Web Development, Cybersecurity, or Python, the terminal is the first thing we open. 
+We don't teach Linux as an "extra" course. We teach it as the *foundation*. Whether you are here for [Web Development](/courses/fullstack-web-development), [DevOps & Cloud Services](/courses/learn-devops-cloud-services), [Backend Development](/courses/backend-development), or [Python Programming](/courses/python), the terminal is the first thing we open.
 
-My advice to any Naga techie starting their journey in 2026 is this: **Put the mouse away for a week.** Force yourself to navigate your files using only the keyboard. It will be frustrating on Monday, confusing on Tuesday, but by Friday, you’ll feel like you’ve finally unplugged from the Matrix.
+My advice to any Naga techie starting their journey in 2026 is this: **Put the mouse away for a week.** Force yourself to navigate your files using only the keyboard. It will be frustrating on Monday, confusing on Tuesday, but by Friday, you’ll feel like you’ve finally unplugged from the Matrix. Check out our [complete beginner's coding guide](/blog/how-to-learn-coding-guide-beginners) for a full breakdown of essential tech skills.
 
-The world needs more than just people who can *use* technology. It needs people who can *command* it. 
+The world needs more than just people who can *use* technology. It needs people who can *command* it. Explore our [DevOps & Cloud Course](/courses/learn-devops-cloud-services) or [contact our admissions team](/contact) to get started.
 
 ---
 

@@ -52,6 +52,8 @@ Even on a solo project, you have to "onboard" your future self who might have fo
 - **The Benefit:** If I brought a collaborator on today, they could understand the system architecture in under an hour without reading a 50-page manual.
 
 ## The Architect Perspective
-Innovation is often found in the things we choose to remove rather than what we add. This refactor was more than just cleaning up tech debt—it was a commitment to the longevity of the project. By prioritizing Developer Experience, I ensured that the engine remains a playground for creativity rather than a burden of maintenance.
+Innovation is often found in the things we choose to remove rather than what we add. This refactor was more than just cleaning up tech debt—it was a commitment to the longevity of the project. By prioritizing Developer Experience, I ensured that the engine remains a playground for creativity rather than a burden of maintenance. 
 
-Stay ahead of the curve.
+If you are looking to build scalable software architecture, explore our [Backend Development Program](/courses/backend-development) and [Fullstack Web Development Course](/courses/fullstack-web-development). You can also read our related breakdown on [Next.js 16 performance refactoring](/blog/revamping-instudia-nextjs-16-performance).
+
+Stay ahead of the curve. Feel free to [explore our courses](/courses) or check out our [AI Study Planner](/tools/study-planner) to keep your learning organized.

@@ -32,6 +32,6 @@ If your project uses axios, do not wait. Follow these steps now:
 - Network Block: Block all traffic to sfrclak.com:8000 at the firewall level.
 
 ## The instudia Perspective
-Supply chain attacks are the new frontier of cyber warfare. This incident highlights why we emphasize dependency management and security hygiene in our developer training. In the modern web, you aren't just responsible for the code you write, but also for every package you import.
+Supply chain attacks are the new frontier of cyber warfare. This incident highlights why we emphasize dependency management, security hygiene, and defensive coding in our [Fullstack Web Development Course](/courses/fullstack-web-development), [Backend Development Program](/courses/backend-development), and [DevOps & Cloud Services Track](/courses/learn-devops-cloud-services). In the modern web, you aren't just responsible for the code you write, but also for every package you import.
 
-Stay vigilant, keep your dependencies pinned, and always use MFA on your registry accounts.
+Stay vigilant, keep your dependencies pinned, and always use MFA on your registry accounts. Feel free to explore our [full course catalog](/courses) or [contact our technical faculty](/contact).

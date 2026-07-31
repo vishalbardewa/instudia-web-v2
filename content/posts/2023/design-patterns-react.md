@@ -223,5 +223,7 @@ Design patterns are powerful tools that can significantly enhance the structure 
 
   
 
-Remember that the effective use of design patterns requires a good understanding of the problem domain and the architecture of your application. Therefore, it's essential to evaluate the suitability of each pattern for your specific use case. Happy coding!
+Remember that the effective use of design patterns requires a good understanding of the problem domain and the architecture of your application. Therefore, it's essential to evaluate the suitability of each pattern for your specific use case.
+
+If you are eager to master advanced React patterns and fullstack architecture, explore our [Frontend Development Program](/courses/frontend-development) and [Fullstack Web Development Track](/courses/fullstack-web-development). You can also read our deep dive on [revamping web performance with Next.js 16](/blog/revamping-instudia-nextjs-16-performance). Happy coding!
 

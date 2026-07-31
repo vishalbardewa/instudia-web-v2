@@ -21,7 +21,7 @@ This supply-demand gap is your opportunity.
 
 ## What You'll Learn
 
-A strong graphic design foundation covers both the technical tools and the creative principles. At instudia, our design curriculum includes:
+A strong graphic design foundation covers both technical tools and creative principles. At instudia, our hands-on [Graphic Designing Course](/courses/graphic-designing) and [UI/UX Designing Track](/courses/ui-ux-designing) include:
 
 - Adobe Photoshop — Photo editing, compositing, and social media graphics
 - Adobe Illustrator — Vector graphics, logos, and brand identity
@@ -31,6 +31,8 @@ A strong graphic design foundation covers both the technical tools and the creat
 
 ## Freelancing Potential
 
-Many of our graphic design graduates start freelancing within months of completing the course. A single logo project can pay ₹2,000–₹15,000 depending on the client. Three to four freelance projects a month can easily supplement or replace a traditional salary.
+Many of our graphic design graduates start freelancing within months of completing the course. Read our real student stories in [From Student to Freelancer in Dimapur](/blog/instudia-graduates-freelancing-dimapur) and explore our guide on [designing for the Naga hills](/blog/design-for-the-hills-nagaland-ui-ux).
 
-The best part: you can work from anywhere.
+A single logo project can pay ₹2,000–₹15,000 depending on the client. Three to four freelance projects a month can easily supplement or replace a traditional salary. Follow our strategic [portfolio building guide for beginners](/blog/how-to-build-your-portfolio-no-experience) and test your earning potential on our [Nagaland Tech Salary Insights Calculator](/tools/salary-insights).
+
+The best part: you can work from anywhere. Feel free to explore [our design courses](/courses) or [contact our admissions team](/contact).

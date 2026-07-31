@@ -74,10 +74,10 @@ You do not have bad habits to unlearn. You are stepping into the field with a bl
 
 ## Bridging the Gap
 
-Your degree gave you the theory, but surviving and thriving in this new landscape requires practical tech-fluency. It requires knowing exactly how to apply these new tools to real-world architectures.
+Your degree gave you the theory, but surviving and thriving in this new landscape requires practical tech-fluency. It requires knowing exactly how to apply these new tools to real-world architectures. Check out our guide on [IT careers in Nagaland](/blog/best-it-careers-nagaland-2025) and our [portfolio building guide for beginners](/blog/how-to-build-your-portfolio-no-experience).
 
-That is exactly what we do at **instudia**. We help bridge the gap between what you learned in the classroom and what the modern tech industry actually demands on day one.
+That is exactly what we do across all [instudia Certificate Programs](/courses)—including [Fullstack Web Development](/courses/fullstack-web-development), [Python Programming](/courses/python), and [Generative AI](/courses/generative-ai). We help bridge the gap between what you learned in the classroom and what the modern tech industry actually demands on day one. You can also generate a personalized career roadmap with our [Career Blueprint Tool](/tools/career-blueprint) or test your CV on our [ATS Resume Analyzer](/tools/ats-analyzer).
 
 Do not let the AI shift intimidate you. Let it be the leverage that launches your career.
 
-**Book a free General Tech-Fluency Consultation with instudia today.** We will sit down, review where you are currently at, and map out a clear, practical roadmap to turn you into the kind of AI-fluent professional the industry is actively searching for.
+**[Book a free General Tech-Fluency Consultation with instudia today](/contact).** We will sit down, review where you are currently at, and map out a clear, practical roadmap to turn you into the kind of AI-fluent professional the industry is actively searching for.

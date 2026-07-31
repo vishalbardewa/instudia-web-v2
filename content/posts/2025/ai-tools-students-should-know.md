@@ -27,8 +27,10 @@ Here's the shortlist that our team at instudia recommends to every student:
 - Grammarly — Real-time writing improvement for emails, reports, and applications
 - Google AI (Docs, Sheets, Gmail) — Inline AI features in tools you already use every day
 
+Additionally, explore Instudia's built-in student utility suite: try our [AI Study Planner](/tools/study-planner), [Free Flashcard Tool](/tools/flashcards), [Lecture Note Generator](/tools/lecture-note-generator), and [ATS Resume Analyzer](/tools/ats-analyzer).
+
 ## How to Actually Learn These Tools
 
-The mistake most people make is watching tutorials without practicing. The best way to learn AI tools is to replace one manual task per week with an AI-assisted one. Within a month, you'll have built real muscle memory.
+The mistake most people make is watching tutorials without practicing. The best way to learn AI tools is to replace one manual task per week with an AI-assisted one. Within a month, you'll have built real muscle memory. Read our story on [bringing AI to classrooms across Nagaland](/blog/beyond-copy-paste-ai-seminars-nagaland).
 
-At instudia, we've started weaving AI literacy into every course — because the future belongs to those who can collaborate with machines, not just use them.
+At instudia, we've started weaving AI literacy into every program — from our flagship [Generative AI Course](/courses/generative-ai) to our [AI Agents & Autonomous Workflows Track](/courses/ai-agents-autonomic-workflows). The future belongs to those who can collaborate with machines, not just use them. Feel free to explore [our full course catalog](/courses) or [contact our admissions team](/contact).

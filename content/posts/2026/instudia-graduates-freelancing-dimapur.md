@@ -21,13 +21,13 @@ Here are three real stories (names changed for privacy) from the last two instud
 
 ## Story 1 — The Graphic Designer
 
-After completing our 3-month Graphic Design course, one graduate started uploading her work to Instagram. Within six weeks, she had her first paid logo project — ₹4,500 from a Dimapur fashion label. Six months later, she's averaging ₹25,000–₹35,000/month from design work alone.
+After completing our 3-month [Graphic Design Course](/courses/graphic-designing), one graduate started uploading her work to Instagram. Within six weeks, she had her first paid logo project — ₹4,500 from a Dimapur fashion label. Six months later, she's averaging ₹25,000–₹35,000/month from design work alone.
 
 Her advice: 'Post every project, even the ones from class. Clients can't hire what they can't see.'
 
 ## Story 2 — The Tally Accountant
 
-A graduate from our Tally + GST batch now manages the books for four local businesses. He started by offering GST filing help to a small grocery shop for ₹1,500/month. Word spread, and he now earns ₹22,000/month working part-time across a few clients.
+A graduate from our [Tally + GST batch](/courses/tally) now manages the books for four local businesses. He started by offering GST filing help to a small grocery shop for ₹1,500/month. Word spread, and he now earns ₹22,000/month working part-time across a few clients.
 
 The most in-demand service? Monthly GST return filing — fast, predictable, and every business needs it.
 
@@ -39,4 +39,6 @@ Her retainer: ₹8,000/client/month. With two clients, she earns more than most 
 
 ## The Common Thread
 
-All three started by doing one small project, doing it well, and then asking for a testimonial. None of them waited until they felt 'ready'. If you're in one of our courses right now — start looking for your first project before you graduate.
+All three started by doing one small project, doing it well, and then asking for a testimonial. Read more of our [Instudia Success Stories](/success-stories) or explore our [portfolio building guide for beginners](/blog/how-to-build-your-portfolio-no-experience).
+
+None of them waited until they felt 'ready'. Whether you choose [Frontend Development](/courses/frontend-development) or [Graphic Design](/courses/graphic-designing), you can calculate expected income using our [Nagaland Tech Salary Tool](/tools/salary-insights). If you're in one of our courses right now — start looking for your first project before you graduate, or [contact our placement support](/contact).

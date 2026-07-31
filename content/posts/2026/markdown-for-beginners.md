@@ -113,4 +113,4 @@ Markdown was created to be easy to read and easy to write. Once you memorize the
 ---
 
 > **Looking to upgrade your technical workflow?**
-> Whether you are taking notes for a Golang backend project, structuring your Obsidian canvas, or writing documentation, mastering Markdown is the first step to building faster, cleaner systems.
+> Whether you are taking notes for a programming course, structuring your study notes, or writing developer documentation, mastering Markdown is the first step to building faster, cleaner systems. Try our [AI Lecture Note Generator](/tools/lecture-note-generator) and [Free Flashcard Tool](/tools/flashcards) to boost your study workflow, or check out our [complete beginner's coding guide](/blog/how-to-learn-coding-guide-beginners) and [Frontend Development Course](/courses/frontend-development).

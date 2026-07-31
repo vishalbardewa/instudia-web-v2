@@ -21,8 +21,10 @@ Blockbuster filed for bankruptcy in 2010, and the company closed its remaining s
 
 ## What We Can Learn from Blockbuster's Fall
 
-Blockbuster's fall is a cautionary tale for businesses that are slow to adapt to change. In the digital age, businesses need to be willing to embrace new technologies and business models. If they don't, they will be left behind by their competitors.
+Blockbuster's fall is a cautionary tale for businesses and professionals who are slow to adapt to change. Just as companies must innovate, individuals must continuously upgrade their skill sets. Read our perspective on why [your degree isn't enough anymore](/blog/your-degree-isnt-enough-anymore) and how learning [Fullstack Web Development](/courses/fullstack-web-development) can prepare you to build modern digital platforms.
 
 ## The Future of Video Rental
 
 The video rental industry is still evolving. There are now a number of different streaming services available, including Netflix, Hulu, and Amazon Prime Video. However, one thing is for sure: the days of going to a physical store to rent a movie are numbered. The future of video rental is digital.
+
+At Instudia, we teach students how to build resilient digital systems and software. Explore our [Fullstack Web Development Track](/courses/fullstack-web-development), [Python & AI Courses](/courses/python), and our article on [building the Naga-Amazon](/blog/building-the-naga-amazon). Feel free to explore [all Instudia programs](/courses) or [contact us](/contact) to learn more.

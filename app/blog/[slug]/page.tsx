@@ -368,8 +368,9 @@ export default async function BlogPostPage({ params }: Props) {
                 <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest mb-4">{post.authorRole}</p>
                 <p className="text-sm font-medium text-black/70 leading-relaxed">
                   {post.authorBio ||
-                    `${post.author} is an educator and tech professional at instudia, Dimapur's leading computer training institute. 
-                    Passionate about making technology accessible to students across Nagaland.`}
+                    (post.author.toLowerCase().includes("instudia")
+                      ? "Instudia is Nagaland's premier IT and skill training institute based in Dimapur, dedicated to equipping students with practical software engineering skills, career guidance, and accessible educational tools."
+                      : `${post.author} is an educator and tech professional at Instudia, Dimapur's leading computer training institute, passionate about making technology accessible to students across Nagaland.`)}
                 </p>
               </div>
             </div>

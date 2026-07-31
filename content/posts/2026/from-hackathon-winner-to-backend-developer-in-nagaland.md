@@ -87,11 +87,11 @@ The foundation is solid. Now it's time to build higher.
 
 ## Final Thoughts
 
-This journey took me from someone who was curious about backend development to someone who can actually *do* backend development. That shift — from observer to builder — is everything.
+This journey took me from someone who was curious about backend development to someone who can actually *do* backend development. That shift — from observer to builder — is everything. For anyone just starting out, reading a [complete beginner's coding guide](/blog/how-to-learn-coding-guide-beginners) and following a clear [portfolio building strategy](/blog/how-to-build-your-portfolio-no-experience) makes all the difference.
 
 Massive gratitude to **Instudia Nagaland** for making this possible. The guidance was practical, the projects were real, and the growth was undeniable.
 
 ---
 
 > **Thinking about making the same leap?**
-> Instudia's Web Development course takes you from complete beginner to job-ready in **4 months**. Small classes. Real instructors. Project-focused learning — no recorded lectures, no passive watching. Just you, a keyboard, and a whole lot of building.
+> Instudia's [Backend Development Course](/courses/backend-development) and [Python Programming Track](/courses/python) take you from complete beginner to job-ready builder. Small classes. Real instructors. Project-focused learning — no recorded lectures, no passive watching. Check out our [Fullstack Web Development Program](/courses/fullstack-web-development) or explore our [Nagaland Tech Salary Calculator](/tools/salary-insights) to plan your tech career.

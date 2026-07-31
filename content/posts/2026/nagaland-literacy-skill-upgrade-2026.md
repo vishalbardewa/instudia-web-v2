@@ -47,7 +47,7 @@ When we talk about a "Skill Upgrade" at **instudia**, we aren't just talking abo
 
 ## Moving from "Literate" to "Market-Ready"
 
-At **instudia**, our mission has always been built on the **3i's: Impart, Inspirit, and Impact.** We see students every day who are brilliant but "skill-starved." They can write a 2,000-word essay on economic theory, but they struggle to build a basic website or manage a project using modern digital tools. This isn't their fault; it's a systemic lag.
+At **instudia**, our mission has always been built on the **3i's: Impart, Inspirit, and Impact.** We see students every day who are brilliant but "skill-starved." They can write a 2,000-word essay on economic theory, but they struggle to build a basic website or manage a project using modern digital tools. This isn't their fault; it's a systemic lag. Read our full take on why [your degree isn't enough anymore](/blog/your-degree-isnt-enough-anymore) and explore our [portfolio building guide](/blog/how-to-build-your-portfolio-no-experience).
 
 My message to the students and parents of Nagaland is this: **Don't let your degree be the end of your education.** The 95.7% literacy rate is a magnificent foundation. It shows we have the discipline and the intelligence to learn. But in 2026, the market doesn't pay you for what you *know*—it pays you for what you can *do* with what you know.
 
@@ -55,9 +55,9 @@ My message to the students and parents of Nagaland is this: **Don't let your deg
 
 Let’s stop chasing just the "paper." Let’s start chasing the "practice." 
 
-Whether it's through a specialized IT course here at instudia, a vocational program in the agricultural sector, or learning a new language for global placement, your "Skill Upgrade" starts the moment you realize that your degree is just the starting line, not the finish line.
+Whether it's through our foundational programs like [Diploma in Computer Applications (DCA)](/courses/diploma-in-computer-applications), [PGDCA](/courses/pgdca), or specialized career tracks like [Fullstack Web Development](/courses/fullstack-web-development) and [Python Programming](/courses/python), your "Skill Upgrade" starts the moment you realize that your degree is just the starting line, not the finish line. Read our [complete beginner's coding guide](/blog/how-to-learn-coding-guide-beginners) and check out [top IT careers in Nagaland](/blog/best-it-careers-nagaland-2025).
 
-Nagaland is ready for its next chapter. We are literate. Now, let’s become unstoppable.
+Nagaland is ready for its next chapter. We are literate. Now, let’s become unstoppable. Feel free to explore [all Instudia courses](/courses) or [contact our admissions team](/contact).
 
 ---
 

@@ -55,14 +55,14 @@ A local developer from Nagaland knows:
 
 ## The instudia Mission: Training the Builders
 
-At **instudia**, we aren't just teaching "coding." We are teaching **problem-solving for Nagaland.** When we teach Python or Web Development, we aren't just looking at generic projects. We’re asking our students: *How would you build a tracking system for a local taxi service? How would you create a marketplace for Naga handlooms that verifies GI-tagged products?*
+At **instudia**, we aren't just teaching "coding." We are teaching **problem-solving for Nagaland.** In our [Fullstack Web Development Program](/courses/fullstack-web-development), [Frontend Development Course](/courses/frontend-development), and [Python Track](/courses/python), we don't just look at generic projects. We’re asking our students: *How would you build a tracking system for a local taxi service? How would you create a marketplace for Naga handlooms that verifies GI-tagged products?*
 
-The state budget for 2026-27 has already allocated funds for an **Innovation Hub in Chumoukedima** and AI-enabled platforms. The infrastructure is coming. The government is opening the doors. But who will walk through them?
+The state budget for 2026-27 has already allocated funds for an **Innovation Hub in Chumoukedima** and AI-enabled platforms. The infrastructure is coming. The government is opening the doors. But who will walk through them? Read our guide on [digital marketing for local businesses in Nagaland](/blog/digital-marketing-for-local-business).
 
 ## A Call to Action
 
-To the youth of Nagaland: Stop looking for "jobs" and start looking for "problems." Every time you find something that doesn't work in our state, that is a business opportunity. That is an app waiting to be built.
+To the youth of Nagaland: Stop looking for "jobs" and start looking for "problems." Every time you find something that doesn't work in our state, that is a business opportunity. That is an app waiting to be built. Read our [complete beginner's coding roadmap](/blog/how-to-learn-coding-guide-beginners) and check out [top IT careers in Nagaland](/blog/best-it-careers-nagaland-2025).
 
 Let’s stop being just consumers of global tech. Let’s become the architects of our own digital future. Nagaland doesn't need another generic app; it needs **your** code to solve **our** problems.
 
-Let’s build the Naga-Amazon, together.
+Let’s build the Naga-Amazon, together. Feel free to explore [our courses](/courses) or [contact our team](/contact) to get started.
