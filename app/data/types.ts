@@ -9,8 +9,8 @@ export type ContentItem =
   | { type: "blockquote"; text: string; fontSize?: string; textCase?: "uppercase" | "lowercase" | "capitalize" | "normal" }
   | { type: "divider" }
   | { type: "image"; src: string; alt: string }
-  | { type: "image"; src: string; alt: string }
   | { type: "chart"; chartType: "bar" | "line" | "area"; title?: string; data: any[]; units?: string }
+  | { type: "widget"; widgetId: string; spec?: any }
   | { type: "code"; language: string; content: string };
 
 export interface Section {

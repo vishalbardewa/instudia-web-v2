@@ -67,6 +67,22 @@ function parseBody(markdown: string): Section[] {
             console.error("[parsePost] Failed to parse chart JSON:", err);
             current.items.push({ type: "code", language, content });
           }
+        } else if (language === "json" || language === "widget" || language === "text") {
+          try {
+            const cleanContent = content.startsWith("JSON") ? content.slice(4).trim() : content;
+            const parsed = JSON.parse(cleanContent);
+            if (parsed && parsed.widgetSpec && parsed.widgetSpec.id) {
+              current.items.push({
+                type: "widget",
+                widgetId: parsed.widgetSpec.id,
+                spec: parsed.widgetSpec,
+              });
+            } else {
+              current.items.push({ type: "code", language, content });
+            }
+          } catch {
+            current.items.push({ type: "code", language, content });
+          }
         } else {
           current.items.push({ type: "code", language, content });
         }
@@ -154,6 +170,24 @@ function parseBody(markdown: string): Section[] {
     const text = trimmed.trim();
 
     if (text) {
+      if (text.includes("widgetSpec") && (text.startsWith("JSON") || text.startsWith("{"))) {
+        try {
+          const rawJson = text.replace(/^JSON\s*/, "").trim();
+          const parsed = JSON.parse(rawJson);
+          if (parsed && parsed.widgetSpec && parsed.widgetSpec.id) {
+            current.items.push({
+              type: "widget",
+              widgetId: parsed.widgetSpec.id,
+              spec: parsed.widgetSpec,
+            });
+            i++;
+            continue;
+          }
+        } catch {
+          // ignore error and proceed as standard paragraph
+        }
+      }
+
       // Group table lines: if it starts with '|', gather all consecutive lines
       if (text.startsWith("|")) {
         const tableLines: string[] = [];
