@@ -9,8 +9,8 @@ readTime: 5 min read
 author: Faculty
 authorRole: "instudia"
 authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "/assets/blog-python-vs-javascript-cover.png"
-ogImage: "/assets/blog-python-vs-javascript-cover.png"
+coverImage: "https://ik.imagekit.io/oytjocebw/acadesx/blog-python-vs-javascript-cover.png"
+ogImage: "https://ik.imagekit.io/oytjocebw/acadesx/blog-python-vs-javascript-cover.png"
 ---
 
 There is no single "best" programming language, but there is an overwhelmingly popular consensus on the best language to start with: Python.
