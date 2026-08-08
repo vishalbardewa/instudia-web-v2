@@ -13,7 +13,7 @@ coverImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=f
 ogImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
 ---
 
-So you want to learn to code.
+So you want to learn to code and build apps.
 
 Maybe you are looking to build the next big app, perhaps you want to automate some tedious tasks at work, or maybe you are just curious about how the digital world is built. Before diving into syntax, [understanding what web development involves](/blog/what-is-web-development-should-you-learn) and exploring [IT career opportunities in Nagaland](/blog/best-it-careers-nagaland-2025) can help clarify your direction. Whatever your reason, the path from writing your first "Hello, World!" to becoming a confident developer can feel overwhelming.
 
