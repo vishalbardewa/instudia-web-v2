@@ -20,14 +20,27 @@ body {
   }
   
   /* Swiss Brutalist Table Support */
+  .prose .table-container {
+    @apply block w-full overflow-x-auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .prose .table-container table,
   .prose table {
-    @apply border-collapse w-full my-12 border-2 border-black bg-white shadow-[8px_8px_0px_rgba(0,0,0,1)];
+    @apply border-collapse my-12 border-2 border-black bg-white shadow-[8px_8px_0px_rgba(0,0,0,1)];
+    min-width: max-content;
+    width: 100%;
+  }
+  /* When inside the scroll wrapper, reset width so table can be wider than container */
+  .prose .table-container table {
+    width: max-content;
+    min-width: 100%;
   }
   .prose thead {
     @apply bg-black text-white;
   }
   .prose th {
     @apply border-2 border-black p-4 text-[10px] font-black uppercase tracking-widest text-white leading-tight;
+    white-space: nowrap;
   }
   .prose td {
     @apply border-2 border-black p-4 text-sm font-bold text-black uppercase tracking-tight;
@@ -37,10 +50,6 @@ body {
   }
   .prose tr:hover {
     @apply bg-brandpurple/5;
-  }
-  /* Mobile Responsiveness */
-  .prose table-container {
-    @apply block w-full overflow-x-auto;
   }
 
   /* Hide native scrollbar — custom scroll indicator is used instead */
