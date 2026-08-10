@@ -12,6 +12,7 @@ import { Container } from "../../components/atom/Container";
 import "katex/dist/katex.min.css";
 import BrutalistChart from "../../components/molecules/BrutalistChart";
 import BeginnerLanguageComparator from "../../components/molecules/BeginnerLanguageComparator";
+import SystemDesignExplorer from "../../components/molecules/SystemDesignExplorer";
 import coursesData from "@/app/courses.json";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -328,6 +329,9 @@ export default async function BlogPostPage({ params }: Props) {
                         if (item.type === "widget") {
                           if (item.widgetId === "beginner-language-comparator") {
                             return <BeginnerLanguageComparator key={ii} />;
+                          }
+                          if (item.widgetId === "system-design-explorer") {
+                            return <SystemDesignExplorer key={ii} />;
                           }
                           return null;
                         }
