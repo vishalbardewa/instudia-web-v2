@@ -13,6 +13,11 @@ import "katex/dist/katex.min.css";
 import BrutalistChart from "../../components/molecules/BrutalistChart";
 import BeginnerLanguageComparator from "../../components/molecules/BeginnerLanguageComparator";
 import SystemDesignExplorer from "../../components/molecules/SystemDesignExplorer";
+import ColorExplorerWidget from "../../components/molecules/ColorExplorerWidget";
+import HarmonyWheelWidget from "../../components/molecules/HarmonyWheelWidget";
+import PaletteRulesWidget from "../../components/molecules/PaletteRulesWidget";
+import HslRelationshipWidget from "../../components/molecules/HslRelationshipWidget";
+import HarmonyDefinitionsWidget from "../../components/molecules/HarmonyDefinitionsWidget";
 import coursesData from "@/app/courses.json";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -332,6 +337,21 @@ export default async function BlogPostPage({ params }: Props) {
                           }
                           if (item.widgetId === "system-design-explorer") {
                             return <SystemDesignExplorer key={ii} />;
+                          }
+                          if (item.widgetId === "color-explorer") {
+                            return <ColorExplorerWidget key={ii} />;
+                          }
+                          if (item.widgetId === "harmony-wheel") {
+                            return <HarmonyWheelWidget key={ii} />;
+                          }
+                          if (item.widgetId === "palette-rules") {
+                            return <PaletteRulesWidget key={ii} />;
+                          }
+                          if (item.widgetId === "hsl-terminal") {
+                            return <HslRelationshipWidget key={ii} />;
+                          }
+                          if (item.widgetId === "harmony-definitions") {
+                            return <HarmonyDefinitionsWidget key={ii} />;
                           }
                           return null;
                         }
