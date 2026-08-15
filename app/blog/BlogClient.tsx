@@ -21,7 +21,7 @@ function SwissBrutalistCard({ post, index, isLarge = false }: { post: Post; inde
   const translateHover = useTransform(springHover, [0, 1], ["translate(0px, 0px)", "translate(-4px, -4px)"]);
 
   return (
-    <Link href={`/blog/${post.slug}`} className={`group block h-full ${isLarge ? 'col-span-full' : ''}`}>
+    <Link href={`/blog/${post.slug}`} prefetch={false} className={`group block h-full ${isLarge ? 'col-span-full' : ''}`}>
       <motion.div
         onMouseEnter={() => isHovered.set(1)}
         onMouseLeave={() => isHovered.set(0)}

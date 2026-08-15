@@ -8,15 +8,28 @@ const WA_MESSAGE = encodeURIComponent(
 );
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
+// Hidden till the end of 29th August 2026 (IST) to showcase the Agentic AI Bot
+const WORKSHOP_EXPIRY_TIMESTAMP = new Date("2026-08-29T23:59:59+05:30").getTime();
+
 export default function WhatsAppWidget() {
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
+  const [isWorkshopPeriod, setIsWorkshopPeriod] = useState(true);
 
-  // Slide in after 2s
+  // Slide in after 2s (only when workshop period has concluded)
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 2000);
-    return () => clearTimeout(t);
+    setMounted(true);
+    const active = Date.now() <= WORKSHOP_EXPIRY_TIMESTAMP;
+    setIsWorkshopPeriod(active);
+
+    if (!active) {
+      const t = setTimeout(() => setVisible(true), 2000);
+      return () => clearTimeout(t);
+    }
   }, []);
+
+  if (!mounted || isWorkshopPeriod) return null;
 
   return (
     <div

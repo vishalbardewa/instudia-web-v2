@@ -143,6 +143,7 @@ export default function TopStoriesSection({
             {/* More Pill Link */}
             <Link
               href={moreHref}
+              prefetch={false}
               className="px-5 py-1.5 sm:px-6 sm:py-2 border-2 border-black rounded-full text-xs font-black uppercase tracking-wider text-black bg-white hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
             >
               More
@@ -165,6 +166,7 @@ export default function TopStoriesSection({
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
+                prefetch={false}
                 className="group flex-shrink-0 w-[190px] sm:w-[220px] md:w-[240px] aspect-[9/13] snap-start block"
               >
                 <div

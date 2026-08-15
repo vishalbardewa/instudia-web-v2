@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import MotionProvider from "./components/atom/MotionProvider";
@@ -11,7 +11,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { AppConfig } from "./_utils/AppConfig";
 import { LocalBusinessSchema } from "./components/SchemaOrg/LocalBusinessSchema";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
