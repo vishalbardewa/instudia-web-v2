@@ -130,13 +130,15 @@ function parseBody(markdown: string): Section[] {
       let text = quoteLines.join("\n");
       let fontSize: string | undefined = undefined;
       let textCase: any = undefined;
+      let calloutType: string | undefined = undefined;
 
-      // Check for attributes in brackets at the start: [size:xl, case:upper]
+      // Check for attributes in brackets at the start: [size:xl, case:upper, type:event]
       const attrMatch = text.match(/^\[(.*?)\]\s*/);
       if (attrMatch) {
         const attrs = attrMatch[1].split(",").map(a => a.trim());
         attrs.forEach(attr => {
           if (attr.startsWith("size:")) fontSize = attr.replace("size:", "").trim();
+          if (attr.startsWith("type:")) calloutType = attr.replace("type:", "").trim();
           if (attr.startsWith("case:")) {
             const c = attr.replace("case:", "").trim();
             if (["uppercase", "lowercase", "capitalize", "normal", "upper", "lower", "cap"].includes(c)) {
@@ -150,7 +152,7 @@ function parseBody(markdown: string): Section[] {
         text = text.replace(attrMatch[0], "");
       }
 
-      current.items.push({ type: "blockquote", text, fontSize, textCase });
+      current.items.push({ type: "blockquote", text, fontSize, textCase, calloutType });
       continue;
     }
 

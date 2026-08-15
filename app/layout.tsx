@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/assets/icons/icon.png",
+    shortcut: "/assets/icons/icon.png",
+    apple: "/assets/icons/icon.png",
+  },
   openGraph: {
     title: {
       default: "Computer & Skill Courses in Nagaland | instudia",

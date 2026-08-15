@@ -6,7 +6,7 @@ export type ContentItem =
   | { type: "bullets"; items: string[] }
   | { type: "list-ordered"; items: string[] }
   | { type: "links"; items: string[] }
-  | { type: "blockquote"; text: string; fontSize?: string; textCase?: "uppercase" | "lowercase" | "capitalize" | "normal" }
+  | { type: "blockquote"; text: string; fontSize?: string; textCase?: "uppercase" | "lowercase" | "capitalize" | "normal"; calloutType?: string }
   | { type: "divider" }
   | { type: "image"; src: string; alt: string }
   | { type: "chart"; chartType: "bar" | "line" | "area"; title?: string; data: any[]; units?: string }

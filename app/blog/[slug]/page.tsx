@@ -165,7 +165,11 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Cinematic Cover Vault */}
       <section className="mt-12 mb-20 px-4 sm:px-10 max-w-7xl mx-auto">
         <div className="border-2 border-black bg-white p-4 shadow-[12px_12px_0px_#FFE01B]">
-          <img src={post.coverImage} alt={post.title} className="w-full aspect-[21/9] object-cover border-2 border-black transition-all duration-700" />
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="w-full h-auto max-h-[650px] object-contain mx-auto border-2 border-black transition-all duration-700 block"
+          />
         </div>
       </section>
 
@@ -210,6 +214,21 @@ export default async function BlogPostPage({ params }: Props) {
                                     <div className="table-container">
                                       <table>{children}</table>
                                     </div>
+                                  ),
+                                  a: ({ href, children }) => (
+                                    <a
+                                      href={href}
+                                      target={href?.startsWith("http") ? "_blank" : undefined}
+                                      rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                                      className="font-black text-black bg-[#FFE01B] px-2 py-0.5 border-b-2 border-black hover:bg-[#C21BFF] hover:text-white transition-all underline decoration-2 decoration-black inline-flex items-center gap-1.5"
+                                    >
+                                      <span>{children}</span>
+                                      {href?.startsWith("http") && (
+                                        <svg className="w-3.5 h-3.5 inline-block shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                      )}
+                                    </a>
                                   ),
                                 }}
                               >
@@ -291,6 +310,96 @@ export default async function BlogPostPage({ params }: Props) {
                           );
                         }
                         if (item.type === "blockquote") {
+                          if (item.calloutType === "event" || item.calloutType === "alert" || item.calloutType === "callout") {
+                            return (
+                              <div key={ii} className="my-14 border-2 sm:border-4 border-black bg-white shadow-[10px_10px_0px_#FFE01B] relative overflow-hidden transition-all">
+                                {/* Top Ribbon */}
+                                <div className="bg-black text-white px-5 py-3 border-b-2 sm:border-b-4 border-black flex flex-wrap items-center justify-between gap-3">
+                                  <div className="flex items-center gap-2.5">
+                                    <span className="relative flex h-3 w-3">
+                                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFE01B] opacity-75"></span>
+                                      <span className="relative inline-flex rounded-full h-3 w-3 bg-[#FFE01B]"></span>
+                                    </span>
+                                    <span className="text-xs font-black tracking-widest uppercase text-[#FFE01B]">
+                                      REGISTRATION ACTIVE
+                                    </span>
+                                  </div>
+                                  <span className="bg-[#FFE01B] text-black text-[10px] font-black px-2.5 py-0.5 uppercase tracking-widest border border-black">
+                                    LIMITED SEATS
+                                  </span>
+                                </div>
+
+                                {/* Matrix Specs Bar */}
+                                <div className="grid grid-cols-1 sm:grid-cols-3 border-b-2 sm:border-b-4 border-black bg-neutral-50 text-black divide-y-2 sm:divide-y-0 sm:divide-x-2 sm:divide-black text-center font-sans">
+                                  <div className="p-3.5 bg-[#FFE01B]/20">
+                                    <div className="text-[10px] font-black uppercase text-black/60 tracking-widest">DATES</div>
+                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight mt-0.5 text-[#C21BFF]">28 & 29 AUG 2026</div>
+                                  </div>
+                                  <div className="p-3.5">
+                                    <div className="text-[10px] font-black uppercase text-black/50 tracking-widest">FORMAT</div>
+                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight mt-0.5">2-Day Intensive Lab</div>
+                                  </div>
+                                  <div className="p-3.5">
+                                    <div className="text-[10px] font-black uppercase text-black/50 tracking-widest">VENUE</div>
+                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight mt-0.5">instudia Lab, Dimapur</div>
+                                  </div>
+                                </div>
+
+                                {/* Body Content */}
+                                <div className="p-6 sm:p-8">
+                                  <div className="text-base sm:text-lg font-bold text-black leading-relaxed">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm, remarkMath]}
+                                      rehypePlugins={[rehypeKatex]}
+                                      components={{
+                                        strong: ({ children }) => (
+                                          <strong className="font-black text-[#C21BFF] bg-[#C21BFF]/10 px-2 py-0.5 border-b-2 border-[#C21BFF] inline-block mx-0.5">
+                                            {children}
+                                          </strong>
+                                        ),
+                                        a: ({ href, children }) => (
+                                          <a
+                                            href={href}
+                                            target={href?.startsWith("http") ? "_blank" : undefined}
+                                            rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                                            className="font-black text-black bg-[#FFE01B] px-1.5 py-0.5 border-b-2 border-black hover:bg-[#C21BFF] hover:text-white transition-all underline decoration-2 decoration-black inline-flex items-center gap-1"
+                                          >
+                                            <span>{children}</span>
+                                            {href?.startsWith("http") && (
+                                              <svg className="w-3.5 h-3.5 inline-block shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                              </svg>
+                                            )}
+                                          </a>
+                                        ),
+                                      }}
+                                    >
+                                      {item.text}
+                                    </ReactMarkdown>
+                                  </div>
+
+                                  {/* CTA Strip */}
+                                  <div className="mt-6 pt-6 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    <div className="text-xs font-bold text-black/70 uppercase tracking-tight text-center sm:text-left">
+                                      Hands-on sandboxed labs with 1-on-1 terminal debugging
+                                    </div>
+                                    <a
+                                      href="https://agentic-ai.instudianagaland.com/"
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#FFE01B] hover:bg-[#C21BFF] hover:text-white text-black font-black text-sm uppercase tracking-wider px-8 py-3.5 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+                                    >
+                                      <span>Register Your Terminal</span>
+                                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          }
+
                           const sizeClass = item.fontSize ? `text-${item.fontSize}` : "text-xl sm:text-3xl";
                           const caseClass = item.textCase === "normal" ? "normal-case" : (item.textCase || "uppercase");
 
@@ -300,7 +409,17 @@ export default async function BlogPostPage({ params }: Props) {
                                 <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.899 15.192 15.606 16.017 15C16.842 14.394 17.667 14.394 18.017 14L18.017 11C18.017 10.337 17.65 10 17 10L14 10L14 4L22 4L22 10C22 15 19 21 14.017 21ZM5.017 21L5.017 18C5.017 16.899 6.192 15.606 7.017 15C7.842 14.394 8.667 14.394 9.017 14L9.017 11C9.017 10.337 8.65 10 8 10L5 10L5 4L13 4L13 10C13 15 10 21 5.017 21Z" /></svg>
                               </div>
                               <div className={`font-black text-black leading-[1.1] tracking-tight italic relative z-10 ${sizeClass} ${caseClass}`}>
-                                <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+                                <ReactMarkdown
+                                  remarkPlugins={[remarkGfm, remarkMath]}
+                                  rehypePlugins={[rehypeKatex]}
+                                  components={{
+                                    strong: ({ children }) => (
+                                      <strong className="font-black text-[#C21BFF] bg-[#C21BFF]/10 px-2 py-0.5 border-b-2 border-[#C21BFF] inline-block mx-0.5 not-italic">
+                                        {children}
+                                      </strong>
+                                    ),
+                                  }}
+                                >
                                   {item.text}
                                 </ReactMarkdown>
                               </div>
@@ -364,7 +483,7 @@ export default async function BlogPostPage({ params }: Props) {
                             <div key={ii} className="my-12 border-2 border-black bg-[#1B1C1E] shadow-[8px_8px_0px_rgba(0,0,0,1)] overflow-hidden">
                               <div className="flex items-center justify-between px-6 py-3 border-b-2 border-black bg-white">
                                 <span className="text-[10px] font-black uppercase tracking-widest text-black">
-                                  {item.language} // RECORD_04_01
+                                  {item.language}
                                 </span>
                                 <div className="flex gap-1.5">
                                   <div className="w-2 h-2 bg-black rounded-full" />
