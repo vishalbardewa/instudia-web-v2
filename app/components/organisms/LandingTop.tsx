@@ -1,126 +1,50 @@
 import Image from "next/image";
-import { Button } from "../atom/Button";
 import { FadeIn, FadeInStagger } from "../atom/FadeIn";
-
+import SeonaEditorialHero from "../molecules/SeonaEditorialHero";
 
 export default function LandingTop() {
-  const heroImages = [
-    "https://images.unsplash.com/photo-1649957909636-10a8b37d052e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1661432995748-6ccff78a1180?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1713946598635-0c2a65e4ee08?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1608048608477-30389696fdc1?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1649957909636-10a8b37d052e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
-
-  // Stable daily rotation — avoids Math.random() breaking SSR/HTTP caching
-  // and allows the browser to reliably preload the LCP image
-  const dayIndex = Math.floor(Date.now() / 86400000) % heroImages.length;
-
   return (
-    <div className="min-h-screen bg-white mt-6">
+    <div className="min-h-screen bg-white">
       <main>
         <div>
-          <div className="relative">
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
-            <div className="mx-auto max-w-7xl sm:px-6 lg:px-1">
-              <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-                <div className="absolute inset-0">
-                  <Image
-                    className="h-full w-full object-cover"
-                    src={heroImages[dayIndex]}
-                    alt="People working on laptops"
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1280px"
-                    priority
-                    loading="eager"
-                    fetchPriority="high"
-                  />
-                  <div className="absolute inset-0 bg-gray-600 mix-blend-multiply" />
-                </div>
-                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
-                  <div className="flex-1 text-center lg:text-left">
-                    <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                      <span className="block text-white">
-                        Turn your potential
-                      </span>
-                      <span className="block text-slate-300">
-                        into a paycheck
-                      </span>
-                    </h1>
-                    <p className="mx-auto lg:mx-0 mt-6 max-w-lg text-xl text-slate-300 sm:max-w-3xl">
-                      Courses in tech, design &amp; business in Dimapur, Nagaland
-                    </p>
-                    <div className="mx-auto lg:mx-0 mt-10 max-w-sm sm:flex sm:max-w-none lg:justify-start justify-center">
-                      <div className="flex justify-center gap-3 sm:mx-auto lg:mx-0 sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                        <Button
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://tally.so/r/wvebpA"
-                          className="flex items-center justify-center border border-transparent bg-black px-4 py-3 text-base font-medium text-black shadow-sm hover:bg-white hover:text-black sm:px-8"
-                        >
-                          Contact Us
-                        </Button>
-                        <Button
-                          className="flex items-center justify-center border border-transparent bg-[#FFE01B] px-4 py-3 text-base font-medium !text-black shadow-sm sm:px-8 animate-pulse"
-                          href="/courses"
-                        >
-                          Explore Courses
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Seona-Style Editorial Hero */}
+          <SeonaEditorialHero />
 
           <FadeInStagger>
             <FadeIn>
-              <div className="bg-gray-100">
+              <div>
                 <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
                   <p className="text-center text-sm font-semibold uppercase tracking-wide text-gray-500">
-                    Affiliations received from Esteemed Institutes.
+                    Affiliations received from Esteemed Institutes
                   </p>
-                  <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-4">
-                    <div className=" col-span-1 flex justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center max-w-4xl mx-auto">
+                    <div className="flex justify-center grayscale hover:grayscale-0">
                       <Image
-                        className="h-24 object-contain"
+                        className="h-48 object-contain"
                         src="/assets/images/iso-logo.png"
                         alt="ISO Certified Computer Institute in Dimapur, Nagaland"
-                        width={100}
-                        height={96}
+                        width={220}
+                        height={220}
                       />
                     </div>
-                    <div className=" col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
+                    <div className="flex items-center justify-center grayscale hover:grayscale-0">
                       <Image
-                        className="h-12 object-contain"
-                        src="/assets/images/aisect.png"
-                        alt="AISECT Affiliated Tech Courses Dimapur"
-                        width={150}
-                        height={48}
-                      />
-                    </div>
-                    <div className="col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 lg:col-span-1">
-                      <Image
-                        className="h-24 object-contain"
+                        className="h-48 object-contain"
                         src="/assets/images/niact.png"
                         alt="National Institute for Advanced Computer Technology Training"
                         width={150}
                         height={96}
                       />
                     </div>
-                    <div className="col-span-1 flex items-center justify-center grayscale hover:grayscale-0 md:col-span-2 md:col-start-2 lg:col-span-1">
+                    <div className="flex items-center justify-center grayscale hover:grayscale-0">
                       <Image
-                        className="h-24 object-contain"
+                        className="h-48 object-contain"
                         src="/assets/images/msme-logo.png"
                         alt="MSME Certified Skill Training Programs in Nagaland"
                         width={150}
                         height={96}
                       />
                     </div>
-
                   </div>
                 </div>
               </div>

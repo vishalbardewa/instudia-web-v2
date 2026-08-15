@@ -136,10 +136,10 @@ export default function PrimaryLayout({ children }: any) {
 
   return (
     <Suspense fallback={null}>
-      <FestivalLayoutContent 
-        navItems={navItems} 
-        longNavigation={longNavigation} 
-        searchOpen={searchOpen} 
+      <FestivalLayoutContent
+        navItems={navItems}
+        longNavigation={longNavigation}
+        searchOpen={searchOpen}
         setSearchOpen={setSearchOpen}
       >
         {children}
@@ -148,12 +148,12 @@ export default function PrimaryLayout({ children }: any) {
   );
 }
 
-function FestivalLayoutContent({ 
-  children, 
-  navItems, 
-  longNavigation, 
-  searchOpen, 
-  setSearchOpen 
+function FestivalLayoutContent({
+  children,
+  navItems,
+  longNavigation,
+  searchOpen,
+  setSearchOpen
 }: any) {
   const searchParams = useSearchParams();
   const festivalDate = searchParams?.get("festivalDate");
@@ -168,19 +168,19 @@ function FestivalLayoutContent({
       {activeFestival?.effect === "snowfall" && <Snowfall />}
       {activeFestival?.effect === "lights" && <GlowEffects />}
       {activeFestival?.effect === "easter-eggs" && <EasterEggs />}
-      <div 
+      <div
         className={clsx(
           "relative flex min-h-10 py-1.5 items-center justify-center px-4 text-xs sm:text-sm font-medium sm:px-6 lg:px-8 print:hidden transition-all duration-500 overflow-hidden border-b border-white/10",
-          activeFestival 
+          activeFestival
             ? clsx(activeFestival.colors.bannerBg, activeFestival.colors.bannerText)
-            : "bg-[#0c0d12] text-white"
+            : "bg-[#1b1c1e] text-white"
         )}
       >
         {/* Futuristic Cyber Neon Glow Backing */}
         {!activeFestival && (
           <>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#C21BFF]/15 via-[#58FF1B]/10 to-[#C21BFF]/15 opacity-80 pointer-events-none" />
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-80 h-10 bg-[#C21BFF]/30 blur-2xl pointer-events-none" />
+            <div className="absolute inset-0 bg-[#1b1c1e] pointer-events-none" />
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-80 h-10 bg-[#1b1c1e] blur-2xl pointer-events-none" />
           </>
         )}
 
@@ -201,7 +201,7 @@ function FestivalLayoutContent({
             </span>
 
             {/* Headline with Cyber / Neon Highlight */}
-            <span className="text-xs sm:text-sm font-semibold tracking-tight text-neutral-200 group-hover:text-white transition-colors truncate">
+            <span className="text-xs sm:text-sm font-semibold tracking-tight text-white group-hover:text-white transition-colors truncate">
               Agentic AI & Autonomous Systems Workshop —{" "}
               <span className="font-bold text-[#FFE01B] underline decoration-2 underline-offset-2 group-hover:text-[#58FF1B] transition-colors inline-flex items-center gap-1">
                 Explore & Register ↗

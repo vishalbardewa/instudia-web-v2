@@ -24,36 +24,6 @@ const tagColors: Record<string, string> = {
 
 const workshops = [
   {
-    title: "Agentic AI & Autonomous Systems Workshop",
-    subtitle: "2-Day Live Masterclass in Multi-Agent Frameworks & Tool Calling",
-    date: "August 28th – 29th, 2026",
-    tags: ["Upcoming", "Workshop", "Agentic AI"],
-    description:
-      "An intensive 2-day hands-on masterclass on building production-ready autonomous AI agents, LLM tool-calling systems, Model Context Protocol (MCP) integrations, and multi-agent coordination pipelines. Participants build practical agentic systems that automate complex workflows end-to-end.",
-    highlights:
-      "Covers agent loop architectures, tool-calling and function APIs, memory patterns (short/long-term), multi-agent collaboration swarms, error-recovery mechanisms, and real-world deployment for local and global business automations in Nagaland.",
-    photos: [
-      {
-        src: "https://ik.imagekit.io/dxffek9yf/tr:h-1800,w-1800,fo-face/website-workshop-instudia/ai-institute-workshop/ai-workshop-at-instudia.jpeg?updatedAt=1752486659667",
-        caption: "Hands-on interaction building autonomous workflows and AI systems",
-        wide: true,
-      },
-      {
-        src: "https://ik.imagekit.io/dxffek9yf/tr:h-1800,w-1800,fo-face,f-webp/website-workshop-instudia/ai-institute-workshop/WhatsApp%20Image%202025-07-14%20at%203.15.05%20PM%20(1).jpeg?updatedAt=1752486594279",
-        caption: "Deep dive into prompting architectures and agent loops",
-      },
-      {
-        src: "https://ik.imagekit.io/dxffek9yf/tr:f-webp/website-workshop-instudia/ai-institute-workshop/WhatsApp%20Image%202025-07-14%20at%203.15.03%20PM.jpeg?updatedAt=1752486594248",
-        caption: "Live coding demonstrations with tool-calling frameworks",
-      },
-      {
-        src: "https://ik.imagekit.io/dxffek9yf/tr:h-1800,w-1800,fo-face,f-webp/website-workshop-instudia/ai-institute-workshop/WhatsApp%20Image%202025-07-14%20at%203.15.05%20PM.jpeg?updatedAt=1752486594214",
-        caption: "Resource person addressing students on Agentic AI career opportunities",
-        wide: true,
-      },
-    ],
-  },
-  {
     title: "AI for Productive & Efficient Learning",
     date: "April 5th, 2025",
     tags: ["Workshop", "AI"],
