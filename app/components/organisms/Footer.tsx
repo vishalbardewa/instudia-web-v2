@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const navigation = {
   tools: [
@@ -15,7 +16,7 @@ const navigation = {
   company: [
     { name: "About", href: "/about" },
     { name: "Workshops", href: "/workshops" },
-    { name: "Host a Seminar", href: "/host-a-seminar" },
+    { name: "Host us", href: "/host-a-seminar" },
     { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },
   ],
@@ -174,14 +175,12 @@ export default function Footer() {
               <ul role="list" className="mt-6 space-y-2">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
                       href={item.href}
-                      className="text-xs leading-6 text-gray-600 hover:text-gray-900"
+                      className="text-xs leading-6 text-gray-600 hover:text-gray-900 transition-colors"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -193,14 +192,12 @@ export default function Footer() {
               <ul role="list" className="mt-6 space-y-2">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
                       href={item.href}
-                      className="text-xs leading-6 text-gray-600 hover:text-gray-900"
+                      className="text-xs leading-6 text-gray-600 hover:text-gray-900 transition-colors"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
