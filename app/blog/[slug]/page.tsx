@@ -18,6 +18,7 @@ import HarmonyWheelWidget from "../../components/molecules/HarmonyWheelWidget";
 import PaletteRulesWidget from "../../components/molecules/PaletteRulesWidget";
 import HslRelationshipWidget from "../../components/molecules/HslRelationshipWidget";
 import HarmonyDefinitionsWidget from "../../components/molecules/HarmonyDefinitionsWidget";
+import TopStoriesSection from "../../components/molecules/TopStoriesSection";
 import coursesData from "@/app/courses.json";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -59,7 +60,12 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const others = posts.filter((p) => p.slug !== slug).slice(-3);
+  // Top stories: same category stories first, followed by remaining latest stories
+  const otherPosts = posts.filter((p) => p.slug !== slug);
+  const sameCategory = otherPosts.filter((p) => p.category === post.category);
+  const differentCategory = otherPosts.filter((p) => p.category !== post.category);
+  const topStories = [...sameCategory, ...differentCategory].slice(0, 10);
+
   const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   const tocItems = post!.body.filter((s) => s.heading).map((s) => ({ label: s.heading!, id: slugify(s.heading!) }));
 
@@ -612,6 +618,11 @@ export default async function BlogPostPage({ params }: Props) {
           </aside>
 
         </div>
+      </Container>
+
+      {/* Top Stories Horizontal Carousel */}
+      <Container className="relative z-10">
+        <TopStoriesSection posts={topStories} title="Top stories" moreHref="/blog" />
       </Container>
     </main>
   );

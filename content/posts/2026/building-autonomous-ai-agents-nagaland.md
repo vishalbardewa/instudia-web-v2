@@ -94,7 +94,7 @@ AI is not just about crafting better prompts. It marks a fundamental paradigm sh
 Whether you are a software developer looking to automate complex engineering operations or an ambitious student aiming to master production-grade AI systems, **AI with ia** gives you the foundational engineering principles to build it right.
 
 > [type:event, case:normal] **Registration Open | Limited Seats Only.** Due to the hands-on nature of the lab environments and 1-on-1 debugging guidance, seats are strictly limited.
-> 
+
 > We encourage interested students and developers to register early and secure their spot for **28th & 29th August 2026**.
 
 * [Explore Curriculum & Register (Limited Seats Available) — agentic-ai.instudianagaland.com](https://agentic-ai.instudianagaland.com/)
