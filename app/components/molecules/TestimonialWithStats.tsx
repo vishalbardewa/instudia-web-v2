@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { FadeIn, FadeInStagger } from "../atom/FadeIn";
 
 export default function TestimonialWithStats() {
@@ -15,10 +16,13 @@ export default function TestimonialWithStats() {
               {/* Left: Image Card */}
               <div className="relative">
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl aspect-[4/3] lg:aspect-[3/4]">
-                  <img
-                    className="absolute inset-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1543269664-647163ef2ee4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  <Image
+                    className="object-cover"
+                    src="https://images.unsplash.com/photo-1543269664-647163ef2ee4?q=80&w=1400&auto=format&fit=crop"
                     alt="Students at Instudia learning tech skills in Dimapur"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 600px"
                   />
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1B1C1E] via-[#1B1C1E]/40 to-transparent" />

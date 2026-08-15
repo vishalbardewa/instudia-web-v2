@@ -264,7 +264,6 @@ export default function SeminarHeroCollage() {
               src={item.src}
               alt={item.alt}
               fill
-              priority={isFeatured}
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes={
                 isFeatured
