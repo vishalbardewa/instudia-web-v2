@@ -351,6 +351,10 @@ const workshops: WorkshopItem[] = [
         wide: true,
       },
     ],
+    newsLink: {
+      url: "https://www.morungexpress.com/workshop-on-emergence-of-ai-and-its-applications-in-education-held-in-dimapur",
+      source: "The Morung Express",
+    },
   },
 
   // --- 2024 ---
