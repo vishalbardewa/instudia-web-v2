@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/contact',
     '/workshops',
+    '/host-a-seminar',
     '/courses',
     '/faq',
     '/blog',

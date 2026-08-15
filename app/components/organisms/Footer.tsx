@@ -14,7 +14,8 @@ const navigation = {
   ],
   company: [
     { name: "About", href: "/about" },
-    { name: "Seminars", href: "/seminar" },
+    { name: "Workshops", href: "/workshops" },
+    { name: "Host a Seminar", href: "/host-a-seminar" },
     { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },
   ],

@@ -115,6 +115,7 @@ const longNavigation = {
   pages: [
     { name: "About", href: "/about" },
     { name: "Workshops", href: "/workshops" },
+    { name: "Host a Seminar", href: "/host-a-seminar" },
     { name: "Contact", href: "/contact" },
     { name: "Tools", href: "/tools", isNew: true },
   ],

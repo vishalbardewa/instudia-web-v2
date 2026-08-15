@@ -360,7 +360,7 @@ const workshops: WorkshopItem[] = [
   // --- 2024 ---
   {
     title: "Unlocking Potential with AI and Career Insights",
-    subtitle: "at St. Edmund's Higher Secondary School",
+    subtitle: "at St. Edmund's Higher Secondary School — Featured in Eastern Mirror",
     date: "September 7th, 2024",
     year: "2024",
     tags: ["Workshop", "AI"],
@@ -368,6 +368,10 @@ const workshops: WorkshopItem[] = [
       "A workshop was conducted at St. Edmund's Higher Secondary School, Dimapur. The event featured engaging sessions led by experts from instudia, who highlighted the growing significance of AI in reshaping industries and the modern job market. Daniel Changkija, Director of instudia, explained the critical role of AI in modern education and its transformative potential.",
     highlights:
       "Aimed to provide students with insights into new and evolving career paths while highlighting how AI can be utilised to enhance their academic and professional growth.",
+    newsLink: {
+      url: "https://www.easternmirrornagaland.com/instudia-conducts-workshop-on-ai-career-insights",
+      source: "Eastern Mirror",
+    },
     photos: [
       {
         src: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/ai-workshop-edmund/tinywow_IMG_2107-1_65553879.webp?updatedAt=1727345998353",
@@ -767,10 +771,16 @@ export default function WorkshopsPage() {
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <a
+                  href="/host-a-seminar"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-brandpurple px-6 py-3 text-sm font-extrabold text-white hover:bg-brandpurple/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-brandpurple/20"
+                >
+                  Host instudia at Your School / College
+                </a>
+                <a
                   href="https://www.instagram.com/instudia_nagaland"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-brandpurple px-6 py-3 text-sm font-extrabold text-white hover:bg-brandpurple/90 transition-all hover:-translate-y-0.5 shadow-lg shadow-brandpurple/20"
+                  className="inline-flex items-center gap-2 rounded-2xl border border-neutral-200 bg-white px-6 py-3 text-sm font-extrabold text-[#1B1C1E] hover:bg-gray-50 transition-all hover:-translate-y-0.5"
                 >
                   Follow on Instagram
                 </a>

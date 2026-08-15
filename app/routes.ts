@@ -4,6 +4,7 @@ export const routes = {
   COURSES: "/courses",
   CONTACT: "/contact",
   WORKSHOPS: "/workshops",
+  HOST_SEMINAR: "/host-a-seminar",
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_AND_CONDITIONS: "/terms",
   SALARY_INSIGHTS: "/tools/salary-insights",

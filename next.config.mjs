@@ -19,6 +19,11 @@ const nextConfig = {
         destination: "https://www.instudianagaland.com/:path*",
         permanent: true,
       },
+      {
+        source: "/host-us",
+        destination: "/host-a-seminar",
+        permanent: true,
+      },
     ];
   },
   turbopack: {},
@@ -29,6 +34,12 @@ const nextConfig = {
       { protocol: "https", hostname: "plus.unsplash.com" },
       { protocol: "https", hostname: "studio.tailwindui.com" },
       { protocol: "https", hostname: "everpath-course-content.s3-accelerate.amazonaws.com" },
+      { protocol: "https", hostname: "easternmirror-assets.s3.ap-south-1.amazonaws.com" },
+      { protocol: "https", hostname: "*.amazonaws.com" },
+      { protocol: "https", hostname: "morungexpress.com" },
+      { protocol: "https", hostname: "www.morungexpress.com" },
+      { protocol: "https", hostname: "nagalandtribune.in" },
+      { protocol: "https", hostname: "nagalandpost.com" },
       { protocol: "https", hostname: "res.cloudinary.com" },
     ],
     // Removed 2048 & 3840 — useless on mobile, bloats image manifest
