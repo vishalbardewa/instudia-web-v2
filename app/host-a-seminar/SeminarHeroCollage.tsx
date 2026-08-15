@@ -12,24 +12,16 @@ interface CollageImage {
   source: string;
 }
 
-type LayoutPreset =
-  | "top-panoramic"
-  | "dominant-left"
-  | "dominant-right"
-  | "split-diagonal"
-  | "bottom-panoramic"
-  | "asymmetric-cascade";
+type LayoutPreset = "top-hero" | "left-pillar" | "right-pillar" | "bottom-hero";
 
 const LAYOUT_PRESETS: LayoutPreset[] = [
-  "top-panoramic",
-  "dominant-left",
-  "split-diagonal",
-  "dominant-right",
-  "bottom-panoramic",
-  "asymmetric-cascade",
+  "top-hero",
+  "left-pillar",
+  "right-pillar",
+  "bottom-hero",
 ];
 
-const COLLAGE_POOL: CollageImage[] = [
+const COLLAGE_IMAGES: CollageImage[] = [
   {
     id: "mgm-college",
     src: "https://ik.imagekit.io/oytjocebw/seminars/mgm/director-at-mgm-college.jpeg",
@@ -75,64 +67,36 @@ const COLLAGE_POOL: CollageImage[] = [
 ];
 
 export default function SeminarHeroCollage() {
-  const [images, setImages] = useState<CollageImage[]>(COLLAGE_POOL);
-  const [preset, setPreset] = useState<LayoutPreset>("top-panoramic");
+  const [images, setImages] = useState<CollageImage[]>(COLLAGE_IMAGES);
+  const [presetIndex, setPresetIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const presetIndexRef = useRef(0);
 
-  // Dynamic width, height & slot morphing timer every 3.8 seconds
+  const activePreset = LAYOUT_PRESETS[presetIndex];
+
+  // Fluid place & dimension morphing timer every 3.8 seconds
   useEffect(() => {
     if (isPaused) return;
 
-    const runMorph = () => {
-      // 1. Advance to the next layout preset with distinct widths and heights
-      presetIndexRef.current = (presetIndexRef.current + 1) % LAYOUT_PRESETS.length;
-      const nextPreset = LAYOUT_PRESETS[presetIndexRef.current];
-      setPreset(nextPreset);
+    const interval = setInterval(() => {
+      // 1. Advance to next layout preset for dynamic width & height morphing
+      setPresetIndex((prev) => (prev + 1) % LAYOUT_PRESETS.length);
 
-      // 2. Randomly morph image positions or bring in fresh queue photos
+      // 2. Rotate image queue smoothly
       setImages((prev) => {
-        const next = [...prev];
-        const randomMode = Math.floor(Math.random() * 3);
-
-        if (randomMode === 0) {
-          // Promote slot 1 or 2 to the primary featured position
-          const targetSlot = Math.random() > 0.5 ? 1 : 2;
-          const [promoted] = next.splice(targetSlot, 1);
-          return [promoted, ...next];
-        } else if (randomMode === 1 && next.length > 3) {
-          // Inflow fresh image from queue into an active slot
-          const slotToReplace = Math.floor(Math.random() * 3);
-          const freshIdx = 3 + Math.floor(Math.random() * (next.length - 3));
-          const [fresh] = next.splice(freshIdx, 1);
-          const [displaced] = next.splice(slotToReplace, 1, fresh);
-          next.push(displaced);
-          return next;
-        } else {
-          // Shuffle visible slots
-          const activeThree = next.slice(0, 3);
-          const remaining = next.slice(3);
-          const shuffled = [...activeThree].sort(() => Math.random() - 0.5);
-          if (shuffled[0].id === activeThree[0].id && activeThree.length > 1) {
-            const temp = shuffled[0];
-            shuffled[0] = shuffled[1];
-            shuffled[1] = temp;
-          }
-          return [...shuffled, ...remaining];
-        }
+        const [first, second, third, ...rest] = prev;
+        // Swap slots: second becomes featured, third becomes slot 1, first becomes slot 2
+        return [second, third, first, ...rest];
       });
-    };
+    }, 3800);
 
-    const interval = setInterval(runMorph, 3800);
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  // Click on a smaller card to morph it into the featured slot with a new layout preset
+  // Click on a card to morph it into the featured primary slot
   const handleCardClick = (idx: number) => {
-    presetIndexRef.current = (presetIndexRef.current + 1) % LAYOUT_PRESETS.length;
-    setPreset(LAYOUT_PRESETS[presetIndexRef.current]);
-
+    setPresetIndex((prev) => (prev + 1) % LAYOUT_PRESETS.length);
     if (idx === 0) return;
+
     setImages((prev) => {
       const next = [...prev];
       const selected = next.splice(idx, 1)[0];
@@ -140,224 +104,129 @@ export default function SeminarHeroCollage() {
     });
   };
 
-  // Continuous slot coordinates with dynamic morphing widths & heights across presets
-  const getSlotCoordinates = (slotIndex: number, currentPreset: LayoutPreset) => {
-    switch (currentPreset) {
-      case "top-panoramic":
-        // Slot 0: Full 100% wide banner (height: 56%)
-        // Slot 1: Asymmetric 60% width card (height: 40%)
-        // Slot 2: Asymmetric 37% width card (height: 40%)
+  // Pure percentage-based slot coordinates (NO calc expressions)
+  // This enables Framer Motion to perform GPU-accelerated math interpolation smoothly!
+  const getSlotStyle = (slotIndex: number, preset: LayoutPreset) => {
+    switch (preset) {
+      case "top-hero":
         if (slotIndex === 0) {
           return {
-            top: "0%",
             left: "0%",
+            top: "0%",
             width: "100%",
             height: "56%",
-            rotate: 0,
-            scale: 1,
             zIndex: 20,
+            rotate: 0,
           };
         }
         if (slotIndex === 1) {
           return {
+            left: "0%",
             top: "60%",
-            left: "0%",
-            width: "calc(60% - 6px)",
+            width: "48%",
             height: "40%",
-            rotate: -0.8,
-            scale: 0.98,
             zIndex: 10,
+            rotate: -0.8,
           };
         }
         return {
+          left: "52%",
           top: "60%",
-          left: "calc(60% + 6px)",
-          width: "calc(40% - 6px)",
+          width: "48%",
           height: "40%",
+          zIndex: 10,
           rotate: 0.8,
-          scale: 0.98,
-          zIndex: 10,
         };
 
-      case "dominant-left":
-        // Slot 0: Tall dominant left column (width: 56%, height: 100% full!)
-        // Slot 1: Top right horizontal card (width: 42%, height: 47%)
-        // Slot 2: Bottom right horizontal card (width: 42%, height: 49%)
+      case "left-pillar":
         if (slotIndex === 0) {
           return {
-            top: "0%",
             left: "0%",
-            width: "calc(56% - 6px)",
+            top: "0%",
+            width: "52%",
             height: "100%",
+            zIndex: 20,
             rotate: -0.5,
-            scale: 1,
-            zIndex: 20,
           };
         }
         if (slotIndex === 1) {
           return {
+            left: "56%",
             top: "0%",
-            left: "calc(56% + 6px)",
-            width: "calc(44% - 6px)",
+            width: "44%",
             height: "47%",
+            zIndex: 10,
             rotate: 0.8,
-            scale: 0.98,
-            zIndex: 10,
           };
         }
         return {
-          top: "51%",
-          left: "calc(56% + 6px)",
-          width: "calc(44% - 6px)",
-          height: "49%",
-          rotate: -0.6,
-          scale: 0.98,
+          left: "56%",
+          top: "53%",
+          width: "44%",
+          height: "47%",
           zIndex: 10,
+          rotate: -0.6,
         };
 
-      case "split-diagonal":
-        // Slot 0: Top left broad block (width: 65%, height: 50%)
-        // Slot 1: Top right compact tall block (width: 32%, height: 100%)
-        // Slot 2: Bottom left wide block (width: 65%, height: 46%)
+      case "right-pillar":
         if (slotIndex === 0) {
           return {
+            left: "48%",
             top: "0%",
-            left: "0%",
-            width: "calc(65% - 6px)",
-            height: "50%",
-            rotate: 0,
-            scale: 1,
+            width: "52%",
+            height: "100%",
             zIndex: 20,
-          };
-        }
-        if (slotIndex === 1) {
-          return {
-            top: "0%",
-            left: "calc(65% + 6px)",
-            width: "calc(35% - 6px)",
-            height: "100%",
-            rotate: 0.6,
-            scale: 0.98,
-            zIndex: 10,
-          };
-        }
-        return {
-          top: "54%",
-          left: "0%",
-          width: "calc(65% - 6px)",
-          height: "46%",
-          rotate: -0.6,
-          scale: 0.98,
-          zIndex: 10,
-        };
-
-      case "dominant-right":
-        // Slot 0: Tall dominant right column (width: 56%, height: 100% full!)
-        // Slot 1: Top left horizontal card (width: 42%, height: 47%)
-        // Slot 2: Bottom left horizontal card (width: 42%, height: 49%)
-        if (slotIndex === 0) {
-          return {
-            top: "0%",
-            left: "calc(44% + 6px)",
-            width: "calc(56% - 6px)",
-            height: "100%",
             rotate: 0.5,
-            scale: 1,
-            zIndex: 20,
           };
         }
         if (slotIndex === 1) {
           return {
-            top: "0%",
             left: "0%",
-            width: "calc(44% - 6px)",
+            top: "0%",
+            width: "44%",
             height: "47%",
-            rotate: -0.8,
-            scale: 0.98,
             zIndex: 10,
+            rotate: -0.8,
           };
         }
         return {
-          top: "51%",
           left: "0%",
-          width: "calc(44% - 6px)",
-          height: "49%",
-          rotate: 0.6,
-          scale: 0.98,
+          top: "53%",
+          width: "44%",
+          height: "47%",
           zIndex: 10,
+          rotate: 0.6,
         };
 
-      case "bottom-panoramic":
-        // Slot 0: Full 100% wide bottom featured banner (height: 56%)
-        // Slot 1: Top left asymmetric 38% width card (height: 40%)
-        // Slot 2: Top right asymmetric 59% width card (height: 40%)
+      case "bottom-hero":
+      default:
         if (slotIndex === 0) {
           return {
-            top: "44%",
             left: "0%",
+            top: "44%",
             width: "100%",
             height: "56%",
-            rotate: 0,
-            scale: 1,
             zIndex: 20,
+            rotate: 0,
           };
         }
         if (slotIndex === 1) {
           return {
-            top: "0%",
             left: "0%",
-            width: "calc(38% - 6px)",
+            top: "0%",
+            width: "48%",
             height: "40%",
+            zIndex: 10,
             rotate: -0.8,
-            scale: 0.98,
-            zIndex: 10,
           };
         }
         return {
+          left: "52%",
           top: "0%",
-          left: "calc(38% + 6px)",
-          width: "calc(62% - 6px)",
+          width: "48%",
           height: "40%",
+          zIndex: 10,
           rotate: 0.8,
-          scale: 0.98,
-          zIndex: 10,
-        };
-
-      case "asymmetric-cascade":
-      default:
-        // Slot 0: Prominent top right block (width: 70%, height: 55%)
-        // Slot 1: Full-height left slim banner (width: 27%, height: 100%)
-        // Slot 2: Bottom right wide block (width: 70%, height: 41%)
-        if (slotIndex === 0) {
-          return {
-            top: "0%",
-            left: "calc(28% + 6px)",
-            width: "calc(72% - 6px)",
-            height: "55%",
-            rotate: 0,
-            scale: 1,
-            zIndex: 20,
-          };
-        }
-        if (slotIndex === 1) {
-          return {
-            top: "0%",
-            left: "0%",
-            width: "calc(28% - 6px)",
-            height: "100%",
-            rotate: -0.7,
-            scale: 0.98,
-            zIndex: 10,
-          };
-        }
-        return {
-          top: "59%",
-          left: "calc(28% + 6px)",
-          width: "calc(72% - 6px)",
-          height: "41%",
-          rotate: 0.6,
-          scale: 0.98,
-          zIndex: 10,
         };
     }
   };
@@ -371,23 +240,23 @@ export default function SeminarHeroCollage() {
       {/* 3 Active Morphing Cards with Dynamic Width & Height Transitions */}
       {images.slice(0, 3).map((item, idx) => {
         const isFeatured = idx === 0;
-        const coordinates = getSlotCoordinates(idx, preset);
+        const targetStyle = getSlotStyle(idx, activePreset);
 
         return (
           <motion.div
             key={item.id}
             initial={false}
-            animate={coordinates}
+            animate={targetStyle}
             transition={{
               type: "spring",
-              stiffness: 125,
-              damping: 17,
+              stiffness: 115,
+              damping: 19,
               mass: 0.85,
             }}
             onClick={() => handleCardClick(idx)}
             className={`absolute rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-md group cursor-pointer transition-shadow duration-300 hover:shadow-2xl ${
               isFeatured
-                ? "shadow-xl border-neutral-300"
+                ? "shadow-xl border-neutral-300 ring-1 ring-black/5"
                 : "hover:border-brandpurple/40"
             }`}
           >
