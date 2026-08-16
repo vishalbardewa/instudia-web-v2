@@ -86,6 +86,8 @@ const nextConfig = {
       "font-src 'self' https://fonts.gstatic.com data:",
       "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://ik.imagekit.io https://res.cloudinary.com https://api.whatsapp.com https://wa.me https://tally.so",
       "frame-src 'self' https://tally.so https://www.google.com",
+      "worker-src 'self' blob:",
+      "manifest-src 'self'",
       "media-src 'self' https: data:",
       "object-src 'none'",
       "base-uri 'self'",
