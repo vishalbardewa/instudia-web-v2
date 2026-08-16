@@ -1,33 +1,35 @@
 import type { Metadata } from 'next';
+import { SITE_URL, canonicalFor } from '@/lib/site';
 import { ResumeBuilder } from '../../components/organisms/ResumeBuilder';
 
 export const metadata: Metadata = {
-  title: 'AI Resume Builder | Professional ATS-Optimized CV Creator',
-  description: 'Create high-fidelity, ATS-optimized resumes with AI-assisted content refinement. Choose from professional templates like Bento, Minimalist, and Metropolitan.',
+  title: 'Free AI Resume Builder & ATS CV Maker',
+  description: 'Create professional, ATS-optimized resumes with AI-assisted content suggestions. Free resume templates designed for tech and corporate jobs in India.',
   keywords: ['AI Resume Builder', 'Professional CV Maker', 'ATS Optimized Resume', 'Career Branding', 'Resume Templates', 'instudia tools'],
-  alternates: { canonical: "/tools/resume-builder" },
+  alternates: { canonical: canonicalFor('/tools/resume-builder') },
   openGraph: {
-    title: 'AI Resume Builder | instudia',
-    description: 'Transform your career identity with our cinematic, AI-powered resume document engine.',
-    url: 'https://www.instudianagaland.com/tools/resume-builder',
+    title: 'Free AI Resume Builder & ATS CV Maker',
+    description: 'Create professional, ATS-optimized resumes with AI-assisted content suggestions. Free resume templates designed for tech and corporate jobs in India.',
+    url: canonicalFor('/tools/resume-builder'),
     siteName: 'instudia',
     images: [
       {
-        url: 'https://www.instudianagaland.com/og-resume-builder.jpg', // Placeholder for actual OG image
+        url: 'https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9',
         width: 1200,
         height: 630,
         alt: 'instudia AI Resume Builder Preview',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Resume Builder | instudia',
-    description: 'Create professional, ATS-optimized resumes with AI-assisted content refinement.',
-    images: ['https://www.instudianagaland.com/og-resume-builder.jpg'],
+    title: 'Free AI Resume Builder & ATS CV Maker',
+    description: 'Create professional, ATS-optimized resumes with AI-assisted content suggestions. Free resume templates designed for tech and corporate jobs in India.',
+    images: ['https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9'],
   },
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function ResumeBuilderPage() {

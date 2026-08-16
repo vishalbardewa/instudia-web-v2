@@ -1,16 +1,23 @@
 ---
 slug: instudia-graduates-freelancing-dimapur
-title: "From Student to Freelancer: How instudia Graduates Are Earning in Dimapur"
-excerpt: "Meet three instudia graduates who turned their course skills into freelance incomes — without leaving Nagaland."
+title: 'From Student to Freelancer: How instudia Graduates Are Earning in Dimapur'
+excerpt: >-
+  Meet three instudia graduates who turned their course skills into freelance
+  incomes — without leaving Nagaland.
 category: Career
 categoryColor: bg-brandpurple/10 text-brandpurple
-date: "2026-03-05"
+date: '2026-03-05'
 readTime: 4 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Director, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80
+authorSlug: daniel-changkija
+dateModified: '2026-03-05'
 ---
 
 ## Freelancing Is Real — and It's Growing in Nagaland

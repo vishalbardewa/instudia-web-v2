@@ -1,11 +1,13 @@
 import { Metadata } from "next";
+import { SITE_URL, canonicalFor } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — instudia Tech Institute Nagaland",
+  title: "Privacy Policy",
   description:
-    "Learn how instudia collects, protects, and manages your personal data in compliance with privacy standards.",
-  alternates: { canonical: "/privacy-policy" },
+    "Learn how instudia collects, protects, and securely manages your personal data in compliance with digital privacy and data protection standards.",
+  alternates: { canonical: canonicalFor("/privacy-policy") },
   robots: { index: true, follow: true },
+  metadataBase: new URL(SITE_URL),
 };
 
 const sections = [

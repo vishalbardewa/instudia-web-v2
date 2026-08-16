@@ -1,7 +1,27 @@
+import fs from "fs";
+
+const coursesData = JSON.parse(
+  fs.readFileSync(new URL("./app/courses.json", import.meta.url), "utf8")
+);
+
+const courseRedirects = [];
+for (const course of coursesData.courses || []) {
+  if (Array.isArray(course.previousSlugs)) {
+    for (const prevSlug of course.previousSlugs) {
+      courseRedirects.push({
+        source: `/courses/${prevSlug}`,
+        destination: `/courses/${course.slug}`,
+        permanent: true,
+      });
+    }
+  }
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
+  trailingSlash: false,
   serverExternalPackages: ['pdf2json', 'mammoth'],
   experimental: {
     optimizePackageImports: ['@heroicons/react', '@headlessui/react', '@tabler/icons-react'],
@@ -24,6 +44,7 @@ const nextConfig = {
         destination: "/host-a-seminar",
         permanent: true,
       },
+      ...courseRedirects,
     ];
   },
   turbopack: {},

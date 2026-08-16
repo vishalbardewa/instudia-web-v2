@@ -1,16 +1,22 @@
 ---
 slug: importance-python-after-ai-boom-2026
-title: "Mastering the Engine: Why Python is Still the King in the Age of AI"
-excerpt: "If AI can write code, why should you learn to? The answer lies in the difference between being a passenger and being the pilot of the future."
+title: 'Mastering the Engine: Why Python is Still the King in the Age of AI'
+excerpt: >-
+  If AI can write code, why should you learn to? The answer lies in the
+  difference between being a passenger and being the pilot of the future.
 category: Technology
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-04-05"
+date: '2026-04-05'
 readTime: 6 min read
 author: instudia Technical Faculty
-authorRole: "Senior Technical Lead, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
-coverImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Senior Technical Lead, instudia'
+authorPhoto: 'https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png'
+coverImage: >-
+  https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-05'
 ---
 
 ## The Elephant in the Room

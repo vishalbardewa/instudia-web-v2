@@ -1,16 +1,23 @@
 ---
 slug: best-it-careers-nagaland-2025
-title: "Best IT Careers You Can Start in Nagaland in 2025"
-excerpt: "The tech job market is no longer limited to metros. Here's how students in Dimapur and Nagaland can land high-paying IT careers without relocating."
+title: Best IT Careers You Can Start in Nagaland in 2025
+excerpt: >-
+  The tech job market is no longer limited to metros. Here's how students in
+  Dimapur and Nagaland can land high-paying IT careers without relocating.
 category: Career
 categoryColor: bg-brandpurple/10 text-brandpurple
-date: "2025-09-10"
+date: '2025-09-10'
 readTime: 5 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Director, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80
+authorSlug: daniel-changkija
+dateModified: '2025-09-10'
 ---
 
 ## The Remote Work Revolution Has Reached Nagaland

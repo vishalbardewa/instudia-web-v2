@@ -1,17 +1,27 @@
 ---
 slug: your-degree-isnt-enough-anymore
-title: "Your Degree Isn't Enough Anymore (But Here Is Why You're Actually in a Great Spot)"
-excerpt: "If you're holding a fresh degree and watching AI tools do the heavy lifting, you might feel cheated. But here is why you're actually stepping into the tech industry at the perfect time."
+title: >-
+  Your Degree Isn't Enough Anymore (But Here Is Why You're Actually in a Great
+  Spot)
+excerpt: >-
+  If you're holding a fresh degree and watching AI tools do the heavy lifting,
+  you might feel cheated. But here is why you're actually stepping into the tech
+  industry at the perfect time.
 category: Career
 categoryColor: bg-purplehue/10 text-purple-700
-date: "2026-07-17"
+date: '2026-07-17'
 readTime: 5 min read
 author: instudia
-authorRole: ""
-authorBio: "We are in the business of building careers."
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+authorRole: ''
+authorBio: We are in the business of building careers.
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-07-17'
 ---
 
 If you are holding a fresh degree right now, or are about to graduate, you might be feeling a bit cheated.

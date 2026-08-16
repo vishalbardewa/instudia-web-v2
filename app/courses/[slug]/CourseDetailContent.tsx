@@ -172,6 +172,7 @@ const CourseInfoBlock = ({ courseDetails }: any) => {
     { label: "Duration", value: durationMonths, icon: "⏱" },
     { label: "Schedule", value: "Mon – Fri  ·  10AM – 4PM", icon: "📅" },
     { label: "Mode", value: "In-Person (Dimapur)", icon: "🏫" },
+    { label: "Certification", value: "ISO 9001:2015 Verified", icon: "📜" },
   ];
 
   return (

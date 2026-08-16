@@ -1,18 +1,15 @@
 import Script from "next/script";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  title: "Contact Us | Reach Us in Dimapur",
+export const metadata = buildMetadata({
+  title: "Contact Our Team in Dimapur, Nagaland",
   description:
     "Get in touch with instudia — the premier computer training institute in Dimapur. Contact us for admissions, collaborations, or career queries.",
-  openGraph: {
-    title: "Contact Us | Reach Us in Dimapur",
-    description:
-      "Contact instudia for admissions and enquiries. Located in Fellowship Colony, Dimapur, Nagaland.",
-  },
-  alternates: {
-    canonical: "/contact",
-  },
-};
+  path: "/contact",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Contact instudia Dimapur",
+});
 
 const jsonLd = {
   "@context": "https://schema.org",

@@ -1,16 +1,25 @@
 ---
 slug: nagaland-literacy-skill-upgrade-2026
-title: "Beyond the Degree: Why Nagaland’s 95% Literacy Rate Needs a 'Skill Upgrade' in 2026"
-excerpt: "We’ve mastered the art of reading the book, but have we mastered the craft of doing the work? A look at why degrees aren't enough in today's Nagaland."
+title: >-
+  Beyond the Degree: Why Nagaland’s 95% Literacy Rate Needs a 'Skill Upgrade' in
+  2026
+excerpt: >-
+  We’ve mastered the art of reading the book, but have we mastered the craft of
+  doing the work? A look at why degrees aren't enough in today's Nagaland.
 category: Education
 categoryColor: bg-brandpurple/10 text-brandpurple
-date: "2026-04-04"
+date: '2026-04-04'
 readTime: 5 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Director, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80
+authorSlug: daniel-changkija
+dateModified: '2026-04-04'
 ---
 
 ## The 95% Pride and the 16% Reality

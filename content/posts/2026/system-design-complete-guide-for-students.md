@@ -1,17 +1,29 @@
 ---
 slug: system-design-complete-guide-for-students
-title: "The Complete System Design Guide: From Fundamentals to Enterprise Scale"
-excerpt: "A comprehensive, interactive guide to mastering distributed systems — covering CAP theorem, database internals, consensus protocols, API design, caching, and real-world architecture case studies. Built for students preparing for technical interviews and senior engineering roles."
+title: 'The Complete System Design Guide: From Fundamentals to Enterprise Scale'
+excerpt: >-
+  A comprehensive, interactive guide to mastering distributed systems — covering
+  CAP theorem, database internals, consensus protocols, API design, caching, and
+  real-world architecture case studies. Built for students preparing for
+  technical interviews and senior engineering roles.
 category: Engineering
 categoryColor: bg-brandpurple/10 text-brandpurple
-date: "2026-08-10"
+date: '2026-08-10'
 readTime: 25 min read
 author: instudia Technical Faculty
-authorRole: "Staff Engineer & Technical Lead"
-authorBio: "Our technical faculty includes practicing engineers from product companies across India. Every module in this guide is drawn from real production system architectures and interview preparation at the Staff Engineer level."
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+authorRole: Staff Engineer & Technical Lead
+authorBio: >-
+  Our technical faculty includes practicing engineers from product companies
+  across India. Every module in this guide is drawn from real production system
+  architectures and interview preparation at the Staff Engineer level.
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-08-10'
 ---
 
 System design is the engineering discipline of making trade-offs under physical constraints. There is no perfect architecture. Every decision — from database selection to API protocol — is a deliberate exchange of one property for another. The engineer who understands *why* these trade-offs exist, not just *what* the patterns are, becomes the person who designs systems that survive at scale.

@@ -1,17 +1,28 @@
 ---
 slug: journey-to-building-acadesx
-title: "The Journey to Acadesx: Why We Built an Exclusive AI-Powered Platform for Education"
-excerpt: "The genesis of Acadesx wasn't a sudden flash of brilliance in a boardroom. It was born out of profound frustration with archaic educational software. Here is why we built the ultimate campus management platform."
+title: >-
+  The Journey to Acadesx: Why We Built an Exclusive AI-Powered Platform for
+  Education
+excerpt: >-
+  The genesis of Acadesx wasn't a sudden flash of brilliance in a boardroom. It
+  was born out of profound frustration with archaic educational software. Here
+  is why we built the ultimate campus management platform.
 category: Technology
 categoryColor: bg-bluehue/10 text-blue-700
-date: "2026-07-14"
+date: '2026-07-14'
 readTime: 6 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorBio: "Daniel Changkija is an director and educator at instudia, Dimapur's leading computer training institute. Passionate about making technology accessible to students across Nagaland."
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://ik.imagekit.io/oytjocebw/acadesx/acadesx-ss.png"
-ogImage: "https://ik.imagekit.io/oytjocebw/acadesx/acadesx-ss.png"
+authorRole: 'Director, instudia'
+authorBio: >-
+  Daniel Changkija is an director and educator at instudia, Dimapur's leading
+  computer training institute. Passionate about making technology accessible to
+  students across Nagaland.
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: 'https://ik.imagekit.io/oytjocebw/acadesx/acadesx-ss.png'
+ogImage: 'https://ik.imagekit.io/oytjocebw/acadesx/acadesx-ss.png'
+authorSlug: daniel-changkija
+dateModified: '2026-07-14'
 ---
 
 As an educator and director at instudia, my days are measured not just in hours, but in the impact those hours have on our students. Yet, when I look across the educational landscape in Nagaland and beyond, I see a staggering amount of human potential being squandered. We are forcing our most passionate teachers and capable administrators to act as glorified data-entry clerks. 

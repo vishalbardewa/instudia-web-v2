@@ -1,16 +1,24 @@
 ---
 slug: design-pattern-in-react
-title: "Leveraging Design Patterns for Big 4 in React Components"
-excerpt: "Design patterns are powerful tools that can significantly enhance the structure and maintainability of your React applications. Learn how to implement Singleton, Factory, Observer, and Strategy."
+title: Leveraging Design Patterns for Big 4 in React Components
+excerpt: >-
+  Design patterns are powerful tools that can significantly enhance the
+  structure and maintainability of your React applications. Learn how to
+  implement Singleton, Factory, Observer, and Strategy.
 category: Tech Blog
 categoryColor: bg-flourescent/20 text-green-700
-date: "2023-09-12"
+date: '2023-09-12'
 readTime: 3 min read
 author: instudia
-authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://ik.imagekit.io/dxffek9yf/blogman/design-patterns/design-patterns.webp?updatedAt=1697272315463"
-ogImage: "https://ik.imagekit.io/dxffek9yf/blogman/design-patterns/design-patterns.webp?updatedAt=1697272315463"
+authorRole: IT Skill Training Center in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/design-patterns/design-patterns.webp?updatedAt=1697272315463
+ogImage: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/design-patterns/design-patterns.webp?updatedAt=1697272315463
+authorSlug: instudia-team
+dateModified: '2023-09-12'
 ---
 
 **Leveraging Design Patterns for Big 4 in React Components**

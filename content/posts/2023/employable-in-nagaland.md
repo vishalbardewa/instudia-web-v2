@@ -1,16 +1,23 @@
 ---
 slug: employable-in-nagaland
-title: "How to Become Employable in Nagaland"
-excerpt: "Becoming employable requires a proactive approach to skill development. Discover the roadmap to success in Nagaland's evolving job landscape."
+title: How to Become Employable in Nagaland
+excerpt: >-
+  Becoming employable requires a proactive approach to skill development.
+  Discover the roadmap to success in Nagaland's evolving job landscape.
 category: Social
 categoryColor: bg-flourescent/20 text-green-700
-date: "2023-09-16"
+date: '2023-09-16'
 readTime: 3 min read
 author: instudia
-authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://ik.imagekit.io/dxffek9yf/blogman/employabale-in-nagaland/how-the-programming-language-is-helping-us.webp?updatedAt=1694845356213"
-ogImage: "https://ik.imagekit.io/dxffek9yf/blogman/employabale-in-nagaland/how-the-programming-language-is-helping-us.webp?updatedAt=1694845356213"
+authorRole: IT Skill Training Center in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/employabale-in-nagaland/how-the-programming-language-is-helping-us.webp?updatedAt=1694845356213
+ogImage: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/employabale-in-nagaland/how-the-programming-language-is-helping-us.webp?updatedAt=1694845356213
+authorSlug: instudia-team
+dateModified: '2023-09-16'
 ---
 
 ## Introduction

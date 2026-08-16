@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 import HostSeminarForm from "./HostSeminarForm";
 import SeminarHeroCollage from "./SeminarHeroCollage";
 import SeminarTracksSection from "./SeminarTracksSection";
@@ -8,12 +10,14 @@ import SeminarFormatsSection from "./SeminarFormatsSection";
 import SeminarTestimonialsSection from "./SeminarTestimonialsSection";
 import { FadeIn, FadeInStagger } from "../components/atom/FadeIn";
 
-export const metadata: Metadata = {
-  title: "Host instudia for Seminars | Practical Tech, Coding & Skill Workshops",
+export const metadata: Metadata = buildMetadata({
+  title: "Host a Tech Seminar & School Workshop",
   description:
-    "Partner with instudia to conduct engaging, practical seminars on Smart Digital Study Tools, Software Development, Team Project Management, and Teacher Enablement for your school or college in Nagaland.",
-  alternates: { canonical: "/host-a-seminar" },
-};
+    "Partner with instudia to host practical tech seminars, coding bootcamps & teacher training workshops for schools and colleges across Nagaland.",
+  path: "/host-a-seminar",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Host instudia Tech Seminars in Nagaland",
+});
 
 
 

@@ -1,16 +1,24 @@
 ---
 slug: blockbuster-vs-netflix
-title: "How the Video Rental Industry Changed Forever"
-excerpt: "Blockbuster was the king of the hill for many years, but it was ultimately unable to adapt to the changing landscape. Here is how Netflix embraced the digital age."
+title: How the Video Rental Industry Changed Forever
+excerpt: >-
+  Blockbuster was the king of the hill for many years, but it was ultimately
+  unable to adapt to the changing landscape. Here is how Netflix embraced the
+  digital age.
 category: Tech Blog
 categoryColor: bg-flourescent/20 text-green-700
-date: "2023-10-20"
+date: '2023-10-20'
 readTime: 4 min read
 author: instudia
-authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://ik.imagekit.io/dxffek9yf/blogman/blockbuster-vs-netflix/netflix-services.webp?updatedAt=1697875866486"
-ogImage: "https://ik.imagekit.io/dxffek9yf/blogman/blockbuster-vs-netflix/netflix-services.webp?updatedAt=1697875866486"
+authorRole: IT Skill Training Center in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/blockbuster-vs-netflix/netflix-services.webp?updatedAt=1697875866486
+ogImage: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/blockbuster-vs-netflix/netflix-services.webp?updatedAt=1697875866486
+authorSlug: instudia-team
+dateModified: '2023-10-20'
 ---
 
 ## The Fall of a Giant

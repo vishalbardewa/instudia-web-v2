@@ -1,16 +1,25 @@
 ---
 slug: linux-terminal-first-skill-naga-techie
-title: "Mastering the Matrix: Why the Linux Terminal is the First Skill Every Naga Techie Should Learn"
-excerpt: "The mouse is for tourists; the keyboard is for residents. Here is why the command line is the true starting point for any serious career in technology."
+title: >-
+  Mastering the Matrix: Why the Linux Terminal is the First Skill Every Naga
+  Techie Should Learn
+excerpt: >-
+  The mouse is for tourists; the keyboard is for residents. Here is why the
+  command line is the true starting point for any serious career in technology.
 category: Technology
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-04-04"
+date: '2026-04-04'
 readTime: 6 min read
 author: instudia
-authorRole: "IT Training Institute in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Training Institute in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-04'
 ---
 
 ## Beyond the "Click" Culture

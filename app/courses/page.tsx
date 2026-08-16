@@ -1,61 +1,38 @@
 import React from "react";
 import CourseSectionList from "../components/molecules/CourseSectionList";
+import CourseComparisonMatrix from "../components/molecules/CourseComparisonMatrix";
 import Image from "next/image";
-import { AppConfig } from "../_utils/AppConfig";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 import Script from "next/script";
-import { slugs } from "../routes";
 import coursesData from "../courses.json";
 
-export const metadata = {
-  title: "Computer Courses in Dimapur, Nagaland — All Programs",
-  description: "Explore 19+ computer and skill courses at instudia Dimapur. Python, DCA, Graphic Design, Tally, Web Development & more. Enroll at Nagaland's top training institute!",
-  openGraph: {
-    title: "Best Computer Courses in Dimapur, Nagaland | instudia",
-    description: "Discover 19+ courses at instudia Dimapur. From DCA & Tally to Python & Web Development — find the right program for your career in Nagaland.",
-    url: `${AppConfig.canonicalBase}/courses`,
-    locale: AppConfig.locale,
-    siteName: AppConfig.site_name,
-    images: [
-      {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-        width: 800,
-        height: 600,
-        type: "image/jpeg",
-        alt: "Upskill with instudia",
-      },
-      {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
-        width: 800,
-        height: 600,
-        alt: "Enroll with instudia",
-        type: "image/jpeg",
-      },
-    ]
-  },
-  twitter: {
-    title:"Computer Courses in Dimapur, Nagaland",
-  description:"Elevate your career with premier computer and skill training in Dimapur, Nagaland. Explore cutting-edge courses in programming, graphic design, web development, Tally, GST, and more at Instudia. Unlock success with industry-focused training.",
-    card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-  },
-  alternates: {
-    canonical: `${AppConfig.canonicalBase}/courses`,
-  },
-  metadataBase: new URL(AppConfig.canonicalBase),
-};
+export const metadata = buildMetadata({
+  title: "Computer Courses & IT Training in Dimapur",
+  description: "Explore 19+ computer and skill courses at instudia Dimapur. Python, DCA, Graphic Design, Tally, Web Development & more. Enroll at Nagaland's top institute!",
+  path: "/courses",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Computer Courses & IT Training at instudia Dimapur",
+});
 
 function Courses() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "itemListElement": Object.values(slugs).map((slug, index) => ({
+    "itemListElement": coursesData.courses.map((course, index) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "url": `${AppConfig.canonicalBase}/courses/${slug}`
-    }))
+      "url": canonicalFor(`/courses/${course.slug}`),
+    })),
   };
 
   return (
     <div className="relative grid grid-cols-12 col-start-2 col-end-12">
+      <Script
+        id="courses-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Image
         className="absolute right-0 size-80 lg:size-[800px] lg:right-[80px] opacity-[.03] -z-1"
         src="https://ik.imagekit.io/dxffek9yf/course-list-page/background.png?updatedAt=1726161612844"
@@ -258,6 +235,9 @@ function Courses() {
       </section>
       <div className="col-start-2 col-end-12">
         <CourseSectionList />
+      </div>
+      <div className="col-span-12">
+        <CourseComparisonMatrix />
       </div>
       <Script
         id="course-list-schema"

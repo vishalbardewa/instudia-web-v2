@@ -1,5 +1,6 @@
 import { slugs } from "../routes";
 import { AppConfig } from "./AppConfig";
+import { SITE_URL } from "@/lib/site";
 
 const META_LOOKUP: Record<string, {
   title: string;
@@ -16,9 +17,9 @@ const META_LOOKUP: Record<string, {
       title: "Python Programming Course in Dimapur",
       description:
         "Master Python syntax, OOP & real-world projects in Dimapur with expert mentors at Instudia Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.PYTHON}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.PYTHON}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -35,7 +36,7 @@ const META_LOOKUP: Record<string, {
         "Master Python programming in Dimapur. Hands-on coding course to build your tech career in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.DCA]: {
     title: "DCA Computer Course in Dimapur, Nagaland",
@@ -45,9 +46,9 @@ const META_LOOKUP: Record<string, {
       title: "DCA Computer Course in Dimapur, Nagaland",
       description:
         "6-month Diploma in Computer Applications at Instudia Dimapur. Master MS Office & digital fundamentals in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.DCA}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.DCA}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -64,7 +65,7 @@ const META_LOOKUP: Record<string, {
         "Elevate your computer skills with DCA in Dimapur. Practical training in computer applications in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.PGDCA]: {
     title: "PGDCA Diploma Course in Dimapur, Nagaland",
@@ -74,9 +75,9 @@ const META_LOOKUP: Record<string, {
       title: "PGDCA Diploma Course in Dimapur, Nagaland",
       description:
         "12-month Post Graduate Diploma in Computer Applications in Dimapur. Advance your IT career with Instudia Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.PGDCA}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.PGDCA}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -93,7 +94,7 @@ const META_LOOKUP: Record<string, {
         "Take your IT skills to the next level with PGDCA. 12-month certified diploma for career success in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.GRAPHIC_DESIGN]: {
     title: "Graphic Design Course in Dimapur, Nagaland",
@@ -103,9 +104,9 @@ const META_LOOKUP: Record<string, {
       title: "Graphic Design Course in Dimapur, Nagaland",
       description:
         "Professional Graphic Design training in Dimapur. Master Photoshop, Illustrator & brand design with expert mentors.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.GRAPHIC_DESIGN}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.GRAPHIC_DESIGN}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -122,7 +123,7 @@ const META_LOOKUP: Record<string, {
         "Learn Graphic Design in Dimapur. Industry-certified training to help you launch a creative career in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.ADVANCED_EXCEL]: {
     title: "Advanced Excel Course in Dimapur, Nagaland",
@@ -132,9 +133,9 @@ const META_LOOKUP: Record<string, {
       title: "Advanced Excel Course in Dimapur, Nagaland",
       description:
         "Practical Advanced Excel training in Dimapur. Master data analytics, pivot tables & automation for work in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.ADVANCED_EXCEL}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.ADVANCED_EXCEL}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -151,7 +152,7 @@ const META_LOOKUP: Record<string, {
         "Master Advanced Excel in Dimapur. Enhance your data skills and boost your corporate employability in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.FRONTEND]: {
     title: "Frontend React Course in Dimapur, Nagaland",
@@ -161,9 +162,9 @@ const META_LOOKUP: Record<string, {
       title: "Frontend React Course in Dimapur, Nagaland",
       description:
         "Comprehensive Frontend Web Development training in Dimapur. Master React & modern JavaScript for tech roles in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.FRONTEND}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.FRONTEND}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -180,7 +181,7 @@ const META_LOOKUP: Record<string, {
         "Master Frontend Web Development with React in Dimapur. Practical hands-on web design training in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.BACKEND]: {
     title: "Backend Node.js Course in Dimapur, Nagaland",
@@ -190,9 +191,9 @@ const META_LOOKUP: Record<string, {
       title: "Backend Node.js Course in Dimapur, Nagaland",
       description:
         "Professional Backend Development training in Dimapur. Build REST APIs & databases with expert guidance at Instudia.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.BACKEND}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.BACKEND}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -209,7 +210,7 @@ const META_LOOKUP: Record<string, {
         "Master server-side logic & databases in Dimapur. Build powerful backend services for modern apps in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.FULLSTACK_WEB_DEVELOPMENT]: {
     title: "Fullstack Web Dev Course in Dimapur",
@@ -219,9 +220,9 @@ const META_LOOKUP: Record<string, {
       title: "Fullstack Web Dev Course in Dimapur",
       description:
         "Complete Fullstack Web Development program in Dimapur. Master UI to backend server architecture with Instudia.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.FULLSTACK_WEB_DEVELOPMENT}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.FULLSTACK_WEB_DEVELOPMENT}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -238,7 +239,7 @@ const META_LOOKUP: Record<string, {
         "Become a Fullstack Web Developer in Dimapur. Master frontend & backend engineering in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.GST]: {
     title: "Tally with GST Course in Dimapur, Nagaland",
@@ -248,9 +249,9 @@ const META_LOOKUP: Record<string, {
       title: "Tally with GST Course in Dimapur, Nagaland",
       description:
         "Tally Prime with GST training in Dimapur. Master digital accounting & GST returns for business roles in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.GST}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.GST}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -267,7 +268,7 @@ const META_LOOKUP: Record<string, {
         "Master Tally with GST in Dimapur. Practical accounting & tax filing skills for business careers in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.TALLY]: {
     title: "Accounting with Tally Course in Dimapur",
@@ -277,9 +278,9 @@ const META_LOOKUP: Record<string, {
       title: "Accounting with Tally Course in Dimapur",
       description:
         "1-month Accounting with Tally training in Dimapur. Master financial entries & business reporting at Instudia Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.TALLY}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.TALLY}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -296,7 +297,7 @@ const META_LOOKUP: Record<string, {
         "Master Tally in Dimapur. Gain practical bookkeeping skills to advance your finance career in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.MOBILE_APP_DEVELOPMENT]: {
     title: "Mobile App Dev Course in Dimapur, Nagaland",
@@ -306,9 +307,9 @@ const META_LOOKUP: Record<string, {
       title: "Mobile App Dev Course in Dimapur, Nagaland",
       description:
         "Professional React Native mobile app development in Dimapur. Build & publish cross-platform apps in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.MOBILE_APP_DEVELOPMENT}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.MOBILE_APP_DEVELOPMENT}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -325,7 +326,7 @@ const META_LOOKUP: Record<string, {
         "Master React Native in Dimapur. Build iOS & Android mobile applications with expert mentors in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.UIUX_DESIGN]: {
     title: "UI/UX Design Course in Dimapur, Nagaland",
@@ -335,9 +336,9 @@ const META_LOOKUP: Record<string, {
       title: "UI/UX Design Course in Dimapur, Nagaland",
       description:
         "Professional UI/UX Design training in Dimapur. Master Figma, design systems & usability testing with Instudia Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.UIUX_DESIGN}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.UIUX_DESIGN}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -354,7 +355,7 @@ const META_LOOKUP: Record<string, {
         "Master UI/UX Design in Dimapur. Create user-centered digital interfaces & launch your design career in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.BUSINESS_INTELLIGENCE]: {
     title: "Power BI & BI Course in Dimapur, Nagaland",
@@ -364,9 +365,9 @@ const META_LOOKUP: Record<string, {
       title: "Power BI & BI Course in Dimapur, Nagaland",
       description:
         "Practical Power BI & Business Intelligence training in Dimapur. Learn data visualization & DAX modeling with Instudia.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.BUSINESS_INTELLIGENCE}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.BUSINESS_INTELLIGENCE}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -383,7 +384,7 @@ const META_LOOKUP: Record<string, {
         "Master Power BI in Dimapur. Learn interactive dashboard reporting for data-driven decisions in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.PROJECT_MANAGEMENT]: {
     title: "Project Management Course in Dimapur",
@@ -393,9 +394,9 @@ const META_LOOKUP: Record<string, {
       title: "Project Management Course in Dimapur",
       description:
         "Agile & Scrum Project Management course in Dimapur. Learn sprint planning & team leadership with Instudia Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.PROJECT_MANAGEMENT}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.PROJECT_MANAGEMENT}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -412,7 +413,7 @@ const META_LOOKUP: Record<string, {
         "Master Project Management in Dimapur. Gain Agile & Scrum skills to lead successful projects in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.DEVOPS]: {
     title: "DevOps & Cloud Course in Dimapur, Nagaland",
@@ -422,9 +423,9 @@ const META_LOOKUP: Record<string, {
       title: "DevOps & Cloud Course in Dimapur, Nagaland",
       description:
         "Hands-on DevOps & Cloud Services training in Dimapur. Learn Docker, Kubernetes & AWS with expert mentors.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.DEVOPS}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.DEVOPS}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -441,7 +442,7 @@ const META_LOOKUP: Record<string, {
         "Master DevOps in Dimapur. Learn CI/CD automation & cloud deployment to boost your IT career in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.HARDWARE_NETWORKING]: {
     title: "Hardware & Networking Course in Dimapur",
@@ -451,9 +452,9 @@ const META_LOOKUP: Record<string, {
       title: "Hardware & Networking Course in Dimapur",
       description:
         "Practical Hardware & Computer Networking course in Dimapur. Prepare for technical IT support roles in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.HARDWARE_NETWORKING}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.HARDWARE_NETWORKING}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -470,7 +471,7 @@ const META_LOOKUP: Record<string, {
         "Master IT Hardware & Networking in Dimapur. Practical computer maintenance skills for jobs in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.RETAIL_MANAGEMENT]: {
     title: "Retail Management Course in Dimapur, Nagaland",
@@ -480,9 +481,9 @@ const META_LOOKUP: Record<string, {
       title: "Retail Management Course in Dimapur, Nagaland",
       description:
         "Professional Retail Management program in Dimapur. Master retail store operations & customer handling in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.RETAIL_MANAGEMENT}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.RETAIL_MANAGEMENT}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -499,7 +500,7 @@ const META_LOOKUP: Record<string, {
         "Master Retail Management in Dimapur. Prepare for business and sales manager positions in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.FOOD_PROCESSING]: {
     title: "Food Processing Course in Dimapur, Nagaland",
@@ -509,9 +510,9 @@ const META_LOOKUP: Record<string, {
       title: "Food Processing Course in Dimapur, Nagaland",
       description:
         "Practical Food Processing & Quality Control training in Dimapur. Learn packaging & food safety at Instudia Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.FOOD_PROCESSING}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.FOOD_PROCESSING}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -528,7 +529,7 @@ const META_LOOKUP: Record<string, {
         "Master Food Processing skills in Dimapur. Quality preservation & safety standards training in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.AGENTIC_AI]: {
     title: "Agentic AI Course in Dimapur, Nagaland",
@@ -538,9 +539,9 @@ const META_LOOKUP: Record<string, {
       title: "Agentic AI Course in Dimapur, Nagaland",
       description:
         "Advanced Agentic AI & Autonomous Workflows course in Dimapur. Build custom AI agent systems with Instudia Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.AGENTIC_AI}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.AGENTIC_AI}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -557,7 +558,7 @@ const META_LOOKUP: Record<string, {
         "Build autonomous AI agents in Dimapur. Master LangGraph & CrewAI multi-agent development in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.DATA_ANALYTICS]: {
     title: "Data Analytics Course in Dimapur, Nagaland",
@@ -567,9 +568,9 @@ const META_LOOKUP: Record<string, {
       title: "Data Analytics Course in Dimapur, Nagaland",
       description:
         "Hands-on Data Analytics course in Dimapur. Master Python, SQL queries & Power BI dashboards in Nagaland.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.DATA_ANALYTICS}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.DATA_ANALYTICS}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -586,7 +587,7 @@ const META_LOOKUP: Record<string, {
         "Master Data Analytics in Dimapur. Practical data science & business intelligence training in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
   [slugs.GENERATIVE_AI]: {
     title: "Generative AI Course in Dimapur, Nagaland",
@@ -596,9 +597,9 @@ const META_LOOKUP: Record<string, {
       title: "Generative AI Course in Dimapur, Nagaland",
       description:
         "Practical Generative AI development training in Dimapur. Learn LLM fine-tuning, prompt design & AI chatbot creation.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.GENERATIVE_AI}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
+      url: `${SITE_URL}/courses/${slugs.GENERATIVE_AI}`,
+      locale: "en_IN",
+      siteName: "instudia",
       images: [
         {
           url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
@@ -615,36 +616,7 @@ const META_LOOKUP: Record<string, {
         "Master Generative AI in Dimapur. Learn to build GPT apps & AI automation workflows in Nagaland.",
       card: "summary_large_image",
     },
-    metadataBase: new URL(AppConfig.canonicalBase),
-  },
-  [slugs.PCA]: {
-    title: "PCA Computer Course in Dimapur, Nagaland",
-    description:
-      "Professional Computer Application certificate in Dimapur. Build core computer skills for office careers in Nagaland.",
-    openGraph: {
-      title: "PCA Computer Course in Dimapur, Nagaland",
-      description:
-        "Certificate in Professional Computer Applications in Dimapur. Build practical office IT skills with Instudia.",
-      url: `${AppConfig.canonicalBase}/courses/${slugs.PCA}`,
-      locale: AppConfig.locale,
-      siteName: AppConfig.site_name,
-      images: [
-        {
-          url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
-          width: 1200,
-          height: 630,
-          alt: "PCA Computer Course at Instudia Dimapur",
-          type: "image/png",
-        },
-      ],
-    },
-    twitter: {
-      title: "PCA Computer Course in Dimapur, Nagaland",
-      description:
-        "Master computer applications with the PCA certificate at Instudia Dimapur. Build your IT skills in Nagaland.",
-      card: "summary_large_image",
-    },
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
   },
 };
 

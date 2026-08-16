@@ -1,16 +1,23 @@
 ---
 slug: axios-supply-chain-compromise-2026
-title: "Critical Security Alert: Axios npm Package Compromised"
-excerpt: "A major supply chain attack has hit the popular 'axios' package. If you are a developer or system administrator, here is what you need to do immediately."
-category: Cybersecurity 
+title: 'Critical Security Alert: Axios npm Package Compromised'
+excerpt: >-
+  A major supply chain attack has hit the popular 'axios' package. If you are a
+  developer or system administrator, here is what you need to do immediately.
+category: Cybersecurity
 categoryColor: bg-red-100 text-red-700
-date: "2026-03-31"
+date: '2026-03-31'
 readTime: 6 min read
 author: instudia
-authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Skill Training Center in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-03-31'
 ---
 
 ## The Supply Chain Under Fire

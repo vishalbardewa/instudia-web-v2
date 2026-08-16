@@ -1,16 +1,23 @@
 ---
 slug: ai-tools-students-should-know
-title: "5 AI Tools Every Student and Professional Should Know in 2025"
-excerpt: "AI isn't replacing jobs — it's replacing people who don't know how to use AI. Here are 5 tools that will make you 10x more productive."
+title: 5 AI Tools Every Student and Professional Should Know in 2025
+excerpt: >-
+  AI isn't replacing jobs — it's replacing people who don't know how to use AI.
+  Here are 5 tools that will make you 10x more productive.
 category: Technology
 categoryColor: bg-redhue/10 text-red-700
-date: "2025-12-01"
+date: '2025-12-01'
 readTime: 6 min read
 author: Vishal Bardewa
-authorRole: "Technical Advisor, instudia"
-authorPhoto: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop"
-coverImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Technical Advisor, instudia'
+authorPhoto: >-
+  https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop
+coverImage: >-
+  https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80
+authorSlug: vishal-bardewa
+dateModified: '2025-12-01'
 ---
 
 ## The Productivity Gap Is Real

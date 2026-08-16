@@ -2,34 +2,18 @@ import Image from "next/image";
 import Script from "next/script";
 import Link from "next/link";
 import { AppConfig } from "../_utils/AppConfig";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 import { staff } from "../data/staff";
 
-export const metadata = {
-  title:
-    "About Us — Tech & Skill Institute in Dimapur",
+export const metadata = buildMetadata({
+  title: "About Us — Tech & Skill Institute in Dimapur",
   description:
     "Learn about instudia — Nagaland's career-first tech institute. Meet our team, our mission, and see how we've helped 500+ students build IT careers.",
-  alternates: { canonical: `${AppConfig.canonicalBase}/about` },
-  openGraph: {
-    title: "About instudia — Dimapur's Career-First Tech Institute",
-    description:
-      "Discover instudia's story, our faculty, and why 500+ students chose us to launch their tech careers in Nagaland.",
-    url: `${AppConfig.canonicalBase}/about`,
-    siteName: AppConfig.site_name,
-    locale: "en_IN",
-    type: "website",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-        width: 800,
-        height: 600,
-        type: "image/jpeg",
-        alt: "instudia — Dimapur's Career-First Tech Institute",
-      },
-    ],
-  },
-  metadataBase: new URL(AppConfig.canonicalBase),
-};
+  path: "/about",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "About instudia — Tech & Skill Institute in Dimapur",
+});
 
 const jsonLd = {
   "@context": "https://schema.org",

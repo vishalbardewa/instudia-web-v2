@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
+    "prebuild": "node scripts/validate-metadata.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate:meta": "node scripts/validate-metadata.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.1",

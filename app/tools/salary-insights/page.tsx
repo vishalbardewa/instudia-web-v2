@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import { SITE_URL, canonicalFor } from "@/lib/site";
 import SalaryDashboard from "../../components/organisms/SalaryDashboard";
 
 export const metadata: Metadata = {
   title: "Tech Salary Insights in Nagaland",
-  description: "Explore competitive salary benchmarks for Developers, Designers, and IT professionals based in Dimapur and Nagaland.",
-  alternates: { canonical: "/tools/salary-insights" },
+  description: "Explore competitive salary benchmarks, local job pay bands & remote compensation data for IT and design professionals across Nagaland.",
+  alternates: { canonical: canonicalFor("/tools/salary-insights") },
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function SalaryInsightsPage() {

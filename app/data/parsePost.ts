@@ -210,10 +210,15 @@ function parseBody(markdown: string): Section[] {
   return sections;
 }
 
+import { getAuthorBySlug } from "./authors";
+
 /** Load and parse a single markdown post file. */
 export function loadPost(filename: string): Post {
   const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
   const { data, content } = matter(raw);
+  const authorSlug = data.authorSlug || "instudia-team";
+  const authorEntity = getAuthorBySlug(authorSlug);
+
   return {
     slug: data.slug,
     title: data.title,
@@ -221,11 +226,14 @@ export function loadPost(filename: string): Post {
     category: data.category,
     categoryColor: data.categoryColor,
     date: data.date,
+    dateModified: data.dateModified || data.date,
     readTime: data.readTime,
-    author: data.author,
-    authorRole: data.authorRole,
-    authorPhoto: data.authorPhoto,
-    authorBio: data.authorBio,
+    authorSlug,
+    author: authorEntity.name || data.author,
+    authorRole: authorEntity.role || data.authorRole || "Faculty",
+    authorPhoto: authorEntity.avatarUrl || data.authorPhoto || "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
+    authorBio: authorEntity.bio || data.authorBio,
+    authorSameAs: authorEntity.sameAs || [],
     coverImage: data.coverImage,
     ogImage: data.ogImage,
     body: parseBody(content),

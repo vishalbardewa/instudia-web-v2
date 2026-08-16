@@ -1,16 +1,25 @@
 ---
 slug: beyond-chatgpt-ai-agents-dimapur-2026
-title: "Beyond ChatGPT: Why 2026 is the Year of 'AI Agents' and How You Can Build One in Dimapur"
-excerpt: "Stop just talking to AI. Start building AI that actually does the work for you. Here’s why 'Agents' are the next big leap for Naga developers."
+title: >-
+  Beyond ChatGPT: Why 2026 is the Year of 'AI Agents' and How You Can Build One
+  in Dimapur
+excerpt: >-
+  Stop just talking to AI. Start building AI that actually does the work for
+  you. Here’s why 'Agents' are the next big leap for Naga developers.
 category: Technology
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-04-04"
+date: '2026-04-04'
 readTime: 6 min read
 author: instudia
-authorRole: "IT Training Institute in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Training Institute in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-04'
 ---
 
 ## The "Chatbot" Fatigue

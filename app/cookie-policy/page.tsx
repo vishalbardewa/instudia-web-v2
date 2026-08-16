@@ -1,11 +1,13 @@
 import { Metadata } from "next";
+import { SITE_URL, canonicalFor } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy — instudia Tech Institute Nagaland",
+  title: "Cookie Policy",
   description:
-    "Learn about how we use cookies to improve your experience on the instudia platform and how you can manage them.",
-  alternates: { canonical: "/cookie-policy" },
+    "Learn about how instudia uses necessary and performance cookies to improve your website experience and how you can manage your preferences.",
+  alternates: { canonical: canonicalFor("/cookie-policy") },
   robots: { index: true, follow: true },
+  metadataBase: new URL(SITE_URL),
 };
 
 const sections = [

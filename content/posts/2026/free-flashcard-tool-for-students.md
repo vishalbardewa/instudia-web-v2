@@ -1,17 +1,29 @@
 ---
 slug: free-flashcard-tool-for-students
-title: "How to Study Smarter with Instudia's Free Flashcard Tool"
-excerpt: "A simple, distraction-free flashcard tool built for students. Import markdown notes, test your active recall, print revision sheets, and save your decks locally without paying subscriptions or creating an account."
+title: How to Study Smarter with Instudia's Free Flashcard Tool
+excerpt: >-
+  A simple, distraction-free flashcard tool built for students. Import markdown
+  notes, test your active recall, print revision sheets, and save your decks
+  locally without paying subscriptions or creating an account.
 category: Study Tools
 categoryColor: bg-purple-100 text-purple-700
-date: "2026-07-28"
+date: '2026-07-28'
 readTime: 4 min read
 author: Instudia
-authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
-authorBio: "Instudia is Nagaland's premier IT and skill training institute based in Dimapur. Dedicated to bridging the gap between traditional education and industry standards, Instudia provides hands-on, job-ready training in software engineering, digital skills, and modern technology alongside a suite of free tools for learners across the region."
-coverImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Skill Training Center in Nagaland
+authorPhoto: 'https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png'
+authorBio: >-
+  Instudia is Nagaland's premier IT and skill training institute based in
+  Dimapur. Dedicated to bridging the gap between traditional education and
+  industry standards, Instudia provides hands-on, job-ready training in software
+  engineering, digital skills, and modern technology alongside a suite of free
+  tools for learners across the region.
+coverImage: >-
+  https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-07-28'
 ---
 
 We have all been there: exam week is around the corner, your notes are scattered across multiple documents, and you are trying to find an easy way to quiz yourself without spending hours writing out physical index cards.

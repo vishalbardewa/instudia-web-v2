@@ -1,23 +1,20 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 import { posts } from "../data/posts";
 import BlogClient from "./BlogClient";
 import { Container } from "../components/atom/Container";
 import { motion } from "framer-motion";
 
-export const metadata: Metadata = {
-  title: "Blog — Insights on Careers, Tech & Skills",
+export const metadata: Metadata = buildMetadata({
+  title: "Tech & Career Insights Blog in Dimapur",
   description:
-    "Career tips, skill guides, and tech insights from instudia — Nagaland's career-first tech institute in Dimapur.",
-  alternates: { canonical: "/blog" },
-  openGraph: {
-    title: "instudia Blog — Career, Tech & Skill Insights",
-    description:
-      "Read practical guides on IT careers, design, accounting, and upskilling from our team in Dimapur.",
-    url: "https://www.instudianagaland.com/blog",
-    type: "website",
-  },
-};
+    "Explore career advice, programming tutorials, design guides & industry insights from instudia, Nagaland's top tech training institute in Dimapur.",
+  path: "/blog",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "instudia Blog — Tech & Career Insights",
+});
 
 export default function BlogPage() {
   const jsonLd = {
@@ -25,13 +22,13 @@ export default function BlogPage() {
     "@type": "CollectionPage",
     name: "instudia Blog — Career & Tech Insights",
     description: "Career tips, skill guides, and tech insights from instudia — Nagaland's career-first tech institute in Dimapur.",
-    url: "https://www.instudianagaland.com/blog",
+    url: canonicalFor("/blog"),
     mainEntity: {
       "@type": "ItemList",
       itemListElement: posts.map((post, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://www.instudianagaland.com/blog/${post.slug}`,
+        url: canonicalFor(`/blog/${post.slug}`),
       })),
     },
   };

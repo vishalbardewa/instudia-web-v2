@@ -1,16 +1,23 @@
 ---
 slug: instudia-proprietary-tools-success-suite-2026
-title: "Empowering Excellence: A Deep Dive into Instudia’s Proprietary Success Suite"
-excerpt: "From ATS-optimized resumes to AI-powered lecture notes, explore the in-house tools we've built to bridge the gap between education and industry."
+title: 'Empowering Excellence: A Deep Dive into Instudia’s Proprietary Success Suite'
+excerpt: >-
+  From ATS-optimized resumes to AI-powered lecture notes, explore the in-house
+  tools we've built to bridge the gap between education and industry.
 category: EdTech
 categoryColor: bg-indigo-100 text-indigo-700
-date: "2026-04-01"
+date: '2026-04-01'
 readTime: 5 min read
 author: instudia
-authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1654931800100-2ecf6eee7c64?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1654931800100-2ecf6eee7c64?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Skill Training Center in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1654931800100-2ecf6eee7c64?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1654931800100-2ecf6eee7c64?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-01'
 ---
 
 ## Why We Built This: Data-Backed Success

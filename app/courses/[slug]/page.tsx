@@ -9,6 +9,8 @@ import { BreadcrumbSchema } from "@/app/components/SchemaOrg/BreadcrumbSchema";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import coursesData from "@/app/courses.json";
 
+import { SITE_URL, canonicalFor } from "@/lib/site";
+
 const RECOMMENDED_COURSES_COUNT = 3;
 
 type Props = {
@@ -33,40 +35,39 @@ export async function generateMetadata(
   const slug = (await params).slug;
   const courseDetails = getCourseBySlug(slug);
   const meta = META_LOOKUP[slug] ?? {};
-  const courseImage = IMAGE_LIST[slug];
+  const courseImage = IMAGE_LIST[slug] || "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9";
 
-  const title = meta.title || `${courseDetails?.fullTitle ?? slug} Course in Dimapur | instudia`;
-  const description = meta.description || courseDetails?.courseHightlight || courseDetails?.courseHighlight || `Learn ${courseDetails?.fullTitle ?? slug} in Dimapur. Industry-certified training. Enroll at Instudia, Nagaland.`;
+  const rawTitle = meta.title || `${courseDetails?.fullTitle ?? slug} Course in Dimapur`;
+  const title = rawTitle.replace(/\s*\|\s*instudia/gi, "").trim();
+  const description = meta.description || courseDetails?.courseHightlight || courseDetails?.courseHighlight || `Learn ${courseDetails?.fullTitle ?? slug} in Dimapur with hands-on training and career support at instudia, Nagaland.`;
 
-  const pageUrl = `${AppConfig.canonicalBase}/courses/${slug}`;
+  const pageUrl = canonicalFor(`/courses/${slug}`);
 
   return {
-    ...meta,
     title,
     description,
-    metadataBase: new URL(AppConfig.canonicalBase),
+    metadataBase: new URL(SITE_URL),
     openGraph: {
-      ...(meta.openGraph ?? {}),
-      title: meta.openGraph?.title || title,
-      description: meta.openGraph?.description || description,
+      title,
+      description,
       url: pageUrl,
-      ...(courseImage
-        ? {
-            images: [
-              {
-                url: courseImage,
-                width: 1200,
-                height: 630,
-                alt: title,
-              },
-            ],
-          }
-        : {}),
+      locale: "en_IN",
+      siteName: "instudia",
+      type: "website",
+      images: [
+        {
+          url: courseImage,
+          width: 1200,
+          height: 630,
+          alt: `${title} at instudia Dimapur`,
+        },
+      ],
     },
     twitter: {
-      ...(meta.twitter ?? {}),
-      title: meta.twitter?.title || title,
-      description: meta.twitter?.description || description,
+      card: "summary_large_image",
+      title,
+      description,
+      images: [courseImage],
     },
     alternates: {
       canonical: pageUrl,
@@ -225,8 +226,8 @@ export default async function Course({ params }: any) {
       "provider": {
         "@type": "Organization",
         "name": "instudia",
-        "sameAs": `${AppConfig.canonicalBase}`,
-        "image": "https://www.instudianagaland.com/assets/images/logo-with-tagline.png",
+        "sameAs": SITE_URL,
+        "image": "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
         "telephone": "+91 87985 87779",
       },
       "inLanguage": ["en", "hi"],
@@ -238,7 +239,7 @@ export default async function Course({ params }: any) {
               "price": priceValue,
               "priceCurrency": "INR",
               "availability": "https://schema.org/InStock",
-              "url": `${AppConfig.canonicalBase}/courses/${slug}`,
+              "url": canonicalFor(`/courses/${slug}`),
             },
           }
         : {}),
@@ -247,7 +248,7 @@ export default async function Course({ params }: any) {
         "courseMode": "Onsite",
         "location": {
           "@type": "Place",
-          "name": "Instudia, Dimapur",
+          "name": "instudia, Dimapur",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Dimapur",
@@ -268,9 +269,9 @@ export default async function Course({ params }: any) {
   return (
     <>
       <BreadcrumbSchema items={[
-        { name: "Home", url: `${AppConfig.canonicalBase}` },
-        { name: "Courses", url: `${AppConfig.canonicalBase}/courses` },
-        { name: courseDetails.fullTitle, url: `${AppConfig.canonicalBase}/courses/${slug}` }
+        { name: "Home", url: canonicalFor("/") },
+        { name: "Courses", url: canonicalFor("/courses") },
+        { name: courseDetails.fullTitle, url: canonicalFor(`/courses/${slug}`) }
       ]} />
       <CourseDetailContent courseDetails={courseDetails} relatedCourses={relatedCourses} />
       <Script

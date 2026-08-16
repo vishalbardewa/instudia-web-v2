@@ -308,7 +308,7 @@ export default function MasterclassModal() {
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">
                     <button
-                      onClick={() => { close(); router.push("/courses/fullstack"); }}
+                      onClick={() => { close(); router.push("/courses/fullstack-web-development"); }}
                       className="inline-flex items-center gap-2 px-8 py-4 bg-[#1B1C1E] text-white rounded-full font-extrabold shadow-lg hover:bg-neutral-800 transition-all hover:-translate-y-0.5 text-sm"
                     >
                       View Full Course Outline

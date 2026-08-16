@@ -1,17 +1,25 @@
 ---
 slug: markdown-vs-word-beginners-guide
-title: "Markdown vs. Word: A Beginner's Guide to Plain Text Writing"
-excerpt: "Switching from Word to Markdown can feel daunting. Here is a comprehensive guide to understanding Markdown, how it works, and why developers love it."
+title: 'Markdown vs. Word: A Beginner''s Guide to Plain Text Writing'
+excerpt: >-
+  Switching from Word to Markdown can feel daunting. Here is a comprehensive
+  guide to understanding Markdown, how it works, and why developers love it.
 category: Technical Guides
 categoryColor: bg-blue-600/10 text-blue-700
-date: "2026-07-10"
+date: '2026-07-10'
 readTime: 4 min read
 author: Faculty
-authorRole: "Instudia"
-authorBio: "Faculty at Instudia Nagaland, passionate about modern tech stacks, Golang, and building efficient developer workflows."
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png"
-coverImage: "https://images.unsplash.com/photo-1633113089631-6456cccaadad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-ogImage: "https://images.unsplash.com/photo-1633113089631-6456cccaadad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+authorRole: Instudia
+authorBio: >-
+  Faculty at Instudia Nagaland, passionate about modern tech stacks, Golang, and
+  building efficient developer workflows.
+authorPhoto: 'https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png'
+coverImage: >-
+  https://images.unsplash.com/photo-1633113089631-6456cccaadad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+ogImage: >-
+  https://images.unsplash.com/photo-1633113089631-6456cccaadad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+authorSlug: instudia-team
+dateModified: '2026-07-10'
 ---
 
 Welcome to the world of Markdown! If you're used to traditional word processors, switching to Markdown can feel like learning to drive a manual car after only driving automatics. It requires a bit more intentionality at first, but it offers incredible speed, control, and portability once you get the hang of it.

@@ -1,16 +1,23 @@
 ---
 slug: refactoring-4000-lines-go-2026
-title: "The 4,000-Line Reset: Refactoring for Developer Joy"
-excerpt: "From a monolithic mess to modular mastery—how I dismantled a complex sports-tech engine to reclaim velocity and developer sanity."
-category: Engineering 
+title: 'The 4,000-Line Reset: Refactoring for Developer Joy'
+excerpt: >-
+  From a monolithic mess to modular mastery—how I dismantled a complex
+  sports-tech engine to reclaim velocity and developer sanity.
+category: Engineering
 categoryColor: bg-blue-100 text-blue-700
-date: "2026-04-12"
+date: '2026-04-12'
 readTime: 5 min read
 author: instudia
-authorRole: "IT Training and Skill Development"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/logo-round-white-bg.png?updatedAt=1696914242799"
-coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Training and Skill Development
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/logo-round-white-bg.png?updatedAt=1696914242799
+coverImage: >-
+  https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-12'
 ---
 
 ## Why I Built This: The Cost of Friction

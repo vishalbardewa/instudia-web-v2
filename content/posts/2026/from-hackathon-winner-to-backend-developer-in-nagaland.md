@@ -1,17 +1,24 @@
 ---
 slug: from-hackathon-winner-to-backend-developer-in-nagaland
-title: "From Hackathon Winner to Backend Developer in Nagaland"
-excerpt: "A first-hand account of learning backend development at Instudia Nagaland and building real-world projects."
+title: From Hackathon Winner to Backend Developer in Nagaland
+excerpt: >-
+  A first-hand account of learning backend development at Instudia Nagaland and
+  building real-world projects.
 category: Student Stories
 categoryColor: bg-yellow-600/10 text-yellow-700
-date: "2026-04-29"
+date: '2026-04-29'
 readTime: 5 min read
 author: Marzulu
-authorRole: "Student, instudia"
-authorBio: "Marzulu is a backend developer and a hackathon winner who studied at Instudia Nagaland. He is passionate about building real-world projects and sharing his knowledge with others."
-authorPhoto: "https://ik.imagekit.io/oytjocebw/authors/20260508_142834(0).jpg"
-coverImage: "https://ik.imagekit.io/oytjocebw/authors/blog-marzulu.png"
-ogImage: "https://ik.imagekit.io/oytjocebw/authors/blog-marzulu.png"
+authorRole: 'Student, instudia'
+authorBio: >-
+  Marzulu is a backend developer and a hackathon winner who studied at Instudia
+  Nagaland. He is passionate about building real-world projects and sharing his
+  knowledge with others.
+authorPhoto: 'https://ik.imagekit.io/oytjocebw/authors/20260508_142834(0).jpg'
+coverImage: 'https://ik.imagekit.io/oytjocebw/authors/blog-marzulu.png'
+ogImage: 'https://ik.imagekit.io/oytjocebw/authors/blog-marzulu.png'
+authorSlug: marzulu
+dateModified: '2026-04-29'
 ---
 
 ## Wait, I Won *What*?

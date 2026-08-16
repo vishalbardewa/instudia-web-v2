@@ -1,13 +1,17 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 import { TESTIMONIALS } from "../data/testimonials";
 import AlumniMasonry from "../components/organisms/AlumniMasonry";
 
-export const metadata: Metadata = {
-  title: "Student Success Stories",
-  description: "Read inspiring stories from instudia alumni who transformed their careers and landed jobs as Developers, Designers, and Marketers in Nagaland.",
-  alternates: { canonical: "/success-stories" },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Student Success Stories & Placements",
+  description: "Read inspiring stories from instudia alumni who transformed their careers and landed jobs as developers, designers, and accountants in Nagaland.",
+  path: "/success-stories",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Student Success Stories at instudia Dimapur",
+});
 
 export default function SuccessStoriesPage() {
   return (

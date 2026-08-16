@@ -1,83 +1,105 @@
 import { Metadata } from "next";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Frequently Asked Questions",
+export const metadata: Metadata = buildMetadata({
+  title: "Course & Admission FAQs in Dimapur",
   description:
-    "Find answers to common questions about our computer courses, admissions, and career services in Dimapur, Nagaland.",
-  alternates: { canonical: "/faq" },
-  robots: { index: true, follow: true },
-};
+    "Find answers to common questions about our computer courses, fees, admissions, certifications and career services in Dimapur, Nagaland.",
+  path: "/faq",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Course & Admission FAQs — instudia Dimapur",
+});
 
 const faqCategories = [
   {
-    category: "General",
+    category: "Courses & Admissions",
     questions: [
       {
-        q: "What is instudia?",
-        a: "instudia is a modern career-tech platform based in Dimapur, Nagaland. We bridge the gap between traditional education and industry requirements through hands-on workshops, career tools, and skill development programs.",
+        q: "What computer and technical courses does instudia offer in Dimapur?",
+        a: "instudia offers 19+ industry-focused programs in Dimapur, Nagaland across four main domains: Software Development (Python, Fullstack Web Development, Backend, Frontend), Creative Design (Graphic Designing, UI/UX Design), Accounting & Taxation (Tally Prime, GST Filing, Advance Excel), and Digital Literacy (DCA, PGDCA, AI Productivity Tools).",
       },
       {
-        q: "Where is instudia located?",
-        a: "Our physical center is located at First Floor, Vikiye Center, Notun Bosti, Dimapur, Nagaland 797112. However, many of our tools and resources are available online for students across the region.",
+        q: "What are the course fees and payment options at instudia?",
+        a: "Course fees at instudia are structured transparently based on duration and specialization, starting from ₹3,999 for short-term skill programs up to ₹15,000 for comprehensive diploma courses. We provide flexible installment payment plans to ensure accessible learning for students across Nagaland without financial burden.",
       },
       {
-        q: "How can I contact the instudia team?",
-        a: "You can reach us via email at instudia.nagaland@gmail.com or call us at +91-8798-587-779. We're also active on WhatsApp for quick student queries.",
+        q: "Are the certificates issued by instudia government-recognized and verified?",
+        a: "Yes. instudia is an ISO 9001:2015 Certified skill development institute. Students who successfully complete their coursework and capstone projects receive a verified certificate with unique credential verification that is recognized for employment in corporate, IT, and government contract opportunities.",
+      },
+      {
+        q: "Who is eligible to enroll in instudia courses?",
+        a: "Courses are designed with tiered entry levels. Foundational programs like DCA and Graphic Design welcome students from Class 10th and above. Advanced software and data engineering courses are ideal for college students, graduates, and working professionals looking to upskill.",
       },
     ],
   },
   {
-    category: "Courses & Training",
+    category: "Location, Batches & Timings",
     questions: [
       {
-        q: "What kind of courses do you offer?",
-        a: "We offer specialized training in Digital Marketing, Web Development, UI/UX Design, and AI Productivity. Our curriculum is designed to be highly practical and project-based.",
+        q: "Where is the instudia campus located in Dimapur?",
+        a: "instudia is located at First Floor, Vikiye Center, Opposite Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112. The campus features modern computer labs with dedicated high-speed workstations.",
       },
       {
-        q: "Are the courses certified?",
-        a: "Yes, upon successful completion of our professional courses and projects, students receive a certificate of completion from instudia which validates their skills to potential employers.",
+        q: "What are the class timings and batch schedules?",
+        a: "Regular batches run Monday through Friday between 10:00 AM and 4:00 PM. We offer morning and afternoon slots to accommodate college students, school leavers, and working individuals.",
       },
       {
-        q: "Do you offer placement assistance?",
-        a: "We provide career guidance, resume building (via our ATS scanner), and interview preparation. We also connect top-performing students with our network of local and national partner organizations.",
+        q: "Does instudia offer online or remote classes?",
+        a: "While our core interactive practical labs are conducted in-person at our Dimapur campus for maximum hands-on guidance, select masterclasses, webinars, and self-study resources are available digitally across Nagaland.",
       },
     ],
   },
   {
-    category: "Student Tools",
+    category: "Placements, Internships & Career Support",
+    questions: [
+      {
+        q: "Does instudia provide placement assistance and job support?",
+        a: "Yes. Every student receives career grooming through our Student Success Suite, including ATS resume optimization, portfolio reviews, technical interview prep, and direct referral opportunities to local businesses and national remote tech hiring teams.",
+      },
+      {
+        q: "Can I do freelancing or remote work after completing a course?",
+        a: "Absolutely. Our Graphic Design, Web Development, and Python curricula include dedicated modules on freelancing, client communication, pricing projects, and building international portfolios on platforms like Upwork and GitHub.",
+      },
+    ],
+  },
+  {
+    category: "Free Student Tools",
     questions: [
       {
         q: "What is the Student Success Suite?",
-        a: "It's a collection of free digital tools we've built to help students manage their time and careers. This includes our custom Study Planner, Salary Insights for Nagaland, and an ATS Resume Scanner.",
+        a: "The Student Success Suite is instudia's collection of free AI-powered career tools. It includes our ATS Resume Analyzer, Nagaland Tech Salary Insights Calculator, Interactive Study Planner, and AI Quiz & Note Generators built specifically for students in the Northeast.",
       },
       {
-        q: "Is the Study Planner really free?",
-        a: "Yes! Our Study Planner is a free resource for any student preparing for exams or personal goals. You can generate, customize, and print your schedule without creating an account.",
-      },
-      {
-        q: "How accurate is the Salary Insights tool?",
-        a: "The data is based on regional market research, industry standards in Nagaland, and feedback from professionals in our network. It serves as a benchmark for local career planning.",
-      },
-    ],
-  },
-  {
-    category: "Workshops & Events",
-    questions: [
-      {
-        q: "Who can attend instudia workshops?",
-        a: "Our workshops are open to students, job seekers, and working professionals. Some events are category-specific (e.g., student seminars vs. professional AI networking), which is always mentioned in the event details.",
-      },
-      {
-        q: "How do I register for an upcoming event?",
-        a: "Upcoming events are listed on our Workshops page. You can register directly through the website or by contacting our team via WhatsApp.",
+        q: "Is any subscription required to use instudia student tools?",
+        a: "No. All tools in the Student Success Suite are completely free to use with no hidden fees or account creation required.",
       },
     ],
   },
 ];
 
 export default function FAQPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqCategories.flatMap((cat) =>
+      cat.questions.map((q) => ({
+        "@type": "Question",
+        "name": q.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.a,
+        },
+      }))
+    ),
+  };
+
   return (
     <main className="bg-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-neutral-100 pt-24 pb-16 px-6 text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brandpurple/5 rounded-full blur-[100px] pointer-events-none" />

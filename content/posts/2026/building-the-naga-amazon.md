@@ -1,16 +1,25 @@
 ---
 slug: building-the-naga-amazon
-title: "Building the 'Naga-Amazon': Why We Need More Local Software Developers to Solve Local Problems"
-excerpt: "Global solutions don't always fit our local terrain. Here’s why the future of Naga e-commerce depends on home-grown code and local empathy."
+title: >-
+  Building the 'Naga-Amazon': Why We Need More Local Software Developers to
+  Solve Local Problems
+excerpt: >-
+  Global solutions don't always fit our local terrain. Here’s why the future of
+  Naga e-commerce depends on home-grown code and local empathy.
 category: Technology
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-04-04"
+date: '2026-04-04'
 readTime: 5 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1624984608976-8a7358d25bce?q=80&w=2671&auto=format&fit=crop"
-ogImage: "https://images.unsplash.com/photo-1624984608976-8a7358d25bce?q=80&w=2671&auto=format&fit=crop"
+authorRole: 'Director, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1624984608976-8a7358d25bce?q=80&w=2671&auto=format&fit=crop
+ogImage: >-
+  https://images.unsplash.com/photo-1624984608976-8a7358d25bce?q=80&w=2671&auto=format&fit=crop
+authorSlug: daniel-changkija
+dateModified: '2026-04-04'
 ---
 
 ## The "Pin Code Not Found" Problem

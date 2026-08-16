@@ -1,16 +1,23 @@
 ---
 slug: how-to-learn-coding-guide-beginners
-title: "How to Learn Coding: A Complete Guide for Beginners"
-excerpt: "From free self-guided resources to structured local bootcamps, discover the practical paths to learn programming and land a developer job."
+title: 'How to Learn Coding: A Complete Guide for Beginners'
+excerpt: >-
+  From free self-guided resources to structured local bootcamps, discover the
+  practical paths to learn programming and land a developer job.
 category: Learning
 categoryColor: bg-brandpurple/10 text-brandpurple
-date: "2026-07-31"
+date: '2026-07-31'
 readTime: 5 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Director, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80
+authorSlug: daniel-changkija
+dateModified: '2026-07-31'
 ---
 
 So you want to learn to code and build apps.

@@ -1,16 +1,24 @@
 ---
 slug: what-is-web-development-should-you-learn
-title: "What Is Web Development and Should You Learn It in 2026?"
-excerpt: "Web development is one of the most in-demand and best-paying tech skills in the world. Here's a plain-language breakdown of what it is, what it pays, and whether it's right for you."
+title: What Is Web Development and Should You Learn It in 2026?
+excerpt: >-
+  Web development is one of the most in-demand and best-paying tech skills in
+  the world. Here's a plain-language breakdown of what it is, what it pays, and
+  whether it's right for you.
 category: Technology
 categoryColor: bg-redhue/10 text-red-700
-date: "2026-03-20"
+date: '2026-03-20'
 readTime: 6 min read
 author: Vishal Bardewa
-authorRole: "Technical Advisor, instudia"
-authorPhoto: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop"
-coverImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Technical Advisor, instudia'
+authorPhoto: >-
+  https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop
+coverImage: >-
+  https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80
+authorSlug: vishal-bardewa
+dateModified: '2026-03-20'
 ---
 
 ## Web Development in Plain English

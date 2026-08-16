@@ -1,16 +1,24 @@
 ---
 slug: beyond-copy-paste-ai-seminars-nagaland
-title: "Beyond the Copy-Paste: Our AI Journey Through Nagaland’s Classrooms"
-excerpt: "A look into Instudia's recent AI seminars across schools in Nagaland, exploring how students can move beyond the 'copy-paste' mindset to leverage AI for true learning efficiency and growth."
+title: 'Beyond the Copy-Paste: Our AI Journey Through Nagaland’s Classrooms'
+excerpt: >-
+  A look into Instudia's recent AI seminars across schools in Nagaland,
+  exploring how students can move beyond the 'copy-paste' mindset to leverage AI
+  for true learning efficiency and growth.
 category: Education
 categoryColor: bg-bluehue/10 text-blue-700
-date: "2026-06-11"
+date: '2026-06-11'
 readTime: 4 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/ai-seminar-2026.png?updatedAt=1781177284569"
-ogImage: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/ai-seminar-2026.png?updatedAt=1781177284569"
+authorRole: 'Director, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/ai-seminar-2026.png?updatedAt=1781177284569
+ogImage: >-
+  https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/ai-seminar-2026.png?updatedAt=1781177284569
+authorSlug: daniel-changkija
+dateModified: '2026-06-11'
 ---
 
 Hello from the Instudia desk!

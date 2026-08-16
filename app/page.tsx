@@ -5,6 +5,7 @@ import LandingTop from "./components/organisms/LandingTop";
 import Stats from "./components/molecules/Stats";
 import Incentives from "./components/molecules/Incentives";
 import { AppConfig } from "./_utils/AppConfig";
+import { SITE_URL, canonicalFor } from "@/lib/site";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { Container } from "./components/atom/Container";
 import { FadeIn, FadeInStagger } from "./components/atom/FadeIn";
@@ -185,13 +186,13 @@ export const metadata = {
   description:
     "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
   openGraph: {
-    title:
-      "Best Computer Courses & Skill Training in Dimapur",
+    title: "Best Computer Courses in Dimapur, Nagaland",
     description:
-      "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills. Practical courses for success in Nagaland. Learn more!",
-    url: AppConfig.canonicalBase,
-    locale: AppConfig.locale,
-    siteName: AppConfig.site_name,
+      "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
+    url: canonicalFor("/"),
+    locale: "en_IN",
+    siteName: "instudia",
+    type: "website",
     images: [
       {
         url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
@@ -200,25 +201,18 @@ export const metadata = {
         type: "image/jpeg",
         alt: "Upskill with instudia",
       },
-      {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
-        width: 1200,
-        height: 630,
-        alt: "Enroll with instudia",
-        type: "image/jpeg",
-      },
     ],
   },
   twitter: {
-    title:
-      "Best Computer Courses & Skill Training in Dimapur",
+    title: "Best Computer Courses in Dimapur, Nagaland",
     description:
-      "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Enroll now!",
-    card: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+      "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
+    card: "summary_large_image",
+    images: ["https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9"],
   },
-  metadataBase: new URL(AppConfig.canonicalBase),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: AppConfig.canonicalBase,
+    canonical: canonicalFor("/"),
   },
 };
 

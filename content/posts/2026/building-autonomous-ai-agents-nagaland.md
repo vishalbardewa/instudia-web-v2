@@ -1,16 +1,22 @@
 ---
 slug: building-autonomous-ai-agents-nagaland
-title: "Beyond Chatbots and No-Code: Building True Autonomous AI Agents from Nagaland"
-excerpt: "Why the future of AI engineering isn't simple prompt wrappers or drag-and-drop tools, but autonomous, self-healing agentic architectures built right here in Nagaland."
+title: 'Beyond Chatbots and No-Code: Building True Autonomous AI Agents from Nagaland'
+excerpt: >-
+  Why the future of AI engineering isn't simple prompt wrappers or drag-and-drop
+  tools, but autonomous, self-healing agentic architectures built right here in
+  Nagaland.
 category: Technology
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-08-15"
+date: '2026-08-15'
 readTime: 5 min read
 author: Instudia Engineering
-authorRole: "Technical Education & AI Systems"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://ik.imagekit.io/oytjocebw/blog-images/agentic-ai-latest.png"
-ogImage: "https://ik.imagekit.io/oytjocebw/blog-images/agentic-ai-latest.png"
+authorRole: Technical Education & AI Systems
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: 'https://ik.imagekit.io/oytjocebw/blog-images/agentic-ai-latest.png'
+ogImage: 'https://ik.imagekit.io/oytjocebw/blog-images/agentic-ai-latest.png'
+authorSlug: instudia-team
+dateModified: '2026-08-15'
 ---
 
 If you have spent any time on tech Twitter or LinkedIn over the past year, you have heard the term thrown around constantly: **Agentic AI**.

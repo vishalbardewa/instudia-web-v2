@@ -1,12 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Careers & Join Our Team in Dimapur",
+export const metadata: Metadata = buildMetadata({
+  title: "Careers & Faculty Openings in Dimapur",
   description:
-    "Join our mission-driven team at instudia. Explore career opportunities for educators, technologists, and creatives in Nagaland.",
-  alternates: { canonical: "/careers" },
-};
+    "Join our mission-driven team at instudia Dimapur. Explore rewarding career and teaching opportunities for tech educators & professionals in Nagaland.",
+  path: "/careers",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Careers at instudia Dimapur",
+});
 
 const perks = [
   {

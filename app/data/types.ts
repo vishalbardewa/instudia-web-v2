@@ -26,12 +26,15 @@ export interface Post {
   category: string;
   categoryColor: string;
   date: string;           // ISO "YYYY-MM-DD"
+  dateModified: string;   // ISO "YYYY-MM-DD"
   readTime: string;
+  authorSlug: string;
   author: string;
   authorRole: string;
   authorPhoto: string;
   /** Optional short biography shown below the article */ 
   authorBio?: string;
+  authorSameAs?: string[];
   coverImage: string;
   ogImage?: string;
   body: Section[];

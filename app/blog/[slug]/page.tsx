@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { posts, getPostBySlug, formatDate } from "../../data/posts";
+import { getAuthorBySlug } from "../../data/authors";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 import hljs from "highlight.js";
 import ReadingProgress from "../../components/atom/ReadingProgress";
 import ReactMarkdown from "react-markdown";
@@ -19,6 +22,7 @@ import PaletteRulesWidget from "../../components/molecules/PaletteRulesWidget";
 import HslRelationshipWidget from "../../components/molecules/HslRelationshipWidget";
 import HarmonyDefinitionsWidget from "../../components/molecules/HarmonyDefinitionsWidget";
 import TopStoriesSection from "../../components/molecules/TopStoriesSection";
+import AuthorCard from "../../components/molecules/AuthorCard";
 import coursesData from "@/app/courses.json";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -33,32 +37,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return {
-    // Clean format: "Post Title — instudia" (layout template appends "| instudia")
+
+  return buildMetadata({
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: `/blog/${slug}` },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: "article",
-      publishedTime: post.date,
-      authors: [post.author],
-      images: [{ url: post.ogImage || post.coverImage, width: 1200, height: 630, alt: post.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-      images: [post.ogImage || post.coverImage],
-    },
-  };
+    path: `/blog/${slug}`,
+    type: "article",
+    publishedTime: post.date,
+    modifiedTime: post.dateModified || post.date,
+    authors: [post.author],
+    authorSlug: post.authorSlug,
+    image: post.ogImage || post.coverImage,
+    imageAlt: `${post.title} | instudia`,
+  });
 }
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const authorEntity = getAuthorBySlug(post.authorSlug);
+  const isOrg = authorEntity.isOrganization;
 
   // Top stories: same category stories first, followed by remaining latest stories
   const otherPosts = posts.filter((p) => p.slug !== slug);
@@ -71,32 +71,39 @@ export default async function BlogPostPage({ params }: Props) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post!.title,
-    description: post!.excerpt,
-    image: post!.ogImage || post!.coverImage,
-    datePublished: post!.date,
-    dateModified: post!.date,
-    author: {
-      "@type": "Person",
-      name: post!.author,
-      jobTitle: post!.authorRole,
-      url: "https://www.instudianagaland.com/blog",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.ogImage || post.coverImage,
+    datePublished: post.date,
+    dateModified: post.dateModified || post.date,
+    inLanguage: "en-IN",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalFor(`/blog/${slug}`),
     },
     publisher: {
       "@type": "Organization",
       name: "instudia",
+      url: SITE_URL,
       logo: {
         "@type": "ImageObject",
         url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
       },
-      url: "https://www.instudianagaland.com",
     },
-    url: `https://www.instudianagaland.com/blog/${slug}`,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://www.instudianagaland.com/blog/${slug}`,
-    },
+    author: isOrg
+      ? {
+          "@type": "Organization",
+          name: authorEntity.name,
+          url: SITE_URL,
+        }
+      : {
+          "@type": "Person",
+          name: authorEntity.name,
+          jobTitle: authorEntity.role,
+          url: canonicalFor(`/blog`),
+          ...(authorEntity.sameAs && authorEntity.sameAs.length > 0 ? { sameAs: authorEntity.sameAs } : {}),
+        },
   };
 
   // Related courses: match by post category/keywords against course fullTitle
@@ -142,24 +149,25 @@ export default async function BlogPostPage({ params }: Props) {
                 </span>
               </h1>
 
-              <div className="flex flex-wrap items-center gap-10">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 border-2 border-black rounded-full overflow-hidden">
-                    <img src={post.authorPhoto} alt={post.author} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-black uppercase leading-tight">{post.author}</p>
-                    <p className="text-[9px] font-bold text-black opacity-40 uppercase tracking-tighter">{post.authorRole}</p>
-                  </div>
-                </div>
+              <div className="flex flex-wrap items-center gap-8 sm:gap-10">
+                <AuthorCard author={authorEntity} variant="compact" />
                 <div className="h-8 w-[1px] bg-black/10 hidden sm:block" />
                 <div>
-                  <p className="text-[10px] font-black uppercase opacity-40 mb-1">Posted On</p>
+                  <p className="text-[10px] font-black uppercase opacity-40 mb-1">Published</p>
                   <p className="text-[10px] font-black uppercase tracking-widest">{formatDate(post.date)}</p>
                 </div>
+                {post.dateModified && post.dateModified !== post.date && (
+                  <>
+                    <div className="h-8 w-[1px] bg-black/10 hidden sm:block" />
+                    <div>
+                      <p className="text-[10px] font-black uppercase opacity-40 mb-1">Updated</p>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-brandpurple">{formatDate(post.dateModified)}</p>
+                    </div>
+                  </>
+                )}
                 <div className="h-8 w-[1px] bg-black/10 hidden sm:block" />
                 <div>
-                  <p className="text-[10px] font-black uppercase opacity-40 mb-1">Time To Read</p>
+                  <p className="text-[10px] font-black uppercase opacity-40 mb-1">Read Time</p>
                   <p className="text-[10px] font-black uppercase tracking-widest">{post.readTime}</p>
                 </div>
               </div>
@@ -512,24 +520,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
 
             {/* Author Bio */}
-            <div className="mt-24 p-8 sm:p-12 border-2 border-black bg-white shadow-[6px_6px_0px_rgba(0,0,0,1)] flex flex-col sm:flex-row gap-8 items-start">
-              <div className="w-20 h-20 border-2 border-black rounded-full overflow-hidden shrink-0">
-                <img src={post.authorPhoto} alt={post.author} className="w-full h-full object-cover" />
-              </div>
-              <div className="flex-1">
-                <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest mb-3 inline-block">
-                  About the Author
-                </span>
-                <p className="text-xl font-black text-black uppercase tracking-tight mb-1">{post.author}</p>
-                <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest mb-4">{post.authorRole}</p>
-                <p className="text-sm font-medium text-black/70 leading-relaxed">
-                  {post.authorBio ||
-                    (post.author.toLowerCase().includes("instudia")
-                      ? "Instudia is Nagaland's premier IT and skill training institute based in Dimapur, dedicated to equipping students with practical software engineering skills, career guidance, and accessible educational tools."
-                      : `${post.author} is an educator and tech professional at Instudia, Dimapur's leading computer training institute, passionate about making technology accessible to students across Nagaland.`)}
-                </p>
-              </div>
-            </div>
+            <AuthorCard author={authorEntity} variant="full" />
 
             {/* Related Courses */}
             {relatedCourses.length > 0 && (

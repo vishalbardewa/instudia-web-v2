@@ -84,6 +84,9 @@
           "title": "Module 7: Final Assessment",
           "description": "Practical test demonstrating proficiency in MS Office and basic troubleshooting."
         }
+      ],
+      "previousSlugs": [
+        "dca"
       ]
     },
     {
@@ -158,6 +161,11 @@
           "title": "Module 4: Final Project",
           "description": "Build a real-world Python script to automate a daily task."
         }
+      ],
+      "previousSlugs": [
+        "python-level-1",
+        "python-level-2",
+        "python-level-3"
       ]
     },
     {
@@ -232,7 +240,8 @@
           "title": "Module 4: GST Returns",
           "description": "Filing GSTR-1, GSTR-3B, and handling tax liabilities."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "tally",
@@ -306,7 +315,8 @@
           "title": "Module 4: Financial Reporting",
           "description": "Generating balance sheets, P&L statements, and cash flow reports."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "pgdca",
@@ -396,7 +406,8 @@
           "title": "Module 8: Industry Capstone Project",
           "description": "A hands-on, end-to-end project solving a real-world business problem using Python, Data, and AI."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "advanced-excel",
@@ -470,7 +481,8 @@
           "title": "Module 4: Automation Basics",
           "description": "Recording macros and basic VBA to automate repetitive tasks."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "frontend-development",
@@ -544,7 +556,8 @@
           "title": "Module 4: Capstone Project",
           "description": "Build a fully responsive, dynamic web application from scratch."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "data-analytics",
@@ -618,7 +631,8 @@
           "title": "Module 4: Capstone Analysis",
           "description": "End-to-end data analysis project on a real-world dataset."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "generative-ai",
@@ -693,7 +707,8 @@
           "title": "Module 4: GenAI Project",
           "description": "Deploy a custom AI application tailored to a specific business need."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "backend-development",
@@ -767,7 +782,8 @@
           "title": "Module 4: Authentication & Security",
           "description": "Implementing JWT, hashing passwords, and securing endpoints."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "buisness-intelligence-using-powerbi",
@@ -841,6 +857,9 @@
           "title": "Module 4: Dashboard Creation",
           "description": "Designing interactive reports and publishing to Power BI Service."
         }
+      ],
+      "previousSlugs": [
+        "business-intelligence-using-powerbi"
       ]
     },
     {
@@ -915,6 +934,10 @@
           "title": "Module 4: Prototyping & Testing",
           "description": "Building interactive prototypes and conducting usability tests."
         }
+      ],
+      "previousSlugs": [
+        "uiux-designing",
+        "ui-ux-design"
       ]
     },
     {
@@ -994,6 +1017,12 @@
           "title": "Module 4: Portfolio Project",
           "description": "Develop a complete brand identity package."
         }
+      ],
+      "previousSlugs": [
+        "graphic-level-1",
+        "graphic-level-2",
+        "graphic-level-3",
+        "graphic-design"
       ]
     },
     {
@@ -1068,7 +1097,8 @@
           "title": "Module 4: Cloud Infrastructure",
           "description": "Introduction to AWS/Azure and basic deployment strategies."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "learn-project-management",
@@ -1142,7 +1172,8 @@
           "title": "Module 4: Execution & Closure",
           "description": "Monitoring progress, stakeholder communication, and project handover."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "hardware-networking",
@@ -1216,7 +1247,8 @@
           "title": "Module 4: Final Project",
           "description": "Build a real-world portfolio project from scratch."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "retail-management",
@@ -1290,7 +1322,8 @@
           "title": "Module 4: Final Project",
           "description": "Build a real-world portfolio project from scratch."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "mobile-app-development",
@@ -1364,7 +1397,8 @@
           "title": "Module 4: Final Project",
           "description": "Build a real-world portfolio project from scratch."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "food-processing",
@@ -1438,7 +1472,8 @@
           "title": "Module 4: Final Project",
           "description": "Build a real-world portfolio project from scratch."
         }
-      ]
+      ],
+      "previousSlugs": []
     },
     {
       "slug": "fullstack-web-development",
@@ -1512,6 +1547,10 @@
           "title": "Module 4: Final Project",
           "description": "Build a real-world portfolio project from scratch."
         }
+      ],
+      "previousSlugs": [
+        "fullstack",
+        "full-stack-web-development"
       ]
     },
     {
@@ -1587,7 +1626,8 @@
           "title": "Module 4: Final Project",
           "description": "Build a real-world portfolio project from scratch."
         }
-      ]
+      ],
+      "previousSlugs": []
     }
   ]
 }

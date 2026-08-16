@@ -1,17 +1,28 @@
 ---
 slug: nagaland-internships-market-linked-guide
-title: "The Ultimate Guide to Internships in Nagaland: A Market-Linked Perspective"
-excerpt: "Discover research-backed, market-linked internship opportunities across Nagaland's emerging startups, traditional industries, and government sectors for college students."
+title: 'The Ultimate Guide to Internships in Nagaland: A Market-Linked Perspective'
+excerpt: >-
+  Discover research-backed, market-linked internship opportunities across
+  Nagaland's emerging startups, traditional industries, and government sectors
+  for college students.
 category: Career
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-08-11"
+date: '2026-08-11'
 readTime: 8 min read
 author: instudia Career Desk
-authorRole: "Student Success Team"
-authorBio: "Our career desk focuses on connecting students with hyper-local, high-impact opportunities that build real-world skills and bridge the gap between academia and industry."
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+authorRole: Student Success Team
+authorBio: >-
+  Our career desk focuses on connecting students with hyper-local, high-impact
+  opportunities that build real-world skills and bridge the gap between academia
+  and industry.
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-08-11'
 ---
 
 Finding the right internship is a critical stepping stone for any college student, but discovering opportunities that genuinely align with local market realities can be challenging. In Nagaland, the professional landscape is rapidly evolving. We are witnessing a unique convergence: the modernization of traditional sectors like agriculture and handloom, the rise of a vibrant startup ecosystem, and increased digital governance initiatives.

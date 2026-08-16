@@ -2,37 +2,38 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
-import { AppConfig } from '../_utils/AppConfig';
+import { SITE_URL, canonicalFor } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Student Success Suite | Tools & Resources',
-  description: 'Accelerate your career with our Student Success Suite. Access our ATS Resume Scanner, Salary Insights, Career Blueprint, and Study Planner tools.',
+  title: 'Career & Study Tools for Tech Students',
+  description: 'Accelerate your tech career with instudia student tools. Access our ATS resume scanner, salary insights calculator, study planner and career guides.',
   keywords: ['career planning', 'ATS resume scanner', 'salary benchmarks', 'study planner', 'student success', 'instudia', 'dimapur', 'nagaland'],
   alternates: {
-    canonical: "/tools",
+    canonical: canonicalFor('/tools'),
   },
   openGraph: {
-    title: 'Student Success Suite | Navigate your Career',
-    description: 'Bridge the gap between education and industry with our premium career tools.',
-    url: `${AppConfig.canonicalBase}/tools`,
-    siteName: 'Instudia',
+    title: 'Career & Study Tools for Tech Students',
+    description: 'Accelerate your tech career with instudia student tools. Access our ATS resume scanner, salary insights calculator, study planner and career guides.',
+    url: canonicalFor('/tools'),
+    siteName: 'instudia',
     images: [
       {
         url: 'https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png',
         width: 1200,
         height: 630,
-        alt: 'Student Success Suite - Instudia',
+        alt: 'Student Success Suite - instudia',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Success Suite',
-    description: 'Premium career tools for the next generation of talent.',
+    title: 'Career & Study Tools for Tech Students',
+    description: 'Accelerate your tech career with instudia student tools. Access our ATS resume scanner, salary insights calculator, study planner and career guides.',
     images: ['https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png'],
   },
+  metadataBase: new URL(SITE_URL),
 };
 
 interface ToolProps {
@@ -275,7 +276,7 @@ export default function CareerPlannerPage() {
         "@type": "WebApplication",
         "name": tool.name,
         "description": tool.description,
-        "url": `${AppConfig.canonicalBase}${tool.href}`,
+        "url": canonicalFor(tool.href),
         "applicationCategory": "EducationalApplication",
         "image": tool.imageUrl,
         "offers": {

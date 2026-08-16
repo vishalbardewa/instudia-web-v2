@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import { SITE_URL, canonicalFor } from "@/lib/site";
 import StudyPlannerWrapper from "./StudyPlannerWrapper";
 
 export const metadata: Metadata = {
-  title: "Interactive Study Planner",
-  description: "Generate a custom, print-ready study planner with time-blocked schedules, Pomodoro sessions, and trackers.",
-  alternates: { canonical: "/tools/study-planner" },
+  title: "Interactive Study Planner & Timetable",
+  description: "Generate a customized, print-ready weekly study timetable with time-blocked schedules, Pomodoro learning sessions, and exam goal tracking.",
+  alternates: { canonical: canonicalFor("/tools/study-planner") },
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function StudyPlannerPage() {

@@ -1,16 +1,25 @@
 ---
 slug: coding-nagaland-heritage-python-ai
-title: "Coding Our Heritage: How Nagaland’s Youth Can Use Python and AI to Preserve Mother Tongues"
-excerpt: "Our languages are more than just words; they are our identity. In 2026, the best way to save them might not be a textbook, but a line of code."
+title: >-
+  Coding Our Heritage: How Nagaland’s Youth Can Use Python and AI to Preserve
+  Mother Tongues
+excerpt: >-
+  Our languages are more than just words; they are our identity. In 2026, the
+  best way to save them might not be a textbook, but a line of code.
 category: Technology
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-04-04"
+date: '2026-04-04'
 readTime: 6 min read
 author: instudia
-authorRole: "IT Skill Training Center in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Skill Training Center in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-04'
 ---
 
 ## The Silence in the Kitchen

@@ -1,16 +1,24 @@
 ---
 slug: how-to-build-your-portfolio-no-experience
-title: "How to Build a Portfolio When You Have Zero Experience"
-excerpt: "Every professional was once a beginner. Here's the exact strategy we teach instudia students to build a standout portfolio — even with no prior work experience."
+title: How to Build a Portfolio When You Have Zero Experience
+excerpt: >-
+  Every professional was once a beginner. Here's the exact strategy we teach
+  instudia students to build a standout portfolio — even with no prior work
+  experience.
 category: Career
 categoryColor: bg-brandpurple/10 text-brandpurple
-date: "2026-01-15"
+date: '2026-01-15'
 readTime: 5 min read
 author: Daniel Changkija
-authorRole: "Director, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Director, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80
+authorSlug: daniel-changkija
+dateModified: '2026-01-15'
 ---
 
 ## The Portfolio Paradox

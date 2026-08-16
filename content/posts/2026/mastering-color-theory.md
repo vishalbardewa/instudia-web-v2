@@ -1,16 +1,22 @@
 ---
 slug: mastering-color-theory
-title: "Mastering Color Theory: From Foundations to Advanced Harmonies"
-excerpt: "A comprehensive and authoritative guide to color theory for digital designers. Explore the HSL color space, essential color harmonies, accessibility standards, and the mathematics of interface design."
+title: 'Mastering Color Theory: From Foundations to Advanced Harmonies'
+excerpt: >-
+  A comprehensive and authoritative guide to color theory for digital designers.
+  Explore the HSL color space, essential color harmonies, accessibility
+  standards, and the mathematics of interface design.
 category: Design
 categoryColor: bg-brandpink/10 text-brandpink
-date: "2026-08-12"
+date: '2026-08-12'
 readTime: 12 min read
 author: instudia
-authorRole: "IT Training Institute in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://ik.imagekit.io/oytjocebw/blog-images/color-pallete.png"
-ogImage: "https://ik.imagekit.io/oytjocebw/blog-images/color-pallete.png"
+authorRole: IT Training Institute in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: 'https://ik.imagekit.io/oytjocebw/blog-images/color-pallete.png'
+ogImage: 'https://ik.imagekit.io/oytjocebw/blog-images/color-pallete.png'
+authorSlug: instudia-team
+dateModified: '2026-08-12'
 ---
 
 ## The Foundation of Visual Communication

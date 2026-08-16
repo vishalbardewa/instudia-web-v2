@@ -1,16 +1,23 @@
 ---
 slug: revamping-instudia-nextjs-16-performance
-title: "From Next 14 to 16: How We Revamped instudianagaland.com for the 2026 Web"
-excerpt: "We rebuilt our digital home from the ground up. Here is the technical breakdown of how Next.js 16 and Turbopack slashed our load times by 50%."
+title: 'From Next 14 to 16: How We Revamped instudianagaland.com for the 2026 Web'
+excerpt: >-
+  We rebuilt our digital home from the ground up. Here is the technical
+  breakdown of how Next.js 16 and Turbopack slashed our load times by 50%.
 category: Technology
 categoryColor: bg-brandblue/10 text-brandblue
-date: "2026-04-04"
+date: '2026-04-04'
 readTime: 7 min read
 author: instudia Technical Faculty
-authorRole: "Senior Technical Lead, instudia"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Senior Technical Lead, instudia'
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-04'
 ---
 
 ## The "Why" Behind the Rewrite

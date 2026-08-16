@@ -1,16 +1,26 @@
 ---
 slug: design-for-the-hills-nagaland-ui-ux
-title: "Design for the Hills: Why Nagaland Needs More Local UI/UX Designers to Build Culturally-Relevant Apps"
-excerpt: "Most apps are built for the flat streets of Bangalore or San Francisco. It's time we built digital experiences that actually understand the geography and soul of the Naga hills."
+title: >-
+  Design for the Hills: Why Nagaland Needs More Local UI/UX Designers to Build
+  Culturally-Relevant Apps
+excerpt: >-
+  Most apps are built for the flat streets of Bangalore or San Francisco. It's
+  time we built digital experiences that actually understand the geography and
+  soul of the Naga hills.
 category: Design
 categoryColor: bg-brandpink/10 text-brandpink
-date: "2026-04-04"
+date: '2026-04-04'
 readTime: 6 min read
 author: instudia
-authorRole: "IT Training Institute in Nagaland"
-authorPhoto: "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7"
-coverImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80"
+authorRole: IT Training Institute in Nagaland
+authorPhoto: >-
+  https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7
+coverImage: >-
+  https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80
+authorSlug: instudia-team
+dateModified: '2026-04-04'
 ---
 
 ## The "Blue Dot" Problem in Dimapur

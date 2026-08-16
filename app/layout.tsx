@@ -11,17 +11,19 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { AppConfig } from "./_utils/AppConfig";
 import { LocalBusinessSchema } from "./components/SchemaOrg/LocalBusinessSchema";
 
+import { SITE_URL, canonicalFor } from "@/lib/site";
+
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: {
-    default: "Computer & Skill Courses in Nagaland | instudia",
+    default: "Best Computer Courses & Skill Training in Dimapur | instudia",
     template: "%s | instudia",
   },
   description: "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
-  metadataBase: new URL(AppConfig.canonicalBase),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: "/",
+    canonical: canonicalFor("/"),
   },
   icons: {
     icon: "/assets/icons/icon.png",
@@ -30,13 +32,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: {
-      default: "Computer & Skill Courses in Nagaland | instudia",
+      default: "Best Computer Courses & Skill Training in Dimapur | instudia",
       template: "%s | instudia",
     },
     description: "Launch your tech career in Dimapur! instudia's expert training in Programming, Web Development, Project Management & Digital Skills.",
-    url: AppConfig.canonicalBase,
-    locale: AppConfig.locale,
-    siteName: AppConfig.site_name,
+    url: canonicalFor("/"),
+    locale: "en_IN",
+    siteName: "instudia",
     images: [
       {
         url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: {
-      default: "Computer & Skill Courses in Nagaland | instudia",
+      default: "Best Computer Courses & Skill Training in Dimapur | instudia",
       template: "%s | instudia",
     },
     description: "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",

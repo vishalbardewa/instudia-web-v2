@@ -1,14 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL, canonicalFor } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Links & Resources | instudia",
+  title: "Quick Links & Official Resources",
   description:
     "Quick access to instudia's courses, AI career tools, and community links for students in Dimapur, Nagaland.",
   alternates: {
-    canonical: "/links",
+    canonical: canonicalFor("/links"),
   },
   robots: { index: false, follow: false },
+  metadataBase: new URL(SITE_URL),
 };
 
 const primaryLinks = [

@@ -18,7 +18,6 @@ export const slugs = {
   GST: "gst",
   TALLY: "tally",
   PYTHON: "python",
-  PCA: "pca",
   ADVANCED_EXCEL: "advanced-excel",
   GRAPHIC_DESIGN: "graphic-designing",
   FRONTEND: "frontend-development",

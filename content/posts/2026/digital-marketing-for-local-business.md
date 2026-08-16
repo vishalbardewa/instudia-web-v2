@@ -1,16 +1,24 @@
 ---
 slug: digital-marketing-for-local-business
-title: "Digital Marketing for Beginners: How to Grow a Local Business Online"
-excerpt: "You don't need a big budget to market a business online. Here's the beginner-friendly playbook we teach at instudia — and how local businesses in Dimapur are using it."
+title: 'Digital Marketing for Beginners: How to Grow a Local Business Online'
+excerpt: >-
+  You don't need a big budget to market a business online. Here's the
+  beginner-friendly playbook we teach at instudia — and how local businesses in
+  Dimapur are using it.
 category: Skills
 categoryColor: bg-flourescent/20 text-green-700
-date: "2026-02-10"
+date: '2026-02-10'
 readTime: 5 min read
 author: Kivigho Kinimi
-authorRole: "IT Faculty, instudia"
-authorPhoto: "https://images.unsplash.com/photo-1656337789708-cdf37b07112d?q=80&w=200&auto=format&fit=crop"
-coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'IT Faculty, instudia'
+authorPhoto: >-
+  https://images.unsplash.com/photo-1656337789708-cdf37b07112d?q=80&w=200&auto=format&fit=crop
+coverImage: >-
+  https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80
+authorSlug: kivigho-kinimi
+dateModified: '2026-02-10'
 ---
 
 ## Why Digital Marketing Is the Great Equaliser

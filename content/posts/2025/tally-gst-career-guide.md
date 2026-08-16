@@ -1,16 +1,24 @@
 ---
 slug: tally-gst-career-guide
-title: "Tally & GST: The Most In-Demand Accounting Skill in India Right Now"
-excerpt: "GST compliance is mandatory for every business in India. That makes Tally-trained accountants one of the most sought-after professionals in the job market."
+title: 'Tally & GST: The Most In-Demand Accounting Skill in India Right Now'
+excerpt: >-
+  GST compliance is mandatory for every business in India. That makes
+  Tally-trained accountants one of the most sought-after professionals in the
+  job market.
 category: Finance
 categoryColor: bg-brightyellow/20 text-yellow-700
-date: "2025-11-12"
+date: '2025-11-12'
 readTime: 4 min read
 author: Niutoli V
-authorRole: "Accounting Faculty, instudia"
-authorPhoto: "https://images.unsplash.com/photo-1678733527538-845ebdc2f6b8?q=80&w=200&auto=format&fit=crop"
-coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80"
-ogImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80"
+authorRole: 'Accounting Faculty, instudia'
+authorPhoto: >-
+  https://images.unsplash.com/photo-1678733527538-845ebdc2f6b8?q=80&w=200&auto=format&fit=crop
+coverImage: >-
+  https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80
+ogImage: >-
+  https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80
+authorSlug: niutoli-v
+dateModified: '2025-11-12'
 ---
 
 ## Why Tally Skills Are Always in Demand

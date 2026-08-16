@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const navigation = {
   tools: [
+    { name: "All Tools Suite", href: "/tools" },
     { name: "Career Blueprint", href: "/tools/career-blueprint" },
     { name: "AI Resume Builder", href: "/tools/resume-builder" },
     { name: "ATS Resume Scanner", href: "/tools/ats-analyzer" },
@@ -14,15 +15,19 @@ const navigation = {
     { name: "acadesx", href: "https://acadesx.instudianagaland.com/", isNew: true }
   ],
   company: [
-    { name: "About", href: "/about" },
+    { name: "All Courses", href: "/courses" },
+    { name: "About Us", href: "/about" },
+    { name: "Success Stories", href: "/success-stories" },
+    { name: "Campus Gallery", href: "/gallery" },
     { name: "Workshops", href: "/workshops" },
-    { name: "Host us", href: "/host-a-seminar" },
+    { name: "Host a Seminar", href: "/host-a-seminar" },
+    { name: "Careers", href: "/careers" },
     { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },
   ],
   legal: [
-    { name: "Privacy", href: "/privacy-policy" },
-    { name: "Terms", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms & Conditions", href: "/terms" },
     { name: "Cookie Policy", href: "/cookie-policy" },
   ],
   social: [
@@ -91,7 +96,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                   </svg>
                   <div>
-                    <span className="sr-only" itemProp="name">Instudia</span>
+                    <span className="sr-only" itemProp="name">instudia</span>
                     <p><span itemProp="streetAddress">First Floor, Vikiye Center,<br />Opp. Notun Bosti Gate, Fellowship Colony</span></p>
                     <p><span itemProp="addressLocality">Dimapur</span>, <span itemProp="addressRegion">Nagaland</span> <span itemProp="postalCode">797112</span></p>
                   </div>

@@ -1,11 +1,15 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import { SITE_URL, canonicalFor } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Campus Gallery & Student Life",
-  description: "Take a tour of our modern computing labs, creative design studios, and vibrant student community at instudia in Nagaland.",
-  alternates: { canonical: "/gallery" },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Campus Gallery & Student Life in Dimapur",
+  description: "Take a virtual tour of our modern computing labs, collaborative classrooms, and vibrant tech student community at instudia in Dimapur, Nagaland.",
+  path: "/gallery",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Campus Gallery & Student Life at instudia Dimapur",
+});
 
 // High-quality modern education, tech, and collaboration placeholders from Unsplash
 const galleryImages = [

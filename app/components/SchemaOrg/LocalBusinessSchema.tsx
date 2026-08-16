@@ -3,10 +3,12 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": ["EducationalOrganization", "LocalBusiness"],
     name: "instudia",
+    legalName: "instudia Tech & Skill Training Institute",
     url: "https://www.instudianagaland.com",
     logo: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
+    image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
     description:
-      "Top computer training institute in Dimapur, Nagaland offering courses in programming, web development, graphic design, Tally, GST and more.",
+      "Premier computer training & skill development institute in Dimapur, Nagaland offering certification courses in programming, web development, graphic design, Tally with GST, and office applications.",
     telephone: "+918798587779",
     email: "instudia.nagaland@gmail.com",
     address: {
@@ -23,22 +25,25 @@ export function LocalBusinessSchema() {
       longitude: 93.7251,
     },
     areaServed: {
-      "@type": "State",
+      "@type": "AdministrativeArea",
       name: "Nagaland",
     },
+    knowsAbout: [
+      "Computer Science Education",
+      "Fullstack Web Development",
+      "Python Programming",
+      "Graphic Design",
+      "Tally Prime & GST Accounting",
+      "Diploma in Computer Applications",
+      "Artificial Intelligence & Machine Learning",
+      "Project Management",
+    ],
     sameAs: [
       "https://www.facebook.com/instudianagaland/",
       "https://www.instagram.com/instudia_nagaland/",
       "https://www.linkedin.com/company/instudia-trainings",
       "https://www.youtube.com/@instudia",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "128",
-      bestRating: "5",
-      worstRating: "1",
-    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

@@ -1,11 +1,13 @@
 import { Metadata } from "next";
+import { SITE_URL, canonicalFor } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — instudia Tech Institute Nagaland",
+  title: "Terms & Conditions",
   description:
-    "Read instudia's Terms and Conditions governing use of our platform, courses, and business services in Nagaland.",
-  alternates: { canonical: "/terms" },
+    "Read the official Terms and Conditions governing enrollment, platform usage, course access, and student policies at instudia, Dimapur.",
+  alternates: { canonical: canonicalFor("/terms") },
   robots: { index: true, follow: true },
+  metadataBase: new URL(SITE_URL),
 };
 
 const sections = [
