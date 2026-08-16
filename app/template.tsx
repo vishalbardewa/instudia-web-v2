@@ -1,5 +1,3 @@
-'use client'
-import { motion } from "framer-motion";
 import React from "react";
 
 export default function Template({
@@ -7,9 +5,18 @@ export default function Template({
 }: {
   children: React.ReactNode;
 }) {
-  return <motion.div
-  initial={{y: 20, opacity: 0}}
-  animate={{y: 0, opacity: 1}}
-  transition={{ease: 'easeInOut', duration: 0.75}}
-  >{children}</motion.div>;
+  return (
+    <>
+      <style>{`
+        @keyframes page-fade-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .page-enter {
+          animation: page-fade-in 0.75s ease-in-out both;
+        }
+      `}</style>
+      <div className="page-enter">{children}</div>
+    </>
+  );
 }
