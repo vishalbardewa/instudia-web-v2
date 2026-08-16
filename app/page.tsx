@@ -165,10 +165,12 @@ export default function Page() {
           <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-black/5 px-6 py-16 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
             <Image
               alt="Person staring at laptop sitting on the chair"
-              src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?q=80&w=800&auto=format&fit=crop"
+              src="/assets/images/course-unique-highlight.webp"
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
               width={600}
               height={600}
+              loading="lazy"
+              unoptimized
               sizes="(max-width: 1024px) 100vw, 384px"
             />
             <div className="w-full flex-auto">

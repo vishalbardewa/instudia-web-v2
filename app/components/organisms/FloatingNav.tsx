@@ -57,7 +57,7 @@ export const FloatingNav = ({
           ease: "easeInOut"
         }}
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border-2 border-black rounded-full bg-white z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
+          "flex max-w-[92vw] sm:max-w-fit fixed top-10 inset-x-0 mx-auto border-2 border-black rounded-full bg-white z-[5000] px-4 sm:pl-8 sm:pr-2 py-2 items-center justify-center space-x-3 sm:space-x-4 shadow-lg",
           className
         )}
       >
@@ -65,19 +65,22 @@ export const FloatingNav = ({
           <Link
             key={`link=${idx}`}
             href={navItem.link}
+            prefetch={false}
             className={cn(
-              "relative items-center flex space-x-1 text-black font-medium"
+              "relative items-center flex space-x-1 text-black font-medium min-h-[44px] px-1 sm:px-2"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <button className="border text-sm font-medium relative  text-white bg-black px-4 py-2 rounded-full xl:px-4">
-          <Link href="/courses">
-            <span>Courses</span>
-          </Link>
-        </button>
+        <Link
+          href="/courses"
+          prefetch={false}
+          className="border text-sm font-medium relative text-white bg-black px-4 py-2 rounded-full min-h-[36px] flex items-center justify-center hover:bg-brandpurple transition-colors"
+        >
+          <span>Courses</span>
+        </Link>
       </motion.div>
     </AnimatePresence>
   );

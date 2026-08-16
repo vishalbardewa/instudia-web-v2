@@ -193,8 +193,8 @@ export default function CourseComparisonMatrix() {
                   <span className="text-[9px] font-black uppercase tracking-widest bg-brandpurple/10 text-brandpurple px-3 py-1 rounded-full">
                     {selected.courseA.level}
                   </span>
-                  <span className="text-xs font-extrabold text-neutral-600">
-                    ⏱ {selected.courseA.duration}
+                  <span className="text-xs font-extrabold text-neutral-600 bg-neutral-100 px-2.5 py-1 rounded-md">
+                    {selected.courseA.duration}
                   </span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-black text-[#1B1C1E] mb-3 leading-tight">
@@ -243,7 +243,7 @@ export default function CourseComparisonMatrix() {
 
               <Link
                 href={`/courses/${selected.courseA.slug}`}
-                className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-xl bg-black text-white text-xs font-black uppercase tracking-wider hover:bg-brandpurple transition-colors mt-4"
+                className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-xl bg-black text-white text-xs font-black uppercase tracking-wider hover:bg-brandpurple transition-colors mt-4 min-h-[44px]"
               >
                 <span>View Full Curriculum</span>
                 <ArrowRightIcon className="h-4 w-4" />
@@ -262,8 +262,8 @@ export default function CourseComparisonMatrix() {
                   <span className="text-[9px] font-black uppercase tracking-widest bg-brandpurple/10 text-brandpurple px-3 py-1 rounded-full">
                     {selected.courseB.level}
                   </span>
-                  <span className="text-xs font-extrabold text-neutral-600">
-                    ⏱ {selected.courseB.duration}
+                  <span className="text-xs font-extrabold text-neutral-600 bg-neutral-100 px-2.5 py-1 rounded-md">
+                    {selected.courseB.duration}
                   </span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-black text-[#1B1C1E] mb-3 leading-tight">

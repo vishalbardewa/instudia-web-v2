@@ -210,14 +210,14 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-6 md:order-2">
+          <div className="flex space-x-4 md:space-x-6 md:order-2">
             {navigation.social.map((item) => (
               <a
                 key={item.name}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={item.href}
-                className="text-gray-400 hover:text-gray-500"
+                className="text-gray-400 hover:text-gray-600 min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon aria-hidden="true" className="h-6 w-6" />
@@ -225,11 +225,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
-            &copy; {new Date().getFullYear()} Powered with{" "}
-            <span role="img" aria-label="Love">
-              🥰
-            </span>{" "}
-            by <b>Team instudia</b>
+            &copy; {new Date().getFullYear()} Crafted by <b>Team instudia</b>. All rights reserved.
           </p>
         </div>
       </div>

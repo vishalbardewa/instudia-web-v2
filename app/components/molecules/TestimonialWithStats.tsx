@@ -18,10 +18,11 @@ export default function TestimonialWithStats() {
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl aspect-[4/3] lg:aspect-[3/4]">
                   <Image
                     className="object-cover"
-                    src="https://images.unsplash.com/photo-1543269664-647163ef2ee4?q=80&w=1400&auto=format&fit=crop"
+                    src="/assets/images/students-mission.webp"
                     alt="Students at Instudia learning tech skills in Dimapur"
                     fill
                     loading="lazy"
+                    unoptimized
                     sizes="(max-width: 1024px) 100vw, 600px"
                   />
                   {/* Dark overlay */}

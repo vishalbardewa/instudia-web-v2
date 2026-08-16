@@ -77,11 +77,13 @@ export default function SeonaEditorialHero() {
           {/* Central Authentic Group of Students Photograph */}
           <div className="relative z-10 w-full max-w-3xl flex items-end justify-center">
             <Image
-              src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/images/hero-students.webp"
               alt="Hands-on youth tech skill development and computer lab training at instudia"
-              width={1200}
-              height={600}
+              width={960}
+              height={480}
               priority
+              fetchPriority="high"
+              unoptimized
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
               className="w-full max-h-[320px] sm:max-h-[380px] md:max-h-[420px] object-cover object-top rounded-xl border border-black/10 shadow-md bg-white"
             />
@@ -129,6 +131,7 @@ export default function SeonaEditorialHero() {
         <div className="flex flex-wrap items-center justify-center gap-3.5 my-8">
           <Link
             href="/courses"
+            prefetch={false}
             className="px-6 sm:px-7 py-3 bg-[#1E1B2E] hover:bg-[#C5F442] text-white hover:text-[#1E1B2E] font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl transition-all shadow-sm"
           >
             Explore 19+ Courses

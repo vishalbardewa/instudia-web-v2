@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
@@ -19,6 +19,13 @@ const jakarta = Plus_Jakarta_Sans({
   preload: true,
   adjustFontFallback: true,
 });
+
+export const viewport: Viewport = {
+  themeColor: "#1E1B2E",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -75,6 +82,11 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
+        <link rel="preload" as="image" href="/assets/images/hero-students.webp" type="image/webp" fetchPriority="high" />
+        <link rel="preconnect" href="https://ik.imagekit.io" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://ik.imagekit.io" />
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <LocalBusinessSchema />
         <script
           type="application/ld+json"

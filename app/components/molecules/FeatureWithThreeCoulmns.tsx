@@ -4,11 +4,10 @@ import {
   BuildingOfficeIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
-import { randomUUID } from 'crypto';
 
 const features = [
   {
-    id: randomUUID(),
+    id: 'career-counseling',
     name: 'Find the Right Role For You',
     description:
       'A career counselor or mentor helps uncover and navigate the path toward your ideal job.',
@@ -18,7 +17,7 @@ const features = [
     border: 'border-brightyellow/20',
   },
   {
-    id: randomUUID(),
+    id: 'cv-coaching',
     name: 'CV & Interview Coaching',
     description:
       'Professional resume and interview coaching services sharpen your CV and boost interview readiness.',
@@ -28,7 +27,7 @@ const features = [
     border: 'border-brandpurple/20',
   },
   {
-    id: randomUUID(),
+    id: 'industry-referrals',
     name: 'Referrals to Top Companies',
     description:
       'Network with recruiters and staffing agencies to unlock job opportunities and referrals in your field.',
@@ -38,7 +37,7 @@ const features = [
     border: 'border-redhue/20',
   },
   {
-    id: randomUUID(),
+    id: 'salary-negotiation',
     name: 'Salary Negotiation Coaching',
     description:
       'A specialized career coach boosts your confidence with effective, evidence-based negotiation strategies.',

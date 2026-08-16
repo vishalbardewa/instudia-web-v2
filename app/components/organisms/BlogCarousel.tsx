@@ -9,6 +9,29 @@ import { Container } from "../atom/Container";
 // --- Authoritative Brand Palette ---
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
+function getOptimizedThumbnail(src: string): string {
+  if (!src) return src;
+  if (src.includes("ik.imagekit.io")) {
+    if (src.includes("tr:")) return src;
+    const parts = src.split("/blog-images/");
+    if (parts.length === 2) {
+      return `${parts[0]}/tr:w-600,f-webp,q-80/blog-images/${parts[1]}`;
+    }
+  }
+  if (src.includes("images.unsplash.com")) {
+    try {
+      const url = new URL(src);
+      url.searchParams.set("w", "600");
+      url.searchParams.set("q", "75");
+      url.searchParams.set("auto", "format");
+      return url.toString();
+    } catch {
+      return src;
+    }
+  }
+  return src;
+}
+
 // --- Swiss Brutalist Card Architecture ---
 function SwissBrutalistCard({ post, index }: { post: PostSummary; index: number }) {
   const isHovered = useMotionValue(0);
@@ -33,7 +56,7 @@ function SwissBrutalistCard({ post, index }: { post: PostSummary; index: number 
       }}
       className="flex-shrink-0 w-[85vw] sm:w-[480px] snap-start py-12 px-4"
     >
-      <Link href={`/blog/${post.slug}`} className="block h-full group">
+      <Link href={`/blog/${post.slug}`} prefetch={false} className="block h-full group">
         <m.div
           onMouseEnter={() => isHovered.set(1)}
           onMouseLeave={() => isHovered.set(0)}
@@ -46,8 +69,10 @@ function SwissBrutalistCard({ post, index }: { post: PostSummary; index: number 
           {/* Brutalist Image Vault */}
           <div className="overflow-hidden aspect-[16/9] relative border-b-2 border-black">
             <m.img
-              src={post.coverImage}
+              src={getOptimizedThumbnail(post.coverImage)}
               alt={post.title}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
             />
             {/* Technical Index Label */}

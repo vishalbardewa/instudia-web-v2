@@ -111,14 +111,14 @@ export default function BlogClient({ posts }: { posts: PostSummary[] }) {
     <div className="relative pb-32">
       {/* Swiss Category Nav */}
       <div className="sticky top-0 z-40 bg-white border-b-2 border-black">
-        <div className="mx-auto max-w-6xl px-6 py-4 flex gap-4 overflow-x-auto no-scrollbar">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex gap-3 sm:gap-4 overflow-x-auto brutalist-scrollbar -webkit-overflow-scrolling-touch">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`flex-shrink-0 text-[10px] font-black uppercase tracking-[0.2em] px-6 py-3 border-2 border-black transition-all duration-200 ${cat === active
-                ? "bg-black text-white shadow-[4px_4px_0px_#C21BFF]"
-                : "bg-white text-black hover:bg-neutral-50 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]"
+              className={`flex-shrink-0 text-[10px] font-black uppercase tracking-[0.2em] px-5 sm:px-6 py-2.5 sm:py-3 border-2 border-black min-h-[44px] transition-all duration-200 ${cat === active
+                ? "bg-black text-white shadow-[3px_3px_0px_#C21BFF] sm:shadow-[4px_4px_0px_#C21BFF]"
+                : "bg-white text-black hover:bg-neutral-50 shadow-[3px_3px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
                 }`}
             >
               {cat}

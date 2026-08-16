@@ -69,7 +69,7 @@ export const authors: Record<string, Author> = {
     role: 'Academic & Career Team',
     credentials: 'ISO Certified Skill Institute',
     bio: 'Official articles and curriculum guides prepared by instudia faculty and industry mentors in Dimapur.',
-    avatarUrl: 'https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/qzmdhewkbsyxmwsjccnu',
+    avatarUrl: 'https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png',
     sameAs: ['https://www.instudianagaland.com'],
     expertise: ['Skill Training', 'Tech Education', 'Nagaland Career Guidance'],
     isOrganization: true,

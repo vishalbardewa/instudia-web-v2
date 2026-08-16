@@ -154,14 +154,14 @@ export default async function BlogPostPage({ params }: Props) {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-9">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-[-0.04em] text-black leading-[0.9] uppercase flex flex-col mb-10">
+              <h1 className="text-3xl sm:text-6xl lg:text-8xl font-black tracking-[-0.04em] text-black leading-[0.95] sm:leading-[0.9] uppercase flex flex-col mb-10">
                 <span>{post.title.split(' ').slice(0, Math.ceil(post.title.split(' ').length / 2)).join(' ')}</span>
-                <span className="text-white [-webkit-text-stroke:4px_black]" style={{ paintOrder: 'stroke fill' }}>
+                <span className="text-white [-webkit-text-stroke:2px_black] sm:[-webkit-text-stroke:4px_black]" style={{ paintOrder: 'stroke fill' }}>
                   {post.title.split(' ').slice(Math.ceil(post.title.split(' ').length / 2)).join(' ')}
                 </span>
               </h1>
 
-              <div className="flex flex-wrap items-center gap-8 sm:gap-10">
+              <div className="flex flex-wrap items-center gap-6 sm:gap-10">
                 <AuthorCard author={authorEntity} variant="compact" />
                 <div className="h-8 w-[1px] bg-black/10 hidden sm:block" />
                 <div>
@@ -189,8 +189,8 @@ export default async function BlogPostPage({ params }: Props) {
       </section>
 
       {/* Cinematic Cover Vault */}
-      <section className="mt-12 mb-20 px-4 sm:px-10 max-w-7xl mx-auto">
-        <div className="border-2 border-black bg-white p-4 shadow-[12px_12px_0px_#FFE01B]">
+      <section className="mt-8 sm:mt-12 mb-16 sm:mb-20 px-4 sm:px-10 max-w-7xl mx-auto">
+        <div className="border-2 border-black bg-white p-3 sm:p-4 shadow-[6px_6px_0px_#FFE01B] sm:shadow-[12px_12px_0px_#FFE01B]">
           <img
             src={post.coverImage}
             alt={post.title}

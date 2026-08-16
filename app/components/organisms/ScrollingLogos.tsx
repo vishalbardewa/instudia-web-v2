@@ -40,6 +40,8 @@ function LogoTile({ logo }: { logo: { src: string; alt: string } }) {
           className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-500 relative z-10"
           width={100}
           height={100}
+          loading="lazy"
+          sizes="(max-width: 640px) 70px, 100px"
         />
         <div className="absolute inset-0 bg-brandpurple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>

@@ -56,7 +56,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                     <button
                       onClick={() => { setOpen(false); onSearch?.(); }}
                       aria-label="Search"
-                      className="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-200 text-gray-500 hover:bg-gray-50 transition-colors"
+                      className="flex items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-full border border-neutral-200 text-gray-500 hover:bg-gray-50 transition-colors"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -66,7 +66,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                     <button
                       onClick={() => setOpen(false)}
                       aria-label="Close menu"
-                      className="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-200 text-gray-500 hover:bg-gray-50 transition-colors"
+                      className="flex items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-full border border-neutral-200 text-gray-500 hover:bg-gray-50 transition-colors"
                     >
                       <XMarkIcon className="h-5 w-5" aria-hidden="true" />
                     </button>
