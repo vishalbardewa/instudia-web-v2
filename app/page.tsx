@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import LandingTop from "./components/organisms/LandingTop";
@@ -10,38 +9,18 @@ import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { Container } from "./components/atom/Container";
 import { FadeIn, FadeInStagger } from "./components/atom/FadeIn";
 import { SectionIntro } from "./components/atom/SectionIntro";
-import { randomUUID } from "crypto";
 import { posts } from "./data/posts";
 
-// --- Dynamic imports: defers JS parsing until component is needed ---
-// Each dynamic() call creates a separate chunk — browser only downloads+parses
-// a component when it's about to render, not at initial page load.
-const TestimonialWithStats = dynamic(
-  () => import("./components/molecules/TestimonialWithStats"),
-  { ssr: true }
-);
-const ScrollingLogos = dynamic(
-  () => import("./components/organisms/ScrollingLogos"),
-  { ssr: true }
-);
-const RandomGateway = dynamic(
-  () => import("./components/organisms/RandomGateway"),
-  { ssr: true }
-);
-const FeatureWithColumns = dynamic(
-  () => import("./components/molecules/FeatureWithThreeCoulmns"),
-  { ssr: true }
-);
-const TestimonialGrid = dynamic(
-  () => import("./components/organisms/TestimonialGrid"),
-  { ssr: true }
-);
-const BlogCarousel = dynamic(
-  () => import("./components/organisms/BlogCarousel"),
-  { ssr: true }
-);
+import TestimonialWithStats from "./components/molecules/TestimonialWithStats";
+import ScrollingLogos from "./components/organisms/ScrollingLogos";
+import RandomGateway from "./components/organisms/RandomGateway";
+import FeatureWithColumns from "./components/molecules/FeatureWithThreeCoulmns";
+import TestimonialGrid from "./components/organisms/TestimonialGrid";
+import BlogCarousel from "./components/organisms/BlogCarousel";
 
 
+
+import { buildMetadata } from "@/lib/metadata";
 
 const stats = [
   { label: "Founded", value: "2021" },
@@ -50,171 +29,14 @@ const stats = [
   { label: "Team Experience", value: "14+ Years" },
 ];
 
-const content = [
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/linear.webp"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-  },
-];
-
-const SkeletonOne = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">House in the woods</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A serene and tranquil retreat, this house in the woods offers a peaceful
-        escape from the hustle and bustle of city life.
-      </p>
-    </div>
-  );
-};
-
-const SkeletonTwo = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">House above the clouds</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Perched high above the world, this house offers breathtaking views and a
-        unique living experience. It&apos;s a place where the sky meets home,
-        and tranquility is a way of life.
-      </p>
-    </div>
-  );
-};
-const SkeletonThree = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Greens all over</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
-      </p>
-    </div>
-  );
-};
-const SkeletonFour = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Rivers are serene</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house by the river is a place of peace and tranquility. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
-      </p>
-    </div>
-  );
-};
-
-const cards = [
-  {
-    id: 1,
-    content: <SkeletonOne />,
-    className: "md:col-span-2",
-    thumbnail:
-      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 2,
-    content: <SkeletonTwo />,
-    className: "col-span-1",
-    thumbnail:
-      "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 3,
-    content: <SkeletonThree />,
-    className: "col-span-1",
-    thumbnail:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 4,
-    content: <SkeletonFour />,
-    className: "md:col-span-2",
-    thumbnail:
-      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-];
-
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Best Computer Courses in Dimapur, Nagaland",
   description:
     "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
-  openGraph: {
-    title: "Best Computer Courses in Dimapur, Nagaland",
-    description:
-      "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
-    url: canonicalFor("/"),
-    locale: "en_IN",
-    siteName: "instudia",
-    type: "website",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
-        width: 1200,
-        height: 630,
-        type: "image/jpeg",
-        alt: "Upskill with instudia",
-      },
-    ],
-  },
-  twitter: {
-    title: "Best Computer Courses in Dimapur, Nagaland",
-    description:
-      "Master Programming, Web Development, Graphic Design & Digital Skills in Dimapur. Top computer courses like DCA, Tally & GST. Boost your career. Enroll now!",
-    card: "summary_large_image",
-    images: ["https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9"],
-  },
-  metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: canonicalFor("/"),
-  },
-};
+  path: "/",
+  image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+  imageAlt: "Upskill with instudia",
+});
 
 const benefits = [
   "Resume Building Sessions",
@@ -227,7 +49,7 @@ const benefits = [
 
 const caseStudies = [
   {
-    id: randomUUID(),
+    id: "unlock-opportunities",
     logo: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/logo-assets/unlock.svg?updatedAt=1729061047829",
     client: "Unlock New Opportunities",
     date: "001",
@@ -237,7 +59,7 @@ const caseStudies = [
     classnames: "hover:bg-[#ffe01b]/70",
   },
   {
-    id: randomUUID(),
+    id: "empower-career",
     logo: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/logo-assets/medal.svg?updatedAt=1729061595377",
     client: "Empower Your Career",
     date: "002",
@@ -247,7 +69,7 @@ const caseStudies = [
     classnames: "hover:bg-[#c21bff]/70",
   },
   {
-    id: randomUUID(),
+    id: "bridge-skills-gap",
     logo: "https://ik.imagekit.io/dxffek9yf/website-workshop-instudia/logo-assets/announcement.svg?updatedAt=1729060940757",
     client: "Bridge the Skills Gap",
     date: "003",
@@ -285,10 +107,10 @@ const CaseStudies = ({ caseStudies }: any) => {
                   <Image
                     src={caseStudy.logo}
                     alt={caseStudy.client}
-                    className="h-16 w-16"
-                    width={16}
-                    height={16}
-                    unoptimized
+                    className="h-16 w-16 object-contain"
+                    width={64}
+                    height={64}
+                    sizes="64px"
                   />
                 </h3>
                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
@@ -301,7 +123,7 @@ const CaseStudies = ({ caseStudies }: any) => {
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>⚡</span>
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-brandpurple">Feature</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
@@ -343,10 +165,11 @@ export default function Page() {
           <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-black/5 px-6 py-16 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
             <Image
               alt="Person staring at laptop sitting on the chair"
-              src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?q=80&w=800&auto=format&fit=crop"
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
               width={600}
               height={600}
+              sizes="(max-width: 1024px) 100vw, 384px"
             />
             <div className="w-full flex-auto">
               <h2 className="text-3xl font-bold tracking-tight text-[#1b1c1e] sm:text-4xl">

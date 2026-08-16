@@ -13,7 +13,12 @@ import { LocalBusinessSchema } from "./components/SchemaOrg/LocalBusinessSchema"
 
 import { SITE_URL, canonicalFor } from "@/lib/site";
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+});
 
 export const metadata: Metadata = {
   title: {
@@ -41,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "instudia",
     images: [
       {
-        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+        url: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/tqo7qzztc4duzktj0jt9",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -56,11 +61,11 @@ export const metadata: Metadata = {
     },
     description: "Master in-demand skills in Dimapur! instudia offers top computer courses: Programming, Web Development, Project Management & Digital Skills. Boost your career in Nagaland. Enroll now!",
     card: "summary_large_image",
-    images: ["https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9"],
+    images: ["https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/tqo7qzztc4duzktj0jt9"],
   },
 };
 
-const GA_MEASUREMENT_ID = "UA-232483046-1";
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 export default function RootLayout({
   children,
@@ -155,9 +160,11 @@ export default function RootLayout({
           </ConditionalLayout>
         </MotionProvider>
         {/* Deferred analytics — loads after page is interactive */}
-        <Suspense fallback={null}>
-          <GoogleAnalytics gaId={GA_MEASUREMENT_ID || ""} />
-        </Suspense>
+        {GA_MEASUREMENT_ID && (
+          <Suspense fallback={null}>
+            <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+          </Suspense>
+        )}
       </body>
     </html>
   );

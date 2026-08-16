@@ -12,10 +12,13 @@ export default function AuthorCard({ author, variant = "full" }: AuthorCardProps
   if (variant === "compact") {
     return (
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 border-2 border-black rounded-full overflow-hidden shrink-0 relative bg-neutral-100">
+        <div className="w-12 h-12 aspect-square border-2 border-black rounded-full overflow-hidden shrink-0 relative bg-neutral-100">
           <img
-            src={author.avatarUrl || "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu"}
+            src={author.avatarUrl || "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/qzmdhewkbsyxmwsjccnu"}
             alt={author.name}
+            width={48}
+            height={48}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>
@@ -32,10 +35,13 @@ export default function AuthorCard({ author, variant = "full" }: AuthorCardProps
 
   return (
     <div className="mt-24 p-8 sm:p-12 border-2 border-black bg-white shadow-[6px_6px_0px_rgba(0,0,0,1)] flex flex-col sm:flex-row gap-8 items-start">
-      <div className="w-20 h-20 border-2 border-black rounded-full overflow-hidden shrink-0 bg-neutral-100">
+      <div className="w-20 h-20 aspect-square border-2 border-black rounded-full overflow-hidden shrink-0 bg-neutral-100">
         <img
-          src={author.avatarUrl || "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu"}
+          src={author.avatarUrl || "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/qzmdhewkbsyxmwsjccnu"}
           alt={author.name}
+          width={80}
+          height={80}
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>

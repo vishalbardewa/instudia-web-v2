@@ -3,14 +3,14 @@
 import { useRef, useState, useEffect } from "react";
 import { m, useScroll, useSpring, useTransform, useMotionValue, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { type Post, formatDate } from "../../data/types";
+import { type PostSummary, formatDate } from "../../data/types";
 import { Container } from "../atom/Container";
 
 // --- Authoritative Brand Palette ---
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
 // --- Swiss Brutalist Card Architecture ---
-function SwissBrutalistCard({ post, index }: { post: Post; index: number }) {
+function SwissBrutalistCard({ post, index }: { post: PostSummary; index: number }) {
   const isHovered = useMotionValue(0);
   const springHover = useSpring(isHovered, { stiffness: 400, damping: 25 });
 
@@ -81,10 +81,13 @@ function SwissBrutalistCard({ post, index }: { post: Post; index: number }) {
             {/* Brutalist Metadata Footer */}
             <div className="mt-10 pt-6 border-t-2 border-black flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 border-2 border-black overflow-hidden bg-neutral-100 rounded-full">
+                <div className="w-10 h-10 aspect-square border-2 border-black overflow-hidden bg-neutral-100 rounded-full">
                   <img
                     src={post.authorPhoto}
                     alt={post.author}
+                    width={40}
+                    height={40}
+                    loading="lazy"
                     className="w-full h-full object-cover grayscale"
                   />
                 </div>
@@ -208,7 +211,7 @@ function RigidButton({ children, onClick, direction, label }: { children: React.
   );
 }
 
-export default function BlogCarousel({ posts }: { posts: Post[] }) {
+export default function BlogCarousel({ posts }: { posts: PostSummary[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);

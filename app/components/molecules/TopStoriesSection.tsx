@@ -3,12 +3,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { type Post, formatDate } from "@/app/data/types";
+import { type PostSummary, formatDate } from "@/app/data/types";
 
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
 interface TopStoriesSectionProps {
-  posts: Post[];
+  posts: PostSummary[];
   title?: string;
   moreHref?: string;
 }

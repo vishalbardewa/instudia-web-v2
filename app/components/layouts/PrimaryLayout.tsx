@@ -1,22 +1,29 @@
 "use client";
 import { useState, useEffect, useMemo, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { IconHome, IconUser, IconMap } from "@tabler/icons-react";
 import { IconMessage } from "@tabler/icons-react";
 import { FloatingNav } from "../organisms/FloatingNav";
 import Footer from "../organisms/Footer";
 import NavigationWithDropdown from "../organisms/NavigationWithDropdown";
-import WhatsAppWidget from "../atom/WhatsAppWidget";
-import SearchModal from "../atom/SearchModal";
-import MasterclassModal from "../organisms/MasterclassModal";
 import { slugs } from "@/app/routes";
 import { IMAGE_LIST } from "@/app/utils/CourseImageList";
 import Link from "next/link";
-import { CookieBanner } from "../molecules/CookieBanner";
 import { getActiveFestival } from "@/app/utils/festival";
-import { Confetti, Snowfall, GlowEffects, FestivalDoodle, EasterEggs } from "../atom/FestivalEffects";
-import AiBotsAnimation from "../atom/AiBotsAnimation";
 import { clsx } from "clsx";
+
+// Deferred non-critical client widgets (loaded after FCP and main render)
+const WhatsAppWidget = dynamic(() => import("../atom/WhatsAppWidget"), { ssr: false });
+const SearchModal = dynamic(() => import("../atom/SearchModal"), { ssr: false });
+const MasterclassModal = dynamic(() => import("../organisms/MasterclassModal"), { ssr: false });
+const CookieBanner = dynamic(() => import("../molecules/CookieBanner").then((m) => m.CookieBanner), { ssr: false });
+const AiBotsAnimation = dynamic(() => import("../atom/AiBotsAnimation"), { ssr: false });
+const Confetti = dynamic(() => import("../atom/FestivalEffects").then((m) => m.Confetti), { ssr: false });
+const Snowfall = dynamic(() => import("../atom/FestivalEffects").then((m) => m.Snowfall), { ssr: false });
+const GlowEffects = dynamic(() => import("../atom/FestivalEffects").then((m) => m.GlowEffects), { ssr: false });
+const FestivalDoodle = dynamic(() => import("../atom/FestivalEffects").then((m) => m.FestivalDoodle), { ssr: false });
+const EasterEggs = dynamic(() => import("../atom/FestivalEffects").then((m) => m.EasterEggs), { ssr: false });
 
 const navItems = [
   {

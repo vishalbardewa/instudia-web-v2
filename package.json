@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "prebuild": "node scripts/validate-metadata.mjs",
+    "strip:images": "node scripts/strip-image-metadata.mjs",
+    "prebuild": "node scripts/strip-image-metadata.mjs && node scripts/validate-metadata.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppConfig } from "../_utils/AppConfig";
 import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
+import { BreadcrumbSchema } from "../components/SchemaOrg/BreadcrumbSchema";
 import { staff } from "../data/staff";
 
 export const metadata = buildMetadata({
@@ -68,6 +69,12 @@ const values = [
 export default function AboutPage() {
   return (
     <main className="bg-white">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: canonicalFor("/") },
+          { name: "About Us", url: canonicalFor("/about") },
+        ]}
+      />
       <Script
         id="about-schema"
         type="application/ld+json"

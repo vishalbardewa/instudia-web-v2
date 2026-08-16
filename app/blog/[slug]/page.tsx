@@ -23,6 +23,7 @@ import HslRelationshipWidget from "../../components/molecules/HslRelationshipWid
 import HarmonyDefinitionsWidget from "../../components/molecules/HarmonyDefinitionsWidget";
 import TopStoriesSection from "../../components/molecules/TopStoriesSection";
 import AuthorCard from "../../components/molecules/AuthorCard";
+import { BreadcrumbSchema } from "../../components/SchemaOrg/BreadcrumbSchema";
 import coursesData from "@/app/courses.json";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -111,15 +112,26 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedCourses = coursesData.courses
     .filter((c) => {
       const courseText = `${c.fullTitle} ${c.courseHightlight || ""}`.toLowerCase();
-      // Simple keyword overlap check
       const postWords = postKeywords.split(/\W+/).filter((w) => w.length > 4);
       return postWords.some((w) => courseText.includes(w));
     })
-    .slice(0, 3);
+    .slice(0, 3)
+    .map((c) => ({
+      slug: c.slug,
+      category: c.category,
+      fullTitle: c.fullTitle,
+    }));
 
   return (
     <main className="bg-[#FAFAFA] min-h-screen pb-32">
       <ReadingProgress />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: canonicalFor("/") },
+          { name: "Blog", url: canonicalFor("/blog") },
+          { name: post.title, url: canonicalFor(`/blog/${slug}`) },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

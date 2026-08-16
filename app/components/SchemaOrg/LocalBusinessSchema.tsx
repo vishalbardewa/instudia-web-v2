@@ -5,8 +5,8 @@ export function LocalBusinessSchema() {
     name: "instudia",
     legalName: "instudia Tech & Skill Training Institute",
     url: "https://www.instudianagaland.com",
-    logo: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
-    image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9",
+    logo: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/qzmdhewkbsyxmwsjccnu",
+    image: "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/tqo7qzztc4duzktj0jt9",
     description:
       "Premier computer training & skill development institute in Dimapur, Nagaland offering certification courses in programming, web development, graphic design, Tally with GST, and office applications.",
     telephone: "+918798587779",

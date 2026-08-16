@@ -40,13 +40,13 @@ export default function BlogCard({
       key={title}
       className="flex flex-col overflow-hidden rounded-lg shadow-lg"
     >
-      <div className="shrink-0 relative h-48 w-full">
+      <div className="shrink-0 relative aspect-[16/9] w-full overflow-hidden bg-neutral-100">
         <Image 
-          className="h-48 w-full object-cover" 
+          className="object-cover" 
           src={imageUrl} 
           alt={title} 
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
         />
       </div>
       <div className="flex flex-1 flex-col justify-between bg-white p-6">

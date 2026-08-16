@@ -63,8 +63,9 @@ const nextConfig = {
       { protocol: "https", hostname: "nagalandpost.com" },
       { protocol: "https", hostname: "res.cloudinary.com" },
     ],
-    // Removed 2048 & 3840 — useless on mobile, bloats image manifest
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    formats: ['image/avif', 'image/webp'],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [640, 750, 828, 1080, 1200],
   },
 };
 

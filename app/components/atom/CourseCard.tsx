@@ -16,13 +16,13 @@ export default function CourseCard({
       key={title}
       className="col-span-3 flex flex-col overflow-hidden rounded-lg shadow-lg lg:col-span-1"
     >
-      <div className="flex shrink-0 h-48 relative">
+      <div className="flex shrink-0 aspect-[16/9] w-full relative overflow-hidden bg-neutral-100">
         <Image
-          className="h-full w-full object-cover"
+          className="object-cover"
           src={`/assets/images/${slug}.png`}
           alt={title}
           fill
-          sizes="(max-width: 1024px) 100vw, 33vw"
+          sizes="(max-width: 1024px) 100vw, 380px"
         />
       </div>
       <div className="flex flex-1 flex-col justify-between bg-white p-6 hover:bg-slate-100">

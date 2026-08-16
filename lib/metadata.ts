@@ -19,7 +19,7 @@ export interface PageMetadataInput {
 }
 
 export const DEFAULT_OG_IMAGE =
-  'https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/tqo7qzztc4duzktj0jt9';
+  'https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto,fl_strip_profile/v1/instudia/tqo7qzztc4duzktj0jt9';
 
 export function buildMetadata(input: PageMetadataInput): Metadata {
   const cleanTitle = input.title

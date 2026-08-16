@@ -230,8 +230,20 @@ export default async function Course({ params }: any) {
         "image": "https://res.cloudinary.com/dhwg77gwm/image/upload/f_auto,q_auto/v1/instudia/qzmdhewkbsyxmwsjccnu",
         "telephone": "+91 87985 87779",
       },
+      "educationalCredentialAwarded": `ISO 9001:2015 Verified Certificate in ${courseDetails.fullTitle}`,
+      "occupationalCredentialAwarded": "Industry Recognized Skill Certificate",
+      "coursePrerequisites": courseDetails.features?.find((f: any) => f.name.includes("Qualification"))?.description || "Basic computer literacy",
       "inLanguage": ["en", "hi"],
       ...(durationMonths ? { "timeRequired": `P${courseDetails.features?.find((f: any) => f.name === "Duration")?.description ?? ""}M` } : {}),
+      ...(Array.isArray(courseDetails.curriculum) && courseDetails.curriculum.length > 0
+        ? {
+            "syllabusSections": courseDetails.curriculum.map((mod: any) => ({
+              "@type": "Syllabus",
+              "name": mod.title,
+              "description": mod.description,
+            })),
+          }
+        : {}),
       ...(priceValue
         ? {
             "offers": {
@@ -246,11 +258,19 @@ export default async function Course({ params }: any) {
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "Onsite",
+        "courseSchedule": {
+          "@type": "Schedule",
+          "repeatFrequency": "P1W",
+          "byDay": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "startTime": "10:00",
+          "endTime": "16:00",
+        },
         "location": {
           "@type": "Place",
           "name": "instudia, Dimapur",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Vikiye Center, 1st Floor, Notun Bosti",
             "addressLocality": "Dimapur",
             "addressRegion": "Nagaland",
             "postalCode": "797112",

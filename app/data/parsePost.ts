@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type { Post, Section, ContentItem } from "./types";
+import { getAuthorBySlug } from "./authors";
+import type { Post, PostSummary, Section, ContentItem } from "./types";
 
 const POSTS_DIR = path.join(process.cwd(), "content/posts");
 
@@ -210,12 +211,10 @@ function parseBody(markdown: string): Section[] {
   return sections;
 }
 
-import { getAuthorBySlug } from "./authors";
-
-/** Load and parse a single markdown post file. */
-export function loadPost(filename: string): Post {
+/** Load and parse only the frontmatter summary of a markdown post (omitting body). */
+export function loadPostSummary(filename: string): PostSummary {
   const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
-  const { data, content } = matter(raw);
+  const { data } = matter(raw);
   const authorSlug = data.authorSlug || "instudia-team";
   const authorEntity = getAuthorBySlug(authorSlug);
 
@@ -236,6 +235,17 @@ export function loadPost(filename: string): Post {
     authorSameAs: authorEntity.sameAs || [],
     coverImage: data.coverImage,
     ogImage: data.ogImage,
+  };
+}
+
+/** Load and parse a single markdown post file including full body AST. */
+export function loadPost(filename: string): Post {
+  const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
+  const { data, content } = matter(raw);
+  const summary = loadPostSummary(filename);
+
+  return {
+    ...summary,
     body: parseBody(content),
   };
 }
@@ -256,7 +266,25 @@ function getAllFiles(dirPath: string): string[] {
   return files;
 }
 
-/** Load all posts from content/posts/ and its subdirectories, sorted newest → oldest by date. */
+/** Load all post summaries (without body) sorted newest → oldest by date. */
+export function loadAllPostSummaries(): PostSummary[] {
+  const files = getAllFiles(POSTS_DIR);
+  const loaded = files
+    .map((f) => {
+      try {
+        return loadPostSummary(f);
+      } catch (err) {
+        console.error(`Error loading post summary ${f}:`, err);
+        return null;
+      }
+    })
+    .filter((p): p is PostSummary => p !== null && typeof p.slug === "string" && p.slug.length > 0);
+
+  loaded.sort((a, b) => b.date.localeCompare(a.date));
+  return loaded;
+}
+
+/** Load all posts with full body from content/posts/. */
 export function loadAllPosts(): Post[] {
   const files = getAllFiles(POSTS_DIR);
   const loaded = files
@@ -270,7 +298,23 @@ export function loadAllPosts(): Post[] {
     })
     .filter((p): p is Post => p !== null && typeof p.slug === "string" && p.slug.length > 0);
 
-  // Sort descending: newest first
   loaded.sort((a, b) => b.date.localeCompare(a.date));
   return loaded;
+}
+
+/** Load a single post with full body by its slug. */
+export function loadPostBySlug(slug: string): Post | undefined {
+  const files = getAllFiles(POSTS_DIR);
+  for (const f of files) {
+    const raw = fs.readFileSync(path.join(POSTS_DIR, f), "utf8");
+    const { data, content } = matter(raw);
+    if (data.slug === slug) {
+      const summary = loadPostSummary(f);
+      return {
+        ...summary,
+        body: parseBody(content),
+      };
+    }
+  }
+  return undefined;
 }

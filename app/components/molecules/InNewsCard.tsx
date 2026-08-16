@@ -61,11 +61,14 @@ export default function InNewsCard({ mainText }: any) {
             key={`${person.email}${idx}`}
             className="relative flex flex-col items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-yellow-500 focus-within:ring-offset-2 hover:border-gray-400 lg:flex-row"
           >
-            <div className="mb-5 shrink-0 lg:mb-0">
+            <div className="mb-5 shrink-0 lg:mb-0 h-12 w-32 flex items-center justify-center">
               <img
-                className={`h-${person.imageDimensions.h} w-${person.imageDimensions.w}`}
+                className="max-h-10 max-w-full w-auto h-auto object-contain"
                 src={person.imageUrl}
-                alt="Nagaland Post Logo"
+                alt={person.role || "News Publication Logo"}
+                loading="lazy"
+                width={128}
+                height={40}
               />
             </div>
             <div className="min-w-0 flex-1">

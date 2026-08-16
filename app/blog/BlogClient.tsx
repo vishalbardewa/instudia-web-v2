@@ -3,13 +3,13 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import { type Post, formatDate } from "../data/types";
+import { type PostSummary, formatDate } from "../data/types";
 
 const categories = ["All", "Career", "Skills", "Finance", "Technology"];
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
 // --- Swiss Brutalist Card Architecture (Shared with Carousel) ---
-function SwissBrutalistCard({ post, index, isLarge = false }: { post: Post; index: number; isLarge?: boolean }) {
+function SwissBrutalistCard({ post, index, isLarge = false }: { post: PostSummary; index: number; isLarge?: boolean }) {
   const isHovered = useMotionValue(0);
   const springHover = useSpring(isHovered, { stiffness: 400, damping: 25 });
 
@@ -67,8 +67,8 @@ function SwissBrutalistCard({ post, index, isLarge = false }: { post: Post; inde
 
           <div className="mt-10 pt-6 border-t-2 border-black flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 border-2 border-black overflow-hidden bg-neutral-100 rounded-full">
-                <img src={post.authorPhoto} alt={post.author} className="w-full h-full object-cover grayscale" />
+              <div className="w-10 h-10 aspect-square border-2 border-black overflow-hidden bg-neutral-100 rounded-full">
+                <img src={post.authorPhoto} alt={post.author} width={40} height={40} loading="lazy" className="w-full h-full object-cover grayscale" />
               </div>
               <div>
                 <span className="block text-[10px] font-black text-black leading-none uppercase">{post.author}</span>
@@ -85,7 +85,7 @@ function SwissBrutalistCard({ post, index, isLarge = false }: { post: Post; inde
   );
 }
 
-export default function BlogClient({ posts }: { posts: Post[] }) {
+export default function BlogClient({ posts }: { posts: PostSummary[] }) {
   const [active, setActive] = useState("All");
 
   const filtered = useMemo(() => {
@@ -96,7 +96,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
   const rest = filtered.slice(1);
 
   const groupedByYear = useMemo(() => {
-    const groups: Record<string, Post[]> = {};
+    const groups: Record<string, PostSummary[]> = {};
     rest.forEach((post) => {
       const year = new Date(post.date).getFullYear().toString();
       if (!groups[year]) groups[year] = [];

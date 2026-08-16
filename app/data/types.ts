@@ -40,6 +40,8 @@ export interface Post {
   body: Section[];
 }
 
+export type PostSummary = Omit<Post, "body">;
+
 export function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", {
     day: "numeric",

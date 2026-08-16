@@ -1,52 +1,58 @@
 # instudia
 
-> Skill Up for a Better Career in Nagaland.
+> Nagaland's career-first computer and technical skill development institute based in Dimapur, Nagaland, India. ISO 9001:2015 certified.
 
-instudia is the premier skill development and computer training institute located in Dimapur, Nagaland. We focus on practical, project-based learning to bridge the gap between education and employability.
-
-## Complete Course Catalog (19 Courses)
-
-### Technology & Development
-- **Programming with Python**: Fundamentals of Python syntax and object-oriented programming.
-- **Frontend Web Development**: Mastery of HTML, CSS, JavaScript, and responsive design.
-- **Backend Web Development**: Server-side scripting, database management, and API development.
-- **Fullstack Web Development**: End-to-end development with modern stacks like React and Node.js.
-- **Mobile App Development**: Building native and cross-platform apps using React Native.
-- **Certificate in DevOps Cloud Services**: Continuous integration, deployment, and cloud automation.
-- **Certificate in Data Analytics**: Data processing with Python, SQL, and visualization tools.
-- **Certificate in Generative AI**: (Trending) Advanced AI modeling and transformer architectures.
-- **Certificate in Agentic AI**: (Trending) Advanced AI agents and autonomic workflows.
-- **Certificate in Hardware and Networking**: PC assembly and network configuration/troubleshooting.
-
-### Finance & Business
-- **Accounting in Tally with GST**: Comprehensive GST-compliant accounting and tax filing.
-- **Accounting with Tally**: Core financial management and reporting.
-- **Certificate in Business Intelligence**: Data visualization and analytics using Power BI.
-- **Certificate in Project Management**: Planning, execution, and risk management for modern projects.
-- **Certificate in Retail Management**: Customer service, inventory control, and retail operations.
-
-### Design & Creativity
-- **Certificate in UI/UX Design Specialization**: User research, prototyping, and user-centered design.
-- **Certificate in Graphic Designing**: Visual communication and professional design principles.
-
-### Specialized Diplomas & Skills
-- **Diploma in Computer Applications (DCA)**: 6-month foundational diploma for IT proficiency.
-- **Post Graduate Diploma in Computer Applications (PGDCA)**: 12-month advanced specialization.
-- **Certificate in Advanced Excel**: Mastery of pivot tables, automation, and business intelligence.
-- **Certificate in Food Processing**: Practical techniques in food preservation and processing.
-
-## Student Success Tools
-- **Salary Insights**: Real-time salary data for tech roles in Nagaland vs National averages.
-- **Study Planner**: AI-powered schedule generator to help students manage their learning time.
-- **Career Planner**: Step-by-step roadmaps for transitioning into high-paying tech careers.
-
-## Contact & Location Information
-- **Address**: First Floor, Vikiye Center, Opp. Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112, India.
-- **Phone**: +91-8798-587779
+## Core Information
+- **Institution Name**: instudia
 - **Website**: https://www.instudianagaland.com
-- **Email**: hello@instudianagaland.com
+- **Accreditation**: ISO 9001:2015 Certified Skill Development Institute
+- **Headquarters / Campus**: First Floor, Vikiye Center, Opposite Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112, India
+- **Coordinates**: 25.9123 N, 93.7251 E
+- **Contact Phone**: +91 87985 87779
+- **Contact Email**: instudia.nagaland@gmail.com
+- **Operating Hours**: Monday to Friday, 10:00 AM – 4:00 PM IST
 
-## Technical Details
-- **Sitemap**: https://www.instudianagaland.com/sitemap.xml
-- **Robots**: https://www.instudianagaland.com/robots.txt
-- **LLM-Friendly**: This file (llms.txt) is provided for machine-readability by AI agents and LLMs.
+## Academic Offerings & Professional Programs
+instudia provides 19+ practical, project-based courses structured across four career departments:
+
+### 1. Software Engineering & Programming
+- **Programming with Python** (`/courses/python`): Fundamentals, data structures, automation scripts, and algorithmic thinking. Duration: 1-3 months.
+- **Fullstack Web Development** (`/courses/fullstack-web-development`): Modern frontend and backend engineering with React, Node.js, Express, MongoDB, and Git. Duration: 3-6 months.
+- **Frontend Development** (`/courses/frontend-development`): HTML5, CSS3, Tailwind CSS, JavaScript ES6+, and React.
+- **Backend Development** (`/courses/backend-development`): REST APIs, databases, authentication, server deployment.
+- **C & C++ Programming** (`/courses/c-and-c-plus-plus`): Low-level systems programming, memory management, data structures.
+- **Java Programming** (`/courses/java`): Object-oriented programming, enterprise application foundations.
+
+### 2. Creative & Interface Design
+- **Graphic Designing** (`/courses/graphic-designing`): Adobe Photoshop, Illustrator, CorelDRAW, typography, visual branding, print media. Duration: 3-6 months.
+- **UI/UX Designing** (`/courses/ui-ux-designing`): Figma, wireframing, interactive prototyping, user journey mapping, design systems. Duration: 3 months.
+- **Video Editing** (`/courses/video-editing`): Premiere Pro, video pacing, color correction, audio mixing.
+- **2D Animation** (`/courses/2d-animation`): Storyboarding, motion graphics, character animation.
+
+### 3. Accounting, Finance & Business
+- **Tally Prime with Accounting** (`/courses/tally`): Ledger management, voucher entry, inventory, bank reconciliation.
+- **GST Compliance & Certification** (`/courses/gst`): GSTR-1, GSTR-3B return filing, e-way bills, input tax credits.
+- **Advance Excel** (`/courses/advance-excel`): Formulas, pivot tables, lookup functions, dashboards, data analysis.
+- **Business Intelligence using Power BI** (`/courses/buisness-intelligence-using-powerbi`): Data modeling, DAX queries, executive reports.
+
+### 4. Foundational Computing & Office Tech
+- **Diploma in Computer Applications (DCA)** (`/courses/diploma-in-computer-applications`): 6-month comprehensive foundational diploma covering MS Office suite, internet, typing, and office automation.
+- **Post Graduate Diploma in Computer Applications (PGDCA)** (`/courses/pgdca`): 12-month advanced diploma for graduates covering database management, programming fundamentals, and office IT systems.
+- **Certificate in Computer Applications (CCA)** (`/courses/cca`): Short-term 3-month foundational course.
+
+## Free Student Success Suite
+instudia provides free, browser-based career tools for students and job seekers across Northeast India:
+- **Career Blueprint** (`/tools/career-blueprint`): AI career roadmap generator matching student interests to high-growth tech roles.
+- **ATS Resume Analyzer** (`/tools/ats-analyzer`): Automated resume scan against technical job descriptions.
+- **AI Resume Builder** (`/tools/resume-builder`): Clean, ATS-friendly markdown resume creator.
+- **Nagaland Tech Salary Insights** (`/tools/salary-insights`): Regional market salary benchmarks.
+- **Interactive Study Planner** (`/tools/study-planner`): Daily and weekly study schedule generator.
+
+## Key Links
+- Course Catalog: https://www.instudianagaland.com/courses
+- About Us: https://www.instudianagaland.com/about
+- Student Success Stories: https://www.instudianagaland.com/success-stories
+- Tech Insights Blog: https://www.instudianagaland.com/blog
+- Admissions FAQ: https://www.instudianagaland.com/faq
+- Host a Tech Seminar: https://www.instudianagaland.com/host-a-seminar
+- Contact & Campus Location: https://www.instudianagaland.com/contact

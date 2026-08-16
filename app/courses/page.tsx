@@ -39,10 +39,10 @@ function Courses() {
         width={800}
         height={800}
         alt="Design Hexagonal"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes="(max-width: 1024px) 320px, 800px"
       />
       <h4 className="col-start-2 col-end-8 lg:col-start-2 lg:col-end-8 py-1 inline-block rounded-md text-sm font-mono uppercase tracking-wider text-stone-900/70 mt-16">
-        <span>💪</span> Upskill Today!
+        Upskill Today
       </h4>
       <div className="text-5xl col-start-2 col-end-12 lg:col-end-9 font-semibold leading-tight lg:text-6xl">
         Empower{" "}
@@ -70,13 +70,13 @@ function Courses() {
                   </h2>
                 </div>
                 <Image
-                  className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading"
+                  className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading object-contain"
                   src="https://ik.imagekit.io/dxffek9yf/course-list-page/pattern-1.png?updatedAt=1726168780299"
                   data-was-processed="true"
-                  width={800}
-                  height={800}
+                  width={400}
+                  height={400}
                   alt="Design Hexagonal"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 380px"
                 />
                 <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-4/5">
                   <p className="flex flex-col items-start text-white">
@@ -95,13 +95,13 @@ function Courses() {
                   </h2>
                 </div>
                 <Image
-                  className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading"
+                  className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading object-contain"
                   src="https://ik.imagekit.io/dxffek9yf/course-list-page/pattern-3.png?updatedAt=1726168779931"
                   data-was-processed="true"
-                  width={800}
-                  height={800}
+                  width={400}
+                  height={400}
                   alt="Square design"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 380px"
                 />
                 <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-3/4">
                   <p className="flex flex-col items-start text-white">
@@ -121,13 +121,13 @@ function Courses() {
                   </h2>
                 </div>
                 <Image
-                  className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loaded"
+                  className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loaded object-contain"
                   src="https://ik.imagekit.io/dxffek9yf/course-list-page/pattern-4.png?updatedAt=1726168780003"
                   data-was-processed="true"
-                  width={800}
-                  height={800}
+                  width={400}
+                  height={400}
                   alt="Rhombus design"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 380px"
                 />
                 <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-3/4">
                   <p className="text-white flex flex-col items-start">
@@ -147,11 +147,6 @@ function Courses() {
                 Earn certificate and stand out from the competition
               </h2>
               <div className="flex flex-wrap text-white space-y-4">
-                {/* <p>
-                  Verified Skills certificates prove your learning and domain
-                  knowledge of specific topics covered in our courses and career
-                  paths
-                </p> */}
                 <p>
                   Get domain knowledge across our Fundamental, Intermediate and
                   Professional series to showcase your capabilities.
@@ -169,11 +164,12 @@ function Courses() {
                 </h4>
               </div>
               <Image
-                className="w-9/12 md:w-11/12 max-w-md m-auto card__image"
+                className="w-9/12 md:w-11/12 max-w-md m-auto card__image object-contain"
                 src="https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fa5kvkze8ki7bepnyswywp8vdk%2Fpublic%2F1718674299%2Fverified_export_test.1718674299381.png"
-                width={800}
-                height={400}
+                width={600}
+                height={300}
                 alt="Accredited Certificate for Proven Skill Mastery"
+                sizes="(max-width: 768px) 100vw, 380px"
               />
               <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-4/5">
                 <p className="flex flex-col items-start">

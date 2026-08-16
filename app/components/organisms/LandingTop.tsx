@@ -18,31 +18,34 @@ export default function LandingTop() {
                     Affiliations received from Esteemed Institutes
                   </p>
                   <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center max-w-4xl mx-auto">
-                    <div className="flex justify-center grayscale hover:grayscale-0">
+                    <div className="flex items-center justify-center h-24 sm:h-28 grayscale hover:grayscale-0 transition-all">
                       <Image
-                        className="h-48 object-contain"
+                        className="max-h-24 sm:max-h-28 w-auto object-contain"
                         src="/assets/images/iso-logo.png"
                         alt="ISO Certified Computer Institute in Dimapur, Nagaland"
                         width={220}
                         height={220}
+                        sizes="(max-width: 640px) 160px, 220px"
                       />
                     </div>
-                    <div className="flex items-center justify-center grayscale hover:grayscale-0">
+                    <div className="flex items-center justify-center h-24 sm:h-28 grayscale hover:grayscale-0 transition-all">
                       <Image
-                        className="h-48 object-contain"
+                        className="max-h-24 sm:max-h-28 w-auto object-contain"
                         src="/assets/images/niact.png"
                         alt="National Institute for Advanced Computer Technology Training"
-                        width={150}
-                        height={96}
+                        width={220}
+                        height={97}
+                        sizes="(max-width: 640px) 160px, 220px"
                       />
                     </div>
-                    <div className="flex items-center justify-center grayscale hover:grayscale-0">
+                    <div className="flex items-center justify-center h-24 sm:h-28 grayscale hover:grayscale-0 transition-all">
                       <Image
-                        className="h-48 object-contain"
+                        className="max-h-24 sm:max-h-28 w-auto object-contain"
                         src="/assets/images/msme-logo.png"
                         alt="MSME Certified Skill Training Programs in Nagaland"
-                        width={150}
-                        height={96}
+                        width={200}
+                        height={128}
+                        sizes="(max-width: 640px) 160px, 200px"
                       />
                     </div>
                   </div>
