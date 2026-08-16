@@ -171,7 +171,7 @@ function FestivalLayoutContent({
       {activeFestival?.effect === "easter-eggs" && <EasterEggs />}
       <div
         className={clsx(
-          "relative flex min-h-10 py-1.5 items-center justify-center px-4 text-xs sm:text-sm font-medium sm:px-6 lg:px-8 print:hidden transition-all duration-500 overflow-hidden border-b border-white/10",
+          "relative flex min-h-[36px] sm:min-h-10 py-1.5 sm:py-2 items-center justify-center px-3 sm:px-6 lg:px-8 print:hidden transition-all duration-500 overflow-hidden border-b border-white/10",
           activeFestival
             ? clsx(activeFestival.colors.bannerBg, activeFestival.colors.bannerText)
             : "bg-[#1b1c1e] text-white"
@@ -190,37 +190,39 @@ function FestivalLayoutContent({
             href="https://agentic-ai.instudianagaland.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 text-center group cursor-pointer"
+            className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-3 text-center group cursor-pointer max-w-full"
           >
             {/* Terminal Style AI Badge */}
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-[#58FF1B]/15 text-[#58FF1B] border border-[#58FF1B]/50 shadow-[0_0_10px_rgba(88,255,27,0.3)] shrink-0 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest bg-[#58FF1B]/15 text-[#58FF1B] border border-[#58FF1B]/50 shadow-[0_0_10px_rgba(88,255,27,0.3)] shrink-0 font-mono">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#58FF1B] opacity-75" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#58FF1B]" />
               </span>
-              AI AGENTS // 28-29 AUG
+              <span className="hidden sm:inline">AI AGENTS // 28-29 AUG</span>
+              <span className="sm:hidden">AUG 28-29</span>
             </span>
 
             {/* Headline with Cyber / Neon Highlight */}
-            <span className="text-xs sm:text-sm font-semibold tracking-tight text-white group-hover:text-white transition-colors truncate">
-              Agentic AI & Autonomous Systems Workshop —{" "}
-              <span className="font-bold text-[#FFE01B] underline decoration-2 underline-offset-2 group-hover:text-[#58FF1B] transition-colors inline-flex items-center gap-1">
-                Explore & Register ↗
+            <span className="text-[11px] sm:text-sm font-semibold tracking-tight text-white group-hover:text-white transition-colors flex items-center gap-1 sm:gap-1.5">
+              <span className="hidden sm:inline">Agentic AI & Autonomous Systems Workshop — </span>
+              <span className="sm:hidden">Agentic AI Workshop — </span>
+              <span className="font-bold text-[#FFE01B] underline decoration-1 sm:decoration-2 underline-offset-2 group-hover:text-[#58FF1B] transition-colors whitespace-nowrap">
+                Register ↗
               </span>
             </span>
           </a>
         ) : (
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2 text-xs sm:text-sm">
             {activeFestival.bannerText}
             {activeFestival.doodle && <FestivalDoodle type={activeFestival.doodle} />}
           </span>
         )}
       </div>
-      <div className="flex sticky z-50 top-0 w-full h-full print:hidden">
-        <div className="w-1/4 h-[0.625rem] bg-[#58FF1B]"></div>
-        <div className="w-1/4 h-[0.625rem] bg-[#FF1B58]"></div>
-        <div className="w-1/4 h-[0.625rem] bg-[#C21BFF]"></div>
-        <div className="w-1/4 h-[0.625rem] bg-[#FFE01B]"></div>
+      <div className="flex w-full print:hidden">
+        <div className="w-1/4 h-1 bg-[#58FF1B]"></div>
+        <div className="w-1/4 h-1 bg-[#FF1B58]"></div>
+        <div className="w-1/4 h-1 bg-[#C21BFF]"></div>
+        <div className="w-1/4 h-1 bg-[#FFE01B]"></div>
       </div>
       <div className="print:hidden">
         <FloatingNav navItems={navItems} />
