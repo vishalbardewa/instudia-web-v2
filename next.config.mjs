@@ -68,7 +68,69 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200],
   },
   async headers() {
+    const isDev = process.env.NODE_ENV === "development";
+
+    const scriptSrc = [
+      "script-src 'self' 'unsafe-inline'",
+      isDev ? "'unsafe-eval'" : null,
+      "https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com https://tally.so",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    const cspDirectives = [
+      "default-src 'self'",
+      scriptSrc,
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "img-src 'self' data: blob: https:",
+      "font-src 'self' https://fonts.gstatic.com data:",
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://ik.imagekit.io https://res.cloudinary.com https://api.whatsapp.com https://wa.me https://tally.so",
+      "frame-src 'self' https://tally.so https://www.google.com",
+      "media-src 'self' https: data:",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self' https://tally.so",
+      "frame-ancestors 'self'",
+      "block-all-mixed-content",
+      "upgrade-insecure-requests",
+    ]
+      .filter(Boolean)
+      .join("; ");
+
     return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: cspDirectives,
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
+        ],
+      },
       {
         source: "/assets/:path*",
         headers: [
