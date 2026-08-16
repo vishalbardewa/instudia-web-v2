@@ -84,7 +84,7 @@ export default function Footer() {
           <div className="space-y-8 xl:col-span-2">
             <a href='/'>
               <div className="h-20 relative aspect-[3/1]">
-                <Image alt="instudia logo" className="h-full object-contain" style={{ width: 'auto', height: 'auto' }} src="/assets/images/logo-with-tagline.png" width={250} height={64} />
+                <Image alt="instudia logo" className="h-full object-contain" style={{ width: 'auto', height: 'auto' }} src="/assets/images/logo-with-tagline.webp" width={250} height={64} loading="lazy" unoptimized />
               </div>
             </a>
             <div className="text-xs leading-6 text-gray-600">

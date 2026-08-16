@@ -48,7 +48,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                 <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-neutral-100">
                   <Link href="/" onClick={() => setOpen(false)}>
                     <div className="h-10 sm:h-11 relative aspect-[3/1]">
-                      <Image src="/assets/images/logo-with-tagline.png" alt="instudia" width={250} height={64} priority loading="eager" style={{ width: 'auto', height: 'auto' }} className="h-full object-contain" />
+                      <Image src="/assets/images/logo-with-tagline.webp" alt="instudia" width={250} height={64} priority unoptimized loading="eager" style={{ width: 'auto', height: 'auto' }} className="h-full object-contain" />
                     </div>
                   </Link>
                   <div className="flex items-center gap-2">
@@ -186,7 +186,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
               <Link href="/" className="flex items-center">
                 <span className="sr-only">instudia</span>
                 <div className="h-10 sm:h-12 lg:h-14 relative aspect-[3/1]">
-                  <Image className="h-full object-contain" style={{ width: 'auto', height: 'auto' }} src="/assets/images/logo-with-tagline.png" alt="instudia logo" width={250} height={64} priority loading="eager" />
+                  <Image className="h-full object-contain" style={{ width: 'auto', height: 'auto' }} src="/assets/images/logo-with-tagline.webp" alt="instudia logo" width={250} height={64} priority unoptimized loading="eager" />
                 </div>
               </Link>
             </div>
