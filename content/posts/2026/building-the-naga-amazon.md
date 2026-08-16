@@ -1,8 +1,6 @@
 ---
 slug: building-the-naga-amazon
-title: >-
-  Building the 'Naga-Amazon': Why We Need More Local Software Developers to
-  Solve Local Problems
+title: Building Local Tech Solutions in Nagaland
 excerpt: >-
   Global solutions don't always fit our local terrain. Here’s why the future of
   Naga e-commerce depends on home-grown code and local empathy.

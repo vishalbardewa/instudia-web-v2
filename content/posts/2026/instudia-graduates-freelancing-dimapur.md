@@ -1,6 +1,6 @@
 ---
 slug: instudia-graduates-freelancing-dimapur
-title: 'From Student to Freelancer: How instudia Graduates Are Earning in Dimapur'
+title: Freelancing Guide for Tech Students in Dimapur
 excerpt: >-
   Meet three instudia graduates who turned their course skills into freelance
   incomes — without leaving Nagaland.

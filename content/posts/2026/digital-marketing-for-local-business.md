@@ -1,6 +1,6 @@
 ---
 slug: digital-marketing-for-local-business
-title: 'Digital Marketing for Beginners: How to Grow a Local Business Online'
+title: Digital Marketing for Local Businesses
 excerpt: >-
   You don't need a big budget to market a business online. Here's the
   beginner-friendly playbook we teach at instudia — and how local businesses in

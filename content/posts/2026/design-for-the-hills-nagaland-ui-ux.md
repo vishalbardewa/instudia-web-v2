@@ -1,8 +1,6 @@
 ---
 slug: design-for-the-hills-nagaland-ui-ux
-title: >-
-  Design for the Hills: Why Nagaland Needs More Local UI/UX Designers to Build
-  Culturally-Relevant Apps
+title: UI/UX Design for Nagaland Digital Apps
 excerpt: >-
   Most apps are built for the flat streets of Bangalore or San Francisco. It's
   time we built digital experiences that actually understand the geography and

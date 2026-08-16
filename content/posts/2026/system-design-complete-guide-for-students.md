@@ -1,6 +1,6 @@
 ---
 slug: system-design-complete-guide-for-students
-title: 'The Complete System Design Guide: From Fundamentals to Enterprise Scale'
+title: System Design Fundamentals for Students
 excerpt: >-
   A comprehensive, interactive guide to mastering distributed systems — covering
   CAP theorem, database internals, consensus protocols, API design, caching, and

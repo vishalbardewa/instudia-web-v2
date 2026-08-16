@@ -1,8 +1,6 @@
 ---
 slug: nagaland-literacy-skill-upgrade-2026
-title: >-
-  Beyond the Degree: Why Nagaland’s 95% Literacy Rate Needs a 'Skill Upgrade' in
-  2026
+title: Why Nagaland Needs a Tech Skill Upgrade
 excerpt: >-
   We’ve mastered the art of reading the book, but have we mastered the craft of
   doing the work? A look at why degrees aren't enough in today's Nagaland.

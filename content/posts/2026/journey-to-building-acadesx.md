@@ -1,8 +1,6 @@
 ---
 slug: journey-to-building-acadesx
-title: >-
-  The Journey to Acadesx: Why We Built an Exclusive AI-Powered Platform for
-  Education
+title: Building Acadesx AI Educational Platform
 excerpt: >-
   The genesis of Acadesx wasn't a sudden flash of brilliance in a boardroom. It
   was born out of profound frustration with archaic educational software. Here

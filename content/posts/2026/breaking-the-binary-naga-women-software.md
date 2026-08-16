@@ -1,6 +1,6 @@
 ---
 slug: breaking-the-binary-naga-women-software
-title: 'Breaking the Binary: Leading the Charge for Naga Women in Software Engineering'
+title: Naga Women in Software Engineering
 excerpt: >-
   While Nagaland's women are dominating the medical field, the engineering world
   still feels like a 'boys' club'. It’s time to change that—starting right here

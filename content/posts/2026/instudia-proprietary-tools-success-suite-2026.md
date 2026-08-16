@@ -1,6 +1,6 @@
 ---
 slug: instudia-proprietary-tools-success-suite-2026
-title: 'Empowering Excellence: A Deep Dive into Instudia’s Proprietary Success Suite'
+title: Inside the Student Success Suite Tools
 excerpt: >-
   From ATS-optimized resumes to AI-powered lecture notes, explore the in-house
   tools we've built to bridge the gap between education and industry.

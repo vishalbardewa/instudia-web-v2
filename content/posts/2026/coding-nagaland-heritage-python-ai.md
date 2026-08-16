@@ -1,8 +1,6 @@
 ---
 slug: coding-nagaland-heritage-python-ai
-title: >-
-  Coding Our Heritage: How Nagaland’s Youth Can Use Python and AI to Preserve
-  Mother Tongues
+title: Preserving Naga Heritage with Python & AI
 excerpt: >-
   Our languages are more than just words; they are our identity. In 2026, the
   best way to save them might not be a textbook, but a line of code.

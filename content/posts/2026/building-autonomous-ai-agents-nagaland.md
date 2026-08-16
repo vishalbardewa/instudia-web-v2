@@ -1,6 +1,6 @@
 ---
 slug: building-autonomous-ai-agents-nagaland
-title: 'Beyond Chatbots and No-Code: Building True Autonomous AI Agents from Nagaland'
+title: Building Autonomous AI Agents in Nagaland
 excerpt: >-
   Why the future of AI engineering isn't simple prompt wrappers or drag-and-drop
   tools, but autonomous, self-healing agentic architectures built right here in

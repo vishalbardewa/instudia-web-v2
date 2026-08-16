@@ -1,6 +1,6 @@
 ---
 slug: why-learn-graphic-design-2025
-title: Why Graphic Design is One of the Best Skills to Learn in 2025
+title: Why Learn Graphic Design in 2025
 excerpt: >-
   In a world where every business needs visual content, graphic design is one of
   the highest-ROI skills you can pick up. Here's why.

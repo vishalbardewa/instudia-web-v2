@@ -1,6 +1,6 @@
 ---
 slug: nagaland-internships-market-linked-guide
-title: 'The Ultimate Guide to Internships in Nagaland: A Market-Linked Perspective'
+title: Complete Guide to Internships in Nagaland
 excerpt: >-
   Discover research-backed, market-linked internship opportunities across
   Nagaland's emerging startups, traditional industries, and government sectors

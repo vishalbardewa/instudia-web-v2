@@ -1,6 +1,6 @@
 ---
 slug: revamping-instudia-nextjs-16-performance
-title: 'From Next 14 to 16: How We Revamped instudianagaland.com for the 2026 Web'
+title: Upgrading instudia to Next.js 16
 excerpt: >-
   We rebuilt our digital home from the ground up. Here is the technical
   breakdown of how Next.js 16 and Turbopack slashed our load times by 50%.

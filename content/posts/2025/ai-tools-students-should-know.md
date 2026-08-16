@@ -1,6 +1,6 @@
 ---
 slug: ai-tools-students-should-know
-title: 5 AI Tools Every Student and Professional Should Know in 2025
+title: 5 Essential AI Tools for Students in 2025
 excerpt: >-
   AI isn't replacing jobs — it's replacing people who don't know how to use AI.
   Here are 5 tools that will make you 10x more productive.

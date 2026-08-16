@@ -1,6 +1,6 @@
 ---
 slug: mastering-color-theory
-title: 'Mastering Color Theory: From Foundations to Advanced Harmonies'
+title: Mastering Color Theory & Design Harmonies
 excerpt: >-
   A comprehensive and authoritative guide to color theory for digital designers.
   Explore the HSL color space, essential color harmonies, accessibility

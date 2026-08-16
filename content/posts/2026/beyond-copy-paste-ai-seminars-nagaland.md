@@ -1,6 +1,6 @@
 ---
 slug: beyond-copy-paste-ai-seminars-nagaland
-title: 'Beyond the Copy-Paste: Our AI Journey Through Nagaland’s Classrooms'
+title: AI Education Journey Across Nagaland
 excerpt: >-
   A look into Instudia's recent AI seminars across schools in Nagaland,
   exploring how students can move beyond the 'copy-paste' mindset to leverage AI

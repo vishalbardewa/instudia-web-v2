@@ -1,8 +1,6 @@
 ---
 slug: your-degree-isnt-enough-anymore
-title: >-
-  Your Degree Isn't Enough Anymore (But Here Is Why You're Actually in a Great
-  Spot)
+title: Why Practical Skills Beat Degrees in Tech
 excerpt: >-
   If you're holding a fresh degree and watching AI tools do the heavy lifting,
   you might feel cheated. But here is why you're actually stepping into the tech

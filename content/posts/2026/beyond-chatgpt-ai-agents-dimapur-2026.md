@@ -1,8 +1,6 @@
 ---
 slug: beyond-chatgpt-ai-agents-dimapur-2026
-title: >-
-  Beyond ChatGPT: Why 2026 is the Year of 'AI Agents' and How You Can Build One
-  in Dimapur
+title: Building AI Agents in Dimapur in 2026
 excerpt: >-
   Stop just talking to AI. Start building AI that actually does the work for
   you. Here’s why 'Agents' are the next big leap for Naga developers.

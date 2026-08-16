@@ -1,8 +1,6 @@
 ---
 slug: linux-terminal-first-skill-naga-techie
-title: >-
-  Mastering the Matrix: Why the Linux Terminal is the First Skill Every Naga
-  Techie Should Learn
+title: Why Learn the Linux Terminal First
 excerpt: >-
   The mouse is for tourists; the keyboard is for residents. Here is why the
   command line is the true starting point for any serious career in technology.

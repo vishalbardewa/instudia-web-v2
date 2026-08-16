@@ -1,6 +1,6 @@
 ---
 slug: tally-gst-career-guide
-title: 'Tally & GST: The Most In-Demand Accounting Skill in India Right Now'
+title: Tally & GST Accounting Career Guide
 excerpt: >-
   GST compliance is mandatory for every business in India. That makes
   Tally-trained accountants one of the most sought-after professionals in the
