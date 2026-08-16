@@ -79,8 +79,8 @@ export default function SeonaEditorialHero() {
             <Image
               src="/assets/images/hero-students.webp"
               alt="Hands-on youth tech skill development and computer lab training at instudia"
-              width={960}
-              height={480}
+              width={800}
+              height={400}
               priority
               fetchPriority="high"
               unoptimized

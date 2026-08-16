@@ -58,7 +58,7 @@ const longNavigation = {
           name: "Full Stack Development",
           href: `/courses/${slugs.FULLSTACK_WEB_DEVELOPMENT}`,
           imageSrc:
-            "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=400&auto=format&fit=crop",
           imageAlt: "Learn Fullstack development in Dimapur",
         },
         // {
