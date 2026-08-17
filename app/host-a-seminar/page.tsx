@@ -22,6 +22,7 @@ export const metadata: Metadata = buildMetadata({
 
 
 const pastInstitutions = [
+  "North East Institute of Social Sciences and Research (NEISSR)",
   "MGM College",
   "Immanuel College",
   "Christian Higher Secondary School (CHSS)",

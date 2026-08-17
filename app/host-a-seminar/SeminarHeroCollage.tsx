@@ -23,6 +23,13 @@ const LAYOUT_PRESETS: LayoutPreset[] = [
 
 const COLLAGE_IMAGES: CollageImage[] = [
   {
+    id: "neissr",
+    src: "https://ik.imagekit.io/oytjocebw/seminars/neissr/neissr-seminar-1.jpeg",
+    alt: "NEISSR Seminar on Career Roadmap & Social Architecture",
+    location: "NEISSR, Chümoukedima",
+    source: "Campus Session",
+  },
+  {
     id: "mgm-college",
     src: "https://ik.imagekit.io/oytjocebw/seminars/mgm/director-at-mgm-college.jpeg",
     alt: "MGM College Seminar on Modern Learning & Digital Tools",

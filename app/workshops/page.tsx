@@ -320,6 +320,37 @@ const workshops: WorkshopItem[] = [
       },
     ],
   },
+  {
+    title: "Navigating Your Career Roadmap — The Social Architect at NEISSR",
+    subtitle: "at North East Institute of Social Sciences and Research (NEISSR), Chümoukedima",
+    date: "April 17th, 2026",
+    year: "2026",
+    tags: ["Seminar", "Career Guidance", "Higher Education"],
+    description:
+      "A seminar titled 'Navigating Your Career Roadmap — The Social Architect: Designing a Career with Impact' was held at the North East Institute of Social Sciences and Research (NEISSR) for BSW (Bachelor of Social Work) and MSW (Master of Social Work) students. The session was organized and hosted by instudia in collaboration with NEISSR, focusing on empowering emerging social work professionals with strategic tools for purposeful career design.",
+    highlights:
+      "Development and social innovation practitioner Chand Bardewa engaged BSW and MSW scholars in redefining traditional career paths through social architecture, covering Strategic Career Mapping, Systems Thinking in the Social Sector, and building impact-driven portfolios for grassroots interventions.",
+    photos: [
+      {
+        src: "https://ik.imagekit.io/oytjocebw/seminars/neissr/neissr-seminar-1.jpeg",
+        caption: "BSW and MSW students alongside faculty at NEISSR attending the career roadmap seminar",
+        wide: true,
+      },
+      {
+        src: "https://ik.imagekit.io/oytjocebw/seminars/neissr/resource-person-neissr.jpeg",
+        caption: "Resource person Chand Bardewa speaking on social architecture and impact career design",
+      },
+      {
+        src: "https://ik.imagekit.io/oytjocebw/seminars/neissr/neissr-seminar-2.jpeg",
+        caption: "Interactive Q&A discussion covering career transitions and grassroots problem-solving",
+      },
+      {
+        src: "https://ik.imagekit.io/oytjocebw/seminars/neissr/neissr-seminar-3.jpeg",
+        caption: "BSW & MSW participants and faculty members during the interactive session at NEISSR",
+        wide: true,
+      },
+    ],
+  },
 
   // --- 2025 ---
   {
