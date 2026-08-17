@@ -2,39 +2,45 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+interface FooterLink {
+  name: string;
+  href: string;
+  isNew?: boolean;
+  external?: boolean;
+}
+
 const navigation = {
-  tools: [
-    { name: "All Tools Suite", href: "/tools" },
-    { name: "Career Blueprint", href: "/tools/career-blueprint" },
-    { name: "AI Resume Builder", href: "/tools/resume-builder" },
-    { name: "ATS Resume Scanner", href: "/tools/ats-analyzer" },
-    { name: "Salary Insights", href: "/tools/salary-insights" },
-    { name: "Study Planner", href: "/tools/study-planner" }
-  ],
-  products: [
-    { name: "acadesx", href: "https://acadesx.instudianagaland.com/", isNew: true }
-  ],
-  company: [
+  programs: [
     { name: "All Courses", href: "/courses" },
-    { name: "About Us", href: "/about" },
-    { name: "Success Stories", href: "/success-stories" },
-    { name: "Campus Gallery", href: "/gallery" },
     { name: "Workshops", href: "/workshops" },
     { name: "Host a Seminar", href: "/host-a-seminar" },
+    { name: "Success Stories", href: "/success-stories" },
+    { name: "Campus Gallery", href: "/gallery" },
+  ] as FooterLink[],
+  tools: [
+    { name: "AI Resume Builder", href: "/tools/resume-builder" },
+    { name: "ATS Resume Scanner", href: "/tools/ats-analyzer" },
+    { name: "Career Blueprint", href: "/tools/career-blueprint" },
+    { name: "Salary Insights", href: "/tools/salary-insights" },
+    { name: "Study Planner", href: "/tools/study-planner" },
+  ] as FooterLink[],
+  company: [
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
     { name: "Careers", href: "/careers" },
     { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },
-  ],
+  ] as FooterLink[],
   legal: [
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms & Conditions", href: "/terms" },
     { name: "Cookie Policy", href: "/cookie-policy" },
-  ],
+  ] as FooterLink[],
   social: [
     {
       name: "Facebook",
-      href: "https://www.facebook.com/instudianagaland",
-      icon: (props: any) => (
+      href: "https://www.facebook.com/instudianagaland/",
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -46,8 +52,8 @@ const navigation = {
     },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/instudia_nagaland",
-      icon: (props: any) => (
+      href: "https://www.instagram.com/instudia_nagaland/",
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -58,9 +64,22 @@ const navigation = {
       ),
     },
     {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/instudia-trainings",
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
+    {
       name: "YouTube",
       href: "https://www.youtube.com/@instudia?sub_confirmation=1",
-      icon: (props: any) => (
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -73,162 +92,270 @@ const navigation = {
   ],
 };
 
+function FooterLinkItem({ item }: { item: FooterLink }) {
+  const content = (
+    <>
+      <span>{item.name}</span>
+      {item.isNew && (
+        <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-xs gap-1.5">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
+          </span>
+          New
+        </span>
+      )}
+    </>
+  );
+
+  const className =
+    "text-xs leading-6 flex items-center text-gray-600 hover:text-gray-900 transition-colors font-medium";
+
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={item.href} className={className}>
+      {content}
+    </Link>
+  );
+}
+
 export default function Footer() {
   return (
-    <footer aria-labelledby="footer-heading" className="bg-white">
+    <footer aria-labelledby="footer-heading" className="bg-white border-t border-neutral-200/60">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-20 lg:px-8 lg:pt-24">
         <div className="xl:grid xl:grid-cols-5 xl:gap-8">
-          <div className="space-y-8 xl:col-span-2">
-            <a href='/'>
-              <div className="h-20 relative aspect-[3/1]">
-                <Image alt="instudia logo" className="h-full object-contain" style={{ width: 'auto', height: 'auto' }} src="/assets/images/logo-with-tagline.webp" width={250} height={64} loading="lazy" unoptimized />
+          {/* Brand & Address Column */}
+          <div className="space-y-6 xl:col-span-2">
+            <Link href="/" className="inline-block">
+              <div className="h-16 relative aspect-[3/1]">
+                <Image
+                  alt="instudia logo"
+                  className="h-full object-contain"
+                  style={{ width: "auto", height: "auto" }}
+                  src="/assets/images/logo-with-tagline.webp"
+                  width={250}
+                  height={64}
+                  loading="lazy"
+                  unoptimized
+                />
               </div>
-            </a>
-            <div className="text-xs leading-6 text-gray-600">
-              <address itemScope itemType="https://schema.org/LocalBusiness" style={{ fontStyle: "normal" }}>
-                <div className="flex gap-x-3 mb-4">
+            </Link>
+            <div className="text-xs leading-6 text-gray-600 max-w-sm">
+              <address
+                itemScope
+                itemType="https://schema.org/LocalBusiness"
+                style={{ fontStyle: "normal" }}
+              >
+                <div className="flex gap-x-3 mb-3.5">
                   <span className="sr-only">Address</span>
-                  <svg className="h-5 w-5 flex-none text-brandpurple" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  <svg
+                    className="h-5 w-5 flex-none text-brandpurple mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                    />
                   </svg>
                   <div>
-                    <span className="sr-only" itemProp="name">instudia</span>
-                    <p><span itemProp="streetAddress">First Floor, Vikiye Center,<br />Opp. Notun Bosti Gate, Fellowship Colony</span></p>
-                    <p><span itemProp="addressLocality">Dimapur</span>, <span itemProp="addressRegion">Nagaland</span> <span itemProp="postalCode">797112</span></p>
+                    <span className="sr-only" itemProp="name">
+                      instudia
+                    </span>
+                    <p>
+                      <span itemProp="streetAddress">
+                        First Floor, Vikiye Center,
+                        <br />
+                        Opp. Notun Bosti Gate, Fellowship Colony
+                      </span>
+                    </p>
+                    <p>
+                      <span itemProp="addressLocality">Dimapur</span>,{" "}
+                      <span itemProp="addressRegion">Nagaland</span>{" "}
+                      <span itemProp="postalCode">797112</span>
+                    </p>
                   </div>
                 </div>
-                <div className="flex gap-x-3">
+                <div className="flex gap-x-3 mb-3">
                   <span className="sr-only">Phone</span>
-                  <svg className="h-5 w-5 flex-none text-brandpurple" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  <svg
+                    className="h-5 w-5 flex-none text-brandpurple"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                    />
                   </svg>
-                  <a href="tel:+918798587779" itemProp="telephone" className="hover:text-gray-900">+91 87985 87779</a>
+                  <a
+                    href="tel:+918798587779"
+                    itemProp="telephone"
+                    className="hover:text-gray-900 transition-colors"
+                  >
+                    +91 87985 87779
+                  </a>
                 </div>
-                <div className="flex gap-x-3 mt-4">
+                <div className="flex gap-x-3">
                   <span className="sr-only">Email</span>
-                  <svg className="h-5 w-5 flex-none text-brandpurple" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  <svg
+                    className="h-5 w-5 flex-none text-brandpurple"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                    />
                   </svg>
-                  <a href="mailto:instudia.nagaland@gmail.com" itemProp="email" className="hover:text-gray-900">instudia.nagaland@gmail.com</a>
+                  <a
+                    href="mailto:instudia.nagaland@gmail.com"
+                    itemProp="email"
+                    className="hover:text-gray-900 transition-colors"
+                  >
+                    instudia.nagaland@gmail.com
+                  </a>
                 </div>
               </address>
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4 xl:col-span-3 xl:mt-0">
+
+          {/* 4 Organized Navigation Columns */}
+          <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4 xl:col-span-3 xl:mt-0">
+            {/* 1. Programs */}
             <div>
-              <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                Student Success Suite
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
+                Programs
               </h3>
-              <ul role="list" className="mt-6 space-y-2">
-                {navigation.tools.map((item: any) => (
+              <ul role="list" className="mt-4 space-y-2.5">
+                {navigation.programs.map((item) => (
                   <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-xs leading-6 flex items-center text-gray-600 hover:text-gray-900 font-medium transition-colors group"
-                    >
-                      {item.name}
-                      {item.isNew && (
-                        <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5">
-                          <span className="relative flex h-1.5 w-1.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
-                          </span>
-                          New
-                        </span>
-                      )}
-                    </a>
+                    <FooterLinkItem item={item} />
                   </li>
                 ))}
               </ul>
             </div>
+
+            {/* 2. Products & Suite */}
             <div>
-              <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                Products
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
+                Products &amp; Tools
               </h3>
-              <ul role="list" className="mt-6 space-y-2">
-                {navigation.products.map((item: any) => (
-                  <li key={item.name}>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.href}
-                      className="text-xs leading-6 flex items-center text-gray-600 hover:text-gray-900 font-medium transition-colors group"
-                    >
-                      {item.name}
-                      {item.isNew && (
-                        <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.1 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-sm gap-1.5">
-                          <span className="relative flex h-1.5 w-1.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
-                          </span>
-                          New
-                        </span>
-                      )}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-4 space-y-3.5">
+                {/* Flagship Product: acadesx */}
+                <div>
+                  <a
+                    href="https://acadesx.instudianagaland.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-2.5 -mx-1 rounded-xl border border-neutral-200/80 bg-neutral-50/70 hover:bg-neutral-100 hover:border-brandpurple/30 transition-all shadow-2xs"
+                  >
+                    <div className="flex items-center justify-between gap-1.5">
+                      <span className="text-xs font-bold text-[#1B1C1E] group-hover:text-brandpurple transition-colors">
+                        acadesx
+                      </span>
+                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-brandpurple text-white shadow-2xs shrink-0">
+                        Campus OS
+                      </span>
+                    </div>
+                    <p className="text-[10px] text-neutral-500 mt-1 font-medium leading-snug">
+                      AI Powered School &amp; College Management System
+                    </p>
+                  </a>
+                </div>
+
+                {/* Free Student Tools Suite */}
+                <ul role="list" className="space-y-2 pt-1 border-t border-neutral-100">
+                  {navigation.tools.map((item) => (
+                    <li key={item.name}>
+                      <FooterLinkItem item={item} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
+            {/* 3. Company */}
             <div>
-              <h3 className="text-sm font-semibold leading-6 text-gray-900">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
                 Company
               </h3>
-              <ul role="list" className="mt-6 space-y-2">
+              <ul role="list" className="mt-4 space-y-2.5">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-xs leading-6 text-gray-600 hover:text-gray-900 transition-colors"
-                    >
-                      {item.name}
-                    </Link>
+                    <FooterLinkItem item={item} />
                   </li>
                 ))}
               </ul>
             </div>
+
+            {/* 4. Legal */}
             <div>
-              <h3 className="text-sm font-semibold leading-6 text-gray-900">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
                 Legal
               </h3>
-              <ul role="list" className="mt-6 space-y-2">
+              <ul role="list" className="mt-4 space-y-2.5">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-xs leading-6 text-gray-600 hover:text-gray-900 transition-colors"
-                    >
-                      {item.name}
-                    </Link>
+                    <FooterLinkItem item={item} />
                   </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-4 md:space-x-6 md:order-2">
+
+        {/* Bottom Social & Copyright Bar */}
+        <div className="mt-12 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
+          <div className="flex space-x-5 md:order-2">
             {navigation.social.map((item) => (
               <a
                 key={item.name}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={item.href}
-                className="text-gray-400 hover:text-gray-600 min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors"
+                className="text-gray-400 hover:text-brandpurple min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors"
+                aria-label={item.name}
               >
-                <span className="sr-only">{item.name}</span>
-                <item.icon aria-hidden="true" className="h-6 w-6" />
+                <item.icon aria-hidden="true" className="h-5 w-5" />
               </a>
             ))}
           </div>
-          <p className="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
-            &copy; {new Date().getFullYear()} Crafted by <b>Team instudia</b>. All rights reserved.
+          <p className="mt-6 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
+            &copy; {new Date().getFullYear()} Crafted by <span className="font-semibold text-gray-700">Team instudia</span>. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
   );
 }
+

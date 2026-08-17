@@ -124,7 +124,6 @@ const longNavigation = {
     { name: "Workshops", href: "/workshops" },
     { name: "Contact", href: "/contact" },
     { name: "Tools", href: "/tools", isNew: true },
-    { name: "Host us", href: "/host-a-seminar" },
   ],
 };
 export default function PrimaryLayout({ children }: any) {
