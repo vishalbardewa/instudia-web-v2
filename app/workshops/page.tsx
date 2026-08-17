@@ -739,7 +739,7 @@ export default function WorkshopsPage() {
                   </div>
 
                   {/* Right: Photo grid with lightbox */}
-                  <WorkshopPhotoGrid photos={w.photos} />
+                  <WorkshopPhotoGrid photos={w.photos} eager={i === 0} />
                 </div>
 
                 {/* Divider */}

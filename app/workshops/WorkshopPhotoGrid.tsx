@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 interface Photo {
@@ -8,7 +9,7 @@ interface Photo {
   wide?: boolean;
 }
 
-export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
+export default function WorkshopPhotoGrid({ photos, eager = false }: { photos: Photo[]; eager?: boolean }) {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   const open = (i: number) => setLightbox(i);
@@ -54,7 +55,8 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
               height={photo.wide ? 900 : 800}
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
               className={`w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105 ${photo.wide ? "aspect-[16/9]" : "aspect-square"}`}
-              loading="lazy"
+              loading={eager && i === 0 ? "eager" : "lazy"}
+              {...(eager && i === 0 ? { priority: true } : {})}
               unoptimized
             />
             {/* Overlay */}
@@ -73,8 +75,8 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
         ))}
       </div>
 
-      {/* Lightbox Portal */}
-      {lightbox !== null && (
+      {/* Lightbox Portal — rendered via createPortal to escape transform stacking context from template.tsx */}
+      {lightbox !== null && createPortal(
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           onClick={close}
@@ -155,7 +157,8 @@ export default function WorkshopPhotoGrid({ photos }: { photos: Photo[] }) {
               ))}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
