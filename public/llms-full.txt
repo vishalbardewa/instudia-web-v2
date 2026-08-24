@@ -1,0 +1,213 @@
+# instudia — Complete Institute & Curriculum Knowledge Base
+
+> Comprehensive knowledge file for Large Language Models (LLMs), AI search engines, and web crawlers detailing instudia's academic programs, course curricula, campus facilities, and student services. ISO 9001:2015 certified & MSME registered.
+
+## Overview
+- Institute Name: instudia
+- Tagline: Skill is the only unfair advantage.
+- Location: First Floor, Vikiye Center, Opposite Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112, India
+- Accreditation: ISO 9001:2015 Certified & MSME Registered Skill Development Institute
+- Phone: +91 87985 87779
+- Email: instudia.nagaland@gmail.com
+- Website: https://www.instudianagaland.com
+- Working Hours: Monday to Friday, 10:00 AM – 4:00 PM IST
+
+## Mission & Vision
+instudia is dedicated to closing the technical skills gap in Northeast India by providing project-based, industry-aligned training programs. Combining 1-on-1 mentorship, modern computer labs, and real-world portfolio building, instudia equips students and professionals for high-demand careers in technology, design, finance, and office management.
+
+---
+
+## Complete Academic Offerings & Detailed Curricula
+
+### 1. Diploma in Computer Applications (DCA)
+- URL: https://www.instudianagaland.com/courses/diploma-in-computer-applications
+- Category: Technology / Foundational Computing
+- Duration: 6 Months
+- Eligibility: Grade 6 and Above / Open to all
+- Overview: Comprehensive foundational diploma covering computer basics, office productivity, accounting foundations, programming, and AI tools.
+- Key Modules:
+  1. Computer Fundamentals: Hardware architecture, operating systems, file management, software installation.
+  2. MS Office Suite: MS Word (formatting, mail merge), MS Excel (functions, charts, pivot tables), MS PowerPoint (presentations).
+  3. Internet & Email: Online security, web protocols, professional email etiquette, cloud storage.
+  4. Tally Fundamentals: Accounting fundamentals, ledger creation, voucher entry, balance sheets.
+  5. Python Programming: Basic syntax, control flow, loops, and simple scripts.
+  6. AI Basics: Understanding generative AI, prompts, study companions, and productivity tools.
+  7. Capstone Assessment: Practical exam and project submission.
+
+### 2. Post Graduate Diploma in Computer Applications (PGDCA)
+- URL: https://www.instudianagaland.com/courses/pgdca
+- Category: Technology / Advanced Diploma
+- Duration: 12 Months
+- Eligibility: Graduation in any discipline
+- Overview: Year-long intensive diploma designed for graduates aiming to enter IT administration, software development, and modern office systems.
+- Key Modules:
+  1. Advanced Operating Systems and Office Automation.
+  2. Relational Database Management Systems (RDBMS) & SQL.
+  3. Object-Oriented Programming and Scripting (C++/Python).
+  4. Web Design & Internet Technologies (HTML, CSS, JavaScript).
+  5. Accounting and Enterprise ERP Systems (Tally Prime).
+  6. Practical Project Development & Viva Voce.
+
+### 3. Fullstack Web Development
+- URL: https://www.instudianagaland.com/courses/fullstack-web-development
+- Category: Software Engineering
+- Duration: 3-6 Months
+- Overview: Complete web development roadmap taking learners from frontend styling to production backend architecture and database management.
+- Key Modules:
+  1. Frontend Architecture: HTML5 semantic tags, CSS3, modern Flexbox & Grid, responsive layouts.
+  2. Modern JavaScript: ES6+ syntax, asynchronous programming, Promises, Fetch API, DOM manipulation.
+  3. React Framework: Components, props, state hooks, routing, context API, Tailwind CSS.
+  4. Backend Engineering: Node.js runtime, Express.js REST API creation, middleware, authentication (JWT).
+  5. Databases: MongoDB / PostgreSQL, schemas, queries, data relationships.
+  6. Version Control & Deployment: Git/GitHub, Vercel, Render, CI/CD basic deployments.
+
+### 4. Programming with Python
+- URL: https://www.instudianagaland.com/courses/python
+- Category: Software Engineering
+- Duration: 1-3 Months
+- Overview: Comprehensive introduction to Python for beginners, automation enthusiasts, and aspiring data analysts.
+- Key Modules:
+  1. Python Basics: Variables, data types, string manipulation, operators.
+  2. Data Structures: Lists, tuples, dictionaries, sets, comprehensions.
+  3. Control Flow: Conditionals, loops, error handling, custom functions.
+  4. Object-Oriented Programming (OOP): Classes, objects, inheritance, encapsulation.
+  5. File I/O & Automation: File reading/writing, web scraping, automation scripts.
+  6. Mini-Projects: Interactive command-line games, budget trackers, automated utilities.
+
+### 5. Frontend Development
+- URL: https://www.instudianagaland.com/courses/frontend-development
+- Category: Software Engineering
+- Duration: 2-3 Months
+- Overview: Specialized focus on modern client-side user interfaces, responsive design, and React development.
+- Key Modules:
+  1. Semantic HTML & CSS3 modern features.
+  2. Tailwind CSS and utility-first design systems.
+  3. JavaScript ES6+ deeply: array methods, event loop, APIs.
+  4. React.js: Components, hooks, custom hooks, state management, SPA routing.
+
+### 6. Backend Development
+- URL: https://www.instudianagaland.com/courses/backend-development
+- Category: Software Engineering
+- Duration: 2-3 Months
+- Overview: Server-side architecture, API engineering, database design, and secure authentication.
+- Key Modules:
+  1. Server Fundamentals with Node.js and Express.
+  2. RESTful API Design & Best Practices.
+  3. Relational & NoSQL Database integration (PostgreSQL, MongoDB).
+  4. Authentication, Authorization, Role-Based Access Control, JWT.
+  5. Security best practices: CORS, rate limiting, sanitization.
+
+### 7. Graphic Designing
+- URL: https://www.instudianagaland.com/courses/graphic-designing
+- Category: Creative & Interface Design
+- Duration: 3-6 Months
+- Overview: Visual branding, digital illustration, and print media design using industry-standard tools.
+- Key Modules:
+  1. Design Theory: Color harmony, typography, visual hierarchy, grid systems.
+  2. Adobe Photoshop: Photo manipulation, retouching, social media creatives, banner ads.
+  3. Adobe Illustrator: Vector graphics, logo creation, mascot design, brand identity kits.
+  4. CorelDRAW: Print layout, packaging design, brochures, flex printing formats.
+  5. Portfolio Development: Creating a client-ready design portfolio.
+
+### 8. UI/UX Designing
+- URL: https://www.instudianagaland.com/courses/ui-ux-designing
+- Category: Creative & Interface Design
+- Duration: 3 Months
+- Overview: User experience research, wireframing, high-fidelity UI design, and interactive prototyping.
+- Key Modules:
+  1. Design Thinking & UX Research: User personas, journey mapping, empathy maps.
+  2. Information Architecture & Wireframing in Figma.
+  3. UI Design: Typography, color palettes, atomic design systems, component libraries.
+  4. Interactive Prototyping: Micro-interactions, animations, smart animate.
+  5. Usability Testing & Developer Handoff.
+
+### 9. Tally Prime with Accounting
+- URL: https://www.instudianagaland.com/courses/tally
+- Category: Accounting, Finance & Business
+- Duration: 1-2 Months
+- Overview: Practical corporate and small business bookkeeping using India's standard accounting software.
+- Key Modules:
+  1. Accounting Principles: Double-entry bookkeeping, debit/credit rules, financial terms.
+  2. Company Creation & Ledger Management in Tally Prime.
+  3. Voucher Entries: Payment, receipt, contra, journal, sales, purchase vouchers.
+  4. Inventory Management: Stock groups, stock items, units of measure.
+  5. Banking & Reconciliation: Bank statements, cheque register, auto-reconciliation.
+  6. Financial Reports: Profit & loss statements, balance sheets, trial balance.
+
+### 10. GST Compliance & Certification
+- URL: https://www.instudianagaland.com/courses/gst
+- Category: Accounting, Finance & Business
+- Duration: 1-2 Months
+- Overview: Goods and Services Tax computation, invoicing rules, and return filing procedures.
+- Key Modules:
+  1. GST Framework: CGST, SGST, IGST, UTGST structure in India.
+  2. Input Tax Credit (ITC) mechanism and eligibility rules.
+  3. Invoicing, E-way Bills, and Delivery Challans.
+  4. Return Filing: GSTR-1, GSTR-3B, annual returns.
+  5. Tax reconciliation in Tally Prime.
+
+### 11. Advanced Excel
+- URL: https://www.instudianagaland.com/courses/advance-excel
+- Category: Accounting, Finance & Business
+- Duration: 1 Month
+- Overview: Data analysis, business modeling, complex lookup formulas, and automated dashboards in Microsoft Excel.
+- Key Modules:
+  1. Advanced Formulas: XLOOKUP, VLOOKUP, INDEX/MATCH, nested IF/IFS, SUMIFS, COUNTIFS.
+  2. Data Cleaning & Text Manipulation functions.
+  3. Pivot Tables & Pivot Charts: Data grouping, slicers, calculated fields.
+  4. Interactive Executive Dashboards and data visualization.
+  5. Data Validation, Conditional Formatting, and Macro basics.
+
+### 12. Business Intelligence using Power BI
+- URL: https://www.instudianagaland.com/courses/buisness-intelligence-using-powerbi
+- Category: Accounting, Finance & Business
+- Duration: 1-2 Months
+- Overview: Extracting insights, building data models, and publishing interactive dashboards using Microsoft Power BI.
+- Key Modules:
+  1. Power Query: Data import, ETL transformations, merging, appending queries.
+  2. Data Modeling: Star schema, relationships, cardinalities.
+  3. DAX Calculations: Measures, calculated columns, time intelligence functions.
+  4. Report Design: Slicers, KPI cards, drill-throughs, custom visuals.
+
+### 13. Data Analytics
+- URL: https://www.instudianagaland.com/courses/data-analytics
+- Category: Technology
+- Overview: Modern data analytics combining SQL, Python (Pandas/NumPy), and business visualization tools.
+
+### 14. Learn DevOps & Cloud Services
+- URL: https://www.instudianagaland.com/courses/learn-devops-cloud-services
+- Category: Technology
+- Overview: Containerization with Docker, cloud fundamentals, CI/CD pipeline automation, and server monitoring.
+
+### 15. Hardware & Networking
+- URL: https://www.instudianagaland.com/courses/hardware-networking
+- Category: Technology
+- Overview: Motherboard architecture, PC assembly, LAN configuration, TCP/IP basics, routers/switches setup, and hardware maintenance.
+
+---
+
+## Free Student Success Suite (Career Tools)
+
+### 1. Career Blueprint (`/tools/career-blueprint`)
+An AI-assisted tool that evaluates a student's education, current skill level, and career aspirations, creating a custom step-by-step roadmap to achieve their desired role (e.g. Fullstack Developer, UI/UX Designer, Financial Accountant).
+
+### 2. ATS Resume Analyzer (`/tools/ats-analyzer`)
+A free scanner that evaluates technical resumes against target job descriptions, checking for keyword density, formatting issues, section hierarchy, and ATS compatibility.
+
+### 3. AI Resume Builder (`/tools/resume-builder`)
+A clean markdown-powered resume builder allowing students to generate ATS-friendly, professional resumes with formatted typography.
+
+### 4. Nagaland Tech Salary Insights (`/tools/salary-insights`)
+A localized salary benchmark tool displaying real compensation insights for technical and digital roles across Dimapur, Kohima, and the wider Northeast region.
+
+### 5. Interactive Study Planner (`/tools/study-planner`)
+An intelligent study scheduler helping students balance course assignments, project milestones, and exam revisions.
+
+---
+
+## Campus & Contact Details
+- Address: First Floor, Vikiye Center, Opposite Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112, India
+- Phone: +91 87985 87779
+- Email: instudia.nagaland@gmail.com
+- Operating Hours: Monday – Friday: 10:00 AM – 4:00 PM IST
+- Google Maps Location: Vikiye Center, Fellowship Colony, Dimapur

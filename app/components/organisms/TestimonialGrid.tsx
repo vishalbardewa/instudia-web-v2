@@ -218,6 +218,9 @@ export default function TestimonialGrid() {
             onClick={() => setActiveTestimonial(null)}
           >
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Student Testimonial"
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
@@ -228,6 +231,7 @@ export default function TestimonialGrid() {
               {/* Escape Button */}
               <button
                 onClick={() => setActiveTestimonial(null)}
+                aria-label="Close testimonial"
                 className="absolute top-6 right-6 sm:top-8 sm:right-8 w-10 h-10 rounded-full bg-neutral-100/50 hover:bg-neutral-200 flex items-center justify-center text-neutral-500 hover:text-[#1B1C1E] transition-colors"
               >
                 <IconX size={20} stroke={2.5} />

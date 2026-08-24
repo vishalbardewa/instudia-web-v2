@@ -86,6 +86,9 @@ export default function WorkshopPhotoGrid({ photos, eager = false }: { photos: P
 
           {/* Content */}
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Workshop Photo Lightbox"
             className="relative z-10 flex flex-col items-center max-w-5xl w-full px-4"
             onClick={(e) => e.stopPropagation()}
           >

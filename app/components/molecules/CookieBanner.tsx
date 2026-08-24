@@ -36,7 +36,11 @@ export const CookieBanner = () => {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:pb-6 pointer-events-none font-jakarta"
         >
-          <div className="max-w-3xl mx-auto bg-white border border-neutral-200 rounded-2xl shadow-xl p-4 md:p-5 pointer-events-auto flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
+          <div
+            role="region"
+            aria-label="Cookie consent banner"
+            className="max-w-3xl mx-auto bg-white border border-neutral-200 rounded-2xl shadow-xl p-4 md:p-5 pointer-events-auto flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden"
+          >
             <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-brandpurple via-redhue to-brightyellow" />
             
             <div className="flex-1 pr-0 md:pr-4">

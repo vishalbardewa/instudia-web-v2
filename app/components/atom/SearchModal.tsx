@@ -90,6 +90,9 @@ export default function SearchModal({ open, onClose }: Props) {
 
       {/* Panel */}
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Search courses and blog posts"
         className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
@@ -118,6 +121,7 @@ export default function SearchModal({ open, onClose }: Props) {
           )}
           <button
             onClick={onClose}
+            aria-label="Close search"
             className="text-xs text-gray-400 border border-neutral-200 rounded px-1.5 py-0.5 hover:bg-gray-50 transition"
           >
             ESC

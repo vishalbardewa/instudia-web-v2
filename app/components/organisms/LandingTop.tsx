@@ -4,7 +4,7 @@ import SeonaEditorialHero from "../molecules/SeonaEditorialHero";
 export default function LandingTop() {
   return (
     <div className="bg-white">
-      <main>
+      <section>
         <div>
           {/* Seona-Style Editorial Hero */}
           <SeonaEditorialHero />
@@ -55,7 +55,7 @@ export default function LandingTop() {
             </div>
           </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }

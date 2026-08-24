@@ -102,7 +102,7 @@ const CaseStudies = ({ caseStudies }: any) => {
               <article
                 className={`relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition ease-in-out duration-800 delay-100 ${caseStudy.classnames} sm:p-8`}
               >
-                <h3>
+                <div>
                   <span className="absolute inset-0 rounded-3xl" />
                   <Image
                     src={caseStudy.logo}
@@ -112,7 +112,7 @@ const CaseStudies = ({ caseStudies }: any) => {
                     height={64}
                     sizes="64px"
                   />
-                </h3>
+                </div>
                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                   <time
                     dateTime={caseStudy.date.split("-")[0]}
@@ -125,9 +125,9 @@ const CaseStudies = ({ caseStudies }: any) => {
                   </span>
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-brandpurple">Feature</span>
                 </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <h3 className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
-                </p>
+                </h3>
                 <p className="mt-4 text-base text-neutral-950">
                   {caseStudy.description}
                 </p>
@@ -198,12 +198,12 @@ export default function Page() {
                 ))}
               </ul>
               <div className="mt-10 flex">
-                <a
-                  href="#"
-                  className="text-sm font-semibold leading-6 text-[#1b1c1e]"
+                <Link
+                  href="/contact"
+                  className="text-sm font-semibold leading-6 text-[#1b1c1e] hover:text-brandpurple transition-colors"
                 >
                   Reach us <span aria-hidden="true">&rarr;</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

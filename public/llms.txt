@@ -1,58 +1,65 @@
 # instudia
 
-> Nagaland's career-first computer and technical skill development institute based in Dimapur, Nagaland, India. ISO 9001:2015 certified.
+> Career-first computer training and technical skill development institute based in Dimapur, Nagaland, India. ISO 9001:2015 certified & MSME registered.
+
+instudia is Nagaland's premier technology and skill development institute offering project-based diplomas, certifications, and career acceleration programs across software engineering, UI/UX design, finance, and office technology.
 
 ## Core Information
-- **Institution Name**: instudia
-- **Website**: https://www.instudianagaland.com
-- **Accreditation**: ISO 9001:2015 Certified Skill Development Institute
-- **Headquarters / Campus**: First Floor, Vikiye Center, Opposite Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112, India
-- **Coordinates**: 25.9123 N, 93.7251 E
-- **Contact Phone**: +91 87985 87779
-- **Contact Email**: instudia.nagaland@gmail.com
-- **Operating Hours**: Monday to Friday, 10:00 AM – 4:00 PM IST
+- [Official Website](https://www.instudianagaland.com): Primary portal with course catalog, admissions, and student services.
+- [About Us](https://www.instudianagaland.com/about): Mission, ISO 9001:2015 certification & MSME registration, leadership, and campus background.
+- [Course Catalog](https://www.instudianagaland.com/courses): Complete directory of 19+ certified professional and foundational computer courses.
+- [Student Success Stories](https://www.instudianagaland.com/success-stories): Testimonials, reviews, and career outcomes from graduates.
+- [Tech Insights Blog](https://www.instudianagaland.com/blog): In-depth tutorials, career roadmaps, and educational articles.
+- [Admissions FAQ](https://www.instudianagaland.com/faq): Answers to questions regarding eligibility, fees, schedules, and certificates.
+- [Contact & Campus Location](https://www.instudianagaland.com/contact): First Floor, Vikiye Center, Opposite Notun Bosti Gate, Fellowship Colony, Dimapur, Nagaland 797112.
+- [Host a Tech Seminar](https://www.instudianagaland.com/host-a-seminar): Information and request form for campus seminars and technical workshops.
+- [Workshops & Events Archive](https://www.instudianagaland.com/workshops): Timeline of past youth development workshops and community programs.
+- [Careers at instudia](https://www.instudianagaland.com/careers): Faculty, mentor, and administrative job opportunities.
 
-## Academic Offerings & Professional Programs
-instudia provides 19+ practical, project-based courses structured across four career departments:
+## Courses & Certifications
 
-### 1. Software Engineering & Programming
-- **Programming with Python** (`/courses/python`): Fundamentals, data structures, automation scripts, and algorithmic thinking. Duration: 1-3 months.
-- **Fullstack Web Development** (`/courses/fullstack-web-development`): Modern frontend and backend engineering with React, Node.js, Express, MongoDB, and Git. Duration: 3-6 months.
-- **Frontend Development** (`/courses/frontend-development`): HTML5, CSS3, Tailwind CSS, JavaScript ES6+, and React.
-- **Backend Development** (`/courses/backend-development`): REST APIs, databases, authentication, server deployment.
-- **C & C++ Programming** (`/courses/c-and-c-plus-plus`): Low-level systems programming, memory management, data structures.
-- **Java Programming** (`/courses/java`): Object-oriented programming, enterprise application foundations.
+### Software Engineering & Programming
+- [Programming with Python](https://www.instudianagaland.com/courses/python): Python programming fundamentals, data structures, automation scripts, and algorithmic thinking. Duration: 1-3 months.
+- [Fullstack Web Development](https://www.instudianagaland.com/courses/fullstack-web-development): Modern full stack engineering with React, Node.js, Express, MongoDB, and Git. Duration: 3-6 months.
+- [Frontend Development](https://www.instudianagaland.com/courses/frontend-development): HTML5, CSS3, Tailwind CSS, modern JavaScript ES6+, and React.
+- [Backend Development](https://www.instudianagaland.com/courses/backend-development): REST APIs, relational and NoSQL databases, authentication, and server deployment.
+- [C & C++ Programming](https://www.instudianagaland.com/courses/c-and-c-plus-plus): Low-level systems programming, memory management, and data structures.
+- [Java Programming](https://www.instudianagaland.com/courses/java): Object-oriented programming, enterprise application foundations, and data structures.
+- [Data Analytics](https://www.instudianagaland.com/courses/data-analytics): Exploratory data analysis, SQL, visualization, and Python for data insights.
+- [Learn DevOps & Cloud Services](https://www.instudianagaland.com/courses/learn-devops-cloud-services): Docker, CI/CD pipelines, cloud deployment, and infrastructure fundamentals.
 
-### 2. Creative & Interface Design
-- **Graphic Designing** (`/courses/graphic-designing`): Adobe Photoshop, Illustrator, CorelDRAW, typography, visual branding, print media. Duration: 3-6 months.
-- **UI/UX Designing** (`/courses/ui-ux-designing`): Figma, wireframing, interactive prototyping, user journey mapping, design systems. Duration: 3 months.
-- **Video Editing** (`/courses/video-editing`): Premiere Pro, video pacing, color correction, audio mixing.
-- **2D Animation** (`/courses/2d-animation`): Storyboarding, motion graphics, character animation.
+### Creative & Interface Design
+- [Graphic Designing](https://www.instudianagaland.com/courses/graphic-designing): Adobe Photoshop, Illustrator, CorelDRAW, typography, visual branding, and print media. Duration: 3-6 months.
+- [UI/UX Designing](https://www.instudianagaland.com/courses/ui-ux-designing): Figma, wireframing, interactive prototyping, user journey mapping, and design systems. Duration: 3 months.
+- [Video Editing](https://www.instudianagaland.com/courses/video-editing): Premiere Pro, timeline pacing, color grading, audio mixing, and export workflows.
+- [2D Animation](https://www.instudianagaland.com/courses/2d-animation): Storyboarding, character design, keyframing, and motion graphics.
 
-### 3. Accounting, Finance & Business
-- **Tally Prime with Accounting** (`/courses/tally`): Ledger management, voucher entry, inventory, bank reconciliation.
-- **GST Compliance & Certification** (`/courses/gst`): GSTR-1, GSTR-3B return filing, e-way bills, input tax credits.
-- **Advance Excel** (`/courses/advance-excel`): Formulas, pivot tables, lookup functions, dashboards, data analysis.
-- **Business Intelligence using Power BI** (`/courses/buisness-intelligence-using-powerbi`): Data modeling, DAX queries, executive reports.
+### Accounting, Finance & Business
+- [Tally Prime with Accounting](https://www.instudianagaland.com/courses/tally): Ledger management, voucher entry, inventory, bank reconciliation, and business reporting.
+- [GST Compliance & Certification](https://www.instudianagaland.com/courses/gst): GSTR-1, GSTR-3B return filing, e-way bills, input tax credit reconciliation, and tax compliance.
+- [Advanced Excel](https://www.instudianagaland.com/courses/advance-excel): Formulas, pivot tables, lookup functions, dashboards, and automated reporting.
+- [Business Intelligence using Power BI](https://www.instudianagaland.com/courses/buisness-intelligence-using-powerbi): Data modeling, DAX queries, and executive business intelligence dashboards.
+- [Project Management](https://www.instudianagaland.com/courses/learn-project-management): Agile, Scrum, sprint planning, risk management, and project execution frameworks.
+- [Retail Management](https://www.instudianagaland.com/courses/retail-management): Retail operations, supply chain basics, inventory control, and customer service.
 
-### 4. Foundational Computing & Office Tech
-- **Diploma in Computer Applications (DCA)** (`/courses/diploma-in-computer-applications`): 6-month comprehensive foundational diploma covering MS Office suite, internet, typing, and office automation.
-- **Post Graduate Diploma in Computer Applications (PGDCA)** (`/courses/pgdca`): 12-month advanced diploma for graduates covering database management, programming fundamentals, and office IT systems.
-- **Certificate in Computer Applications (CCA)** (`/courses/cca`): Short-term 3-month foundational course.
+### Foundational Computing & Office Tech
+- [Diploma in Computer Applications (DCA)](https://www.instudianagaland.com/courses/diploma-in-computer-applications): 6-month foundational diploma covering MS Office suite, internet, typing, and office automation.
+- [Post Graduate Diploma in Computer Applications (PGDCA)](https://www.instudianagaland.com/courses/pgdca): 12-month advanced diploma covering database management, programming fundamentals, and office IT systems.
+- [Hardware & Networking](https://www.instudianagaland.com/courses/hardware-networking): PC assembly, OS installation, LAN configuration, network troubleshooting, and hardware maintenance.
 
 ## Free Student Success Suite
-instudia provides free, browser-based career tools for students and job seekers across Northeast India:
-- **Career Blueprint** (`/tools/career-blueprint`): AI career roadmap generator matching student interests to high-growth tech roles.
-- **ATS Resume Analyzer** (`/tools/ats-analyzer`): Automated resume scan against technical job descriptions.
-- **AI Resume Builder** (`/tools/resume-builder`): Clean, ATS-friendly markdown resume creator.
-- **Nagaland Tech Salary Insights** (`/tools/salary-insights`): Regional market salary benchmarks.
-- **Interactive Study Planner** (`/tools/study-planner`): Daily and weekly study schedule generator.
+- [Career Blueprint](https://www.instudianagaland.com/tools/career-blueprint): AI career roadmap generator matching student interests to high-growth tech roles.
+- [ATS Resume Analyzer](https://www.instudianagaland.com/tools/ats-analyzer): Automated resume scan against technical job descriptions with ATS scoring.
+- [AI Resume Builder](https://www.instudianagaland.com/tools/resume-builder): Clean, ATS-friendly markdown resume creator.
+- [Nagaland Tech Salary Insights](https://www.instudianagaland.com/tools/salary-insights): Regional market salary benchmarks and pay scales in Nagaland and Northeast India.
+- [Interactive Study Planner](https://www.instudianagaland.com/tools/study-planner): Daily and weekly study schedule generator.
+- [Lecture Note Generator](https://www.instudianagaland.com/tools/lecture-note-generator): Study note structuring and revision helper.
+- [Flashcard Generator](https://www.instudianagaland.com/tools/flashcards): Active recall flashcard maker for students.
+- [Assessment Designer](https://www.instudianagaland.com/tools/assessment-designer): Custom quiz and practice question generator.
 
-## Key Links
-- Course Catalog: https://www.instudianagaland.com/courses
-- About Us: https://www.instudianagaland.com/about
-- Student Success Stories: https://www.instudianagaland.com/success-stories
-- Tech Insights Blog: https://www.instudianagaland.com/blog
-- Admissions FAQ: https://www.instudianagaland.com/faq
-- Host a Tech Seminar: https://www.instudianagaland.com/host-a-seminar
-- Contact & Campus Location: https://www.instudianagaland.com/contact
+## Optional
+- [acadesx Campus OS](https://acadesx.instudianagaland.com/): AI-powered school and college management system.
+- [Agentic AI Workshop](https://agentic-ai.instudianagaland.com/): Hands-on workshop on autonomous AI agents and systems.
+- [Full Curriculum & Deep Knowledge Index](https://www.instudianagaland.com/llms-full.txt): Complete detailed text export including module outlines and institution info.
+- [Privacy Policy](https://www.instudianagaland.com/privacy-policy): User privacy and data protection guidelines.
+- [Terms & Conditions](https://www.instudianagaland.com/terms): Terms of service and enrollment policies.

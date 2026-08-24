@@ -65,12 +65,13 @@ export const FloatingNav = ({
           <Link
             key={`link=${idx}`}
             href={navItem.link}
+            aria-label={navItem.name}
             prefetch={false}
             className={cn(
               "relative items-center flex space-x-1 text-black font-medium min-h-[44px] px-1 sm:px-2"
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
+            <span className="block sm:hidden" aria-hidden="true">{navItem.icon}</span>
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}

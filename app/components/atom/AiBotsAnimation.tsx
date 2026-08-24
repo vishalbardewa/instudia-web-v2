@@ -310,6 +310,9 @@ export default function AiBotsAnimation({
       >
         {/* Floating Robot Body */}
         <motion.div
+          role="button"
+          tabIndex={0}
+          aria-label="Explore Agentic AI Workshop"
           initial={{ y: 80, opacity: 0, scale: 0.5, rotate: -15 }}
           animate={{
             y: isHovered ? [0, -6, 0] : [0, -8, 0],
@@ -324,7 +327,13 @@ export default function AiBotsAnimation({
             scale: { duration: 0.3, type: "spring", stiffness: 400, damping: 20 },
           }}
           onClick={handleBotClick}
-          className="cursor-pointer group relative select-none"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              window.open(workshopUrl, "_blank");
+            }
+          }}
+          className="cursor-pointer group relative select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#58FF1B] rounded-2xl"
           title="Agentic AI Workshop · Aug 28–29 (Click to explore)"
         >
           {/* Main Bot Canvas (SVG Neo-Brutalist Cyber Robot) */}

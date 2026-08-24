@@ -109,6 +109,9 @@ export default function MasterclassModal() {
 
       {/* Modal Container */}
       <motion.div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Free Masterclass Access"
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -122,6 +125,7 @@ export default function MasterclassModal() {
         {/* Close Button */}
         <button
           onClick={close}
+          aria-label="Close modal"
           className="absolute top-6 right-6 z-[60] bg-white border border-neutral-200 p-2 rounded-full text-neutral-500 hover:text-black hover:bg-neutral-50 transition-all shadow-sm"
         >
           <XMarkIcon className="w-6 h-6" />
@@ -150,9 +154,9 @@ export default function MasterclassModal() {
                   <span className="inline-block text-[10px] font-black text-brandpurple uppercase tracking-[0.4em] mb-4">
                     Free 30-Minute Masterclass
                   </span>
-                  <h1 className="text-4xl sm:text-5xl font-black text-[#1B1C1E] tracking-tight leading-[1.05] mb-6">
+                  <h2 className="text-4xl sm:text-5xl font-black text-[#1B1C1E] tracking-tight leading-[1.05] mb-6">
                     Build Your First <span className="text-brandpurple">Modern Website</span>
-                  </h1>
+                  </h2>
                   <p className="text-base text-neutral-500 leading-relaxed font-medium mb-8">
                     Learn the exact framework professional web developers use to build highly-converting landing pages from scratch. No prior experience required.
                   </p>
@@ -283,9 +287,9 @@ export default function MasterclassModal() {
                   <span className="inline-flex items-center gap-2 text-sm font-extrabold text-green-500 uppercase tracking-widest mb-3 bg-green-50 px-4 py-1.5 rounded-full border border-green-200">
                     <CheckCircleIcon className="w-5 h-5" /> Access Unlocked
                   </span>
-                  <h1 className="text-3xl sm:text-5xl font-black text-[#1B1C1E] tracking-tight leading-none mb-4">
+                  <h2 className="text-3xl sm:text-5xl font-black text-[#1B1C1E] tracking-tight leading-none mb-4">
                     Welcome to the Masterclass
-                  </h1>
+                  </h2>
                   <p className="text-neutral-500 font-medium">Grab some notes. Let's start building.</p>
                 </div>
 
@@ -302,7 +306,7 @@ export default function MasterclassModal() {
 
                 {/* Upsell CTA */}
                 <div className="mt-12 text-center bg-white p-8 rounded-[3rem] border border-neutral-100 shadow-xl max-w-3xl mx-auto mb-4">
-                  <h2 className="text-2xl font-black text-[#1B1C1E] mb-3">Want the Full Curriculum?</h2>
+                  <h3 className="text-2xl font-black text-[#1B1C1E] mb-3">Want the Full Curriculum?</h3>
                   <p className="text-neutral-500 mb-6 max-w-xl mx-auto text-sm">
                     If you enjoyed this intro, you'll love our comprehensive 3-month Frontend Development certification program.
                   </p>

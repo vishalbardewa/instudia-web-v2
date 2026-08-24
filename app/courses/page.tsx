@@ -41,17 +41,17 @@ function Courses() {
         alt="Design Hexagonal"
         sizes="(max-width: 1024px) 320px, 800px"
       />
-      <h4 className="col-start-2 col-end-8 lg:col-start-2 lg:col-end-8 py-1 inline-block rounded-md text-sm font-mono uppercase tracking-wider text-stone-900/70 mt-16">
+      <p className="col-start-2 col-end-8 lg:col-start-2 lg:col-end-8 py-1 inline-block rounded-md text-sm font-mono uppercase tracking-wider text-stone-900/70 mt-16">
         Upskill Today
-      </h4>
-      <div className="text-5xl col-start-2 col-end-12 lg:col-end-9 font-semibold leading-tight lg:text-6xl">
+      </p>
+      <h1 className="text-5xl col-start-2 col-end-12 lg:col-end-9 font-semibold leading-tight lg:text-6xl">
         Empower{" "}
         <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-yellow-500 relative inline-block">
           <span className="relative p-4 text-white">Yourself</span>
         </span>{" "}
         <br />
         With Skills of Tomorrow.
-      </div>
+      </h1>
       <div className="col-start-2 col-end-12">
         <section className="gutter">
           <div className="mt-8">
@@ -61,13 +61,13 @@ function Courses() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 gap-y-70 pb-150">
             <article className="col-span-1 relative bg-[#e16687] min-h-96 rounded-md card__hover">
-              <a className="flex flex-col h-full py-5 arrow__right" href="#">
+              <div className="flex flex-col h-full py-5 arrow__right">
                 <div className="px-4 pb-2">
-                  <h2 className="flex flex-col items-start w-4/5">
+                  <h3 className="flex flex-col items-start w-4/5">
                     <span className="text-white font-mono tracking-wide uppercase text-sm">
                       Comprehensive Curriculum
                     </span>
-                  </h2>
+                  </h3>
                 </div>
                 <Image
                   className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading object-contain"
@@ -83,16 +83,16 @@ function Courses() {
                     Covers essential computing skills and advanced technologies.
                   </p>
                 </div>
-              </a>
+              </div>
             </article>
             <article className="col-span-1 relative bg-[#b936d0] min-h-96 rounded-md card__hover">
-              <a className="flex flex-col h-full py-5 arrow__right" href="#">
+              <div className="flex flex-col h-full py-5 arrow__right">
                 <div className="px-4 pb-2">
-                  <h2 className="flex flex-col items-start">
+                  <h3 className="flex flex-col items-start">
                     <span className="font-mono tracking-wide uppercase text-sm text-white">
                       Hands-on Projects
                     </span>
-                  </h2>
+                  </h3>
                 </div>
                 <Image
                   className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loading object-contain"
@@ -109,16 +109,16 @@ function Courses() {
                     abilities.
                   </p>
                 </div>
-              </a>
+              </div>
             </article>
             <article className="col-span-1 relative bg-[#99daee] min-h-96 rounded-md card__hover">
-              <a className="flex flex-col h-full py-5 arrow__right" href="#">
+              <div className="flex flex-col h-full py-5 arrow__right">
                 <div className="px-4 pb-2">
-                  <h2 className="flex flex-col items-start">
+                  <h3 className="flex flex-col items-start">
                     <span className="text-white font-mono tracking-wide uppercase text-sm">
                       Industry-Relevant Skills
                     </span>
-                  </h2>
+                  </h3>
                 </div>
                 <Image
                   className="w-9/12 md:w-11/12 max-w-md m-auto card__image initial loaded object-contain"
@@ -134,7 +134,7 @@ function Courses() {
                     Prepares students for diverse roles in technology sectors.
                   </p>
                 </div>
-              </a>
+              </div>
             </article>
           </div>
         </section>
@@ -155,13 +155,13 @@ function Courses() {
             </div>
           </div>
           <article className="col-span-1 relative bg-[#FFD28A] min-h-96 rounded-md card__hover">
-            <a className="flex flex-col h-full py-5 arrow__right" href="#">
+            <div className="flex flex-col h-full py-5 arrow__right">
               <div className="px-4 pb-2">
-                <h4 className="flex flex-col items-start w-4/5">
-                  <span className="font-mono tracking-wide uppercase text-sm">
+                <h3 className="flex flex-col items-start w-4/5">
+                  <span className="font-mono tracking-wide uppercase text-sm text-neutral-900 font-bold">
                     Receive Accredited Certificate for Proven Skill Mastery
                   </span>
-                </h4>
+                </h3>
               </div>
               <Image
                 className="w-9/12 md:w-11/12 max-w-md m-auto card__image object-contain"
@@ -172,59 +172,50 @@ function Courses() {
                 sizes="(max-width: 768px) 100vw, 380px"
               />
               <div className="flex justify-between pt-2 px-4 mt-auto w-full lg:w-4/5">
-                <p className="flex flex-col items-start">
+                <p className="flex flex-col items-start text-neutral-900">
                   Discover your abilities in specific topics covered in our
                   Curriculum
                 </p>
               </div>
-            </a>
+            </div>
           </article>
           <div className="relative bg-[#141414] min-h-96 w-full">
             <div className="flex flex-col gap-2 h-full">
-              <a
-                className="h-1/3 border border-stone-500 p-4 rounded-md"
-                href="/page/badges#fundamentals"
-              >
-                <h4 className="text-stone-50">
+              <div className="h-1/3 border border-stone-500 p-4 rounded-md">
+                <h3 className="text-stone-50">
                   <span className="font-mono tracking-wide uppercase text-sm internal_link">
                     Fundamental Courses
                   </span>
-                </h4>
+                </h3>
                 <p className="text-sm text-stone-50">
                   Earn a certificate by mastering the fundamentals for success
                   on the Instudia platform, showcasing your skills and readiness
                   for the tech industry.
                 </p>
-              </a>{" "}
-              <a
-                className="h-1/3 border border-stone-500 p-4 rounded-md"
-                href="/page/badges#fundamentals"
-              >
-                <h4 className="text-stone-50">
+              </div>
+              <div className="h-1/3 border border-stone-500 p-4 rounded-md">
+                <h3 className="text-stone-50">
                   <span className="font-mono tracking-wide uppercase text-sm internal_link">
                     Intermediate Series
                   </span>
-                </h4>
+                </h3>
                 <p className="text-sm text-stone-50">
                   Earn a certificate for mastering the intermediate skills
                   essential for your knowledge and enhance your career prospects
                   with our recognized certifications.
                 </p>
-              </a>{" "}
-              <a
-                className="h-1/3 border border-stone-500 p-4 rounded-md"
-                href="/page/badges#retail"
-              >
-                <h4 className="text-stone-50">
+              </div>
+              <div className="h-1/3 border border-stone-500 p-4 rounded-md">
+                <h3 className="text-stone-50">
                   <span className="font-mono tracking-wide uppercase text-sm internal_link">
                     Professional Series
                   </span>
-                </h4>
+                </h3>
                 <p className="text-sm text-stone-50">
                   Earn a certificate for mastering the advanced skills for Top
                   10%
                 </p>
-              </a>
+              </div>
             </div>
           </div>
         </div>
