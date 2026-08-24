@@ -12,11 +12,11 @@ export interface Author {
 export const authors: Record<string, Author> = {
   'daniel-changkija': {
     name: 'Daniel Changkija',
-    role: 'Director & Lead Instructor',
+    role: 'Director',
     credentials: '',
     bio: "Visionary leader driving instudia's mission to bridge the tech skills gap in Nagaland.",
     avatarUrl: 'https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png',
-    sameAs: ['https://www.linkedin.com/in/instudia'],
+    sameAs: ['https://www.linkedin.com/in/daniel-changkija/'],
     expertise: ['Python Programming', 'Software Engineering', 'IT Career Mentorship'],
   },
   'vishal-bardewa': {

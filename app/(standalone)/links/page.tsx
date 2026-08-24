@@ -52,6 +52,13 @@ const primaryLinks = [
     arrow: true,
   },
   {
+    label: "📦 Download Seminar Materials",
+    sub: "Access slides, notes & resources",
+    href: "/seminar",
+    style: "bg-white border border-neutral-200 text-[#1B1C1E] hover:border-brandpurple/40 hover:bg-gray-50",
+    arrow: true,
+  },
+  {
     label: "📍 Find Us in Dimapur",
     sub: "Fellowship Colony, Vikiye Center",
     href: "/contact",

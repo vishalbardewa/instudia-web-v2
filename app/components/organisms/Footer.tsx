@@ -14,6 +14,7 @@ const navigation = {
     { name: "All Courses", href: "/courses" },
     { name: "Workshops", href: "/workshops" },
     { name: "Host a Seminar", href: "/host-a-seminar" },
+    { name: "Seminar Resources", href: "/seminar" },
   ] as FooterLink[],
   tools: [
     { name: "AI Resume Builder", href: "/tools/resume-builder" },

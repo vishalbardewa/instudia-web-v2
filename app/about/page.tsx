@@ -6,6 +6,7 @@ import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbSchema } from "../components/SchemaOrg/BreadcrumbSchema";
 import { staff } from "../data/staff";
+import HistoryTimeline from "./HistoryTimeline";
 
 export const metadata = buildMetadata({
   title: "About Us — Tech & Skill Institute in Dimapur",
@@ -234,6 +235,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* ── History Timeline ─────────────────────────────── */}
+      <HistoryTimeline />
 
       {/* ── Team ─────────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-6 py-20">

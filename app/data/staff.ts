@@ -22,7 +22,7 @@ export const staff: StaffMember[] = [
     photo:
       "https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png?updatedAt=1775053172327&tr=cm-extract,w-0.7,h-0.7",
     bio: "Visionary leader driving instudia's mission to bridge the tech skills gap in Nagaland.",
-    linkedin: "https://www.linkedin.com/in/instudia",
+    linkedin: "https://www.linkedin.com/in/daniel-changkija/",
   },
   {
     slug: "niutoli-v",
