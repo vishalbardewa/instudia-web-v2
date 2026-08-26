@@ -19,11 +19,7 @@ const SearchModal = dynamic(() => import("../atom/SearchModal"), { ssr: false })
 const MasterclassModal = dynamic(() => import("../organisms/MasterclassModal"), { ssr: false });
 const CookieBanner = dynamic(() => import("../molecules/CookieBanner").then((m) => m.CookieBanner), { ssr: false });
 const AiBotsAnimation = dynamic(() => import("../atom/AiBotsAnimation"), { ssr: false });
-const Confetti = dynamic(() => import("../atom/FestivalEffects").then((m) => m.Confetti), { ssr: false });
-const Snowfall = dynamic(() => import("../atom/FestivalEffects").then((m) => m.Snowfall), { ssr: false });
-const GlowEffects = dynamic(() => import("../atom/FestivalEffects").then((m) => m.GlowEffects), { ssr: false });
-const FestivalDoodle = dynamic(() => import("../atom/FestivalEffects").then((m) => m.FestivalDoodle), { ssr: false });
-const EasterEggs = dynamic(() => import("../atom/FestivalEffects").then((m) => m.EasterEggs), { ssr: false });
+import { FestivalEffectOverlay, FestivalDoodle } from "../atom/FestivalEffects";
 
 const navItems = [
   {
@@ -169,12 +165,45 @@ function FestivalLayoutContent({
     return getActiveFestival(festivalDate || undefined);
   }, [festivalDate]);
 
+  const [showEffects, setShowEffects] = useState(false);
+
+  useEffect(() => {
+    if (!activeFestival || !activeFestival.effect || activeFestival.effect === "none") {
+      setShowEffects(false);
+      return;
+    }
+
+    // Always trigger when explicitly previewing via query parameter
+    if (festivalDate) {
+      setShowEffects(true);
+      const timer = setTimeout(() => setShowEffects(false), 6000);
+      return () => clearTimeout(timer);
+    }
+
+    // Play once per browser session
+    const sessionKey = `instudia_festival_${activeFestival.id}_seen`;
+    const hasSeen = typeof window !== "undefined" ? sessionStorage.getItem(sessionKey) : null;
+
+    if (!hasSeen) {
+      try {
+        sessionStorage.setItem(sessionKey, "true");
+      } catch {
+        // Ignore storage write errors (e.g., privacy mode / disabled storage)
+      }
+      setShowEffects(true);
+      const timer = setTimeout(() => setShowEffects(false), 6000);
+      return () => clearTimeout(timer);
+    } else {
+      setShowEffects(false);
+    }
+  }, [activeFestival, festivalDate]);
+
   return (
     <>
-      {activeFestival?.effect === "confetti" && <Confetti />}
-      {activeFestival?.effect === "snowfall" && <Snowfall />}
-      {activeFestival?.effect === "lights" && <GlowEffects />}
-      {activeFestival?.effect === "easter-eggs" && <EasterEggs />}
+      <FestivalEffectOverlay
+        effect={activeFestival?.effect}
+        active={showEffects}
+      />
       <div
         className={clsx(
           "relative flex min-h-[36px] sm:min-h-10 py-1.5 sm:py-2 items-center justify-center px-3 sm:px-6 lg:px-8 print:hidden transition-all duration-500 overflow-hidden border-b border-white/10",
