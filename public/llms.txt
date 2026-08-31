@@ -59,7 +59,7 @@ instudia is Nagaland's premier technology and skill development institute offeri
 
 ## Optional
 - [acadesx Campus OS](https://acadesx.instudianagaland.com/): AI-powered school and college management system.
-- [Agentic AI Workshop](https://agentic-ai.instudianagaland.com/): Hands-on workshop on autonomous AI agents and systems.
+- [Agentic AI Workshop](https://agentic-ai.instudianagaland.com/): Hands-on workshop on autonomous AI agents and systems (Part 2 planned for End of September, Date TBA).
 - [Full Curriculum & Deep Knowledge Index](https://www.instudianagaland.com/llms-full.txt): Complete detailed text export including module outlines and institution info.
 - [Privacy Policy](https://www.instudianagaland.com/privacy-policy): User privacy and data protection guidelines.
 - [Terms & Conditions](https://www.instudianagaland.com/terms): Terms of service and enrollment policies.

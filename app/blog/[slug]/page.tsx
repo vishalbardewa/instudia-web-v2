@@ -347,23 +347,23 @@ export default async function BlogPostPage({ params }: Props) {
                                       <span className="relative inline-flex rounded-full h-3 w-3 bg-[#FFE01B]"></span>
                                     </span>
                                     <span className="text-xs font-black tracking-widest uppercase text-[#FFE01B]">
-                                      REGISTRATION ACTIVE
+                                      PART 2 IN PLANNING
                                     </span>
                                   </div>
                                   <span className="bg-[#FFE01B] text-black text-[10px] font-black px-2.5 py-0.5 uppercase tracking-widest border border-black">
-                                    LIMITED SEATS
+                                    COMING SOON
                                   </span>
                                 </div>
 
                                 {/* Matrix Specs Bar */}
                                 <div className="grid grid-cols-1 sm:grid-cols-3 border-b-2 sm:border-b-4 border-black bg-neutral-50 text-black divide-y-2 sm:divide-y-0 sm:divide-x-2 sm:divide-black text-center font-sans">
                                   <div className="p-3.5 bg-[#FFE01B]/20">
-                                    <div className="text-[10px] font-black uppercase text-black/60 tracking-widest">DATES</div>
-                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight mt-0.5 text-[#C21BFF]">28 & 29 AUG 2026</div>
+                                    <div className="text-[10px] font-black uppercase text-black/60 tracking-widest">TIMELINE</div>
+                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight mt-0.5 text-[#C21BFF]">End of September (Date TBA)</div>
                                   </div>
                                   <div className="p-3.5">
                                     <div className="text-[10px] font-black uppercase text-black/50 tracking-widest">FORMAT</div>
-                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight mt-0.5">2-Day Intensive Lab</div>
+                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight mt-0.5">Part 2 Developer Lab</div>
                                   </div>
                                   <div className="p-3.5">
                                     <div className="text-[10px] font-black uppercase text-black/50 tracking-widest">VENUE</div>
@@ -407,19 +407,17 @@ export default async function BlogPostPage({ params }: Props) {
                                   {/* CTA Strip */}
                                   <div className="mt-6 pt-6 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-4">
                                     <div className="text-xs font-bold text-black/70 uppercase tracking-tight text-center sm:text-left">
-                                      Hands-on sandboxed labs with 1-on-1 terminal debugging
+                                      Planning for Part 2 in End of September (Date TBA)
                                     </div>
-                                    <a
-                                      href="https://agentic-ai.instudianagaland.com/"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
+                                    <Link
+                                      href="/contact"
                                       className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#FFE01B] hover:bg-[#C21BFF] hover:text-white text-black font-black text-sm uppercase tracking-wider px-8 py-3.5 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
                                     >
-                                      <span>Register Your Terminal</span>
+                                      <span>Enquire for Part 2</span>
                                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                       </svg>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>

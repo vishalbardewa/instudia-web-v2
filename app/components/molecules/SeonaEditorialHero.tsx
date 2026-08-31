@@ -137,16 +137,14 @@ export default function SeonaEditorialHero() {
             Explore 19+ Courses
           </Link>
 
-          <a
-            href="https://agentic-ai.instudianagaland.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="px-5 sm:px-6 py-3 bg-[#C5F442] hover:bg-[#1E1B2E] hover:text-white text-[#1E1B2E] font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 shadow-sm group"
           >
             <span className="w-2 h-2 rounded-full bg-[#1E1B2E] group-hover:bg-[#C5F442] animate-pulse" />
-            <span>AI Workshop (Aug 28–29)</span>
+            <span>AI Workshop Part 2 (End Sept · TBA)</span>
             <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
-          </a>
+          </Link>
 
           <a
             href="https://tally.so/r/wvebpA"

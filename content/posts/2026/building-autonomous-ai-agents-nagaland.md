@@ -27,7 +27,7 @@ While no-code automation platforms like n8n or Zapier serve a purpose for simple
 
 That changes now.
 
-We are launching [**AI with ia**](https://agentic-ai.instudianagaland.com/)—Nagaland’s first **2-day code-first, systems-level Agentic AI developer workshop**, happening on **28th and 29th August 2026**.
+We launched **AI with ia**—Nagaland’s first **2-day code-first, systems-level Agentic AI developer workshop**, held on **28th and 29th August 2026**.
 
 ---
 
@@ -71,7 +71,7 @@ Building systems that run these cycles reliably in production requires defensive
 
 ## What You Will Build: Zero Fluff, Pure Code
 
-In this intensive two-day masterclass (held on **28th and 29th August 2026**), you will not be watching static slides or assembling generic chat widgets. You will write code, wire up state graphs, and ship two production-grade agentic architectures from scratch:
+In this intensive two-day masterclass (held on **28th and 29th August 2026**), participants wrote code, wired up state graphs, and shipped two production-grade agentic architectures from scratch:
 
 ### 1. Autonomous Web Research & Report Synthesizer
 * Engineer an autonomous research agent powered by **Playwright**, **Cheerio**, and **LangChain**.
@@ -99,8 +99,8 @@ AI is not just about crafting better prompts. It marks a fundamental paradigm sh
 
 Whether you are a software developer looking to automate complex engineering operations or an ambitious student aiming to master production-grade AI systems, **AI with ia** gives you the foundational engineering principles to build it right.
 
-> [type:event, case:normal] **Registration Open | Limited Seats Only.** Due to the hands-on nature of the lab environments and 1-on-1 debugging guidance, seats are strictly limited.
+> [type:event, case:normal] **Part 1 Concluded | Part 2 Coming Soon.** We are planning for Part 2 in End of September (Date TBA).
 
-> We encourage interested students and developers to register early and secure their spot for **28th & 29th August 2026**.
+> Stay tuned for updated curriculum details and advance registrations.
 
-* [Explore Curriculum & Register (Limited Seats Available) — agentic-ai.instudianagaland.com](https://agentic-ai.instudianagaland.com/)
+* [Pre-Register & Enquire for Part 2 — instudianagaland.com/contact](/contact)

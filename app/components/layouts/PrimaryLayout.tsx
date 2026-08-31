@@ -18,7 +18,6 @@ const WhatsAppWidget = dynamic(() => import("../atom/WhatsAppWidget"), { ssr: fa
 const SearchModal = dynamic(() => import("../atom/SearchModal"), { ssr: false });
 const MasterclassModal = dynamic(() => import("../organisms/MasterclassModal"), { ssr: false });
 const CookieBanner = dynamic(() => import("../molecules/CookieBanner").then((m) => m.CookieBanner), { ssr: false });
-const AiBotsAnimation = dynamic(() => import("../atom/AiBotsAnimation"), { ssr: false });
 import { FestivalEffectOverlay, FestivalDoodle } from "../atom/FestivalEffects";
 
 const navItems = [
@@ -221,10 +220,8 @@ function FestivalLayoutContent({
         )}
 
         {!activeFestival ? (
-          <a
-            href="https://agentic-ai.instudianagaland.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-3 text-center group cursor-pointer max-w-full"
           >
             {/* Terminal Style AI Badge */}
@@ -233,19 +230,19 @@ function FestivalLayoutContent({
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#58FF1B] opacity-75" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#58FF1B]" />
               </span>
-              <span className="hidden sm:inline">AI AGENTS // 28-29 AUG</span>
-              <span className="sm:hidden">AUG 28-29</span>
+              <span className="hidden sm:inline">AGENTIC AI // PART 2</span>
+              <span className="sm:hidden">PART 2</span>
             </span>
 
             {/* Headline with Cyber / Neon Highlight */}
             <span className="text-[11px] sm:text-sm font-semibold tracking-tight text-white group-hover:text-white transition-colors flex items-center gap-1 sm:gap-1.5">
-              <span className="hidden sm:inline">Agentic AI & Autonomous Systems Workshop — </span>
-              <span className="sm:hidden">Agentic AI Workshop — </span>
-              <span className="font-bold text-[#FFE01B] underline decoration-1 sm:decoration-2 underline-offset-2 group-hover:text-[#58FF1B] transition-colors whitespace-nowrap">
-                Register ↗
+              <span className="hidden sm:inline">Agentic AI Workshop Part 2 — </span>
+              <span>Planning for End of September (Date TBA)</span>
+              <span className="font-bold text-[#FFE01B] underline decoration-1 sm:decoration-2 underline-offset-2 group-hover:text-[#58FF1B] transition-colors whitespace-nowrap ml-0.5">
+                Enquire ↗
               </span>
             </span>
-          </a>
+          </Link>
         ) : (
           <span className="flex items-center gap-2 text-xs sm:text-sm">
             {activeFestival.bannerText}
@@ -265,7 +262,6 @@ function FestivalLayoutContent({
       </div>
       {children}
       <div className="print:hidden">
-        <AiBotsAnimation />
         <WhatsAppWidget />
         <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
         <MasterclassModal />
