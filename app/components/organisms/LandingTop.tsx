@@ -14,7 +14,7 @@ export default function LandingTop() {
               <p className="text-center text-sm font-semibold uppercase tracking-wide text-gray-500">
                 Affiliations received from Esteemed Institutes
               </p>
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center max-w-4xl mx-auto">
+              <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-center max-w-5xl mx-auto">
                 <div className="flex items-center justify-center h-24 sm:h-28 grayscale hover:grayscale-0 transition-all duration-300">
                   <Image
                     className="max-h-24 sm:max-h-28 w-auto object-contain"
@@ -49,6 +49,18 @@ export default function LandingTop() {
                     unoptimized
                     loading="lazy"
                     sizes="(max-width: 640px) 160px, 200px"
+                  />
+                </div>
+                <div className="flex items-center justify-center h-24 sm:h-28 grayscale hover:grayscale-0 transition-all duration-300">
+                  <Image
+                    className="max-h-24 sm:max-h-28 w-auto object-contain"
+                    src="https://ik.imagekit.io/oytjocebw/tally.png"
+                    alt="Tally Certified Institute in Dimapur, Nagaland"
+                    width={220}
+                    height={120}
+                    unoptimized
+                    loading="lazy"
+                    sizes="(max-width: 640px) 160px, 220px"
                   />
                 </div>
               </div>
