@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getStaffBySlug, staff } from "@/app/data/staff";
 import { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import CardActions from "./CardActions";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -10,18 +11,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const member = getStaffBySlug(slug);
   if (!member) return { title: "Card Not Found" };
 
-  return {
+  return buildMetadata({
     title: `${member.name} — ${member.designation} at instudia`,
     description: member.bio ?? `Connect with ${member.name}, ${member.designation} at instudia, Dimapur, Nagaland.`,
-    openGraph: {
-      title: `${member.name} — instudia`,
-      description: member.bio,
-      images: member.photo ? [{ url: member.photo }] : [],
-    },
-    alternates: {
-      canonical: `/card/${slug}`,
-    },
-  };
+    path: `/card/${slug}`,
+    image: member.photo,
+    imageAlt: `${member.name} — instudia`,
+  });
 }
 
 export function generateStaticParams() {

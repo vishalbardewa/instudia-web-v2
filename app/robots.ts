@@ -3,11 +3,25 @@ import { SITE_URL } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/_next/', '/private/', '/admin/'],
-    },
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/private/',
+          '/admin/',
+          '/submit-test',
+          '/seminar',
+          '/masterclass-resources',
+          '/links',
+        ],
+      },
+    ],
+    sitemap: [
+      `${SITE_URL}/sitemap.xml`,
+      `${SITE_URL}/rss.xml`,
+    ],
   };
 }

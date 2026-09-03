@@ -409,6 +409,54 @@ export default function CareerPlannerPage() {
               If you're already in a specialized role but feel you're being under-compensated, our <strong>Salary Insights</strong> tool will provide the negotiation power you need. Whatever your goal, we have a resource to help you reach it faster.
             </p>
           </div>
+
+          <div className="mt-12 pt-8 border-t border-neutral-200">
+            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-brandpurple mb-6">
+              Recommended Reading &amp; Tool Guides
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link
+                href="/blog/free-flashcard-tool-for-students"
+                className="group p-5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-white hover:border-brandpurple/40 transition-all shadow-xs"
+              >
+                <span className="text-[10px] font-mono font-bold text-brandpurple uppercase tracking-wider">Guide</span>
+                <h4 className="text-sm font-bold text-[#1B1C1E] group-hover:text-brandpurple transition-colors mt-1">
+                  How to Study Smarter with the Free Flashcard Tool →
+                </h4>
+                <p className="text-xs text-gray-500 mt-1">Active recall techniques and markdown deck generation.</p>
+              </Link>
+              <Link
+                href="/blog/instudia-proprietary-tools-success-suite-2026"
+                className="group p-5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-white hover:border-brandpurple/40 transition-all shadow-xs"
+              >
+                <span className="text-[10px] font-mono font-bold text-brandpurple uppercase tracking-wider">Overview</span>
+                <h4 className="text-sm font-bold text-[#1B1C1E] group-hover:text-brandpurple transition-colors mt-1">
+                  Inside the Instudia Student Success Suite →
+                </h4>
+                <p className="text-xs text-gray-500 mt-1">How our proprietary career and study tools empower students.</p>
+              </Link>
+              <Link
+                href="/blog/how-to-build-your-portfolio-no-experience"
+                className="group p-5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-white hover:border-brandpurple/40 transition-all shadow-xs"
+              >
+                <span className="text-[10px] font-mono font-bold text-brandpurple uppercase tracking-wider">Career Prep</span>
+                <h4 className="text-sm font-bold text-[#1B1C1E] group-hover:text-brandpurple transition-colors mt-1">
+                  How to Build a Tech Portfolio with Zero Experience →
+                </h4>
+                <p className="text-xs text-gray-500 mt-1">Proof-of-work strategies that get you hired in Nagaland and beyond.</p>
+              </Link>
+              <Link
+                href="/blog/how-to-learn-coding-guide-beginners"
+                className="group p-5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:bg-white hover:border-brandpurple/40 transition-all shadow-xs"
+              >
+                <span className="text-[10px] font-mono font-bold text-brandpurple uppercase tracking-wider">Coding 101</span>
+                <h4 className="text-sm font-bold text-[#1B1C1E] group-hover:text-brandpurple transition-colors mt-1">
+                  The Complete Beginner's Guide to Learning Code →
+                </h4>
+                <p className="text-xs text-gray-500 mt-1">A step-by-step roadmap for starting your software journey.</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

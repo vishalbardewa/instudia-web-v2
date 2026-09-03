@@ -40,6 +40,19 @@ export function buildMetadata(input: PageMetadataInput): Metadata {
     alternates: {
       canonical: canonicalUrl,
     },
+    robots: input.noIndex
+      ? { index: false, follow: false }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+          },
+        },
     openGraph: {
       title: ogTitle,
       description: ogDescription,
@@ -70,7 +83,6 @@ export function buildMetadata(input: PageMetadataInput): Metadata {
       images: [image],
     },
     ...(input.keywords ? { keywords: input.keywords } : {}),
-    ...(input.noIndex ? { robots: { index: false, follow: false } } : {}),
   };
 
   return meta;

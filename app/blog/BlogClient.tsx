@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { type PostSummary, formatDate } from "../data/types";
 
-const categories = ["All", "Career", "Skills", "Finance", "Technology"];
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
 // --- Swiss Brutalist Card Architecture (Shared with Carousel) ---
@@ -87,6 +86,12 @@ function SwissBrutalistCard({ post, index, isLarge = false }: { post: PostSummar
 
 export default function BlogClient({ posts }: { posts: PostSummary[] }) {
   const [active, setActive] = useState("All");
+
+  const categories = useMemo(() => {
+    const rawCategories = Array.from(new Set(posts.map((p) => p.category).filter(Boolean)));
+    rawCategories.sort((a, b) => a.localeCompare(b));
+    return ["All", ...rawCategories];
+  }, [posts]);
 
   const filtered = useMemo(() => {
     return active === "All" ? posts : posts.filter((p) => p.category === active);

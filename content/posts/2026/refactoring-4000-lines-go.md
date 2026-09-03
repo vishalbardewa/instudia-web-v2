@@ -61,6 +61,6 @@ Even on a solo project, you have to "onboard" your future self who might have fo
 ## The Architect Perspective
 Innovation is often found in the things we choose to remove rather than what we add. This refactor was more than just cleaning up tech debt—it was a commitment to the longevity of the project. By prioritizing Developer Experience, I ensured that the engine remains a playground for creativity rather than a burden of maintenance. 
 
-If you are looking to build scalable software architecture, explore our [Backend Development Program](/courses/backend-development) and [Fullstack Web Development Course](/courses/fullstack-web-development). You can also read our related breakdown on [Next.js 16 performance refactoring](/blog/revamping-instudia-nextjs-16-performance).
+If you are looking to build scalable software architecture, explore our [Backend Development Program](/courses/backend-development) and [Fullstack Web Development Course](/courses/fullstack-web-development). You can also read our deep dive on [System Design Fundamentals for Students](/blog/system-design-complete-guide-for-students), our analysis of the [Axios npm Supply Chain Security Incident](/blog/axios-supply-chain-compromise-2026), and our breakdown on [Next.js 16 performance refactoring](/blog/revamping-instudia-nextjs-16-performance).
 
 Stay ahead of the curve. Feel free to [explore our courses](/courses) or check out our [AI Study Planner](/tools/study-planner) to keep your learning organized.

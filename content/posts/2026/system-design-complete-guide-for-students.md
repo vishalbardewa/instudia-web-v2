@@ -378,8 +378,10 @@ The concepts in this guide — CAP theorem, LSM-Trees, Raft, CRDT, CDC pipelines
 
 Build the fluency. Practice the framework. Understand the trade-offs, not just the patterns.
 
+For related technical deep dives, check out our analysis of the [Axios npm Supply Chain Incident](/blog/axios-supply-chain-compromise-2026), our breakdown of [PostgreSQL Internals and MVCC](/blog/postgresql-internals-pages-tuples-mvcc), and [Refactoring 4000 Lines of Go](/blog/refactoring-4000-lines-go). You can also test your knowledge with our free [Interactive Flashcards Tool](/tools/flashcards) or plan your engineering learning path with the [AI Career Blueprint](/tools/career-blueprint).
+
 If you are studying for technical interviews or preparing for a system design role, explore our [Fullstack Web Development program](/courses/fullstack-web-development) and our [Python Programming track](/courses/python) — both of which include backend architecture modules drawing directly from the production systems described in this guide.
 
 ---
 
-**What system design concept would you like us to cover in more depth?** Drop us a message through our [contact page](/contact) — we publish new deep-dive technical posts.
+**What system design concept would you like us to cover in more depth?** Drop us a message through our [contact page](/contact) — we publish new deep-dive technical posts regularly.

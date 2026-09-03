@@ -1,13 +1,14 @@
 import { staff } from "@/app/data/staff";
 import { Metadata } from "next";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Our Team | instudia Digital Cards",
+export const metadata: Metadata = buildMetadata({
+  title: "Faculty & Leadership Team",
   description:
-    "Meet the instudia team — educators, technologists and mentors shaping tech careers in Dimapur, Nagaland.",
-  alternates: { canonical: "/card" },
-};
+    "Meet the instudia leadership, faculty, and technical advisors shaping digital and tech careers in Dimapur, Nagaland.",
+  path: "/card",
+});
 
 const departmentColors: Record<string, string> = {
   Management: "bg-brandpurple text-white",

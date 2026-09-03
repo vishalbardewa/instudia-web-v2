@@ -336,3 +336,7 @@ PostgreSQL’s physical storage engine is built around deliberate architectural 
 4. Running **background `VACUUM` operations** maintains bounded disk usage in an append-only architecture.
 
 Keeping these foundational internals in mind makes it much easier to write efficient queries, design performant indexes, and keep your production databases healthy.
+
+For more distributed database architectures and engineering trade-offs, explore our [System Design Fundamentals Guide](/blog/system-design-complete-guide-for-students), our analysis of the [Axios npm Supply Chain Incident](/blog/axios-supply-chain-compromise-2026), and our [Fullstack Web Development Course](/courses/fullstack-web-development).
+
+You can also explore our [Backend Development Program](/courses/backend-development) and [DevOps & Cloud Services Track](/courses/learn-devops-cloud-services) to learn database administration and production deployment in hands-on labs at instudia Dimapur.
