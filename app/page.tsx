@@ -123,7 +123,6 @@ const CaseStudies = ({ caseStudies }: any) => {
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-brandpurple">Feature</span>
                 </p>
                 <h3 className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
@@ -148,7 +147,7 @@ export default function Page() {
       <ScrollingLogos />
 
       <Stats stats={stats} />
-      
+
       {/* Isolated Interactive Gateway Node — client picks randomly */}
       <RandomGateway />
 
@@ -233,7 +232,7 @@ export default function Page() {
           <p>
             At Instudia, we believe in an <Link href="/about">innovative approach</Link> to education. Unlike traditional institutes, we focus on hands-on experiences, project-based learning, and personalized mentorship. We offer over 19+ intensive courses, including DCA, PGDCA, Tally, Full-Stack Web Development, Data Analysis, and more. Our training bridges the gap between academic knowledge and real-world skills, ensuring our students are job-ready from day one. By learning from our expert instructors, you gain insights that go beyond the textbook.
           </p>
-          
+
           <h3>Comprehensive Skills for the Future</h3>
           <p>
             Our mission is to establish Nagaland as a hub of digital literacy and technical expertise. We partner with top organizations to bring you courses that align with the latest market demands. Whether it's mastering React.js for web development, understanding SEO, or designing stunning visuals with Adobe Creative Suite, we have the right course layout for you. Explore our <Link href="/courses">complete course catalog</Link> to find a program that suits your career goals.
