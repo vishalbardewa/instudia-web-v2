@@ -231,16 +231,16 @@ const ContactUs = () => {
 
             {/* Embedded Map */}
             <div className="rounded-[2.5rem] overflow-hidden border border-neutral-200 shadow-sm aspect-[4/3] lg:aspect-auto lg:h-full min-h-[380px]">
-            <iframe
-              src="https://maps.google.com/maps?q=Vikiye+Center,+Opposite+Notun+Bosti+Gate,+Fellowship+Colony,+Dimapur,+Nagaland+797112&z=17&output=embed"
-              width="100%"
-              height="100%"
-              className="w-full border-0 min-h-[380px]"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="instudia location on Google Maps — Vikiye Center, Fellowship Colony, Dimapur"
-            />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3588.616!2d93.713963!3d25.9149862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3745e19091f0077d%3A0x1e6170309f79c7e0!2sVikiye%20Centre!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                className="w-full border-0 min-h-[380px]"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="instudia location on Google Maps — Vikiye Center, Fellowship Colony, Dimapur"
+              />
             </div>
           </div>
         </div>
