@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { CheckCircleIcon, ExclamationCircleIcon, LockClosedIcon, XMarkIcon } from "@heroicons/react/24/solid";
 
 export default function MasterclassModal() {
-  const searchParams = useSearchParams();
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   const [unlocked, setUnlocked] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -17,7 +17,12 @@ export default function MasterclassModal() {
   const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
   const [touched, setTouched] = useState<{ name?: boolean; email?: boolean; phone?: boolean }>({});
 
-  const isOpen = searchParams?.get("modal") === "masterclass";
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      setIsOpen(params.get("modal") === "masterclass");
+    }
+  }, []);
 
   // Prevent background scrolling when open
   useEffect(() => {
@@ -33,9 +38,13 @@ export default function MasterclassModal() {
 
   const close = () => {
     // Remove the ?modal=masterclass from URL
-    const newParams = new URLSearchParams(searchParams?.toString());
-    newParams.delete("modal");
-    router.replace(`?${newParams.toString()}`, { scroll: false });
+    if (typeof window !== "undefined") {
+      const newParams = new URLSearchParams(window.location.search);
+      newParams.delete("modal");
+      const newQuery = newParams.toString();
+      router.replace(newQuery ? `?${newQuery}` : window.location.pathname, { scroll: false });
+    }
+    setIsOpen(false);
 
     // reset form briefly after close animation
     setTimeout(() => {

@@ -102,7 +102,9 @@ export default async function BlogPostPage({ params }: Props) {
           "@type": "Person",
           name: authorEntity.name,
           jobTitle: authorEntity.role,
-          url: canonicalFor(`/blog`),
+          url: (authorEntity.sameAs && authorEntity.sameAs.length > 0)
+            ? authorEntity.sameAs[0]
+            : canonicalFor(`/card/${post.authorSlug}`),
           ...(authorEntity.sameAs && authorEntity.sameAs.length > 0 ? { sameAs: authorEntity.sameAs } : {}),
         },
   };

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Script from "next/script";
 import WorkshopPhotoGrid from "./WorkshopPhotoGrid";
 import WorkshopNav, { YearGroup } from "./WorkshopNav";
 
@@ -638,8 +637,7 @@ export default function WorkshopsPage() {
 
   return (
     <main className="bg-white">
-      <Script
-        id="workshops-event-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />

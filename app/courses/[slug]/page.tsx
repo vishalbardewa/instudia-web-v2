@@ -2,7 +2,6 @@ import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
 import META_LOOKUP from "@/app/_utils/MetaLookup";
 import { AppConfig } from "@/app/_utils/AppConfig";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import CourseDetailContent from "./CourseDetailContent";
 import { BreadcrumbSchema } from "@/app/components/SchemaOrg/BreadcrumbSchema";
@@ -294,8 +293,7 @@ export default async function Course({ params }: any) {
         { name: courseDetails.fullTitle, url: canonicalFor(`/courses/${slug}`) }
       ]} />
       <CourseDetailContent courseDetails={courseDetails} relatedCourses={relatedCourses} />
-      <Script
-        id="course-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd),

@@ -90,10 +90,10 @@ export default function FlashcardCreator({ onCardsGenerated }: FlashcardCreatorP
           <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest inline-block mb-6">
             Module
           </span>
-          <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter mb-4 uppercase leading-[0.9]">
+          <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter mb-4 uppercase leading-[0.9]">
             Generate <br/>
             <span className="text-white [-webkit-text-stroke:1.5px_black]">Flashcards.</span>
-          </h1>
+          </h2>
           <p className="text-black font-bold uppercase opacity-80 max-w-lg mx-auto text-sm mt-6">
             Paste your Markdown below or upload a .md file to generate study cards with an interactive swiping interface.
           </p>

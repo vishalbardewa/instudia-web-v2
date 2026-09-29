@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
@@ -94,8 +93,7 @@ export default function HostSeminarPage() {
 
   return (
     <main className="bg-white text-[#1B1C1E] selection:bg-brandpurple selection:text-white">
-      <Script
-        id="host-seminar-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />

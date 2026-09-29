@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script';
 import { SITE_URL, canonicalFor } from '@/lib/site';
+
+export const dynamic = 'force-static';
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: 'Career & Study Tools for Tech Students',
@@ -139,6 +141,16 @@ const tools: ToolProps[] = [
     statusMessage: "New",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-4.png"
+  },
+  {
+    name: "Career Path Planner",
+    href: "/tools/career-planner",
+    description: "Map your career goals, milestone roadmaps, and targeted skills with an interactive planner.",
+    style: "brightyellow",
+    statusIcon: "🎯",
+    statusMessage: "Interactive Tool",
+    category: "student",
+    imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png"
   },
 ]
 
@@ -479,8 +491,7 @@ export default function CareerPlannerPage() {
         </div>
       </section>
 
-      <Script
-        id="tools-suite-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

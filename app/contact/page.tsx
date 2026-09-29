@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -246,8 +245,7 @@ const ContactUs = () => {
         </div>
       </main>
 
-      <Script
-        id="contact-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

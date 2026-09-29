@@ -2,6 +2,7 @@ import { staff } from "@/app/data/staff";
 import { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
+import { canonicalFor } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Faculty & Leadership Team",
@@ -18,22 +19,51 @@ const departmentColors: Record<string, string> = {
 };
 
 export default function StaffDirectory() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "instudia Faculty and Leadership Team",
+    description: "Meet the educators, mentors, and industry practitioners training students in computer applications, programming, and digital skills in Dimapur, Nagaland.",
+    url: canonicalFor("/card"),
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: staff.map((member, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Person",
+          name: member.name,
+          jobTitle: member.designation,
+          worksFor: {
+            "@type": "EducationalOrganization",
+            name: "instudia",
+            url: "https://www.instudianagaland.com",
+          },
+          url: canonicalFor(`/card/${member.slug}`),
+        },
+      })),
+    },
+  };
+
   return (
     <main className="relative min-h-screen bg-gray-50 overflow-hidden py-24 px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brandpurple/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-xs font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
-            instudia Team
+            instudia Team &amp; Faculty
           </p>
           <h1 className="text-5xl font-black tracking-tight text-[#1B1C1E]">
             Meet Our <span className="text-brandpurple">People</span>
           </h1>
-          <p className="mt-4 text-base text-gray-500 max-w-xl mx-auto">
-            Click any card to open the full digital visiting card with contact
-            details and a scannable QR code.
+          <p className="mt-4 text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Our educators, technical mentors, and academic leadership bring decades of cumulative experience across software engineering, digital design, business accounting, and vocational education in Nagaland.
           </p>
         </div>
 
@@ -88,6 +118,35 @@ export default function StaffDirectory() {
             </Link>
           ))}
         </div>
+
+        {/* Editorial Mentorship Section */}
+        <section className="mt-20 bg-white rounded-[2rem] border border-neutral-200 p-8 sm:p-12 shadow-sm">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#1B1C1E] tracking-tight">
+              Dedicated Mentorship for Real-World Tech Careers
+            </h2>
+            <p className="mt-4 text-base text-gray-600 leading-relaxed">
+              At instudia, we believe that education is most impactful when taught by practitioners who build and solve problems daily. Every course curriculum across web development, data analysis, DCA, PGDCA, and Tally GST is curated directly by our instructors to reflect current industry benchmarks in India.
+            </p>
+            <p className="mt-4 text-base text-gray-600 leading-relaxed">
+              Whether you are preparing for your first IT certification or upgrading skills for senior developer and analyst roles, our faculty provides one-on-one doubt clearance, project portfolio reviews, and career counseling.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/courses"
+                className="px-6 py-3 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all"
+              >
+                Explore Courses
+              </Link>
+              <Link
+                href="/about"
+                className="px-6 py-3 bg-neutral-100 hover:bg-neutral-200 text-[#1B1C1E] rounded-xl font-bold text-xs uppercase tracking-wider transition-all"
+              >
+                About instudia
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

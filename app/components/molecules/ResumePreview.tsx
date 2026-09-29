@@ -15,9 +15,9 @@ export const ResumePreview = ({ data }: any) => {
 
   const renderHeader = (alignment: "left" | "center" = "left", showContact: boolean = true) => (
     <div className={`mb-1 ${alignment === "center" ? "text-center" : ""}`}>
-      <h1 className="text-[4em] font-black text-[#1B1C1E] mb-2 tracking-tighter leading-none">
+      <h2 className="text-[4em] font-black text-[#1B1C1E] mb-2 tracking-tighter leading-none">
         {basics.name?.split(" ")[0]} <span className="text-brandpurple">{basics.name?.split(" ").slice(1).join(" ")}</span>
-      </h1>
+      </h2>
       <div className={`flex flex-col gap-4 ${alignment === "center" ? "items-center" : "items-start"}`}>
         <span className="text-[#1B1C1E] border-b-2 border-brandpurple pb-0.5 text-[0.85em] font-black uppercase tracking-[0.1em]">{basics.title}</span>
         {showContact && (
@@ -197,10 +197,10 @@ export const ResumePreview = ({ data }: any) => {
       {/* Sidebar Focus (30%) */}
       <div className="col-span-4 bg-neutral-900 p-12 text-white space-y-16">
         <div>
-          <h1 className="text-[3.5em] font-black leading-[0.9] tracking-tighter mb-4">
+          <h2 className="text-[3.5em] font-black leading-[0.9] tracking-tighter mb-4">
             {basics.name?.split(" ")[0]} <br />
             <span className="text-brandpurple">{basics.name?.split(" ").slice(1).join(" ")}</span>
-          </h1>
+          </h2>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-neutral-400 mt-6 pb-2 border-b border-white/10">{basics.title}</p>
         </div>
 

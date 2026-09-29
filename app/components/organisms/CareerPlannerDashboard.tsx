@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ProgressBadge } from '../atom/ProgressBadge';
 import { MentorCard } from '../molecules/MentorCard';
@@ -23,15 +22,30 @@ const MOCK_MENTORS = [
 ];
 
 const DashboardContent = () => {
-  const searchParams = useSearchParams();
-  const requestedRole = searchParams?.get('role');
-  const requestedSkills = searchParams?.get('skills') || '';
-  const wasRequested = !!requestedRole;
+  const [requestedRole, setRequestedRole] = useState<string | null>(null);
+  const [requestedSkills, setRequestedSkills] = useState<string>('');
+  const [mounted, setMounted] = useState(false);
 
   const [milestones, setMilestones] = useState<Milestone[]>([]);
   const [skillGaps, setSkillGaps] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(wasRequested);
+  const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const role = params.get('role');
+      const skills = params.get('skills') || '';
+      setRequestedRole(role);
+      setRequestedSkills(skills);
+      if (role) {
+        setIsLoading(true);
+      }
+    }
+    setMounted(true);
+  }, []);
+
+  const wasRequested = mounted && !!requestedRole;
 
   const readinessScore = skillGaps.length > 0 ? Math.round(skillGaps.reduce((acc, skill) => {
     const score = Math.min(100, ((Number(skill.current) || 0) / (Number(skill.required) || 1)) * 100);
@@ -94,7 +108,9 @@ const DashboardContent = () => {
         <div className="w-24 h-24 bg-neutral-100 rounded-full flex items-center justify-center mb-2">
           <IconTargetArrow size={48} className="text-neutral-300" stroke={1.5} />
         </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#1B1C1E] tracking-tight">No Action Plan Found</h1>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#1B1C1E] tracking-tight">
+          Student Career Planner &amp; Goal Tracker
+        </h1>
         <p className="text-neutral-500 max-w-md mx-auto leading-relaxed">
           You haven't selected a target career role yet. Complete your Career Blueprint first so our AI engine can dynamically generate a custom learning roadmap for you.
         </p>
@@ -235,9 +251,5 @@ const DashboardContent = () => {
 };
 
 export const CareerPlannerDashboard = () => {
-  return (
-    <Suspense fallback={<div className="w-full h-screen flex items-center justify-center"><IconLoader2 className="animate-spin text-brandpurple" size={64} stroke={1.5} /></div>}>
-      <DashboardContent />
-    </Suspense>
-  )
+  return <DashboardContent />;
 };

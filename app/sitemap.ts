@@ -2,7 +2,6 @@ import { MetadataRoute } from 'next';
 import { canonicalFor } from '@/lib/site';
 import coursesData from './courses.json';
 import { posts } from './data/posts';
-import { staff } from './data/staff';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
@@ -51,13 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const dynamicStaff = staff.map((member) => ({
-    url: canonicalFor(`/card/${member.slug}`),
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
-
   const blogPosts = posts.map((post) => {
     const rawDate = post.dateModified || post.date;
     const postDate = rawDate ? new Date(rawDate).toISOString() : now;
@@ -69,5 +61,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticRoutes, ...dynamicCourses, ...dynamicStaff, ...blogPosts];
+  return [...staticRoutes, ...dynamicCourses, ...blogPosts];
 }

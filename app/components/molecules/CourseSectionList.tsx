@@ -313,9 +313,9 @@ function CourseSectionList() {
                 Develop
               </span>
             </div>
-            <h1 className="text-5xl tracking-tight text-[#FAFAFA] font-light mb-4">
+            <h2 className="text-5xl tracking-tight text-[#FAFAFA] font-light mb-4">
               Learn how to build unique skill and experiences
-            </h1>
+            </h2>
             <p className="text-lg text-[#FAFAFA]">Grow your career for better goals</p>
           </article>
         </div>

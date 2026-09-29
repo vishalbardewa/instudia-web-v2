@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/card/${slug}`,
     image: member.photo,
     imageAlt: `${member.name} — instudia`,
+    noIndex: true,
   });
 }
 

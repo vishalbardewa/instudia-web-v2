@@ -4,7 +4,6 @@ import CourseComparisonMatrix from "../components/molecules/CourseComparisonMatr
 import Image from "next/image";
 import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
-import Script from "next/script";
 import coursesData from "../courses.json";
 
 export const metadata = buildMetadata({
@@ -28,8 +27,7 @@ function Courses() {
 
   return (
     <div className="relative grid grid-cols-12 col-start-2 col-end-12">
-      <Script
-        id="courses-jsonld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
@@ -226,11 +224,6 @@ function Courses() {
       <div className="col-span-12">
         <CourseComparisonMatrix />
       </div>
-      <Script
-        id="course-list-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
     </div>
   );
 }

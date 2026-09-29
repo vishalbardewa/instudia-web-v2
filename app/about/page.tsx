@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Script from "next/script";
 import Link from "next/link";
 import { AppConfig } from "../_utils/AppConfig";
 import { SITE_URL, canonicalFor } from "@/lib/site";
@@ -76,8 +75,7 @@ export default function AboutPage() {
           { name: "About Us", url: canonicalFor("/about") },
         ]}
       />
-      <Script
-        id="about-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
