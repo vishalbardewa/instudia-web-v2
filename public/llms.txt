@@ -15,6 +15,15 @@ instudia is Nagaland's premier technology and skill development institute offeri
 - [Host a Tech Seminar](https://www.instudianagaland.com/host-a-seminar): Information and request form for campus seminars and technical workshops.
 - [Workshops & Events Archive](https://www.instudianagaland.com/workshops): Timeline of past youth development workshops and community programs.
 - [Careers at instudia](https://www.instudianagaland.com/careers): Faculty, mentor, and administrative job opportunities.
+- [Technology & Institutional Services](https://www.instudianagaland.com/services): Enterprise software development, cloud/DevOps, UI/UX design, corporate training, and campus bootcamps.
+
+## Technology & Enterprise Services
+- [Custom Web & Software Development](https://www.instudianagaland.com/services/web-software-development): High-performance Next.js web applications, mobile apps, ERPs, and SaaS MVPs.
+- [Cloud, DevOps & IT Infrastructure](https://www.instudianagaland.com/services/cloud-devops-infrastructure): AWS setup, Docker containerization, CI/CD automation, server hardening, and database optimization.
+- [UI/UX Design & Digital Branding](https://www.instudianagaland.com/services/ui-ux-branding): Figma wireframing, clickable prototypes, design systems, and corporate brand identities.
+- [Corporate & Workforce Tech Training](https://www.instudianagaland.com/services/corporate-training): Practical employee upskilling in Advanced Excel, Power BI, Tally with GST, and Generative AI tools.
+- [Campus Bootcamps & Institutional Partnerships](https://www.instudianagaland.com/services/campus-partnerships): College/school student coding bootcamps, Faculty Development Programs (FDP), and lab advisory.
+- [Career Acceleration & Placement Mentorship](https://www.instudianagaland.com/services/career-services): 1-on-1 ATS resume audits, technical mock interviews, GitHub portfolio reviews, and hiring partner pipelines.
 
 ## Courses & Certifications
 

@@ -1,11 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  MapPinIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  ClockIcon,
+  ShieldCheckIcon,
+  ArrowTopRightOnSquareIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/outline";
 
 interface FooterLink {
   name: string;
   href: string;
-  isNew?: boolean;
+  badge?: string;
   external?: boolean;
 }
 
@@ -15,32 +24,36 @@ const navigation = {
     { name: "Workshops", href: "/workshops" },
     { name: "Host a Seminar", href: "/host-a-seminar" },
     { name: "Success Stories", href: "/success-stories" },
-    { name: "Campus Gallery", href: "/gallery" },
+  ] as FooterLink[],
+  services: [
+    { name: "Services Overview", href: "/services", badge: "Hub" },
+    { name: "Custom Software Dev", href: "/services/web-software-development" },
+    { name: "Cloud & DevOps", href: "/services/cloud-devops-infrastructure" },
+    { name: "UI/UX & Branding", href: "/services/ui-ux-branding" },
+    { name: "Corporate Training", href: "/services/corporate-training" },
+    { name: "Campus Bootcamps", href: "/services/campus-partnerships" },
+    { name: "Career Mentorship", href: "/services/career-services" },
   ] as FooterLink[],
   tools: [
-    { name: "Nagaland Career Guide", href: "/tools/career-guide", isNew: true },
-    { name: "Interactive Flashcards", href: "/tools/flashcards", isNew: true },
     { name: "AI Resume Builder", href: "/tools/resume-builder" },
     { name: "ATS Resume Scanner", href: "/tools/ats-analyzer" },
     { name: "Career Blueprint", href: "/tools/career-blueprint" },
-    { name: "Salary Insights", href: "/tools/salary-insights" },
-    { name: "Study Planner", href: "/tools/study-planner" },
-    { name: "Assessment Designer", href: "/tools/assessment-designer" },
-    { name: "Pedagogical Assistant", href: "/tools/lecture-note-generator" },
+    { name: "Interactive Flashcards", href: "/tools/flashcards" },
+    { name: "Nagaland Career Guide", href: "/tools/career-guide" },
+    { name: "Tech Salary Insights", href: "/tools/salary-insights" },
   ] as FooterLink[],
   company: [
     { name: "About Us", href: "/about" },
     { name: "Contact & Admissions", href: "/contact" },
-    { name: "Faculty & Staff", href: "/card" },
     { name: "Careers", href: "/careers" },
     { name: "Blog & Insights", href: "/blog" },
     { name: "FAQ", href: "/faq" },
   ] as FooterLink[],
   legal: [
-    { name: "HTML Sitemap", href: "/sitemap" },
     { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms & Conditions", href: "/terms" },
+    { name: "Terms of Service", href: "/terms" },
     { name: "Cookie Policy", href: "/cookie-policy" },
+    { name: "HTML Sitemap", href: "/sitemap" },
   ] as FooterLink[],
   social: [
     {
@@ -100,22 +113,20 @@ const navigation = {
 
 function FooterLinkItem({ item }: { item: FooterLink }) {
   const content = (
-    <>
-      <span>{item.name}</span>
-      {item.isNew && (
-        <span className="ml-2 inline-flex items-center justify-center px-1.5 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wider text-black bg-white border border-neutral-200 shadow-xs gap-1.5">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandpurple opacity-75" />
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brandpurple" />
-          </span>
-          New
+    <span className="inline-flex items-center gap-1.5 group">
+      <span className="group-hover:text-neutral-900 group-hover:translate-x-0.5 transition-all duration-150">
+        {item.name}
+      </span>
+      {item.badge && (
+        <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-mono font-bold uppercase tracking-wider text-brandpurple bg-brandpurple/10 shrink-0">
+          {item.badge}
         </span>
       )}
-    </>
+    </span>
   );
 
   const className =
-    "text-xs leading-6 flex items-center text-gray-600 hover:text-gray-900 transition-colors font-medium";
+    "text-[13px] leading-6 text-neutral-600 hover:text-neutral-950 transition-colors inline-block";
 
   if (item.external) {
     return (
@@ -139,130 +150,113 @@ function FooterLinkItem({ item }: { item: FooterLink }) {
 
 export default function Footer() {
   return (
-    <footer aria-labelledby="footer-heading" className="bg-white border-t border-neutral-200/60">
+    <footer
+      aria-labelledby="footer-heading"
+      className="bg-[#FAF9F5] border-t border-neutral-200/80 text-neutral-700 font-sans"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-20 lg:px-8 lg:pt-24">
-        <div className="xl:grid xl:grid-cols-5 xl:gap-8">
-          {/* Brand & Address Column */}
-          <div className="space-y-6 xl:col-span-2">
+
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-12 sm:pt-20 lg:px-8">
+        {/* Main Footer Grid: 4-col Brand & Info + 8-col Navigation */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start">
+          {/* Left Column: Brand Identity, Accreditation & Local Business Details */}
+          <div className="lg:col-span-4 space-y-6">
             <Link href="/" className="inline-block">
-              <div className="h-16 relative aspect-[3/1]">
+              <div className="h-12 relative aspect-[3.2/1]">
                 <Image
                   alt="instudia logo"
                   className="h-full object-contain"
                   style={{ width: "auto", height: "auto" }}
                   src="/assets/images/logo-with-tagline.webp"
-                  width={250}
-                  height={64}
+                  width={220}
+                  height={50}
                   loading="lazy"
                   unoptimized
                 />
               </div>
             </Link>
-            <div className="text-xs leading-6 text-gray-600 max-w-sm">
+
+            <p className="text-xs leading-relaxed text-neutral-600 max-w-sm">
+              Nagaland&apos;s premier career-first technology institute and engineering studio.
+              Bridging modern computing education with enterprise-grade digital development.
+            </p>
+
+            {/* Institutional Trust Badges */}
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-neutral-200/90 shadow-2xs text-[11px] font-mono font-medium text-neutral-700">
+                <ShieldCheckIcon className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>ISO 9001:2015</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-neutral-200/90 shadow-2xs text-[11px] font-mono font-medium text-neutral-700">
+                <span className="w-2 h-2 rounded-full bg-brandpurple shrink-0" />
+                <span>Govt. MSME Recognized</span>
+              </div>
+            </div>
+
+            {/* Local Business Microdata & Contact Card */}
+            <div className="pt-4 border-t border-neutral-200/60 text-xs text-neutral-600 space-y-3">
               <address
                 itemScope
                 itemType="https://schema.org/LocalBusiness"
-                style={{ fontStyle: "normal" }}
+                className="not-italic space-y-2.5"
               >
-                <div className="flex gap-x-3 mb-3.5">
-                  <span className="sr-only">Address</span>
-                  <svg
-                    className="h-5 w-5 flex-none text-brandpurple mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                    />
-                  </svg>
+                <div className="flex items-start gap-2.5">
+                  <MapPinIcon className="w-4 h-4 text-brandpurple shrink-0 mt-0.5" />
                   <div>
                     <span className="sr-only" itemProp="name">
                       instudia
                     </span>
-                    <p>
-                      <span itemProp="streetAddress">
-                        First Floor, Vikiye Center,
-                        <br />
-                        Opp. Notun Bosti Gate, Fellowship Colony
-                      </span>
-                    </p>
-                    <p>
-                      <span itemProp="addressLocality">Dimapur</span>,{" "}
-                      <span itemProp="addressRegion">Nagaland</span>{" "}
-                      <span itemProp="postalCode">797112</span>
-                    </p>
+                    <span itemProp="streetAddress">
+                      First Floor, Vikiye Center, Opp. Notun Bosti Gate
+                    </span>
+                    <br />
+                    <span>Fellowship Colony, </span>
+                    <span itemProp="addressLocality">Dimapur</span>,{" "}
+                    <span itemProp="addressRegion">Nagaland</span>{" "}
+                    <span itemProp="postalCode">797112</span>
                   </div>
                 </div>
-                <div className="flex gap-x-3 mb-3">
-                  <span className="sr-only">Phone</span>
-                  <svg
-                    className="h-5 w-5 flex-none text-brandpurple"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                    />
-                  </svg>
+
+                <div className="flex items-center gap-2.5">
+                  <PhoneIcon className="w-4 h-4 text-brandpurple shrink-0" />
                   <a
                     href="tel:+918798587779"
                     itemProp="telephone"
-                    className="hover:text-gray-900 transition-colors"
+                    className="hover:text-neutral-900 transition-colors font-medium"
                   >
                     +91 87985 87779
                   </a>
                 </div>
-                <div className="flex gap-x-3">
-                  <span className="sr-only">Email</span>
-                  <svg
-                    className="h-5 w-5 flex-none text-brandpurple"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                    />
-                  </svg>
+
+                <div className="flex items-center gap-2.5">
+                  <EnvelopeIcon className="w-4 h-4 text-brandpurple shrink-0" />
                   <a
                     href="mailto:instudia.nagaland@gmail.com"
                     itemProp="email"
-                    className="hover:text-gray-900 transition-colors"
+                    className="hover:text-neutral-900 transition-colors"
                   >
                     instudia.nagaland@gmail.com
                   </a>
+                </div>
+
+                <div className="flex items-center gap-2.5 text-neutral-500">
+                  <ClockIcon className="w-4 h-4 text-neutral-400 shrink-0" />
+                  <span>Mon – Sat • 9:00 AM – 5:00 PM</span>
                 </div>
               </address>
             </div>
           </div>
 
-          {/* 4 Organized Navigation Columns */}
-          <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4 xl:col-span-3 xl:mt-0">
-            {/* 1. Programs */}
+          {/* Right Area: 4 Symmetrical & Balanced Navigation Columns */}
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+            {/* Column 1: Programs & Courses */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-900 mb-4">
                 Programs
               </h3>
-              <ul role="list" className="mt-4 space-y-2.5">
+              <ul role="list" className="space-y-2.5">
                 {navigation.programs.map((item) => (
                   <li key={item.name}>
                     <FooterLinkItem item={item} />
@@ -271,51 +265,73 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* 2. Products & Suite */}
+            {/* Column 2: Services & Solutions */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
-                Products &amp; Tools
+              <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-900 mb-4">
+                Services
               </h3>
-              <div className="mt-4 space-y-3.5">
-                {/* Flagship Product: acadesx */}
-                <div>
-                  <a
-                    href="https://acadesx.instudianagaland.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block p-2.5 -mx-1 rounded-xl border border-neutral-200/80 bg-neutral-50/70 hover:bg-neutral-100 hover:border-brandpurple/30 transition-all shadow-2xs"
-                  >
-                    <div className="flex items-center justify-between gap-1.5">
-                      <span className="text-xs font-bold text-[#1B1C1E] group-hover:text-brandpurple transition-colors">
-                        acadesx
-                      </span>
-                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-brandpurple text-white shadow-2xs shrink-0">
-                        Campus OS
-                      </span>
-                    </div>
-                    <p className="text-[10px] text-neutral-500 mt-1 font-medium leading-snug">
-                      AI Powered School &amp; College Management System
-                    </p>
-                  </a>
-                </div>
-
-                {/* Free Student Tools Suite */}
-                <ul role="list" className="space-y-2 pt-1 border-t border-neutral-100">
-                  {navigation.tools.map((item) => (
-                    <li key={item.name}>
-                      <FooterLinkItem item={item} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul role="list" className="space-y-2.5">
+                {navigation.services.map((item) => (
+                  <li key={item.name}>
+                    <FooterLinkItem item={item} />
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* 3. Company */}
+            {/* Column 3: Platform & Free Tools */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-900 mb-4">
+                Products &amp; Tools
+              </h3>
+
+              {/* acadesx Flagship Product Feature */}
+              <div className="mb-4">
+                <a
+                  href="https://acadesx.instudianagaland.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-3 rounded-xl border border-neutral-200/90 bg-white hover:border-brandpurple/40 hover:shadow-xs transition-all"
+                >
+                  <div className="flex items-center justify-between gap-1.5 mb-1">
+                    <span className="text-xs font-bold text-neutral-900 group-hover:text-brandpurple transition-colors">
+                      acadesx
+                    </span>
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[8px] font-mono font-bold uppercase tracking-wider bg-brandpurple text-white shrink-0">
+                      Campus OS
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-neutral-500 leading-snug">
+                    AI School &amp; College OS
+                  </p>
+                </a>
+              </div>
+
+              {/* Free Tools List */}
+              <ul role="list" className="space-y-2.5">
+                {navigation.tools.map((item) => (
+                  <li key={item.name}>
+                    <FooterLinkItem item={item} />
+                  </li>
+                ))}
+                <li className="pt-1.5">
+                  <Link
+                    href="/tools"
+                    className="inline-flex items-center gap-1 text-[12px] font-semibold text-brandpurple hover:text-brandpurple/80 transition-colors"
+                  >
+                    <span>View all 9 tools</span>
+                    <ArrowRightIcon className="w-3 h-3" />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Company & Community */}
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-900 mb-4">
                 Company
               </h3>
-              <ul role="list" className="mt-4 space-y-2.5">
+              <ul role="list" className="space-y-2.5">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
                     <FooterLinkItem item={item} />
@@ -323,45 +339,49 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-
-            {/* 4. Legal */}
-            <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900">
-                Legal
-              </h3>
-              <ul role="list" className="mt-4 space-y-2.5">
-                {navigation.legal.map((item) => (
-                  <li key={item.name}>
-                    <FooterLinkItem item={item} />
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
 
-        {/* Bottom Social & Copyright Bar */}
-        <div className="mt-12 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-5 md:order-2">
+        {/* Bottom Bar: Copyright, Legal Links & Socials */}
+        <div className="mt-14 pt-8 border-t border-neutral-200/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+          {/* Left: Copyright */}
+          <div className="order-2 md:order-1 text-center md:text-left">
+            <p>
+              &copy; {new Date().getFullYear()}{" "}
+              <span className="font-semibold text-neutral-800">instudia</span>. Built with precision in Dimapur, Nagaland.
+            </p>
+          </div>
+
+          {/* Center: Legal Links */}
+          <div className="order-1 md:order-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            {navigation.legal.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="hover:text-neutral-900 transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right: Social Media Icons */}
+          <div className="order-3 flex items-center gap-3">
             {navigation.social.map((item) => (
               <a
                 key={item.name}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={item.href}
-                className="text-gray-400 hover:text-brandpurple min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-500 hover:text-brandpurple hover:border-brandpurple/40 hover:bg-neutral-50 transition-all shadow-2xs"
                 aria-label={item.name}
               >
-                <item.icon aria-hidden="true" className="h-5 w-5" />
+                <item.icon aria-hidden="true" className="h-4 w-4" />
               </a>
             ))}
           </div>
-          <p className="mt-6 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
-            &copy; {new Date().getFullYear()} Crafted by <span className="font-semibold text-gray-700">Team instudia</span>. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
   );
 }
-

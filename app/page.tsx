@@ -154,10 +154,7 @@ export default function Page() {
       <Incentives />
       <FeatureWithColumns />
 
-      {/* <Testimonials /> */}
       <TestimonialGrid />
-
-      {/* <StickyScroll content={content} /> */}
 
       <div className="relative isolate -z-10 mt-32 sm:mt-40">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">

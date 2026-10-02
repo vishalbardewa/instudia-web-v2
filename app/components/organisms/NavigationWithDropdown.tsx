@@ -211,12 +211,23 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                               <Popover.Button
                                 className={classNames(
                                   open
-                                    ? "text-indigo-600"
-                                    : "border-transparent text-gray-700 ",
-                                  `relative z-10 -mb-px flex items-center text-sm font-medium transition-colors duration-200 ease-out focus-visible:outline-none`
+                                    ? "text-brandpurple font-bold"
+                                    : "border-transparent text-gray-700 hover:text-brandpurple",
+                                  `relative z-10 -mb-px flex items-center text-[15px] font-semibold transition-colors duration-200 ease-out focus-visible:outline-none cursor-pointer gap-1`
                                 )}
                               >
-                                {category.name}
+                                <span>{category.name}</span>
+                                <svg
+                                  className={classNames(
+                                    open ? "rotate-180 text-brandpurple" : "text-gray-400 group-hover:text-brandpurple",
+                                    "w-3.5 h-3.5 transition-transform duration-200"
+                                  )}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                                </svg>
                               </Popover.Button>
                             )}
                           </div>

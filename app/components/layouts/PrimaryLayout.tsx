@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { IconHome, IconUser, IconMap } from "@tabler/icons-react";
+import { IconHome, IconUser, IconMap, IconBriefcase, IconBook } from "@tabler/icons-react";
 import { IconMessage } from "@tabler/icons-react";
 import { FloatingNav } from "../organisms/FloatingNav";
 import Footer from "../organisms/Footer";
@@ -18,6 +18,16 @@ const navItems = [
     icon: <IconHome fill="black" className="h-6 w-6 text-black dark:text-white" />,
   },
   {
+    name: "Courses",
+    link: "/courses",
+    icon: <IconBook fill="black" className="h-6 w-6 text-black dark:text-white" />,
+  },
+  {
+    name: "Services",
+    link: "/services",
+    icon: <IconBriefcase fill="black" className="h-6 w-6 text-black dark:text-white" />,
+  },
+  {
     name: "About",
     link: "/about",
     icon: <IconUser fill="black" className="h-6 w-6 text-black dark:text-white" />,
@@ -28,7 +38,7 @@ const navItems = [
     icon: <IconMessage fill="black" className="h-6 w-6 text-black dark:text-white" />,
   },
   {
-    name: "Student Success Suite",
+    name: "Tools",
     link: "/tools",
     icon: <IconHome fill="black" className="h-6 w-6 text-black dark:text-white" />,
   },
@@ -47,13 +57,6 @@ const longNavigation = {
             "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=400&auto=format&fit=crop",
           imageAlt: "Learn Fullstack development in Dimapur",
         },
-        // {
-        //   name: "Frontend Development",
-        //   href: `/courses/${slugs.FRONTEND}`,
-        //   imageSrc:
-        //     "https://images.unsplash.com/photo-1552960504-34e1e1be3f53?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        //   imageAlt: "Learn Frontend development in Dimapur.",
-        // },
         {
           name: "Explore all courses",
           href: `/courses`,
@@ -82,11 +85,7 @@ const longNavigation = {
           id: "programming",
           name: "Programming Foundation",
           items: [
-            // { name: "Javascript", href: `/courses/${slugs.PYTHON}` },
             { name: "Python", href: `/courses/${slugs.PYTHON}` }
-            // { name: "Rust", href: "#" },
-            // { name: "C", href: "#" },
-            // { name: "C++", href: "#" },
           ],
         },
         {
@@ -104,12 +103,52 @@ const longNavigation = {
         },
       ],
     },
+    {
+      id: "services",
+      name: "Services & Solutions",
+      featured: [
+        {
+          name: "Web & Software Development",
+          href: "/services/web-software-development",
+          imageSrc:
+            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop",
+          imageAlt: "Custom software and web development in Dimapur",
+        },
+        {
+          name: "Explore All Services",
+          href: "/services",
+          imageSrc:
+            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop",
+          imageAlt: "instudia technology and enterprise solutions",
+        },
+      ],
+      sections: [
+        {
+          id: "engineering-cloud",
+          name: "Engineering & Cloud",
+          items: [
+            { name: "Custom Web & Software Dev", href: "/services/web-software-development" },
+            { name: "Cloud & DevOps Infrastructure", href: "/services/cloud-devops-infrastructure" },
+            { name: "UI/UX Design & Branding", href: "/services/ui-ux-branding" },
+          ],
+        },
+        {
+          id: "enterprise-campus",
+          name: "Enterprise & Campuses",
+          items: [
+            { name: "Corporate Workforce Training", href: "/services/corporate-training" },
+            { name: "Campus Bootcamps & Partnerships", href: "/services/campus-partnerships" },
+            { name: "Career Acceleration Mentorship", href: "/services/career-services" },
+          ],
+        },
+      ],
+    },
   ],
   pages: [
     { name: "About", href: "/about" },
     { name: "Workshops", href: "/workshops" },
     { name: "Contact", href: "/contact" },
-    { name: "Tools", href: "/tools", isNew: true },
+    { name: "Tools", href: "/tools" },
   ],
 };
 export default function PrimaryLayout({

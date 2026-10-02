@@ -2,12 +2,14 @@ import { MetadataRoute } from 'next';
 import { canonicalFor } from '@/lib/site';
 import coursesData from './courses.json';
 import { posts } from './data/posts';
+import { servicesData } from './data/servicesData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
 
   const staticRouteConfigs = [
     { route: '', priority: 1.0, freq: 'daily' as const },
+    { route: '/services', priority: 0.95, freq: 'weekly' as const },
     { route: '/courses', priority: 0.95, freq: 'weekly' as const },
     { route: '/blog', priority: 0.9, freq: 'daily' as const },
     { route: '/tools', priority: 0.9, freq: 'weekly' as const },
@@ -43,6 +45,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: cfg.priority,
   }));
 
+  const dynamicServices = servicesData.map((service) => ({
+    url: canonicalFor(`/services/${service.slug}`),
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
   const dynamicCourses = (coursesData.courses || []).map((course) => ({
     url: canonicalFor(`/courses/${course.slug}`),
     lastModified: now,
@@ -61,5 +70,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticRoutes, ...dynamicCourses, ...blogPosts];
+  return [...staticRoutes, ...dynamicServices, ...dynamicCourses, ...blogPosts];
 }

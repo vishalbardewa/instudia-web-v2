@@ -1,17 +1,3 @@
-export const routes = {
-  ABOUT_US: "/about",
-  COMMUNITY: "/community",
-  COURSES: "/courses",
-  CONTACT: "/contact",
-  WORKSHOPS: "/workshops",
-  HOST_SEMINAR: "/host-a-seminar",
-  PRIVACY_POLICY: "/privacy-policy",
-  TERMS_AND_CONDITIONS: "/terms",
-  SALARY_INSIGHTS: "/tools/salary-insights",
-  SUCCESS_STORIES: "/success-stories",
-  STUDY_PLANNER: "/tools/study-planner",
-};
-
 export const slugs = {
   DCA: "diploma-in-computer-applications",
   PGDCA: "pgdca",

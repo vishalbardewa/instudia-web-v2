@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { posts, getPostBySlug, formatDate } from "../../data/posts";
-import { getAuthorBySlug } from "../../data/authors";
+import { getAuthorBySlug } from "@/data/authors";
 import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
 import hljs from "highlight.js";

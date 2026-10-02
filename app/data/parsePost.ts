@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { getAuthorBySlug } from "./authors";
+import { getAuthorBySlug } from "@/data/authors";
 import type { Post, PostSummary, Section, ContentItem } from "./types";
 
 const POSTS_DIR = path.join(process.cwd(), "content/posts");

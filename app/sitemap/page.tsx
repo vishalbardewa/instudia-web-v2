@@ -6,6 +6,7 @@ import { SITE_URL, canonicalFor } from '@/lib/site';
 import coursesData from '../courses.json';
 import { posts, formatDate } from '../data/posts';
 import { staff } from '../data/staff';
+import { servicesData } from '../data/servicesData';
 
 export default function SitemapPage() {
   // Group courses by category
@@ -79,6 +80,7 @@ export default function SitemapPage() {
 
   const mainPages = [
     { name: 'Home', href: '/', desc: 'Premier computer training & skill development institute in Dimapur.' },
+    { name: 'Services & Solutions Hub', href: '/services', desc: 'Custom web & software development, cloud infrastructure, corporate training, and campus bootcamps.' },
     { name: 'All Courses', href: '/courses', desc: '19+ practical computer courses from DCA to Fullstack Web Development.' },
     { name: 'Student Success Suite Tools', href: '/tools', desc: 'Free AI-powered study, resume, and career tools for students and teachers.' },
     { name: 'Tech & Career Insights Blog', href: '/blog', desc: 'Practical tutorials, programming guides, and local career insights.' },
@@ -141,7 +143,7 @@ export default function SitemapPage() {
 
           <p className="text-base sm:text-lg font-bold text-black max-w-2xl leading-relaxed uppercase opacity-75">
             A comprehensive, structured index of all {coursesData.courses.length} courses,{' '}
-            {toolsList.length} free student tools, {posts.length} technical tutorials, and institutional pages.
+            {servicesData.length} specialized services, {toolsList.length} free student tools, {posts.length} technical tutorials, and institutional pages.
           </p>
         </Container>
       </section>
@@ -182,11 +184,49 @@ export default function SitemapPage() {
           </div>
         </section>
 
-        {/* Section 2: Courses Catalog */}
-        <section className="bg-white border-2 border-black p-8 sm:p-12 shadow-[8px_8px_0px_#C21BFF]">
+        {/* Section 2: Services & Solutions */}
+        <section className="bg-white border-2 border-black p-8 sm:p-12 shadow-[8px_8px_0px_#58FF1B]">
           <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-black">
             <span className="text-xs font-black bg-black text-white px-3 py-1 uppercase tracking-widest">
               02
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-black uppercase tracking-tight">
+              Technology &amp; Institutional Services ({servicesData.length} Dedicated Pillars)
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {servicesData.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group p-5 border-2 border-black bg-white hover:bg-neutral-50 transition-all shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-brandpurple mb-1 block">
+                    {service.badge}
+                  </span>
+                  <h3 className="text-base font-black text-black uppercase tracking-tight group-hover:text-brandpurple transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs font-medium text-black/70 mt-2 leading-relaxed line-clamp-2">
+                    {service.heroTagline}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-black/10 flex items-center justify-between text-[10px] font-black text-brandpurple uppercase tracking-widest">
+                  <span>Explore Service</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Section 3: Courses Catalog */}
+        <section className="bg-white border-2 border-black p-8 sm:p-12 shadow-[8px_8px_0px_#C21BFF]">
+          <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-black">
+            <span className="text-xs font-black bg-black text-white px-3 py-1 uppercase tracking-widest">
+              03
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-black uppercase tracking-tight">
               Computer Courses ({coursesData.courses.length} Programs)
