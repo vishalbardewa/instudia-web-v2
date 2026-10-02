@@ -8,6 +8,8 @@ const COURSES = [
   { title: "Tally with GST", href: "/courses/gst", type: "Course" },
   { title: "Advanced Excel", href: "/courses/advanced-excel", type: "Course" },
   { title: "Python Programming", href: "/courses/python", type: "Course" },
+  { title: "JavaScript Programming", href: "/courses/javascript", type: "Course" },
+  { title: "Go (Golang) Programming", href: "/courses/golang", type: "Course" },
   { title: "UI/UX Designing", href: "/courses/ui-ux-designing", type: "Course" },
   { title: "Frontend Development", href: "/courses/frontend-development", type: "Course" },
   { title: "Backend Development", href: "/courses/backend-development", type: "Course" },
@@ -20,6 +22,7 @@ const COURSES = [
   { title: "Retail Management", href: "/courses/retail-management", type: "Course" },
   { title: "Generative AI", href: "/courses/generative-ai", type: "Course" },
   { title: "Data Analytics", href: "/courses/data-analytics", type: "Course" },
+  { title: "Statistical Analysis with SPSS", href: "/courses/spss", type: "Course" },
   { title: "Graphic Designing", href: "/courses/graphic-designing", type: "Course" },
 ];
 

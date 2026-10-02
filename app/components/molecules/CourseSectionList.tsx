@@ -38,39 +38,56 @@ let firstLayerCourses = [
     href: slugs.PYTHON
   },
   {
-    title: "Accounting in Tally with GST",
+    title: "Programming with JavaScript",
     imageUrl:
-      IMAGE_LIST[`${slugs.GST}`],
-    imageAlt: "Tally with GST in Dimapur",
+      IMAGE_LIST[`${slugs.JAVASCRIPT}`],
+    imageAlt: "JavaScript Programming in Dimapur",
     description:
-      "Learn the fundamentals of Tally, from basic accounting to GST compliance. This beginner-friendly course offers hands-on projects to develop real-world accounting skills. By the end, you'll be ready to manage GST-compliant financials.",
-    badge: <FinanceBadge />,
-    href: slugs.GST
+      "Master modern JavaScript syntax, ES6+, DOM manipulation, and asynchronous programming. Build interactive web applications and scripts with hands-on projects in Dimapur.",
+    badge: <DevelopmentBadge />,
+    href: slugs.JAVASCRIPT
   },
+  {
+    title: "Programming with Go",
+    imageUrl:
+      IMAGE_LIST[`${slugs.GO}`],
+    imageAlt: "Go Programming in Dimapur",
+    description:
+      "Learn Go (Golang) from scratch, including strict typing, struct composition, and blistering concurrency with goroutines and channels. Build high-speed networked tools.",
+    badge: <DevelopmentBadge />,
+    href: slugs.GO
+  },
+  {
+    title: "Fullstack Web Development",
+    imageUrl: IMAGE_LIST[`${slugs.FULLSTACK_WEB_DEVELOPMENT}`],
+    imageAlt: "Fullstack Development in Dimapur",
+    description:
+      "Master end-to-end web application development with industry-relevant tech stack. Learn in-demand frontend frameworks like React, backend technologies including Node.js, and database management.",
+    badge: <DevelopmentBadge />,
+    href: slugs.FULLSTACK_WEB_DEVELOPMENT
+  },
+];
 
+let secondLayerCourses = [
   {
     title: "Frontend Web Development",
     imageUrl:
       IMAGE_LIST[`${slugs.FRONTEND}`],
-    imageAlt: "Tally with GST in Dimapur",
+    imageAlt: "Frontend Development in Dimapur",
     description:
       "Learn the fundamentals of frontend development, from HTML, CSS to JavaScript and responsive design. This beginner-friendly course offers hands-on projects to develop real-world web design skills. Build your own websites.",
     badge: <DevelopmentBadge />,
     href: slugs.FRONTEND
   },
-
   {
     title: "Backend Web Development",
     imageUrl: IMAGE_LIST[`${slugs.BACKEND}`],
-    imageAlt: "Tally with GST in Dimapur",
+    imageAlt: "Backend Development in Dimapur",
     description:
       "Learn the fundamentals of backend development, from server-side scripting to database management. This beginner-friendly course offers hands-on projects to build real-world APIs. Ready to develop and manage backend systems.",
     badge: <DevelopmentBadge />,
     href: slugs.BACKEND
   },
-];
-
-let secondLayerCourses = [
   {
     title: "Certificate in UI/UX Design Specialization",
     imageUrl: IMAGE_LIST[`${slugs.UIUX_DESIGN}`],
@@ -89,7 +106,9 @@ let secondLayerCourses = [
     badge: <DesignBadge />,
     href: slugs.GRAPHIC_DESIGN
   },
+];
 
+let thirdLayerCourses = [
   {
     title: "Certificate in DevOps Cloud Services",
     imageUrl: IMAGE_LIST[`${slugs.DEVOPS}`],
@@ -99,7 +118,6 @@ let secondLayerCourses = [
     badge: <DevelopmentBadge />,
     href: slugs.DEVOPS
   },
-
   {
     title: "Certificate in Business Intelligence",
     imageUrl:
@@ -110,9 +128,6 @@ let secondLayerCourses = [
     badge: <FinanceBadge />,
     href: slugs.BUSINESS_INTELLIGENCE
   },
-];
-
-let thirdLayerCourses = [
   {
     title: "Certificate in Hardware and Networking",
     imageUrl:
@@ -132,7 +147,9 @@ let thirdLayerCourses = [
     badge: <DesignBadge />,
     href: slugs.PROJECT_MANAGEMENT
   },
+];
 
+let fourthLayerCourses = [
   {
     title: "Diploma in Computer Applications",
     imageUrl:
@@ -143,7 +160,25 @@ let thirdLayerCourses = [
     badge: <SkillBadge />,
     href: slugs.DCA
   },
-
+  {
+    title: "Accounting in Tally with GST",
+    imageUrl:
+      IMAGE_LIST[`${slugs.GST}`],
+    imageAlt: "Tally with GST in Dimapur",
+    description:
+      "Learn the fundamentals of Tally, from basic accounting to GST compliance. This beginner-friendly course offers hands-on projects to develop real-world accounting skills. By the end, you'll be ready to manage GST-compliant financials.",
+    badge: <FinanceBadge />,
+    href: slugs.GST
+  },
+  {
+    title: "Certificate in Advanced Excel",
+    imageUrl: IMAGE_LIST[`${slugs.ADVANCED_EXCEL}`],
+    imageAlt: "Advanced Excel in Dimapur",
+    description:
+      "Master essential spreadsheet functions, automated calculations, pivot tables, and data modeling to streamline office productivity and business intelligence reporting.",
+    badge: <SkillBadge />,
+    href: slugs.ADVANCED_EXCEL
+  },
   {
     title: "Certificate in Retail Management",
     imageUrl:
@@ -156,46 +191,29 @@ let thirdLayerCourses = [
   },
 ];
 
-let fourthLayerCourses = [
+let fifthLayerCourses = [
+  {
+    title: "Post Graduate in Diploma in Computer Applications",
+    imageUrl:
+      IMAGE_LIST[`${slugs.PGDCA}`],
+    imageAlt: "PGDCA in Dimapur",
+    description:
+      "Learn key concepts in computing, from basic programming to advanced software development. This beginner-friendly PGDCA course offers hands-on projects to build real-world IT skills. By the end, you'll be ready to excel in various tech roles.",
+    badge: <SkillBadge />,
+    href: slugs.PGDCA
+  },
+];
+
+let sixthLayerCourses = [
   {
     title: "Mobile App Development",
     imageUrl:
       IMAGE_LIST[`${slugs.MOBILE_APP_DEVELOPMENT}`],
-    imageAlt: "Fullstack Development in Dimapur",
+    imageAlt: "Mobile App Development in Dimapur",
     description:
-      "Learn the fundamentals of mobile app development using React Native, from basic UI components to advanced navigation. This beginner-friendly course offers hands-on projects to build real-world apps. By the end, you'll be ready to create your own mobile applications.",
+      "Learn the fundamentals of mobile app development using React Native, from basic UI components to advanced navigation. This beginner-friendly course offers hands-on projects to build real-world apps.",
     badge: <DevelopmentBadge />,
     href: slugs.MOBILE_APP_DEVELOPMENT
-  },
-  {
-    title: "Certificate in Food Processing",
-    imageUrl:
-      IMAGE_LIST[`${slugs.FOOD_PROCESSING}`],
-    imageAlt: "Food Processing in Dimapur",
-    description:
-      "Learn the fundamentals of food processing, from basic techniques to advanced preservation methods. This beginner-friendly course offers hands-on projects to develop practical skills. By the end, you'll be ready to apply your knowledge in real-world food processing environments.",
-    badge: <SkillBadge />,
-    href: slugs.FOOD_PROCESSING
-  },
-
-  {
-    title: "Fullstack Web Development",
-    imageUrl: IMAGE_LIST[`${slugs.FULLSTACK_WEB_DEVELOPMENT}`],
-    imageAlt: "Fullstack Development in Dimapur",
-    description:
-      "Master end-to-end web application development with industry-relevant tech stack. Learn in-demand frontend frameworks like React, backend technologies including Node.js, and database management.",
-    badge: <DevelopmentBadge />,
-    href: slugs.FULLSTACK_WEB_DEVELOPMENT
-  },
-
-  {
-    title: "Certificate in Advanced Excel",
-    imageUrl: IMAGE_LIST[`${slugs.ADVANCED_EXCEL}`],
-    imageAlt: "Advanced Excel in Dimapur",
-    description:
-      "Learn the fundamentals of Fullstack Development, from front-end design to back-end architecture. This beginner-friendly course offers hands-on projects to build real-world web applications. By the end, you'll be ready to create and deploy your own full-stack solutions.",
-    badge: <SkillBadge />,
-    href: slugs.ADVANCED_EXCEL
   },
   {
     title: "Certificate in Data Analytics",
@@ -205,6 +223,15 @@ let fourthLayerCourses = [
       "Master in-demand data skills with Python, SQL, and visualization tools. Transform raw data into strategic insights through hands-on projects with real datasets.",
     badge: <DevelopmentBadge />,
     href: slugs.DATA_ANALYTICS
+  },
+  {
+    title: "Statistical Analysis with SPSS",
+    imageUrl: IMAGE_LIST[`${slugs.SPSS}`],
+    imageAlt: "SPSS Data Analysis in Dimapur",
+    description:
+      "Master statistical data analysis with IBM SPSS. Learn data preparation, descriptive statistics, hypothesis testing, ANOVA, and regression models for academic and corporate research.",
+    badge: <DevelopmentBadge />,
+    href: slugs.SPSS
   },
   {
     title: "Certificate in Generative AI",
@@ -224,18 +251,15 @@ let fourthLayerCourses = [
     badge: <TrendingBadge />,
     href: slugs.AGENTIC_AI
   },
-];
-
-let fifthLayerCourses = [
   {
-    title: "Post Graduate in Diploma in Computer Applications",
+    title: "Certificate in Food Processing",
     imageUrl:
-      IMAGE_LIST[`${slugs.PGDCA}`],
-    imageAlt: "PGDCA in Dimapur",
+      IMAGE_LIST[`${slugs.FOOD_PROCESSING}`],
+    imageAlt: "Food Processing in Dimapur",
     description:
-      "Learn key concepts in computing, from basic programming to advanced software development. This beginner-friendly PGDCA course offers hands-on projects to build real-world IT skills. By the end, you'll be ready to excel in various tech roles.",
+      "Learn the fundamentals of food processing, from basic techniques to advanced preservation methods. This beginner-friendly course offers hands-on projects to develop practical skills.",
     badge: <SkillBadge />,
-    href: slugs.PGDCA
+    href: slugs.FOOD_PROCESSING
   },
 ];
 
@@ -339,6 +363,12 @@ function CourseSectionList() {
 
       <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
         {fourthLayerCourses.map((course) => (
+          <CourseCard key={course.title} {...course} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
+        {sixthLayerCourses.map((course) => (
           <CourseCard key={course.title} {...course} />
         ))}
       </div>

@@ -77,6 +77,7 @@ const longNavigation = {
             },
             { name: "UI/UX Designing", href: `/courses/${slugs.UIUX_DESIGN}` },
             { name: "Advanced Excel", href: `/courses/${slugs.ADVANCED_EXCEL}` },
+            { name: "Statistical Analysis with SPSS", href: `/courses/${slugs.SPSS}` },
             { name: "Tally with GST", href: `/courses/${slugs.GST}` },
             { name: "Hardware & Networking", href: `/courses/${slugs.HARDWARE_NETWORKING}` },
           ],
@@ -85,7 +86,9 @@ const longNavigation = {
           id: "programming",
           name: "Programming Foundation",
           items: [
-            { name: "Python", href: `/courses/${slugs.PYTHON}` }
+            { name: "Python", href: `/courses/${slugs.PYTHON}` },
+            { name: "JavaScript", href: `/courses/${slugs.JAVASCRIPT}` },
+            { name: "Go (Golang)", href: `/courses/${slugs.GO}` },
           ],
         },
         {

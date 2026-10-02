@@ -4,6 +4,9 @@ export const slugs = {
   GST: "gst",
   TALLY: "tally",
   PYTHON: "python",
+  JAVASCRIPT: "javascript",
+  GO: "golang",
+  GOLANG: "golang",
   ADVANCED_EXCEL: "advanced-excel",
   GRAPHIC_DESIGN: "graphic-designing",
   FRONTEND: "frontend-development",
@@ -19,5 +22,6 @@ export const slugs = {
   FULLSTACK_WEB_DEVELOPMENT : "fullstack-web-development",
   DATA_ANALYTICS : "data-analytics",
   GENERATIVE_AI: "generative-ai",
-  AGENTIC_AI: "ai-agents-autonomic-workflows"
+  AGENTIC_AI: "ai-agents-autonomic-workflows",
+  SPSS: "spss"
 };

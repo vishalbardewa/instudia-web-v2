@@ -99,6 +99,24 @@ const LANGUAGES: LanguageData[] = [
     highlights: ["Unrivaled performance & control", "Industry standard for game engines (Unreal)", "High-paying specialized engineering roles"],
     bestUse: "AAA Game Engines & System Performance",
   },
+  {
+    id: "golang",
+    name: "Go (Golang)",
+    badgeColor: "bg-[#00ADD8] text-white",
+    accentBorder: "border-[#00ADD8]",
+    description: "Engineered by Google for simplicity, blistering speed, and effortless concurrency. Powers modern cloud architecture, microservices, and DevOps tooling.",
+    scores: {
+      web: 88,
+      data_ai: 70,
+      enterprise: 94,
+      gamedev: 50,
+      easiest: 88,
+      demand: 92,
+      salary: 96,
+    },
+    highlights: ["Clean minimalist syntax (easy to learn)", "Built-in goroutines for extreme concurrency", "Powers Docker, Kubernetes & modern cloud backends"],
+    bestUse: "Cloud Backends, Microservices & High-Scale Systems",
+  },
 ];
 
 const EXPLANATIONS: Record<CareerGoal, Record<Priority, string>> = {

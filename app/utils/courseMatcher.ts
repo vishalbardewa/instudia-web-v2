@@ -33,10 +33,13 @@ export function getRecommendedCourses(keywords: string[] = [], maxResults = 2): 
       if ((keyword.includes('sql') || keyword.includes('database') || keyword.includes('postgres') || keyword.includes('mongodb')) && (slug === 'backend-development' || slug === 'data-analytics')) score += 3;
       if ((keyword.includes('figma') || keyword.includes('design') || keyword.includes('wireframe') || keyword.includes('ui/ux')) && slug === 'ui-ux-designing') score += 5;
       if ((keyword.includes('photoshop') || keyword.includes('illustrator') || keyword.includes('graphics')) && slug === 'graphic-designing') score += 5;
+      if ((keyword.includes('javascript') || keyword.includes('js') || keyword.includes('ecmascript') || keyword.includes('es6')) && slug === 'javascript') score += 6;
+      if ((keyword.includes('go') || keyword.includes('golang') || keyword.includes('goroutine') || keyword.includes('goroutines')) && slug === 'golang') score += 6;
       if ((keyword.includes('python') || keyword.includes('django')) && (slug === 'python' || slug === 'data-analytics')) score += 5;
       if ((keyword.includes('ai') || keyword.includes('llm') || keyword.includes('machine learning') || keyword.includes('generative')) && slug === 'generative-ai') score += 6;
       if ((keyword.includes('excel') || keyword.includes('spreadsheet') || keyword.includes('sheets')) && slug === 'advanced-excel') score += 5;
       if ((keyword.includes('tally') || keyword.includes('gst') || keyword.includes('accounting')) && (slug === 'gst' || slug === 'tally')) score += 5;
+      if ((keyword.includes('spss') || keyword.includes('statistics') || keyword.includes('hypothesis') || keyword.includes('anova') || keyword.includes('regression')) && slug === 'spss') score += 6;
       if ((keyword.includes('powerbi') || keyword.includes('dashboard') || keyword.includes('tableau') || keyword.includes('analytics')) && slug === 'buisness-intelligence-using-powerbi') score += 6;
       if ((keyword.includes('agile') || keyword.includes('scrum') || keyword.includes('jira') || keyword.includes('project')) && slug === 'learn-project-management') score += 5;
     });

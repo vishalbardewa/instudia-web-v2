@@ -2,6 +2,10 @@ export const IMAGE_LIST: Record<string,string> = {
     "diploma-in-computer-applications": 'https://ik.imagekit.io/dxffek9yf/course-list-page/dca.png?updatedAt=1726165860101',
     "retail-management": "https://ik.imagekit.io/dxffek9yf/course-list-page/retail.png?updatedAt=1726165860169",
     "python": "https://ik.imagekit.io/dxffek9yf/course-list-page/python.png?updatedAt=1726135539337",
+    "javascript": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?q=80&w=1200&auto=format&fit=crop",
+    "golang": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+    "go": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+    "go-programming": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
     "tally":"https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
     "frontend-development": "https://ik.imagekit.io/dxffek9yf/course-list-page/frontend.png?updatedAt=1726135539217",
     "backend-development":"https://ik.imagekit.io/dxffek9yf/course-list-page/backend.png?updatedAt=1726135539480",
@@ -19,5 +23,8 @@ export const IMAGE_LIST: Record<string,string> = {
     "gst": "https://ik.imagekit.io/dxffek9yf/course-list-page/tally.png?updatedAt=1726135539366",
     "data-analytics": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template.png?updatedAt=1754633884785",
     "generative-ai": "https://ik.imagekit.io/dxffek9yf/course-list-page/course-template-fs.png?updatedAt=1754633884789",
-    "ai-agents-autonomic-workflows": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858"
+    "ai-agents-autonomic-workflows": "https://ik.imagekit.io/dxffek9yf/course-list-page/uiux-design.png?updatedAt=1726138195858",
+    "spss": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    "spss-data-analysis": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    "ibm-spss": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
 }

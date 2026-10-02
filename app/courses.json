@@ -169,6 +169,163 @@
       ]
     },
     {
+      "slug": "javascript",
+      "category": "Technology",
+      "fullTitle": "Programming with JavaScript",
+      "pageTitle": {
+        "text": "Programming",
+        "highlightText": "with JavaScript"
+      },
+      "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?q=80&w=1200&auto=format&fit=crop",
+      "courseHightlight": "An introductory programming foundation course designed for beginners who want to master the language of the modern web. Learn fundamental syntax, ES6+ features, DOM manipulation, asynchronous programming, and hands-on algorithmic problem solving. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 1301,
+          "description": "JavaScript is the universal language of the web, executing natively in every internet browser and driving the interactive frontend and backend engines of millions of global applications."
+        },
+        {
+          "id": 1302,
+          "description": "Instant visual feedback and rapid prototyping. Unlike traditional compiled languages, JavaScript lets you write code and see the visual results instantly inside your browser console and live web interfaces."
+        },
+        {
+          "id": 1303,
+          "description": "High career versatility. A solid foundation in JavaScript opens clear pathways to Frontend Development with React, Backend Engineering with Node.js, and Mobile Apps with React Native."
+        },
+        {
+          "id": 1304,
+          "description": "Master essential computer science principles including event-driven execution, asynchronous promises, higher-order functions, and real-world data structure manipulation."
+        }
+      ],
+      "price": {
+        "original": 4999,
+        "discountedPrice": 2999
+      },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "CheckBadgeIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "1",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 6 and Above",
+          "icon": "BuildingLibraryIcon"
+        }
+      ],
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: JavaScript Foundations",
+          "description": "Runtime environments, variables (let/const), primitive data types, operators, and control flow."
+        },
+        {
+          "title": "Module 2: Functions, Arrays & Objects",
+          "description": "Arrow functions, scopes, closures, array methods (map/filter/reduce), and object manipulation."
+        },
+        {
+          "title": "Module 3: DOM & Browser Events",
+          "description": "Selecting HTML elements, event listeners, dynamic style manipulation, and interactive form handling."
+        },
+        {
+          "title": "Module 4: Asynchronous JS & Capstone Project",
+          "description": "Promises, async/await, fetching JSON REST APIs, and building an interactive web application from scratch."
+        }
+      ],
+      "previousSlugs": [
+        "javascript-foundation",
+        "learn-javascript"
+      ]
+    },
+    {
+      "slug": "golang",
+      "category": "Technology",
+      "fullTitle": "Programming with Go",
+      "pageTitle": {
+        "text": "Programming",
+        "highlightText": "with Go"
+      },
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+      "courseHightlight": "A comprehensive systems and backend foundation course designed for beginners and developers to master Go (Golang). Learn Go's clean syntax, static typing, struct-based composition, and blazing-fast concurrency with goroutines and channels. Now in Dimapur",
+      "fourReasons": [
+        {
+          "id": 1401,
+          "description": "Engineered by Google for speed, simplicity, and scale. Go combines the rapid development velocity of Python with the runtime performance, type safety, and memory efficiency of compiled C++."
+        },
+        {
+          "id": 1402,
+          "description": "First-class built-in concurrency. Go's lightweight goroutines and channels allow you to write high-performance concurrent software and networked servers without thread complexity."
+        },
+        {
+          "id": 1403,
+          "description": "The backbone of modern cloud and DevOps infrastructure. Industry standards like Docker, Kubernetes, Terraform, Prometheus, and CockroachDB are built in Go, creating massive industry demand."
+        },
+        {
+          "id": 1404,
+          "description": "Clean, minimalist, and readable design with zero bloated syntax. Go provides lightning-fast compilation times, single-binary deployments, and straightforward tooling out of the box."
+        }
+      ],
+      "price": {
+        "original": 5999,
+        "discountedPrice": 3499
+      },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "CheckBadgeIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "1",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Grade 8 and Above",
+          "icon": "BuildingLibraryIcon"
+        }
+      ],
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: Go Syntax & Environment Setup",
+          "description": "Go toolchain, package main, variables, strict typing, operators, conditionals, and loops."
+        },
+        {
+          "title": "Module 2: Data Structures & Pointers",
+          "description": "Slices, arrays, maps, structs, custom types, and understanding memory pointers clearly."
+        },
+        {
+          "title": "Module 3: Functions, Methods & Interfaces",
+          "description": "Multiple return values, idiomatic error handling, methods on structs, and interface polymorphism."
+        },
+        {
+          "title": "Module 4: Concurrency & Capstone Service",
+          "description": "Goroutines, channels, select statements, worker pools, and building a high-performance CLI utility or HTTP service."
+        }
+      ],
+      "previousSlugs": [
+        "go",
+        "go-programming",
+        "golang-foundation"
+      ]
+    },
+    {
       "slug": "gst",
       "category": "Finance",
       "fullTitle": "Tally with GST",
@@ -633,6 +790,84 @@
         }
       ],
       "previousSlugs": []
+    },
+    {
+      "slug": "spss",
+      "category": "Technology",
+      "fullTitle": "Statistical Analysis with SPSS",
+      "pageTitle": {
+        "text": "Statistical Analysis",
+        "highlightText": "with SPSS"
+      },
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+      "courseHightlight": "A comprehensive practical course on IBM SPSS designed for researchers, postgraduate students, faculty, and data analysts. Master data cleaning, variable transformation, descriptive statistics, hypothesis testing (t-tests, ANOVA, Chi-Square), regression models, and research survey analytics in Dimapur, Nagaland.",
+      "fourReasons": [
+        {
+          "id": 1501,
+          "description": "The global gold standard for academic and scientific research. SPSS is the premier statistical suite utilized by top universities, healthcare institutions, market research agencies, and NGOs for rigorous quantitative analysis."
+        },
+        {
+          "id": 1502,
+          "description": "Zero programming required. SPSS empowers researchers to perform sophisticated parametric and non-parametric data analyses through a clean, intuitive graphical interface without writing complex code."
+        },
+        {
+          "id": 1503,
+          "description": "Essential for dissertations, theses, and published journals. Learn how to transform raw questionnaire datasets into publication-ready APA-style tables, graphs, and statistically validated research findings."
+        },
+        {
+          "id": 1504,
+          "description": "In-demand career skills across social research, monitoring & evaluation (M&E), public health studies, and corporate market research organizations across Northeast India and nationally."
+        }
+      ],
+      "price": {
+        "original": 7999,
+        "discountedPrice": 4999
+      },
+      "features": [
+        {
+          "name": "Language",
+          "description": "English, Hindi & Nagamese",
+          "icon": "CheckBadgeIcon"
+        },
+        {
+          "name": "Certificate",
+          "description": "On Completion",
+          "icon": "AcademicCapIcon"
+        },
+        {
+          "name": "Duration",
+          "description": "1",
+          "icon": "ClockIcon"
+        },
+        {
+          "name": "Recommended Qualifications",
+          "description": "Graduate / Research Scholar / Basic Math",
+          "icon": "BuildingLibraryIcon"
+        }
+      ],
+      "inDemand": true,
+      "curriculum": [
+        {
+          "title": "Module 1: SPSS Environment & Data Preparation",
+          "description": "Data View vs. Variable View, defining measurement scales, importing from Excel/CSV, data screening, recoding, and computing variables."
+        },
+        {
+          "title": "Module 2: Descriptive Statistics & Data Visualization",
+          "description": "Frequencies, measures of central tendency and dispersion, cross-tabulation, charts, histograms, and testing data normality."
+        },
+        {
+          "title": "Module 3: Hypothesis Testing & Inferential Statistics",
+          "description": "Parametric & non-parametric tests: One-Sample, Independent & Paired Samples t-tests, One-Way ANOVA, and Chi-Square test of independence."
+        },
+        {
+          "title": "Module 4: Correlation, Regression & Research Capstone",
+          "description": "Pearson & Spearman correlations, linear & multiple regression, scale reliability with Cronbach's Alpha, and drafting APA-formatted research reports."
+        }
+      ],
+      "previousSlugs": [
+        "spss-data-analysis",
+        "ibm-spss"
+      ]
     },
     {
       "slug": "generative-ai",

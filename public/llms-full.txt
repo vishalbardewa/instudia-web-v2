@@ -74,7 +74,29 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   5. File I/O & Automation: File reading/writing, web scraping, automation scripts.
   6. Mini-Projects: Interactive command-line games, budget trackers, automated utilities.
 
-### 5. Frontend Development
+### 5. Programming with JavaScript
+- URL: https://www.instudianagaland.com/courses/javascript
+- Category: Software Engineering
+- Duration: 1-2 Months
+- Overview: Foundational programming course covering modern JavaScript (ES6+), DOM manipulation, and asynchronous programming for web engineering.
+- Key Modules:
+  1. JavaScript Foundations: Runtimes, let/const variables, primitive types, operators, and control flow.
+  2. Functions, Arrays & Objects: Arrow functions, lexical scope, closures, array methods (map, filter, reduce), and object manipulation.
+  3. DOM & Browser Events: DOM tree navigation, event handling, dynamic UI styling, and interactive forms.
+  4. Asynchronous JS & REST APIs: Promises, async/await, JSON HTTP fetch requests, and interactive web application capstone.
+
+### 6. Programming with Go
+- URL: https://www.instudianagaland.com/courses/golang
+- Category: Software Engineering
+- Duration: 1-2 Months
+- Overview: High-performance systems and backend foundation course teaching Google's Go (Golang), static typing, memory concepts, and lightweight concurrency.
+- Key Modules:
+  1. Go Syntax & Toolchain: Workspace setup, package main, static types, constants, conditionals, and loops.
+  2. Collections & Pointers: Arrays, slices, maps, custom structs, and pointer arithmetic basics.
+  3. Methods, Interfaces & Error Handling: Multi-value returns, idiomatic error checking, struct methods, and polymorphism with interfaces.
+  4. Concurrency & Microservices: Goroutines, channels, worker pools, select primitives, and building a high-speed CLI tool or HTTP backend.
+
+### 7. Frontend Development
 - URL: https://www.instudianagaland.com/courses/frontend-development
 - Category: Software Engineering
 - Duration: 2-3 Months
@@ -85,7 +107,7 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   3. JavaScript ES6+ deeply: array methods, event loop, APIs.
   4. React.js: Components, hooks, custom hooks, state management, SPA routing.
 
-### 6. Backend Development
+### 8. Backend Development
 - URL: https://www.instudianagaland.com/courses/backend-development
 - Category: Software Engineering
 - Duration: 2-3 Months
@@ -97,7 +119,7 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   4. Authentication, Authorization, Role-Based Access Control, JWT.
   5. Security best practices: CORS, rate limiting, sanitization.
 
-### 7. Graphic Designing
+### 9. Graphic Designing
 - URL: https://www.instudianagaland.com/courses/graphic-designing
 - Category: Creative & Interface Design
 - Duration: 3-6 Months
@@ -109,7 +131,7 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   4. CorelDRAW: Print layout, packaging design, brochures, flex printing formats.
   5. Portfolio Development: Creating a client-ready design portfolio.
 
-### 8. UI/UX Designing
+### 10. UI/UX Designing
 - URL: https://www.instudianagaland.com/courses/ui-ux-designing
 - Category: Creative & Interface Design
 - Duration: 3 Months
@@ -121,7 +143,7 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   4. Interactive Prototyping: Micro-interactions, animations, smart animate.
   5. Usability Testing & Developer Handoff.
 
-### 9. Tally Prime with Accounting
+### 11. Tally Prime with Accounting
 - URL: https://www.instudianagaland.com/courses/tally
 - Category: Accounting, Finance & Business
 - Duration: 1-2 Months
@@ -134,7 +156,7 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   5. Banking & Reconciliation: Bank statements, cheque register, auto-reconciliation.
   6. Financial Reports: Profit & loss statements, balance sheets, trial balance.
 
-### 10. GST Compliance & Certification
+### 12. GST Compliance & Certification
 - URL: https://www.instudianagaland.com/courses/gst
 - Category: Accounting, Finance & Business
 - Duration: 1-2 Months
@@ -146,7 +168,7 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   4. Return Filing: GSTR-1, GSTR-3B, annual returns.
   5. Tax reconciliation in Tally Prime.
 
-### 11. Advanced Excel
+### 13. Advanced Excel
 - URL: https://www.instudianagaland.com/courses/advance-excel
 - Category: Accounting, Finance & Business
 - Duration: 1 Month
@@ -158,7 +180,7 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   4. Interactive Executive Dashboards and data visualization.
   5. Data Validation, Conditional Formatting, and Macro basics.
 
-### 12. Business Intelligence using Power BI
+### 14. Business Intelligence using Power BI
 - URL: https://www.instudianagaland.com/courses/buisness-intelligence-using-powerbi
 - Category: Accounting, Finance & Business
 - Duration: 1-2 Months
@@ -169,17 +191,28 @@ instudia is dedicated to closing the technical skills gap in Northeast India by 
   3. DAX Calculations: Measures, calculated columns, time intelligence functions.
   4. Report Design: Slicers, KPI cards, drill-throughs, custom visuals.
 
-### 13. Data Analytics
+### 15. Data Analytics
 - URL: https://www.instudianagaland.com/courses/data-analytics
 - Category: Technology
 - Overview: Modern data analytics combining SQL, Python (Pandas/NumPy), and business visualization tools.
 
-### 14. Learn DevOps & Cloud Services
+### 16. Statistical Analysis with SPSS
+- URL: https://www.instudianagaland.com/courses/spss
+- Category: Technology / Research Analytics
+- Duration: 1-2 Months
+- Overview: Practical training in IBM SPSS for postgraduate research, academic dissertations, survey analysis, and corporate data analytics.
+- Key Modules:
+  1. SPSS Environment & Data Preparation: Variable definition, measurement scales, Excel/CSV import, data recoding, computing variables.
+  2. Descriptive Statistics & Visualizations: Measures of central tendency, dispersion, cross-tabulations, histograms, testing normality.
+  3. Inferential Statistics & Hypothesis Testing: Independent/paired t-tests, One-Way ANOVA, Chi-Square test of independence.
+  4. Correlation, Regression & Research Capstone: Pearson/Spearman correlation, multiple linear regression, Cronbach's Alpha reliability, APA reporting.
+
+### 17. Learn DevOps & Cloud Services
 - URL: https://www.instudianagaland.com/courses/learn-devops-cloud-services
 - Category: Technology
 - Overview: Containerization with Docker, cloud fundamentals, CI/CD pipeline automation, and server monitoring.
 
-### 15. Hardware & Networking
+### 18. Hardware & Networking
 - URL: https://www.instudianagaland.com/courses/hardware-networking
 - Category: Technology
 - Overview: Motherboard architecture, PC assembly, LAN configuration, TCP/IP basics, routers/switches setup, and hardware maintenance.

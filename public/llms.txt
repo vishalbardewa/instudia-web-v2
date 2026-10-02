@@ -29,12 +29,15 @@ instudia is Nagaland's premier technology and skill development institute offeri
 
 ### Software Engineering & Programming
 - [Programming with Python](https://www.instudianagaland.com/courses/python): Python programming fundamentals, data structures, automation scripts, and algorithmic thinking. Duration: 1-3 months.
+- [Programming with JavaScript](https://www.instudianagaland.com/courses/javascript): Modern JavaScript foundations, ES6+ syntax, DOM manipulation, asynchronous programming, and interactive web apps. Duration: 1-2 months.
+- [Programming with Go](https://www.instudianagaland.com/courses/golang): Systems and backend engineering with Go (Golang), static typing, goroutine concurrency, and microservices. Duration: 1-2 months.
 - [Fullstack Web Development](https://www.instudianagaland.com/courses/fullstack-web-development): Modern full stack engineering with React, Node.js, Express, MongoDB, and Git. Duration: 3-6 months.
 - [Frontend Development](https://www.instudianagaland.com/courses/frontend-development): HTML5, CSS3, Tailwind CSS, modern JavaScript ES6+, and React.
 - [Backend Development](https://www.instudianagaland.com/courses/backend-development): REST APIs, relational and NoSQL databases, authentication, and server deployment.
 - [C & C++ Programming](https://www.instudianagaland.com/courses/c-and-c-plus-plus): Low-level systems programming, memory management, and data structures.
 - [Java Programming](https://www.instudianagaland.com/courses/java): Object-oriented programming, enterprise application foundations, and data structures.
 - [Data Analytics](https://www.instudianagaland.com/courses/data-analytics): Exploratory data analysis, SQL, visualization, and Python for data insights.
+- [Statistical Analysis with SPSS](https://www.instudianagaland.com/courses/spss): IBM SPSS for research methodology, hypothesis testing, ANOVA, correlation, regression, and survey data analysis. Duration: 1-2 months.
 - [Learn DevOps & Cloud Services](https://www.instudianagaland.com/courses/learn-devops-cloud-services): Docker, CI/CD pipelines, cloud deployment, and infrastructure fundamentals.
 
 ### Creative & Interface Design

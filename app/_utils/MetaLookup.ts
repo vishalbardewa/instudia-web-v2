@@ -7,6 +7,21 @@ const META_LOOKUP: Record<string, { title: string; description: string }> = {
     description:
       "Master Python syntax, OOP & real-world projects in Dimapur. Beginner-friendly 1-month coding course in Nagaland. Join now!",
   },
+  [slugs.JAVASCRIPT]: {
+    title: "JavaScript Programming Foundation Course in Dimapur",
+    description:
+      "Master JavaScript syntax, ES6+, DOM manipulation & async logic in Dimapur. Practical coding foundation course in Nagaland. Enroll today!",
+  },
+  [slugs.GO]: {
+    title: "Go Programming Foundation Course in Dimapur",
+    description:
+      "Master Go (Golang) syntax, concurrency with goroutines, types & systems coding in Dimapur. High-performance coding course in Nagaland. Join now!",
+  },
+  [slugs.SPSS]: {
+    title: "SPSS Data Analysis Course in Dimapur, Nagaland",
+    description:
+      "Master statistical data analysis with IBM SPSS in Dimapur. Learn hypothesis testing, ANOVA, regression, research methodology & survey analytics. Enroll today!",
+  },
   [slugs.DCA]: {
     title: "DCA Computer Course in Dimapur, Nagaland",
     description:
