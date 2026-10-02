@@ -21,6 +21,7 @@ import HarmonyWheelWidget from "../../components/molecules/HarmonyWheelWidget";
 import PaletteRulesWidget from "../../components/molecules/PaletteRulesWidget";
 import HslRelationshipWidget from "../../components/molecules/HslRelationshipWidget";
 import HarmonyDefinitionsWidget from "../../components/molecules/HarmonyDefinitionsWidget";
+import CockroachDbExplorer from "../../components/molecules/CockroachDbExplorer";
 import TopStoriesSection from "../../components/molecules/TopStoriesSection";
 import AuthorCard from "../../components/molecules/AuthorCard";
 import { BreadcrumbSchema } from "../../components/SchemaOrg/BreadcrumbSchema";
@@ -497,6 +498,9 @@ export default async function BlogPostPage({ params }: Props) {
                           }
                           if (item.widgetId === "harmony-definitions") {
                             return <HarmonyDefinitionsWidget key={ii} />;
+                          }
+                          if (item.widgetId === "cockroachdb-explorer") {
+                            return <CockroachDbExplorer key={ii} />;
                           }
                           return null;
                         }
