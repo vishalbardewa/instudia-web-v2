@@ -376,6 +376,7 @@ export default function SterlingServicesView({
                           src={img}
                           alt={service.title}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 450px"
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />

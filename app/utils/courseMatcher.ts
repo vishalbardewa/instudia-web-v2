@@ -9,7 +9,7 @@ export interface Course {
 
 export function getRecommendedCourses(keywords: string[] = [], maxResults = 2): Course[] {
   if (!keywords || keywords.length === 0) return [];
-  
+
   const courses = coursesData.courses;
   const results = courses.map((course: any) => {
     let score = 0;
@@ -20,12 +20,12 @@ export function getRecommendedCourses(keywords: string[] = [], maxResults = 2): 
     keywords.forEach((kwRaw) => {
       const keyword = kwRaw.toLowerCase().trim();
       if (!keyword) return;
-      
+
       // Native String Constraints
       if (title.includes(keyword)) score += 5;
       if (slug.includes(keyword)) score += 4;
       if (highlight.includes(keyword)) score += 1;
-      
+
       // Extensive Synonym Targeting Constraints Matrix 
       if ((keyword.includes('react') || keyword.includes('html') || keyword.includes('css') || keyword.includes('javascript') || keyword.includes('next.js')) && slug === 'frontend-development') score += 5;
       if ((keyword.includes('node') || keyword.includes('express') || keyword.includes('api') || keyword.includes('backend') || keyword.includes('c++') || keyword.includes('java')) && slug === 'backend-development') score += 5;

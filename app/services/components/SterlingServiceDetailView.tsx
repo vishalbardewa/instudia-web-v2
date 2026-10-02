@@ -138,6 +138,7 @@ export default function SterlingServiceDetailView({
                 alt={service.title}
                 fill
                 priority
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />

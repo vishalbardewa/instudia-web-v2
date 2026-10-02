@@ -20,13 +20,11 @@ export default function CoskaHero() {
         <div className="mb-10 sm:mb-14">
           <h1 className="text-[2.6rem] leading-[0.96] sm:text-6xl md:text-7xl lg:text-[5.4rem] font-black uppercase tracking-[-0.035em] text-neutral-950">
             <span className="text-neutral-950">Skill is the only</span>{" "}
-            <span className="text-neutral-400"><span className="text-[#58FF1B]">✴</span> unfair advantage</span>
-            <br />
+            <span className="text-neutral-400"><span className="text-[#58FF1B]">✴</span> unfair advantage</span>{" "}
             <span className="text-neutral-400"><span className="text-[#FF1B58]">✦</span> Real-world</span>{" "}
-            <span className="text-neutral-950">tech careers</span>
-            <br />
+            <span className="text-neutral-950">tech careers</span>{" "}
             <span className="text-neutral-950">in Nagaland</span>{" "}
-            <span className="text-neutral-400"><span className="text-[#C21BFF]">•</span> built to scale</span>
+            <span className="text-neutral-400"><span className="text-[#C21BFF]">•</span> built for skills</span>
           </h1>
         </div>
 
