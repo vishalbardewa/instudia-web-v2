@@ -152,7 +152,7 @@ export default function Footer() {
   return (
     <footer
       aria-labelledby="footer-heading"
-      className="bg-[#FAF9F5] border-t border-neutral-200/80 text-neutral-700 font-sans"
+      className="bg-[#FAFAFA] border-t border-neutral-200/80 text-neutral-700 font-sans"
     >
       <h2 id="footer-heading" className="sr-only">
         Footer

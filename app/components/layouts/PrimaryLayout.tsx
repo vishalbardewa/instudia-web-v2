@@ -105,7 +105,7 @@ const longNavigation = {
     },
     {
       id: "services",
-      name: "Services & Solutions",
+      name: "Services",
       featured: [
         {
           name: "Web & Software Development",
