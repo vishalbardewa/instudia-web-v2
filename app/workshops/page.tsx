@@ -30,6 +30,8 @@ export interface WorkshopItem {
   title: string;
   subtitle?: string;
   date: string;
+  startDate: string;
+  endDate?: string;
   year: string;
   tags: string[];
   description: string;
@@ -51,6 +53,7 @@ const workshops: WorkshopItem[] = [
     title: "Seminar on AI in Education Sector at MGM College",
     subtitle: "at MGM College, Dimapur — Featured in Eastern Mirror",
     date: "July 4th, 2026",
+    startDate: "2026-07-04",
     year: "2026",
     tags: ["Seminar", "AI", "Higher Education"],
     description:
@@ -86,6 +89,7 @@ const workshops: WorkshopItem[] = [
     title: "Seminar on AI for Productivity at Immanuel College",
     subtitle: "at Immanuel College, Dimapur — Featured in Nagaland Tribune",
     date: "June 20th, 2026",
+    startDate: "2026-06-20",
     year: "2026",
     tags: ["Seminar", "AI", "Higher Education"],
     description:
@@ -121,6 +125,7 @@ const workshops: WorkshopItem[] = [
     title: "Seminar on AI Integration & Digital Productivity at Spring Blossoms Academy",
     subtitle: "at Spring Blossoms Academy, Dimapur",
     date: "June 15th, 2026",
+    startDate: "2026-06-15",
     year: "2026",
     tags: ["Seminar", "AI", "School Outreach"],
     description:
@@ -152,6 +157,7 @@ const workshops: WorkshopItem[] = [
     title: "Instudia Hosts AI Seminar at Beanstalk School",
     subtitle: "at Beanstalk School, Dimapur — Featured in Nagaland Tribune",
     date: "June 12th, 2026",
+    startDate: "2026-06-12",
     year: "2026",
     tags: ["Seminar", "AI", "School Outreach"],
     description:
@@ -187,6 +193,7 @@ const workshops: WorkshopItem[] = [
     title: "Seminar on Efficient Use of AI at Lewis Academy",
     subtitle: "at Lewis Academy, Dimapur — Featured in Nagaland Post",
     date: "June 6th, 2026",
+    startDate: "2026-06-06",
     year: "2026",
     tags: ["Seminar", "AI", "School Outreach"],
     description:
@@ -222,6 +229,8 @@ const workshops: WorkshopItem[] = [
     title: "CHSS Hosts 3-Day Seminar on AI Integration in Education",
     subtitle: "at Christian Higher Secondary School (CHSS), Dimapur — Featured in The Morung Express",
     date: "May 25, June 1 & June 2, 2026",
+    startDate: "2026-05-25",
+    endDate: "2026-06-02",
     year: "2026",
     tags: ["Seminar", "AI", "Commerce & Arts"],
     description:
@@ -257,6 +266,7 @@ const workshops: WorkshopItem[] = [
     title: "AI Integration for 21st-Century Learning & Productivity",
     subtitle: "in association with Assisi Higher Secondary School — Featured in The Morung Express",
     date: "May 23rd, 2026",
+    startDate: "2026-05-23",
     year: "2026",
     tags: ["Seminar", "AI", "Education"],
     description:
@@ -292,6 +302,7 @@ const workshops: WorkshopItem[] = [
     title: "Seminar on AI Integration & Productivity at Naga Adventist School",
     subtitle: "at Naga Adventist School, Dimapur",
     date: "May 22nd, 2026",
+    startDate: "2026-05-22",
     year: "2026",
     tags: ["Seminar", "AI", "School Outreach"],
     description:
@@ -323,6 +334,7 @@ const workshops: WorkshopItem[] = [
     title: "Navigating Your Career Roadmap — The Social Architect at NEISSR",
     subtitle: "at North East Institute of Social Sciences and Research (NEISSR), Chümoukedima",
     date: "April 17th, 2026",
+    startDate: "2026-04-17",
     year: "2026",
     tags: ["Seminar", "Career Guidance", "Higher Education"],
     description:
@@ -355,6 +367,7 @@ const workshops: WorkshopItem[] = [
   {
     title: "AI for Productive & Efficient Learning",
     date: "April 5th, 2025",
+    startDate: "2025-04-05",
     year: "2025",
     tags: ["Workshop", "AI"],
     description:
@@ -392,6 +405,7 @@ const workshops: WorkshopItem[] = [
     title: "Unlocking Potential with AI and Career Insights",
     subtitle: "at St. Edmund's Higher Secondary School — Featured in Eastern Mirror",
     date: "September 7th, 2024",
+    startDate: "2024-09-07",
     year: "2024",
     tags: ["Workshop", "AI"],
     description:
@@ -427,6 +441,8 @@ const workshops: WorkshopItem[] = [
     title: "Youth Upskilling Program",
     subtitle: "in association with Dimapur Ao Baptist Arogo",
     date: "March 1 – July 10, 2024",
+    startDate: "2024-03-01",
+    endDate: "2024-07-10",
     year: "2024",
     tags: ["Skill Program", "DABA"],
     description:
@@ -460,6 +476,8 @@ const workshops: WorkshopItem[] = [
     title: "6 Weeks ESDP Training Program",
     subtitle: "in association with Government of India & Ministry of MSME — Niuland",
     date: "October 30 – December 8, 2023",
+    startDate: "2023-10-30",
+    endDate: "2023-12-08",
     year: "2023",
     tags: ["Skill Program", "MSME"],
     description:
@@ -490,6 +508,7 @@ const workshops: WorkshopItem[] = [
   {
     title: "JobEx — instudia Job Fair",
     date: "March 11th, 2023",
+    startDate: "2023-03-11",
     year: "2023",
     tags: ["Job Fair"],
     description:
@@ -523,6 +542,7 @@ const workshops: WorkshopItem[] = [
     title: "Career Guidance at EduFest 2022",
     subtitle: "at Pilgrim Higher Secondary School",
     date: "September 17th, 2022",
+    startDate: "2022-09-17",
     year: "2022",
     tags: ["Career Guidance"],
     description:
@@ -553,6 +573,8 @@ const workshops: WorkshopItem[] = [
   {
     title: "Workshop on Photography & Python",
     date: "June 23–24, 2022",
+    startDate: "2022-06-23",
+    endDate: "2022-06-24",
     year: "2022",
     tags: ["Workshop"],
     description:
@@ -613,9 +635,12 @@ export default function WorkshopsPage() {
         "@type": "Event",
         "name": w.title,
         "description": w.description.slice(0, 200),
-        "startDate": w.date,
+        "startDate": w.startDate,
+        ...(w.endDate ? { "endDate": w.endDate } : {}),
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        ...(w.photos.length > 0 ? { "image": w.photos.map((p) => p.src) } : {}),
+        "url": `https://www.instudianagaland.com/workshops#${toId(w.title)}`,
         "location": {
           "@type": "Place",
           "name": "instudia, Dimapur",
