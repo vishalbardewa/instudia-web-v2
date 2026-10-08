@@ -202,12 +202,16 @@ export default function Footer() {
                 itemType="https://schema.org/LocalBusiness"
                 className="not-italic space-y-2.5"
               >
+                <span className="sr-only" itemProp="name">
+                  instudia
+                </span>
                 <div className="flex items-start gap-2.5">
                   <MapPinIcon className="w-4 h-4 text-brandpurple shrink-0 mt-0.5" />
-                  <div>
-                    <span className="sr-only" itemProp="name">
-                      instudia
-                    </span>
+                  <div
+                    itemProp="address"
+                    itemScope
+                    itemType="https://schema.org/PostalAddress"
+                  >
                     <span itemProp="streetAddress">
                       First Floor, Vikiye Center, Opp. Notun Bosti Gate
                     </span>
@@ -234,10 +238,9 @@ export default function Footer() {
                   <EnvelopeIcon className="w-4 h-4 text-brandpurple shrink-0" />
                   <a
                     href="mailto:instudia.nagaland@gmail.com"
-                    itemProp="email"
                     className="hover:text-neutral-900 transition-colors"
                   >
-                    instudia.nagaland@gmail.com
+                    <span itemProp="email">instudia.nagaland@gmail.com</span>
                   </a>
                 </div>
 

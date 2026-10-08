@@ -636,7 +636,7 @@ export default function WorkshopsPage() {
         "name": w.title,
         "description": w.description.slice(0, 200),
         "startDate": w.startDate,
-        ...(w.endDate ? { "endDate": w.endDate } : {}),
+        "endDate": w.endDate || w.startDate,
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         ...(w.photos.length > 0 ? { "image": w.photos.map((p) => p.src) } : {}),
