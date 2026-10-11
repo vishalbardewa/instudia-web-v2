@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ProgressBadge } from '../atom/ProgressBadge';
 import { MentorCard } from '../molecules/MentorCard';
@@ -114,9 +115,9 @@ const DashboardContent = () => {
         <p className="text-neutral-500 max-w-md mx-auto leading-relaxed">
           You haven't selected a target career role yet. Complete your Career Blueprint first so our AI engine can dynamically generate a custom learning roadmap for you.
         </p>
-        <a href="/tools/career-blueprint" className="px-8 py-4 mt-8 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-xl font-bold transition-all shadow-lg active:scale-95 inline-flex items-center gap-2">
+        <Link href="/tools/career-blueprint" className="px-8 py-4 mt-8 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-xl font-bold transition-all shadow-lg active:scale-95 inline-flex items-center gap-2">
           Create Your Blueprint
-        </a>
+        </Link>
       </div>
     );
   }
@@ -222,7 +223,7 @@ const DashboardContent = () => {
                 
                 <div className="space-y-3 relative z-10 w-full mb-8">
                   {recommendedCourses.map((course: any) => (
-                    <a key={course.slug} href={`/courses/${course.slug}`} className="flex items-center shadow-sm justify-between p-4 bg-white hover:bg-brandpurple/5 hover:border-brandpurple/30 border-2 border-neutral-100 rounded-xl transition-all group/card">
+                    <Link key={course.slug} href={`/courses/${course.slug}`} className="flex items-center shadow-sm justify-between p-4 bg-white hover:bg-brandpurple/5 hover:border-brandpurple/30 border-2 border-neutral-100 rounded-xl transition-all group/card">
                        <div className="flex flex-col">
                          <span className="font-extrabold text-[#1B1C1E] group-hover/card:text-brandpurple transition-colors text-[14.5px] leading-snug">{course.fullTitle}</span>
                          <span className="text-neutral-400 text-[11px] uppercase tracking-wider font-black mt-1">{course.category}</span>
@@ -230,16 +231,16 @@ const DashboardContent = () => {
                        <div className="p-1.5 bg-neutral-50 group-hover/card:bg-brandpurple/10 text-neutral-400 group-hover/card:text-brandpurple rounded-lg transition-colors shrink-0 ml-3">
                          <IconArrowRight size={18} stroke={2} />
                        </div>
-                    </a>
+                    </Link>
                   ))}
                 </div>
 
-                <a 
+                <Link 
                    href="/courses" 
                    className="w-full inline-flex justify-center items-center gap-2 py-4 px-6 bg-[#1B1C1E] hover:bg-neutral-800 text-white rounded-[14px] text-[15px] font-bold shadow-lg shadow-neutral-900/10 transition-all hover:-translate-y-1 active:scale-95 z-10"
                 >
                   Browse All Courses
-                </a>
+                </Link>
              </div>
           )}
         </div>}

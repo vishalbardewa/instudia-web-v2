@@ -166,7 +166,6 @@ export default function Page() {
               width={600}
               height={600}
               loading="lazy"
-              unoptimized
               sizes="(max-width: 1024px) 100vw, 384px"
             />
             <div className="w-full flex-auto">

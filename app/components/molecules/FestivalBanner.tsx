@@ -82,7 +82,7 @@ export default function FestivalBanner() {
 
         {!activeFestival ? (
           <Link
-            href="/contact"
+            href="/courses"
             className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-3 text-center group cursor-pointer max-w-full"
           >
             <span className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest bg-[#58FF1B]/15 text-[#58FF1B] border border-[#58FF1B]/50 shadow-[0_0_10px_rgba(88,255,27,0.3)] shrink-0 font-mono">
@@ -90,15 +90,15 @@ export default function FestivalBanner() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#58FF1B] opacity-75" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#58FF1B]" />
               </span>
-              <span className="hidden sm:inline">AGENTIC AI // PART 2</span>
-              <span className="sm:hidden">PART 2</span>
+              <span className="hidden sm:inline">ADMISSIONS OPEN // 2026</span>
+              <span className="sm:hidden">ADMISSIONS</span>
             </span>
 
             <span className="text-[11px] sm:text-sm font-semibold tracking-tight text-white group-hover:text-white transition-colors flex items-center gap-1 sm:gap-1.5">
-              <span className="hidden sm:inline">Agentic AI Workshop Part 2 — </span>
-              <span>Planning for End of September (Date TBA)</span>
+              <span className="hidden sm:inline">Admissions Open for New Batches — </span>
+              <span>Practical Tech, Coding & AI Programs in Dimapur</span>
               <span className="font-bold text-[#FFE01B] underline decoration-1 sm:decoration-2 underline-offset-2 group-hover:text-[#58FF1B] transition-colors whitespace-nowrap ml-0.5">
-                Enquire ↗
+                Explore Courses ↗
               </span>
             </span>
           </Link>

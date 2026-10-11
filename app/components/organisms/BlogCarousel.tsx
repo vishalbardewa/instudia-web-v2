@@ -9,28 +9,7 @@ import { Container } from "../atom/Container";
 // --- Authoritative Brand Palette ---
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
-function getOptimizedThumbnail(src: string): string {
-  if (!src) return src;
-  if (src.includes("ik.imagekit.io")) {
-    if (src.includes("tr:")) return src;
-    const parts = src.split("/blog-images/");
-    if (parts.length === 2) {
-      return `${parts[0]}/tr:w-600,f-webp,q-80/blog-images/${parts[1]}`;
-    }
-  }
-  if (src.includes("images.unsplash.com")) {
-    try {
-      const url = new URL(src);
-      url.searchParams.set("w", "600");
-      url.searchParams.set("q", "75");
-      url.searchParams.set("auto", "format");
-      return url.toString();
-    } catch {
-      return src;
-    }
-  }
-  return src;
-}
+import { getOptimizedThumbnail } from "../../utils/thumbnailOptimizer";
 
 // --- Swiss Brutalist Card Architecture ---
 function SwissBrutalistCard({ post, index }: { post: PostSummary; index: number }) {

@@ -40,7 +40,6 @@ export default function CoskaHero() {
                 fill
                 priority
                 fetchPriority="high"
-                unoptimized
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
@@ -73,7 +72,6 @@ export default function CoskaHero() {
                 src="/assets/images/programming1.jpg"
                 alt="Computer programming, web development and practical software courses in Nagaland"
                 fill
-                unoptimized
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
@@ -105,7 +103,6 @@ export default function CoskaHero() {
                 src="/assets/images/students-mission.webp"
                 alt="Instudia career mentorship, interview preparation and student outcomes"
                 fill
-                unoptimized
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
@@ -163,13 +160,13 @@ export default function CoskaHero() {
 
             {/* AI Workshop Pill */}
             <Link
-              href="/contact"
+              href="/workshops"
               className="inline-flex items-center justify-between px-8 py-4 rounded-full bg-white text-neutral-950 border border-neutral-300 hover:border-neutral-950 transition-all duration-300 shadow-sm group"
             >
               <span className="inline-flex items-center gap-2.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-xs font-bold uppercase tracking-wider">
-                  AI Workshop Part 2 (End Sept · TBA)
+                  Upcoming Batches & Workshops (Admissions Open)
                 </span>
               </span>
               <span className="text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
@@ -212,7 +209,6 @@ export default function CoskaHero() {
                   alt="ISO Certified Computer Institute in Dimapur, Nagaland"
                   width={140}
                   height={140}
-                  unoptimized
                   className="max-h-16 sm:max-h-18 w-auto object-contain"
                 />
               </div>
@@ -229,7 +225,6 @@ export default function CoskaHero() {
                   alt="National Institute for Advanced Computer Technology Training"
                   width={160}
                   height={70}
-                  unoptimized
                   className="max-h-12 sm:max-h-14 w-auto object-contain"
                 />
               </div>
@@ -246,7 +241,6 @@ export default function CoskaHero() {
                   alt="MSME Certified Skill Training Programs in Nagaland"
                   width={150}
                   height={90}
-                  unoptimized
                   className="max-h-14 sm:max-h-16 w-auto object-contain"
                 />
               </div>
@@ -263,7 +257,6 @@ export default function CoskaHero() {
                   alt="Tally Certified Institute in Dimapur, Nagaland"
                   width={150}
                   height={80}
-                  unoptimized
                   className="max-h-12 sm:max-h-14 w-auto object-contain"
                 />
               </div>

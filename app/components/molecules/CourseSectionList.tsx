@@ -275,7 +275,7 @@ const CourseCard = ({
   comingSoon = false
 }: ICourseCard) => (
   <div className={`${gridFix && "grid row-span-3"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
-    <Link href={`courses/${href}`} >
+    <Link href={`/courses/${href}`}>
       <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6">
         {badge}
         {comingSoon && <ComingSoonBadge />}

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
 import { TESTIMONIALS } from "../data/testimonials";
@@ -78,12 +79,12 @@ export default function SuccessStoriesPage() {
         <p className="text-brandpurple-100 text-lg max-w-xl mx-auto mb-10 text-white/80">
           Join hundreds of students who have upgraded their skills and launched new careers with Instudia.
         </p>
-        <a 
+        <Link 
           href="/courses" 
           className="inline-flex items-center justify-center px-8 py-4 bg-white text-brandpurple font-black rounded-xl hover:bg-gray-50 hover:scale-105 transition-all shadow-xl shadow-black/10"
         >
           Enroll Now
-        </a>
+        </Link>
       </section>
     </main>
   );

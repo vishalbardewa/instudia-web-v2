@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const CookieBanner = () => {
@@ -47,9 +48,9 @@ export const CookieBanner = () => {
               <h3 className="text-[15px] font-black text-[#1B1C1E] mb-1 tracking-tight">We value your privacy</h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
                 We use strictly necessary cookies to make our site work and optional analytics cookies to improve your experience. 
-                <a href="/cookie-policy" className="text-brandpurple font-bold ml-1.5 hover:underline underline-offset-2">
+                <Link href="/cookie-policy" className="text-brandpurple font-bold ml-1.5 hover:underline underline-offset-2">
                   Read Policy
-                </a>
+                </Link>
               </p>
             </div>
             

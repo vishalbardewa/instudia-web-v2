@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/contact', priority: 0.8, freq: 'monthly' as const },
     { route: '/workshops', priority: 0.85, freq: 'weekly' as const },
     { route: '/host-a-seminar', priority: 0.8, freq: 'monthly' as const },
-    { route: '/success-stories', priority: 0.85, freq: 'weekly' as const },
+    // { route: '/success-stories', priority: 0.85, freq: 'weekly' as const },
     { route: '/faq', priority: 0.8, freq: 'monthly' as const },
     { route: '/gallery', priority: 0.7, freq: 'monthly' as const },
     { route: '/careers', priority: 0.75, freq: 'monthly' as const },

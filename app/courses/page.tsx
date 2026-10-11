@@ -1,6 +1,7 @@
 import React from "react";
 import CourseSectionList from "../components/molecules/CourseSectionList";
 import CourseComparisonMatrix from "../components/molecules/CourseComparisonMatrix";
+import CourseQuickFinder from "../components/molecules/CourseQuickFinder";
 import Image from "next/image";
 import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
@@ -24,6 +25,16 @@ function Courses() {
       "url": canonicalFor(`/courses/${course.slug}`),
     })),
   };
+
+  const finderCourses = coursesData.courses.map((course: any) => ({
+    slug: course.slug,
+    category: course.category,
+    fullTitle: course.fullTitle,
+    courseHighlight: course.courseHightlight || course.courseHighlight,
+    durationMonths: course.features?.find((f: any) => f.name === "Duration")?.description,
+    inDemand: Boolean(course.inDemand),
+    qualification: course.features?.find((f: any) => f.name?.includes("Qualification"))?.description,
+  }));
 
   return (
     <div className="relative grid grid-cols-12 col-start-2 col-end-12">
@@ -219,6 +230,7 @@ function Courses() {
         </div>
       </section>
       <div className="col-start-2 col-end-12">
+        <CourseQuickFinder courses={finderCourses} />
         <CourseSectionList />
       </div>
       <div className="col-span-12">

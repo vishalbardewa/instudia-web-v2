@@ -81,7 +81,6 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
-        <link rel="preload" as="image" href="/assets/images/hero-students.webp" type="image/webp" fetchPriority="high" />
         <link rel="preconnect" href="https://ik.imagekit.io" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

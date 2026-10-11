@@ -22,7 +22,6 @@ export default function TestimonialWithStats() {
                     alt="Students at Instudia learning tech skills in Dimapur"
                     fill
                     loading="lazy"
-                    unoptimized
                     sizes="(max-width: 1024px) 100vw, 600px"
                   />
                   {/* Dark overlay */}

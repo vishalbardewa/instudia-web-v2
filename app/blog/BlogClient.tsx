@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { type PostSummary, formatDate } from "../data/types";
+import { getOptimizedThumbnail } from "../utils/thumbnailOptimizer";
 
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
@@ -33,8 +34,10 @@ function SwissBrutalistCard({ post, index, isLarge = false }: { post: PostSummar
         {/* Brutalist Image Vault */}
         <div className={`overflow-hidden relative border-black ${isLarge ? 'lg:w-3/5 lg:border-r-2 aspect-[16/9] lg:aspect-auto' : 'aspect-[16/9] border-b-2'}`}>
           <motion.img
-            src={post.coverImage}
+            src={getOptimizedThumbnail(post.coverImage, isLarge ? 1000 : 600)}
             alt={post.title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
           />
           <div className="absolute top-0 right-0 z-30">

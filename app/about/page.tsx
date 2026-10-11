@@ -5,7 +5,9 @@ import { SITE_URL, canonicalFor } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbSchema } from "../components/SchemaOrg/BreadcrumbSchema";
 import { staff } from "../data/staff";
-import HistoryTimeline from "./HistoryTimeline";
+import dynamic from "next/dynamic";
+
+const HistoryTimeline = dynamic(() => import("./HistoryTimeline"), { ssr: true });
 
 export const metadata = buildMetadata({
   title: "About Us — Tech & Skill Institute in Dimapur",

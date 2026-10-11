@@ -267,7 +267,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                                               className="object-cover object-center"
                                             />
                                           </div>
-                                          <a
+                                          <Link
                                             href={item.href}
                                             className="mt-6 block font-medium text-gray-900"
                                           >
@@ -276,7 +276,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                                               aria-hidden="true"
                                             />
                                             {item.name}
-                                          </a>
+                                          </Link>
                                           <p
                                             aria-hidden="true"
                                             className="mt-1"
@@ -307,12 +307,12 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                                                     key={item.name}
                                                     className="flex"
                                                   >
-                                                    <a
+                                                    <Link
                                                       href={item.href}
                                                       className="hover:text-gray-800"
                                                     >
                                                       {item.name}
-                                                    </a>
+                                                    </Link>
                                                   </li>
                                                 )
                                               )}
@@ -333,7 +333,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                 ))}
 
                 {navigation.pages.map((page: any) => (
-                  <a
+                  <Link
                     key={page.name}
                     href={page.href}
                     className="flex items-center text-[15px] font-semibold text-[#1B1C1E] hover:text-brandpurple transition-colors relative group"
@@ -348,7 +348,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                         New
                       </span>
                     )}
-                  </a>
+                  </Link>
                 ))}
 
               </div>

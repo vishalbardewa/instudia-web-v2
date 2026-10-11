@@ -1,5 +1,15 @@
-import { loadAllPosts } from "@/app/data/parsePost";
+import { loadAllPostSummaries } from "@/app/data/parsePost";
+import type { PostSummary } from "@/app/data/types";
 import { NextRequest, NextResponse } from "next/server";
+
+let cachedPosts: PostSummary[] | null = null;
+
+function getPostSummaries(): PostSummary[] {
+  if (!cachedPosts || process.env.NODE_ENV === "development") {
+    cachedPosts = loadAllPostSummaries();
+  }
+  return cachedPosts;
+}
 
 // Static course data for search
 const COURSES = [
@@ -34,7 +44,7 @@ export async function GET(req: NextRequest) {
   }
 
   // Search blog posts
-  const posts = loadAllPosts();
+  const posts = getPostSummaries();
   const postResults = posts
     .filter(
       (p) =>

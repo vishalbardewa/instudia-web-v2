@@ -5,7 +5,6 @@ import { buildMetadata } from "@/lib/metadata";
 import { posts } from "../data/posts";
 import BlogClient from "./BlogClient";
 import { Container } from "../components/atom/Container";
-import { motion } from "framer-motion";
 
 export const metadata: Metadata = buildMetadata({
   title: "Tech & Career Insights Blog in Dimapur",

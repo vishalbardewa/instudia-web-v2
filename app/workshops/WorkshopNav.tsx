@@ -56,29 +56,40 @@ export default function WorkshopNav({ groups }: { groups: YearGroup[] }) {
   };
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    // Single shared IntersectionObserver instance for all workshop items
+    const itemToYearMap = new Map<string, string>();
+    const elements: HTMLElement[] = [];
 
-    // Observe each workshop item
     groups.forEach((group) => {
       group.items.forEach(({ id, year }) => {
+        itemToYearMap.set(id, year);
         const el = document.getElementById(id);
-        if (!el) return;
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setActiveItemId(id);
-              // Auto-expand active year accordion if not open
-              setExpandedYears((prev) => ({ ...prev, [year]: true }));
-            }
-          },
-          { rootMargin: "-25% 0px -55% 0px", threshold: 0 }
-        );
-        observer.observe(el);
-        observers.push(observer);
+        if (el) elements.push(el);
       });
     });
 
-    return () => observers.forEach((o) => o.disconnect());
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const year = itemToYearMap.get(id);
+            setActiveItemId(id);
+            if (year) {
+              setExpandedYears((prev) => (prev[year] ? prev : { ...prev, [year]: true }));
+            }
+            break;
+          }
+        }
+      },
+      { rootMargin: "-25% 0px -55% 0px", threshold: 0 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, [groups]);
 
   return (

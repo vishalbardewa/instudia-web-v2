@@ -23,7 +23,7 @@ const navigation = {
     { name: "All Courses", href: "/courses" },
     { name: "Workshops", href: "/workshops" },
     { name: "Host a Seminar", href: "/host-a-seminar" },
-    { name: "Success Stories", href: "/success-stories" },
+    // { name: "Success Stories", href: "/success-stories" },
   ] as FooterLink[],
   services: [
     { name: "Services Overview", href: "/services", badge: "Hub" },
