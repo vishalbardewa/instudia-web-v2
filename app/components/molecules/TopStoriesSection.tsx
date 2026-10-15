@@ -2,7 +2,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, useScroll, useSpring } from "framer-motion";
 import { type PostSummary, formatDate } from "@/app/data/types";
 
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
@@ -21,19 +20,15 @@ export default function TopStoriesSection({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const { scrollXProgress } = useScroll({ container: scrollRef });
-  const smoothProgress = useSpring(scrollXProgress, {
-    stiffness: 300,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const checkScroll = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
     setCanScrollLeft(scrollLeft > 10);
     setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    const maxScroll = scrollWidth - clientWidth;
+    setScrollProgress(maxScroll > 0 ? scrollLeft / maxScroll : 0);
   };
 
   useEffect(() => {
@@ -217,11 +212,10 @@ export default function TopStoriesSection({
         {/* Scroll Progress Bar Track (Matching Screenshot) */}
         <div className="mt-4 pt-2 flex items-center justify-center">
           <div className="w-full max-w-xs sm:max-w-md h-1.5 bg-neutral-200 rounded-full overflow-hidden relative">
-            <motion.div
-              className="h-full bg-black rounded-full"
+            <div
+              className="h-full bg-black rounded-full transition-transform duration-100 ease-out origin-left"
               style={{
-                scaleX: smoothProgress,
-                transformOrigin: "left",
+                transform: `scaleX(${scrollProgress})`,
               }}
             />
           </div>
