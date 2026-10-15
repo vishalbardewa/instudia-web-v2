@@ -40,10 +40,15 @@ export default function ServiceInquiryForm({
     setStatus("idle");
     setErrorMessage("");
 
-    // Validate phone
-    const cleanPhone = formData.phone.replace(/[\s\-()+]/g, "").slice(-10);
-    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
-      setErrorMessage("Please enter a valid 10-digit Indian phone number.");
+    // Resilient phone normalization (Postel's Law)
+    const rawPhone = formData.phone.replace(/\D/g, "");
+    const cleanPhone =
+      rawPhone.length > 10 && rawPhone.startsWith("91")
+        ? rawPhone.slice(2, 12)
+        : rawPhone.slice(-10);
+
+    if (!cleanPhone || cleanPhone.length !== 10 || !/^[6-9]\d{9}$/.test(cleanPhone)) {
+      setErrorMessage("Please enter a valid 10-digit mobile number for WhatsApp follow-up.");
       setLoading(false);
       return;
     }
@@ -157,6 +162,9 @@ export default function ServiceInquiryForm({
                 onChange={handleInputChange}
                 className="w-full rounded-xl bg-white border border-neutral-300 px-4 py-3 text-neutral-900 placeholder:text-neutral-400 focus:outline-hidden focus:border-[#121212] focus:ring-1 focus:ring-[#121212] transition-all text-sm shadow-2xs"
               />
+              <p className="text-[10px] text-neutral-400 font-mono mt-1">
+                Direct WhatsApp consultation will be scheduled through this number.
+              </p>
             </div>
           </div>
 

@@ -44,7 +44,6 @@ interface ToolProps {
   icon?: string;
   category?: 'student' | 'teacher';
   href: string;
-  statusIcon?: string;
   statusMessage?: string;
   style: string;
   imageUrl?: string;
@@ -57,7 +56,6 @@ const tools: ToolProps[] = [
     href: "/tools/career-guide",
     description: "An interactive, 80,000 Hours-inspired guide to building high-impact careers and finding your problem match in Nagaland.",
     style: "flourescent",
-    statusIcon: "🧭",
     statusMessage: "New Guide",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-6.png"
@@ -67,7 +65,6 @@ const tools: ToolProps[] = [
     href: "/tools/career-blueprint",
     description: "Bridge the gap between your current skills and your dream roles.",
     style: "purple",
-    statusIcon: "⭐",
     statusMessage: "Updated",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png"
@@ -77,7 +74,6 @@ const tools: ToolProps[] = [
     href: "/tools/salary-insights",
     description: "Discover salary benchmarks for various roles and industries.",
     style: "redhue",
-    statusIcon: "📈",
     statusMessage: "Updated",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-2.png"
@@ -87,7 +83,6 @@ const tools: ToolProps[] = [
     href: "/tools/ats-analyzer",
     description: "Scan your resume for ATS compliance and get personalized recommendations.",
     style: "brightyellow",
-    statusIcon: "🔍",
     statusMessage: "Most Popular",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-3.png"
@@ -97,7 +92,6 @@ const tools: ToolProps[] = [
     href: "/tools/study-planner",
     description: "Get a personalized study plan based on your skills and interests.",
     style: "flourescent",
-    statusIcon: "📅",
     statusMessage: "Updated",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-4.png"
@@ -107,7 +101,6 @@ const tools: ToolProps[] = [
     href: "/tools/assessment-designer",
     description: "Create high-quality, calibrated assessments strictly based on your source material for Indian standards.",
     style: "flourescent",
-    statusIcon: "🎓",
     statusMessage: "New for Teachers",
     category: "teacher",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-5.png"
@@ -117,7 +110,6 @@ const tools: ToolProps[] = [
     href: "/tools/lecture-note-generator",
     description: "Transform complex text into guided lecture notes with analogies, visual cues, and the 'Rule of Three'.",
     style: "purple",
-    statusIcon: "👨‍🏫",
     statusMessage: "New for Teachers",
     category: "teacher",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-6.png"
@@ -127,7 +119,6 @@ const tools: ToolProps[] = [
     href: "/tools/resume-builder",
     description: "Create professional, ATS-optimized resumes with real-time AI content suggestions.",
     style: "purple",
-    statusIcon: "✨",
     statusMessage: "New",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-7.png"
@@ -137,7 +128,6 @@ const tools: ToolProps[] = [
     href: "/tools/flashcards",
     description: "Create and study interactive flashcards using Markdown with a swipeable, Deck-like interface.",
     style: "flourescent",
-    statusIcon: "🗂️",
     statusMessage: "New",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-4.png"
@@ -147,7 +137,6 @@ const tools: ToolProps[] = [
     href: "/tools/career-planner",
     description: "Map your career goals, milestone roadmaps, and targeted skills with an interactive planner.",
     style: "brightyellow",
-    statusIcon: "🎯",
     statusMessage: "Interactive Tool",
     category: "student",
     imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-1.png"
@@ -223,7 +212,7 @@ const styles: Record<string, { bg: string; border: string; text: string; hover: 
   }
 }
 
-const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, style, imageUrl, priority }: ToolProps) => {
+const ToolCard = ({ name, description, icon, statusMessage, href, style, imageUrl, priority }: ToolProps) => {
   return (
     <Link href={href} className={`group block w-full max-w-sm mx-auto md:mx-0 rounded-[2rem] p-2 shadow-sm transition-shadow hover:shadow-lg ${styles[style].bg} ${styles[style].border} ${styles[style].text} ${styles[style].hover}`}>
       <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-stone-50">
@@ -263,10 +252,11 @@ const ToolCard = ({ name, description, icon, statusIcon, statusMessage, href, st
         <button className="rounded-xl border border-stone-200 bg-white px-5 py-2.5 text-sm font-semibold text-stone-900 transition-colors hover:bg-stone-50">
           Launch
         </button>
-        <div className="flex items-center gap-2 text-sm text-stone-500">
-          {statusIcon}
-          <span>{statusMessage}</span>
-        </div>
+        {statusMessage && (
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-stone-500">
+            <span>{statusMessage}</span>
+          </div>
+        )}
       </div>
     </Link>
   );

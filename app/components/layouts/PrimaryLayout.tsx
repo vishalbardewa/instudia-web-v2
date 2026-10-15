@@ -1,8 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { IconHome, IconUser, IconMap, IconBriefcase, IconBook } from "@tabler/icons-react";
-import { IconMessage } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconUser,
+  IconBriefcase,
+  IconBook,
+  IconMessage,
+  IconTools,
+} from "@tabler/icons-react";
 import { FloatingNav } from "../organisms/FloatingNav";
 import Footer from "../organisms/Footer";
 import NavigationWithDropdown from "../organisms/NavigationWithDropdown";
@@ -15,32 +21,32 @@ const navItems = [
   {
     name: "Home",
     link: "/",
-    icon: <IconHome fill="black" className="h-6 w-6 text-black dark:text-white" />,
+    icon: <IconHome size={19} stroke={2} className="shrink-0" />,
   },
   {
     name: "Courses",
     link: "/courses",
-    icon: <IconBook fill="black" className="h-6 w-6 text-black dark:text-white" />,
+    icon: <IconBook size={19} stroke={2} className="shrink-0" />,
   },
   {
     name: "Services",
     link: "/services",
-    icon: <IconBriefcase fill="black" className="h-6 w-6 text-black dark:text-white" />,
+    icon: <IconBriefcase size={19} stroke={2} className="shrink-0" />,
   },
   {
     name: "About",
     link: "/about",
-    icon: <IconUser fill="black" className="h-6 w-6 text-black dark:text-white" />,
+    icon: <IconUser size={19} stroke={2} className="shrink-0" />,
   },
   {
     name: "Contact",
     link: "/contact",
-    icon: <IconMessage fill="black" className="h-6 w-6 text-black dark:text-white" />,
+    icon: <IconMessage size={19} stroke={2} className="shrink-0" />,
   },
   {
     name: "Tools",
     link: "/tools",
-    icon: <IconHome fill="black" className="h-6 w-6 text-black dark:text-white" />,
+    icon: <IconTools size={19} stroke={2} className="shrink-0" />,
   },
 ];
 
@@ -185,9 +191,9 @@ export default function PrimaryLayout({
       <div className="print:hidden">
         <FloatingNav navItems={navItems} />
         <NavigationWithDropdown navigation={longNavigation} onSearch={() => setSearchOpen(true)} />
+      <div className="pb-20 sm:pb-0">
+        {children}
       </div>
-      {children}
-      <div className="print:hidden">
         <Footer />
         <ClientWidgets searchOpen={searchOpen} onCloseSearch={() => setSearchOpen(false)} />
       </div>

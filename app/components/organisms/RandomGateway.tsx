@@ -23,6 +23,16 @@ export default function RandomGateway() {
     setComponent(() => pick);
   }, []);
 
-  if (!Component) return null;
+  if (!Component) {
+    return (
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 animate-pulse" aria-hidden="true">
+        <div className="h-[420px] rounded-[2.5rem] bg-neutral-100/80 border border-neutral-200/60 flex flex-col items-center justify-center gap-4">
+          <div className="w-12 h-12 rounded-full bg-neutral-200/60" />
+          <div className="h-4 w-48 rounded-full bg-neutral-200/60" />
+        </div>
+      </div>
+    );
+  }
+
   return <Component />;
 }

@@ -9,7 +9,6 @@ import {
   ClockIcon,
   AcademicCapIcon,
   CheckCircleIcon,
-  SparklesIcon,
 } from "@heroicons/react/24/outline";
 
 export interface CourseItemData {
@@ -97,10 +96,9 @@ export default function CourseQuickFinder({ courses }: Props) {
       {/* Header bar */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-neutral-200">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brandpurple/10 text-brandpurple text-xs font-mono uppercase tracking-wider mb-2">
-            <SparklesIcon className="w-3.5 h-3.5" />
-            <span>Interactive Course Finder</span>
-          </div>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brandpurple mb-2">
+            Course Catalog &amp; Directory
+          </p>
           <h2 className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
             Find the right program for your goals
           </h2>

@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { IconQuote, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const featuredTestimonial = {
   body: "I enrolled for DCA course and I wholeheartedly recommend Instudia to anyone ready to embrace growth and conquer new horizons! The platform’s dynamic range of courses empowers you to master skills that matter, while its vibrant, supportive community fuels your journey every step of the way. Whether you’re sharpening your expertise for the future or diving into bold challenges, Instudia is the ultimate launchpad for unlocking your potential.",
@@ -87,6 +89,8 @@ const testimonials = [
 
 export default function TestimonialGrid() {
   const [activeTestimonial, setActiveTestimonial] = useState<any>(null);
+  const containerRef = useRef<HTMLElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   // Prevent background scrolling natively when a lightbox state is active
   useEffect(() => {
@@ -98,8 +102,59 @@ export default function TestimonialGrid() {
     return () => { document.body.style.overflow = 'unset'; };
   }, [activeTestimonial]);
 
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      // 1. Header entrance
+      gsap.fromTo(
+        ".testimonial-header-reveal",
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // 2. Testimonial cards stagger
+      if (gridRef.current) {
+        const figures = gridRef.current.querySelectorAll("figure");
+        gsap.fromTo(
+          figures,
+          { opacity: 0, y: 36, scale: 0.97 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.08,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: "top 82%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFA] py-24 sm:py-32 border-y border-neutral-200/50">
+    <section ref={containerRef} className="relative overflow-hidden bg-[#FAFAFA] py-24 sm:py-32 border-y border-neutral-200/50">
 
       {/* Target localized Webkit scrollbar structural overrides completely preventing clipping natively */}
       <style dangerouslySetInnerHTML={{
@@ -127,17 +182,17 @@ export default function TestimonialGrid() {
 
         {/* Typographic Header Block matching ecosystem variables */}
         <div className="mx-auto max-w-3xl text-center mb-16 sm:mb-24">
-          <p className="text-xs md:text-sm font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
+          <p className="testimonial-header-reveal text-xs md:text-sm font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">
             Wall of Love
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#1B1C1E] leading-tight">
+          <h2 className="testimonial-header-reveal text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#1B1C1E] leading-tight">
             Transformations
           </h2>
-          <p className="text-xs md:text-sm font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">built by us. driven by them</p>
+          <p className="testimonial-header-reveal text-xs md:text-sm font-extrabold tracking-[0.2em] text-brandpurple uppercase mb-4">built by us. driven by them</p>
         </div>
 
         {/* Core Rendering Grid */}
-        <div className="mx-auto grid max-w-2xl grid-cols-1 grid-rows-1 gap-6 sm:gap-8 lg:mx-0 lg:max-w-none lg:grid-flow-col lg:grid-cols-4">
+        <div ref={gridRef} className="mx-auto grid max-w-2xl grid-cols-1 grid-rows-1 gap-6 sm:gap-8 lg:mx-0 lg:max-w-none lg:grid-flow-col lg:grid-cols-4">
 
           {/* Featured Dominant Testimonial Card */}
           <figure
@@ -227,6 +282,7 @@ export default function TestimonialGrid() {
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-3xl bg-white rounded-[2.5rem] p-8 sm:p-12 md:p-16 shadow-2xl border border-neutral-100 flex flex-col max-h-[90vh] overflow-y-auto modal-scrollbar"
+              data-lenis-prevent
             >
               {/* Escape Button */}
               <button

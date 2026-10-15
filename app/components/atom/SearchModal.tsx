@@ -172,8 +172,12 @@ export default function SearchModal({ open, onClose }: Props) {
         {/* Empty state */}
         {!loading && query.length >= 2 && results.length === 0 && (
           <div className="px-5 py-10 text-center">
-            <p className="text-2xl mb-2">🔍</p>
-            <p className="text-sm font-semibold text-gray-500">No results for "{query}"</p>
+            <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-3 text-neutral-400">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
+              </svg>
+            </div>
+            <p className="text-sm font-semibold text-gray-700">No results for "{query}"</p>
             <p className="text-xs text-gray-400 mt-1">Try searching for a course name or topic</p>
           </div>
         )}
@@ -210,7 +214,7 @@ export default function SearchModal({ open, onClose }: Props) {
                         : "text-[#1B1C1E] bg-neutral-100 hover:bg-brandpurple hover:text-white"
                     }`}
                   >
-                    {term === "Free Masterclass" ? `🎁 ${term}` : term}
+                    {term}
                   </button>
                 ))}
               </div>

@@ -67,6 +67,18 @@ A true autonomous agent operates on a dynamic **ReAct loop (Reason -> Act -> Obs
 
 Building systems that run these cycles reliably in production requires defensive engineering, structured tool routers, memory pruning, and isolated execution guardrails.
 
+Below is an interactive walkthrough of this exact self-healing loop in action, showing how an autonomous agent intercepts container test failures, revises its hypothesis, and repairs the codebase:
+
+```json
+{
+  "widgetSpec": {
+    "id": "interactive-sequence",
+    "preset": "autonomous-agent-react",
+    "title": "Autonomous ReAct Loop and Self-Healing Execution"
+  }
+}
+```
+
 ---
 
 ## What You Will Build: Zero Fluff, Pure Code

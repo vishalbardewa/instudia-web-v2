@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "./components/atom/MotionProvider";
+import SmoothScrollProvider from "./components/atom/SmoothScrollProvider";
 
 import ConditionalLayout from "./components/layouts/ConditionalLayout";
 import DeviceSizeIndicator from "./components/atom/DeviceSizeIndicator";
@@ -106,12 +107,14 @@ export default function RootLayout({
         />
       </head>
       <body className={jakarta.className}>
-        <MotionProvider>
-          <ConditionalLayout>
-            <DeviceSizeIndicator />
-            {children}
-          </ConditionalLayout>
-        </MotionProvider>
+        <SmoothScrollProvider>
+          <MotionProvider>
+            <ConditionalLayout>
+              <DeviceSizeIndicator />
+              {children}
+            </ConditionalLayout>
+          </MotionProvider>
+        </SmoothScrollProvider>
         {/* Deferred analytics — loads after page is interactive */}
         {GA_MEASUREMENT_ID && (
           <Suspense fallback={null}>

@@ -62,8 +62,9 @@ export default function MasterclassModal() {
     if (!f.email.trim()) e.email = "Email is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) e.email = "Enter a valid email address.";
     
+    const sanitizedPhone = f.phone.replace(/\D/g, "").slice(-10);
     if (!f.phone.trim()) e.phone = "Phone number is required.";
-    else if (!/^[0-9]{10}$/.test(f.phone.trim())) e.phone = "Enter a valid 10-digit phone number.";
+    else if (!/^[6-9]\d{9}$/.test(sanitizedPhone)) e.phone = "Enter a valid 10-digit phone number.";
     
     return e;
   };
@@ -233,7 +234,8 @@ export default function MasterclassModal() {
                           placeholder="9876543210"
                           value={form.phone}
                           onChange={(e) => {
-                            const val = e.target.value.replace(/\D/g, "");
+                            const raw = e.target.value.replace(/\D/g, "");
+                            const val = raw.length > 10 && raw.startsWith("91") ? raw.slice(2, 12) : raw.slice(0, 10);
                             setForm({ ...form, phone: val });
                             if (touched.phone) setErrors((prev) => ({ ...prev, phone: validate({ ...form, phone: val }).phone }));
                           }}

@@ -10,7 +10,6 @@ import {
   CheckCircleIcon,
   XCircleIcon,
   ShieldCheckIcon,
-  SparklesIcon,
   ClockIcon,
   ChevronDownIcon,
   BuildingOffice2Icon,
@@ -141,15 +140,6 @@ export default function SterlingServiceDetailView({
                 sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-neutral-900 text-xs font-mono">
-                <span className="bg-white/95 backdrop-blur-xs px-3 py-1.5 rounded-lg border border-neutral-200 font-bold shadow-xs">
-                  Dedicated Senior Pod
-                </span>
-                <span className="bg-white/95 backdrop-blur-xs px-3 py-1.5 rounded-lg border border-neutral-200 font-bold shadow-xs">
-                  Fixed SOW
-                </span>
-              </div>
             </div>
 
             {/* Metric Counters Grid */}
@@ -467,7 +457,7 @@ export default function SterlingServiceDetailView({
           </p>
           <div className="pt-6 border-t border-neutral-200/80 flex items-center justify-between text-xs font-mono text-neutral-500">
             <span>Client Outcome Confirmed</span>
-            <span className="text-[#121212] font-bold">100% Production SLA</span>
+            <span className="text-[#121212] font-bold">Production Verified</span>
           </div>
         </div>
       </section>
@@ -501,7 +491,9 @@ export default function SterlingServiceDetailView({
                   onClick={() =>
                     setOpenFaqIndex((prev) => (prev === idx ? null : idx))
                   }
-                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 font-bold text-[#121212] text-base sm:text-lg hover:text-black transition-colors"
+                  aria-expanded={isOpen}
+                  aria-controls={`service-faq-${idx}`}
+                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 font-bold text-[#121212] text-base sm:text-lg hover:text-black transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-inset"
                 >
                   <span>{faq.question}</span>
                   <div
@@ -513,7 +505,11 @@ export default function SterlingServiceDetailView({
                   </div>
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 sm:px-7 sm:pb-7 text-neutral-600 text-sm sm:text-base leading-relaxed border-t border-neutral-100 pt-4">
+                  <div
+                    id={`service-faq-${idx}`}
+                    role="region"
+                    className="px-6 pb-6 sm:px-7 sm:pb-7 text-neutral-600 text-sm sm:text-base leading-relaxed border-t border-neutral-100 pt-4"
+                  >
                     {faq.answer}
                   </div>
                 )}

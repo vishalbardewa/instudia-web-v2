@@ -94,11 +94,12 @@ export default function FestivalBanner() {
               <span className="sm:hidden">ADMISSIONS</span>
             </span>
 
-            <span className="text-[11px] sm:text-sm font-semibold tracking-tight text-white group-hover:text-white transition-colors flex items-center gap-1 sm:gap-1.5">
+            <span className="text-[11px] sm:text-sm font-semibold tracking-tight text-white group-hover:text-white transition-colors flex items-center gap-1 sm:gap-1.5 truncate sm:overflow-visible">
               <span className="hidden sm:inline">Admissions Open for New Batches — </span>
-              <span>Practical Tech, Coding & AI Programs in Dimapur</span>
+              <span className="hidden sm:inline">Practical Tech &amp; Coding Programs in Dimapur</span>
+              <span className="sm:hidden">New Batches Now Enrolling &mdash;</span>
               <span className="font-bold text-[#FFE01B] underline decoration-1 sm:decoration-2 underline-offset-2 group-hover:text-[#58FF1B] transition-colors whitespace-nowrap ml-0.5">
-                Explore Courses ↗
+                Explore &rarr;
               </span>
             </span>
           </Link>

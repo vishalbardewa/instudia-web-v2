@@ -10,7 +10,7 @@ import {
   CheckCircleIcon,
   XCircleIcon,
   ShieldCheckIcon,
-  SparklesIcon,
+  BriefcaseIcon,
   ClockIcon,
   ChevronDownIcon,
   BuildingOffice2Icon,
@@ -84,7 +84,7 @@ const serviceIcons: Record<string, React.ReactNode> = {
   "corporate-tech-training": <UsersIcon className="w-5 h-5 text-[#056671]" />,
   "campus-partnerships": <AcademicCapIcon className="w-5 h-5 text-[#2b7a14]" />,
   "institutional-erp-software": <BuildingOffice2Icon className="w-5 h-5 text-[#8f58ff]" />,
-  "career-services": <SparklesIcon className="w-5 h-5 text-[#8f58ff]" />,
+  "career-services": <BriefcaseIcon className="w-5 h-5 text-[#8f58ff]" />,
   "campus-bootcamps-hackathons": <AcademicCapIcon className="w-5 h-5 text-[#2b7a14]" />,
 };
 
@@ -93,7 +93,7 @@ export default function SterlingServicesView({
   partners,
   faqs,
 }: SterlingServicesViewProps) {
-  const [expandedIndex, setExpandedIndex] = useState<number>(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
   const [activeApproachStep, setActiveApproachStep] = useState<number>(0);
   const [activeSector, setActiveSector] = useState<number>(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -238,7 +238,7 @@ export default function SterlingServicesView({
             <div className="flex items-center gap-3">
               <span className="text-2xl font-bold text-[#121212]">99.9%</span>
               <span className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
-                Cloud Uptime SLA
+                Cloud Uptime Rate
               </span>
             </div>
             <div className="h-4 w-px bg-neutral-300 hidden sm:block" />
@@ -304,7 +304,7 @@ export default function SterlingServicesView({
             </h2>
           </div>
           <p className="text-neutral-600 text-sm sm:text-base max-w-md mt-4 md:mt-0">
-            Tailored engineering pods delivering modern software, cloud
+            Dedicated engineering teams delivering modern software, cloud
             reliability, and practical tech training.
           </p>
         </div>
@@ -325,15 +325,16 @@ export default function SterlingServicesView({
             return (
               <div
                 key={service.slug}
-                className={`transition-colors duration-200 ${
-                  isExpanded ? "bg-[#FAF9F6]" : "hover:bg-neutral-50/70"
-                }`}
+                className={`transition-colors duration-200 ${isExpanded ? "bg-[#FAF9F6]" : "hover:bg-neutral-50/70"
+                  }`}
               >
                 {/* Header Row (Click to toggle/expand) */}
                 <button
                   type="button"
-                  onClick={() => setExpandedIndex(index)}
-                  className="w-full text-left p-6 sm:p-8 flex items-center justify-between gap-6 cursor-pointer focus:outline-hidden"
+                  onClick={() => setExpandedIndex(isExpanded ? null : index)}
+                  aria-expanded={isExpanded}
+                  aria-controls={`service-drawer-${service.slug}`}
+                  className="w-full text-left p-6 sm:p-8 flex items-center justify-between gap-6 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-inset transition-colors"
                 >
                   <div className="flex items-center gap-6 sm:gap-8">
                     <span className="font-mono text-sm sm:text-base font-bold text-neutral-400">
@@ -343,7 +344,10 @@ export default function SterlingServicesView({
                       {icon}
                     </div>
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#121212] tracking-tight">
+                      <h3
+                        id={`service-title-${service.slug}`}
+                        className="text-xl sm:text-2xl font-bold text-[#121212] tracking-tight"
+                      >
                         {service.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-neutral-500 font-medium mt-0.5">
@@ -357,9 +361,8 @@ export default function SterlingServicesView({
                       {isExpanded ? "Collapse" : "Details"}
                     </span>
                     <div
-                      className={`w-9 h-9 rounded-full flex items-center justify-center border border-neutral-300 bg-white transition-transform duration-300 ${
-                        isExpanded ? "rotate-180 bg-neutral-100 border-neutral-300 text-neutral-900" : "text-neutral-700"
-                      }`}
+                      className={`w-9 h-9 rounded-full flex items-center justify-center border border-neutral-300 bg-white transition-transform duration-300 ${isExpanded ? "rotate-180 bg-neutral-100 border-neutral-300 text-neutral-900" : "text-neutral-700"
+                        }`}
                     >
                       <ChevronDownIcon className="w-4 h-4" />
                     </div>
@@ -368,7 +371,12 @@ export default function SterlingServicesView({
 
                 {/* Expanded Drawer Content */}
                 {isExpanded && (
-                  <div className="px-6 pb-8 sm:px-8 sm:pb-10 pt-2 border-t border-neutral-200/60">
+                  <div
+                    id={`service-drawer-${service.slug}`}
+                    role="region"
+                    aria-labelledby={`service-title-${service.slug}`}
+                    className="px-6 pb-8 sm:px-8 sm:pb-10 pt-2 border-t border-neutral-200/60"
+                  >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                       {/* Left Column: High-Res Image Preview */}
                       <div className="lg:col-span-5 relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-xs bg-neutral-100">
@@ -379,15 +387,6 @@ export default function SterlingServicesView({
                           sizes="(max-width: 1024px) 100vw, 450px"
                           className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-neutral-900 text-xs font-mono">
-                          <span className="bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-md border border-neutral-200 shadow-2xs font-semibold">
-                            Typical SLA: 2–6 Weeks
-                          </span>
-                          <span className="bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-md border border-neutral-200 shadow-2xs font-semibold">
-                            Senior Lead Pod
-                          </span>
-                        </div>
                       </div>
 
                       {/* Right Column: Narrative, Deliverables & SOW Link */}
@@ -584,17 +583,11 @@ export default function SterlingServicesView({
 
         {/* 3 Step Interactive / Bento Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {approachSteps.map((step, idx) => {
-            const isActive = activeApproachStep === idx;
+          {approachSteps.map((step) => {
             return (
               <div
                 key={step.num}
-                onClick={() => setActiveApproachStep(idx)}
-                className={`rounded-3xl p-8 border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
-                  isActive
-                    ? "bg-white border-[#121212] shadow-md"
-                    : "bg-[#FAF9F5] border-neutral-200/90 hover:bg-white"
-                }`}
+                className="rounded-3xl p-8 border border-neutral-200/90 bg-white hover:border-neutral-900 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -630,10 +623,7 @@ export default function SterlingServicesView({
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-neutral-100 flex items-center justify-between text-xs font-mono font-bold text-neutral-400">
-                  <span>Phase {step.num}</span>
-                  <span className="text-[#C21BFF]">
-                    {isActive ? "Active View" : "Click to view"}
-                  </span>
+                  <span>Phase {step.num} of 03</span>
                 </div>
               </div>
             );
@@ -669,11 +659,10 @@ export default function SterlingServicesView({
                 <button
                   key={sec.name}
                   onClick={() => setActiveSector(idx)}
-                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                    active
-                      ? "bg-[#121212] text-white shadow-xs"
-                      : "bg-[#FAF9F5] text-neutral-600 border border-neutral-200 hover:bg-neutral-100"
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${active
+                    ? "bg-[#121212] text-white shadow-xs"
+                    : "bg-[#FAF9F5] text-neutral-600 border border-neutral-200 hover:bg-neutral-100"
+                    }`}
                 >
                   {sec.name}
                 </button>
@@ -772,7 +761,7 @@ export default function SterlingServicesView({
 
               <div className="my-6">
                 <span className="text-3xl sm:text-4xl font-black text-[#121212]">
-                  4,000+
+                  1,000+
                 </span>
                 <p className="text-xs font-mono uppercase tracking-wider text-neutral-500 mt-1 font-bold">
                   Students &amp; Faculty Connected
@@ -780,7 +769,7 @@ export default function SterlingServicesView({
               </div>
 
               <h3 className="text-xl font-bold text-[#121212] mb-2">
-                NEISSR &amp; MGM College Academic Portals
+                Academic Portals
               </h3>
               <p className="text-sm text-neutral-600 leading-relaxed">
                 Automated student records, marksheet generation, and digital
@@ -1003,19 +992,24 @@ export default function SterlingServicesView({
                   onClick={() =>
                     setOpenFaqIndex((prev) => (prev === index ? null : index))
                   }
-                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 font-bold text-[#121212] text-base sm:text-lg hover:text-neutral-900 transition-colors"
+                  aria-expanded={isOpen}
+                  aria-controls={`services-hub-faq-${index}`}
+                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 font-bold text-[#121212] text-base sm:text-lg hover:text-neutral-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-inset"
                 >
                   <span>{faq.question}</span>
                   <div
-                    className={`w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-brandpurple/10 text-brandpurple" : "text-neutral-600"
-                    }`}
+                    className={`w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 bg-brandpurple/10 text-brandpurple" : "text-neutral-600"
+                      }`}
                   >
                     <ChevronDownIcon className="w-4 h-4" />
                   </div>
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 sm:px-7 sm:pb-7 text-neutral-600 text-sm sm:text-base leading-relaxed border-t border-neutral-100 pt-4">
+                  <div
+                    id={`services-hub-faq-${index}`}
+                    role="region"
+                    className="px-6 pb-6 sm:px-7 sm:pb-7 text-neutral-600 text-sm sm:text-base leading-relaxed border-t border-neutral-100 pt-4"
+                  >
                     {faq.answer}
                   </div>
                 )}

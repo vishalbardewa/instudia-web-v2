@@ -361,7 +361,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
                 type="button"
                 onClick={onSearch}
                 aria-label="Search"
-                className="flex lg:hidden items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neutral-200 text-neutral-600 hover:text-black hover:bg-neutral-100 active:scale-95 transition-all"
+                className="flex lg:hidden items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-full border border-neutral-200 text-neutral-600 hover:text-black hover:bg-neutral-100 active:scale-95 transition-all"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -372,7 +372,7 @@ export default function NavigationWithDropdown({ navigation, onSearch }: { navig
               {/* Mobile Menu Button */}
               <button
                 type="button"
-                className="flex lg:hidden items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-100 text-neutral-800 hover:bg-neutral-200 active:scale-95 transition-all"
+                className="flex lg:hidden items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-xl bg-neutral-100 text-neutral-800 hover:bg-neutral-200 active:scale-95 transition-all"
                 onClick={() => setOpen(true)}
                 aria-label="Open menu"
               >

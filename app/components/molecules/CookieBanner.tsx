@@ -35,7 +35,7 @@ export const CookieBanner = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:pb-6 pointer-events-none font-jakarta"
+          className="fixed bottom-16 sm:bottom-0 left-0 right-0 z-[100] p-4 md:pb-6 pointer-events-none font-jakarta"
         >
           <div
             role="region"

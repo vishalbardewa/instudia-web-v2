@@ -122,8 +122,7 @@ export const servicesData: ServiceItem[] = [
         description:
           "Back-office software, customer dashboards, booking portals, and inventory trackers built to match your exact day-to-day operations.",
         deliverables: [
-          "Role-based user permissions (RBAC)",
-          "PostgreSQL database design",
+          "Role-based user permissions",
           "Excel & PDF report exports",
           "Automated email and WhatsApp alerts",
         ],
@@ -203,7 +202,7 @@ export const servicesData: ServiceItem[] = [
         ctaText: "Request Scope Estimate",
       },
       {
-        name: "Dedicated Engineering Pod",
+        name: "Dedicated Engineering Team",
         tag: "Best for Growing Products",
         badge: "Popular",
         popular: true,
@@ -310,7 +309,7 @@ export const servicesData: ServiceItem[] = [
       "Server security audit",
     ],
     stats: [
-      { value: "99.9%", label: "Target Uptime SLA" },
+      { value: "99.9%", label: "Target Uptime Rate" },
       { value: "Zero", label: "Downtime Deployments" },
       { value: "35%", label: "Average Cloud Savings" },
       { value: "24/7", label: "Automated Crash Alerts" },

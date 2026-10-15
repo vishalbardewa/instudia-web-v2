@@ -292,17 +292,39 @@ export default function EnquiryForm({ courseName = "" }: EnquiryFormProps) {
                       disabled={disabled}
                       required
                     />
-                    <InputField
-                      id="enq-course"
-                      label="Course Interested In"
-                      value={fields.courseName}
-                      onChange={handleChange("courseName")}
-                      onBlur={handleBlur("courseName")}
-                      error={errors.courseName}
-                      placeholder="e.g. Diploma in Computer Applications"
-                      disabled={disabled}
-                      required
-                    />
+                    <div className="flex flex-col gap-1.5">
+                      <label htmlFor="enq-course" className="text-[10px] font-black text-neutral-400 uppercase tracking-[0.3em]">
+                        Course Interested In <span className="text-brandpurple">*</span>
+                      </label>
+                      <input
+                        id="enq-course"
+                        list="courses-datalist"
+                        value={fields.courseName}
+                        onChange={handleChange("courseName")}
+                        onBlur={handleBlur("courseName")}
+                        disabled={disabled}
+                        placeholder="Type or select a course"
+                        className={`w-full px-5 py-4 rounded-2xl border text-sm font-medium text-[#1B1C1E] placeholder-neutral-300 bg-white transition-all outline-none focus:ring-2 focus:ring-brandpurple/30 focus:border-brandpurple disabled:opacity-50 ${errors.courseName ? "border-red-300 ring-2 ring-red-100" : "border-neutral-200 hover:border-neutral-300"}`}
+                      />
+                      <datalist id="courses-datalist">
+                        <option value="Diploma in Computer Applications (DCA)" />
+                        <option value="Post Graduate Diploma in Computer Applications (PGDCA)" />
+                        <option value="Full Stack Web Development" />
+                        <option value="Python Programming" />
+                        <option value="UI/UX Design" />
+                        <option value="Tally with GST" />
+                        <option value="Advanced Excel" />
+                        <option value="Statistical Analysis with SPSS" />
+                        <option value="Mobile App Development" />
+                        <option value="DevOps & Cloud" />
+                      </datalist>
+                      {errors.courseName && (
+                        <p className="text-[10px] text-red-500 font-semibold flex items-center gap-1">
+                          <ExclamationCircleIcon className="w-3 h-3 flex-shrink-0" />
+                          {errors.courseName}
+                        </p>
+                      )}
+                    </div>
                   </div>
 
                   {/* Message */}

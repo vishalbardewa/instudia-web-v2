@@ -7,6 +7,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/app/_utils/cn";
 
 export const FloatingNav = ({
@@ -21,7 +22,7 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollY } = useScroll();
-
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (current) => {
@@ -41,6 +42,11 @@ export const FloatingNav = ({
     }
   });
 
+  const isItemActive = (link: string) => {
+    if (link === "/") return pathname === "/";
+    return pathname.startsWith(link);
+  };
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -53,34 +59,59 @@ export const FloatingNav = ({
           opacity: visible ? 1 : 0,
         }}
         transition={{
-          duration: 0.4,
-          ease: "easeInOut"
+          duration: 0.35,
+          ease: "easeInOut",
         }}
         className={cn(
-          "flex max-w-[92vw] sm:max-w-fit fixed top-10 inset-x-0 mx-auto border-2 border-black rounded-full bg-white z-[5000] px-4 sm:pl-8 sm:pr-2 py-2 items-center justify-center space-x-3 sm:space-x-4 shadow-lg",
+          "fixed top-4 sm:top-8 inset-x-0 mx-auto z-[5000] flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3 sm:py-2 rounded-full bg-white/95 backdrop-blur-md border border-black/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.12)] max-w-fit select-none",
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            aria-label={navItem.name}
-            prefetch={false}
-            className={cn(
-              "relative items-center flex space-x-1 text-black font-medium min-h-[44px] px-1 sm:px-2"
-            )}
-          >
-            <span className="block sm:hidden" aria-hidden="true">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </Link>
-        ))}
+        {navItems.map((navItem: any, idx: number) => {
+          const active = isItemActive(navItem.link);
+          return (
+            <Link
+              key={`link=${idx}`}
+              href={navItem.link}
+              aria-label={navItem.name}
+              prefetch={false}
+              className="relative flex items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 transition-transform active:scale-95"
+            >
+              {/* Mobile: 36px circular micro-pod */}
+              <span
+                className={cn(
+                  "sm:hidden w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200",
+                  active
+                    ? "bg-neutral-950 text-white shadow-xs"
+                    : "bg-neutral-100/90 text-neutral-700 hover:bg-neutral-200 hover:text-black"
+                )}
+                aria-hidden="true"
+              >
+                {navItem.icon}
+              </span>
+
+              {/* Desktop: clean text badge */}
+              <span
+                className={cn(
+                  "hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all duration-200",
+                  active
+                    ? "bg-neutral-950 text-white"
+                    : "text-neutral-700 hover:text-black hover:bg-neutral-100"
+                )}
+              >
+                {navItem.name}
+              </span>
+            </Link>
+          );
+        })}
+
         <Link
-          href="/courses"
+          href="/contact"
           prefetch={false}
-          className="border text-sm font-medium relative text-white bg-black px-4 py-2 rounded-full min-h-[36px] flex items-center justify-center hover:bg-brandpurple transition-colors"
+          aria-label="Enroll or Inquire"
+          className="inline-flex items-center justify-center px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-neutral-950 text-white hover:bg-neutral-800 active:scale-95 text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 shrink-0 min-h-[36px] shadow-xs ml-0.5"
         >
-          <span>Courses</span>
+          <span>Enroll</span>
         </Link>
       </motion.div>
     </AnimatePresence>

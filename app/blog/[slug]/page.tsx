@@ -24,6 +24,7 @@ const PaletteRulesWidget = dynamic(() => import("../../components/molecules/Pale
 const HslRelationshipWidget = dynamic(() => import("../../components/molecules/HslRelationshipWidget"));
 const HarmonyDefinitionsWidget = dynamic(() => import("../../components/molecules/HarmonyDefinitionsWidget"));
 const CockroachDbExplorer = dynamic(() => import("../../components/molecules/CockroachDbExplorer"));
+const InteractiveSequenceWidget = dynamic(() => import("../../components/molecules/InteractiveSequenceWidget"));
 import TopStoriesSection from "../../components/molecules/TopStoriesSection";
 import AuthorCard from "../../components/molecules/AuthorCard";
 import { BreadcrumbSchema } from "../../components/SchemaOrg/BreadcrumbSchema";
@@ -503,6 +504,15 @@ export default async function BlogPostPage({ params }: Props) {
                           }
                           if (item.widgetId === "cockroachdb-explorer") {
                             return <CockroachDbExplorer key={ii} />;
+                          }
+                          if (
+                            item.widgetId === "interactive-sequence" ||
+                            item.widgetId === "sequence-flow" ||
+                            item.widgetId === "sequence-diagram" ||
+                            item.widgetId === "llm-tool-calling" ||
+                            (item.spec && (item.spec.actors || item.spec.preset || item.spec.type === "sequence"))
+                          ) {
+                            return <InteractiveSequenceWidget key={ii} spec={item.spec} />;
                           }
                           return null;
                         }
