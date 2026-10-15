@@ -106,17 +106,103 @@ export default function CoskaHero() {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    const mm = gsap.matchMedia(sectionRef);
 
-      // 1. Top philosophy tag entrance
+    // ==========================================
+    // HELPER: START AMBIENT LOOPS AFTER ENTRANCE
+    // ==========================================
+    const startAmbientLoops = (scopeSelector: string) => {
+      // Continuous idle windmill rotation
+      gsap.to(`${scopeSelector} .hero-flair-windmill-svg`, {
+        rotation: 360,
+        duration: 24,
+        repeat: -1,
+        ease: "none",
+      });
+
+      // Continuous diamond breathing & tilt
+      gsap.to(`${scopeSelector} .hero-glyph-diamond`, {
+        scale: 1.25,
+        rotation: 45,
+        duration: 1.6,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      // Continuous star rotation
+      gsap.to(`${scopeSelector} .hero-glyph-star`, {
+        rotation: 360,
+        duration: 22,
+        repeat: -1,
+        ease: "none",
+      });
+
+      // Continuous dot pulse
+      gsap.to(`${scopeSelector} .hero-glyph-dot`, {
+        scale: 1.35,
+        duration: 1.4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      // Orbital flairs floating idle around CTA button
+      gsap.to(".orbit-flair-1", {
+        y: -5,
+        rotation: 12,
+        duration: 2.2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+      gsap.to(".orbit-flair-2", {
+        y: 6,
+        rotation: -15,
+        duration: 2.8,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+      gsap.to(".orbit-flair-3", {
+        x: -4,
+        y: 4,
+        rotation: 20,
+        duration: 2.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+      gsap.to(".orbit-flair-4", {
+        x: 5,
+        y: -4,
+        rotation: -18,
+        duration: 3.1,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    };
+
+    // ==========================================
+    // 1. DESKTOP / LAPTOP TIMELINE (>= 1024px)
+    // ==========================================
+    mm.add("(min-width: 1024px)", () => {
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+        onComplete: () => {
+          startAmbientLoops(".hero-headline-desktop");
+        },
+      });
+
+      // Philosophy tag
       tl.fromTo(
         ".hero-philosophy-tag",
         { opacity: 0, y: -16 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
+        { opacity: 1, y: 0, duration: 0.6 }
       );
 
-      // 2a. Desktop 3D Perspective Line Reveal (gsap.com signature)
+      // 3D Perspective Line Reveal
       tl.fromTo(
         ".hero-headline-desktop .hero-headline-word",
         {
@@ -139,70 +225,51 @@ export default function CoskaHero() {
         "-=0.25"
       );
 
-      // 2b. Mobile Clean Line Stagger Entrance
+      // Embedded kinetic flairs (strictly scoped to desktop)
       tl.fromTo(
-        ".hero-headline-mobile .hero-headline-line-mob",
-        {
-          opacity: 0,
-          y: 20,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.75,
-          stagger: 0.07,
-          ease: "power3.out",
-        },
-        "<"
-      );
-
-      // 3. Kinetic pop & spin on embedded flairs (both desktop & mobile)
-      tl.fromTo(
-        ".hero-flair-windmill, .hero-flair-windmill-mob",
+        ".hero-headline-desktop .hero-flair-windmill",
         { scale: 0, rotation: -360, opacity: 0 },
         { scale: 1, rotation: 0, opacity: 1, duration: 1.05, ease: "back.out(2.2)" },
         "-=0.7"
       );
 
       tl.fromTo(
-        ".hero-glyph-star",
+        ".hero-headline-desktop .hero-glyph-star",
         { scale: 0, rotation: -270, opacity: 0 },
         { scale: 1, rotation: 0, opacity: 1, duration: 0.9, ease: "back.out(2.5)" },
         "-=0.6"
       );
 
       tl.fromTo(
-        ".hero-glyph-diamond",
+        ".hero-headline-desktop .hero-glyph-diamond",
         { scale: 0, rotation: 45, opacity: 0 },
         { scale: 1, rotation: 0, opacity: 1, duration: 0.85, ease: "back.out(3)" },
         "-=0.7"
       );
 
       tl.fromTo(
-        ".hero-flair-bolt",
+        ".hero-headline-desktop .hero-flair-bolt",
         { scale: 0, y: -20, opacity: 0 },
         { scale: 1, y: 0, opacity: 1, duration: 0.8, ease: "back.out(2)" },
         "-=0.6"
       );
 
       tl.fromTo(
-        ".hero-flair-circles",
+        ".hero-headline-desktop .hero-flair-circles",
         { scale: 0, rotation: 180, opacity: 0 },
         { scale: 1, rotation: 0, opacity: 1, duration: 0.95, ease: "back.out(2)" },
         "-=0.65"
       );
 
-
-
-      // 4. CTA button and its orbital flairs
+      // CTA button
       tl.fromTo(
         ".gsap-btn-container",
         { opacity: 0, y: 24, scale: 0.96 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out" },
+        { opacity: 1, y: 0, scale: 1, duration: 0.8 },
         "-=0.4"
       );
 
-      // 5. Showcase cards gallery
+      // Showcase cards gallery
       tl.fromTo(
         ".hero-showcase-gallery",
         { opacity: 0, y: 36, scale: 0.98 },
@@ -210,185 +277,204 @@ export default function CoskaHero() {
         "-=0.45"
       );
 
-      // 6. Editorial narrative
+      // Editorial narrative
       tl.fromTo(
         ".hero-footer-item",
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: 0.65 },
         "-=0.3"
       );
 
-      // Idle continuous floating animation on the orbital flairs around the CTA button
-      gsap.to(".orbit-flair-1", {
-        y: -5,
-        rotation: 12,
-        duration: 2.2,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".orbit-flair-2", {
-        y: 6,
-        rotation: -15,
-        duration: 2.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".orbit-flair-3", {
-        x: -4,
-        y: 4,
-        rotation: 20,
-        duration: 2.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".orbit-flair-4", {
-        x: 5,
-        y: -4,
-        rotation: -18,
-        duration: 3.1,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      // Subtle continuous idle rotation on windmill flair
-      gsap.to(".hero-flair-windmill-svg", {
-        rotation: 360,
-        duration: 24,
-        repeat: -1,
-        ease: "none",
-      });
-
-      // Continuous ambient breathing & rotation animation on the diamond flair
-      gsap.to(".hero-glyph-diamond", {
-        scale: 1.25,
-        rotation: 45,
-        duration: 1.6,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      // Continuous ambient rotation on star glyph
-      gsap.to(".hero-glyph-star", {
-        rotation: 360,
-        duration: 22,
-        repeat: -1,
-        ease: "none",
-      });
-
-      // Continuous gentle pulse on dot glyph
-      gsap.to(".hero-glyph-dot", {
-        scale: 1.35,
-        duration: 1.4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      // ScrollTrigger Parallax Scrub on Hero Exit (desktop only for buttery 120fps touch scroll)
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 768px)", () => {
-        if (sectionRef.current) {
-          gsap.to(".hero-headline-container", {
-            yPercent: -12,
-            opacity: 0.85,
-            ease: "none",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top top",
-              end: "bottom top",
-              scrub: 0.5,
-            },
-          });
-
-          gsap.to(".hero-showcase-gallery", {
-            yPercent: -6,
-            ease: "none",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top top",
-              end: "bottom top",
-              scrub: 0.5,
-            },
-          });
-        }
-      });
-
-      // Smooth 120fps continuous quickTo interpolators for magnetic CTA button & secondary text parallax
-      if (buttonWrapperRef.current) {
-        xWrapperTo.current = gsap.quickTo(buttonWrapperRef.current, "x", {
-          duration: 0.45,
-          ease: "power3.out",
-        });
-        yWrapperTo.current = gsap.quickTo(buttonWrapperRef.current, "y", {
-          duration: 0.45,
-          ease: "power3.out",
-        });
-      }
-
-      if (buttonTextRef.current) {
-        xTextTo.current = gsap.quickTo(buttonTextRef.current, "x", {
-          duration: 0.45,
-          ease: "power3.out",
-        });
-        yTextTo.current = gsap.quickTo(buttonTextRef.current, "y", {
-          duration: 0.45,
-          ease: "power3.out",
-        });
-      }
-
-      // 7. Dedicated Accreditation Section Entrance via ScrollTrigger
-      const accSection = document.querySelector(".hero-accreditation-section");
-      if (accSection) {
-        gsap.fromTo(
-          ".accreditation-header",
-          { opacity: 0, y: 32 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: accSection,
-              start: "top 85%",
-            },
-          }
-        );
-
-        gsap.fromTo(
-          ".accreditation-card",
-          {
-            opacity: 0,
-            y: 44,
-            scale: 0.94,
-            rotateX: 12,
-            transformOrigin: "50% 100%",
+      // Desktop Parallax on Scroll
+      if (sectionRef.current) {
+        gsap.to(".hero-headline-desktop", {
+          yPercent: -12,
+          opacity: 0.85,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.5,
           },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            rotateX: 0,
-            duration: 0.85,
-            stagger: 0.1,
-            ease: "back.out(1.2)",
-            scrollTrigger: {
-              trigger: accSection,
-              start: "top 85%",
-            },
-          }
-        );
-      }
-    }, sectionRef);
+        });
 
-    return () => ctx.revert();
+        gsap.to(".hero-showcase-gallery", {
+          yPercent: -6,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.5,
+          },
+        });
+      }
+    });
+
+    // ==========================================
+    // 2. MOBILE / TABLET TIMELINE (< 1024px)
+    // ==========================================
+    mm.add("(max-width: 1023px)", () => {
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+        onComplete: () => {
+          startAmbientLoops(".hero-headline-mobile");
+        },
+      });
+
+      // Philosophy tag
+      tl.fromTo(
+        ".hero-philosophy-tag",
+        { opacity: 0, y: -12 },
+        { opacity: 1, y: 0, duration: 0.5 }
+      );
+
+      // Mobile clean line stagger entrance
+      tl.fromTo(
+        ".hero-headline-mobile .hero-headline-line-mob",
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          stagger: 0.07,
+          ease: "power3.out",
+        },
+        "-=0.2"
+      );
+
+      // Kinetic flairs on mobile (strictly scoped to mobile)
+      tl.fromTo(
+        ".hero-headline-mobile .hero-flair-windmill-mob",
+        { scale: 0, rotation: -360, opacity: 0 },
+        { scale: 1, rotation: 0, opacity: 1, duration: 0.95, ease: "back.out(2.2)" },
+        "-=0.6"
+      );
+
+      tl.fromTo(
+        ".hero-headline-mobile .hero-glyph-star",
+        { scale: 0, rotation: -270, opacity: 0 },
+        { scale: 1, rotation: 0, opacity: 1, duration: 0.8, ease: "back.out(2.5)" },
+        "-=0.5"
+      );
+
+      tl.fromTo(
+        ".hero-headline-mobile .hero-glyph-diamond",
+        { scale: 0, rotation: 45, opacity: 0 },
+        { scale: 1, rotation: 0, opacity: 1, duration: 0.75, ease: "back.out(3)" },
+        "-=0.6"
+      );
+
+      tl.fromTo(
+        ".hero-headline-mobile .hero-flair-bolt",
+        { scale: 0, y: -16, opacity: 0 },
+        { scale: 1, y: 0, opacity: 1, duration: 0.7, ease: "back.out(2)" },
+        "-=0.5"
+      );
+
+      tl.fromTo(
+        ".hero-headline-mobile .hero-flair-circles",
+        { scale: 0, rotation: 180, opacity: 0 },
+        { scale: 1, rotation: 0, opacity: 1, duration: 0.85, ease: "back.out(2)" },
+        "-=0.55"
+      );
+
+      // CTA button
+      tl.fromTo(
+        ".gsap-btn-container",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.7 },
+        "-=0.3"
+      );
+
+      // Showcase cards gallery
+      tl.fromTo(
+        ".hero-showcase-gallery",
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.8 },
+        "-=0.3"
+      );
+
+      // Editorial narrative
+      tl.fromTo(
+        ".hero-footer-item",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        "-=0.2"
+      );
+    });
+
+    // ==========================================
+    // 3. COMMON INTERPOLATORS & SCROLLTRIGGERS
+    // ==========================================
+    // Smooth 120fps continuous quickTo interpolators for magnetic CTA button
+    if (buttonWrapperRef.current) {
+      xWrapperTo.current = gsap.quickTo(buttonWrapperRef.current, "x", {
+        duration: 0.45,
+        ease: "power3.out",
+      });
+      yWrapperTo.current = gsap.quickTo(buttonWrapperRef.current, "y", {
+        duration: 0.45,
+        ease: "power3.out",
+      });
+    }
+
+    if (buttonTextRef.current) {
+      xTextTo.current = gsap.quickTo(buttonTextRef.current, "x", {
+        duration: 0.45,
+        ease: "power3.out",
+      });
+      yTextTo.current = gsap.quickTo(buttonTextRef.current, "y", {
+        duration: 0.45,
+        ease: "power3.out",
+      });
+    }
+
+    // Dedicated Accreditation Section Entrance via ScrollTrigger
+    const accSection = document.querySelector(".hero-accreditation-section");
+    if (accSection) {
+      gsap.fromTo(
+        ".accreditation-header",
+        { opacity: 0, y: 32 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: accSection,
+            start: "top 85%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".accreditation-card",
+        {
+          opacity: 0,
+          y: 44,
+          scale: 0.94,
+          rotateX: 12,
+          transformOrigin: "50% 100%",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotateX: 0,
+          duration: 0.85,
+          stagger: 0.1,
+          ease: "back.out(1.2)",
+          scrollTrigger: {
+            trigger: accSection,
+            start: "top 85%",
+          },
+        }
+      );
+    }
+
+    return () => mm.revert();
   }, []);
 
   // Gallery scroll listener to update mobile active indicator pill
