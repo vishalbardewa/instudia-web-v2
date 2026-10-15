@@ -23,12 +23,13 @@ function SwissBrutalistCard({
   const shadowClass = isLarge
     ? "shadow-[12px_12px_0px_rgba(0,0,0,1)] hover:shadow-[20px_20px_0px_var(--card-brand)]"
     : "shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_var(--card-brand)]";
+  const cardIdentifier = isLarge ? "featured-card" : "archive-card";
 
   return (
     <Link
       href={`/blog/${post.slug}`}
       prefetch={false}
-      className={`blog-card group block h-full ${isLarge ? "col-span-full" : ""}`}
+      className={`${cardIdentifier} group block h-full ${isLarge ? "col-span-full" : ""}`}
     >
       <div
         style={{ "--card-brand": brandColor } as React.CSSProperties}
@@ -155,26 +156,30 @@ export default function BlogClient({ posts }: { posts: PostSummary[] }) {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      const cards = containerRef.current?.querySelectorAll(".blog-card");
-      if (cards && cards.length > 0) {
-        gsap.fromTo(
-          cards,
-          { opacity: 0, y: 36, scale: 0.98 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.6,
-            stagger: 0.06,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top 85%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
+      // Reveal archive cards smoothly as each year section scrolls into view
+      const archiveGrids = containerRef.current?.querySelectorAll(".archive-year-grid");
+      archiveGrids?.forEach((grid) => {
+        const cards = grid.querySelectorAll(".archive-card");
+        if (cards.length > 0) {
+          gsap.fromTo(
+            cards,
+            { opacity: 0, y: 32, scale: 0.98 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.55,
+              stagger: 0.06,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: grid,
+                start: "top 85%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
+        }
+      });
     }, containerRef);
 
     return () => ctx.revert();
@@ -238,7 +243,7 @@ export default function BlogClient({ posts }: { posts: PostSummary[] }) {
                   <div className="md:col-span-4 h-1 bg-black hidden md:block" />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div className="archive-year-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
                   {groupedByYear[year].map((post, i) => (
                     <SwissBrutalistCard key={post.slug} post={post} index={i} />
                   ))}
