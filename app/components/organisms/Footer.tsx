@@ -296,7 +296,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="group block p-3 rounded-xl border border-neutral-200/90 bg-white hover:border-brandpurple/40 hover:shadow-xs transition-all"
                 >
-                  <div className="flex items-center justify-between gap-1.5 mb-1">
+                  <div className="flex items-center gap-1.5 mb-1">
                     <span className="text-xs font-bold text-neutral-900 group-hover:text-brandpurple transition-colors">
                       acadesx
                     </span>
