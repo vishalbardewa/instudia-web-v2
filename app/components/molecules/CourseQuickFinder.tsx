@@ -136,11 +136,10 @@ export default function CourseQuickFinder({ courses }: Props) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                activeTab === tab.id
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${activeTab === tab.id
                   ? "bg-neutral-950 text-white shadow-sm"
                   : "text-neutral-600 hover:text-neutral-950 hover:bg-neutral-200/50"
-              }`}
+                }`}
             >
               {tab.label}
             </button>
@@ -154,31 +153,28 @@ export default function CourseQuickFinder({ courses }: Props) {
           </span>
           <button
             onClick={() => setDurationFilter("all")}
-            className={`px-3 py-1.5 rounded-lg font-semibold border transition-all ${
-              durationFilter === "all"
+            className={`px-3 py-1.5 rounded-lg font-semibold border transition-all ${durationFilter === "all"
                 ? "bg-neutral-900 text-white border-neutral-900"
                 : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-300"
-            }`}
+              }`}
           >
             All Durations
           </button>
           <button
             onClick={() => setDurationFilter("short")}
-            className={`px-3 py-1.5 rounded-lg font-semibold border transition-all ${
-              durationFilter === "short"
+            className={`px-3 py-1.5 rounded-lg font-semibold border transition-all ${durationFilter === "short"
                 ? "bg-neutral-900 text-white border-neutral-900"
                 : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-300"
-            }`}
+              }`}
           >
             1–3 Months
           </button>
           <button
             onClick={() => setDurationFilter("diploma")}
-            className={`px-3 py-1.5 rounded-lg font-semibold border transition-all ${
-              durationFilter === "diploma"
+            className={`px-3 py-1.5 rounded-lg font-semibold border transition-all ${durationFilter === "diploma"
                 ? "bg-neutral-900 text-white border-neutral-900"
                 : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-300"
-            }`}
+              }`}
           >
             6+ Months (Diploma)
           </button>

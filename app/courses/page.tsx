@@ -230,7 +230,6 @@ function Courses() {
         </div>
       </section>
       <div className="col-start-2 col-end-12">
-        <CourseQuickFinder courses={finderCourses} />
         <CourseSectionList />
       </div>
       <div className="col-span-12">

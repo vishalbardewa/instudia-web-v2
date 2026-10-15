@@ -41,7 +41,7 @@ const jsonLd = {
 };
 
 const stats = [
-  { value: "500+", label: "Students Trained" },
+  { value: "1000+", label: "Students Trained" },
   { value: "10,000+", label: "Hours of Training" },
   { value: "98%", label: "Completion Rate" },
   { value: "20+", label: "Combined YOE" },

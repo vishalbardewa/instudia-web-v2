@@ -147,9 +147,6 @@ export default function CourseComparisonMatrix() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brandpurple mb-3 block">
-            Course Selection Guide
-          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#1B1C1E] uppercase">
             Compare Career <span className="text-brandpurple">Tracks</span>
           </h2>
@@ -164,11 +161,10 @@ export default function CourseComparisonMatrix() {
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all ${
-                activeTab === item.id
+              className={`px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all ${activeTab === item.id
                   ? "bg-black text-white shadow-md shadow-black/10 scale-105"
                   : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-              }`}
+                }`}
             >
               {item.title}
             </button>

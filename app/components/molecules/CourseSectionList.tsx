@@ -23,7 +23,7 @@ interface ICourseCard {
   className?: string;
   gridFix?: boolean;
   href?: string;
-  comingSoon?: false;
+  comingSoon?: boolean;
 }
 
 let firstLayerCourses = [
@@ -269,32 +269,38 @@ const CourseCard = ({
   badge,
   imageUrl,
   imageAlt,
-  className,
-  gridFix = true,
+  className = "",
   href,
   comingSoon = false
 }: ICourseCard) => (
-  <div className={`${gridFix && "grid row-span-3"} overflow-hidden rounded-lg bg-white shadow ${className} hover:bg-[#fefefe] hover:duration-150 hover:ease-fast-in-slow-out hover:scale-[1.01]`}>
-    <Link href={`/courses/${href}`}>
-      <div className="px-4 py-4 pt-8 font-normal text-3xl leading-tight sm:px-6">
-        {badge}
-        {comingSoon && <ComingSoonBadge />}
-        <br />
-        {title}
+  <div
+    className={`group overflow-hidden rounded-xl bg-white shadow-sm border border-neutral-200/80 hover:shadow-md hover:border-neutral-300 transition-all duration-200 h-full flex flex-col ${className}`}
+  >
+    <Link href={`/courses/${href}`} className="flex flex-col justify-between h-full flex-1">
+      <div className="p-5 sm:p-6 flex-1 flex flex-col">
+        <div className="flex items-center gap-2 mb-3">
+          {badge}
+          {comingSoon && <ComingSoonBadge />}
+        </div>
+        <h3 className="font-normal text-xl md:text-2xl leading-snug tracking-tight text-neutral-900 min-h-[3.5rem] md:min-h-[4rem] flex items-start mb-2.5">
+          {title}
+        </h3>
+        <p className="text-sm text-stone-600 leading-relaxed line-clamp-3">
+          {description}
+        </p>
       </div>
 
-      <div className="px-4 py-4 pb-0 font-light sm:px-6 sm:pb-0 line-clamp-2 md:line-clamp-3 lg:line-clamp-4">
-        {description}
-      </div>
-      <div className="px-2 py-2 sm:px-2 mt-4">
-        <Image
-          className="rounded-md"
-          width={800}
-          height={800}
-          alt={imageAlt}
-          src={imageUrl}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+      <div className="p-2.5 pt-0 sm:p-3 sm:pt-0 mt-auto">
+        <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-neutral-100">
+          <Image
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            width={800}
+            height={800}
+            alt={imageAlt}
+            src={imageUrl}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+        </div>
       </div>
     </Link>
   </div>
@@ -303,20 +309,20 @@ const CourseCard = ({
 function CourseSectionList() {
   return (
     <>
-      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-4">
         {firstLayerCourses.map((course) => (
           <CourseCard key={course.title} {...course} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-4">
         {secondLayerCourses.map((course) => (
           <CourseCard key={course.title} {...course} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 gap-4 mt-12 lg:grid-cols-3">
-        <div className="lg:col-start-1 lg:col-end-3 py-10 md:py-15 lg:py-20 px-6 md:px-8 lg:px-12 content-center bg-[#1B1C1E] rounded-xl">
+      <div className="grid grid-cols-1 gap-6 mt-12 lg:grid-cols-3">
+        <div className="lg:col-span-2 py-10 md:py-15 lg:py-20 px-6 md:px-8 lg:px-12 bg-[#1B1C1E] rounded-xl flex flex-col justify-center">
           <article className="relative max-w-xl">
             <Image
               className="absolute right-0 size-80 lg:right-[-180px] lg:top-[-260px] opacity-[.3] -z-1"
@@ -337,7 +343,7 @@ function CourseSectionList() {
                 Develop
               </span>
             </div>
-            <h2 className="text-5xl tracking-tight text-[#FAFAFA] font-light mb-4">
+            <h2 className="text-4xl lg:text-5xl tracking-tight text-[#FAFAFA] font-light mb-4">
               Learn how to build unique skill and experiences
             </h2>
             <p className="text-lg text-[#FAFAFA]">Grow your career for better goals</p>
@@ -348,12 +354,12 @@ function CourseSectionList() {
             key={course.title}
             gridFix={false}
             {...course}
-            className="lg:col-start-3 lg:col-end-4"
+            className="lg:col-span-1"
           />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-4">
         {thirdLayerCourses.map((course) => (
           <CourseCard key={course.title} {...course} />
         ))}
@@ -361,13 +367,13 @@ function CourseSectionList() {
 
       <SideBySideCard />
 
-      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-4">
         {fourthLayerCourses.map((course) => (
           <CourseCard key={course.title} {...course} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 grid-rows-[200px auto auto] gap-4 mt-12 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-4">
         {sixthLayerCourses.map((course) => (
           <CourseCard key={course.title} {...course} />
         ))}
