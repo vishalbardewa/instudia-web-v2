@@ -116,29 +116,49 @@ export default function CoskaHero() {
         { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
       );
 
-      // 2. Headline 3D Perspective Stagger Reveal
+      // 2a. Desktop 3D Perspective Line Reveal (gsap.com signature)
       tl.fromTo(
-        ".hero-headline-phrase",
+        ".hero-headline-desktop .hero-headline-word",
         {
-          y: 40,
+          y: "125%",
           opacity: 0,
-          rotateX: 25,
-          transformOrigin: "50% 100% -25px",
+          rotateX: 35,
+          transformOrigin: "50% 100% -30px",
         },
         {
-          y: 0,
+          y: "0%",
           opacity: 1,
           rotateX: 0,
-          duration: 0.9,
-          stagger: 0.06,
+          duration: 1.0,
+          stagger: 0.08,
           ease: "power4.out",
+          onComplete: () => {
+            gsap.set(".hero-headline-desktop .hero-headline-line", { overflow: "visible" });
+          },
         },
         "-=0.25"
       );
 
-      // 3. Kinetic pop & spin on embedded flairs
+      // 2b. Mobile Clean Line Stagger Entrance
       tl.fromTo(
-        ".hero-flair-windmill",
+        ".hero-headline-mobile .hero-headline-line-mob",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          stagger: 0.07,
+          ease: "power3.out",
+        },
+        "<"
+      );
+
+      // 3. Kinetic pop & spin on embedded flairs (both desktop & mobile)
+      tl.fromTo(
+        ".hero-flair-windmill, .hero-flair-windmill-mob",
         { scale: 0, rotation: -360, opacity: 0 },
         { scale: 1, rotation: 0, opacity: 1, duration: 1.05, ease: "back.out(2.2)" },
         "-=0.7"
@@ -592,93 +612,80 @@ export default function CoskaHero() {
             <span>✴</span>
             <span>Learn by building</span>
           </div>
-        </div>        {/* 2. UNIFIED RESPONSIVE & FLUID HERO HEADLINE */}
-        <div ref={headlineRef} className="hero-headline mb-10 sm:mb-14 [perspective:1000px]">
-          <h1 className="text-[clamp(1.85rem,6.2vw,2.75rem)] sm:text-[clamp(2.75rem,4.5vw,3.6rem)] lg:text-[clamp(4.2rem,4.8vw,5.3rem)] leading-[1.06] sm:leading-[0.98] lg:leading-[0.88] font-black uppercase tracking-[-0.035em] text-neutral-950 flex flex-wrap items-center gap-x-2.5 sm:gap-x-3.5 lg:gap-x-4 gap-y-1 sm:gap-y-1.5 lg:gap-y-1">
+        </div>
 
-            {/* Phrase 1: Skill is the only [Windmill] */}
-            <span className="hero-headline-phrase inline-flex items-center gap-2 lg:gap-3.5 will-change-transform whitespace-nowrap">
-              <span className="text-neutral-950">Skill is the only</span>
+        {/* 2a. DESKTOP / LAPTOP HEADLINE (Signature 4-Line Locked GSAP Display) */}
+        <div ref={headlineRef} className="hidden lg:block hero-headline-desktop mb-12 sm:mb-14 overflow-hidden [perspective:1000px]">
+          <h1 className="text-[clamp(5.2rem,4.8vw,5.3rem)] leading-[0.88] font-black uppercase tracking-[-0.035em] flex flex-col gap-1 text-neutral-950">
 
-              {/* GSAP Windmill Flair */}
-              <span
-                onClick={handleWindmillHover}
-                onMouseEnter={handleWindmillHover}
-                className="hero-flair-windmill inline-flex items-center justify-center cursor-pointer select-none origin-center w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 -my-1 lg:-my-2 active:scale-90 transition-transform shrink-0"
-                title="Interactive windmill flair"
-              >
-                <svg
-                  viewBox="0 0 137 135"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="hero-flair-windmill-svg w-full h-full drop-shadow-[0_2px_8px_rgba(255,135,9,0.3)]"
+            {/* Line 1: SKILL IS THE ONLY [Windmill] ✴ UNFAIR */}
+            <div className="hero-headline-line overflow-hidden py-2 -my-2">
+              <div className="hero-headline-word flex items-center gap-x-4 whitespace-nowrap will-change-transform">
+                <span className="text-neutral-950">Skill is the only</span>
+
+                {/* GSAP Windmill Flair */}
+                <span
+                  onMouseEnter={handleWindmillHover}
+                  className="hero-flair-windmill inline-flex items-center justify-center cursor-pointer select-none origin-center w-10 h-10 -my-2"
+                  title="Interactive windmill flair"
                 >
-                  <path
-                    d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z"
-                    fill="url(#paint_hero_windmill)"
-                  />
-                  <defs>
-                    <linearGradient id="paint_hero_windmill" x1="-76.68" y1="-15.62" x2="165.68" y2="81.01" gradientUnits="userSpaceOnUse">
-                      <stop offset="0.43" stopColor="#FF8709" />
-                      <stop offset="0.79" stopColor="#F7BDF8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </span>
-            </span>
+                  <svg
+                    viewBox="0 0 137 135"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="hero-flair-windmill-svg w-full h-full drop-shadow-[0_2px_8px_rgba(255,135,9,0.3)]"
+                  >
+                    <path
+                      d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z"
+                      fill="url(#paint_hero_windmill_desktop)"
+                    />
+                    <defs>
+                      <linearGradient id="paint_hero_windmill_desktop" x1="-76.68" y1="-15.62" x2="165.68" y2="81.01" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.43" stopColor="#FF8709" />
+                        <stop offset="0.79" stopColor="#F7BDF8" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </span>
 
-            {/* Line break on mobile (finishes mobile Line 1) */}
-            <span className="basis-full h-0 block lg:hidden" aria-hidden="true" />
+                <span className="text-neutral-400 inline-flex items-baseline gap-2.5">
+                  <span
+                    onMouseEnter={handleStarHover}
+                    className="hero-glyph-star text-[#58FF1B] text-[0.8em] inline-flex items-center justify-center cursor-pointer select-none origin-center drop-shadow-[0_0_8px_rgba(88,255,27,0.5)] px-1 leading-none align-middle will-change-transform"
+                    title="Interactive glyph"
+                  >
+                    ✴
+                  </span>
+                  <span>unfair</span>
+                </span>
+              </div>
+            </div>
 
-            {/* Phrase 2: ✴ unfair */}
-            <span className="hero-headline-phrase inline-flex items-center gap-1.5 lg:gap-2.5 will-change-transform whitespace-nowrap text-neutral-400">
-              <span
-                onClick={handleStarHover}
-                onMouseEnter={handleStarHover}
-                className="hero-glyph-star text-[#58FF1B] text-[0.8em] inline-flex items-center justify-center cursor-pointer select-none origin-center drop-shadow-[0_0_8px_rgba(88,255,27,0.5)] active:scale-90"
-                title="Interactive glyph"
-              >
-                ✴
-              </span>
-              <span>unfair</span>
-            </span>
+            {/* Line 2: ADVANTAGE ✦ REAL-WORLD */}
+            <div className="hero-headline-line overflow-hidden py-2 -my-2">
+              <div className="hero-headline-word flex items-baseline gap-x-4 whitespace-nowrap will-change-transform">
+                <span className="text-neutral-400">advantage</span>
+                <span className="text-neutral-400 inline-flex items-baseline gap-2.5">
+                  <span
+                    onMouseEnter={handleDiamondHover}
+                    className="hero-glyph-diamond text-[#FF1B58] text-[0.72em] inline-flex items-center justify-center cursor-pointer select-none origin-center drop-shadow-[0_0_12px_rgba(255,27,88,0.6)] px-1.5 py-1 -my-1 leading-none align-middle will-change-transform"
+                    title="Interactive glyph"
+                  >
+                    ✦
+                  </span>
+                  <span>Real-world</span>
+                </span>
+              </div>
+            </div>
 
-            {/* Line break on desktop (finishes desktop Line 1) */}
-            <span className="basis-full h-0 hidden lg:block" aria-hidden="true" />
-
-            {/* Phrase 3: advantage */}
-            <span className="hero-headline-phrase inline-flex items-center will-change-transform whitespace-nowrap text-neutral-400">
-              <span>advantage</span>
-            </span>
-
-            {/* Line break on mobile (finishes mobile Line 2: ✴ unfair advantage) */}
-            <span className="basis-full h-0 block lg:hidden" aria-hidden="true" />
-
-            {/* Phrase 4: ✦ Real-world */}
-            <span className="hero-headline-phrase inline-flex items-center gap-1.5 lg:gap-2.5 will-change-transform whitespace-nowrap text-neutral-400">
-              <span
-                onClick={handleDiamondHover}
-                onMouseEnter={handleDiamondHover}
-                className="hero-glyph-diamond text-[#FF1B58] text-[0.72em] inline-flex items-center justify-center cursor-pointer select-none origin-center drop-shadow-[0_0_12px_rgba(255,27,88,0.6)] active:scale-90"
-                title="Interactive glyph"
-              >
-                ✦
-              </span>
-              <span>Real-world</span>
-            </span>
-
-            {/* Line break on both mobile and desktop (finishes desktop Line 2 & mobile Line 3) */}
-            <span className="basis-full h-0 block" aria-hidden="true" />
-
-            {/* Phrase 5: tech careers in Nagaland [Lightning Bolt] */}
-            <span className="hero-headline-phrase inline-flex flex-wrap sm:flex-nowrap items-center gap-x-2.5 lg:gap-x-3.5 will-change-transform text-neutral-950">
-              <span className="whitespace-nowrap">tech careers</span>
-              <span className="inline-flex items-center gap-2 lg:gap-3 whitespace-nowrap">
-                <span>in Nagaland</span>
+            {/* Line 3: TECH CAREERS IN NAGALAND [Lightning Bolt] */}
+            <div className="hero-headline-line overflow-hidden py-2 -my-2">
+              <div className="hero-headline-word flex items-center gap-x-4 whitespace-nowrap will-change-transform">
+                <span className="text-neutral-950">tech careers in Nagaland</span>
 
                 {/* GSAP Lightning Bolt Flair */}
                 <span
-                  className="hero-flair-bolt inline-flex items-center justify-center select-none w-4 h-6 sm:w-5 sm:h-7 lg:w-6 lg:h-9 -my-1 lg:-my-2 shrink-0"
+                  className="hero-flair-bolt inline-flex items-center justify-center select-none w-6 h-9 -my-2"
                   title="Electric momentum"
                 >
                   <svg
@@ -695,29 +702,144 @@ export default function CoskaHero() {
                     />
                   </svg>
                 </span>
-              </span>
-            </span>
+              </div>
+            </div>
 
-            {/* Line break on both mobile and desktop (finishes desktop Line 3 & mobile Line 4) */}
-            <span className="basis-full h-0 block" aria-hidden="true" />
-
-            {/* Phrase 6: • built for skills [Quad-Circles Flair] */}
-            <span className="hero-headline-phrase inline-flex items-center gap-2.5 lg:gap-4 will-change-transform whitespace-nowrap text-neutral-400">
-              <span className="inline-flex items-center gap-1.5 lg:gap-2.5">
-                <span
-                  onClick={handleDotHover}
-                  onMouseEnter={handleDotHover}
-                  className="hero-glyph-dot text-[#C21BFF] text-[0.85em] leading-none inline-flex items-center justify-center cursor-pointer select-none origin-center drop-shadow-[0_0_8px_rgba(194,27,255,0.5)] active:scale-90"
-                  title="Interactive glyph"
-                >
-                  •
+            {/* Line 4: • BUILT FOR SKILLS [Quad-Circles Flair] */}
+            <div className="hero-headline-line overflow-hidden py-2 -my-2">
+              <div className="hero-headline-word flex items-center gap-x-4 whitespace-nowrap will-change-transform">
+                <span className="text-neutral-400 inline-flex items-baseline gap-3.5">
+                  <span
+                    onMouseEnter={handleDotHover}
+                    className="hero-glyph-dot text-[#C21BFF] text-[0.85em] leading-none self-center inline-flex items-center justify-center cursor-pointer select-none origin-center drop-shadow-[0_0_8px_rgba(194,27,255,0.5)] px-1 align-middle will-change-transform"
+                    title="Interactive glyph"
+                  >
+                    •
+                  </span>
+                  <span>built for skills</span>
                 </span>
-                <span>built for skills</span>
-              </span>
 
-              {/* GSAP Quad-Circles Flair */}
+                {/* GSAP Quad-Circles Flair */}
+                <span
+                  className="hero-flair-circles inline-flex items-center justify-center select-none w-7 h-7 -my-2"
+                  title="Geometric perfection"
+                >
+                  <svg
+                    viewBox="0 0 156 156"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full drop-shadow-[0_2px_8px_rgba(225,147,255,0.4)]"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M45.9341 76.316C43.4159 76.8454 40.8068 77.1236 38.1333 77.1236C17.0729 77.1236 0 59.8589 0 38.5618C0 17.2647 17.0729 0 38.1333 0C59.1938 0 76.2666 17.2647 76.2666 38.5618C76.2666 40.3457 76.1469 42.1013 75.915 43.8209H80.0849C79.853 42.1013 79.7332 40.3457 79.7332 38.5618C79.7332 17.2647 96.8061 0 117.867 0C138.927 0 156 17.2647 156 38.5618C156 59.8589 138.927 77.1236 117.867 77.1236C115.499 77.1236 113.182 76.9054 110.934 76.4879V79.5128C113.182 79.0953 115.499 78.8771 117.867 78.8771C138.927 78.8771 156 96.1418 156 117.439C156 138.736 138.927 156.001 117.867 156.001C96.8064 156.001 79.7335 138.736 79.7335 117.439C79.7335 114.736 80.0086 112.097 80.5319 109.551H75.6376C76.0508 111.825 76.2667 114.169 76.2667 116.564C76.2667 137.861 59.1938 155.126 38.1334 155.126C17.0729 155.126 6.30037e-05 137.861 6.30037e-05 116.564C6.30037e-05 95.2671 17.0729 78.0024 38.1334 78.0024C40.8068 78.0024 43.416 78.2806 45.9341 78.8099V76.316Z"
+                      fill="url(#paint_hero_circles_desktop)"
+                    />
+                    <defs>
+                      <radialGradient id="paint_hero_circles_desktop" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.0022 111.876) rotate(-90) scale(122.883)">
+                        <stop stopColor="#E193FF" />
+                        <stop offset="0.67" stopColor="#8E78DA" />
+                        <stop offset="1" stopColor="#DFC7E8" />
+                      </radialGradient>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+          </h1>
+        </div>
+
+        {/* 2b. MOBILE / TABLET HEADLINE (Clean, Purpose-Built Portrait Layout) */}
+        <div className="block lg:hidden hero-headline-mobile mb-8">
+          <h1 className="text-[clamp(2.1rem,6.8vw,2.6rem)] sm:text-[2.9rem] leading-[1.08] font-black uppercase tracking-[-0.035em] text-neutral-950 flex flex-col gap-1.5">
+
+            {/* Line 1: Skill is the only [Windmill] */}
+            <div className="hero-headline-line-mob flex items-center gap-2 will-change-transform">
+              <span className="text-neutral-950">Skill is the only</span>
               <span
-                className="hero-flair-circles inline-flex items-center justify-center select-none w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 -my-1 lg:-my-2 shrink-0"
+                onClick={handleWindmillHover}
+                onMouseEnter={handleWindmillHover}
+                className="hero-flair-windmill-mob inline-flex items-center justify-center cursor-pointer select-none origin-center w-7 h-7 sm:w-9 sm:h-9 active:scale-90 transition-transform shrink-0"
+                title="Interactive windmill flair"
+              >
+                <svg
+                  viewBox="0 0 137 135"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="hero-flair-windmill-svg w-full h-full drop-shadow-[0_2px_8px_rgba(255,135,9,0.3)]"
+                >
+                  <path
+                    d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.841 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z"
+                    fill="url(#paint_hero_windmill_mob)"
+                  />
+                  <defs>
+                    <linearGradient id="paint_hero_windmill_mob" x1="-76.68" y1="-15.62" x2="165.68" y2="81.01" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.43" stopColor="#FF8709" />
+                      <stop offset="0.79" stopColor="#F7BDF8" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+            </div>
+
+            {/* Line 2: ✴ unfair advantage */}
+            <div className="hero-headline-line-mob flex items-center gap-1.5 text-neutral-400 will-change-transform">
+              <span
+                onClick={handleStarHover}
+                onMouseEnter={handleStarHover}
+                className="hero-glyph-star text-[#58FF1B] text-[0.8em] inline-flex items-center justify-center cursor-pointer select-none drop-shadow-[0_0_8px_rgba(88,255,27,0.5)] active:scale-90"
+              >
+                ✴
+              </span>
+              <span>unfair advantage</span>
+            </div>
+
+            {/* Line 3: ✦ Real-world tech */}
+            <div className="hero-headline-line-mob flex items-center gap-1.5 text-neutral-400 will-change-transform">
+              <span
+                onClick={handleDiamondHover}
+                onMouseEnter={handleDiamondHover}
+                className="hero-glyph-diamond text-[#FF1B58] text-[0.72em] inline-flex items-center justify-center cursor-pointer select-none drop-shadow-[0_0_12px_rgba(255,27,88,0.6)] active:scale-90"
+              >
+                ✦
+              </span>
+              <span>Real-world tech</span>
+            </div>
+
+            {/* Line 4: careers in Nagaland ⚡ */}
+            <div className="hero-headline-line-mob flex items-center gap-1.5 will-change-transform">
+              <span className="text-neutral-950">careers in Nagaland</span>
+              <span className="hero-flair-bolt inline-flex items-center justify-center select-none w-4 h-6 sm:w-5 sm:h-7 shrink-0">
+                <svg
+                  viewBox="0 0 134 229"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-full drop-shadow-[0_2px_8px_rgba(10,228,72,0.4)]"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M102.08 10C103.439 10 104.402 11.3264 103.982 12.6187L79.6746 87.3335C79.2542 88.6259 80.2175 89.9522 81.5765 89.9522H109.983C111.634 89.9522 112.574 91.8401 111.579 93.1577L11.2304 226L40.4408 124.708C40.8095 123.429 39.8499 122.154 38.5191 122.154H8.82733C7.44727 122.154 6.48193 120.789 6.94147 119.488L45.1353 11.334C45.4176 10.5346 46.1733 10 47.0211 10H102.08Z"
+                    fill="#0AE448"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            {/* Line 5: • built for skills [Quad-Circles Flair] */}
+            <div className="hero-headline-line-mob flex items-center gap-2 text-neutral-400 will-change-transform">
+              <span
+                onClick={handleDotHover}
+                onMouseEnter={handleDotHover}
+                className="hero-glyph-dot text-[#C21BFF] text-[0.85em] inline-flex items-center justify-center cursor-pointer select-none drop-shadow-[0_0_8px_rgba(194,27,255,0.5)] active:scale-90"
+              >
+                •
+              </span>
+              <span>built for skills</span>
+              <span
+                className="hero-flair-circles inline-flex items-center justify-center select-none w-5 h-5 sm:w-6 sm:h-6 shrink-0"
                 title="Geometric perfection"
               >
                 <svg
@@ -730,10 +852,10 @@ export default function CoskaHero() {
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M45.9341 76.316C43.4159 76.8454 40.8068 77.1236 38.1333 77.1236C17.0729 77.1236 0 59.8589 0 38.5618C0 17.2647 17.0729 0 38.1333 0C59.1938 0 76.2666 17.2647 76.2666 38.5618C76.2666 40.3457 76.1469 42.1013 75.915 43.8209H80.0849C79.853 42.1013 79.7332 40.3457 79.7332 38.5618C79.7332 17.2647 96.8061 0 117.867 0C138.927 0 156 17.2647 156 38.5618C156 59.8589 138.927 77.1236 117.867 77.1236C115.499 77.1236 113.182 76.9054 110.934 76.4879V79.5128C113.182 79.0953 115.499 78.8771 117.867 78.8771C138.927 78.8771 156 96.1418 156 117.439C156 138.736 138.927 156.001 117.867 156.001C96.8064 156.001 79.7335 138.736 79.7335 117.439C79.7335 114.736 80.0086 112.097 80.5319 109.551H75.6376C76.0508 111.825 76.2667 114.169 76.2667 116.564C76.2667 137.861 59.1938 155.126 38.1334 155.126C17.0729 155.126 6.30037e-05 137.861 6.30037e-05 116.564C6.30037e-05 95.2671 17.0729 78.0024 38.1334 78.0024C40.8068 78.0024 43.416 78.2806 45.9341 78.8099V76.316Z"
-                    fill="url(#paint_hero_circles)"
+                    fill="url(#paint_hero_circles_mob)"
                   />
                   <defs>
-                    <radialGradient id="paint_hero_circles" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.0022 111.876) rotate(-90) scale(122.883)">
+                    <radialGradient id="paint_hero_circles_mob" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.0022 111.876) rotate(-90) scale(122.883)">
                       <stop stopColor="#E193FF" />
                       <stop offset="0.67" stopColor="#8E78DA" />
                       <stop offset="1" stopColor="#DFC7E8" />
@@ -741,7 +863,7 @@ export default function CoskaHero() {
                   </defs>
                 </svg>
               </span>
-            </span>
+            </div>
 
           </h1>
         </div>
