@@ -23,7 +23,7 @@ function SwissBrutalistCard({
   const shadowClass = isLarge
     ? "shadow-[12px_12px_0px_rgba(0,0,0,1)] hover:shadow-[20px_20px_0px_var(--card-brand)]"
     : "shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_var(--card-brand)]";
-  const cardIdentifier = isLarge ? "featured-card" : "archive-card";
+  const cardIdentifier = "blog-card";
 
   return (
     <Link
@@ -155,34 +155,23 @@ export default function BlogClient({ posts }: { posts: PostSummary[] }) {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
-      // Reveal archive cards smoothly as each year section scrolls into view
-      const archiveGrids = containerRef.current?.querySelectorAll(".archive-year-grid");
-      archiveGrids?.forEach((grid) => {
-        const cards = grid.querySelectorAll(".archive-card");
-        if (cards.length > 0) {
-          gsap.fromTo(
-            cards,
-            { opacity: 0, y: 32, scale: 0.98 },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.55,
-              stagger: 0.06,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: grid,
-                start: "top 85%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
+    // When the category filter changes, smoothly reveal the new set of cards
+    const cards = containerRef.current.querySelectorAll(".blog-card");
+    if (cards.length > 0) {
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: "power2.out",
+          overwrite: "auto",
         }
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
+      );
+    }
+    ScrollTrigger.refresh();
   }, [active]);
 
   return (

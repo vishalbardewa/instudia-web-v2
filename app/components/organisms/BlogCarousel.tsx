@@ -291,7 +291,7 @@ export default function BlogCarousel({ posts }: { posts: PostSummary[] }) {
   }, [posts]);
 
   return (
-    <section ref={sectionRef} className="relative mt-24 sm:mt-32 lg:mt-40 py-24 sm:py-32 lg:py-40 overflow-hidden bg-[#FAFAFA]">
+    <section ref={sectionRef} data-no-reveal="true" className="relative mt-24 sm:mt-32 lg:mt-40 py-24 sm:py-32 lg:py-40 overflow-hidden bg-[#FAFAFA]">
       {/* Swiss Grid Overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"

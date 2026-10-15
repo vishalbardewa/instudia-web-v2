@@ -672,6 +672,7 @@ export default function CoskaHero() {
   return (
     <section
       ref={sectionRef}
+      data-no-reveal="true"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative w-full bg-[#F7F7F8] text-neutral-950 overflow-hidden pt-6 sm:pt-12 pb-14 sm:pb-24 font-sans antialiased border-b border-black/[0.06]"

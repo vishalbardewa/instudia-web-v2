@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "./components/atom/MotionProvider";
 import SmoothScrollProvider from "./components/atom/SmoothScrollProvider";
+import ScrollRevealProvider from "./components/atom/ScrollRevealProvider";
 
 import ConditionalLayout from "./components/layouts/ConditionalLayout";
 import DeviceSizeIndicator from "./components/atom/DeviceSizeIndicator";
@@ -108,12 +109,14 @@ export default function RootLayout({
       </head>
       <body className={jakarta.className}>
         <SmoothScrollProvider>
-          <MotionProvider>
-            <ConditionalLayout>
-              <DeviceSizeIndicator />
-              {children}
-            </ConditionalLayout>
-          </MotionProvider>
+          <ScrollRevealProvider>
+            <MotionProvider>
+              <ConditionalLayout>
+                <DeviceSizeIndicator />
+                {children}
+              </ConditionalLayout>
+            </MotionProvider>
+          </ScrollRevealProvider>
         </SmoothScrollProvider>
         {/* Deferred analytics — loads after page is interactive */}
         {GA_MEASUREMENT_ID && (
