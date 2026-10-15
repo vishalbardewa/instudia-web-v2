@@ -23,7 +23,7 @@ interface CourseHighlightSectionProps {
 export default function CourseHighlightSection({
   benefits = defaultBenefits,
 }: CourseHighlightSectionProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -119,23 +119,27 @@ export default function CourseHighlightSection({
   }, []);
 
   return (
-    <div ref={containerRef} className="relative isolate -z-10 mt-32 sm:mt-40">
+    <section
+      ref={containerRef}
+      data-no-reveal="true"
+      className="relative isolate mt-32 sm:mt-40"
+    >
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-black/5 px-6 py-16 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
           
-          {/* Left image container with parallax */}
+          {/* Left image container with parallax depth */}
           <div
             ref={imageWrapperRef}
-            className="relative h-96 w-full flex-none rounded-2xl overflow-hidden shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
+            className="relative w-full sm:w-[384px] h-[340px] sm:h-[384px] lg:w-[384px] lg:h-[384px] flex-none rounded-2xl overflow-hidden shadow-xl border-2 border-black/10 bg-neutral-100"
           >
-            <div ref={imageRef} className="absolute inset-0 h-[115%] w-full -top-[7.5%]">
+            <div ref={imageRef} className="absolute inset-0 h-[120%] w-full -top-[10%]">
               <Image
                 alt="Person staring at laptop sitting on the chair"
                 src="/assets/images/course-unique-highlight.webp"
                 className="object-cover"
                 fill
-                loading="lazy"
-                sizes="(max-width: 1024px) 100vw, 384px"
+                priority={false}
+                sizes="(max-width: 640px) 100vw, 384px"
               />
             </div>
           </div>
@@ -186,6 +190,6 @@ export default function CourseHighlightSection({
           className="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#1B1C1E] to-[#FAFAFA] opacity-25"
         />
       </div>
-    </div>
+    </section>
   );
 }
