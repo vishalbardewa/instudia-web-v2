@@ -25,6 +25,7 @@ const HslRelationshipWidget = dynamic(() => import("../../components/molecules/H
 const HarmonyDefinitionsWidget = dynamic(() => import("../../components/molecules/HarmonyDefinitionsWidget"));
 const CockroachDbExplorer = dynamic(() => import("../../components/molecules/CockroachDbExplorer"));
 const InteractiveSequenceWidget = dynamic(() => import("../../components/molecules/InteractiveSequenceWidget"));
+const GmailComposeWidget = dynamic(() => import("../../components/molecules/GmailComposeWidget"));
 import TopStoriesSection from "../../components/molecules/TopStoriesSection";
 import AuthorCard from "../../components/molecules/AuthorCard";
 import { BreadcrumbSchema } from "../../components/SchemaOrg/BreadcrumbSchema";
@@ -504,6 +505,9 @@ export default async function BlogPostPage({ params }: Props) {
                           }
                           if (item.widgetId === "cockroachdb-explorer") {
                             return <CockroachDbExplorer key={ii} />;
+                          }
+                          if (item.widgetId === "gmail-compose-widget" || item.widgetId === "gmail-outreach-composer") {
+                            return <GmailComposeWidget key={ii} />;
                           }
                           if (
                             item.widgetId === "interactive-sequence" ||

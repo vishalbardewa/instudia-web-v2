@@ -586,6 +586,7 @@ export default function CoskaHero() {
   const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (typeof window === "undefined" || window.innerWidth < 1024) return;
     const card = e.currentTarget;
+    if (!card) return;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
@@ -605,6 +606,7 @@ export default function CoskaHero() {
 
   const handleCardMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
+    if (!card) return;
     gsap.to(card, {
       rotateX: 0,
       rotateY: 0,
@@ -617,54 +619,73 @@ export default function CoskaHero() {
 
   // Interactive glyph hover & tap handlers (gsap.com signature)
   const handleStarHover = (e: React.MouseEvent<HTMLElement>) => {
-    gsap.to(e.currentTarget, {
+    const target = e.currentTarget;
+    if (!target) return;
+    gsap.to(target, {
       rotation: "+=360",
       scale: 1.25,
       duration: 0.65,
       ease: "back.out(2)",
+      overwrite: "auto",
       onComplete: () => {
-        gsap.to(e.currentTarget, { scale: 1, duration: 0.3, ease: "power2.out" });
+        if (target) {
+          gsap.to(target, { scale: 1, duration: 0.3, ease: "power2.out", overwrite: "auto" });
+        }
       },
     });
   };
 
   const handleDiamondHover = (e: React.MouseEvent<HTMLElement>) => {
-    gsap.to(e.currentTarget, {
+    const target = e.currentTarget;
+    if (!target) return;
+    gsap.to(target, {
       scale: 1.45,
       rotation: "+=180",
       duration: 0.55,
       ease: "back.out(2)",
       overwrite: "auto",
       onComplete: () => {
-        gsap.to(e.currentTarget, {
-          scale: 1,
-          duration: 0.4,
-          ease: "power2.out",
-          overwrite: "auto",
-        });
+        if (target) {
+          gsap.to(target, {
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+            overwrite: "auto",
+          });
+        }
       },
     });
   };
 
   const handleDotHover = (e: React.MouseEvent<HTMLElement>) => {
-    gsap.to(e.currentTarget, {
+    const target = e.currentTarget;
+    if (!target) return;
+    gsap.to(target, {
       scale: 1.5,
       duration: 0.35,
       ease: "back.out(3)",
+      overwrite: "auto",
       onComplete: () => {
-        gsap.to(e.currentTarget, { scale: 1, duration: 0.3, ease: "power2.out" });
+        if (target) {
+          gsap.to(target, { scale: 1, duration: 0.3, ease: "power2.out", overwrite: "auto" });
+        }
       },
     });
   };
 
   const handleWindmillHover = (e: React.MouseEvent<HTMLElement>) => {
-    gsap.to(e.currentTarget, {
+    const target = e.currentTarget;
+    if (!target) return;
+    gsap.to(target, {
       rotation: "+=180",
       scale: 1.2,
       duration: 0.6,
       ease: "power3.out",
+      overwrite: "auto",
       onComplete: () => {
-        gsap.to(e.currentTarget, { scale: 1, duration: 0.3, ease: "power2.out" });
+        if (target) {
+          gsap.to(target, { scale: 1, duration: 0.3, ease: "power2.out", overwrite: "auto" });
+        }
       },
     });
   };
