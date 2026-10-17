@@ -38,42 +38,7 @@ export default function BlogPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Swiss Archival Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden border-b-2 border-black/5">
-        {/* Swiss Grid Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-
-        <Container className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-8">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest">
-                  Latest
-                </span>
-                <p className="text-[10px] font-black tracking-[0.4em] text-black uppercase">
-                  Knowledge Vault
-                </p>
-              </div>
-
-              <h1 className="text-6xl sm:text-[9rem] font-black tracking-[-0.04em] text-black leading-[0.8] uppercase flex flex-col">
-                <span>instudia</span>
-                <span className="text-white [-webkit-text-stroke:4px_black]" style={{ paintOrder: 'stroke fill' }}>blogs.</span>
-              </h1>
-            </div>
-
-            <div className="lg:col-span-4 lg:mb-4 lg:text-right">
-              <p className="text-sm font-bold text-black leading-tight max-w-sm ml-auto uppercase mb-10 opacity-70">
-                Insights to <span className="text-brandpurple underline decoration-2 underline-offset-4">build your career</span>. Practical guides on tech, design, and regional skills.
-              </p>
-              <div className="h-[2px] w-full bg-black/10 relative overflow-hidden hidden lg:block">
-                <div className="absolute inset-0 bg-black w-1/3" />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Interactive filter + posts (client component) */}
+      {/* Interactive Hero + Filter + Posts (Animated Client Component) */}
       <BlogClient posts={posts} />
 
       {/* Brutalist Newsletter / CTA */}

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { type PostSummary, formatDate } from "../data/types";
 import { getOptimizedThumbnail } from "../utils/thumbnailOptimizer";
+import { Container } from "../components/atom/Container";
 
 const BRAND_COLORS = ["#C21BFF", "#FFE01B", "#FF1B58", "#58FF1B"];
 
@@ -80,7 +81,7 @@ function SwissBrutalistCard({
           </h3>
 
           <p
-            className={`mt-6 text-sm text-black font-medium leading-normal opacity-70 line-clamp-3 ${
+            className={`blog-card-excerpt mt-6 text-sm text-black font-medium leading-normal opacity-70 line-clamp-3 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-black ${
               isLarge ? "text-lg max-w-xl" : ""
             }`}
           >
@@ -122,6 +123,7 @@ function SwissBrutalistCard({
 
 export default function BlogClient({ posts }: { posts: PostSummary[] }) {
   const [active, setActive] = useState("All");
+  const heroRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const categories = useMemo(() => {
@@ -149,33 +151,132 @@ export default function BlogClient({ posts }: { posts: PostSummary[] }) {
 
   const sortedYears = Object.keys(groupedByYear).sort((a, b) => b.localeCompare(a));
 
+  // 1. Initial Hero Entrance Animation
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion || !heroRef.current) return;
+
+    const heroBadge = heroRef.current.querySelector(".hero-badge");
+    const heroTitle = heroRef.current.querySelector(".hero-title");
+    const heroDesc = heroRef.current.querySelector(".hero-description");
+    const heroAccentBar = heroRef.current.querySelector(".hero-accent-bar");
+
+    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    if (heroBadge) {
+      heroTl.fromTo(heroBadge, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.5 });
+    }
+    if (heroTitle) {
+      heroTl.fromTo(heroTitle, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.65 }, "-=0.3");
+    }
+    if (heroDesc) {
+      heroTl.fromTo(
+        heroDesc,
+        { opacity: 0, y: 16 },
+        { opacity: 0.7, y: 0, duration: 0.65 },
+        "-=0.35"
+      );
+    }
+    if (heroAccentBar) {
+      heroTl.fromTo(
+        heroAccentBar,
+        { scaleX: 0, transformOrigin: "left center" },
+        { scaleX: 1, duration: 0.8, ease: "power2.inOut" },
+        "-=0.4"
+      );
+    }
+  }, []);
+
+  // 2. Coordinated Card and Excerpt Entrance on Load & Category Filter
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion || !containerRef.current) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // When the category filter changes, smoothly reveal the new set of cards
     const cards = containerRef.current.querySelectorAll(".blog-card");
+    const excerpts = containerRef.current.querySelectorAll(".blog-card-excerpt");
+
     if (cards.length > 0) {
-      gsap.fromTo(
-        cards,
-        { opacity: 0, y: 24 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: "power2.out",
-          overwrite: "auto",
-        }
-      );
+      const cardsTl = gsap.timeline({ defaults: { overwrite: "auto" } });
+      cardsTl
+        .fromTo(
+          cards,
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.45,
+            stagger: 0.04,
+            ease: "power2.out",
+          }
+        )
+        .fromTo(
+          excerpts,
+          { opacity: 0, y: 8 },
+          {
+            opacity: 0.7,
+            y: 0,
+            duration: 0.4,
+            stagger: 0.04,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        );
     }
     ScrollTrigger.refresh();
   }, [active]);
 
   return (
     <div className="relative pb-32">
+      {/* Swiss Archival Hero with Animated Description */}
+      <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden border-b-2 border-black/5">
+        {/* Swiss Grid Overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-8">
+              <div className="hero-badge flex items-center gap-4 mb-8">
+                <span className="text-[10px] font-black text-white bg-black px-3 py-1 uppercase tracking-widest">
+                  Latest
+                </span>
+                <p className="text-[10px] font-black tracking-[0.4em] text-black uppercase">
+                  Knowledge Vault
+                </p>
+              </div>
+
+              <h1 className="hero-title text-6xl sm:text-[9rem] font-black tracking-[-0.04em] text-black leading-[0.8] uppercase flex flex-col">
+                <span>instudia</span>
+                <span className="text-white [-webkit-text-stroke:4px_black]" style={{ paintOrder: "stroke fill" }}>
+                  blogs.
+                </span>
+              </h1>
+            </div>
+
+            <div className="lg:col-span-4 lg:mb-4 lg:text-right">
+              <p className="hero-description text-sm font-bold text-black leading-tight max-w-sm ml-auto uppercase mb-10 opacity-70">
+                Insights to{" "}
+                <span className="text-brandpurple underline decoration-2 underline-offset-4">
+                  build your career
+                </span>
+                . Practical guides on tech, design, and regional skills.
+              </p>
+              <div className="h-[2px] w-full bg-black/10 relative overflow-hidden hidden lg:block">
+                <div className="hero-accent-bar absolute inset-0 bg-black w-1/3" />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* Swiss Category Nav */}
       <div className="sticky top-0 z-40 bg-white border-b-2 border-black">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex gap-3 sm:gap-4 overflow-x-auto brutalist-scrollbar -webkit-overflow-scrolling-touch">
