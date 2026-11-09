@@ -52,6 +52,15 @@ interface ToolProps {
 
 const tools: ToolProps[] = [
   {
+    name: "Student PC & Laptop Builder",
+    href: "/tools/pc-laptop-builder",
+    description: "Customise your laptop or desktop PC build for coding, graphic design, and 3D. Analyse market prices and avoid costly hardware traps.",
+    style: "flourescent",
+    statusMessage: "New Tool",
+    category: "student",
+    imageUrl: "https://ik.imagekit.io/dxffek9yf/course-list-page/tool-3.png"
+  },
+  {
     name: "Nagaland Career Guide",
     href: "/tools/career-guide",
     description: "An interactive, 80,000 Hours-inspired guide to building high-impact careers and finding your problem match in Nagaland.",

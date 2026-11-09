@@ -12,25 +12,51 @@ export const ResumePreview = ({ data }: any) => {
   const headerSize = settings?.headerSize || 4.0;
   const sectionTitleSize = settings?.sectionTitleSize || 11;
   const bodySize = settings?.bodySize || 14;
+  const template = settings?.template || "bento";
+  const paperSize = settings?.paperSize || "a4";
+  const fontKey = settings?.fontFamily || "jakarta";
+  const headerAlignmentSetting = settings?.headerAlignment || "default";
 
-  const renderHeader = (alignment: "left" | "center" = "left", showContact: boolean = true) => (
-    <div className={`mb-1 ${alignment === "center" ? "text-center" : ""}`}>
-      <h2 className="text-[4em] font-black text-[#1B1C1E] mb-2 tracking-tighter leading-none">
-        {basics.name?.split(" ")[0]} <span className="text-brandpurple">{basics.name?.split(" ").slice(1).join(" ")}</span>
-      </h2>
-      <div className={`flex flex-col gap-4 ${alignment === "center" ? "items-center" : "items-start"}`}>
-        <span className="text-[#1B1C1E] border-b-2 border-brandpurple pb-0.5 text-[0.85em] font-black uppercase tracking-[0.1em]">{basics.title}</span>
-        {showContact && (
-          <div className={`flex flex-wrap items-center gap-2 text-[0.85em] font-black uppercase tracking-[0.1em] text-gray-400 ${alignment === "center" ? "justify-center" : ""}`}>
-            <span>{basics.email}</span>
-            <span>{basics.phone}</span>
-            <span>{basics.location}</span>
-            {basics.website && <span>{basics.website}</span>}
-          </div>
-        )}
+  const isLetter = paperSize === "letter";
+  const docWidth = isLetter ? "215.9mm" : "210mm";
+  const docMinHeight = isLetter ? "279.4mm" : "297mm";
+  const pageSize = isLetter ? "letter" : "A4";
+
+  const fontFamily =
+    fontKey === "merriweather"
+      ? "'Merriweather', serif"
+      : fontKey === "inter"
+      ? "'Inter', sans-serif"
+      : "'Plus Jakarta Sans', sans-serif";
+
+  const getHeaderAlignment = (templateDefault: "left" | "center" = "left"): "left" | "center" => {
+    if (headerAlignmentSetting === "center" || headerAlignmentSetting === "left") {
+      return headerAlignmentSetting;
+    }
+    return templateDefault;
+  };
+
+  const renderHeader = (alignment: "left" | "center" = "left", showContact: boolean = true) => {
+    const activeAlign = getHeaderAlignment(alignment);
+    return (
+      <div className={`mb-1 ${activeAlign === "center" ? "text-center" : ""}`}>
+        <h2 className="text-[4em] font-black text-[#1B1C1E] mb-2 tracking-tighter leading-none">
+          {basics.name?.split(" ")[0]} <span className="text-brandpurple">{basics.name?.split(" ").slice(1).join(" ")}</span>
+        </h2>
+        <div className={`flex flex-col gap-4 ${activeAlign === "center" ? "items-center" : "items-start"}`}>
+          <span className="text-[#1B1C1E] border-b-2 border-brandpurple pb-0.5 text-[0.85em] font-black uppercase tracking-[0.1em]">{basics.title}</span>
+          {showContact && (
+            <div className={`flex flex-wrap items-center gap-2 text-[0.85em] font-black uppercase tracking-[0.1em] text-gray-400 ${activeAlign === "center" ? "justify-center" : ""}`}>
+              <span>{basics.email}</span>
+              <span>{basics.phone}</span>
+              <span>{basics.location}</span>
+              {basics.website && <span>{basics.website}</span>}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const renderBento = () => (
     <div className="space-y-4">
@@ -38,7 +64,7 @@ export const ResumePreview = ({ data }: any) => {
       <div className="grid grid-cols-3 gap-12">
         <div className="col-span-2 space-y-12">
           {basics.summary && (
-            <div className="section-spacing bg-neutral-50/30 p-8 rounded-[2rem] border border-neutral-100/50 shadow-sm">
+            <div className="section-spacing bg-neutral-50/30 p-8 rounded-[2rem] border border-neutral-100/50 shadow-sm break-inside-avoid">
               <div className="section-title">
                 <h2 className="text-section-title font-black text-[#1B1C1E] uppercase">Professional Summary</h2>
               </div>
@@ -53,7 +79,7 @@ export const ResumePreview = ({ data }: any) => {
               </div>
               <div className="space-y-item-gap">
                 {section.items.map((item: any, i: number) => (
-                  <div key={i} className="group relative bg-white border border-neutral-100 rounded-[1.5rem] p-6 hover:shadow-md transition-all">
+                  <div key={i} className="group relative bg-white border border-neutral-100 rounded-[1.5rem] p-6 hover:shadow-md transition-all break-inside-avoid">
                     <div className="flex justify-between items-baseline mb-2">
                       <h3 className="text-[1.2em] font-black text-[#1B1C1E] tracking-tight">{item.title || "Entry Title"}</h3>
                       <span className="text-[0.7em] font-black text-gray-300 uppercase tracking-widest bg-neutral-50 px-2 py-1 rounded border border-neutral-100">{item.date}</span>
@@ -76,7 +102,7 @@ export const ResumePreview = ({ data }: any) => {
 
         <div className="col-span-1 space-y-12">
           {sections.filter((s: any) => s.type === "tags").map((section: any) => (
-            <div key={section.id} className="section-spacing bg-neutral-50 p-8 rounded-[2rem] border border-neutral-100 h-fit">
+            <div key={section.id} className="section-spacing bg-neutral-50 p-8 rounded-[2rem] border border-neutral-100 h-fit break-inside-avoid">
               <div className="section-title">
                 <h2 className="text-section-title font-black text-[#1B1C1E] uppercase">{section.title}</h2>
               </div>
@@ -98,7 +124,7 @@ export const ResumePreview = ({ data }: any) => {
     <div className="max-w-4xl mx-auto space-y-14">
       {renderHeader("center")}
       {basics.summary && (
-        <div className="section-spacing text-center border-y border-neutral-100 py-10">
+        <div className="section-spacing text-center border-y border-neutral-100 py-10 break-inside-avoid">
           <p className="font-medium max-w-2xl mx-auto italic leading-relaxed text-gray-600">{basics.summary}</p>
         </div>
       )}
@@ -112,7 +138,7 @@ export const ResumePreview = ({ data }: any) => {
           {section.type === "list" ? (
             <div className="space-y-item-gap">
               {section.items.map((item: any, i: number) => (
-                <div key={i} className="text-center">
+                <div key={i} className="text-center break-inside-avoid py-2">
                   <h3 className="text-[1.3em] font-black text-[#1B1C1E] mb-2">{item.title}</h3>
                   <p className="text-[0.9em] font-black text-brandpurple uppercase tracking-widest mb-2">{item.subtitle} — {item.date}</p>
                   {item.description && (
@@ -124,7 +150,7 @@ export const ResumePreview = ({ data }: any) => {
               ))}
             </div>
           ) : (
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-3 break-inside-avoid">
               {section.content?.split(",").map((tag: string, i: number) => (
                 <span key={i} className="px-4 py-1.5 bg-neutral-50 text-[#1B1C1E] rounded-full text-[0.75em] font-black border border-neutral-100 uppercase tracking-widest">
                   {tag.trim()}
@@ -147,7 +173,7 @@ export const ResumePreview = ({ data }: any) => {
               <h2 className="text-section-title font-black text-[#1B1C1E] uppercase border-b-2 border-neutral-100 pb-2 mb-8">{sectionIndex.title}</h2>
               <div className="space-y-item-gap">
                 {sectionIndex.items.map((item: any, i: number) => (
-                  <div key={i} className="grid grid-cols-6 gap-6">
+                  <div key={i} className="grid grid-cols-6 gap-6 break-inside-avoid">
                     <div className="col-span-1 text-[0.75em] font-black text-gray-300 uppercase tracking-widest pt-1">{item.date}</div>
                     <div className="col-span-1 border-l-2 border-neutral-50 ml-2" />
                     <div className="col-span-4">
@@ -166,7 +192,7 @@ export const ResumePreview = ({ data }: any) => {
           ))}
         </div>
 
-        <div className="col-span-4 space-y-12 bg-neutral-50 px-8 py-10 rounded-[2rem] border border-neutral-100 h-fit">
+        <div className="col-span-4 space-y-12 bg-neutral-50 px-8 py-10 rounded-[2rem] border border-neutral-100 h-fit break-inside-avoid">
           {basics.summary && (
             <div className="section-spacing mt-0!">
               <h2 className="text-[0.85em] font-black text-[#1B1C1E] uppercase tracking-widest mb-4">Target Profile</h2>
@@ -193,9 +219,9 @@ export const ResumePreview = ({ data }: any) => {
   );
 
   const renderMetropolitan = () => (
-    <div className="grid grid-cols-12 gap-0 min-h-[297mm] -m-[var(--doc-page-padding)]">
+    <div className="grid grid-cols-12 gap-0 w-full min-h-[inherit]">
       {/* Sidebar Focus (30%) */}
-      <div className="col-span-4 bg-neutral-900 p-12 text-white space-y-16">
+      <div className="col-span-4 bg-neutral-900 p-10 text-white space-y-12">
         <div>
           <h2 className="text-[3.5em] font-black leading-[0.9] tracking-tighter mb-4">
             {basics.name?.split(" ")[0]} <br />
@@ -216,7 +242,7 @@ export const ResumePreview = ({ data }: any) => {
           </div>
 
           {sections.filter((s: any) => s.type === "tags").map((section: any) => (
-            <div key={section.id} className="space-y-6">
+            <div key={section.id} className="space-y-6 break-inside-avoid">
               <h2 className="text-[0.7em] font-black uppercase tracking-[0.3em] text-brandpurple">{section.title}</h2>
               <div className="flex flex-wrap gap-2">
                 {section.content?.split(",").map((tag: string, i: number) => (
@@ -231,9 +257,9 @@ export const ResumePreview = ({ data }: any) => {
       </div>
 
       {/* Main Content Focus (70%) */}
-      <div className="col-span-8 p-16 bg-white space-y-16">
+      <div className="col-span-8 p-12 bg-white space-y-12">
         {basics.summary && (
-          <div className="section-spacing mt-0!">
+          <div className="section-spacing mt-0! break-inside-avoid">
             <div className="flex items-center gap-4 mb-4">
               <div className="h-[2px] w-8 bg-brandpurple" />
               <h2 className="text-[0.7em] font-black uppercase tracking-[0.3em] text-neutral-400">Core Narrative</h2>
@@ -250,7 +276,7 @@ export const ResumePreview = ({ data }: any) => {
             </h2>
             <div className="space-y-12 pl-6 border-l border-neutral-100">
               {section.items.map((item: any, i: number) => (
-                <div key={i} className="relative">
+                <div key={i} className="relative break-inside-avoid">
                   <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-white border-2 border-brandpurple" />
                   <div className="flex justify-between items-baseline mb-2">
                     <h3 className="text-[1.25em] font-black text-black tracking-tight">{item.title}</h3>
@@ -275,8 +301,10 @@ export const ResumePreview = ({ data }: any) => {
     </div>
   );
 
+  const isMetropolitan = template === "metropolitan";
+
   return (
-    <div className="resume-print-area relative p-0 overflow-hidden">
+    <div className={`resume-print-area relative p-0 overflow-hidden ${fontKey === "merriweather" ? "font-serif" : "font-jakarta"}`}>
       <style dangerouslySetInnerHTML={{
         __html: `
         .resume-print-area {
@@ -287,17 +315,24 @@ export const ResumePreview = ({ data }: any) => {
             --doc-item-gap: ${itemGap}px;
             --doc-header-size: ${headerSize}em;
             --doc-section-size: ${sectionTitleSize}px;
-             --doc-body-size: ${bodySize}px;
+            --doc-body-size: ${bodySize}px;
             
-            width: 210mm;
-            min-height: 297mm;
+            width: ${docWidth};
+            min-height: ${docMinHeight};
             background: white;
+            font-family: ${fontFamily};
             font-size: var(--doc-body-size);
             line-height: var(--doc-line-height);
-            padding: var(--doc-page-padding);
+            padding: ${isMetropolitan ? "0px" : "var(--doc-page-padding)"};
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
          }
          .resume-print-area * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
             transition: color 0.35s ease-out, background-color 0.35s ease-out, border-color 0.35s ease-out, margin 0.35s ease-out, padding 0.35s ease-out, font-size 0.35s ease-out;
          }
          .resume-print-area .text-brandpurple { color: var(--local-brandpurple) !important; transition: color 0.3s ease-out; }
@@ -305,17 +340,17 @@ export const ResumePreview = ({ data }: any) => {
          .resume-print-area .border-brandpurple { border-color: var(--local-brandpurple) !important; transition: border-color 0.3s ease-out; }
          
          .resume-print-area h1 { 
-           font-family: 'Plus Jakarta Sans', sans-serif; 
+           font-family: ${fontFamily}; 
            letter-spacing: -0.05em; 
            line-height: 0.9; 
            font-size: var(--doc-header-size);
          }
          .text-section-title {
            font-size: var(--doc-section-size);
-           font-family: 'Plus Jakarta Sans', sans-serif; 
+           font-family: ${fontFamily}; 
            letter-spacing: 0.1em;
          }
-         .resume-print-area h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+         .resume-print-area h2, .resume-print-area h3 { font-family: ${fontFamily}; }
          
          .section-title {
            display: flex;
@@ -341,22 +376,39 @@ export const ResumePreview = ({ data }: any) => {
          .space-y-item-gap > * + * {
             margin-top: var(--doc-item-gap);
          }
+         .break-inside-avoid {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+         }
 
          @media print {
-           body * { visibility: hidden; }
-           .resume-print-area, .resume-print-area * { visibility: visible; }
-           .resume-print-area { 
-             position: absolute; left: 0; top: 0; width: 210mm; height: 297mm; 
-             margin: 0; padding: var(--doc-page-padding); box-shadow: none !important; border: none !important; 
-             -webkit-print-color-adjust: exact; print-color-adjust: exact;
+           @page { size: ${pageSize}; margin: 0; }
+           html, body {
+             margin: 0 !important;
+             padding: 0 !important;
+             background: white !important;
+             -webkit-print-color-adjust: exact !important;
+             print-color-adjust: exact !important;
            }
-           @page { size: A4; margin: 0; }
+           .resume-print-area { 
+             position: relative !important;
+             left: 0 !important;
+             top: 0 !important;
+             width: ${docWidth} !important;
+             min-height: ${docMinHeight} !important; 
+             margin: 0 auto !important;
+             padding: ${isMetropolitan ? "0px" : "var(--doc-page-padding)"} !important;
+             box-shadow: none !important;
+             border: none !important; 
+             -webkit-print-color-adjust: exact !important;
+             print-color-adjust: exact !important;
+           }
          }
       `}} />
 
-      {settings?.template === "minimalist" ? renderMinimalist() :
-        settings?.template === "executive" ? renderExecutive() :
-          settings?.template === "metropolitan" ? renderMetropolitan() :
+      {template === "minimalist" ? renderMinimalist() :
+        template === "executive" ? renderExecutive() :
+          template === "metropolitan" ? renderMetropolitan() :
             renderBento()}
     </div>
   );

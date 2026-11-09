@@ -11,8 +11,33 @@ import {
   IconForms,
   IconDownload,
   IconAdjustmentsHorizontal,
-  IconMaximize
+  IconMaximize,
+  IconLoader2
 } from "@tabler/icons-react";
+
+const TEMPLATES = [
+  { id: "bento", label: "Bento", desc: "Symmetrical Grid Layout" },
+  { id: "minimalist", label: "Minimalist", desc: "Spacious Single Column" },
+  { id: "executive", label: "Executive", desc: "Traditional Business Focus" },
+  { id: "metropolitan", label: "Metropolitan", desc: "Asymmetric High-End Editorial" },
+];
+
+const PAPER_SIZES = [
+  { id: "a4", label: "A4", desc: "ISO 210 × 297 mm" },
+  { id: "letter", label: "US Letter", desc: "8.5 × 11 in" },
+];
+
+const FONT_OPTIONS = [
+  { id: "jakarta", label: "Plus Jakarta", desc: "Modern Sans" },
+  { id: "inter", label: "Inter", desc: "Clean Tech" },
+  { id: "merriweather", label: "Merriweather", desc: "Editorial Serif" },
+];
+
+const HEADER_ALIGNMENTS = [
+  { id: "default", label: "Template Default" },
+  { id: "left", label: "Left Align" },
+  { id: "center", label: "Centered" },
+];
 
 const DEFAULT_RESUME = {
   basics: {
@@ -68,7 +93,10 @@ const DEFAULT_RESUME = {
     itemGap: 10,
     headerSize: 4.0,
     sectionTitleSize: 11,
-    bodySize: 14
+    bodySize: 14,
+    paperSize: "a4",
+    fontFamily: "jakarta",
+    headerAlignment: "default"
   }
 };
 
@@ -115,6 +143,7 @@ export const ResumeBuilder = () => {
   const [zoom, setZoom] = useState(0.85);
   const [isAutoFit, setIsAutoFit] = useState(true); // Intelligence toggle
   const [showSettings, setShowSettings] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
   const previewContainerRef = useRef<HTMLDivElement>(null);
 
   // Advanced Live-Scaling Engine (ResizeObserver)
@@ -148,34 +177,103 @@ export const ResumeBuilder = () => {
     }));
   };
 
-  const handlePrint = () => {
+  const handleExport = async () => {
     const printContent = document.querySelector(".resume-print-area");
-    if (!printContent) return;
-    const themeColor = data.settings.themeColor;
-    const printWindow = window.open("", "_blank", "width=800,height=1000");
-    if (!printWindow) return;
+    if (!printContent || isExporting) return;
 
-    const htmlContent = `
-      <html>
-        <head>
-          <title>Resume - instudia</title>
-          <style>
-            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap');
-            body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 0; }
-            .resume-print-area { width: 210mm; min-height: 297mm; padding: 15mm; margin: 0 auto; -webkit-print-color-adjust: exact; }
-            @page { size: A4; margin: 0; }
-          </style>
-        </head>
-        <body>
-          <div class="resume-print-area">
-            ${printContent.innerHTML}
-          </div>
-          <script>window.onload = () => { setTimeout(() => { window.print(); window.close(); }, 500); }</script>
-        </body>
-      </html>
-    `;
-    printWindow.document.write(htmlContent);
-    printWindow.document.close();
+    setIsExporting(true);
+
+    try {
+      // 1. Collect all stylesheets and style blocks from the parent window
+      const styleTags = Array.from(document.querySelectorAll("link[rel='stylesheet'], style"))
+        .map((tag) => tag.outerHTML)
+        .join("\n");
+
+      const docTitle = `${data.basics?.name ? `${data.basics.name} - Resume` : "Resume"} | instudia`;
+      const paperSize = data.settings?.paperSize === "letter" ? "letter" : "A4";
+
+      // 2. Create a clean hidden iframe
+      const iframe = document.createElement("iframe");
+      iframe.style.position = "fixed";
+      iframe.style.right = "0";
+      iframe.style.bottom = "0";
+      iframe.style.width = "0";
+      iframe.style.height = "0";
+      iframe.style.border = "none";
+      iframe.style.visibility = "hidden";
+      iframe.id = "resume-export-iframe";
+      document.body.appendChild(iframe);
+
+      const iframeDoc = iframe.contentWindow?.document;
+      if (!iframeDoc) {
+        document.body.removeChild(iframe);
+        setIsExporting(false);
+        return;
+      }
+
+      const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8" />
+            <title>${docTitle}</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+            ${styleTags}
+            <style>
+              @page {
+                size: ${paperSize};
+                margin: 0;
+              }
+              html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+              }
+              .resume-print-area {
+                margin: 0 auto !important;
+                box-shadow: none !important;
+                border: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+              }
+            </style>
+          </head>
+          <body>
+            ${printContent.outerHTML}
+          </body>
+        </html>
+      `;
+
+      iframeDoc.open();
+      iframeDoc.write(htmlContent);
+      iframeDoc.close();
+
+      if (iframe.contentWindow) {
+        if (iframeDoc.fonts && iframeDoc.fonts.ready) {
+          await iframeDoc.fonts.ready;
+        }
+
+        // Small grace timeout for layout calculation & rendering
+        await new Promise((resolve) => setTimeout(resolve, 300));
+
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+      }
+    } catch (err) {
+      console.error("Export error:", err);
+    } finally {
+      setTimeout(() => {
+        const existingIframe = document.getElementById("resume-export-iframe");
+        if (existingIframe) {
+          document.body.removeChild(existingIframe);
+        }
+        setIsExporting(false);
+      }, 1000);
+    }
   };
 
   const handleZoom = (type: "in" | "out" | "fit") => {
@@ -224,8 +322,22 @@ export const ResumeBuilder = () => {
             <button onClick={() => setShowSettings(true)} className="px-8 py-5 bg-black text-white rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-xl shadow-black/10 transition-all hover:-translate-y-1">
               Settings
             </button>
-            <button onClick={handlePrint} className="px-8 py-5 bg-brandpurple text-white rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-xl shadow-brandpurple/20 transition-all hover:opacity-90 hover:-translate-y-1">
-              Export Project
+            <button
+              onClick={handleExport}
+              disabled={isExporting}
+              className="flex items-center gap-2.5 px-8 py-5 bg-brandpurple text-white rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-xl shadow-brandpurple/20 transition-all hover:opacity-90 hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0"
+            >
+              {isExporting ? (
+                <>
+                  <IconLoader2 size={16} className="animate-spin" />
+                  <span>Preparing...</span>
+                </>
+              ) : (
+                <>
+                  <IconDownload size={16} />
+                  <span>Export Project</span>
+                </>
+              )}
             </button>
           </div>
         </motion.header>
@@ -273,14 +385,27 @@ export const ResumeBuilder = () => {
             className={`sticky top-10 transition-all duration-500 ease-out ${activeTab === "edit" ? "opacity-0 translate-y-10 pointer-events-none absolute lg:relative lg:opacity-100 lg:translate-y-0 lg:pointer-events-auto lg:top-10" : "opacity-100 translate-y-0"}`}
           >
             <div className="bg-white border border-neutral-200 rounded-[2.5rem] p-6 lg:p-12 shadow-sm space-y-10 relative overflow-hidden min-h-[70vh] lg:min-h-0">
-              <div className="flex items-center justify-between border-b border-neutral-50 pb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-neutral-100 pb-6 gap-4">
                 <div className="flex items-center gap-3">
-                  <IconEye size={18} className="text-neutral-300" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400">Resume</span>
+                  <IconEye size={18} className="text-neutral-400" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400">Live Preview</span>
                 </div>
-                <div className="hidden md:flex gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-neutral-100" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-neutral-100" />
+
+                {/* Quick Template Switcher */}
+                <div className="flex flex-wrap items-center gap-1 bg-neutral-100/70 p-1 rounded-2xl border border-neutral-200/50">
+                  {TEMPLATES.map((t) => (
+                    <button
+                      key={t.id}
+                      onClick={() => updateSettings("template", t.id)}
+                      className={`px-3 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all ${
+                        data.settings.template === t.id
+                          ? "bg-black text-white shadow-sm"
+                          : "text-neutral-500 hover:text-black hover:bg-white/60"
+                      }`}
+                    >
+                      {t.label}
+                    </button>
+                  ))}
                 </div>
               </div>
 
@@ -341,27 +466,94 @@ export const ResumeBuilder = () => {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-10 space-y-12 custom-scrollbar">
+              <div className="flex-1 overflow-y-auto p-10 space-y-10 custom-scrollbar">
                 {/* Template Picker */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <label className="text-[10px] font-black text-black uppercase tracking-[0.2em] ml-1">Architectural Type</label>
-                  <div className="grid grid-cols-1 gap-3">
-                    {["bento", "minimalist", "executive", "metropolitan"].map((t) => (
+                  <div className="grid grid-cols-1 gap-2.5">
+                    {TEMPLATES.map((t) => (
                       <button
-                        key={t}
-                        onClick={() => updateSettings("template", t)}
-                        className={`p-5 rounded-2xl border-2 text-left transition-all ${data.settings.template === t ? "border-black bg-black text-white shadow-xl" : "border-neutral-100 hover:border-neutral-200"}`}
+                        key={t.id}
+                        onClick={() => updateSettings("template", t.id)}
+                        className={`p-4 rounded-2xl border-2 text-left transition-all ${data.settings.template === t.id ? "border-black bg-black text-white shadow-xl" : "border-neutral-100 hover:border-neutral-200"}`}
                       >
-                        <div className="text-xs font-black uppercase tracking-wider">{t}</div>
-                        <div className={`text-[10px] font-medium mt-1 ${data.settings.template === t ? "text-neutral-400" : "text-neutral-400"}`}>
-                          {t === "bento" ? "Symmetrical Grid Layout" : t === "minimalist" ? "Spacious Single Column" : t === "executive" ? "Traditional Business Focus" : "Asymmetric High-End Editorial"}
+                        <div className="text-xs font-black uppercase tracking-wider">{t.label}</div>
+                        <div className={`text-[10px] font-medium mt-1 ${data.settings.template === t.id ? "text-neutral-400" : "text-neutral-400"}`}>
+                          {t.desc}
                         </div>
                       </button>
                     ))}
                   </div>
                 </div>
 
-                <div className="space-y-6">
+                {/* Paper Standard Picker */}
+                <div className="space-y-4">
+                  <label className="text-[10px] font-black text-black uppercase tracking-[0.2em] ml-1">Document Paper Standard</label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {PAPER_SIZES.map((p) => (
+                      <button
+                        key={p.id}
+                        onClick={() => updateSettings("paperSize", p.id)}
+                        className={`p-4 rounded-2xl border-2 text-left transition-all ${
+                          (data.settings.paperSize || "a4") === p.id
+                            ? "border-black bg-black text-white shadow-lg"
+                            : "border-neutral-100 hover:border-neutral-200 bg-neutral-50/50"
+                        }`}
+                      >
+                        <div className="text-xs font-black uppercase tracking-wider">{p.label}</div>
+                        <div className={`text-[10px] font-medium mt-0.5 ${(data.settings.paperSize || "a4") === p.id ? "text-neutral-300" : "text-neutral-400"}`}>
+                          {p.desc}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Typography Engine Picker */}
+                <div className="space-y-4">
+                  <label className="text-[10px] font-black text-black uppercase tracking-[0.2em] ml-1">Typography Engine</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {FONT_OPTIONS.map((f) => (
+                      <button
+                        key={f.id}
+                        onClick={() => updateSettings("fontFamily", f.id)}
+                        className={`p-3 rounded-2xl border-2 text-left transition-all ${
+                          (data.settings.fontFamily || "jakarta") === f.id
+                            ? "border-black bg-black text-white shadow-lg"
+                            : "border-neutral-100 hover:border-neutral-200 bg-neutral-50/50"
+                        }`}
+                      >
+                        <div className="text-[11px] font-black tracking-tight">{f.label}</div>
+                        <div className={`text-[9px] font-medium mt-0.5 ${(data.settings.fontFamily || "jakarta") === f.id ? "text-neutral-300" : "text-neutral-400"}`}>
+                          {f.desc}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Header Style */}
+                <div className="space-y-4">
+                  <label className="text-[10px] font-black text-black uppercase tracking-[0.2em] ml-1">Header Style</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {HEADER_ALIGNMENTS.map((h) => (
+                      <button
+                        key={h.id}
+                        onClick={() => updateSettings("headerAlignment", h.id)}
+                        className={`py-3 px-2 rounded-2xl border-2 text-center transition-all ${
+                          (data.settings.headerAlignment || "default") === h.id
+                            ? "border-black bg-black text-white shadow-lg"
+                            : "border-neutral-100 hover:border-neutral-200 bg-neutral-50/50"
+                        }`}
+                      >
+                        <div className="text-[10px] font-black uppercase tracking-wider">{h.label}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Color Palette */}
+                <div className="space-y-4">
                   <label className="text-[10px] font-black text-black uppercase tracking-[0.2em] ml-1">Color Palette</label>
                   <div className="flex flex-wrap gap-4 px-2">
                     {PRESET_COLORS.map((c) => (
@@ -370,7 +562,7 @@ export const ResumeBuilder = () => {
                   </div>
                 </div>
 
-                <div className="space-y-10 pt-6 border-t border-neutral-50">
+                <div className="space-y-8 pt-6 border-t border-neutral-50">
                   <SettingSlider label="Body Typography" value={data.settings.bodySize} min={10} max={18} step={1} onChange={(v: any) => updateSettings("bodySize", v)} />
                   <SettingSlider label="Vertical Rhythm" value={data.settings.lineHeight} min={1.2} max={2} step={0.1} onChange={(v: any) => updateSettings("lineHeight", v)} />
                   <SettingSlider label="Atmospheric Spacing" value={data.settings.sectionGap} min={12} max={64} step={4} onChange={(v: any) => updateSettings("sectionGap", v)} />
