@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { IconBrandWhatsapp, IconMapPin } from '@tabler/icons-react';
+import { IconBrandWhatsapp, IconMapPin, IconChevronDown } from '@tabler/icons-react';
 
 interface FaqItem {
   question: string;
@@ -35,13 +35,13 @@ const FAQS: FaqItem[] = [
 ];
 
 export default function CounselingFaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0); // First FAQ open by default
   const containerRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const faqListRef = useRef<HTMLDivElement>(null);
   const bottomCtaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Check user preference for reduced motion
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
@@ -50,17 +50,15 @@ export default function CounselingFaqSection() {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // 1. Header reveal (badge -> title -> subtitle)
       if (headerRef.current) {
-        const headerElements = headerRef.current.children;
         gsap.fromTo(
-          headerElements,
-          { opacity: 0, y: 20 },
+          headerRef.current.children,
+          { opacity: 0, y: 16 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            stagger: 0.1,
+            duration: 0.5,
+            stagger: 0.08,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: headerRef.current,
@@ -71,60 +69,33 @@ export default function CounselingFaqSection() {
         );
       }
 
-      // 2. Staggered FAQ cards: Heading/Question fades in first, then body answer fades in
       if (faqListRef.current) {
-        const faqCards = faqListRef.current.querySelectorAll('.faq-card');
-
-        faqCards.forEach((card) => {
-          const questionEl = card.querySelector('.faq-question');
-          const answerEl = card.querySelector('.faq-answer');
-
-          const cardTimeline = gsap.timeline({
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 86%',
-              toggleActions: 'play none none none',
-            },
-          });
-
-          // Card container subtle appearance
-          cardTimeline.fromTo(
-            card,
-            { opacity: 0, y: 16 },
-            { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }
-          );
-
-          // Question fades in and translates up first
-          if (questionEl) {
-            cardTimeline.fromTo(
-              questionEl,
-              { opacity: 0, y: 10 },
-              { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
-              '-=0.3'
-            );
-          }
-
-          // Answer body fades in with a staggered follow-through
-          if (answerEl) {
-            cardTimeline.fromTo(
-              answerEl,
-              { opacity: 0, y: 10 },
-              { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' },
-              '-=0.2'
-            );
-          }
-        });
-      }
-
-      // 3. Staggered entrance for the bottom consultation card
-      if (bottomCtaRef.current) {
         gsap.fromTo(
-          bottomCtaRef.current,
-          { opacity: 0, y: 24 },
+          faqListRef.current.children,
+          { opacity: 0, y: 12 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.65,
+            duration: 0.45,
+            stagger: 0.06,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: faqListRef.current,
+              start: 'top 86%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      }
+
+      if (bottomCtaRef.current) {
+        gsap.fromTo(
+          bottomCtaRef.current,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.55,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: bottomCtaRef.current,
@@ -139,71 +110,91 @@ export default function CounselingFaqSection() {
     return () => ctx.revert();
   }, []);
 
+  const toggleFaq = (index: number) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <section
       ref={containerRef}
-      className="mx-auto max-w-5xl px-6 lg:px-8 py-16 border-t border-neutral-200"
+      className="mx-auto max-w-4xl px-6 lg:px-8 py-16 border-t border-neutral-200"
     >
-      {/* ── Section Header ── */}
-      <div ref={headerRef} className="text-center mb-12">
+      {/* ── Header ── */}
+      <div ref={headerRef} className="text-center mb-10">
         <span className="text-xs font-black uppercase tracking-widest text-neutral-500 px-3 py-1 bg-neutral-100 rounded-full inline-block mb-3 border border-neutral-200">
-          Counseling FAQ
+          Frequently Asked Questions
         </span>
-        <h2 className="text-3xl font-extrabold text-neutral-950">
-          Questions Students Ask Us Every Week
+        <h2 className="text-2xl md:text-3xl font-extrabold text-neutral-950">
+          Hardware Advice You Need to Know
         </h2>
-        <p className="text-sm text-neutral-600 mt-2">
-          No marketing talk—just the honest answers our mentors give at our counseling desk.
+        <p className="text-sm text-neutral-600 mt-1.5">
+          Clear, honest answers from our Dimapur counseling desk.
         </p>
       </div>
 
-      {/* ── Staggered FAQ Items ── */}
-      <div ref={faqListRef} className="space-y-5">
-        {FAQS.map((faq, idx) => (
-          <div
-            key={idx}
-            className="faq-card p-6 md:p-7 bg-white rounded-3xl border border-neutral-200 shadow-xs transition-shadow hover:shadow-sm"
-          >
-            {/* Question Heading */}
-            <h3 className="faq-question font-extrabold text-base md:text-lg text-neutral-950 mb-2 leading-snug">
-              {faq.question}
-            </h3>
+      {/* ── Interactive Clean Accordion (Zero Text Clutter) ── */}
+      <div ref={faqListRef} className="space-y-3">
+        {FAQS.map((faq, idx) => {
+          const isOpen = openIndex === idx;
+          return (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl border border-neutral-200 shadow-2xs overflow-hidden transition-all"
+            >
+              <button
+                type="button"
+                onClick={() => toggleFaq(idx)}
+                aria-expanded={isOpen}
+                className="w-full p-5 text-left flex items-center justify-between gap-4 font-extrabold text-sm md:text-base text-neutral-950 hover:bg-neutral-50/70 transition-colors"
+              >
+                <span>{faq.question}</span>
+                <IconChevronDown
+                  className={`w-5 h-5 text-neutral-400 shrink-0 transition-transform duration-200 ${
+                    isOpen ? 'rotate-180 text-brandpurple' : ''
+                  }`}
+                />
+              </button>
 
-            {/* Answer Body */}
-            <p className="faq-answer text-sm text-neutral-600 leading-relaxed font-medium">
-              {faq.answer}
-            </p>
-          </div>
-        ))}
+              {isOpen && (
+                <div className="px-5 pb-5 pt-1 text-sm text-neutral-600 leading-relaxed font-medium border-t border-neutral-100 bg-neutral-50/40">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
-      {/* ── Hallmark Light Bottom Card ── */}
-      <div ref={bottomCtaRef} className="mt-12 p-8 md:p-12 bg-white rounded-3xl border border-neutral-200 text-neutral-900 text-center flex flex-col items-center shadow-sm">
-        <span className="text-xs font-black uppercase tracking-widest text-brandpurple mb-2 px-3 py-1 bg-brandpurple/10 rounded-full border border-brandpurple/20">
-          Talk to an Instructor
+      {/* ── Compact Light Bottom Card ── */}
+      <div
+        ref={bottomCtaRef}
+        className="mt-12 p-6 md:p-8 bg-white rounded-3xl border border-neutral-200 text-neutral-900 text-center flex flex-col items-center shadow-xs"
+      >
+        <span className="text-xs font-black uppercase tracking-wider text-brandpurple mb-1.5">
+          Free Consultation Desk
         </span>
-        <h3 className="text-2xl md:text-3xl font-extrabold mb-3 text-neutral-950">
-          Want us to verify your laptop or parts quote?
+        <h3 className="text-xl md:text-2xl font-extrabold text-neutral-950 mb-2">
+          Want a mentor to review your shop quotation?
         </h3>
-        <p className="text-sm text-neutral-600 max-w-xl mb-6 leading-relaxed">
-          Message our WhatsApp counseling desk or walk into our Dimapur campus. We don’t sell hardware, so you get completely unbiased advice.
+        <p className="text-xs md:text-sm text-neutral-600 max-w-lg mb-5 leading-relaxed">
+          Take a photo of the quote or print your sheet and send it to our desk. We don't sell hardware, so our review is 100% unbiased.
         </p>
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-3 justify-center">
           <a
             href="https://wa.me/918798587779?text=Hello%20instudia%2C%20I%20have%20a%20laptop%2FPC%20quotation%20I%20would%20like%20your%20mentor%20to%20review."
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-2"
+            className="px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-2"
           >
             <IconBrandWhatsapp className="w-4 h-4" />
-            Ask on WhatsApp
+            Check Quote on WhatsApp
           </a>
           <Link
             href="/contact"
-            className="px-6 py-3.5 bg-white hover:bg-neutral-50 text-neutral-900 font-bold text-xs uppercase tracking-wider rounded-xl border border-neutral-300 hover:border-neutral-400 transition-all flex items-center gap-2 shadow-2xs"
+            className="px-5 py-3 bg-white hover:bg-neutral-50 text-neutral-900 font-bold text-xs uppercase tracking-wider rounded-xl border border-neutral-300 hover:border-neutral-400 transition-all flex items-center gap-2 shadow-2xs"
           >
             <IconMapPin className="w-4 h-4" />
-            Find Our Dimapur Campus
+            Visit Vikiye Center, Dimapur
           </Link>
         </div>
       </div>

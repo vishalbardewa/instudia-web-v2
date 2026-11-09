@@ -104,18 +104,18 @@ export default function RigSchematic2D({
           {/* 1. Memory Headroom Indicator */}
           <div
             className={`p-2.5 rounded-2xl border flex items-center gap-2.5 transition-colors ${has32GbRam
-                ? 'bg-emerald-50/80 border-emerald-200/80 text-emerald-950'
-                : ramGb >= 16
-                  ? 'bg-purple-50/70 border-purple-200/80 text-purple-950'
-                  : 'bg-amber-50/80 border-amber-200/80 text-amber-950'
+              ? 'bg-emerald-50/80 border-emerald-200/80 text-emerald-950'
+              : ramGb >= 16
+                ? 'bg-purple-50/70 border-purple-200/80 text-purple-950'
+                : 'bg-amber-50/80 border-amber-200/80 text-amber-950'
               }`}
           >
             <span
               className={`h-2.5 w-2.5 rounded-full shrink-0 ${has32GbRam
-                  ? 'bg-emerald-600 ring-2 ring-emerald-200'
-                  : ramGb >= 16
-                    ? 'bg-brandpurple ring-2 ring-purple-200'
-                    : 'bg-amber-500 ring-2 ring-amber-200'
+                ? 'bg-emerald-600 ring-2 ring-emerald-200'
+                : ramGb >= 16
+                  ? 'bg-brandpurple ring-2 ring-purple-200'
+                  : 'bg-amber-500 ring-2 ring-amber-200'
                 }`}
             />
             <div className="min-w-0">
@@ -142,14 +142,14 @@ export default function RigSchematic2D({
           {/* 2. Color Accuracy Indicator */}
           <div
             className={`p-2.5 rounded-2xl border flex items-center gap-2.5 transition-colors ${isColorAccurate
-                ? 'bg-emerald-50/80 border-emerald-200/80 text-emerald-950'
-                : 'bg-amber-50/80 border-amber-200/80 text-amber-950'
+              ? 'bg-emerald-50/80 border-emerald-200/80 text-emerald-950'
+              : 'bg-amber-50/80 border-amber-200/80 text-amber-950'
               }`}
           >
             <span
               className={`h-2.5 w-2.5 rounded-full shrink-0 ${isColorAccurate
-                  ? 'bg-emerald-600 ring-2 ring-emerald-200'
-                  : 'bg-amber-500 ring-2 ring-amber-200'
+                ? 'bg-emerald-600 ring-2 ring-emerald-200'
+                : 'bg-amber-500 ring-2 ring-amber-200'
                 }`}
             />
             <div className="min-w-0">
@@ -170,14 +170,14 @@ export default function RigSchematic2D({
           {/* 3. Power Protection Indicator */}
           <div
             className={`p-2.5 rounded-2xl border flex items-center gap-2.5 transition-colors ${hasPowerProtection
-                ? 'bg-emerald-50/80 border-emerald-200/80 text-emerald-950'
-                : 'bg-amber-50/80 border-amber-200/80 text-amber-950'
+              ? 'bg-emerald-50/80 border-emerald-200/80 text-emerald-950'
+              : 'bg-amber-50/80 border-amber-200/80 text-amber-950'
               }`}
           >
             <span
               className={`h-2.5 w-2.5 rounded-full shrink-0 ${hasPowerProtection
-                  ? 'bg-emerald-600 ring-2 ring-emerald-200'
-                  : 'bg-amber-500 ring-2 ring-amber-200'
+                ? 'bg-emerald-600 ring-2 ring-emerald-200'
+                : 'bg-amber-500 ring-2 ring-amber-200'
                 }`}
             />
             <div className="min-w-0">
@@ -215,8 +215,8 @@ export default function RigSchematic2D({
               aria-label="Inspect screen color accuracy and panel specifications"
               aria-pressed={activeHotspot === 'screen'}
               className={`w-full rounded-t-2xl p-3 border-2 cursor-pointer transition-all text-left focus-visible:ring-2 focus-visible:ring-brandpurple focus-visible:ring-offset-2 outline-hidden min-h-[44px] ${activeHotspot === 'screen'
-                  ? 'border-brandpurple bg-purple-50/40 shadow-sm ring-2 ring-brandpurple/20'
-                  : 'border-neutral-300 bg-neutral-100 hover:border-neutral-400'
+                ? 'border-brandpurple bg-purple-50/40 shadow-sm ring-2 ring-brandpurple/20'
+                : 'border-neutral-300 bg-neutral-100 hover:border-neutral-400'
                 }`}
             >
               {/* Display Bezel */}
@@ -233,8 +233,8 @@ export default function RigSchematic2D({
                 <div className="my-auto text-center">
                   <div
                     className={`h-5 rounded-md mb-2 transition-all border ${isColorAccurate
-                        ? 'bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 border-purple-300 shadow-2xs'
-                        : 'bg-gradient-to-r from-amber-200 via-amber-300 to-neutral-300 border-amber-300'
+                      ? 'bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 border-purple-300 shadow-2xs'
+                      : 'bg-gradient-to-r from-amber-200 via-amber-300 to-neutral-300 border-amber-300'
                       }`}
                   />
                   <div className="text-xs font-bold text-neutral-900">
@@ -242,8 +242,8 @@ export default function RigSchematic2D({
                   </div>
                   <span
                     className={`text-[10px] font-black uppercase tracking-wider inline-block px-2.5 py-0.5 rounded-md mt-1 border ${isColorAccurate
-                        ? 'bg-purple-50 text-purple-900 border-purple-200'
-                        : 'bg-amber-50 text-amber-900 border-amber-200'
+                      ? 'bg-purple-50 text-purple-900 border-purple-200'
+                      : 'bg-amber-50 text-amber-900 border-amber-200'
                       }`}
                   >
                     {isColorAccurate
@@ -272,8 +272,8 @@ export default function RigSchematic2D({
                   aria-label="Inspect CPU processor details"
                   aria-pressed={activeHotspot === 'cpu'}
                   className={`p-2 rounded-xl border-2 cursor-pointer transition-all text-center focus-visible:ring-2 focus-visible:ring-brandpurple focus-visible:ring-offset-2 outline-hidden min-h-[44px] flex flex-col items-center justify-center ${activeHotspot === 'cpu'
-                      ? 'border-brandpurple bg-purple-50/50'
-                      : 'border-neutral-200 hover:border-neutral-300 bg-neutral-50'
+                    ? 'border-brandpurple bg-purple-50/50'
+                    : 'border-neutral-200 hover:border-neutral-300 bg-neutral-50'
                     }`}
                 >
                   <IconCpu className="w-5 h-5 text-brandpurple mx-auto mb-1" />
@@ -295,8 +295,8 @@ export default function RigSchematic2D({
                   aria-label="Toggle 32GB RAM upgrade"
                   aria-pressed={has32GbRam}
                   className={`p-2 rounded-xl border-2 cursor-pointer transition-all text-center focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 outline-hidden min-h-[44px] flex flex-col items-center justify-center ${has32GbRam || activeHotspot === 'ram'
-                      ? 'border-emerald-600 bg-emerald-50/60 shadow-2xs'
-                      : 'border-neutral-200 hover:border-neutral-300 bg-neutral-50'
+                    ? 'border-emerald-600 bg-emerald-50/60 shadow-2xs'
+                    : 'border-neutral-200 hover:border-neutral-300 bg-neutral-50'
                     }`}
                 >
                   <div className="flex justify-center gap-1 mb-1">
@@ -333,8 +333,8 @@ export default function RigSchematic2D({
                   aria-label="Toggle 1TB NVMe SSD upgrade"
                   aria-pressed={has1TbSsd}
                   className={`p-2 rounded-xl border-2 cursor-pointer transition-all text-center focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 outline-hidden min-h-[44px] flex flex-col items-center justify-center ${has1TbSsd || activeHotspot === 'storage'
-                      ? 'border-blue-600 bg-blue-50/60 shadow-2xs'
-                      : 'border-neutral-200 hover:border-neutral-300 bg-neutral-50'
+                    ? 'border-blue-600 bg-blue-50/60 shadow-2xs'
+                    : 'border-neutral-200 hover:border-neutral-300 bg-neutral-50'
                     }`}
                 >
                   <div className="h-4 w-7 bg-neutral-200 mx-auto mb-1 rounded-xs flex items-center justify-center text-[8px] text-blue-900 font-mono font-bold">
@@ -379,8 +379,8 @@ export default function RigSchematic2D({
               aria-label="Inspect 24 to 27 inch eye-level IPS monitor"
               aria-pressed={activeHotspot === 'screen'}
               className={`w-full bg-white rounded-2xl p-3 border-2 mb-3 cursor-pointer transition-all shadow-xs text-left focus-visible:ring-2 focus-visible:ring-brandpurple focus-visible:ring-offset-2 outline-hidden min-h-[44px] ${activeHotspot === 'screen'
-                  ? 'border-brandpurple bg-purple-50/40 shadow-sm ring-2 ring-brandpurple/20'
-                  : 'border-neutral-300 hover:border-neutral-400'
+                ? 'border-brandpurple bg-purple-50/40 shadow-sm ring-2 ring-brandpurple/20'
+                : 'border-neutral-300 hover:border-neutral-400'
                 }`}
             >
               <div className="h-20 bg-neutral-50 rounded-xl border border-neutral-200 flex flex-col items-center justify-center p-2 text-center">
@@ -407,8 +407,8 @@ export default function RigSchematic2D({
                     aria-label="Inspect desktop CPU and cooler"
                     aria-pressed={activeHotspot === 'cpu'}
                     className={`flex-1 p-2 rounded-xl border-2 cursor-pointer transition-all flex items-center gap-2 text-left focus-visible:ring-2 focus-visible:ring-brandpurple focus-visible:ring-offset-2 outline-hidden min-h-[44px] ${activeHotspot === 'cpu'
-                        ? 'border-brandpurple bg-purple-50/50'
-                        : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
+                      ? 'border-brandpurple bg-purple-50/50'
+                      : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
                       }`}
                   >
                     <div className="w-8 h-8 rounded-full border-2 border-neutral-300 flex items-center justify-center bg-white shrink-0">
@@ -438,8 +438,8 @@ export default function RigSchematic2D({
                     aria-label="Toggle 32GB Desktop DDR RAM upgrade"
                     aria-pressed={has32GbRam}
                     className={`p-2 rounded-xl border-2 cursor-pointer transition-all text-center focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 outline-hidden min-h-[44px] flex flex-col items-center justify-center ${has32GbRam || activeHotspot === 'ram'
-                        ? 'border-emerald-600 bg-emerald-50/60 shadow-2xs'
-                        : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
+                      ? 'border-emerald-600 bg-emerald-50/60 shadow-2xs'
+                      : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
                       }`}
                   >
                     <div className="flex justify-center gap-1 mb-1">
@@ -468,8 +468,8 @@ export default function RigSchematic2D({
                   aria-label="Inspect dedicated graphics card"
                   aria-pressed={activeHotspot === 'gpu'}
                   className={`w-full p-2.5 rounded-xl border-2 cursor-pointer transition-all text-left focus-visible:ring-2 focus-visible:ring-brandpurple focus-visible:ring-offset-2 outline-hidden min-h-[44px] ${activeHotspot === 'gpu'
-                      ? 'border-brandpurple bg-purple-50/50'
-                      : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
+                    ? 'border-brandpurple bg-purple-50/50'
+                    : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
                     }`}
                 >
                   <div className="flex items-center justify-between text-xs">
@@ -499,8 +499,8 @@ export default function RigSchematic2D({
                     aria-label="Toggle desktop 1TB NVMe storage upgrade"
                     aria-pressed={has1TbSsd}
                     className={`p-2 rounded-xl border-2 cursor-pointer transition-all text-left focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 outline-hidden min-h-[44px] ${has1TbSsd || activeHotspot === 'storage'
-                        ? 'border-blue-600 bg-blue-50/60 shadow-2xs'
-                        : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
+                      ? 'border-blue-600 bg-blue-50/60 shadow-2xs'
+                      : 'border-neutral-200 bg-neutral-50 hover:border-neutral-300'
                       }`}
                   >
                     <div className="text-[10px] font-bold text-neutral-900">
@@ -535,8 +535,8 @@ export default function RigSchematic2D({
                 aria-label="Toggle external line-interactive UPS protection"
                 aria-pressed={hasUps}
                 className={`mt-2.5 w-full p-2.5 rounded-xl border-2 flex items-center justify-between cursor-pointer transition-all text-left focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 outline-hidden min-h-[44px] ${hasUps || activeHotspot === 'ups'
-                    ? 'border-amber-500 bg-amber-50/70 shadow-2xs'
-                    : 'border-neutral-300 bg-white hover:border-neutral-400'
+                  ? 'border-amber-500 bg-amber-50/70 shadow-2xs'
+                  : 'border-neutral-300 bg-white hover:border-neutral-400'
                   }`}
               >
                 <div className="flex items-center gap-2">
@@ -560,8 +560,8 @@ export default function RigSchematic2D({
                 </div>
                 <span
                   className={`text-[9px] font-bold px-2 py-0.5 rounded border ${hasUps
-                      ? 'bg-amber-100 text-amber-900 border-amber-300'
-                      : 'bg-neutral-100 text-neutral-600 border-neutral-200'
+                    ? 'bg-amber-100 text-amber-900 border-amber-300'
+                    : 'bg-neutral-100 text-neutral-600 border-neutral-200'
                     }`}
                 >
                   {hasUps ? 'Connected' : 'Tap to Add'}
@@ -641,9 +641,6 @@ export default function RigSchematic2D({
                 <span>
                   Interactive blueprint: Click on RAM, Screen, Storage, or UPS to
                   inspect hardware facts.
-                </span>
-                <span className="font-mono text-[10px] text-neutral-400">
-                  Tactile 2D
                 </span>
               </div>
             )}
