@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, Suspense, useMemo, useRef } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,8 +21,7 @@ import {
   ArrowRightIcon,
   ArrowLeftIcon,
   ShieldCheckIcon,
-  ChatBubbleLeftRightIcon,
-  PhoneIcon,
+  HomeIcon,
 } from "@heroicons/react/24/outline";
 import {
   COURSE_OPTIONS,
@@ -546,27 +546,15 @@ function ReviewFormContent() {
               </p>
             </div>
 
-            {/* Direct Leadership WhatsApp / Phone Action */}
-            <div className="space-y-3 mb-4">
-              <a
-                href={`https://wa.me/918798587779?text=${encodeURIComponent(
-                  `Hi instudia, I just submitted feedback regarding the ${selectedCourse} course (Name: ${name}). I would like to speak directly with management.`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#1B1C1E] hover:bg-neutral-800 text-white font-black text-sm sm:text-base px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-neutral-900 shadow-[4px_4px_0_#25D366] hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+            {/* Go to Home Action */}
+            <div className="mb-4">
+              <Link
+                href="/"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#1B1C1E] hover:bg-neutral-800 text-white font-black text-sm sm:text-base px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-neutral-900 shadow-[4px_4px_0_#1B1C1E] hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
               >
-                <ChatBubbleLeftRightIcon className="w-5 h-5 text-[#25D366]" />
-                <span>Connect with Management on WhatsApp</span>
-              </a>
-
-              <a
-                href="tel:+918798587779"
-                className="w-full inline-flex items-center justify-center gap-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-neutral-300 transition-colors"
-              >
-                <PhoneIcon className="w-4 h-4 text-neutral-600" />
-                <span>Or Call Director: +91 87985 87779</span>
-              </a>
+                <HomeIcon className="w-4 h-4 sm:w-5 sm:h-5 text-brandpurple" />
+                <span>Go to Home</span>
+              </Link>
             </div>
 
             <div className="pt-3 border-t border-neutral-100 text-center">
