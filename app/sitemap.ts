@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/tools', priority: 0.9, freq: 'weekly' as const },
     { route: '/about', priority: 0.8, freq: 'monthly' as const },
     { route: '/contact', priority: 0.8, freq: 'monthly' as const },
+    { route: '/review', priority: 0.8, freq: 'monthly' as const },
     { route: '/workshops', priority: 0.85, freq: 'weekly' as const },
     { route: '/host-a-seminar', priority: 0.8, freq: 'monthly' as const },
     // { route: '/success-stories', priority: 0.85, freq: 'weekly' as const },

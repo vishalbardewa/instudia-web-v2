@@ -247,3 +247,175 @@ export function buildHostSeminarEmailHtml({
 </html>
   `.trim();
 }
+
+export function buildReviewEmailHtml({
+  type,
+  name,
+  role,
+  course,
+  rating,
+  smartTags = [],
+  feedback,
+  phone,
+  email,
+  submittedAt,
+}: {
+  type: "positive_review" | "private_feedback";
+  name: string;
+  role: "student" | "parent";
+  course: string;
+  rating: number;
+  smartTags?: string[];
+  feedback: string;
+  phone?: string;
+  email?: string;
+  submittedAt: string;
+}): string {
+  const isPositive = type === "positive_review";
+  const starsDisplay = "★".repeat(rating) + "☆".repeat(5 - rating);
+  const roleLabel = role === "parent" ? "Parent" : "Student";
+  const cleanPhone = phone ? phone.replace(/\D/g, "").slice(-10) : "";
+
+  const rows: [string, string][] = [
+    ["Full Name", `<strong>${name}</strong>`],
+    ["Role", `<strong>${roleLabel}</strong>`],
+    ["Course / Program", `<strong>${course}</strong>`],
+    ["Star Rating", `<span style="font-size:18px;color:#F59E0B;letter-spacing:2px;">${starsDisplay}</span> (${rating}/5)`],
+  ];
+  if (phone) {
+    rows.push(["Phone Number", `<a href="tel:${phone}" style="color:#1B1C1E;text-decoration:none;font-weight:700;">${phone}</a>`]);
+  }
+  if (email) {
+    rows.push(["Email Address", `<a href="mailto:${email}" style="color:#C21BFF;text-decoration:none;">${email}</a>`]);
+  }
+
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${isPositive ? "New Google Review Drafted" : "Urgent: Private Feedback Received"}</title>
+</head>
+<body style="margin:0;padding:0;background:#f5f5f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:40px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border:2px solid #000;box-shadow:6px 6px 0 #000;max-width:600px;width:100%;">
+
+          <!-- Header -->
+          <tr>
+            <td style="background:#1B1C1E;padding:32px 40px;">
+              <p style="margin:0;color:#C21BFF;font-size:10px;font-weight:900;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:8px;">
+                instudia × ${isPositive ? "Google Review Funnel" : "Direct Quality Feedback"}
+              </p>
+              <h1 style="margin:0;color:#ffffff;font-size:26px;font-weight:900;letter-spacing:-0.03em;text-transform:uppercase;line-height:1.1;">
+                ${isPositive ? `New Review (${starsDisplay})` : `Private Feedback (${starsDisplay})`}
+              </h1>
+            </td>
+          </tr>
+
+          <!-- Badge -->
+          <tr>
+            <td style="padding:0 40px;">
+              <table cellpadding="0" cellspacing="0" style="margin-top:-1px;">
+                <tr>
+                  <td style="background:${isPositive ? "#FFE01B" : "#EF4444"};padding:6px 16px;border:1px solid #000;">
+                    <span style="color:${isPositive ? "#000" : "#fff"};font-size:10px;font-weight:900;letter-spacing:0.2em;text-transform:uppercase;">
+                      ${isPositive ? "Google Review Prompted" : "Action Required • Contact Follow-Up"}
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Body introduction -->
+          <tr>
+            <td style="padding:32px 40px 0;">
+              <p style="margin:0 0 24px;color:#6b7280;font-size:14px;line-height:1.6;">
+                ${
+                  isPositive
+                    ? `A <strong>${roleLabel}</strong> completed the review flow on <strong style="color:#1B1C1E;">${submittedAt}</strong> and was directed to Google Reviews.`
+                    : `A <strong>${roleLabel}</strong> submitted constructive private feedback on <strong style="color:#1B1C1E;">${submittedAt}</strong>.`
+                }
+              </p>
+            </td>
+          </tr>
+
+          <!-- Fields -->
+          <tr>
+            <td style="padding:0 40px 32px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e5e7eb;">
+                ${rows
+                  .map(([label, value], i) => `
+                <tr style="background:${i % 2 === 0 ? "#ffffff" : "#f9fafb"};">
+                  <td style="padding:12px 18px;border-bottom:1px solid #e5e7eb;width:38%;">
+                    <span style="font-size:10px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:0.15em;">${label}</span>
+                  </td>
+                  <td style="padding:12px 18px;border-bottom:1px solid #e5e7eb;">
+                    <span style="font-size:14px;font-weight:600;color:#1B1C1E;">${value}</span>
+                  </td>
+                </tr>`).join("")}
+
+                ${smartTags && smartTags.length > 0 ? `
+                <tr style="background:#ffffff;">
+                  <td style="padding:12px 18px;border-bottom:1px solid #e5e7eb;vertical-align:top;">
+                    <span style="font-size:10px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:0.15em;">Highlights / Tags</span>
+                  </td>
+                  <td style="padding:12px 18px;border-bottom:1px solid #e5e7eb;">
+                    ${smartTags
+                      .map(
+                        (tag) =>
+                          `<span style="display:inline-block;background:#F3E8FF;color:#7E22CE;font-size:11px;font-weight:700;padding:4px 10px;border-radius:12px;margin:2px 4px 2px 0;">${tag}</span>`
+                      )
+                      .join("")}
+                  </td>
+                </tr>` : ""}
+
+                ${feedback ? `
+                <tr style="background:#ffffff;">
+                  <td colspan="2" style="padding:16px 18px;">
+                    <span style="display:block;font-size:10px;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:8px;">
+                      ${isPositive ? "Drafted Review Text" : "Constructive Feedback Details"}
+                    </span>
+                    <div style="background:#F9FAFB;border-left:4px solid ${isPositive ? "#C21BFF" : "#EF4444"};padding:12px 16px;font-size:14px;color:#1F2937;line-height:1.6;white-space:pre-wrap;">
+                      "${feedback}"
+                    </div>
+                  </td>
+                </tr>` : ""}
+              </table>
+            </td>
+          </tr>
+
+          <!-- Action Buttons -->
+          ${cleanPhone ? `
+          <tr>
+            <td style="padding:0 40px 40px;">
+              <a href="https://wa.me/91${cleanPhone}" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;font-size:12px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:12px 24px;border:2px solid #000;box-shadow:4px 4px 0 #000;margin-right:12px;">
+                Chat on WhatsApp →
+              </a>
+              ${email ? `
+              <a href="mailto:${email}?subject=instudia%20Feedback%20Follow-up" style="display:inline-block;background:#1B1C1E;color:#ffffff;text-decoration:none;font-size:12px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:12px 24px;border:2px solid #000;box-shadow:4px 4px 0 #C21BFF;">
+                Reply via Email →
+              </a>` : ""}
+            </td>
+          </tr>` : ""}
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#f9fafb;padding:20px 40px;border-top:2px solid #e5e7eb;">
+              <p style="margin:0;font-size:11px;color:#9ca3af;">
+                Automated notification from instudia Google Review Portal.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `.trim();
+}

@@ -45,6 +45,7 @@ const navigation = {
   company: [
     { name: "About Us", href: "/about" },
     { name: "Contact & Admissions", href: "/contact" },
+    { name: "Share Review", href: "/review", badge: "Google" },
     { name: "Careers", href: "/careers" },
     { name: "Blog & Insights", href: "/blog" },
     { name: "FAQ", href: "/faq" },
