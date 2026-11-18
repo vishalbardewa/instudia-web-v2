@@ -19,6 +19,9 @@ import {
   CheckIcon,
   ArrowRightIcon,
   ArrowLeftIcon,
+  ShieldCheckIcon,
+  ChatBubbleLeftRightIcon,
+  PhoneIcon,
 } from "@heroicons/react/24/outline";
 import {
   COURSE_OPTIONS,
@@ -350,8 +353,10 @@ function ReviewFormContent() {
       }
 
       setSubmissionSuccess(true);
-      handleCopyReview();
-      triggerConfetti();
+      if (rating >= 4) {
+        handleCopyReview();
+        triggerConfetti();
+      }
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Something went wrong.";
       setErrorMessage(msg);
@@ -403,106 +408,174 @@ function ReviewFormContent() {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      {/* CELEBRATION / SUCCESS SCREEN */}
+      {/* SUCCESS / ROUTING SCREEN */}
       {submissionSuccess ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-white border-2 border-neutral-900 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[4px_4px_0_#1B1C1E] sm:shadow-[8px_8px_0_#1B1C1E] text-center"
-        >
-          <div className="w-14 h-14 sm:w-20 sm:h-20 bg-[#F3E8FF] border-2 border-neutral-900 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-[3px_3px_0_#C21BFF] sm:shadow-[4px_4px_0_#C21BFF]">
-            <SparklesSolid className="w-8 h-8 sm:w-11 sm:h-11 text-brandpurple" />
-          </div>
-
-          <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] sm:text-xs font-black uppercase tracking-wider rounded-full mb-2 sm:mb-3">
-            Review Ready to Post
-          </span>
-
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral-900 tracking-tight mb-2">
-            Thank you, {name.split(" ")[0]}!
-          </h2>
-          <p className="text-neutral-600 text-xs sm:text-sm md:text-base max-w-md mx-auto mb-5 sm:mb-6 leading-relaxed">
-            Your review text has been copied to your clipboard. Now, simply paste it on Google to share your experience with other students and parents!
-          </p>
-
-          {/* Review Text Preview Box */}
-          <div
-            data-lenis-prevent
-            className="relative bg-neutral-50 border border-neutral-200 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-left mb-5 sm:mb-6 max-h-52 sm:max-h-60 overflow-y-auto overscroll-contain"
+        rating >= 4 ? (
+          /* 4–5 STARS: POSITIVE GOOGLE REVIEW CELEBRATION */
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="bg-white border-2 border-neutral-900 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[4px_4px_0_#1B1C1E] sm:shadow-[8px_8px_0_#1B1C1E] text-center"
           >
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-neutral-500 truncate mr-2">
-                Your Review ({selectedCourse})
-              </span>
-              <button
-                type="button"
-                onClick={handleCopyReview}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-brandpurple hover:text-brandpurple/80 transition-colors cursor-pointer shrink-0 py-1 px-2 rounded-md hover:bg-brandpurple/10 active:scale-95"
-              >
-                {copied ? (
-                  <>
-                    <CheckIcon className="w-4 h-4 text-emerald-600" />
-                    <span className="text-emerald-700">Copied!</span>
-                  </>
-                ) : (
-                  <>
-                    <ClipboardDocumentIcon className="w-4 h-4" />
-                    <span>Copy Text</span>
-                  </>
-                )}
-              </button>
+            <div className="w-14 h-14 sm:w-20 sm:h-20 bg-[#F3E8FF] border-2 border-neutral-900 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-[3px_3px_0_#C21BFF] sm:shadow-[4px_4px_0_#C21BFF]">
+              <SparklesSolid className="w-8 h-8 sm:w-11 sm:h-11 text-brandpurple" />
             </div>
-            <p className="text-neutral-800 text-xs sm:text-sm md:text-base leading-relaxed italic">
-              &ldquo;{reviewText}&rdquo;
+
+            <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] sm:text-xs font-black uppercase tracking-wider rounded-full mb-2 sm:mb-3">
+              Review Ready to Post
+            </span>
+
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral-900 tracking-tight mb-2">
+              Thank you, {name.split(" ")[0]}!
+            </h2>
+            <p className="text-neutral-600 text-xs sm:text-sm md:text-base max-w-md mx-auto mb-5 sm:mb-6 leading-relaxed">
+              Your review text has been copied to your clipboard. Now, simply paste it on Google to share your experience with other students and parents!
             </p>
-          </div>
 
-          {/* Prominent Google Reviews CTA */}
-          <a
-            href={GOOGLE_REVIEW_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#1B1C1E] hover:bg-neutral-800 text-white font-black text-sm sm:text-base md:text-lg px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-neutral-900 shadow-[4px_4px_0_#C21BFF] sm:shadow-[6px_6px_0_#C21BFF] hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all mb-4"
+            {/* Review Text Preview Box */}
+            <div
+              data-lenis-prevent
+              className="relative bg-neutral-50 border border-neutral-200 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-left mb-5 sm:mb-6 max-h-52 sm:max-h-60 overflow-y-auto overscroll-contain"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-neutral-500 truncate mr-2">
+                  Your Review ({selectedCourse})
+                </span>
+                <button
+                  type="button"
+                  onClick={handleCopyReview}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-brandpurple hover:text-brandpurple/80 transition-colors cursor-pointer shrink-0 py-1 px-2 rounded-md hover:bg-brandpurple/10 active:scale-95"
+                >
+                  {copied ? (
+                    <>
+                      <CheckIcon className="w-4 h-4 text-emerald-600" />
+                      <span className="text-emerald-700">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <ClipboardDocumentIcon className="w-4 h-4" />
+                      <span>Copy Text</span>
+                    </>
+                  )}
+                </button>
+              </div>
+              <p className="text-neutral-800 text-xs sm:text-sm md:text-base leading-relaxed italic">
+                &ldquo;{reviewText}&rdquo;
+              </p>
+            </div>
+
+            {/* Prominent Google Reviews CTA */}
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#1B1C1E] hover:bg-neutral-800 text-white font-black text-sm sm:text-base md:text-lg px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-neutral-900 shadow-[4px_4px_0_#C21BFF] sm:shadow-[6px_6px_0_#C21BFF] hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all mb-4"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24">
+                <path
+                  fill="#4285F4"
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                />
+              </svg>
+              <span>Paste &amp; Post on Google Reviews</span>
+              <ArrowTopRightOnSquareIcon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+            </a>
+
+            {/* 3 Step Helper Guide (Responsive Flow) */}
+            <div className="pt-3.5 border-t border-neutral-100 grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] sm:text-xs text-neutral-500 text-left sm:text-center">
+              <span className="flex items-center gap-1.5 sm:justify-center">
+                <span className="w-4 h-4 rounded-full bg-neutral-200 text-neutral-700 font-bold flex items-center justify-center text-[10px] shrink-0">1</span>
+                <span>Tap button above</span>
+              </span>
+              <span className="flex items-center gap-1.5 sm:justify-center">
+                <span className="w-4 h-4 rounded-full bg-neutral-200 text-neutral-700 font-bold flex items-center justify-center text-[10px] shrink-0">2</span>
+                <span>Tap {rating} Star{rating > 1 ? "s" : ""} on Google</span>
+              </span>
+              <span className="flex items-center gap-1.5 sm:justify-center">
+                <span className="w-4 h-4 rounded-full bg-neutral-200 text-neutral-700 font-bold flex items-center justify-center text-[10px] shrink-0">3</span>
+                <span>Paste review &amp; Post!</span>
+              </span>
+            </div>
+          </motion.div>
+        ) : (
+          /* 1–3 STARS: PRIVATE DIRECT LEADERSHIP FEEDBACK (NEVER GOES TO GOOGLE) */
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="bg-white border-2 border-neutral-900 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[4px_4px_0_#1B1C1E] sm:shadow-[8px_8px_0_#1B1C1E] text-center"
           >
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24">
-              <path
-                fill="#4285F4"
-                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-              />
-              <path
-                fill="#34A853"
-                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-              />
-              <path
-                fill="#FBBC05"
-                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
-              />
-              <path
-                fill="#EA4335"
-                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
-              />
-            </svg>
-            <span>Paste &amp; Post on Google Reviews</span>
-            <ArrowTopRightOnSquareIcon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-          </a>
+            <div className="w-14 h-14 sm:w-20 sm:h-20 bg-amber-50 border-2 border-neutral-900 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-[3px_3px_0_#F59E0B] sm:shadow-[4px_4px_0_#F59E0B]">
+              <ShieldCheckIcon className="w-8 h-8 sm:w-11 sm:h-11 text-amber-600" />
+            </div>
 
-          {/* 3 Step Helper Guide (Responsive Flow) */}
-          <div className="pt-3.5 border-t border-neutral-100 grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] sm:text-xs text-neutral-500 text-left sm:text-center">
-            <span className="flex items-center gap-1.5 sm:justify-center">
-              <span className="w-4 h-4 rounded-full bg-neutral-200 text-neutral-700 font-bold flex items-center justify-center text-[10px] shrink-0">1</span>
-              <span>Tap button above</span>
+            <span className="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-[10px] sm:text-xs font-black uppercase tracking-wider rounded-full mb-2 sm:mb-3 border border-amber-300">
+              Feedback Sent Privately
             </span>
-            <span className="flex items-center gap-1.5 sm:justify-center">
-              <span className="w-4 h-4 rounded-full bg-neutral-200 text-neutral-700 font-bold flex items-center justify-center text-[10px] shrink-0">2</span>
-              <span>Tap {rating} Star{rating > 1 ? "s" : ""} on Google</span>
-            </span>
-            <span className="flex items-center gap-1.5 sm:justify-center">
-              <span className="w-4 h-4 rounded-full bg-neutral-200 text-neutral-700 font-bold flex items-center justify-center text-[10px] shrink-0">3</span>
-              <span>Paste review &amp; Post!</span>
-            </span>
-          </div>
-        </motion.div>
+
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral-900 tracking-tight mb-2">
+              Thank you for your feedback, {name.split(" ")[0]}
+            </h2>
+            <p className="text-neutral-600 text-xs sm:text-sm md:text-base max-w-md mx-auto mb-5 sm:mb-6 leading-relaxed">
+              Your feedback has been sent directly to our leadership team. We take every concern seriously and will review your comments to improve our institute.
+            </p>
+
+            {/* Private Feedback Preview Box */}
+            <div
+              data-lenis-prevent
+              className="relative bg-neutral-50 border border-neutral-200 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-left mb-5 sm:mb-6 max-h-52 sm:max-h-60 overflow-y-auto overscroll-contain"
+            >
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-1">
+                Your Private Message ({selectedCourse})
+              </span>
+              <p className="text-neutral-800 text-xs sm:text-sm md:text-base leading-relaxed italic">
+                &ldquo;{reviewText}&rdquo;
+              </p>
+            </div>
+
+            {/* Direct Leadership WhatsApp / Phone Action */}
+            <div className="space-y-3 mb-4">
+              <a
+                href={`https://wa.me/918798587779?text=${encodeURIComponent(
+                  `Hi instudia, I just submitted feedback regarding the ${selectedCourse} course (Name: ${name}). I would like to speak directly with management.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#1B1C1E] hover:bg-neutral-800 text-white font-black text-sm sm:text-base px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-neutral-900 shadow-[4px_4px_0_#25D366] hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+              >
+                <ChatBubbleLeftRightIcon className="w-5 h-5 text-[#25D366]" />
+                <span>Connect with Management on WhatsApp</span>
+              </a>
+
+              <a
+                href="tel:+918798587779"
+                className="w-full inline-flex items-center justify-center gap-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-neutral-300 transition-colors"
+              >
+                <PhoneIcon className="w-4 h-4 text-neutral-600" />
+                <span>Or Call Director: +91 87985 87779</span>
+              </a>
+            </div>
+
+            <div className="pt-3 border-t border-neutral-100 text-center">
+              <span className="text-[11px] text-neutral-400">
+                Your feedback is 100% confidential and was not submitted to public search listings.
+              </span>
+            </div>
+          </motion.div>
+        )
       ) : (
         /* STEPPER CONTAINER (TYPEFORM STYLE) */
         <div className="bg-white border-2 border-neutral-900 rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-10 shadow-[4px_4px_0_#1B1C1E] sm:shadow-[8px_8px_0_#1B1C1E] relative flex flex-col min-h-[460px] sm:min-h-[500px]">
@@ -926,10 +999,12 @@ function ReviewFormContent() {
                       Step 5 • Final Step
                     </span>
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral-900 tracking-tight">
-                      Who is writing this review?
+                      {rating >= 4 ? "Who is writing this review?" : "Who is submitting this feedback?"}
                     </h2>
                     <p className="mt-1 text-xs sm:text-sm text-neutral-500">
-                      Your name will accompany your Google review.
+                      {rating >= 4
+                        ? "Your name will accompany your Google review."
+                        : "Your feedback will be delivered directly and privately to instudia leadership."}
                     </p>
                   </div>
 
@@ -981,12 +1056,17 @@ function ReviewFormContent() {
                         {isSubmitting ? (
                           <>
                             <ArrowPathIcon className="w-5 h-5 animate-spin" />
-                            <span>Preparing your review...</span>
+                            <span>{rating >= 4 ? "Preparing your review..." : "Sending your feedback..."}</span>
                           </>
-                        ) : (
+                        ) : rating >= 4 ? (
                           <>
                             <span>Post Review on Google</span>
                             <span className="text-brandpurple">→</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Send Private Feedback to Leadership</span>
+                            <span className="text-amber-400">→</span>
                           </>
                         )}
                       </button>
@@ -1011,7 +1091,9 @@ function ReviewFormContent() {
           ) : (
             <div className="pt-3 mt-4 border-t border-neutral-100 text-center">
               <span className="text-[11px] text-neutral-400 font-medium">
-                Your review will be copied to your clipboard to paste on Google Reviews.
+                {rating >= 4
+                  ? "Your review will be copied to your clipboard to paste on Google Reviews."
+                  : "Your feedback is 100% confidential and sent directly to our leadership team."}
               </span>
             </div>
           )}

@@ -58,11 +58,14 @@ export async function POST(req: NextRequest) {
       timeStyle: "short",
     });
 
+    const isPromoter = numericRating >= 4;
     const roleTitle = role === "parent" ? "Parent" : "Student";
-    const subject = `⭐ [${numericRating}★ Google Review] ${name.trim()} (${roleTitle}) — ${course.trim()}`;
+    const subject = isPromoter
+      ? `⭐ [${numericRating}★ Google Review] ${name.trim()} (${roleTitle}) — ${course.trim()}`
+      : `⚠️ [${numericRating}★ Private Feedback - Action Required] ${name.trim()} (${roleTitle}) — ${course.trim()}`;
 
     const emailHtml = buildReviewEmailHtml({
-      type: "positive_review",
+      type: isPromoter ? "positive_review" : "private_feedback",
       name: name.trim(),
       role: role === "parent" ? "parent" : "student",
       course: course.trim(),
