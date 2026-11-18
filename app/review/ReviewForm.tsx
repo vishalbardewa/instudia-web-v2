@@ -522,10 +522,6 @@ function ReviewFormContent() {
               <ShieldCheckIcon className="w-8 h-8 sm:w-11 sm:h-11 text-amber-600" />
             </div>
 
-            <span className="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-[10px] sm:text-xs font-black uppercase tracking-wider rounded-full mb-2 sm:mb-3 border border-amber-300">
-              Feedback Sent Privately
-            </span>
-
             <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral-900 tracking-tight mb-2">
               Thank you for your feedback, {name.split(" ")[0]}
             </h2>
@@ -613,13 +609,12 @@ function ReviewFormContent() {
                       }}
                       disabled={i > step}
                       aria-label={`Go to step ${i}`}
-                      className={`transition-all rounded-full ${
-                        i === step
-                          ? "w-5 sm:w-6 h-2 bg-brandpurple"
-                          : i < step
+                      className={`transition-all rounded-full ${i === step
+                        ? "w-5 sm:w-6 h-2 bg-brandpurple"
+                        : i < step
                           ? "w-2 h-2 bg-neutral-900 hover:bg-brandpurple cursor-pointer"
                           : "w-2 h-2 bg-neutral-200 cursor-not-allowed"
-                      }`}
+                        }`}
                     />
                   ))}
                 </div>
@@ -688,28 +683,25 @@ function ReviewFormContent() {
                     <button
                       type="button"
                       onClick={() => handleSelectRole("student")}
-                      className={`group p-4 sm:p-5 rounded-xl sm:rounded-2xl border-2 text-left transition-all cursor-pointer relative active:scale-[0.98] ${
-                        role === "student"
-                          ? "border-neutral-900 bg-[#1B1C1E] text-white shadow-[4px_4px_0_#C21BFF] sm:shadow-[6px_6px_0_#C21BFF]"
-                          : "border-neutral-200 bg-neutral-50 hover:bg-white hover:border-neutral-900 text-neutral-800"
-                      }`}
+                      className={`group p-4 sm:p-5 rounded-xl sm:rounded-2xl border-2 text-left transition-all cursor-pointer relative active:scale-[0.98] ${role === "student"
+                        ? "border-neutral-900 bg-[#1B1C1E] text-white shadow-[4px_4px_0_#C21BFF] sm:shadow-[6px_6px_0_#C21BFF]"
+                        : "border-neutral-200 bg-neutral-50 hover:bg-white hover:border-neutral-900 text-neutral-800"
+                        }`}
                     >
                       <div className="flex items-center justify-between mb-2.5 sm:mb-3">
                         <div
-                          className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center border ${
-                            role === "student"
-                              ? "bg-white/10 border-white/20 text-white"
-                              : "bg-white border-neutral-200 text-brandpurple"
-                          }`}
+                          className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center border ${role === "student"
+                            ? "bg-white/10 border-white/20 text-white"
+                            : "bg-white border-neutral-200 text-brandpurple"
+                            }`}
                         >
                           <AcademicCapIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
                         <span
-                          className={`hidden sm:inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded border uppercase ${
-                            role === "student"
-                              ? "bg-white/20 border-white/30 text-white"
-                              : "bg-neutral-200 border-neutral-300 text-neutral-600"
-                          }`}
+                          className={`hidden sm:inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded border uppercase ${role === "student"
+                            ? "bg-white/20 border-white/30 text-white"
+                            : "bg-neutral-200 border-neutral-300 text-neutral-600"
+                            }`}
                         >
                           Key: A
                         </span>
@@ -718,9 +710,8 @@ function ReviewFormContent() {
                         Student / Alumni
                       </h3>
                       <p
-                        className={`text-xs leading-relaxed ${
-                          role === "student" ? "text-neutral-300" : "text-neutral-500"
-                        }`}
+                        className={`text-xs leading-relaxed ${role === "student" ? "text-neutral-300" : "text-neutral-500"
+                          }`}
                       >
                         I enrolled and attended classes at instudia Dimapur.
                       </p>
@@ -730,28 +721,25 @@ function ReviewFormContent() {
                     <button
                       type="button"
                       onClick={() => handleSelectRole("parent")}
-                      className={`group p-4 sm:p-5 rounded-xl sm:rounded-2xl border-2 text-left transition-all cursor-pointer relative active:scale-[0.98] ${
-                        role === "parent"
-                          ? "border-neutral-900 bg-[#1B1C1E] text-white shadow-[4px_4px_0_#C21BFF] sm:shadow-[6px_6px_0_#C21BFF]"
-                          : "border-neutral-200 bg-neutral-50 hover:bg-white hover:border-neutral-900 text-neutral-800"
-                      }`}
+                      className={`group p-4 sm:p-5 rounded-xl sm:rounded-2xl border-2 text-left transition-all cursor-pointer relative active:scale-[0.98] ${role === "parent"
+                        ? "border-neutral-900 bg-[#1B1C1E] text-white shadow-[4px_4px_0_#C21BFF] sm:shadow-[6px_6px_0_#C21BFF]"
+                        : "border-neutral-200 bg-neutral-50 hover:bg-white hover:border-neutral-900 text-neutral-800"
+                        }`}
                     >
                       <div className="flex items-center justify-between mb-2.5 sm:mb-3">
                         <div
-                          className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center border ${
-                            role === "parent"
-                              ? "bg-white/10 border-white/20 text-white"
-                              : "bg-white border-neutral-200 text-brandpurple"
-                          }`}
+                          className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center border ${role === "parent"
+                            ? "bg-white/10 border-white/20 text-white"
+                            : "bg-white border-neutral-200 text-brandpurple"
+                            }`}
                         >
                           <UserGroupIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
                         <span
-                          className={`hidden sm:inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded border uppercase ${
-                            role === "parent"
-                              ? "bg-white/20 border-white/30 text-white"
-                              : "bg-neutral-200 border-neutral-300 text-neutral-600"
-                          }`}
+                          className={`hidden sm:inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded border uppercase ${role === "parent"
+                            ? "bg-white/20 border-white/30 text-white"
+                            : "bg-neutral-200 border-neutral-300 text-neutral-600"
+                            }`}
                         >
                           Key: B
                         </span>
@@ -760,9 +748,8 @@ function ReviewFormContent() {
                         Parent / Guardian
                       </h3>
                       <p
-                        className={`text-xs leading-relaxed ${
-                          role === "parent" ? "text-neutral-300" : "text-neutral-500"
-                        }`}
+                        className={`text-xs leading-relaxed ${role === "parent" ? "text-neutral-300" : "text-neutral-500"
+                          }`}
                       >
                         My child completed or is currently taking training at instudia.
                       </p>
@@ -902,11 +889,10 @@ function ReviewFormContent() {
                           key={tag}
                           type="button"
                           onClick={() => toggleTag(tag)}
-                          className={`inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border transition-all cursor-pointer active:scale-95 ${
-                            isSelected
-                              ? "bg-brandpurple text-white border-brandpurple shadow-2xs scale-102"
-                              : "bg-neutral-50 text-neutral-700 border-neutral-200 hover:border-neutral-300 hover:bg-neutral-100"
-                          }`}
+                          className={`inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border transition-all cursor-pointer active:scale-95 ${isSelected
+                            ? "bg-brandpurple text-white border-brandpurple shadow-2xs scale-102"
+                            : "bg-neutral-50 text-neutral-700 border-neutral-200 hover:border-neutral-300 hover:bg-neutral-100"
+                            }`}
                         >
                           {isSelected ? (
                             <CheckIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -1053,7 +1039,7 @@ function ReviewFormContent() {
                           </>
                         ) : (
                           <>
-                            <span>Send Private Feedback to Leadership</span>
+                            <span>Send Review</span>
                             <span className="text-amber-400">→</span>
                           </>
                         )}
