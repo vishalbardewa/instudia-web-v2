@@ -208,9 +208,11 @@ export async function POST(req: NextRequest) {
       feedback: String(feedback || "").trim(),
     };
 
+    // Fire-and-forget storage tasks — never block the student's certificate
+    // Storage errors are logged server-side; the cert download always proceeds.
     const tasks: Promise<{ target: string; ok: boolean; error?: unknown }>[] = [];
 
-    // 2. Write to Supabase
+    // 2. Write to Supabase (best-effort)
     if (supabaseAdmin) {
       tasks.push(
         (async () => {
@@ -226,7 +228,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 3. Write directly to Google Sheets via Service Account
+    // 3. Write directly to Google Sheets via Service Account (best-effort)
     const sheetsClient = getGoogleSheetsClient();
     if (sheetsClient) {
       tasks.push(
@@ -251,18 +253,9 @@ export async function POST(req: NextRequest) {
     }
 
     const results = await Promise.all(tasks);
-    const anySucceeded = results.length === 0 || results.some((r) => r.ok);
 
-    if (!anySucceeded) {
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Could not save your feedback right now. Please try again.",
-        },
-        { status: 500 }
-      );
-    }
-
+    // Always return success to the student — certificate download must never be blocked
+    // by a storage failure. Errors are logged server-side for operator review.
     return NextResponse.json({
       ok: true,
       certificateId,
