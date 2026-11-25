@@ -1,11 +1,83 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { google } from "googleapis";
+
+const SPREADSHEET_ID =
+  process.env.GOOGLE_SHEET_ID || "1CGcvOhNduvkwOYAtcG5v3lzJUnxUu8XbtGULdylDhiI";
+
+const SHEET_HEADERS = [
+  "Submitted At",
+  "Certificate ID",
+  "Campus",
+  "Seminar Date",
+  "Topic",
+  "Student Name",
+  "Email",
+  "Phone",
+  "Rating (1-5)",
+  "Course Interest",
+  "Feedback",
+];
 
 function getSupabaseAdmin() {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return null;
   return createClient(url, key);
+}
+
+function getGoogleSheetsClient() {
+  const credJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+  if (!credJson) return null;
+  try {
+    const credentials = JSON.parse(credJson);
+    const auth = new google.auth.GoogleAuth({
+      credentials,
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    });
+    return google.sheets({ version: "v4", auth });
+  } catch (err) {
+    console.error("[seminar-feedback] Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON:", err);
+    return null;
+  }
+}
+
+async function appendToSheet(
+  sheets: ReturnType<typeof google.sheets>,
+  row: (string | number)[]
+): Promise<{ ok: boolean; error?: unknown }> {
+  try {
+    // Check if sheet already has headers (row 1)
+    const headerCheck = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A1:K1",
+    });
+
+    const firstRow = headerCheck.data.values?.[0];
+    if (!firstRow || firstRow.length === 0) {
+      // Write headers first
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: SPREADSHEET_ID,
+        range: "Sheet1!A1:K1",
+        valueInputOption: "RAW",
+        requestBody: { values: [SHEET_HEADERS] },
+      });
+    }
+
+    // Append the data row
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A:K",
+      valueInputOption: "USER_ENTERED",
+      insertDataOption: "INSERT_ROWS",
+      requestBody: { values: [row] },
+    });
+
+    return { ok: true };
+  } catch (err) {
+    console.error("[seminar-feedback] Google Sheets append error:", err);
+    return { ok: false, error: err };
+  }
 }
 
 function generateCertificateId(): string {
@@ -150,39 +222,26 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 2. Sync to Google Sheet via Apps Script Webhook
-    const sheetWebhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
-    if (sheetWebhookUrl) {
+    // 3. Write directly to Google Sheets via Service Account
+    const sheetsClient = getGoogleSheetsClient();
+    if (sheetsClient) {
       tasks.push(
         (async () => {
-          try {
-            const res = await fetch(sheetWebhookUrl, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                submittedAt,
-                certificateId: record.certificate_id,
-                campus: record.campus,
-                date: record.seminar_date,
-                topic: record.seminar_topic,
-                name: record.name,
-                email: record.email,
-                phone: record.phone,
-                rating: record.rating,
-                courseInterest: record.course_interest,
-                feedback: record.feedback,
-              }),
-            });
-            if (!res.ok) {
-              const text = await res.text();
-              console.error("[seminar-feedback] Sheet webhook error:", res.status, text);
-              return { target: "sheets", ok: false, error: text };
-            }
-            return { target: "sheets", ok: true };
-          } catch (err) {
-            console.error("[seminar-feedback] Sheet webhook fetch failed:", err);
-            return { target: "sheets", ok: false, error: err };
-          }
+          const row = [
+            submittedAt,
+            record.certificate_id,
+            record.campus,
+            record.seminar_date,
+            record.seminar_topic,
+            record.name,
+            record.email,
+            record.phone,
+            record.rating,
+            record.course_interest,
+            record.feedback,
+          ];
+          const result = await appendToSheet(sheetsClient, row);
+          return { target: "sheets", ...result };
         })()
       );
     }
