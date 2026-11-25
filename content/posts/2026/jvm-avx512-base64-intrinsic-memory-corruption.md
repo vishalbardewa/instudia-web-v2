@@ -12,9 +12,9 @@ authorRole: Engineering
 authorPhoto: >-
   https://ik.imagekit.io/dxffek9yf/blogman/authors/new-logo-with-white-bg.png
 coverImage: >-
-  https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D
+  https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80
 ogImage: >-
-  https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D
+  https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80
 authorSlug: instudia-team
 dateModified: '2026-11-20'
 ---
