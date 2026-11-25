@@ -27,17 +27,21 @@ function getSupabaseAdmin() {
 }
 
 function getGoogleSheetsClient() {
-  const credJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  if (!credJson) return null;
+  const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+  const privateKey = process.env.GOOGLE_PRIVATE_KEY;
+  if (!clientEmail || !privateKey) return null;
   try {
-    const credentials = JSON.parse(credJson);
     const auth = new google.auth.GoogleAuth({
-      credentials,
+      credentials: {
+        client_email: clientEmail,
+        // .env files turn \n into literal newlines; handle both cases
+        private_key: privateKey.replace(/\\n/g, "\n"),
+      },
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
     return google.sheets({ version: "v4", auth });
   } catch (err) {
-    console.error("[seminar-feedback] Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON:", err);
+    console.error("[seminar-feedback] Failed to init Google Sheets client:", err);
     return null;
   }
 }
