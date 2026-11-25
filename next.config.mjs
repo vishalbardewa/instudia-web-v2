@@ -74,6 +74,7 @@ const nextConfig = {
     const scriptSrc = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com https://tally.so",
+      "https://connect.facebook.net",
     ]
       .filter(Boolean)
       .join(" ");
@@ -84,8 +85,8 @@ const nextConfig = {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: blob: https:",
       "font-src 'self' https://fonts.gstatic.com data:",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://ik.imagekit.io https://res.cloudinary.com https://api.whatsapp.com https://wa.me https://tally.so",
-      "frame-src 'self' https://tally.so https://www.google.com https://maps.google.com https://www.youtube.com",
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://ik.imagekit.io https://res.cloudinary.com https://api.whatsapp.com https://wa.me https://tally.so https://*.supabase.co https://script.google.com",
+      "frame-src 'self' https://tally.so https://www.google.com https://maps.google.com https://www.youtube.com https://www.facebook.com",
       "worker-src 'self' blob:",
       "manifest-src 'self'",
       "media-src 'self' https: data:",

@@ -9,6 +9,7 @@ import ScrollRevealProvider from "./components/atom/ScrollRevealProvider";
 import ConditionalLayout from "./components/layouts/ConditionalLayout";
 import DeviceSizeIndicator from "./components/atom/DeviceSizeIndicator";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import MetaPixel from "./components/atom/MetaPixel";
 import { AppConfig } from "./_utils/AppConfig";
 import { LocalBusinessSchema } from "./components/SchemaOrg/LocalBusinessSchema";
 
@@ -74,6 +75,7 @@ export const metadata: Metadata = {
 };
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
 
 export default function RootLayout({
   children,
@@ -124,6 +126,7 @@ export default function RootLayout({
             <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
           </Suspense>
         )}
+        {META_PIXEL_ID && <MetaPixel pixelId={META_PIXEL_ID} />}
       </body>
     </html>
   );

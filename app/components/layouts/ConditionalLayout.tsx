@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import PrimaryLayout from "./PrimaryLayout";
 
 // Routes where header/footer should be suppressed
-const STANDALONE_PREFIXES = ["/links", "/card"];
+const STANDALONE_PREFIXES = ["/links", "/card", "/s"];
 
 export default function ConditionalLayout({
   children,

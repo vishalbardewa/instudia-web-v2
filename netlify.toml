@@ -1,0 +1,24 @@
+[build]
+  command   = "npm run build"
+  publish   = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# ---------------------------------------------------------------------------
+# Environment variable SCOPES (the actual secret values are set in
+# Netlify → Site → Site configuration → Environment variables)
+# ---------------------------------------------------------------------------
+# SUPABASE_URL                  → server-only  (not NEXT_PUBLIC_)
+# SUPABASE_SERVICE_ROLE_KEY     → server-only  (not NEXT_PUBLIC_)
+# RESEND_API_KEY                → server-only
+# RESEND_FROM_EMAIL             → server-only
+# ADMIN_EMAIL                   → server-only
+# ADMIN_EXPORT_KEY              → server-only
+# GOOGLE_SHEET_WEBHOOK_URL      → server-only
+# NEXT_PUBLIC_GA_ID             → public (exposed to browser)
+# NEXT_PUBLIC_META_PIXEL_ID     → public (exposed to browser)
+
